@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | {% note warning \&quot;Этот параметр устарел\&quot; %}  Не используйте его.  {% endnote %}  Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом &#x60;POST cart&#x60;. | [optional]
+**id** | **string** | Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом &#x60;POST cart&#x60;. | [optional]
 **type** | [**\OpenAPI\Client\Model\OrderDeliveryType**](OrderDeliveryType.md) |  |
 **service_name** | **string** | Наименование службы доставки. |
-**price** | **float** | {% note warning \&quot;Этот параметр устарел\&quot; %}  Стоимость доставки смотрите в параметре &#x60;deliveryTotal&#x60;.  {% endnote %}  Стоимость доставки в валюте заказа. | [optional]
+**price** | **float** | {% note warning \&quot;Стоимость доставки смотрите в параметре &#x60;deliveryTotal&#x60;.\&quot; %}     {% endnote %}  Стоимость доставки в валюте заказа. | [optional]
 **delivery_partner_type** | [**\OpenAPI\Client\Model\OrderDeliveryPartnerType**](OrderDeliveryPartnerType.md) |  |
 **courier** | [**\OpenAPI\Client\Model\OrderCourierDTO**](OrderCourierDTO.md) |  | [optional]
 **dates** | [**\OpenAPI\Client\Model\OrderDeliveryDatesDTO**](OrderDeliveryDatesDTO.md) |  |

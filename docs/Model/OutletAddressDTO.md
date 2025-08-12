@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **block** | **string** | Номер корпуса. | [optional]
 **additional** | **string** | Дополнительная информация. | [optional]
 **km** | **int** | Порядковый номер километра дороги, на котором располагается точка продаж, если отсутствует улица. | [optional]
-**city** | **string** | {% note warning \&quot;Этот параметр устарел\&quot; %}  Не используйте его.  В ответах города и населенные пункты возвращаются в параметре &#x60;regionId&#x60;.  {% endnote %} | [optional]
+**city** | **string** | {% note warning \&quot;В ответах города и населенные пункты возвращаются в параметре &#x60;regionId&#x60;.\&quot; %}     {% endnote %} | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

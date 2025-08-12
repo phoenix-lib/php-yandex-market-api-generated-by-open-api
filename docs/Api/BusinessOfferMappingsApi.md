@@ -20,7 +20,7 @@ addOffersToArchive($business_id, $add_offers_to_archive_request): \OpenAPI\Clien
 
 Добавление товаров в архив
 
-{% include notitle [access](../../_auto/method_scopes/addOffersToArchive.md) %}  Помещает товары в архив. Товары, помещенные в архив, скрыты с витрины во всех магазинах кабинета.  {% note warning \"В архив нельзя отправить товар, который хранится на складе Маркета\" %}  Вначале такой товар нужно распродать или вывезти.  {% endnote %}  |**⚙️ Лимит:** 5000 товаров в минуту, не более 200 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/addOffersToArchive.md) %}  Помещает товары в архив. Товары, помещенные в архив, скрыты с витрины во всех магазинах кабинета.  {% note warning \"В архив нельзя отправить товар, который хранится на складе Маркета\" %}  Вначале такой товар нужно распродать или вывезти.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 200 товаров в одном запросе| |-|
 
 ### Example
 
@@ -44,7 +44,7 @@ $apiInstance = new OpenAPI\Client\Api\BusinessOfferMappingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $add_offers_to_archive_request = new \OpenAPI\Client\Model\AddOffersToArchiveRequest(); // \OpenAPI\Client\Model\AddOffersToArchiveRequest
 
 try {
@@ -59,7 +59,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **add_offers_to_archive_request** | [**\OpenAPI\Client\Model\AddOffersToArchiveRequest**](../Model/AddOffersToArchiveRequest.md)|  | |
 
 ### Return type
@@ -87,7 +87,7 @@ deleteOffers($business_id, $delete_offers_request): \OpenAPI\Client\Model\Delete
 
 Удаление товаров из каталога
 
-{% include notitle [access](../../_auto/method_scopes/deleteOffers.md) %}  Удаляет товары из каталога.  |**⚙️ Лимит:** 5000 товаров в минуту, не более 200 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/deleteOffers.md) %}  Удаляет товары из каталога.  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 200 товаров в одном запросе| |-|
 
 ### Example
 
@@ -111,7 +111,7 @@ $apiInstance = new OpenAPI\Client\Api\BusinessOfferMappingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $delete_offers_request = new \OpenAPI\Client\Model\DeleteOffersRequest(); // \OpenAPI\Client\Model\DeleteOffersRequest
 
 try {
@@ -126,7 +126,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **delete_offers_request** | [**\OpenAPI\Client\Model\DeleteOffersRequest**](../Model/DeleteOffersRequest.md)|  | |
 
 ### Return type
@@ -154,7 +154,7 @@ deleteOffersFromArchive($business_id, $delete_offers_from_archive_request): \Ope
 
 Удаление товаров из архива
 
-{% include notitle [access](../../_auto/method_scopes/deleteOffersFromArchive.md) %}  Восстанавливает товары из архива.  |**⚙️ Лимит:** 5000 товаров в минуту, не более 200 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/deleteOffersFromArchive.md) %}  Восстанавливает товары из архива.  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 200 товаров в одном запросе| |-|
 
 ### Example
 
@@ -178,7 +178,7 @@ $apiInstance = new OpenAPI\Client\Api\BusinessOfferMappingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $delete_offers_from_archive_request = new \OpenAPI\Client\Model\DeleteOffersFromArchiveRequest(); // \OpenAPI\Client\Model\DeleteOffersFromArchiveRequest
 
 try {
@@ -193,7 +193,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **delete_offers_from_archive_request** | [**\OpenAPI\Client\Model\DeleteOffersFromArchiveRequest**](../Model/DeleteOffersFromArchiveRequest.md)|  | |
 
 ### Return type
@@ -221,7 +221,7 @@ getOfferMappings($business_id, $page_token, $limit, $language, $get_offer_mappin
 
 Информация о товарах в каталоге
 
-{% include notitle [access](../../_auto/method_scopes/getOfferMappings.md) %}  Возвращает список товаров в каталоге, их категории на Маркете и характеристики каждого товара.  Можно использовать тремя способами: * задать список интересующих SKU; * задать фильтр — в этом случае результаты возвращаются постранично; * не передавать тело запроса, чтобы получить список всех товаров в каталоге.  |**⚙️ Лимит:** 600 запросов в минуту, не более 200 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOfferMappings.md) %}  Возвращает список товаров в каталоге, их категории на Маркете и характеристики каждого товара.  Можно использовать тремя способами: * задать список интересующих :no-translate[SKU]; * задать фильтр — в этом случае результаты возвращаются постранично; * не передавать тело запроса, чтобы получить список всех товаров в каталоге.  |**:no-translate[⚙️] Лимит:** 600 запросов в минуту, не более 200 товаров в одном запросе| |-|
 
 ### Example
 
@@ -245,10 +245,10 @@ $apiInstance = new OpenAPI\Client\Api\BusinessOfferMappingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
-$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\CatalogLanguageType(); // \OpenAPI\Client\Model\CatalogLanguageType | Язык, на котором принимаются и возвращаются значения в параметрах `name` и `description`.  Значение по умолчанию: `RU`.
+$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\CatalogLanguageType(); // \OpenAPI\Client\Model\CatalogLanguageType | Язык, на котором принимаются и возвращаются значения в параметрах :no-translate[`name`] и :no-translate[`description`].  Значение по умолчанию: :no-translate[`RU`].
 $get_offer_mappings_request = new \OpenAPI\Client\Model\GetOfferMappingsRequest(); // \OpenAPI\Client\Model\GetOfferMappingsRequest
 
 try {
@@ -263,10 +263,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
-| **language** | [**\OpenAPI\Client\Model\CatalogLanguageType**](../Model/.md)| Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. | [optional] |
+| **language** | [**\OpenAPI\Client\Model\CatalogLanguageType**](../Model/.md)| Язык, на котором принимаются и возвращаются значения в параметрах :no-translate[&#x60;name&#x60;] и :no-translate[&#x60;description&#x60;].  Значение по умолчанию: :no-translate[&#x60;RU&#x60;]. | [optional] |
 | **get_offer_mappings_request** | [**\OpenAPI\Client\Model\GetOfferMappingsRequest**](../Model/GetOfferMappingsRequest.md)|  | [optional] |
 
 ### Return type
@@ -294,7 +294,7 @@ getSuggestedOfferMappings($business_id, $get_suggested_offer_mappings_request): 
 
 Просмотр карточек на Маркете, которые подходят вашим товарам
 
-{% include notitle [access](../../_auto/method_scopes/getSuggestedOfferMappings.md) %}  Возвращает идентификаторы карточек на Маркете, которые соответствуют товарам с заданными параметрами.  Пользоваться этим запросом необязательно: он просто помогает заранее убедиться, что Маркет верно определяет карточки по предоставленным вами данным.  **Как пользоваться запросом**  1. Передайте Маркету список товаров, которые нужно проверить. 2. В ответ вы получите список SKU на Маркете с расшифровкой: названием, идентификатором модели, категорией. 3. Если расшифровки мало, вы можете открыть карточку. Для этого перейдите по ссылке вида `https://market.yandex.ru/product/<marketModelId>?sku=<marketSku>`. 4. Если карточка соответствует товару, значит его можно добавлять в каталог с теми данными, что вы указали. Если карточка определилась неправильно — проверьте данные о товаре. Возможно, их нужно уточнить или дополнить. Кроме того, на этапе добавления товара вы можете указать `marketSKU`, который ему подходит по вашему мнению.  {% note info \"Как определить `marketSku` товара, найденного на Маркете?\" %}  Он есть в адресе страницы товара — расположен после `sku=`.  Например, `https://market.yandex.ru/product--yandex-kniga/484830016?sku=484830016`  {% endnote %}  |**⚙️ Лимит:** 100 000 товаров в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getSuggestedOfferMappings.md) %}  Возвращает идентификаторы карточек на Маркете, которые соответствуют товарам с заданными параметрами.  Пользоваться этим запросом необязательно: он просто помогает заранее убедиться, что Маркет верно определяет карточки по предоставленным вами данным.  **Как пользоваться запросом**  1. Передайте Маркету список товаров, которые нужно проверить. 2. В ответ вы получите список :no-translate[SKU] на Маркете с расшифровкой: названием, идентификатором модели, категорией. 3. Если расшифровки мало, вы можете открыть карточку. Для этого перейдите по ссылке вида `https://market.yandex.ru/product/<marketModelId>?sku=<marketSku>`. 4. Если карточка соответствует товару, значит его можно добавлять в каталог с теми данными, что вы указали. Если карточка определилась неправильно — проверьте данные о товаре. Возможно, их нужно уточнить или дополнить. Кроме того, на этапе добавления товара вы можете указать `marketSKU`, который ему подходит по вашему мнению.  {% note info \"Как определить `marketSku` товара, найденного на Маркете?\" %}  Он есть в адресе страницы товара — расположен после `sku=`.  Например, `https://market.yandex.ru/product--yandex-kniga/484830016?sku=484830016`  {% endnote %}  |**:no-translate[⚙️] Лимит:** 100 000 товаров в час| |-|
 
 ### Example
 
@@ -318,7 +318,7 @@ $apiInstance = new OpenAPI\Client\Api\BusinessOfferMappingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $get_suggested_offer_mappings_request = new \OpenAPI\Client\Model\GetSuggestedOfferMappingsRequest(); // \OpenAPI\Client\Model\GetSuggestedOfferMappingsRequest
 
 try {
@@ -333,7 +333,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **get_suggested_offer_mappings_request** | [**\OpenAPI\Client\Model\GetSuggestedOfferMappingsRequest**](../Model/GetSuggestedOfferMappingsRequest.md)|  | [optional] |
 
 ### Return type
@@ -361,7 +361,7 @@ updateOfferMappings($business_id, $update_offer_mappings_request, $language): \O
 
 Добавление товаров в каталог и изменение информации о них
 
-{% include notitle [access](../../_auto/method_scopes/updateOfferMappings.md) %}  Добавляет товары в каталог, передает их категории на Маркете и характеристики, необходимые для этих категории. Также редактирует информацию об уже имеющихся товарах.  Список категорий Маркета можно получить с помощью запроса [POST categories/tree](../../reference/categories/getCategoriesTree.md), а характеристики товаров по категориям с помощью [POST category/{categoryId}/parameters](../../reference/content/getCategoryContentParameters.md).  Чтобы **добавить новый товар**, передайте его с новым идентификатором, который раньше никогда не использовался в каталоге. Старайтесь сразу передать как можно больше информации — она потребуется Маркету для подбора подходящей карточки или создания новой. Если известно, какой карточке на Маркете соответствует товар, можно сразу указать идентификатор этой карточки (**SKU на Маркете**) в поле `marketSKU`.  Для **новых товаров** обязательно укажите параметры: `offerId`, `name`, `marketCategoryId`, `pictures`, `vendor`, `description`.  Чтобы **отредактировать информацию о товаре**, передайте новые данные, указав в `offerId` соответствующий **ваш SKU**. Поля, в которых ничего не меняется, можно не передавать.  Чтобы **удалить характеристики**, которые заданы в параметрах с типом `string`, передайте пустое значение.  Параметр `offerId` должен быть **уникальным** для всех товаров, которые вы передаете.  {% note warning \"Правила использования SKU\" %}  * У каждого товара SKU должен быть свой.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  SKU товара можно изменить в кабинете продавца на Маркете. О том, как это сделать, читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/assortment/operations/edit-sku).  {% endnote %}  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**⚙️ Лимит:** 5000 товаров в минуту, не более 500 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateOfferMappings.md) %}  Добавляет товары в каталог и передает:  * их категории на Маркете и категорийные характеристики; * основные характеристики; * цены на товары в кабинете.  Также объединяет товары на карточке, редактирует и удаляет информацию об уже добавленных товарах, в том числе цены в кабинете и категории товаров.  Список категорий Маркета можно получить с помощью запроса [POST categories/tree](../../reference/categories/getCategoriesTree.md), а характеристики товаров по категориям с помощью [POST category/{categoryId}/parameters](../../reference/content/getCategoryContentParameters.md).  {% cut \"Добавить новый товар\" %}  Передайте его с новым идентификатором, который раньше никогда не использовался в каталоге.  Обязательно укажите параметры: `offerId`, `name`, `marketCategoryId`, `pictures`, `vendor`, `description`.  Старайтесь сразу передать как можно больше информации — она потребуется Маркету для подбора подходящей карточки или создания новой.  Если известно, какой карточке на Маркете соответствует товар, можно сразу указать идентификатор этой карточки (**:no-translate[SKU] на Маркете**) в поле `marketSKU`.  **Для продавцов Market Yandex Go:**  Когда вы добавляете товары в каталог, указывайте значения параметров `name` и `description` на русском языке. Чтобы на витрине они отображались и на другом языке, еще раз выполните запрос `POST businesses/{businessId}/offer-mappings/update`, где укажите:    * язык в параметре `language`;   * значения параметров `name` и `description` на указанном языке.    Повторно передавать остальные характеристики товара не нужно.  {% endcut %}  {% cut \"Изменить информацию о товаре\" %}  Передайте новые данные, указав в `offerId` соответствующий **ваш :no-translate[SKU]**.  Поля, в которых ничего не меняется, можно не передавать.  {% endcut %}  {% cut \"Удалить переданные ранее параметры товара\" %}  В `deleteParameters` укажите значения параметров, которые хотите удалить. Можно передать сразу несколько значений.  Для параметров с типом `string` также можно передать пустое значение.  {% endcut %}  Параметр `offerId` должен быть **уникальным** для всех товаров, которые вы передаете.  {% note warning \"Правила использования :no-translate[SKU]\" %}  * У каждого товара :no-translate[SKU] должен быть свой.  * Уже заданный :no-translate[SKU] нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  :no-translate[SKU] товара можно изменить в кабинете продавца на Маркете. О том, как это сделать, читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/assortment/operations/edit-sku).  {% endnote %}  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 100 товаров в одном запросе| |-|
 
 ### Example
 
@@ -385,9 +385,9 @@ $apiInstance = new OpenAPI\Client\Api\BusinessOfferMappingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $update_offer_mappings_request = new \OpenAPI\Client\Model\UpdateOfferMappingsRequest(); // \OpenAPI\Client\Model\UpdateOfferMappingsRequest
-$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\CatalogLanguageType(); // \OpenAPI\Client\Model\CatalogLanguageType | Язык, на котором принимаются и возвращаются значения в параметрах `name` и `description`.  Значение по умолчанию: `RU`.
+$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\CatalogLanguageType(); // \OpenAPI\Client\Model\CatalogLanguageType | Язык, на котором принимаются и возвращаются значения в параметрах :no-translate[`name`] и :no-translate[`description`].  Значение по умолчанию: :no-translate[`RU`].
 
 try {
     $result = $apiInstance->updateOfferMappings($business_id, $update_offer_mappings_request, $language);
@@ -401,9 +401,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **update_offer_mappings_request** | [**\OpenAPI\Client\Model\UpdateOfferMappingsRequest**](../Model/UpdateOfferMappingsRequest.md)|  | |
-| **language** | [**\OpenAPI\Client\Model\CatalogLanguageType**](../Model/.md)| Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. | [optional] |
+| **language** | [**\OpenAPI\Client\Model\CatalogLanguageType**](../Model/.md)| Язык, на котором принимаются и возвращаются значения в параметрах :no-translate[&#x60;name&#x60;] и :no-translate[&#x60;description&#x60;].  Значение по умолчанию: :no-translate[&#x60;RU&#x60;]. | [optional] |
 
 ### Return type
 

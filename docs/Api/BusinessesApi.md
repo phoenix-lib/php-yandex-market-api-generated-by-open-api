@@ -15,7 +15,7 @@ getBusinessSettings($business_id): \OpenAPI\Client\Model\GetBusinessSettingsResp
 
 Настройки кабинета
 
-{% include notitle [access](../../_auto/method_scopes/getBusinessSettings.md) %}  Возвращает информацию о настройках кабинета, идентификатор которого указан в запросе. |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getBusinessSettings.md) %}  Возвращает информацию о настройках кабинета, идентификатор которого указан в запросе. |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -39,7 +39,7 @@ $apiInstance = new OpenAPI\Client\Api\BusinessesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 
 try {
     $result = $apiInstance->getBusinessSettings($business_id);
@@ -53,7 +53,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 
 ### Return type
 

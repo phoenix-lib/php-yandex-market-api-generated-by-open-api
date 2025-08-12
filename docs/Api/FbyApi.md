@@ -16,42 +16,46 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 | [**deleteOffers()**](FbyApi.md#deleteOffers) | **POST** /businesses/{businessId}/offer-mappings/delete | Удаление товаров из каталога |
 | [**deleteOffersFromArchive()**](FbyApi.md#deleteOffersFromArchive) | **POST** /businesses/{businessId}/offer-mappings/unarchive | Удаление товаров из архива |
 | [**deletePromoOffers()**](FbyApi.md#deletePromoOffers) | **POST** /businesses/{businessId}/promos/offers/delete | Удаление товаров из акции |
+| [**generateBannersStatisticsReport()**](FbyApi.md#generateBannersStatisticsReport) | **POST** /reports/banners-statistics/generate | Отчет по охватному продвижению |
 | [**generateBoostConsolidatedReport()**](FbyApi.md#generateBoostConsolidatedReport) | **POST** /reports/boost-consolidated/generate | Отчет по бусту продаж |
+| [**generateClosureDocumentsDetalizationReport()**](FbyApi.md#generateClosureDocumentsDetalizationReport) | **POST** /reports/closure-documents/detalization/generate | Отчет по схождению с закрывающими документами |
+| [**generateClosureDocumentsReport()**](FbyApi.md#generateClosureDocumentsReport) | **POST** /reports/closure-documents/generate | Закрывающие документы |
 | [**generateCompetitorsPositionReport()**](FbyApi.md#generateCompetitorsPositionReport) | **POST** /reports/competitors-position/generate | Отчет «Конкурентная позиция» |
 | [**generateGoodsFeedbackReport()**](FbyApi.md#generateGoodsFeedbackReport) | **POST** /reports/goods-feedback/generate | Отчет по отзывам о товарах |
-| [**generateGoodsMovementReport()**](FbyApi.md#generateGoodsMovementReport) | **POST** /reports/goods-movement/generate | Отчет по движению товаров (FBY) |
+| [**generateGoodsMovementReport()**](FbyApi.md#generateGoodsMovementReport) | **POST** /reports/goods-movement/generate | Отчет по движению товаров |
 | [**generateGoodsRealizationReport()**](FbyApi.md#generateGoodsRealizationReport) | **POST** /reports/goods-realization/generate | Отчет по реализации |
-| [**generateGoodsTurnoverReport()**](FbyApi.md#generateGoodsTurnoverReport) | **POST** /reports/goods-turnover/generate | Отчет по оборачиваемости (FBY) |
+| [**generateGoodsTurnoverReport()**](FbyApi.md#generateGoodsTurnoverReport) | **POST** /reports/goods-turnover/generate | Отчет по оборачиваемости |
+| [**generateJewelryFiscalReport()**](FbyApi.md#generateJewelryFiscalReport) | **POST** /reports/jewelry-fiscal/generate | Отчет по заказам с ювелирными изделиями |
+| [**generateKeyIndicatorsReport()**](FbyApi.md#generateKeyIndicatorsReport) | **POST** /reports/key-indicators/generate | Отчет по ключевым показателям |
 | [**generatePricesReport()**](FbyApi.md#generatePricesReport) | **POST** /reports/prices/generate | Отчет «Цены на рынке» |
+| [**generateSalesGeographyReport()**](FbyApi.md#generateSalesGeographyReport) | **POST** /reports/sales-geography/generate | Отчет по географии продаж |
 | [**generateShelfsStatisticsReport()**](FbyApi.md#generateShelfsStatisticsReport) | **POST** /reports/shelf-statistics/generate | Отчет по полкам |
+| [**generateShowsBoostReport()**](FbyApi.md#generateShowsBoostReport) | **POST** /reports/shows-boost/generate | Отчет по бусту показов |
 | [**generateShowsSalesReport()**](FbyApi.md#generateShowsSalesReport) | **POST** /reports/shows-sales/generate | Отчет «Аналитика продаж» |
 | [**generateStocksOnWarehousesReport()**](FbyApi.md#generateStocksOnWarehousesReport) | **POST** /reports/stocks-on-warehouses/generate | Отчет по остаткам на складах |
 | [**generateUnitedMarketplaceServicesReport()**](FbyApi.md#generateUnitedMarketplaceServicesReport) | **POST** /reports/united-marketplace-services/generate | Отчет по стоимости услуг |
 | [**generateUnitedNettingReport()**](FbyApi.md#generateUnitedNettingReport) | **POST** /reports/united-netting/generate | Отчет по платежам |
 | [**generateUnitedOrdersReport()**](FbyApi.md#generateUnitedOrdersReport) | **POST** /reports/united-orders/generate | Отчет по заказам |
-| [**getAllOffers()**](FbyApi.md#getAllOffers) | **GET** /campaigns/{campaignId}/offers/all | Все предложения магазина |
+| [**generateUnitedReturnsReport()**](FbyApi.md#generateUnitedReturnsReport) | **POST** /reports/united-returns/generate | Отчет по невыкупам и возвратам |
+| [**getAuthTokenInfo()**](FbyApi.md#getAuthTokenInfo) | **POST** /auth/token | Получение информации об авторизационном токене |
 | [**getBidsInfoForBusiness()**](FbyApi.md#getBidsInfoForBusiness) | **POST** /businesses/{businessId}/bids/info | Информация об установленных ставках |
 | [**getBidsRecommendations()**](FbyApi.md#getBidsRecommendations) | **POST** /businesses/{businessId}/bids/recommendations | Рекомендованные ставки для заданных товаров |
 | [**getBusinessQuarantineOffers()**](FbyApi.md#getBusinessQuarantineOffers) | **POST** /businesses/{businessId}/price-quarantine | Список товаров, находящихся в карантине по цене в кабинете |
 | [**getBusinessSettings()**](FbyApi.md#getBusinessSettings) | **POST** /businesses/{businessId}/settings | Настройки кабинета |
 | [**getCampaign()**](FbyApi.md#getCampaign) | **GET** /campaigns/{campaignId} | Информация о магазине |
-| [**getCampaignLogins()**](FbyApi.md#getCampaignLogins) | **GET** /campaigns/{campaignId}/logins | Логины, связанные с магазином |
 | [**getCampaignOffers()**](FbyApi.md#getCampaignOffers) | **POST** /campaigns/{campaignId}/offers | Информация о товарах, которые размещены в заданном магазине |
 | [**getCampaignQuarantineOffers()**](FbyApi.md#getCampaignQuarantineOffers) | **POST** /campaigns/{campaignId}/price-quarantine | Список товаров, находящихся в карантине по цене в магазине |
-| [**getCampaignRegion()**](FbyApi.md#getCampaignRegion) | **GET** /campaigns/{campaignId}/region | Регион магазина |
 | [**getCampaignSettings()**](FbyApi.md#getCampaignSettings) | **GET** /campaigns/{campaignId}/settings | Настройки магазина |
 | [**getCampaigns()**](FbyApi.md#getCampaigns) | **GET** /campaigns | Список магазинов пользователя |
-| [**getCampaignsByLogin()**](FbyApi.md#getCampaignsByLogin) | **GET** /campaigns/by_login/{login} | Магазины, доступные логину |
 | [**getCategoriesMaxSaleQuantum()**](FbyApi.md#getCategoriesMaxSaleQuantum) | **POST** /categories/max-sale-quantum | Лимит на установку кванта продажи и минимального количества товаров в заказе |
 | [**getCategoriesTree()**](FbyApi.md#getCategoriesTree) | **POST** /categories/tree | Дерево категорий |
 | [**getCategoryContentParameters()**](FbyApi.md#getCategoryContentParameters) | **POST** /category/{categoryId}/parameters | Списки характеристик товаров по категориям |
+| [**getChat()**](FbyApi.md#getChat) | **GET** /businesses/{businessId}/chat | Получение чата по идентификатору |
 | [**getChatHistory()**](FbyApi.md#getChatHistory) | **POST** /businesses/{businessId}/chats/history | Получение истории сообщений в чате |
+| [**getChatMessage()**](FbyApi.md#getChatMessage) | **GET** /businesses/{businessId}/chats/message | Получение сообщения в чате |
 | [**getChats()**](FbyApi.md#getChats) | **POST** /businesses/{businessId}/chats | Получение доступных чатов |
-| [**getFeed()**](FbyApi.md#getFeed) | **GET** /campaigns/{campaignId}/feeds/{feedId} | Информация о прайс-листе |
-| [**getFeedIndexLogs()**](FbyApi.md#getFeedIndexLogs) | **GET** /campaigns/{campaignId}/feeds/{feedId}/index-logs | Отчет по индексации прайс-листа |
-| [**getFeedbackAndCommentUpdates()**](FbyApi.md#getFeedbackAndCommentUpdates) | **GET** /campaigns/{campaignId}/feedback/updates | Новые и обновленные отзывы о магазине |
-| [**getFeeds()**](FbyApi.md#getFeeds) | **GET** /campaigns/{campaignId}/feeds | Список прайс-листов магазина |
-| [**getFulfillmentWarehouses()**](FbyApi.md#getFulfillmentWarehouses) | **GET** /warehouses | Идентификаторы складов Маркета (FBY) |
+| [**getDefaultPrices()**](FbyApi.md#getDefaultPrices) | **POST** /businesses/{businessId}/offer-prices | Просмотр цен на указанные товары во всех магазинах |
+| [**getFulfillmentWarehouses()**](FbyApi.md#getFulfillmentWarehouses) | **GET** /warehouses | Идентификаторы складов Маркета |
 | [**getGoodsFeedbackComments()**](FbyApi.md#getGoodsFeedbackComments) | **POST** /businesses/{businessId}/goods-feedback/comments | Получение комментариев к отзыву |
 | [**getGoodsFeedbacks()**](FbyApi.md#getGoodsFeedbacks) | **POST** /businesses/{businessId}/goods-feedback | Получение отзывов о товарах продавца |
 | [**getGoodsStats()**](FbyApi.md#getGoodsStats) | **POST** /campaigns/{campaignId}/stats/skus | Отчет по товарам |
@@ -60,35 +64,38 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 | [**getOfferMappingEntries()**](FbyApi.md#getOfferMappingEntries) | **GET** /campaigns/{campaignId}/offer-mapping-entries | Список товаров в каталоге |
 | [**getOfferMappings()**](FbyApi.md#getOfferMappings) | **POST** /businesses/{businessId}/offer-mappings | Информация о товарах в каталоге |
 | [**getOfferRecommendations()**](FbyApi.md#getOfferRecommendations) | **POST** /businesses/{businessId}/offers/recommendations | Рекомендации Маркета, касающиеся цен |
-| [**getOffers()**](FbyApi.md#getOffers) | **GET** /campaigns/{campaignId}/offers | Предложения магазина |
 | [**getOrder()**](FbyApi.md#getOrder) | **GET** /campaigns/{campaignId}/orders/{orderId} | Информация об одном заказе |
 | [**getOrderBusinessBuyerInfo()**](FbyApi.md#getOrderBusinessBuyerInfo) | **POST** /campaigns/{campaignId}/orders/{orderId}/business-buyer | Информация о покупателе — юридическом лице |
 | [**getOrderBusinessDocumentsInfo()**](FbyApi.md#getOrderBusinessDocumentsInfo) | **POST** /campaigns/{campaignId}/orders/{orderId}/documents | Информация о документах |
 | [**getOrders()**](FbyApi.md#getOrders) | **GET** /campaigns/{campaignId}/orders | Информация о нескольких заказах |
 | [**getOrdersStats()**](FbyApi.md#getOrdersStats) | **POST** /campaigns/{campaignId}/stats/orders | Детальная информация по заказам |
 | [**getPrices()**](FbyApi.md#getPrices) | **GET** /campaigns/{campaignId}/offer-prices | Список цен |
-| [**getPricesByOfferIds()**](FbyApi.md#getPricesByOfferIds) | **POST** /campaigns/{campaignId}/offer-prices | Просмотр цен на указанные товары в магазине |
+| [**getPricesByOfferIds()**](FbyApi.md#getPricesByOfferIds) | **POST** /campaigns/{campaignId}/offer-prices | Просмотр цен на указанные товары в конкретном магазине |
 | [**getPromoOffers()**](FbyApi.md#getPromoOffers) | **POST** /businesses/{businessId}/promos/offers | Получение списка товаров, которые участвуют или могут участвовать в акции |
 | [**getPromos()**](FbyApi.md#getPromos) | **POST** /businesses/{businessId}/promos | Получение списка акций |
 | [**getQualityRatings()**](FbyApi.md#getQualityRatings) | **POST** /businesses/{businessId}/ratings/quality | Индекс качества магазинов |
-| [**getReportInfo()**](FbyApi.md#getReportInfo) | **GET** /reports/info/{reportId} | Получение заданного отчета |
+| [**getRegionsCodes()**](FbyApi.md#getRegionsCodes) | **POST** /regions/countries | Список допустимых кодов стран |
+| [**getReportInfo()**](FbyApi.md#getReportInfo) | **GET** /reports/info/{reportId} | Получение заданного отчета или документа |
 | [**getReturn()**](FbyApi.md#getReturn) | **GET** /campaigns/{campaignId}/orders/{orderId}/returns/{returnId} | Информация о невыкупе или возврате |
-| [**getReturnPhoto()**](FbyApi.md#getReturnPhoto) | **GET** /campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/{itemId}/image/{imageHash} | Получение фотографии возврата |
+| [**getReturnApplication()**](FbyApi.md#getReturnApplication) | **GET** /campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/application | Получение заявления на возврат |
+| [**getReturnPhoto()**](FbyApi.md#getReturnPhoto) | **GET** /campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/{itemId}/image/{imageHash} | Получение фотографий товаров в возврате |
 | [**getReturns()**](FbyApi.md#getReturns) | **GET** /campaigns/{campaignId}/returns | Список невыкупов и возвратов |
 | [**getStocks()**](FbyApi.md#getStocks) | **POST** /campaigns/{campaignId}/offers/stocks | Информация об остатках и оборачиваемости |
 | [**getSuggestedOfferMappingEntries()**](FbyApi.md#getSuggestedOfferMappingEntries) | **POST** /campaigns/{campaignId}/offer-mapping-entries/suggestions | Рекомендованные карточки для товаров |
 | [**getSuggestedOfferMappings()**](FbyApi.md#getSuggestedOfferMappings) | **POST** /businesses/{businessId}/offer-mappings/suggestions | Просмотр карточек на Маркете, которые подходят вашим товарам |
 | [**getSuggestedPrices()**](FbyApi.md#getSuggestedPrices) | **POST** /campaigns/{campaignId}/offer-prices/suggestions | Цены для продвижения товаров |
+| [**getSupplyRequestDocuments()**](FbyApi.md#getSupplyRequestDocuments) | **POST** /campaigns/{campaignId}/supply-requests/documents | Получение документов по заявке на поставку, вывоз или утилизацию |
+| [**getSupplyRequestItems()**](FbyApi.md#getSupplyRequestItems) | **POST** /campaigns/{campaignId}/supply-requests/items | Получение товаров в заявке на поставку, вывоз или утилизацию |
+| [**getSupplyRequests()**](FbyApi.md#getSupplyRequests) | **POST** /campaigns/{campaignId}/supply-requests | Получение информации о заявках на поставку, вывоз и утилизацию |
 | [**putBidsForBusiness()**](FbyApi.md#putBidsForBusiness) | **PUT** /businesses/{businessId}/bids | Включение буста продаж и установка ставок |
 | [**putBidsForCampaign()**](FbyApi.md#putBidsForCampaign) | **PUT** /campaigns/{campaignId}/bids | Включение буста продаж и установка ставок для магазина |
-| [**refreshFeed()**](FbyApi.md#refreshFeed) | **POST** /campaigns/{campaignId}/feeds/{feedId}/refresh | Сообщить, что прайс-лист обновился |
 | [**searchRegionChildren()**](FbyApi.md#searchRegionChildren) | **GET** /regions/{regionId}/children | Информация о дочерних регионах |
 | [**searchRegionsById()**](FbyApi.md#searchRegionsById) | **GET** /regions/{regionId} | Информация о регионе |
 | [**searchRegionsByName()**](FbyApi.md#searchRegionsByName) | **GET** /regions | Поиск регионов по их имени |
 | [**sendFileToChat()**](FbyApi.md#sendFileToChat) | **POST** /businesses/{businessId}/chats/file/send | Отправка файла в чат |
 | [**sendMessageToChat()**](FbyApi.md#sendMessageToChat) | **POST** /businesses/{businessId}/chats/message | Отправка сообщения в чат |
-| [**setFeedParams()**](FbyApi.md#setFeedParams) | **POST** /campaigns/{campaignId}/feeds/{feedId}/params | Изменение параметров прайс-листа |
-| [**skipGoodsFeedbacksReaction()**](FbyApi.md#skipGoodsFeedbacksReaction) | **POST** /businesses/{businessId}/goods-feedback/skip-reaction | Отказ от ответа на отзывы |
+| [**skipGoodsFeedbacksReaction()**](FbyApi.md#skipGoodsFeedbacksReaction) | **POST** /businesses/{businessId}/goods-feedback/skip-reaction | Пропуск реакции на отзывы |
+| [**submitReturnDecision()**](FbyApi.md#submitReturnDecision) | **POST** /campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача и подтверждение решения по возврату |
 | [**updateBusinessPrices()**](FbyApi.md#updateBusinessPrices) | **POST** /businesses/{businessId}/offer-prices/updates | Установка цен на товары для всех магазинов |
 | [**updateCampaignOffers()**](FbyApi.md#updateCampaignOffers) | **POST** /campaigns/{campaignId}/offers/update | Изменение условий продажи товаров в магазине |
 | [**updateGoodsFeedbackComment()**](FbyApi.md#updateGoodsFeedbackComment) | **POST** /businesses/{businessId}/goods-feedback/comments/update | Добавление нового или изменение созданного комментария |
@@ -102,12 +109,12 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 ## `addHiddenOffers()`
 
 ```php
-addHiddenOffers($campaign_id, $add_hidden_offers_request): \OpenAPI\Client\Model\ApiResponse
+addHiddenOffers($campaign_id, $add_hidden_offers_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Скрытие товаров и настройки скрытия
 
-{% include notitle [access](../../_auto/method_scopes/addHiddenOffers.md) %}  Скрывает товары магазина на Маркете.  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**⚙️ Лимит:** 5000 товаров в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/addHiddenOffers.md) %}  Скрывает товары магазина на Маркете.  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту| |-|
 
 ### Example
 
@@ -131,7 +138,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $add_hidden_offers_request = new \OpenAPI\Client\Model\AddHiddenOffersRequest(); // \OpenAPI\Client\Model\AddHiddenOffersRequest | Запрос на скрытие оферов.
 
 try {
@@ -146,12 +153,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **add_hidden_offers_request** | [**\OpenAPI\Client\Model\AddHiddenOffersRequest**](../Model/AddHiddenOffersRequest.md)| Запрос на скрытие оферов. | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -174,7 +181,7 @@ addOffersToArchive($business_id, $add_offers_to_archive_request): \OpenAPI\Clien
 
 Добавление товаров в архив
 
-{% include notitle [access](../../_auto/method_scopes/addOffersToArchive.md) %}  Помещает товары в архив. Товары, помещенные в архив, скрыты с витрины во всех магазинах кабинета.  {% note warning \"В архив нельзя отправить товар, который хранится на складе Маркета\" %}  Вначале такой товар нужно распродать или вывезти.  {% endnote %}  |**⚙️ Лимит:** 5000 товаров в минуту, не более 200 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/addOffersToArchive.md) %}  Помещает товары в архив. Товары, помещенные в архив, скрыты с витрины во всех магазинах кабинета.  {% note warning \"В архив нельзя отправить товар, который хранится на складе Маркета\" %}  Вначале такой товар нужно распродать или вывезти.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 200 товаров в одном запросе| |-|
 
 ### Example
 
@@ -198,7 +205,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $add_offers_to_archive_request = new \OpenAPI\Client\Model\AddOffersToArchiveRequest(); // \OpenAPI\Client\Model\AddOffersToArchiveRequest
 
 try {
@@ -213,7 +220,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **add_offers_to_archive_request** | [**\OpenAPI\Client\Model\AddOffersToArchiveRequest**](../Model/AddOffersToArchiveRequest.md)|  | |
 
 ### Return type
@@ -241,7 +248,7 @@ calculateTariffs($calculate_tariffs_request): \OpenAPI\Client\Model\CalculateTar
 
 Калькулятор стоимости услуг
 
-{% include notitle [access](../../_auto/method_scopes/calculateTariffs.md) %}  Рассчитывает стоимость услуг Маркета для товаров с заданными параметрами. Порядок товаров в запросе и ответе сохраняется, чтобы определить, для какого товара рассчитана стоимость услуги.  Обратите внимание: калькулятор осуществляет примерные расчеты. Финальная стоимость для каждого заказа зависит от предоставленных услуг.  В запросе можно указать либо параметр `campaignId`, либо `sellingProgram`. Совместное использование параметров приведет к ошибке.  |**⚙️ Лимит:** 100 запросов в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/calculateTariffs.md) %}  Рассчитывает стоимость услуг Маркета для товаров с заданными параметрами. Порядок товаров в запросе и ответе сохраняется, чтобы определить, для какого товара рассчитана стоимость услуги.  Обратите внимание: калькулятор осуществляет примерные расчеты. Финальная стоимость для каждого заказа зависит от предоставленных услуг.  В запросе можно указать либо параметр `campaignId`, либо `sellingProgram`. Совместное использование параметров приведет к ошибке.  |**:no-translate[⚙️] Лимит:** 100 запросов в минуту| |-|
 
 ### Example
 
@@ -301,12 +308,12 @@ try {
 ## `confirmBusinessPrices()`
 
 ```php
-confirmBusinessPrices($business_id, $confirm_prices_request): \OpenAPI\Client\Model\ApiResponse
+confirmBusinessPrices($business_id, $confirm_prices_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Удаление товара из карантина по цене в кабинете
 
-{% include notitle [access](../../_auto/method_scopes/confirmBusinessPrices.md) %}  Подтверждает во всех магазинах цену на товары, которые попали в карантин, и удаляет их из карантина.  Товар попадает в карантин, если его цена меняется слишком резко. [Как настроить карантин](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  Чтобы увидеть список товаров, которые попали в карантин, используйте запрос [POST businesses/{businessId}/price-quarantine](getBusinessQuarantineOffers.md).  |**⚙️ Лимит:** 5000 товаров в минуту, не более 200 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/confirmBusinessPrices.md) %}  Подтверждает во всех магазинах цену на товары, которые попали в карантин, и удаляет их из карантина.  Товар попадает в карантин, если его цена меняется слишком резко. [Как настроить карантин](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  Чтобы увидеть список товаров, которые попали в карантин, используйте запрос [POST businesses/{businessId}/price-quarantine](getBusinessQuarantineOffers.md).  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 200 товаров в одном запросе| |-|
 
 ### Example
 
@@ -330,7 +337,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $confirm_prices_request = new \OpenAPI\Client\Model\ConfirmPricesRequest(); // \OpenAPI\Client\Model\ConfirmPricesRequest
 
 try {
@@ -345,12 +352,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **confirm_prices_request** | [**\OpenAPI\Client\Model\ConfirmPricesRequest**](../Model/ConfirmPricesRequest.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -368,12 +375,12 @@ try {
 ## `confirmCampaignPrices()`
 
 ```php
-confirmCampaignPrices($campaign_id, $confirm_prices_request): \OpenAPI\Client\Model\ApiResponse
+confirmCampaignPrices($campaign_id, $confirm_prices_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Удаление товара из карантина по цене в магазине
 
-{% include notitle [access](../../_auto/method_scopes/confirmCampaignPrices.md) %}  Подтверждает в заданном магазине цену на товары, которые попали в карантин, и удаляет их из карантина.  Товар попадает в карантин, если его цена меняется слишком резко. [Как настроить карантин](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  Чтобы увидеть список товаров, которые попали в карантин, используйте запрос [POST campaigns/{campaignId}/price-quarantine](getCampaignQuarantineOffers.md).  |**⚙️ Лимит:** 5000 товаров в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/confirmCampaignPrices.md) %}  Подтверждает в заданном магазине цену на товары, которые попали в карантин, и удаляет их из карантина.  Товар попадает в карантин, если его цена меняется слишком резко. [Как настроить карантин](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  Чтобы увидеть список товаров, которые попали в карантин, используйте запрос [POST campaigns/{campaignId}/price-quarantine](getCampaignQuarantineOffers.md).  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту| |-|
 
 ### Example
 
@@ -397,7 +404,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $confirm_prices_request = new \OpenAPI\Client\Model\ConfirmPricesRequest(); // \OpenAPI\Client\Model\ConfirmPricesRequest
 
 try {
@@ -412,12 +419,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **confirm_prices_request** | [**\OpenAPI\Client\Model\ConfirmPricesRequest**](../Model/ConfirmPricesRequest.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -440,7 +447,7 @@ createChat($business_id, $create_chat_request): \OpenAPI\Client\Model\CreateChat
 
 Создание нового чата с покупателем
 
-{% include notitle [access](../../_auto/method_scopes/createChat.md) %}  Создает новый чат с покупателем.  |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/createChat.md) %}  Создает новый чат с покупателем.  Типы чатов:  * по заказам; * по возвратам (доступны только для FBS- и Экспресс-магазинов).  Нельзя создать чат с типом `DIRECT`. Подробнее о сообщениях от покупателей читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/ru/orders/communication/with-users).  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -464,7 +471,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $create_chat_request = new \OpenAPI\Client\Model\CreateChatRequest(); // \OpenAPI\Client\Model\CreateChatRequest | description
 
 try {
@@ -479,7 +486,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **create_chat_request** | [**\OpenAPI\Client\Model\CreateChatRequest**](../Model/CreateChatRequest.md)| description | |
 
 ### Return type
@@ -507,7 +514,7 @@ deleteCampaignOffers($campaign_id, $delete_campaign_offers_request): \OpenAPI\Cl
 
 Удаление товаров из ассортимента магазина
 
-{% include notitle [access](../../_auto/method_scopes/deleteCampaignOffers.md) %}  Удаляет заданные товары из заданного магазина.  {% note warning \"Запрос удаляет товары из конкретного магазина\" %}  На продажи в других магазинах и на наличие товара в общем каталоге он не влияет.  {% endnote %}  Товар не получится удалить, если он хранится на складах Маркета.  |**⚙️ Лимит:** 5000 товаров в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/deleteCampaignOffers.md) %}  Удаляет заданные товары из заданного магазина.  {% note warning \"Запрос удаляет товары из конкретного магазина\" %}  На продажи в других магазинах и на наличие товара в общем каталоге он не влияет.  {% endnote %}  Товар не получится удалить, если он хранится на складах Маркета.  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту| |-|
 
 ### Example
 
@@ -531,7 +538,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $delete_campaign_offers_request = new \OpenAPI\Client\Model\DeleteCampaignOffersRequest(); // \OpenAPI\Client\Model\DeleteCampaignOffersRequest
 
 try {
@@ -546,7 +553,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **delete_campaign_offers_request** | [**\OpenAPI\Client\Model\DeleteCampaignOffersRequest**](../Model/DeleteCampaignOffersRequest.md)|  | |
 
 ### Return type
@@ -569,12 +576,12 @@ try {
 ## `deleteGoodsFeedbackComment()`
 
 ```php
-deleteGoodsFeedbackComment($business_id, $delete_goods_feedback_comment_request): \OpenAPI\Client\Model\ApiResponse
+deleteGoodsFeedbackComment($business_id, $delete_goods_feedback_comment_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Удаление комментария к отзыву
 
-{% include notitle [access](../../_auto/method_scopes/deleteGoodsFeedbackComment.md) %}  Удаляет комментарий магазина.  |**⚙️ Лимит:** 1 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/deleteGoodsFeedbackComment.md) %}  Удаляет комментарий магазина.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -598,7 +605,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $delete_goods_feedback_comment_request = new \OpenAPI\Client\Model\DeleteGoodsFeedbackCommentRequest(); // \OpenAPI\Client\Model\DeleteGoodsFeedbackCommentRequest
 
 try {
@@ -613,12 +620,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **delete_goods_feedback_comment_request** | [**\OpenAPI\Client\Model\DeleteGoodsFeedbackCommentRequest**](../Model/DeleteGoodsFeedbackCommentRequest.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -636,12 +643,12 @@ try {
 ## `deleteHiddenOffers()`
 
 ```php
-deleteHiddenOffers($campaign_id, $delete_hidden_offers_request): \OpenAPI\Client\Model\ApiResponse
+deleteHiddenOffers($campaign_id, $delete_hidden_offers_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Возобновление показа товаров
 
-{% include notitle [access](../../_auto/method_scopes/deleteHiddenOffers.md) %}  Возобновляет показ скрытых вами товаров магазина на Маркете.  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**⚙️ Лимит:** 5000 товаров в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/deleteHiddenOffers.md) %}  Возобновляет показ скрытых вами товаров магазина на Маркете.  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту| |-|
 
 ### Example
 
@@ -665,7 +672,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $delete_hidden_offers_request = new \OpenAPI\Client\Model\DeleteHiddenOffersRequest(); // \OpenAPI\Client\Model\DeleteHiddenOffersRequest | Запрос на возобновление показа оферов.
 
 try {
@@ -680,12 +687,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **delete_hidden_offers_request** | [**\OpenAPI\Client\Model\DeleteHiddenOffersRequest**](../Model/DeleteHiddenOffersRequest.md)| Запрос на возобновление показа оферов. | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -708,7 +715,7 @@ deleteOffers($business_id, $delete_offers_request): \OpenAPI\Client\Model\Delete
 
 Удаление товаров из каталога
 
-{% include notitle [access](../../_auto/method_scopes/deleteOffers.md) %}  Удаляет товары из каталога.  |**⚙️ Лимит:** 5000 товаров в минуту, не более 200 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/deleteOffers.md) %}  Удаляет товары из каталога.  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 200 товаров в одном запросе| |-|
 
 ### Example
 
@@ -732,7 +739,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $delete_offers_request = new \OpenAPI\Client\Model\DeleteOffersRequest(); // \OpenAPI\Client\Model\DeleteOffersRequest
 
 try {
@@ -747,7 +754,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **delete_offers_request** | [**\OpenAPI\Client\Model\DeleteOffersRequest**](../Model/DeleteOffersRequest.md)|  | |
 
 ### Return type
@@ -775,7 +782,7 @@ deleteOffersFromArchive($business_id, $delete_offers_from_archive_request): \Ope
 
 Удаление товаров из архива
 
-{% include notitle [access](../../_auto/method_scopes/deleteOffersFromArchive.md) %}  Восстанавливает товары из архива.  |**⚙️ Лимит:** 5000 товаров в минуту, не более 200 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/deleteOffersFromArchive.md) %}  Восстанавливает товары из архива.  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 200 товаров в одном запросе| |-|
 
 ### Example
 
@@ -799,7 +806,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $delete_offers_from_archive_request = new \OpenAPI\Client\Model\DeleteOffersFromArchiveRequest(); // \OpenAPI\Client\Model\DeleteOffersFromArchiveRequest
 
 try {
@@ -814,7 +821,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **delete_offers_from_archive_request** | [**\OpenAPI\Client\Model\DeleteOffersFromArchiveRequest**](../Model/DeleteOffersFromArchiveRequest.md)|  | |
 
 ### Return type
@@ -842,7 +849,7 @@ deletePromoOffers($business_id, $delete_promo_offers_request): \OpenAPI\Client\M
 
 Удаление товаров из акции
 
-{% include notitle [access](../../_auto/method_scopes/deletePromoOffers.md) %}  Убирает товары из акции.  Изменения начинают действовать в течение 4–6 часов.  |**⚙️ Лимит:** 10000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/deletePromoOffers.md) %}  Убирает товары из акции.  Изменения начинают действовать в течение 4–6 часов.  |**:no-translate[⚙️] Лимит:** 10 000 запросов в час| |-|
 
 ### Example
 
@@ -866,7 +873,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $delete_promo_offers_request = new \OpenAPI\Client\Model\DeletePromoOffersRequest(); // \OpenAPI\Client\Model\DeletePromoOffersRequest
 
 try {
@@ -881,12 +888,79 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **delete_promo_offers_request** | [**\OpenAPI\Client\Model\DeletePromoOffersRequest**](../Model/DeletePromoOffersRequest.md)|  | |
 
 ### Return type
 
 [**\OpenAPI\Client\Model\DeletePromoOffersResponse**](../Model/DeletePromoOffersResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateBannersStatisticsReport()`
+
+```php
+generateBannersStatisticsReport($generate_banners_statistics_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по охватному продвижению
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateBannersStatisticsReport.md) %}  Запускает генерацию сводного отчета по охватному продвижению. Что это за отчет: [для баннеров](https://yandex.ru/support/marketplace/ru/marketing/advertising-tools/banner#statistics), [для пуш-уведомлений](https://yandex.ru/support/marketplace/ru/marketing/advertising-tools/push-notifications#statistics).  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/incuts/banners_statistics.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_banners_statistics_request = new \OpenAPI\Client\Model\GenerateBannersStatisticsRequest(); // \OpenAPI\Client\Model\GenerateBannersStatisticsRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateBannersStatisticsReport($generate_banners_statistics_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->generateBannersStatisticsReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_banners_statistics_request** | [**\OpenAPI\Client\Model\GenerateBannersStatisticsRequest**](../Model/GenerateBannersStatisticsRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
 
 ### Authorization
 
@@ -909,7 +983,7 @@ generateBoostConsolidatedReport($generate_boost_consolidated_request, $format): 
 
 Отчет по бусту продаж
 
-{% include notitle [access](../../_auto/method_scopes/generateBoostConsolidatedReport.md) %}  Запускает генерацию **сводного отчета по бусту продаж** за заданный период. Отчет содержит информацию по всем кампаниям, созданным и через API, и в кабинете.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/boost/consolidated/business_boost_consolidated.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateBoostConsolidatedReport.md) %}  Запускает генерацию сводного отчета по бусту продаж за заданный период. [Что такое буст продаж](https://yandex.ru/support/marketplace/ru/marketing/campaigns)  Отчет содержит информацию по всем кампаниям, созданным и через :no-translate[API], и в кабинете.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/boost/consolidated/business_boost_consolidated.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -934,7 +1008,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_boost_consolidated_request = new \OpenAPI\Client\Model\GenerateBoostConsolidatedRequest(); // \OpenAPI\Client\Model\GenerateBoostConsolidatedRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateBoostConsolidatedReport($generate_boost_consolidated_request, $format);
@@ -949,7 +1023,139 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_boost_consolidated_request** | [**\OpenAPI\Client\Model\GenerateBoostConsolidatedRequest**](../Model/GenerateBoostConsolidatedRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateClosureDocumentsDetalizationReport()`
+
+```php
+generateClosureDocumentsDetalizationReport($generate_closure_documents_detalization_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по схождению с закрывающими документами
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateClosureDocumentsDetalizationReport.md) %}  Запускает генерацию отчета по схождению с закрывающими документами в зависимости от типа договора.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Договор на размещение    {% include notitle [:no-translate[reports]](../../_auto/reports/period_closure/period_closure_income.md) %}  - Договор на продвижение    {% include notitle [:no-translate[reports]](../../_auto/reports/period_closure/period_closure_outcome.md) %}  - Договор на маркетинг    {% include notitle [:no-translate[reports]](../../_auto/reports/advertiser_billing_operations/advertiser_billing_operations.md) %}  {% endlist %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_closure_documents_detalization_request = new \OpenAPI\Client\Model\GenerateClosureDocumentsDetalizationRequest(); // \OpenAPI\Client\Model\GenerateClosureDocumentsDetalizationRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateClosureDocumentsDetalizationReport($generate_closure_documents_detalization_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->generateClosureDocumentsDetalizationReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_closure_documents_detalization_request** | [**\OpenAPI\Client\Model\GenerateClosureDocumentsDetalizationRequest**](../Model/GenerateClosureDocumentsDetalizationRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateClosureDocumentsReport()`
+
+```php
+generateClosureDocumentsReport($generate_closure_documents_request): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Закрывающие документы
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateClosureDocumentsReport.md) %}  Возвращает ZIP-архив с закрывающими документами в формате PDF за указанный месяц.  {% cut \"Состав документов в зависимости от типа договора\" %}  * **Договор на размещение**    * [акт об оказанных услугах](:no-translate[*acts-main-act])   * [счет-фактура](:no-translate[*acts-main-invoice])   * [сводный отчет по данным статистики](:no-translate[*acts-main-report])   * [отчет об исполнении поручения и о зачете взаимных требований](:no-translate[*acts-main-agent]) (отчет агента)  * **Договор на продвижение** (в России не заключается после 30 сентября 2024 года)    * [акт об оказании услуг](:no-translate[*acts-discounts-act])   * [счет-фактура](:no-translate[*acts-discounts-invoice]), если этого требует схема налогообложения  * **Договор на маркетинг**    * [акт об оказанных услугах](:no-translate[*acts-marketing-act])   * [счет-фактура](:no-translate[*acts-main-invoice])   * [счет-фактура на аванс](:no-translate[*acts-marketing-invoice])   * [выписка по лицевому счету](:no-translate[*acts-marketing-account])   * [детализация к акту](:no-translate[*acts-marketing-details])  {% endcut %}  Узнать статус генерации и получить ссылку на архив можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_closure_documents_request = new \OpenAPI\Client\Model\GenerateClosureDocumentsRequest(); // \OpenAPI\Client\Model\GenerateClosureDocumentsRequest
+
+try {
+    $result = $apiInstance->generateClosureDocumentsReport($generate_closure_documents_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->generateClosureDocumentsReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_closure_documents_request** | [**\OpenAPI\Client\Model\GenerateClosureDocumentsRequest**](../Model/GenerateClosureDocumentsRequest.md)|  | |
 
 ### Return type
 
@@ -976,7 +1182,7 @@ generateCompetitorsPositionReport($generate_competitors_position_report_request,
 
 Отчет «Конкурентная позиция»
 
-{% include notitle [access](../../_auto/method_scopes/generateCompetitorsPositionReport.md) %}  Запускает генерацию **отчета «Конкурентная позиция»** за заданный период. [Что это за отчет](https://yandex.ru/support2/marketplace/ru/analytics/competitors.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% note info \"Значение -1 в отчете\" %}  Если в CSV-файле в столбце **POSITION** стоит -1, в этот день не было заказов с товарами в указанной категории.  {% endnote %}  {% include notitle [reports](../../_auto/reports/masterstat/competitors_position.md) %}  |**⚙️ Лимит:** 10 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateCompetitorsPositionReport.md) %}  Запускает генерацию отчета «Конкурентная позиция» за заданный период. [Что это за отчет](https://yandex.ru/support2/marketplace/ru/analytics/competitors.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% note info \"Значение -1 в отчете\" %}  Если в CSV-файле в столбце :no-translate[**POSITION**] стоит -1, в этот день не было заказов с товарами в указанной категории.  {% endnote %}  {% include notitle [:no-translate[reports]](../../_auto/reports/masterstat/competitors_position.md) %}  |**:no-translate[⚙️] Лимит:** 10 запросов в час| |-|
 
 ### Example
 
@@ -1001,7 +1207,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_competitors_position_report_request = new \OpenAPI\Client\Model\GenerateCompetitorsPositionReportRequest(); // \OpenAPI\Client\Model\GenerateCompetitorsPositionReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateCompetitorsPositionReport($generate_competitors_position_report_request, $format);
@@ -1016,7 +1222,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_competitors_position_report_request** | [**\OpenAPI\Client\Model\GenerateCompetitorsPositionReportRequest**](../Model/GenerateCompetitorsPositionReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1043,7 +1249,7 @@ generateGoodsFeedbackReport($generate_goods_feedback_request, $format): \OpenAPI
 
 Отчет по отзывам о товарах
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsFeedbackReport.md) %}  Запускает генерацию **отчета по отзывам о товарах**. [Что это за отчет](https://yandex.ru/support2/marketplace/ru/marketing/plus-reviews#stat)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/paid_opinion_models/paid_opinion_models.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateGoodsFeedbackReport.md) %}  Запускает генерацию отчета по отзывам о товарах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/marketing/plus-reviews#stat)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/paid_opinion_models/paid_opinion_models.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -1068,7 +1274,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_goods_feedback_request = new \OpenAPI\Client\Model\GenerateGoodsFeedbackRequest(); // \OpenAPI\Client\Model\GenerateGoodsFeedbackRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateGoodsFeedbackReport($generate_goods_feedback_request, $format);
@@ -1083,7 +1289,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_goods_feedback_request** | [**\OpenAPI\Client\Model\GenerateGoodsFeedbackRequest**](../Model/GenerateGoodsFeedbackRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1108,9 +1314,9 @@ try {
 generateGoodsMovementReport($generate_goods_movement_report_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
 ```
 
-Отчет по движению товаров (FBY)
+Отчет по движению товаров
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsMovementReport.md) %}  Запускает генерацию **отчета по движению товаров**. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/reports-fby-fbs.html#flow)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/sku/movement/movement_config.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateGoodsMovementReport.md) %}  Запускает генерацию отчета по движению товаров. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/reports-fby-fbs.html#flow)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/sku/movement/movement_config.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -1135,7 +1341,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_goods_movement_report_request = new \OpenAPI\Client\Model\GenerateGoodsMovementReportRequest(); // \OpenAPI\Client\Model\GenerateGoodsMovementReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateGoodsMovementReport($generate_goods_movement_report_request, $format);
@@ -1150,7 +1356,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_goods_movement_report_request** | [**\OpenAPI\Client\Model\GenerateGoodsMovementReportRequest**](../Model/GenerateGoodsMovementReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1177,7 +1383,7 @@ generateGoodsRealizationReport($generate_goods_realization_report_request, $form
 
 Отчет по реализации
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsRealizationReport.md) %}  Запускает генерацию **отчета по реализации** за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/reports-fby-fbs.html#sales-report)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/goods/monthly/goods_realization.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateGoodsRealizationReport.md) %}  Запускает генерацию отчета по реализации за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#sales-report)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - :no-translate[FBY, FBS,] Экспресс    {% include notitle [:no-translate[reports]](../../_auto/reports/united/statistics/generator/united_statistics_v2.md) %}  - :no-translate[DBS]    {% include notitle [:no-translate[reports]](../../_auto/reports/united/statistics/generator/united_statistics_v2_dbs.md) %}  {% endlist %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -1202,7 +1408,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_goods_realization_report_request = new \OpenAPI\Client\Model\GenerateGoodsRealizationReportRequest(); // \OpenAPI\Client\Model\GenerateGoodsRealizationReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateGoodsRealizationReport($generate_goods_realization_report_request, $format);
@@ -1217,7 +1423,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_goods_realization_report_request** | [**\OpenAPI\Client\Model\GenerateGoodsRealizationReportRequest**](../Model/GenerateGoodsRealizationReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1242,9 +1448,9 @@ try {
 generateGoodsTurnoverReport($generate_goods_turnover_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
 ```
 
-Отчет по оборачиваемости (FBY)
+Отчет по оборачиваемости
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsTurnoverReport.md) %}  Запускает генерацию **отчета по оборачиваемости** за заданную дату.  [Что это за отчет](https://yandex.ru/support/marketplace/analytics/turnover.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/turnover/turnover.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateGoodsTurnoverReport.md) %}  Запускает генерацию отчета по оборачиваемости за заданную дату.  [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#turnover)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/turnover/turnover.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -1269,7 +1475,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_goods_turnover_request = new \OpenAPI\Client\Model\GenerateGoodsTurnoverRequest(); // \OpenAPI\Client\Model\GenerateGoodsTurnoverRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateGoodsTurnoverReport($generate_goods_turnover_request, $format);
@@ -1284,7 +1490,141 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_goods_turnover_request** | [**\OpenAPI\Client\Model\GenerateGoodsTurnoverRequest**](../Model/GenerateGoodsTurnoverRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateJewelryFiscalReport()`
+
+```php
+generateJewelryFiscalReport($generate_jewelry_fiscal_report_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по заказам с ювелирными изделиями
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateJewelryFiscalReport.md) %}  Запускает генерацию отчета по заказам с ювелирными изделиями.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/identifiers/jewelry/orders_jewelry_fiscal.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_jewelry_fiscal_report_request = new \OpenAPI\Client\Model\GenerateJewelryFiscalReportRequest(); // \OpenAPI\Client\Model\GenerateJewelryFiscalReportRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateJewelryFiscalReport($generate_jewelry_fiscal_report_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->generateJewelryFiscalReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_jewelry_fiscal_report_request** | [**\OpenAPI\Client\Model\GenerateJewelryFiscalReportRequest**](../Model/GenerateJewelryFiscalReportRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateKeyIndicatorsReport()`
+
+```php
+generateKeyIndicatorsReport($generate_key_indicators_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по ключевым показателям
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateKeyIndicatorsReport.md) %}  Запускает генерацию отчета по ключевым показателям. [Что это за отчет](https://yandex.ru/support/marketplace/ru/analytics/key-metrics)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/key_indicators/key_indicators.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_key_indicators_request = new \OpenAPI\Client\Model\GenerateKeyIndicatorsRequest(); // \OpenAPI\Client\Model\GenerateKeyIndicatorsRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateKeyIndicatorsReport($generate_key_indicators_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->generateKeyIndicatorsReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_key_indicators_request** | [**\OpenAPI\Client\Model\GenerateKeyIndicatorsRequest**](../Model/GenerateKeyIndicatorsRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1311,7 +1651,7 @@ generatePricesReport($generate_prices_report_request, $format): \OpenAPI\Client\
 
 Отчет «Цены на рынке»
 
-{% include notitle [access](../../_auto/method_scopes/generatePricesReport.md) %}  Запускает генерацию **отчета «Цены на рынке»**.  {% note warning \"Данные в этом отчете постоянно обновляются\" %}  Поэтому информация в нем и в кабинете продавца на Маркете на странице **Цены** может отличаться.  {% endnote %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/prices/business_prices_v2.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generatePricesReport.md) %}  Запускает генерацию отчета «Цены на рынке».  В отчете возвращается информация только по 50 000 товаров. Если у вас их больше, используйте фильтры.  {% note warning \"Данные в этом отчете постоянно обновляются\" %}  Поэтому информация в нем и в кабинете продавца на Маркете на странице **Цены** может отличаться.  {% endnote %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/prices/business_prices_v2.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -1336,7 +1676,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_prices_report_request = new \OpenAPI\Client\Model\GeneratePricesReportRequest(); // \OpenAPI\Client\Model\GeneratePricesReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generatePricesReport($generate_prices_report_request, $format);
@@ -1351,7 +1691,74 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_prices_report_request** | [**\OpenAPI\Client\Model\GeneratePricesReportRequest**](../Model/GeneratePricesReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateSalesGeographyReport()`
+
+```php
+generateSalesGeographyReport($generate_sales_geography_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по географии продаж
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateSalesGeographyReport.md) %}  Запускает генерацию отчета по географии продаж. [Что это за отчет](https://yandex.ru/support/marketplace/ru/analytics/sales-geography)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/locality/locality_offers_report_v2.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_sales_geography_request = new \OpenAPI\Client\Model\GenerateSalesGeographyRequest(); // \OpenAPI\Client\Model\GenerateSalesGeographyRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateSalesGeographyReport($generate_sales_geography_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->generateSalesGeographyReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_sales_geography_request** | [**\OpenAPI\Client\Model\GenerateSalesGeographyRequest**](../Model/GenerateSalesGeographyRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1378,7 +1785,7 @@ generateShelfsStatisticsReport($generate_shelfs_statistics_request, $format): \O
 
 Отчет по полкам
 
-{% include notitle [access](../../_auto/method_scopes/generateShelfsStatisticsReport.md) %}  Запускает генерацию **сводного отчета по полкам** — рекламным блокам с баннером или видео и набором товаров. Подробнее о них читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/shelf).  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/incuts/shelfs_statistics.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateShelfsStatisticsReport.md) %}  Запускает генерацию сводного отчета по полкам — рекламным блокам с баннером или видео и набором товаров. Подробнее о них читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/shelf).  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/incuts/shelfs_statistics.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -1403,7 +1810,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_shelfs_statistics_request = new \OpenAPI\Client\Model\GenerateShelfsStatisticsRequest(); // \OpenAPI\Client\Model\GenerateShelfsStatisticsRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateShelfsStatisticsReport($generate_shelfs_statistics_request, $format);
@@ -1418,7 +1825,74 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_shelfs_statistics_request** | [**\OpenAPI\Client\Model\GenerateShelfsStatisticsRequest**](../Model/GenerateShelfsStatisticsRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateShowsBoostReport()`
+
+```php
+generateShowsBoostReport($generate_shows_boost_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по бусту показов
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateShowsBoostReport.md) %}  Запускает генерацию сводного отчета по бусту показов за заданный период. [Что такое буст показов](https://yandex.ru/support/marketplace/ru/marketing/boost-shows)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/cpm_boost/business_cpm_boost_consolidated.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_shows_boost_request = new \OpenAPI\Client\Model\GenerateShowsBoostRequest(); // \OpenAPI\Client\Model\GenerateShowsBoostRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateShowsBoostReport($generate_shows_boost_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->generateShowsBoostReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_shows_boost_request** | [**\OpenAPI\Client\Model\GenerateShowsBoostRequest**](../Model/GenerateShowsBoostRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1445,7 +1919,7 @@ generateShowsSalesReport($generate_shows_sales_report_request, $format): \OpenAP
 
 Отчет «Аналитика продаж»
 
-{% include notitle [access](../../_auto/method_scopes/generateShowsSalesReport.md) %}  Запускает генерацию **отчета «Аналитика продаж»** за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/shows-sales.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/masterstat/sales_funnel.md) %}  |**⚙️ Лимит:** 10 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateShowsSalesReport.md) %}  Запускает генерацию отчета «Аналитика продаж» за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/shows-sales.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/masterstat/sales_funnel_promotions.md) %}  |**:no-translate[⚙️] Лимит:** 10 запросов в час| |-|
 
 ### Example
 
@@ -1470,7 +1944,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_shows_sales_report_request = new \OpenAPI\Client\Model\GenerateShowsSalesReportRequest(); // \OpenAPI\Client\Model\GenerateShowsSalesReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateShowsSalesReport($generate_shows_sales_report_request, $format);
@@ -1485,7 +1959,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_shows_sales_report_request** | [**\OpenAPI\Client\Model\GenerateShowsSalesReportRequest**](../Model/GenerateShowsSalesReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1512,7 +1986,7 @@ generateStocksOnWarehousesReport($generate_stocks_on_warehouses_report_request, 
 
 Отчет по остаткам на складах
 
-{% include notitle [access](../../_auto/method_scopes/generateStocksOnWarehousesReport.md) %}  Запускает генерацию **отчета по остаткам на складах**. Отчет содержит данные:  * Для модели FBY — об остатках на складах Маркета. * Для остальных моделей — об остатках на соответствующем складе магазина.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/stocks/stocks_on_warehouses.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateStocksOnWarehousesReport.md) %}  Запускает генерацию отчета по остаткам на складах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#remains-history)  **Какая информация вернется:**  * Для модели :no-translate[FBY] — об остатках на складах Маркета. * Для остальных моделей, если указать `businessId`, — об остатках на всех складах магазинов в кабинете, кроме :no-translate[FBY]. Используйте фильтр `campaignIds`, чтобы указать определенные магазины. * Для остальных моделей, если указать `campaignId`, — об остатках на соответствующем складе магазина. Этот тип отчета скоро станет недоступен.  ⚠️ Не передавайте одновременно `campaignId` и `businessId`.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Склад Маркета    {% include notitle [:no-translate[reports]](../../_auto/reports/stocks/stocks_on_warehouses.md) %}  - Склад магазина    {% include notitle [:no-translate[reports]](../../_auto/reports/offers/mass/mass_shared_stocks_business_csv_config.md) %}  - Все склады магазинов в кабинете, кроме :no-translate[FBY]    {% include notitle [:no-translate[reports]](../../_auto/reports/offers/stocks_business_config.md) %}  {% endlist %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -1537,7 +2011,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_stocks_on_warehouses_report_request = new \OpenAPI\Client\Model\GenerateStocksOnWarehousesReportRequest(); // \OpenAPI\Client\Model\GenerateStocksOnWarehousesReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateStocksOnWarehousesReport($generate_stocks_on_warehouses_report_request, $format);
@@ -1552,7 +2026,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_stocks_on_warehouses_report_request** | [**\OpenAPI\Client\Model\GenerateStocksOnWarehousesReportRequest**](../Model/GenerateStocksOnWarehousesReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1579,7 +2053,7 @@ generateUnitedMarketplaceServicesReport($generate_united_marketplace_services_re
 
 Отчет по стоимости услуг
 
-{% include notitle [access](../../_auto/method_scopes/generateUnitedMarketplaceServicesReport.md) %}  Запускает генерацию **отчета по стоимости услуг** за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/reports.html)  Тип отчета зависит от того, какие поля заполнены в запросе:  |**Тип отчета**               |**Какие поля нужны**             | |-----------------------------|---------------------------------| |По дате начисления услуги    |`dateFrom` и `dateTo`            | |По дате формирования акта    |`year` и `month`                 |  Заказать отчеты обоих типов одним запросом нельзя.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/united/services/generator/united_marketplace_services.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateUnitedMarketplaceServicesReport.md) %}  Запускает генерацию отчета по стоимости услуг за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#reports)  Тип отчета зависит от того, какие поля заполнены в запросе:  |**Тип отчета**               |**Какие поля нужны**             | |-----------------------------|---------------------------------| |По дате начисления услуги    |`dateFrom` и `dateTo`            | |По дате формирования акта    |`year` и `month`                 |  Заказать отчеты обоих типов одним запросом нельзя.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/united/services/generator/united_marketplace_services.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -1604,8 +2078,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_united_marketplace_services_report_request = new \OpenAPI\Client\Model\GenerateUnitedMarketplaceServicesReportRequest(); // \OpenAPI\Client\Model\GenerateUnitedMarketplaceServicesReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
-$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета или документа.
 
 try {
     $result = $apiInstance->generateUnitedMarketplaceServicesReport($generate_united_marketplace_services_report_request, $format, $language);
@@ -1620,8 +2094,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_united_marketplace_services_report_request** | [**\OpenAPI\Client\Model\GenerateUnitedMarketplaceServicesReportRequest**](../Model/GenerateUnitedMarketplaceServicesReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
-| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1648,7 +2122,7 @@ generateUnitedNettingReport($generate_united_netting_report_request, $format, $l
 
 Отчет по платежам
 
-{% include notitle [access](../../_auto/method_scopes/generateUnitedNettingReport.md) %}  Запускает генерацию **отчета по платежам** за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/transactions.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  Тип отчета зависит от того, какие поля заполнены в запросе:  |**Тип отчета**           |**Какие поля нужны**                   | |-------------------------|---------------------------------------| |О платежах за период     |`dateFrom` и `dateTo`                  | |О платежном поручении    |`bankOrderId` и `bankOrderDateTime`    |  Заказать отчеты обоих типов одним запросом нельзя.  {% include notitle [reports](../../_auto/reports/united/netting/generator/united_netting.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateUnitedNettingReport.md) %}  Запускает генерацию отчета по платежам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#all-pay)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  Тип отчета зависит от того, какие поля заполнены в запросе:  #| || **Тип отчета** | **Какие поля нужны** || || О платежах за период | `dateFrom` и `dateTo` || || О платежном поручении | `bankOrderId` и `bankOrderDateTime` || || [О баллах Маркета](:no-translate[*баллы_маркета]) | `monthOfYear` || |#  Заказать отчеты нескольких типов одним запросом нельзя.  {% include notitle [:no-translate[reports]](../../_auto/reports/united/netting/generator/united_netting.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -1673,8 +2147,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_united_netting_report_request = new \OpenAPI\Client\Model\GenerateUnitedNettingReportRequest(); // \OpenAPI\Client\Model\GenerateUnitedNettingReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
-$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета или документа.
 
 try {
     $result = $apiInstance->generateUnitedNettingReport($generate_united_netting_report_request, $format, $language);
@@ -1689,8 +2163,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_united_netting_report_request** | [**\OpenAPI\Client\Model\GenerateUnitedNettingReportRequest**](../Model/GenerateUnitedNettingReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
-| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1717,7 +2191,7 @@ generateUnitedOrdersReport($generate_united_orders_request, $format, $language):
 
 Отчет по заказам
 
-{% include notitle [access](../../_auto/method_scopes/generateUnitedOrdersReport.md) %}  Запускает генерацию **отчета по заказам** за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/orders.html)  {% note info \"Это новый отчет\" %}  Раньше мы так называли генерацию детальной информации по заказам. [Как получить детальную информацию по заказам](../../reference/stats/getOrdersStats.md)  {% endnote %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/united/orders/generator/united_orders.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateUnitedOrdersReport.md) %}  Запускает генерацию отчета по заказам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#get-report)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/united/orders/generator/united_orders.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -1742,8 +2216,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     $config
 );
 $generate_united_orders_request = new \OpenAPI\Client\Model\GenerateUnitedOrdersRequest(); // \OpenAPI\Client\Model\GenerateUnitedOrdersRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
-$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета или документа.
 
 try {
     $result = $apiInstance->generateUnitedOrdersReport($generate_united_orders_request, $format, $language);
@@ -1758,8 +2232,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_united_orders_request** | [**\OpenAPI\Client\Model\GenerateUnitedOrdersRequest**](../Model/GenerateUnitedOrdersRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
-| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1778,15 +2252,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getAllOffers()`
+## `generateUnitedReturnsReport()`
 
 ```php
-getAllOffers($campaign_id, $feed_id, $chunk): \OpenAPI\Client\Model\OffersDTO
+generateUnitedReturnsReport($generate_united_returns_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
 ```
 
-Все предложения магазина
+Отчет по невыкупам и возвратам
 
-{% include notitle [access](../../_auto/method_scopes/getAllOffers.md) %}  {% note warning \"Этот метод устарел\" %}  Не используйте его.  {% endnote %}  Позволяет максимально быстро получить информацию обо всех предложениях магазина, размещенных на Маркете. Возвращает результат в виде сегментов нефиксированного размера.  В ответе на запрос для каждого найденного предложения указывается URL и наименование этого предложения, его цена и валюта, в которой она указана, карточка модели Яндекс Маркета, с которой соотнесено предложение, а также аукционные ставки на него.  {% note info \"Как считается количество предложений\" %}  По данным за последние семь дней (не включая сегодня).  Для новых магазинов, еще не разместивших предложения, ограничение равно 0 и пересчитывается на следующий день после размещения первых предложений.  {% endnote %}  |**⚙️ Лимит:** рассчитывается по [формуле](*rule)| |-|  [//]: <> (rule: суточный лимит товаров — среднее количество таваров в каталоге за неделю * 25)
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateUnitedReturnsReport.md) %}  Запускает генерацию сводного отчета по невыкупам и возвратам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/orders/returns/logistic#rejected-orders)  Отчет содержит информацию о невыкупах и возвратах за указанный период, а также о тех, которые готовы к выдаче.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/united/returns/generator/united_returns.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -1810,15 +2284,14 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$feed_id = 56; // int | Идентификатор прайс-листа.
-$chunk = 56; // int | Номер сегмента с результатами.  Значение по умолчанию: `0`.  {% note info \"Как запрашиваются номера сегментов\" %}  Последовательно, пока не будет получен сегмент с пустым ответом. Пустой ответ означает, что все предложения магазина получены.  {% endnote %}  {% note alert \"Нумерация начинается с 0\" %}  Чтобы запросить первую страницу, необходимо указать `chunk=0` и т. д.  {% endnote %}
+$generate_united_returns_request = new \OpenAPI\Client\Model\GenerateUnitedReturnsRequest(); // \OpenAPI\Client\Model\GenerateUnitedReturnsRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
-    $result = $apiInstance->getAllOffers($campaign_id, $feed_id, $chunk);
+    $result = $apiInstance->generateUnitedReturnsReport($generate_united_returns_request, $format);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FbyApi->getAllOffers: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FbyApi->generateUnitedReturnsReport: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -1826,13 +2299,74 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **feed_id** | **int**| Идентификатор прайс-листа. | [optional] |
-| **chunk** | **int**| Номер сегмента с результатами.  Значение по умолчанию: &#x60;0&#x60;.  {% note info \&quot;Как запрашиваются номера сегментов\&quot; %}  Последовательно, пока не будет получен сегмент с пустым ответом. Пустой ответ означает, что все предложения магазина получены.  {% endnote %}  {% note alert \&quot;Нумерация начинается с 0\&quot; %}  Чтобы запросить первую страницу, необходимо указать &#x60;chunk&#x3D;0&#x60; и т. д.  {% endnote %} | [optional] |
+| **generate_united_returns_request** | [**\OpenAPI\Client\Model\GenerateUnitedReturnsRequest**](../Model/GenerateUnitedReturnsRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OffersDTO**](../Model/OffersDTO.md)
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getAuthTokenInfo()`
+
+```php
+getAuthTokenInfo(): \OpenAPI\Client\Model\GetTokenInfoResponse
+```
+
+Получение информации об авторизационном токене
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getAuthTokenInfo.md) %}  {% note info \"Метод доступен только для Api-Key-токена.\" %}     {% endnote %}  Возвращает информацию о переданном авторизационном токене.  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getAuthTokenInfo();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getAuthTokenInfo: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetTokenInfoResponse**](../Model/GetTokenInfoResponse.md)
 
 ### Authorization
 
@@ -1855,7 +2389,7 @@ getBidsInfoForBusiness($business_id, $page_token, $limit, $get_bids_info_request
 
 Информация об установленных ставках
 
-{% include notitle [access](../../_auto/method_scopes/getBidsInfoForBusiness.md) %}  Возвращает значения ставок для заданных товаров.  {% note warning \"Получить информацию по кампаниям, созданным в кабинете, не получится\" %}  В ответе возвращаются значения только тех ставок, которые вы установили через запрос [PUT businesses/{businessId}/bids](../../reference/bids/putBidsForBusiness.md).  {% endnote %}  В одном запросе может быть максимум 1500 товаров.  |**⚙️ Лимит:** 1000 запросов в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getBidsInfoForBusiness.md) %}  Возвращает значения ставок для заданных товаров.  {% note warning \"Получить информацию по кампаниям, созданным в кабинете, не получится\" %}  В ответе возвращаются значения только тех ставок, которые вы установили через запрос [PUT businesses/{businessId}/bids](../../reference/bids/putBidsForBusiness.md).  {% endnote %}  В одном запросе может быть максимум 1500 товаров.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в минуту| |-|
 
 ### Example
 
@@ -1879,8 +2413,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 $get_bids_info_request = new \OpenAPI\Client\Model\GetBidsInfoRequest(); // \OpenAPI\Client\Model\GetBidsInfoRequest | description
 
@@ -1896,8 +2430,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 | **get_bids_info_request** | [**\OpenAPI\Client\Model\GetBidsInfoRequest**](../Model/GetBidsInfoRequest.md)| description | [optional] |
 
@@ -1926,7 +2460,7 @@ getBidsRecommendations($business_id, $get_bids_recommendations_request): \OpenAP
 
 Рекомендованные ставки для заданных товаров
 
-{% include notitle [access](../../_auto/method_scopes/getBidsRecommendations.md) %}  Возвращает рекомендованные ставки для заданных товаров, что обеспечивает вашим предложениям определенную долю показов, и дополнительные инструменты продвижения.  Для одного товара может возвращаться одна рекомендованная ставка или несколько. Во втором случае разные ставки предназначены для достижения разной доли показов и получения дополнительных инструментов продвижения.  Если товар только добавлен в каталог, но пока не продается, рекомендованной ставки для него не будет.  В одном запросе может быть максимум 1500 товаров.  |**⚙️ Лимит:** 1000 запросов в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getBidsRecommendations.md) %}  Возвращает рекомендованные ставки для заданных товаров, что обеспечивает вашим предложениям определенную долю показов, и дополнительные инструменты продвижения.  Для одного товара может возвращаться одна рекомендованная ставка или несколько. Во втором случае разные ставки предназначены для достижения разной доли показов и получения дополнительных инструментов продвижения.  Если товар только добавлен в каталог, но пока не продается, рекомендованной ставки для него не будет.  В одном запросе может быть максимум 1500 товаров.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в минуту| |-|
 
 ### Example
 
@@ -1950,7 +2484,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $get_bids_recommendations_request = new \OpenAPI\Client\Model\GetBidsRecommendationsRequest(); // \OpenAPI\Client\Model\GetBidsRecommendationsRequest | description.
 
 try {
@@ -1965,7 +2499,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **get_bids_recommendations_request** | [**\OpenAPI\Client\Model\GetBidsRecommendationsRequest**](../Model/GetBidsRecommendationsRequest.md)| description. | |
 
 ### Return type
@@ -1993,7 +2527,7 @@ getBusinessQuarantineOffers($business_id, $get_quarantine_offers_request, $page_
 
 Список товаров, находящихся в карантине по цене в кабинете
 
-{% include notitle [access](../../_auto/method_scopes/getBusinessQuarantineOffers.md) %}  Возвращает список товаров, которые находятся в карантине по цене, установленной для всех магазинов кабинета.  Проверьте цену каждого из товаров, который попал в карантин. Если ошибки нет и цена правильная, подтвердите ее с помощью запроса [POST businesses/{businessId}/price-quarantine/confirm](../../reference/business-assortment/confirmBusinessPrices.md). Если цена в самом деле ошибочная, установите верную с помощью запроса [POST businesses/{businessId}/offer-prices/updates](../../reference/business-assortment/updateBusinessPrices.md).  {% note info \"Что такое карантин?\" %}  Товар попадает в карантин, если его цена меняется слишком резко или слишком сильно отличается от рыночной. [Подробнее](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  {% endnote %}  В запросе можно использовать фильтры.  Результаты возвращаются постранично.  |**⚙️ Лимит:** 5000 товаров в минуту, не более 500 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getBusinessQuarantineOffers.md) %}  Возвращает список товаров, которые находятся в карантине по цене, установленной для всех магазинов кабинета.  Проверьте цену каждого из товаров, который попал в карантин. Если ошибки нет и цена правильная, подтвердите ее с помощью запроса [POST businesses/{businessId}/price-quarantine/confirm](../../reference/business-assortment/confirmBusinessPrices.md). Если цена в самом деле ошибочная, установите верную с помощью запроса [POST businesses/{businessId}/offer-prices/updates](../../reference/business-assortment/updateBusinessPrices.md).  {% note info \"Что такое карантин?\" %}  Товар попадает в карантин, если его цена меняется слишком резко или слишком сильно отличается от рыночной. [Подробнее](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  {% endnote %}  В запросе можно использовать фильтры.  Результаты возвращаются постранично.  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 500 товаров в одном запросе| |-|
 
 ### Example
 
@@ -2017,9 +2551,9 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $get_quarantine_offers_request = new \OpenAPI\Client\Model\GetQuarantineOffersRequest(); // \OpenAPI\Client\Model\GetQuarantineOffersRequest
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 
 try {
@@ -2034,9 +2568,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **get_quarantine_offers_request** | [**\OpenAPI\Client\Model\GetQuarantineOffersRequest**](../Model/GetQuarantineOffersRequest.md)|  | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 
 ### Return type
@@ -2064,7 +2598,7 @@ getBusinessSettings($business_id): \OpenAPI\Client\Model\GetBusinessSettingsResp
 
 Настройки кабинета
 
-{% include notitle [access](../../_auto/method_scopes/getBusinessSettings.md) %}  Возвращает информацию о настройках кабинета, идентификатор которого указан в запросе. |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getBusinessSettings.md) %}  Возвращает информацию о настройках кабинета, идентификатор которого указан в запросе. |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -2088,7 +2622,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 
 try {
     $result = $apiInstance->getBusinessSettings($business_id);
@@ -2102,7 +2636,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 
 ### Return type
 
@@ -2129,7 +2663,7 @@ getCampaign($campaign_id): \OpenAPI\Client\Model\GetCampaignResponse
 
 Информация о магазине
 
-{% include notitle [access](../../_auto/method_scopes/getCampaign.md) %}  Возвращает информацию о магазине. |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getCampaign.md) %}  Возвращает информацию о магазине. |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -2153,7 +2687,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 
 try {
     $result = $apiInstance->getCampaign($campaign_id);
@@ -2167,76 +2701,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 
 ### Return type
 
 [**\OpenAPI\Client\Model\GetCampaignResponse**](../Model/GetCampaignResponse.md)
-
-### Authorization
-
-[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getCampaignLogins()`
-
-```php
-getCampaignLogins($campaign_id): \OpenAPI\Client\Model\GetCampaignLoginsResponse
-```
-
-Логины, связанные с магазином
-
-{% include notitle [access](../../_auto/method_scopes/getCampaignLogins.md) %}  {% note warning \"Этот метод устарел\" %}  Не используйте его.  {% endnote %}  **Для Api-Key-токена:** возвращает пустой ответ.  **Для OAuth-токена:** возвращает список логинов, у которых есть доступ к магазину.  |**⚙️ Лимит:** 1000 запросов в час| |-|
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
-
-// Configure OAuth2 access token for authorization: OAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new OpenAPI\Client\Api\FbyApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-
-try {
-    $result = $apiInstance->getCampaignLogins($campaign_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling FbyApi->getCampaignLogins: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\GetCampaignLoginsResponse**](../Model/GetCampaignLoginsResponse.md)
 
 ### Authorization
 
@@ -2259,7 +2728,7 @@ getCampaignOffers($campaign_id, $get_campaign_offers_request, $page_token, $limi
 
 Информация о товарах, которые размещены в заданном магазине
 
-{% include notitle [access](../../_auto/method_scopes/getCampaignOffers.md) %}  Возвращает список товаров, которые размещены в заданном магазине. Для каждого товара указываются параметры размещения.  |**⚙️ Лимит:** 5000 товаров в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getCampaignOffers.md) %}  Возвращает список товаров, которые размещены в заданном магазине. Для каждого товара указываются параметры размещения.  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту| |-|
 
 ### Example
 
@@ -2283,9 +2752,9 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $get_campaign_offers_request = new \OpenAPI\Client\Model\GetCampaignOffersRequest(); // \OpenAPI\Client\Model\GetCampaignOffersRequest
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 
 try {
@@ -2300,9 +2769,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **get_campaign_offers_request** | [**\OpenAPI\Client\Model\GetCampaignOffersRequest**](../Model/GetCampaignOffersRequest.md)|  | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 
 ### Return type
@@ -2330,7 +2799,7 @@ getCampaignQuarantineOffers($campaign_id, $get_quarantine_offers_request, $page_
 
 Список товаров, находящихся в карантине по цене в магазине
 
-{% include notitle [access](../../_auto/method_scopes/getCampaignQuarantineOffers.md) %}  Возвращает список товаров, которые находятся в карантине по цене, установленной в заданном магазине.  Проверьте цену каждого из товаров, который попал в карантин. Если ошибки нет и цена правильная, подтвердите ее с помощью запроса [POST campaigns/{campaignId}/price-quarantine/confirm](../../reference/assortment/confirmCampaignPrices.md). Если цена в самом деле ошибочная, установите верную с помощью запроса [POST campaigns/{campaignId}/offer-prices/updates](../../reference/assortment/updatePrices.md).  {% note info \"Что такое карантин?\" %}  Товар попадает в карантин, если его цена меняется слишком резко или слишком сильно отличается от рыночной. [Подробнее](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  {% endnote %}  В запросе можно использовать фильтры.  Результаты возвращаются постранично.  |**⚙️ Лимит:** 5000 товаров в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getCampaignQuarantineOffers.md) %}  Возвращает список товаров, которые находятся в карантине по цене, установленной в заданном магазине.  Проверьте цену каждого из товаров, который попал в карантин. Если ошибки нет и цена правильная, подтвердите ее с помощью запроса [POST campaigns/{campaignId}/price-quarantine/confirm](../../reference/assortment/confirmCampaignPrices.md). Если цена в самом деле ошибочная, установите верную с помощью запроса [POST campaigns/{campaignId}/offer-prices/updates](../../reference/assortment/updatePrices.md).  {% note info \"Что такое карантин?\" %}  Товар попадает в карантин, если его цена меняется слишком резко или слишком сильно отличается от рыночной. [Подробнее](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  {% endnote %}  В запросе можно использовать фильтры.  Результаты возвращаются постранично.  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту| |-|
 
 ### Example
 
@@ -2354,9 +2823,9 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $get_quarantine_offers_request = new \OpenAPI\Client\Model\GetQuarantineOffersRequest(); // \OpenAPI\Client\Model\GetQuarantineOffersRequest
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 
 try {
@@ -2371,9 +2840,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **get_quarantine_offers_request** | [**\OpenAPI\Client\Model\GetQuarantineOffersRequest**](../Model/GetQuarantineOffersRequest.md)|  | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 
 ### Return type
@@ -2393,71 +2862,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getCampaignRegion()`
-
-```php
-getCampaignRegion($campaign_id): \OpenAPI\Client\Model\GetCampaignRegionResponse
-```
-
-Регион магазина
-
-{% include notitle [access](../../_auto/method_scopes/getCampaignRegion.md) %}  {% note warning \"Этот метод устарел\" %}  Вместо него используйте [GET campaigns/{campaignId}/settings](../../reference/campaigns/getCampaignSettings.md).  {% endnote %}  Возвращает регион, в котором находится магазин. |**⚙️ Лимит:** 5 000 запросов в час| |-|
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
-
-// Configure OAuth2 access token for authorization: OAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new OpenAPI\Client\Api\FbyApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-
-try {
-    $result = $apiInstance->getCampaignRegion($campaign_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling FbyApi->getCampaignRegion: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\GetCampaignRegionResponse**](../Model/GetCampaignRegionResponse.md)
-
-### Authorization
-
-[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `getCampaignSettings()`
 
 ```php
@@ -2466,7 +2870,7 @@ getCampaignSettings($campaign_id): \OpenAPI\Client\Model\GetCampaignSettingsResp
 
 Настройки магазина
 
-{% include notitle [access](../../_auto/method_scopes/getCampaignSettings.md) %}  Возвращает информацию о настройках магазина, идентификатор которого указан в запросе. |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getCampaignSettings.md) %}  Возвращает информацию о настройках магазина, идентификатор которого указан в запросе. |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -2490,7 +2894,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 
 try {
     $result = $apiInstance->getCampaignSettings($campaign_id);
@@ -2504,7 +2908,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 
 ### Return type
 
@@ -2531,7 +2935,7 @@ getCampaigns($page, $page_size): \OpenAPI\Client\Model\GetCampaignsResponse
 
 Список магазинов пользователя
 
-{% include notitle [access](../../_auto/method_scopes/getCampaigns.md) %}  **Для Api-Key-токена:** возвращает список магазинов в кабинете, для которого выдан токен. Нельзя получить список только подагентских магазинов.  **Для OAuth-токена:** возвращает список магазинов, к которым имеет доступ пользователь — владелец авторизационного токена, использованного в запросе. Для агентских пользователей список состоит из подагентских магазинов.  |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getCampaigns.md) %}  **Для Api-Key-токена:** возвращает список магазинов в кабинете, для которого выдан токен. Нельзя получить список только подагентских магазинов.  **Для OAuth-токена:** возвращает список магазинов, к которым имеет доступ пользователь — владелец авторизационного токена, использованного в запросе. Для агентских пользователей список состоит из подагентских магазинов.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -2555,8 +2959,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$page = 1; // int | {% note warning \"Если в методе есть `page_token`\" %}  Используйте его вместо параметра `page`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `page_size`.  `page_number` игнорируется, если задан `page_token`, `limit` или `offset`.
-$page_size = 56; // int | Размер страницы.  Используется вместе с параметром `page_number`.  `page_size` игнорируется, если задан `page_token`, `limit` или `offset`.
+$page = 1; // int | {% note warning \"Если в методе есть :no-translate[`page_token`]\" %}  Используйте его вместо параметра :no-translate[`page`].  [Подробнее о типах пагинации и их использовании](:no-translate[../../concepts/pagination.md])  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром :no-translate[`pageSize`].  :no-translate[`page`] игнорируется, если задан :no-translate[`page_token`] или :no-translate[`limit`].
+$page_size = 56; // int | Размер страницы.  Используется вместе с параметром :no-translate[`page`].  :no-translate[`pageSize`] игнорируется, если задан :no-translate[`page_token`] или :no-translate[`limit`].
 
 try {
     $result = $apiInstance->getCampaigns($page, $page_size);
@@ -2570,77 +2974,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **page** | **int**| {% note warning \&quot;Если в методе есть &#x60;page_token&#x60;\&quot; %}  Используйте его вместо параметра &#x60;page&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;page_size&#x60;.  &#x60;page_number&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| Размер страницы.  Используется вместе с параметром &#x60;page_number&#x60;.  &#x60;page_size&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\GetCampaignsResponse**](../Model/GetCampaignsResponse.md)
-
-### Authorization
-
-[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getCampaignsByLogin()`
-
-```php
-getCampaignsByLogin($login, $page, $page_size): \OpenAPI\Client\Model\GetCampaignsResponse
-```
-
-Магазины, доступные логину
-
-{% include notitle [access](../../_auto/method_scopes/getCampaignsByLogin.md) %}  {% note warning \"Этот метод устарел\" %}  Не используйте его.  {% endnote %}  **Для Api-Key-токена:** возвращает пустой ответ.  **Для OAuth-токена:** возвращает список магазинов, к которым у пользователя с указанным логином есть доступ.  |**⚙️ Лимит:** 100 запросов в час| |-|
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
-
-// Configure OAuth2 access token for authorization: OAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new OpenAPI\Client\Api\FbyApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$login = 'login_example'; // string | Логин пользователя.
-$page = 1; // int | {% note warning \"Если в методе есть `page_token`\" %}  Используйте его вместо параметра `page`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `page_size`.  `page_number` игнорируется, если задан `page_token`, `limit` или `offset`.
-$page_size = 56; // int | Размер страницы.  Используется вместе с параметром `page_number`.  `page_size` игнорируется, если задан `page_token`, `limit` или `offset`.
-
-try {
-    $result = $apiInstance->getCampaignsByLogin($login, $page, $page_size);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling FbyApi->getCampaignsByLogin: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **login** | **string**| Логин пользователя. | |
-| **page** | **int**| {% note warning \&quot;Если в методе есть &#x60;page_token&#x60;\&quot; %}  Используйте его вместо параметра &#x60;page&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;page_size&#x60;.  &#x60;page_number&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| Размер страницы.  Используется вместе с параметром &#x60;page_number&#x60;.  &#x60;page_size&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] |
+| **page** | **int**| {% note warning \&quot;Если в методе есть :no-translate[&#x60;page_token&#x60;]\&quot; %}  Используйте его вместо параметра :no-translate[&#x60;page&#x60;].  [Подробнее о типах пагинации и их использовании](:no-translate[../../concepts/pagination.md])  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром :no-translate[&#x60;pageSize&#x60;].  :no-translate[&#x60;page&#x60;] игнорируется, если задан :no-translate[&#x60;page_token&#x60;] или :no-translate[&#x60;limit&#x60;]. | [optional] [default to 1] |
+| **page_size** | **int**| Размер страницы.  Используется вместе с параметром :no-translate[&#x60;page&#x60;].  :no-translate[&#x60;pageSize&#x60;] игнорируется, если задан :no-translate[&#x60;page_token&#x60;] или :no-translate[&#x60;limit&#x60;]. | [optional] |
 
 ### Return type
 
@@ -2667,7 +3002,7 @@ getCategoriesMaxSaleQuantum($get_categories_max_sale_quantum_request): \OpenAPI\
 
 Лимит на установку кванта продажи и минимального количества товаров в заказе
 
-{% include notitle [access](../../_auto/method_scopes/getCategoriesMaxSaleQuantum.md) %}  Возвращает лимит на установку [кванта](*quantum) и минимального количества товаров в заказе, которые вы можете задать для товаров указанных категорий.  Если вы передадите значение кванта или минимального количества товаров выше установленного Маркетом ограничения, товар будет скрыт с витрины.  Подробнее о том, как продавать товары по несколько штук, читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/assortment/fields/quantum).  |**⚙️ Лимит:** 1 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getCategoriesMaxSaleQuantum.md) %}  Возвращает лимит на установку [кванта](:no-translate[*quantum]) и минимального количества товаров в заказе, которые вы можете задать для товаров указанных категорий.  Если вы передадите значение кванта или минимального количества товаров выше установленного Маркетом ограничения, товар будет скрыт с витрины.  Подробнее о том, как продавать товары по несколько штук, читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/assortment/fields/quantum).  |**:no-translate[⚙️] Лимит:** 5 000 запросов в час| |-|
 
 ### Example
 
@@ -2732,7 +3067,7 @@ getCategoriesTree($get_categories_request): \OpenAPI\Client\Model\GetCategoriesR
 
 Дерево категорий
 
-{% include notitle [access](../../_auto/method_scopes/getCategoriesTree.md) %}  Возвращает дерево категорий Маркета.  |**⚙️ Лимит:** 1 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getCategoriesTree.md) %}  Возвращает дерево категорий Маркета.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -2792,12 +3127,12 @@ try {
 ## `getCategoryContentParameters()`
 
 ```php
-getCategoryContentParameters($category_id): \OpenAPI\Client\Model\GetCategoryContentParametersResponse
+getCategoryContentParameters($category_id, $business_id): \OpenAPI\Client\Model\GetCategoryContentParametersResponse
 ```
 
 Списки характеристик товаров по категориям
 
-{% include notitle [access](../../_auto/method_scopes/getCategoryContentParameters.md) %}  Возвращает список характеристик с допустимыми значениями для заданной категории.  |**⚙️ Лимит:** 50 категорий в минуту | |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getCategoryContentParameters.md) %}  Возвращает список характеристик с допустимыми значениями для заданной листовой категории — той, у которой нет дочерних категорий.  |**:no-translate[⚙️] Лимит:** 100 категорий в минуту | |-|
 
 ### Example
 
@@ -2821,10 +3156,11 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$category_id = 56; // int | Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md).
+$category_id = 56; // int | Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [:no-translate[POST categories/tree]](:no-translate[../../reference/categories/getCategoriesTree.md]).
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  Передайте параметр, чтобы получить характеристики, которые являются особенностями варианта товара в данном кабинете.
 
 try {
-    $result = $apiInstance->getCategoryContentParameters($category_id);
+    $result = $apiInstance->getCategoryContentParameters($category_id, $business_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FbyApi->getCategoryContentParameters: ', $e->getMessage(), PHP_EOL;
@@ -2835,11 +3171,79 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **category_id** | **int**| Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md). | |
+| **category_id** | **int**| Идентификатор категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится интересующий вас товар, воспользуйтесь запросом [:no-translate[POST categories/tree]](:no-translate[../../reference/categories/getCategoriesTree.md]). | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  Передайте параметр, чтобы получить характеристики, которые являются особенностями варианта товара в данном кабинете. | [optional] |
 
 ### Return type
 
 [**\OpenAPI\Client\Model\GetCategoryContentParametersResponse**](../Model/GetCategoryContentParametersResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getChat()`
+
+```php
+getChat($business_id, $chat_id): \OpenAPI\Client\Model\GetChatResponse
+```
+
+Получение чата по идентификатору
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getChat.md) %}  Возвращает чат по его идентификатору.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
+$chat_id = 56; // int | Идентификатор чата.
+
+try {
+    $result = $apiInstance->getChat($business_id, $chat_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getChat: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
+| **chat_id** | **int**| Идентификатор чата. | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetChatResponse**](../Model/GetChatResponse.md)
 
 ### Authorization
 
@@ -2862,7 +3266,7 @@ getChatHistory($business_id, $chat_id, $get_chat_history_request, $page_token, $
 
 Получение истории сообщений в чате
 
-{% include notitle [access](../../_auto/method_scopes/getChatHistory.md) %}  Возвращает историю сообщений в чате с покупателем.  |**⚙️ Лимит:** 10000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getChatHistory.md) %}  Возвращает историю сообщений в чате с покупателем.  |**:no-translate[⚙️] Лимит:** 10 000 запросов в час| |-|
 
 ### Example
 
@@ -2886,10 +3290,10 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $chat_id = 56; // int | Идентификатор чата.
 $get_chat_history_request = new \OpenAPI\Client\Model\GetChatHistoryRequest(); // \OpenAPI\Client\Model\GetChatHistoryRequest | description
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 
 try {
@@ -2904,10 +3308,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **chat_id** | **int**| Идентификатор чата. | |
 | **get_chat_history_request** | [**\OpenAPI\Client\Model\GetChatHistoryRequest**](../Model/GetChatHistoryRequest.md)| description | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 
 ### Return type
@@ -2927,15 +3331,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getChats()`
+## `getChatMessage()`
 
 ```php
-getChats($business_id, $get_chats_request, $page_token, $limit): \OpenAPI\Client\Model\GetChatsResponse
+getChatMessage($business_id, $chat_id, $message_id): \OpenAPI\Client\Model\GetChatMessageResponse
 ```
 
-Получение доступных чатов
+Получение сообщения в чате
 
-{% include notitle [access](../../_auto/method_scopes/getChats.md) %}  Возвращает ваши чаты с покупателями.  |**⚙️ Лимит:** 10000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getChatMessage.md) %}  Возвращает сообщение по его идентификатору.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -2959,9 +3363,78 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
+$chat_id = 56; // int | Идентификатор чата.
+$message_id = 56; // int | Идентификатор сообщения.
+
+try {
+    $result = $apiInstance->getChatMessage($business_id, $chat_id, $message_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getChatMessage: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
+| **chat_id** | **int**| Идентификатор чата. | |
+| **message_id** | **int**| Идентификатор сообщения. | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetChatMessageResponse**](../Model/GetChatMessageResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getChats()`
+
+```php
+getChats($business_id, $get_chats_request, $page_token, $limit): \OpenAPI\Client\Model\GetChatsResponse
+```
+
+Получение доступных чатов
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getChats.md) %}  Возвращает чаты с покупателями.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $get_chats_request = new \OpenAPI\Client\Model\GetChatsRequest(); // \OpenAPI\Client\Model\GetChatsRequest | description
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 
 try {
@@ -2976,9 +3449,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **get_chats_request** | [**\OpenAPI\Client\Model\GetChatsRequest**](../Model/GetChatsRequest.md)| description | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 
 ### Return type
@@ -2998,15 +3471,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getFeed()`
+## `getDefaultPrices()`
 
 ```php
-getFeed($campaign_id, $feed_id): \OpenAPI\Client\Model\GetFeedResponse
+getDefaultPrices($business_id, $page_token, $limit, $get_default_prices_request): \OpenAPI\Client\Model\GetDefaultPricesResponse
 ```
 
-Информация о прайс-листе
+Просмотр цен на указанные товары во всех магазинах
 
-{% include notitle [access](../../_auto/method_scopes/getFeed.md) %}  {% note warning \"Этот метод устарел\" %}  Не используйте его.  {% endnote %}  Возвращает информацию о прайс-листе, размещенном на Маркете для заданного магазина. Также ресурс возвращает результаты автоматических проверок прайс-листа. |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getDefaultPrices.md) %}  Возвращает список цен, которые вы установили для всех магазинов любым способом. Например, через API или с помощью Excel-шаблона.  О способах установки цен читайте [в Справке Маркета для продавцов](https://yandex.ru/support/marketplace/assortment/operations/prices.html).  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту| |-|
 
 ### Example
 
@@ -3030,85 +3503,16 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$feed_id = 56; // int | Идентификатор прайс-листа.
-
-try {
-    $result = $apiInstance->getFeed($campaign_id, $feed_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling FbyApi->getFeed: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **feed_id** | **int**| Идентификатор прайс-листа. | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\GetFeedResponse**](../Model/GetFeedResponse.md)
-
-### Authorization
-
-[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getFeedIndexLogs()`
-
-```php
-getFeedIndexLogs($campaign_id, $feed_id, $limit, $published_time_from, $published_time_to, $status): \OpenAPI\Client\Model\GetFeedIndexLogsResponse
-```
-
-Отчет по индексации прайс-листа
-
-{% include notitle [access](../../_auto/method_scopes/getFeedIndexLogs.md) %}  {% note warning \"Этот метод устарел\" %}  Не используйте его.  {% endnote %}  Возвращает отчет по индексации прайс-листа для заданного магазина. Отчет позволяет получить статистику загрузки прайс-листа и результаты его автоматических проверок.  Данные в отчете возвращаются в порядке убывания значений параметра `generationId`.  |**⚙️ Лимит:** 1 000 запросов в час| |-|
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
-
-// Configure OAuth2 access token for authorization: OAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new OpenAPI\Client\Api\FbyApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$feed_id = 56; // int | Идентификатор прайс-листа.
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
-$published_time_from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Начальная дата. Используется для фильтрации записей — по дате и времени публикации предложений на Яндекс Маркете.  Формат даты: ISO 8601 со смещением относительно UTC. Например, `2017-11-21T00:42:42+03:00`.  Значение по умолчанию: последние восемь дней со времени отправки запроса.
-$published_time_to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Конечная дата. Используется для фильтрации записей — по дате и времени публикации предложений на Яндекс Маркете.  Формат даты: ISO 8601 со смещением относительно UTC. Например, `2017-11-31T00:42:42+03:00`.  Значение по умолчанию: дата и время отправки запроса.  {% note info \"Вы не получите часть данных\" %}  Если во время переключения между страницами выходных данных на Яндекс Маркете появятся новые результаты индексации прайс-листа. Чтобы этого не произошло, зафиксируйте выходные данные с помощью входного параметра `published_time_to`. Значение параметра не должно быть датой из будущего.  {% endnote %}
-$status = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\FeedIndexLogsStatusType(); // \OpenAPI\Client\Model\FeedIndexLogsStatusType | Статус индексации и проверки прайс-листа на соответствие техническим требованиям.  Возможные значения: * `ERROR` — произошли ошибки. * `OK` — обработан без ошибок. * `WARNING` — наблюдались некритичные проблемы.
+$get_default_prices_request = new \OpenAPI\Client\Model\GetDefaultPricesRequest(); // \OpenAPI\Client\Model\GetDefaultPricesRequest
 
 try {
-    $result = $apiInstance->getFeedIndexLogs($campaign_id, $feed_id, $limit, $published_time_from, $published_time_to, $status);
+    $result = $apiInstance->getDefaultPrices($business_id, $page_token, $limit, $get_default_prices_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FbyApi->getFeedIndexLogs: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FbyApi->getDefaultPrices: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -3116,16 +3520,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **feed_id** | **int**| Идентификатор прайс-листа. | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
-| **published_time_from** | **\DateTime**| Начальная дата. Используется для фильтрации записей — по дате и времени публикации предложений на Яндекс Маркете.  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-21T00:42:42+03:00&#x60;.  Значение по умолчанию: последние восемь дней со времени отправки запроса. | [optional] |
-| **published_time_to** | **\DateTime**| Конечная дата. Используется для фильтрации записей — по дате и времени публикации предложений на Яндекс Маркете.  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-31T00:42:42+03:00&#x60;.  Значение по умолчанию: дата и время отправки запроса.  {% note info \&quot;Вы не получите часть данных\&quot; %}  Если во время переключения между страницами выходных данных на Яндекс Маркете появятся новые результаты индексации прайс-листа. Чтобы этого не произошло, зафиксируйте выходные данные с помощью входного параметра &#x60;published_time_to&#x60;. Значение параметра не должно быть датой из будущего.  {% endnote %} | [optional] |
-| **status** | [**\OpenAPI\Client\Model\FeedIndexLogsStatusType**](../Model/.md)| Статус индексации и проверки прайс-листа на соответствие техническим требованиям.  Возможные значения: * &#x60;ERROR&#x60; — произошли ошибки. * &#x60;OK&#x60; — обработан без ошибок. * &#x60;WARNING&#x60; — наблюдались некритичные проблемы. | [optional] |
+| **get_default_prices_request** | [**\OpenAPI\Client\Model\GetDefaultPricesRequest**](../Model/GetDefaultPricesRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\GetFeedIndexLogsResponse**](../Model/GetFeedIndexLogsResponse.md)
+[**\OpenAPI\Client\Model\GetDefaultPricesResponse**](../Model/GetDefaultPricesResponse.md)
 
 ### Authorization
 
@@ -3133,143 +3535,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getFeedbackAndCommentUpdates()`
-
-```php
-getFeedbackAndCommentUpdates($campaign_id, $page_token, $limit, $from_date): \OpenAPI\Client\Model\GetFeedbackListResponse
-```
-
-Новые и обновленные отзывы о магазине
-
-{% include notitle [access](../../_auto/method_scopes/getFeedbackAndCommentUpdates.md) %}  {% note warning \"Этот метод устарел\" %}  Не используйте его.  {% endnote %}  Возвращает новые и обновленные отзывы о магазине на Маркете.  Результаты возвращаются постранично, одна страница содержит не более 20 отзывов. Выходные данные содержат идентификатор следующей страницы.  |**⚙️ Лимит:** 100 запросов в час| |-|
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
-
-// Configure OAuth2 access token for authorization: OAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new OpenAPI\Client\Api\FbyApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
-$limit = 20; // int | Количество значений на одной странице.
-$from_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Начальная дата обновления отзывов.  Если параметр указан, возвращаются отзывы, которые были написаны или обновлены с этой даты.  Формат даты: `ГГГГ-ММ-ДД`.
-
-try {
-    $result = $apiInstance->getFeedbackAndCommentUpdates($campaign_id, $page_token, $limit, $from_date);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling FbyApi->getFeedbackAndCommentUpdates: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
-| **limit** | **int**| Количество значений на одной странице. | [optional] |
-| **from_date** | **\DateTime**| Начальная дата обновления отзывов.  Если параметр указан, возвращаются отзывы, которые были написаны или обновлены с этой даты.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\GetFeedbackListResponse**](../Model/GetFeedbackListResponse.md)
-
-### Authorization
-
-[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getFeeds()`
-
-```php
-getFeeds($campaign_id): \OpenAPI\Client\Model\GetFeedsResponse
-```
-
-Список прайс-листов магазина
-
-{% include notitle [access](../../_auto/method_scopes/getFeeds.md) %}  {% note warning \"Этот метод устарел\" %}  Не используйте его.  {% endnote %}  Возвращает список прайс-листов, размещенных на Маркете для магазина. Также ресурс возвращает результаты автоматических проверок прайс-листов. |**⚙️ Лимит:** 1000 запросов в час| |-|
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
-
-// Configure OAuth2 access token for authorization: OAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new OpenAPI\Client\Api\FbyApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-
-try {
-    $result = $apiInstance->getFeeds($campaign_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling FbyApi->getFeeds: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\GetFeedsResponse**](../Model/GetFeedsResponse.md)
-
-### Authorization
-
-[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -3282,9 +3548,9 @@ try {
 getFulfillmentWarehouses(): \OpenAPI\Client\Model\GetFulfillmentWarehousesResponse
 ```
 
-Идентификаторы складов Маркета (FBY)
+Идентификаторы складов Маркета
 
-{% include notitle [access](../../_auto/method_scopes/getFulfillmentWarehouses.md) %}  Возвращает список складов Маркета с их идентификаторами.  |**⚙️ Лимит:** 100 запросов в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getFulfillmentWarehouses.md) %}  Возвращает список складов Маркета с их идентификаторами.  |**:no-translate[⚙️] Лимит:** 100 запросов в минуту| |-|
 
 ### Example
 
@@ -3346,7 +3612,7 @@ getGoodsFeedbackComments($business_id, $get_goods_feedback_comments_request, $pa
 
 Получение комментариев к отзыву
 
-{% include notitle [access](../../_auto/method_scopes/getGoodsFeedbackComments.md) %}  Возвращает комментарии к отзыву.  Результаты возвращаются постранично, одна страница содержит не более 20 комментариев.  Комментарии расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `page_token`, если вы получали его ранее.  |**⚙️ Лимит:** 1 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getGoodsFeedbackComments.md) %}  Возвращает комментарии к отзыву, кроме:    * тех, которые удалили пользователи или Маркет;   * комментариев к удаленным отзывам.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый комментарий. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 комментариев.  Комментарии расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `page_token`, если вы получали его ранее.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -3370,9 +3636,9 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $get_goods_feedback_comments_request = new \OpenAPI\Client\Model\GetGoodsFeedbackCommentsRequest(); // \OpenAPI\Client\Model\GetGoodsFeedbackCommentsRequest
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 
 try {
@@ -3387,9 +3653,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **get_goods_feedback_comments_request** | [**\OpenAPI\Client\Model\GetGoodsFeedbackCommentsRequest**](../Model/GetGoodsFeedbackCommentsRequest.md)|  | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 
 ### Return type
@@ -3417,7 +3683,7 @@ getGoodsFeedbacks($business_id, $page_token, $limit, $get_goods_feedback_request
 
 Получение отзывов о товарах продавца
 
-{% include notitle [access](../../_auto/method_scopes/getGoodsFeedbacks.md) %}  Возвращает все отзывы о товарах продавца по указанным фильтрам.  Результаты возвращаются постранично, одна страница содержит не более 20 отзывов.  Отзывы расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `page_token`, если вы получали его ранее.  |**⚙️ Лимит:** 1 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getGoodsFeedbacks.md) %}  Возвращает отзывы о товарах продавца по указанным фильтрам. **Исключение:** отзывы, которые удалили покупатели или Маркет.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый отзыв. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 отзывов.  Отзывы расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `page_token`, если вы получали его ранее.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -3441,8 +3707,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 $get_goods_feedback_request = new \OpenAPI\Client\Model\GetGoodsFeedbackRequest(); // \OpenAPI\Client\Model\GetGoodsFeedbackRequest
 
@@ -3458,8 +3724,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 | **get_goods_feedback_request** | [**\OpenAPI\Client\Model\GetGoodsFeedbackRequest**](../Model/GetGoodsFeedbackRequest.md)|  | [optional] |
 
@@ -3488,7 +3754,7 @@ getGoodsStats($campaign_id, $get_goods_stats_request): \OpenAPI\Client\Model\Get
 
 Отчет по товарам
 
-{% include notitle [access](../../_auto/method_scopes/getGoodsStats.md) %}  Возвращает подробный отчет по товарам, которые вы разместили на Маркете. С помощью отчета вы можете узнать, например, об остатках на складе, об условиях хранения ваших товаров и т. д.  |**⚙️ Лимит:** 5000 товаров в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getGoodsStats.md) %}  Возвращает подробный отчет по товарам, которые вы разместили на Маркете. С помощью отчета вы можете узнать, например, об остатках на складе, об условиях хранения ваших товаров и т. д.  |**:no-translate[⚙️] Лимит:** 5 000 товаров в минуту| |-|
 
 ### Example
 
@@ -3512,7 +3778,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $get_goods_stats_request = new \OpenAPI\Client\Model\GetGoodsStatsRequest(); // \OpenAPI\Client\Model\GetGoodsStatsRequest
 
 try {
@@ -3527,7 +3793,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **get_goods_stats_request** | [**\OpenAPI\Client\Model\GetGoodsStatsRequest**](../Model/GetGoodsStatsRequest.md)|  | |
 
 ### Return type
@@ -3550,12 +3816,12 @@ try {
 ## `getHiddenOffers()`
 
 ```php
-getHiddenOffers($campaign_id, $offer_id, $page_token, $limit, $offset, $page, $page_size): \OpenAPI\Client\Model\GetHiddenOffersResponse
+getHiddenOffers($campaign_id, $offer_id, $page_token, $limit): \OpenAPI\Client\Model\GetHiddenOffersResponse
 ```
 
 Информация о скрытых вами товарах
 
-{% include notitle [access](../../_auto/method_scopes/getHiddenOffers.md) %}  Возвращает список скрытых вами товаров для заданного магазина.  В списке будут товары, скрытые любым способом — по API, с помощью YML-фида, в кабинете и так далее.  |**⚙️ Лимит:** 5000 товаров в минуту, не более 500 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getHiddenOffers.md) %}  Возвращает список скрытых вами товаров для заданного магазина.  В списке будут товары, скрытые любым способом — через :no-translate[API], с помощью YML-фида, в кабинете и так далее.  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 500 товаров в одном запросе| |-|
 
 ### Example
 
@@ -3579,16 +3845,13 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $offer_id = array('offer_id_example'); // string[] | Идентификатор скрытого предложения.
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
-$offset = 56; // int | Позиция в списке, начиная с которой возвращаются результаты ответа.  Используется вместе с параметром `limit`.  Если задан `offset`, параметры `page_number` и `page_size` игнорируются.  `offset` игнорируется, если задан `page_token`.
-$page = 1; // int | {% note warning \"Если в методе есть `page_token`\" %}  Используйте его вместо параметра `page`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `page_size`.  `page_number` игнорируется, если задан `page_token`, `limit` или `offset`.
-$page_size = 56; // int | Размер страницы.  Используется вместе с параметром `page_number`.  `page_size` игнорируется, если задан `page_token`, `limit` или `offset`.
 
 try {
-    $result = $apiInstance->getHiddenOffers($campaign_id, $offer_id, $page_token, $limit, $offset, $page, $page_size);
+    $result = $apiInstance->getHiddenOffers($campaign_id, $offer_id, $page_token, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FbyApi->getHiddenOffers: ', $e->getMessage(), PHP_EOL;
@@ -3599,13 +3862,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **offer_id** | [**string[]**](../Model/string.md)| Идентификатор скрытого предложения. | [optional] |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
-| **offset** | **int**| Позиция в списке, начиная с которой возвращаются результаты ответа.  Используется вместе с параметром &#x60;limit&#x60;.  Если задан &#x60;offset&#x60;, параметры &#x60;page_number&#x60; и &#x60;page_size&#x60; игнорируются.  &#x60;offset&#x60; игнорируется, если задан &#x60;page_token&#x60;. | [optional] |
-| **page** | **int**| {% note warning \&quot;Если в методе есть &#x60;page_token&#x60;\&quot; %}  Используйте его вместо параметра &#x60;page&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;page_size&#x60;.  &#x60;page_number&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| Размер страницы.  Используется вместе с параметром &#x60;page_number&#x60;.  &#x60;page_size&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] |
 
 ### Return type
 
@@ -3632,7 +3892,7 @@ getOfferCardsContentStatus($business_id, $page_token, $limit, $get_offer_cards_c
 
 Получение информации о заполненности карточек магазина
 
-{% include notitle [access](../../_auto/method_scopes/getOfferCardsContentStatus.md) %}  Возвращает сведения о состоянии контента для заданных товаров:  * создана ли карточка товара и в каком она статусе; * заполненность карточки в процентах; * переданные характеристики товаров; * есть ли ошибки или предупреждения, связанные с контентом; * рекомендации по заполнению карточки.  |**⚙️ Лимит:** 600 запросов в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOfferCardsContentStatus.md) %}  Возвращает сведения о состоянии контента для заданных товаров:  * создана ли карточка товара и в каком она статусе; * рейтинг карточки — на сколько процентов она заполнена; * переданные характеристики товаров; * есть ли ошибки или предупреждения, связанные с контентом; * рекомендации по заполнению карточки.  |**:no-translate[⚙️] Лимит:** 600 запросов в минуту| |-|
 
 ### Example
 
@@ -3656,8 +3916,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 $get_offer_cards_content_status_request = new \OpenAPI\Client\Model\GetOfferCardsContentStatusRequest(); // \OpenAPI\Client\Model\GetOfferCardsContentStatusRequest
 
@@ -3673,8 +3933,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 | **get_offer_cards_content_status_request** | [**\OpenAPI\Client\Model\GetOfferCardsContentStatusRequest**](../Model/GetOfferCardsContentStatusRequest.md)|  | [optional] |
 
@@ -3703,7 +3963,7 @@ getOfferMappingEntries($campaign_id, $offer_id, $shop_sku, $mapping_kind, $statu
 
 Список товаров в каталоге
 
-{% include notitle [access](../../_auto/method_scopes/getOfferMappingEntries.md) %}  {% note warning \"Этот метод устарел\" %}  Вместо него используйте [POST businesses/{businessId}/offer-mappings](../../reference/business-assortment/getOfferMappings.md).  {% endnote %}  Для каждого товара, который вы размещаете на Маркете, возвращается информация о карточках Маркета, к которым привязан этот товар:  * Идентификатор текущей карточки (marketSku), карточки, которая проходит модерацию и последней отклоненной карточки. * Описание товара, которое указано на карточке Маркета. Например, размер упаковки и вес товара.  Результаты возвращаются постранично. Выходные данные содержат идентификатор следующей страницы.  {% note info \"Как считается количество товаров в каталоге магазина\" %}  По данным за последние семь дней (не включая сегодня).  {% endnote %}  |**⚙️ Лимит:** рассчитывается по [формуле](*rule)| |-|  [//]: <> (rule: суточный лимит товаров — количество товаров в каталоге магазина * 25)
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOfferMappingEntries.md) %}  {% note warning \"Какой метод использовать вместо устаревшего\" %}  [POST businesses/{businessId}/offer-mappings](../../reference/business-assortment/getOfferMappings.md)  {% endnote %}  Для каждого товара, который вы размещаете на Маркете, возвращается информация о карточках Маркета, к которым привязан этот товар:  * Идентификатор текущей карточки (marketSku), карточки, которая проходит модерацию и последней отклоненной карточки. * Описание товара, которое указано на карточке Маркета. Например, размер упаковки и вес товара.  Результаты возвращаются постранично. Выходные данные содержат идентификатор следующей страницы.  {% note info \"Как считается количество товаров в каталоге магазина\" %}  По данным за последние семь дней (не включая сегодня).  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту| |-|
 
 ### Example
 
@@ -3727,15 +3987,15 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $offer_id = array('offer_id_example'); // string[] | Идентификатор товара в каталоге.
-$shop_sku = array('shop_sku_example'); // string[] | Ваш SKU товара.  Параметр может быть указан несколько раз, например:  ``` ...shop_sku=123&shop_sku=129&shop_sku=141... ```  В запросе можно указать либо параметр `shopSku`, либо любые параметры для фильтрации товаров. Совместное использование параметра `shopSku` и параметров для фильтрации приведет к ошибке.
+$shop_sku = array('shop_sku_example'); // string[] | Ваш SKU товара.  Параметр может быть указан несколько раз, например:  ```text translate=no ...shop_sku=123&shop_sku=129&shop_sku=141... ```  В запросе можно указать либо параметр `shopSku`, либо любые параметры для фильтрации товаров. Совместное использование параметра `shopSku` и параметров для фильтрации приведет к ошибке.
 $mapping_kind = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OfferMappingKindType(); // \OpenAPI\Client\Model\OfferMappingKindType | Тип маппинга.
-$status = array(new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OfferProcessingStatusType()); // \OpenAPI\Client\Model\OfferProcessingStatusType[] | Фильтрация по статусу публикации товара:  * `READY` — товар прошел модерацию. * `IN_WORK` — товар проходит модерацию. * `NEED_CONTENT` — для товара без SKU на Маркете marketSku нужно найти карточку самостоятельно или создать ее. * `NEED_INFO` — товар не прошел модерацию из-за ошибок или недостающих сведений в описании товара. * `REJECTED` — товар не прошел модерацию, так как Маркет не планирует размещать подобные товары. * `SUSPENDED` — товар не прошел модерацию, так как Маркет пока не размещает подобные товары. * `OTHER` — товар не прошел модерацию по другой причине.  Можно указать несколько статусов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  ``` ...status=READY,IN_WORK... ...status=READY&status=IN_WORK... ```  В запросе можно указать либо параметр shopSku, либо любые параметры для фильтрации товаров. Совместное использование параметра shopSku и параметров для фильтрации приведет к ошибке.
-$availability = array(new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OfferAvailabilityStatusType()); // \OpenAPI\Client\Model\OfferAvailabilityStatusType[] | Фильтрация по планам поставок товара:  * `ACTIVE` — поставки будут. * `INACTIVE` — поставок не будет: товар есть на складе, но вы больше не планируете его поставлять. * `DELISTED` — архив: товар закончился на складе, и его поставок больше не будет.  Можно указать несколько значений в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  ``` ...availability=INACTIVE,DELISTED... ...availability=INACTIVE&availability=DELISTED... ```  В запросе можно указать либо параметр `shopSku`, либо любые параметры для фильтрации товаров. Совместное использование параметра `shopSku` и параметров для фильтрации приведет к ошибке.
-$category_id = array(56); // int[] | Фильтрация по идентификатору категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md).  Можно указать несколько идентификаторов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  ``` ...category_id=14727164,14382343... ...category_id=14727164&category_id=14382343... ```  В запросе можно указать либо параметр `shopSku`, либо любые параметры для фильтрации товаров. Совместное использование параметра `shopSku` и параметров для фильтрации приведет к ошибке.
-$vendor = array('vendor_example'); // string[] | Фильтрация по бренду товара.  Можно указать несколько брендов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  ``` ...vendor=Aqua%20Minerale,Borjomi... ...vendor=Aqua%20Minerale&vendor=Borjomi... ```  Чтобы товар попал в результаты фильтрации, его бренд должен точно совпадать с одним из указанных в запросе. Например, если указан бренд Schwarzkopf, то в результатах не будет товаров Schwarzkopf Professional.  Если в названии бренда есть символы, которые не входят в таблицу ASCII (в том числе кириллические символы), используйте для них URL-кодирование. Например, пробел — %20, апостроф «'» — %27 и т. д. Подробнее см. в разделе [Кодирование URL русскоязычной Википедии](https://ru.wikipedia.org/wiki/URL#Кодирование_URL).  В запросе можно указать либо параметр shopSku, либо любые параметры для фильтрации товаров. Совместное использование параметра shopSku и параметров для фильтрации приведет к ошибке.
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$status = array(new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OfferProcessingStatusType()); // \OpenAPI\Client\Model\OfferProcessingStatusType[] | Фильтрация по статусу публикации товара:  * `READY` — товар прошел модерацию. * `IN_WORK` — товар проходит модерацию. * `NEED_CONTENT` — для товара без SKU на Маркете `marketSku` нужно найти карточку самостоятельно или создать ее. * `NEED_INFO` — товар не прошел модерацию из-за ошибок или недостающих сведений в описании товара. * `REJECTED` — товар не прошел модерацию, так как Маркет не планирует размещать подобные товары. * `SUSPENDED` — товар не прошел модерацию, так как Маркет пока не размещает подобные товары. * `OTHER` — товар не прошел модерацию по другой причине.  Можно указать несколько статусов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  ```text translate=no ...status=READY,IN_WORK... ...status=READY&status=IN_WORK... ```  В запросе можно указать либо параметр shopSku, либо любые параметры для фильтрации товаров. Совместное использование параметра shopSku и параметров для фильтрации приведет к ошибке.
+$availability = array(new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OfferAvailabilityStatusType()); // \OpenAPI\Client\Model\OfferAvailabilityStatusType[] | Фильтрация по планам поставок товара:  * `ACTIVE` — поставки будут. * `INACTIVE` — поставок не будет: товар есть на складе, но вы больше не планируете его поставлять. * `DELISTED` — архив: товар закончился на складе, и его поставок больше не будет.  Можно указать несколько значений в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  ```text translate=no ...availability=INACTIVE,DELISTED... ...availability=INACTIVE&availability=DELISTED... ```  В запросе можно указать либо параметр `shopSku`, либо любые параметры для фильтрации товаров. Совместное использование параметра `shopSku` и параметров для фильтрации приведет к ошибке.
+$category_id = array(56); // int[] | Фильтрация по идентификатору категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md).  Можно указать несколько идентификаторов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  ```text translate=no ...category_id=14727164,14382343... ...category_id=14727164&category_id=14382343... ```  В запросе можно указать либо параметр `shopSku`, либо любые параметры для фильтрации товаров. Совместное использование параметра `shopSku` и параметров для фильтрации приведет к ошибке.
+$vendor = array('vendor_example'); // string[] | Фильтрация по бренду товара.  Можно указать несколько брендов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  ```text translate=no ...vendor=Aqua%20Minerale,Borjomi... ...vendor=Aqua%20Minerale&vendor=Borjomi... ```  Чтобы товар попал в результаты фильтрации, его бренд должен точно совпадать с одним из указанных в запросе. Например, если указан бренд :no-translate[Schwarzkopf], то в результатах не будет товаров :no-translate[Schwarzkopf Professional].  Если в названии бренда есть символы, которые не входят в таблицу :no-translate[ASCII] (в том числе кириллические символы), используйте для них URL-кодирование. Например, пробел — %20, апостроф «'» — %27 и т. д. Подробнее см. в разделе [Кодирование :no-translate[URL] русскоязычной Википедии](https://ru.wikipedia.org/wiki/URL#Кодирование_URL).  В запросе можно указать либо параметр shopSku, либо любые параметры для фильтрации товаров. Совместное использование параметра `shopSku` и параметров для фильтрации приведет к ошибке.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 
 try {
@@ -3750,15 +4010,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **offer_id** | [**string[]**](../Model/string.md)| Идентификатор товара в каталоге. | [optional] |
-| **shop_sku** | [**string[]**](../Model/string.md)| Ваш SKU товара.  Параметр может быть указан несколько раз, например:  &#x60;&#x60;&#x60; ...shop_sku&#x3D;123&amp;shop_sku&#x3D;129&amp;shop_sku&#x3D;141... &#x60;&#x60;&#x60;  В запросе можно указать либо параметр &#x60;shopSku&#x60;, либо любые параметры для фильтрации товаров. Совместное использование параметра &#x60;shopSku&#x60; и параметров для фильтрации приведет к ошибке. | [optional] |
+| **shop_sku** | [**string[]**](../Model/string.md)| Ваш SKU товара.  Параметр может быть указан несколько раз, например:  &#x60;&#x60;&#x60;text translate&#x3D;no ...shop_sku&#x3D;123&amp;shop_sku&#x3D;129&amp;shop_sku&#x3D;141... &#x60;&#x60;&#x60;  В запросе можно указать либо параметр &#x60;shopSku&#x60;, либо любые параметры для фильтрации товаров. Совместное использование параметра &#x60;shopSku&#x60; и параметров для фильтрации приведет к ошибке. | [optional] |
 | **mapping_kind** | [**\OpenAPI\Client\Model\OfferMappingKindType**](../Model/.md)| Тип маппинга. | [optional] |
-| **status** | [**\OpenAPI\Client\Model\OfferProcessingStatusType[]**](../Model/\OpenAPI\Client\Model\OfferProcessingStatusType.md)| Фильтрация по статусу публикации товара:  * &#x60;READY&#x60; — товар прошел модерацию. * &#x60;IN_WORK&#x60; — товар проходит модерацию. * &#x60;NEED_CONTENT&#x60; — для товара без SKU на Маркете marketSku нужно найти карточку самостоятельно или создать ее. * &#x60;NEED_INFO&#x60; — товар не прошел модерацию из-за ошибок или недостающих сведений в описании товара. * &#x60;REJECTED&#x60; — товар не прошел модерацию, так как Маркет не планирует размещать подобные товары. * &#x60;SUSPENDED&#x60; — товар не прошел модерацию, так как Маркет пока не размещает подобные товары. * &#x60;OTHER&#x60; — товар не прошел модерацию по другой причине.  Можно указать несколько статусов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  &#x60;&#x60;&#x60; ...status&#x3D;READY,IN_WORK... ...status&#x3D;READY&amp;status&#x3D;IN_WORK... &#x60;&#x60;&#x60;  В запросе можно указать либо параметр shopSku, либо любые параметры для фильтрации товаров. Совместное использование параметра shopSku и параметров для фильтрации приведет к ошибке. | [optional] |
-| **availability** | [**\OpenAPI\Client\Model\OfferAvailabilityStatusType[]**](../Model/\OpenAPI\Client\Model\OfferAvailabilityStatusType.md)| Фильтрация по планам поставок товара:  * &#x60;ACTIVE&#x60; — поставки будут. * &#x60;INACTIVE&#x60; — поставок не будет: товар есть на складе, но вы больше не планируете его поставлять. * &#x60;DELISTED&#x60; — архив: товар закончился на складе, и его поставок больше не будет.  Можно указать несколько значений в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  &#x60;&#x60;&#x60; ...availability&#x3D;INACTIVE,DELISTED... ...availability&#x3D;INACTIVE&amp;availability&#x3D;DELISTED... &#x60;&#x60;&#x60;  В запросе можно указать либо параметр &#x60;shopSku&#x60;, либо любые параметры для фильтрации товаров. Совместное использование параметра &#x60;shopSku&#x60; и параметров для фильтрации приведет к ошибке. | [optional] |
-| **category_id** | [**int[]**](../Model/int.md)| Фильтрация по идентификатору категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md).  Можно указать несколько идентификаторов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  &#x60;&#x60;&#x60; ...category_id&#x3D;14727164,14382343... ...category_id&#x3D;14727164&amp;category_id&#x3D;14382343... &#x60;&#x60;&#x60;  В запросе можно указать либо параметр &#x60;shopSku&#x60;, либо любые параметры для фильтрации товаров. Совместное использование параметра &#x60;shopSku&#x60; и параметров для фильтрации приведет к ошибке. | [optional] |
-| **vendor** | [**string[]**](../Model/string.md)| Фильтрация по бренду товара.  Можно указать несколько брендов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  &#x60;&#x60;&#x60; ...vendor&#x3D;Aqua%20Minerale,Borjomi... ...vendor&#x3D;Aqua%20Minerale&amp;vendor&#x3D;Borjomi... &#x60;&#x60;&#x60;  Чтобы товар попал в результаты фильтрации, его бренд должен точно совпадать с одним из указанных в запросе. Например, если указан бренд Schwarzkopf, то в результатах не будет товаров Schwarzkopf Professional.  Если в названии бренда есть символы, которые не входят в таблицу ASCII (в том числе кириллические символы), используйте для них URL-кодирование. Например, пробел — %20, апостроф «&#39;» — %27 и т. д. Подробнее см. в разделе [Кодирование URL русскоязычной Википедии](https://ru.wikipedia.org/wiki/URL#Кодирование_URL).  В запросе можно указать либо параметр shopSku, либо любые параметры для фильтрации товаров. Совместное использование параметра shopSku и параметров для фильтрации приведет к ошибке. | [optional] |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **status** | [**\OpenAPI\Client\Model\OfferProcessingStatusType[]**](../Model/\OpenAPI\Client\Model\OfferProcessingStatusType.md)| Фильтрация по статусу публикации товара:  * &#x60;READY&#x60; — товар прошел модерацию. * &#x60;IN_WORK&#x60; — товар проходит модерацию. * &#x60;NEED_CONTENT&#x60; — для товара без SKU на Маркете &#x60;marketSku&#x60; нужно найти карточку самостоятельно или создать ее. * &#x60;NEED_INFO&#x60; — товар не прошел модерацию из-за ошибок или недостающих сведений в описании товара. * &#x60;REJECTED&#x60; — товар не прошел модерацию, так как Маркет не планирует размещать подобные товары. * &#x60;SUSPENDED&#x60; — товар не прошел модерацию, так как Маркет пока не размещает подобные товары. * &#x60;OTHER&#x60; — товар не прошел модерацию по другой причине.  Можно указать несколько статусов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  &#x60;&#x60;&#x60;text translate&#x3D;no ...status&#x3D;READY,IN_WORK... ...status&#x3D;READY&amp;status&#x3D;IN_WORK... &#x60;&#x60;&#x60;  В запросе можно указать либо параметр shopSku, либо любые параметры для фильтрации товаров. Совместное использование параметра shopSku и параметров для фильтрации приведет к ошибке. | [optional] |
+| **availability** | [**\OpenAPI\Client\Model\OfferAvailabilityStatusType[]**](../Model/\OpenAPI\Client\Model\OfferAvailabilityStatusType.md)| Фильтрация по планам поставок товара:  * &#x60;ACTIVE&#x60; — поставки будут. * &#x60;INACTIVE&#x60; — поставок не будет: товар есть на складе, но вы больше не планируете его поставлять. * &#x60;DELISTED&#x60; — архив: товар закончился на складе, и его поставок больше не будет.  Можно указать несколько значений в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  &#x60;&#x60;&#x60;text translate&#x3D;no ...availability&#x3D;INACTIVE,DELISTED... ...availability&#x3D;INACTIVE&amp;availability&#x3D;DELISTED... &#x60;&#x60;&#x60;  В запросе можно указать либо параметр &#x60;shopSku&#x60;, либо любые параметры для фильтрации товаров. Совместное использование параметра &#x60;shopSku&#x60; и параметров для фильтрации приведет к ошибке. | [optional] |
+| **category_id** | [**int[]**](../Model/int.md)| Фильтрация по идентификатору категории на Маркете.  Чтобы узнать идентификатор категории, к которой относится товар, воспользуйтесь запросом [POST categories/tree](../../reference/categories/getCategoriesTree.md).  Можно указать несколько идентификаторов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  &#x60;&#x60;&#x60;text translate&#x3D;no ...category_id&#x3D;14727164,14382343... ...category_id&#x3D;14727164&amp;category_id&#x3D;14382343... &#x60;&#x60;&#x60;  В запросе можно указать либо параметр &#x60;shopSku&#x60;, либо любые параметры для фильтрации товаров. Совместное использование параметра &#x60;shopSku&#x60; и параметров для фильтрации приведет к ошибке. | [optional] |
+| **vendor** | [**string[]**](../Model/string.md)| Фильтрация по бренду товара.  Можно указать несколько брендов в одном параметре, через запятую, или в нескольких одинаковых параметрах. Например:  &#x60;&#x60;&#x60;text translate&#x3D;no ...vendor&#x3D;Aqua%20Minerale,Borjomi... ...vendor&#x3D;Aqua%20Minerale&amp;vendor&#x3D;Borjomi... &#x60;&#x60;&#x60;  Чтобы товар попал в результаты фильтрации, его бренд должен точно совпадать с одним из указанных в запросе. Например, если указан бренд :no-translate[Schwarzkopf], то в результатах не будет товаров :no-translate[Schwarzkopf Professional].  Если в названии бренда есть символы, которые не входят в таблицу :no-translate[ASCII] (в том числе кириллические символы), используйте для них URL-кодирование. Например, пробел — %20, апостроф «&#39;» — %27 и т. д. Подробнее см. в разделе [Кодирование :no-translate[URL] русскоязычной Википедии](https://ru.wikipedia.org/wiki/URL#Кодирование_URL).  В запросе можно указать либо параметр shopSku, либо любые параметры для фильтрации товаров. Совместное использование параметра &#x60;shopSku&#x60; и параметров для фильтрации приведет к ошибке. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 
 ### Return type
@@ -3786,7 +4046,7 @@ getOfferMappings($business_id, $page_token, $limit, $language, $get_offer_mappin
 
 Информация о товарах в каталоге
 
-{% include notitle [access](../../_auto/method_scopes/getOfferMappings.md) %}  Возвращает список товаров в каталоге, их категории на Маркете и характеристики каждого товара.  Можно использовать тремя способами: * задать список интересующих SKU; * задать фильтр — в этом случае результаты возвращаются постранично; * не передавать тело запроса, чтобы получить список всех товаров в каталоге.  |**⚙️ Лимит:** 600 запросов в минуту, не более 200 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOfferMappings.md) %}  Возвращает список товаров в каталоге, их категории на Маркете и характеристики каждого товара.  Можно использовать тремя способами: * задать список интересующих :no-translate[SKU]; * задать фильтр — в этом случае результаты возвращаются постранично; * не передавать тело запроса, чтобы получить список всех товаров в каталоге.  |**:no-translate[⚙️] Лимит:** 600 запросов в минуту, не более 200 товаров в одном запросе| |-|
 
 ### Example
 
@@ -3810,10 +4070,10 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
-$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\CatalogLanguageType(); // \OpenAPI\Client\Model\CatalogLanguageType | Язык, на котором принимаются и возвращаются значения в параметрах `name` и `description`.  Значение по умолчанию: `RU`.
+$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\CatalogLanguageType(); // \OpenAPI\Client\Model\CatalogLanguageType | Язык, на котором принимаются и возвращаются значения в параметрах :no-translate[`name`] и :no-translate[`description`].  Значение по умолчанию: :no-translate[`RU`].
 $get_offer_mappings_request = new \OpenAPI\Client\Model\GetOfferMappingsRequest(); // \OpenAPI\Client\Model\GetOfferMappingsRequest
 
 try {
@@ -3828,10 +4088,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
-| **language** | [**\OpenAPI\Client\Model\CatalogLanguageType**](../Model/.md)| Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. | [optional] |
+| **language** | [**\OpenAPI\Client\Model\CatalogLanguageType**](../Model/.md)| Язык, на котором принимаются и возвращаются значения в параметрах :no-translate[&#x60;name&#x60;] и :no-translate[&#x60;description&#x60;].  Значение по умолчанию: :no-translate[&#x60;RU&#x60;]. | [optional] |
 | **get_offer_mappings_request** | [**\OpenAPI\Client\Model\GetOfferMappingsRequest**](../Model/GetOfferMappingsRequest.md)|  | [optional] |
 
 ### Return type
@@ -3859,7 +4119,7 @@ getOfferRecommendations($business_id, $get_offer_recommendations_request, $page_
 
 Рекомендации Маркета, касающиеся цен
 
-{% include notitle [access](../../_auto/method_scopes/getOfferRecommendations.md) %}  Метод возвращает рекомендации нескольких типов.  **1. Порог для привлекательной цены. Он нужен для участия в софинансировании скидок.**  Показывает, какие **цены для участия** нужно установить, чтобы получить максимальные шансы на срабатывание скидок, софинансируемых Маркетом. [Как это устроено](https://yandex.ru/support/marketplace/marketing/smart-pricing.html#sponsored-discounts)  **2. Оценка привлекательности цен на витрине.**  Привлекательность влияет на вероятность срабатывания скидок за счет Маркета. [Как это устроено](https://yandex.ru/support/marketplace/marketing/smart-pricing.html#validation)  В запросе можно использовать фильтры.  Результаты возвращаются постранично.  |**⚙️ Лимит:** 100 запросов в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOfferRecommendations.md) %}  Метод возвращает рекомендации нескольких типов.  1. Порог для привлекательной цены. 2. Оценка привлекательности цен на витрине.  Рекомендации показывают, какие цены нужно установить, чтобы привлечь покупателя.  В запросе можно использовать фильтры. Результаты возвращаются постранично.  |**:no-translate[⚙️] Лимит:** 100 запросов в минуту| |-|
 
 ### Example
 
@@ -3883,9 +4143,9 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $get_offer_recommendations_request = new \OpenAPI\Client\Model\GetOfferRecommendationsRequest(); // \OpenAPI\Client\Model\GetOfferRecommendationsRequest
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 
 try {
@@ -3900,9 +4160,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **get_offer_recommendations_request** | [**\OpenAPI\Client\Model\GetOfferRecommendationsRequest**](../Model/GetOfferRecommendationsRequest.md)|  | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 
 ### Return type
@@ -3922,85 +4182,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getOffers()`
-
-```php
-getOffers($campaign_id, $query, $feed_id, $shop_category_id, $currency, $matched, $page, $page_size): \OpenAPI\Client\Model\GetOffersResponse
-```
-
-Предложения магазина
-
-{% include notitle [access](../../_auto/method_scopes/getOffers.md) %}  {% note warning \"Этот метод устарел\" %}  Не используйте его.  {% endnote %}  Позволяет фильтровать информацию о предложениях магазина, размещенных на Маркете, и искать предложения по заданному поисковому запросу.  Поиск предложений, размещенных на Маркете, работает по поисковому запросу аналогично поиску Маркета. Результаты возвращаются с использованием пейджера.  В ответе на запрос для каждого найденного предложения указывается URL и наименование этого предложения, его цена и валюта, в которой она указана, карточка модели Маркета, с которой соотнесено предложение, и аукционные ставки на него.  {% note info \"Расхождения в количестве результатов\" %}  Из-за особенностей поиска Маркета иногда на последних страницах пейджера фактическое количество результатов оказывается меньше количества, указанного ранее на предыдущих страницах.  Рекомендуем анализировать содержимое параметра `pager` для каждой полученной страницы.  {% endnote %}  {% note info \"Как считается количество предложений\" %}  По данным за последние семь дней (не включая сегодня).  Для новых магазинов, еще не разместивших предложения, ограничение равно 0 и пересчитывается на следующий день после размещения первых предложений.  {% endnote %}  |**⚙️ Лимит:** рассчитывается по [формуле](*rule)| |-|  [//]: <> (rule: суточный лисит товаров — среднее количество таваров в каталоге за неделю * 25)
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
-
-// Configure OAuth2 access token for authorization: OAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new OpenAPI\Client\Api\FbyApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$query = 'query_example'; // string | Поисковый запрос.  Поддерживается язык запросов.  Значение по умолчанию: все предложения магазина, размещенные на Маркете.
-$feed_id = 56; // int | Идентификатор прайс-листа.
-$shop_category_id = 'shop_category_id_example'; // string | Идентификатор категории предложения, указанный магазином в прайс-листе.  Параметр выводится только для предложений, у которых указана категория в прайс-листе.  Параметр доступен начиная с версии 2.0 партнерского API.
-$currency = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\CurrencyType(); // \OpenAPI\Client\Model\CurrencyType | Валюта, в которой указана цена предложения.  Возможные значения:  * `RUR` — российский рубль.  * `UAH` — украинская гривна.  * `BYR` — белорусский рубль.  * `KZT` — казахстанский тенге.  * `UZS` — узбекский сум.
-$matched = True; // bool | Фильтр по признаку соотнесения предложения и карточки модели.  Возможные значения:  * `0 / FALSE / NO` — поиск выполняется среди предложений, не соотнесенных ни с какой карточкой модели.  * `1 / TRUE / YES` — поиск выполняется среди предложений, соотнесенных с карточками моделей).
-$page = 1; // int | {% note warning \"Если в методе есть `page_token`\" %}  Используйте его вместо параметра `page`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `page_size`.  `page_number` игнорируется, если задан `page_token`, `limit` или `offset`.
-$page_size = 56; // int | Размер страницы.  Используется вместе с параметром `page_number`.  `page_size` игнорируется, если задан `page_token`, `limit` или `offset`.
-
-try {
-    $result = $apiInstance->getOffers($campaign_id, $query, $feed_id, $shop_category_id, $currency, $matched, $page, $page_size);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling FbyApi->getOffers: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **query** | **string**| Поисковый запрос.  Поддерживается язык запросов.  Значение по умолчанию: все предложения магазина, размещенные на Маркете. | [optional] |
-| **feed_id** | **int**| Идентификатор прайс-листа. | [optional] |
-| **shop_category_id** | **string**| Идентификатор категории предложения, указанный магазином в прайс-листе.  Параметр выводится только для предложений, у которых указана категория в прайс-листе.  Параметр доступен начиная с версии 2.0 партнерского API. | [optional] |
-| **currency** | [**\OpenAPI\Client\Model\CurrencyType**](../Model/.md)| Валюта, в которой указана цена предложения.  Возможные значения:  * &#x60;RUR&#x60; — российский рубль.  * &#x60;UAH&#x60; — украинская гривна.  * &#x60;BYR&#x60; — белорусский рубль.  * &#x60;KZT&#x60; — казахстанский тенге.  * &#x60;UZS&#x60; — узбекский сум. | [optional] |
-| **matched** | **bool**| Фильтр по признаку соотнесения предложения и карточки модели.  Возможные значения:  * &#x60;0 / FALSE / NO&#x60; — поиск выполняется среди предложений, не соотнесенных ни с какой карточкой модели.  * &#x60;1 / TRUE / YES&#x60; — поиск выполняется среди предложений, соотнесенных с карточками моделей). | [optional] |
-| **page** | **int**| {% note warning \&quot;Если в методе есть &#x60;page_token&#x60;\&quot; %}  Используйте его вместо параметра &#x60;page&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;page_size&#x60;.  &#x60;page_number&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| Размер страницы.  Используется вместе с параметром &#x60;page_number&#x60;.  &#x60;page_size&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\GetOffersResponse**](../Model/GetOffersResponse.md)
-
-### Authorization
-
-[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `getOrder()`
 
 ```php
@@ -4009,7 +4190,7 @@ getOrder($campaign_id, $order_id): \OpenAPI\Client\Model\GetOrderResponse
 
 Информация об одном заказе
 
-{% include notitle [access](../../_auto/method_scopes/getOrder.md) %}  Возвращает информацию о заказе.  Получить более подробную информацию о покупателе и его номере телефона можно с помощью запроса [GET campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/orders/getOrderBuyerInfo.md).  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOrder.md) %}  Возвращает информацию о заказе.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый заказ или изменится его статус. А полную информацию можно получить с помощью этого метода или [GET campaigns/{campaignId}/orders](../../reference/orders/getOrders.md).  [{#T}](../../push-notifications/index.md)  {% endnote %}  Получить более подробную информацию о покупателе и его номере телефона можно с помощью запроса [GET campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/orders/getOrderBuyerInfo.md).  |**:no-translate[⚙️] Лимит:** 100 000 запросов в час| |-|
 
 ### Example
 
@@ -4033,7 +4214,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $order_id = 56; // int | Идентификатор заказа.
 
 try {
@@ -4048,7 +4229,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **order_id** | **int**| Идентификатор заказа. | |
 
 ### Return type
@@ -4076,7 +4257,7 @@ getOrderBusinessBuyerInfo($campaign_id, $order_id): \OpenAPI\Client\Model\GetBus
 
 Информация о покупателе — юридическом лице
 
-{% include notitle [access](../../_auto/method_scopes/getOrderBusinessBuyerInfo.md) %}  Возвращает информацию о покупателе по идентификатору заказа.  {% note info \"Как получить информацию о покупателе, который является физическим лицом\" %}  Воспользуйтесь запросом [GET campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/orders/getOrderBuyerInfo.md).  {% endnote %}  Получить данные можно, только если заказ находится в статусе `PROCESSING`, `DELIVERY`, `PICKUP` или `DELIVERED`.  |**⚙️ Лимит:** 3 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOrderBusinessBuyerInfo.md) %}  Возвращает информацию о покупателе по идентификатору заказа.  {% note info \"Как получить информацию о покупателе, который является физическим лицом\" %}  Воспользуйтесь запросом [GET campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/orders/getOrderBuyerInfo.md).  {% endnote %}  Получить данные можно, только если заказ находится в статусе `PROCESSING`, `DELIVERY`, `PICKUP` или `DELIVERED`.  |**:no-translate[⚙️] Лимит:** 3 000 запросов в час| |-|
 
 ### Example
 
@@ -4100,7 +4281,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $order_id = 56; // int | Идентификатор заказа.
 
 try {
@@ -4115,7 +4296,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **order_id** | **int**| Идентификатор заказа. | |
 
 ### Return type
@@ -4143,7 +4324,7 @@ getOrderBusinessDocumentsInfo($campaign_id, $order_id): \OpenAPI\Client\Model\Ge
 
 Информация о документах
 
-{% include notitle [access](../../_auto/method_scopes/getOrderBusinessDocumentsInfo.md) %}  Возвращает информацию о документах по идентификатору заказа.  Получить данные можно после того, как заказ перейдет в статус `DELIVERED`.  |**⚙️ Лимит:** 3 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOrderBusinessDocumentsInfo.md) %}  Возвращает информацию о документах по идентификатору заказа.  Получить данные можно после того, как заказ перейдет в статус `DELIVERED`.  |**:no-translate[⚙️] Лимит:** 3 000 запросов в час| |-|
 
 ### Example
 
@@ -4167,7 +4348,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $order_id = 56; // int | Идентификатор заказа.
 
 try {
@@ -4182,7 +4363,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **order_id** | **int**| Идентификатор заказа. | |
 
 ### Return type
@@ -4210,7 +4391,7 @@ getOrders($campaign_id, $order_ids, $status, $substatus, $from_date, $to_date, $
 
 Информация о нескольких заказах
 
-{% include notitle [access](../../_auto/method_scopes/getOrders.md) %}  Возвращает информацию о заказах. Запрос можно использовать, чтобы узнать, нет ли новых заказов.  Доступна фильтрация по нескольким характеристикам заказов:  * дате оформления;  * статусу;  * идентификаторам заказов;  * этапу обработки или причине отмены;  * типу (настоящий или тестовый);  * дате отгрузки в службу доставки;  * дате и времени обновления заказа.  Информация о заказах, доставленных или отмененных больше 30 дней назад, не возвращается. Ее можно получить с помощью запроса информации об отдельном заказе [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md) (если у вас есть идентификатор заказа) или запроса отчета по заказам [POST campaigns/{campaignId}/stats/orders](../../reference/stats/getOrdersStats.md).  Максимальный диапазон дат за один запрос к ресурсу — 30 дней.  Результаты возвращаются постранично. Для навигации по страницам используйте параметры `page_token` и `limit`.  Получить более подробную информацию о покупателе и его номере телефона можно с помощью запроса [GET campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/orders/getOrderBuyerInfo.md).  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOrders.md) %}  Возвращает информацию о заказах. Запрос можно использовать, чтобы узнать, нет ли новых заказов.  По умолчанию данные о тестовых заказах не приходят. Чтобы их получить, передайте значение `true` в параметре `fake`.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый заказ или изменится его статус. А полную информацию можно получить с помощью этого метода или [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md).  [{#T}](../../push-notifications/index.md)  {% endnote %}  Доступна фильтрация по нескольким характеристикам заказов:  * дате оформления;  * статусу;  * идентификаторам заказов;  * этапу обработки или причине отмены;  * типу (настоящий или тестовый);  * дате отгрузки в службу доставки;  * дате и времени обновления заказа.  Информация о заказах, доставленных или отмененных больше 30 дней назад, не возвращается. Ее можно получить с помощью запроса информации об отдельном заказе [GET campaigns/{campaignId}/orders/{orderId}](../../reference/orders/getOrder.md) (если у вас есть идентификатор заказа) или запроса отчета по заказам [POST campaigns/{campaignId}/stats/orders](../../reference/stats/getOrdersStats.md).  Максимальный диапазон дат за один запрос к ресурсу — 30 дней.  Результаты возвращаются постранично. Для навигации по страницам используйте параметры `page_token` и `limit`.  Получить более подробную информацию о покупателе и его номере телефона можно с помощью запроса [GET campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/orders/getOrderBuyerInfo.md).  {% note warning \"Ограничение для параметра `limit`\" %}  Не передавайте значение больше 50.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 100 000 запросов в час| |-|
 
 ### Example
 
@@ -4234,25 +4415,25 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $order_ids = array(56); // int[] | Фильтрация заказов по идентификаторам. <br><br> ⚠️ Не используйте это поле одновременно с другими фильтрами. Если вы хотите воспользоваться ими, оставьте поле пустым.
-$status = array(new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OrderStatusType()); // \OpenAPI\Client\Model\OrderStatusType[] | Статус заказа:  * `CANCELLED` — заказ отменен.  * `DELIVERED` — заказ получен покупателем.  * `DELIVERY` — заказ передан в службу доставки.  * `PICKUP` — заказ доставлен в пункт самовывоза.  * `PROCESSING` — заказ находится в обработке.  * `UNPAID` — заказ оформлен, но еще не оплачен (если выбрана оплата при оформлении).  Также могут возвращаться другие значения. Обрабатывать их не требуется.
-$substatus = array(new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OrderSubstatusType()); // \OpenAPI\Client\Model\OrderSubstatusType[] | Этап обработки заказа (если он имеет статус `PROCESSING`) или причина отмены заказа (если он имеет статус `CANCELLED`).  Возможные значения для заказа в статусе `PROCESSING`:  * `STARTED` — заказ подтвержден, его можно начать обрабатывать. * `READY_TO_SHIP` — заказ собран и готов к отправке. * `SHIPPED` — заказ передан службе доставки.  Возможные значения для заказа в статусе `CANCELLED`:  * `DELIVERY_SERVICE_UNDELIVERED` — служба доставки не смогла доставить заказ.  * `PROCESSING_EXPIRED` — значение более не используется.  * `REPLACING_ORDER` — покупатель решил заменить товар другим по собственной инициативе.  * `RESERVATION_EXPIRED` — покупатель не завершил оформление зарезервированного заказа в течение 10 минут.  * `RESERVATION_FAILED` — Маркет не может продолжить дальнейшую обработку заказа.  * `SHOP_FAILED` — магазин не может выполнить заказ.  * `USER_CHANGED_MIND` — покупатель отменил заказ по личным причинам.  * `USER_NOT_PAID` — покупатель не оплатил заказ (для типа оплаты `PREPAID`) в течение 30 минут.  * `USER_REFUSED_DELIVERY` — покупателя не устроили условия доставки.  * `USER_REFUSED_PRODUCT` — покупателю не подошел товар.  * `USER_REFUSED_QUALITY` — покупателя не устроило качество товара.  * `USER_UNREACHABLE` — не удалось связаться с покупателем. Для отмены с этой причиной необходимо выполнить условия:    * не менее 3 звонков с 8 до 21 в часовом поясе покупателя;   * перерыв между первым и третьим звонком не менее 90 минут;   * соединение не короче 5 секунд.    Если хотя бы одно из этих условий не выполнено (кроме случая, когда номер недоступен), отменить заказ не получится. Вернется ответ с кодом ошибки 400. * `USER_WANTS_TO_CHANGE_DELIVERY_DATE` — покупатель хочет получить заказ в другой день. * `CANCELLED_COURIER_NOT_FOUND` — не удалось найти курьера.  Также могут возвращаться другие значения. Обрабатывать их не требуется.
+$status = array(new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OrderStatusType()); // \OpenAPI\Client\Model\OrderStatusType[] | Статус заказа:  * `CANCELLED` — заказ отменен.  * `DELIVERED` — заказ получен покупателем.  * `DELIVERY` — заказ передан в службу доставки.  * `PICKUP` — заказ доставлен в пункт самовывоза.  * `PROCESSING` — заказ находится в обработке.  * `UNPAID` — заказ оформлен, но еще не оплачен (если выбрана оплата при оформлении).
+$substatus = array(new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OrderSubstatusType()); // \OpenAPI\Client\Model\OrderSubstatusType[] | Этап обработки заказа (если он имеет статус `PROCESSING`) или причина отмены заказа (если он имеет статус `CANCELLED`).  Возможные значения для заказа в статусе `PROCESSING`:  * `STARTED` — заказ подтвержден, его можно начать обрабатывать. * `READY_TO_SHIP` — заказ собран и готов к отправке. * `SHIPPED` — заказ передан службе доставки.  Возможные значения для заказа в статусе `CANCELLED`:  * `RESERVATION_EXPIRED` — покупатель не завершил оформление зарезервированного заказа в течение 10 минут.  * `USER_NOT_PAID` — покупатель не оплатил заказ (для типа оплаты `PREPAID`) в течение 30 минут.  * `USER_UNREACHABLE` — не удалось связаться с покупателем. Для отмены с этой причиной необходимо выполнить условия:    * не менее 3 звонков с 8 до 21 в часовом поясе покупателя;   * перерыв между первым и третьим звонком не менее 90 минут;   * соединение не короче 5 секунд.    Если хотя бы одно из этих условий не выполнено (кроме случая, когда номер недоступен), отменить заказ не получится. Вернется ответ с кодом ошибки 400  * `USER_CHANGED_MIND` — покупатель отменил заказ по личным причинам.  * `USER_REFUSED_DELIVERY` — покупателя не устроили условия доставки.  * `USER_REFUSED_PRODUCT` — покупателю не подошел товар.  * `SHOP_FAILED` — магазин не может выполнить заказ.  * `USER_REFUSED_QUALITY` — покупателя не устроило качество товара.  * `REPLACING_ORDER` — покупатель решил заменить товар другим по собственной инициативе.  * `PROCESSING_EXPIRED` — значение более не используется.  * `PICKUP_EXPIRED` — закончился срок хранения заказа в ПВЗ.  * `DELIVERY_SERVICE_UNDELIVERED` — служба доставки не смогла доставить заказ.  * `CANCELLED_COURIER_NOT_FOUND` — не удалось найти курьера.  * `USER_WANTS_TO_CHANGE_DELIVERY_DATE` — покупатель хочет получить заказ в другой день.  * `RESERVATION_FAILED` — Маркет не может продолжить дальнейшую обработку заказа.
 $from_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Начальная дата для фильтрации заказов по дате оформления.  Формат даты: `ДД-ММ-ГГГГ`.  Между начальной и конечной датой (параметр `toDate`) должно быть не больше 30 дней.  Значение по умолчанию: 30 дней назад от текущей даты.
-$to_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Конечная дата для фильтрации заказов по дате оформления.  Показываются заказы, созданные до 00:00 указанного дня.  Формат даты: `ДД-ММ-ГГГГ`.  Между начальной (параметр `fromDate`) и конечной датой должно быть не больше 30 дней.  Значение по умолчанию: текущая дата.
+$to_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Конечная дата для фильтрации заказов по дате оформления.  Показываются заказы, созданные до 00:00 указанного дня.  Формат даты: `ДД-ММ-ГГГГ`.  Между начальной (параметр `fromDate`) и конечной датой должно быть не больше 30 дней.  Значение по умолчанию: текущая дата.  Если промежуток времени между `toDate` и `fromDate` меньше суток, то `toDate` равен `fromDate` + сутки.
 $supplier_shipment_date_from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Начальная дата для фильтрации заказов по дате отгрузки в службу доставки (параметр `shipmentDate`).  Формат даты: `ДД-ММ-ГГГГ`.  Между начальной и конечной датой (параметр `supplierShipmentDateTo`) должно быть не больше 30 дней.  Начальная дата включается в интервал для фильтрации.
-$supplier_shipment_date_to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Конечная дата для фильтрации заказов по дате отгрузки в службу доставки (параметр `shipmentDate`).  Формат даты: `ДД-ММ-ГГГГ`.  Между начальной (параметр `supplierShipmentDateFrom`) и конечной датой должно быть не больше 30 дней.  Конечная дата не включается в интервал для фильтрации.
-$updated_at_from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Начальная дата для фильтрации заказов по дате и времени обновления (параметр `updatedAt`).  Формат даты: ISO 8601 со смещением относительно UTC. Например, `2017-11-21T00:42:42+03:00`.  Между начальной и конечной датой (параметр `updatedAtTo`) должно быть не больше 30 дней.  Начальная дата включается в интервал для фильтрации.
-$updated_at_to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Конечная дата для фильтрации заказов по дате и времени обновления (параметр `updatedAt`).  Формат даты: ISO 8601 со смещением относительно UTC. Например, `2017-11-21T00:42:42+03:00`.  Между начальной (параметр `updatedAtFrom`) и конечной датой должно быть не больше 30 дней.  Конечная дата не включается в интервал для фильтрации.
+$supplier_shipment_date_to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Конечная дата для фильтрации заказов по дате отгрузки в службу доставки (параметр `shipmentDate`).  Формат даты: `ДД-ММ-ГГГГ`.  Между начальной (параметр `supplierShipmentDateFrom`) и конечной датой должно быть не больше 30 дней.  Конечная дата не включается в интервал для фильтрации.  Если промежуток времени между `supplierShipmentDateTo` и `supplierShipmentDateFrom` меньше суток, то `supplierShipmentDateTo` равен `supplierShipmentDateFrom` + сутки.
+$updated_at_from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Начальная дата для фильтрации заказов по дате и времени обновления (параметр `updatedAt`).  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC]. Например, `2017-11-21T00:42:42+03:00`.  Между начальной и конечной датой (параметр `updatedAtTo`) должно быть не больше 30 дней.  Начальная дата включается в интервал для фильтрации.
+$updated_at_to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Конечная дата для фильтрации заказов по дате и времени обновления (параметр `updatedAt`).  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC]. Например, `2017-11-21T00:42:42+03:00`.  Между начальной (параметр `updatedAtFrom`) и конечной датой должно быть не больше 30 дней.  Конечная дата не включается в интервал для фильтрации.
 $dispatch_type = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OrderDeliveryDispatchType(); // \OpenAPI\Client\Model\OrderDeliveryDispatchType | Способ отгрузки
 $fake = false; // bool | Фильтрация заказов по типам:  * `false` — настоящий заказ покупателя.  * `true` — [тестовый](../../concepts/sandbox.md) заказ Маркета.
-$has_cis = false; // bool | Нужно ли вернуть только те заказы, в составе которых есть хотя бы один товар с кодом идентификации [в системе «Честный ЗНАК»](https://честныйзнак.рф/):  * `true` — да.  * `false` — нет.  Такие коды присваиваются товарам, которые подлежат маркировке и относятся к определенным категориям.
-$only_waiting_for_cancellation_approve = false; // bool | **Только для модели DBS**  Фильтрация заказов по наличию запросов покупателей на отмену.  При значение `true` возвращаются только заказы, которые находятся в статусе `DELIVERY` или `PICKUP` и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation).
+$has_cis = false; // bool | Нужно ли вернуть только те заказы, в составе которых есть хотя бы один товар с кодом идентификации в системе [:no-translate[«Честный ЗНАК»]](https://честныйзнак.рф/) или [:no-translate[«ASL BELGISI»]](https://aslbelgisi.uz) (для продавцов :no-translate[Market Yandex Go]):  * `true` — да.  * `false` — нет.  Такие коды присваиваются товарам, которые подлежат маркировке и относятся к определенным категориям.
+$only_waiting_for_cancellation_approve = false; // bool | **Только для модели DBS**  Фильтрация заказов по наличию запросов покупателей на отмену.  При значении `true` возвращаются только заказы, которые находятся в статусе `DELIVERY` или `PICKUP` и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation).
 $only_estimated_delivery = false; // bool | Фильтрация заказов с долгой доставкой (31-60 дней) по подтвержденной дате доставки:  * `true` — возвращаются только заказы с неподтвержденной датой доставки. * `false` — фильтрация не применяется.
 $buyer_type = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OrderBuyerType(); // \OpenAPI\Client\Model\OrderBuyerType | Фильтрация заказов по типу покупателя.
-$page = 1; // int | {% note warning \"Если в методе есть `page_token`\" %}  Используйте его вместо параметра `page`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `page_size`.  `page_number` игнорируется, если задан `page_token`, `limit` или `offset`.
-$page_size = 56; // int | Размер страницы.  Используется вместе с параметром `page_number`.  `page_size` игнорируется, если задан `page_token`, `limit` или `offset`.
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$page = 1; // int | {% note warning \"Если в методе есть :no-translate[`page_token`]\" %}  Используйте его вместо параметра :no-translate[`page`].  [Подробнее о типах пагинации и их использовании](:no-translate[../../concepts/pagination.md])  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром :no-translate[`pageSize`].  :no-translate[`page`] игнорируется, если задан :no-translate[`page_token`] или :no-translate[`limit`].
+$page_size = 56; // int | Размер страницы.  Используется вместе с параметром :no-translate[`page`].  :no-translate[`pageSize`] игнорируется, если задан :no-translate[`page_token`] или :no-translate[`limit`].
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 
 try {
@@ -4267,25 +4448,25 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **order_ids** | [**int[]**](../Model/int.md)| Фильтрация заказов по идентификаторам. &lt;br&gt;&lt;br&gt; ⚠️ Не используйте это поле одновременно с другими фильтрами. Если вы хотите воспользоваться ими, оставьте поле пустым. | [optional] |
-| **status** | [**\OpenAPI\Client\Model\OrderStatusType[]**](../Model/\OpenAPI\Client\Model\OrderStatusType.md)| Статус заказа:  * &#x60;CANCELLED&#x60; — заказ отменен.  * &#x60;DELIVERED&#x60; — заказ получен покупателем.  * &#x60;DELIVERY&#x60; — заказ передан в службу доставки.  * &#x60;PICKUP&#x60; — заказ доставлен в пункт самовывоза.  * &#x60;PROCESSING&#x60; — заказ находится в обработке.  * &#x60;UNPAID&#x60; — заказ оформлен, но еще не оплачен (если выбрана оплата при оформлении).  Также могут возвращаться другие значения. Обрабатывать их не требуется. | [optional] |
-| **substatus** | [**\OpenAPI\Client\Model\OrderSubstatusType[]**](../Model/\OpenAPI\Client\Model\OrderSubstatusType.md)| Этап обработки заказа (если он имеет статус &#x60;PROCESSING&#x60;) или причина отмены заказа (если он имеет статус &#x60;CANCELLED&#x60;).  Возможные значения для заказа в статусе &#x60;PROCESSING&#x60;:  * &#x60;STARTED&#x60; — заказ подтвержден, его можно начать обрабатывать. * &#x60;READY_TO_SHIP&#x60; — заказ собран и готов к отправке. * &#x60;SHIPPED&#x60; — заказ передан службе доставки.  Возможные значения для заказа в статусе &#x60;CANCELLED&#x60;:  * &#x60;DELIVERY_SERVICE_UNDELIVERED&#x60; — служба доставки не смогла доставить заказ.  * &#x60;PROCESSING_EXPIRED&#x60; — значение более не используется.  * &#x60;REPLACING_ORDER&#x60; — покупатель решил заменить товар другим по собственной инициативе.  * &#x60;RESERVATION_EXPIRED&#x60; — покупатель не завершил оформление зарезервированного заказа в течение 10 минут.  * &#x60;RESERVATION_FAILED&#x60; — Маркет не может продолжить дальнейшую обработку заказа.  * &#x60;SHOP_FAILED&#x60; — магазин не может выполнить заказ.  * &#x60;USER_CHANGED_MIND&#x60; — покупатель отменил заказ по личным причинам.  * &#x60;USER_NOT_PAID&#x60; — покупатель не оплатил заказ (для типа оплаты &#x60;PREPAID&#x60;) в течение 30 минут.  * &#x60;USER_REFUSED_DELIVERY&#x60; — покупателя не устроили условия доставки.  * &#x60;USER_REFUSED_PRODUCT&#x60; — покупателю не подошел товар.  * &#x60;USER_REFUSED_QUALITY&#x60; — покупателя не устроило качество товара.  * &#x60;USER_UNREACHABLE&#x60; — не удалось связаться с покупателем. Для отмены с этой причиной необходимо выполнить условия:    * не менее 3 звонков с 8 до 21 в часовом поясе покупателя;   * перерыв между первым и третьим звонком не менее 90 минут;   * соединение не короче 5 секунд.    Если хотя бы одно из этих условий не выполнено (кроме случая, когда номер недоступен), отменить заказ не получится. Вернется ответ с кодом ошибки 400. * &#x60;USER_WANTS_TO_CHANGE_DELIVERY_DATE&#x60; — покупатель хочет получить заказ в другой день. * &#x60;CANCELLED_COURIER_NOT_FOUND&#x60; — не удалось найти курьера.  Также могут возвращаться другие значения. Обрабатывать их не требуется. | [optional] |
+| **status** | [**\OpenAPI\Client\Model\OrderStatusType[]**](../Model/\OpenAPI\Client\Model\OrderStatusType.md)| Статус заказа:  * &#x60;CANCELLED&#x60; — заказ отменен.  * &#x60;DELIVERED&#x60; — заказ получен покупателем.  * &#x60;DELIVERY&#x60; — заказ передан в службу доставки.  * &#x60;PICKUP&#x60; — заказ доставлен в пункт самовывоза.  * &#x60;PROCESSING&#x60; — заказ находится в обработке.  * &#x60;UNPAID&#x60; — заказ оформлен, но еще не оплачен (если выбрана оплата при оформлении). | [optional] |
+| **substatus** | [**\OpenAPI\Client\Model\OrderSubstatusType[]**](../Model/\OpenAPI\Client\Model\OrderSubstatusType.md)| Этап обработки заказа (если он имеет статус &#x60;PROCESSING&#x60;) или причина отмены заказа (если он имеет статус &#x60;CANCELLED&#x60;).  Возможные значения для заказа в статусе &#x60;PROCESSING&#x60;:  * &#x60;STARTED&#x60; — заказ подтвержден, его можно начать обрабатывать. * &#x60;READY_TO_SHIP&#x60; — заказ собран и готов к отправке. * &#x60;SHIPPED&#x60; — заказ передан службе доставки.  Возможные значения для заказа в статусе &#x60;CANCELLED&#x60;:  * &#x60;RESERVATION_EXPIRED&#x60; — покупатель не завершил оформление зарезервированного заказа в течение 10 минут.  * &#x60;USER_NOT_PAID&#x60; — покупатель не оплатил заказ (для типа оплаты &#x60;PREPAID&#x60;) в течение 30 минут.  * &#x60;USER_UNREACHABLE&#x60; — не удалось связаться с покупателем. Для отмены с этой причиной необходимо выполнить условия:    * не менее 3 звонков с 8 до 21 в часовом поясе покупателя;   * перерыв между первым и третьим звонком не менее 90 минут;   * соединение не короче 5 секунд.    Если хотя бы одно из этих условий не выполнено (кроме случая, когда номер недоступен), отменить заказ не получится. Вернется ответ с кодом ошибки 400  * &#x60;USER_CHANGED_MIND&#x60; — покупатель отменил заказ по личным причинам.  * &#x60;USER_REFUSED_DELIVERY&#x60; — покупателя не устроили условия доставки.  * &#x60;USER_REFUSED_PRODUCT&#x60; — покупателю не подошел товар.  * &#x60;SHOP_FAILED&#x60; — магазин не может выполнить заказ.  * &#x60;USER_REFUSED_QUALITY&#x60; — покупателя не устроило качество товара.  * &#x60;REPLACING_ORDER&#x60; — покупатель решил заменить товар другим по собственной инициативе.  * &#x60;PROCESSING_EXPIRED&#x60; — значение более не используется.  * &#x60;PICKUP_EXPIRED&#x60; — закончился срок хранения заказа в ПВЗ.  * &#x60;DELIVERY_SERVICE_UNDELIVERED&#x60; — служба доставки не смогла доставить заказ.  * &#x60;CANCELLED_COURIER_NOT_FOUND&#x60; — не удалось найти курьера.  * &#x60;USER_WANTS_TO_CHANGE_DELIVERY_DATE&#x60; — покупатель хочет получить заказ в другой день.  * &#x60;RESERVATION_FAILED&#x60; — Маркет не может продолжить дальнейшую обработку заказа. | [optional] |
 | **from_date** | **\DateTime**| Начальная дата для фильтрации заказов по дате оформления.  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;.  Между начальной и конечной датой (параметр &#x60;toDate&#x60;) должно быть не больше 30 дней.  Значение по умолчанию: 30 дней назад от текущей даты. | [optional] |
-| **to_date** | **\DateTime**| Конечная дата для фильтрации заказов по дате оформления.  Показываются заказы, созданные до 00:00 указанного дня.  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;.  Между начальной (параметр &#x60;fromDate&#x60;) и конечной датой должно быть не больше 30 дней.  Значение по умолчанию: текущая дата. | [optional] |
+| **to_date** | **\DateTime**| Конечная дата для фильтрации заказов по дате оформления.  Показываются заказы, созданные до 00:00 указанного дня.  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;.  Между начальной (параметр &#x60;fromDate&#x60;) и конечной датой должно быть не больше 30 дней.  Значение по умолчанию: текущая дата.  Если промежуток времени между &#x60;toDate&#x60; и &#x60;fromDate&#x60; меньше суток, то &#x60;toDate&#x60; равен &#x60;fromDate&#x60; + сутки. | [optional] |
 | **supplier_shipment_date_from** | **\DateTime**| Начальная дата для фильтрации заказов по дате отгрузки в службу доставки (параметр &#x60;shipmentDate&#x60;).  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;.  Между начальной и конечной датой (параметр &#x60;supplierShipmentDateTo&#x60;) должно быть не больше 30 дней.  Начальная дата включается в интервал для фильтрации. | [optional] |
-| **supplier_shipment_date_to** | **\DateTime**| Конечная дата для фильтрации заказов по дате отгрузки в службу доставки (параметр &#x60;shipmentDate&#x60;).  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;.  Между начальной (параметр &#x60;supplierShipmentDateFrom&#x60;) и конечной датой должно быть не больше 30 дней.  Конечная дата не включается в интервал для фильтрации. | [optional] |
-| **updated_at_from** | **\DateTime**| Начальная дата для фильтрации заказов по дате и времени обновления (параметр &#x60;updatedAt&#x60;).  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-21T00:42:42+03:00&#x60;.  Между начальной и конечной датой (параметр &#x60;updatedAtTo&#x60;) должно быть не больше 30 дней.  Начальная дата включается в интервал для фильтрации. | [optional] |
-| **updated_at_to** | **\DateTime**| Конечная дата для фильтрации заказов по дате и времени обновления (параметр &#x60;updatedAt&#x60;).  Формат даты: ISO 8601 со смещением относительно UTC. Например, &#x60;2017-11-21T00:42:42+03:00&#x60;.  Между начальной (параметр &#x60;updatedAtFrom&#x60;) и конечной датой должно быть не больше 30 дней.  Конечная дата не включается в интервал для фильтрации. | [optional] |
+| **supplier_shipment_date_to** | **\DateTime**| Конечная дата для фильтрации заказов по дате отгрузки в службу доставки (параметр &#x60;shipmentDate&#x60;).  Формат даты: &#x60;ДД-ММ-ГГГГ&#x60;.  Между начальной (параметр &#x60;supplierShipmentDateFrom&#x60;) и конечной датой должно быть не больше 30 дней.  Конечная дата не включается в интервал для фильтрации.  Если промежуток времени между &#x60;supplierShipmentDateTo&#x60; и &#x60;supplierShipmentDateFrom&#x60; меньше суток, то &#x60;supplierShipmentDateTo&#x60; равен &#x60;supplierShipmentDateFrom&#x60; + сутки. | [optional] |
+| **updated_at_from** | **\DateTime**| Начальная дата для фильтрации заказов по дате и времени обновления (параметр &#x60;updatedAt&#x60;).  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC]. Например, &#x60;2017-11-21T00:42:42+03:00&#x60;.  Между начальной и конечной датой (параметр &#x60;updatedAtTo&#x60;) должно быть не больше 30 дней.  Начальная дата включается в интервал для фильтрации. | [optional] |
+| **updated_at_to** | **\DateTime**| Конечная дата для фильтрации заказов по дате и времени обновления (параметр &#x60;updatedAt&#x60;).  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC]. Например, &#x60;2017-11-21T00:42:42+03:00&#x60;.  Между начальной (параметр &#x60;updatedAtFrom&#x60;) и конечной датой должно быть не больше 30 дней.  Конечная дата не включается в интервал для фильтрации. | [optional] |
 | **dispatch_type** | [**\OpenAPI\Client\Model\OrderDeliveryDispatchType**](../Model/.md)| Способ отгрузки | [optional] |
 | **fake** | **bool**| Фильтрация заказов по типам:  * &#x60;false&#x60; — настоящий заказ покупателя.  * &#x60;true&#x60; — [тестовый](../../concepts/sandbox.md) заказ Маркета. | [optional] [default to false] |
-| **has_cis** | **bool**| Нужно ли вернуть только те заказы, в составе которых есть хотя бы один товар с кодом идентификации [в системе «Честный ЗНАК»](https://честныйзнак.рф/):  * &#x60;true&#x60; — да.  * &#x60;false&#x60; — нет.  Такие коды присваиваются товарам, которые подлежат маркировке и относятся к определенным категориям. | [optional] [default to false] |
-| **only_waiting_for_cancellation_approve** | **bool**| **Только для модели DBS**  Фильтрация заказов по наличию запросов покупателей на отмену.  При значение &#x60;true&#x60; возвращаются только заказы, которые находятся в статусе &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60; и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation). | [optional] [default to false] |
+| **has_cis** | **bool**| Нужно ли вернуть только те заказы, в составе которых есть хотя бы один товар с кодом идентификации в системе [:no-translate[«Честный ЗНАК»]](https://честныйзнак.рф/) или [:no-translate[«ASL BELGISI»]](https://aslbelgisi.uz) (для продавцов :no-translate[Market Yandex Go]):  * &#x60;true&#x60; — да.  * &#x60;false&#x60; — нет.  Такие коды присваиваются товарам, которые подлежат маркировке и относятся к определенным категориям. | [optional] [default to false] |
+| **only_waiting_for_cancellation_approve** | **bool**| **Только для модели DBS**  Фильтрация заказов по наличию запросов покупателей на отмену.  При значении &#x60;true&#x60; возвращаются только заказы, которые находятся в статусе &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60; и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation). | [optional] [default to false] |
 | **only_estimated_delivery** | **bool**| Фильтрация заказов с долгой доставкой (31-60 дней) по подтвержденной дате доставки:  * &#x60;true&#x60; — возвращаются только заказы с неподтвержденной датой доставки. * &#x60;false&#x60; — фильтрация не применяется. | [optional] [default to false] |
 | **buyer_type** | [**\OpenAPI\Client\Model\OrderBuyerType**](../Model/.md)| Фильтрация заказов по типу покупателя. | [optional] |
-| **page** | **int**| {% note warning \&quot;Если в методе есть &#x60;page_token&#x60;\&quot; %}  Используйте его вместо параметра &#x60;page&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;page_size&#x60;.  &#x60;page_number&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| Размер страницы.  Используется вместе с параметром &#x60;page_number&#x60;.  &#x60;page_size&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **page** | **int**| {% note warning \&quot;Если в методе есть :no-translate[&#x60;page_token&#x60;]\&quot; %}  Используйте его вместо параметра :no-translate[&#x60;page&#x60;].  [Подробнее о типах пагинации и их использовании](:no-translate[../../concepts/pagination.md])  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром :no-translate[&#x60;pageSize&#x60;].  :no-translate[&#x60;page&#x60;] игнорируется, если задан :no-translate[&#x60;page_token&#x60;] или :no-translate[&#x60;limit&#x60;]. | [optional] [default to 1] |
+| **page_size** | **int**| Размер страницы.  Используется вместе с параметром :no-translate[&#x60;page&#x60;].  :no-translate[&#x60;pageSize&#x60;] игнорируется, если задан :no-translate[&#x60;page_token&#x60;] или :no-translate[&#x60;limit&#x60;]. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 
 ### Return type
@@ -4313,7 +4494,7 @@ getOrdersStats($campaign_id, $page_token, $limit, $get_orders_stats_request): \O
 
 Детальная информация по заказам
 
-{% include notitle [access](../../_auto/method_scopes/getOrdersStats.md) %}  {% note info \"Раньше генерация детальной информации по заказам называлась «Отчет по заказам»\" %}  Сейчас это новый отчет. [Подробнее об отчете](../../reference/reports/generateUnitedOrdersReport.md)  {% endnote %}  Возвращает информацию по заказам на Маркете, в которых есть ваши товары. С помощью нее вы можете собрать статистику по вашим заказам и узнать, например, какие из товаров чаще всего возвращаются покупателями, какие, наоборот, пользуются большим спросом, какая комиссия начисляется за заказы и т. п.  {% note tip \"Информация по созданным или обновленным заказам может появиться с задержкой до 40 минут\" %}  Чтобы получить данные без задержки, используйте [метод получения информации о заказах](../../reference/orders/getOrders.md).  {% endnote %}  В одном запросе можно получить информацию не более чем по 200 заказам.  |**⚙️ Лимит:** 1 000 000 заказов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOrdersStats.md) %}  Возвращает информацию по заказам на Маркете, в которых есть ваши товары.  С помощью нее вы можете собрать статистику по вашим заказам и узнать, например, какие из товаров чаще всего возвращаются покупателями, какие, наоборот, пользуются большим спросом и т. п.  {% note tip \"Информация по созданным или обновленным заказам может появиться с задержкой до 40 минут\" %}  Чтобы получить данные без задержки, используйте [метод получения информации о заказах](../../reference/orders/getOrders.md).  {% endnote %}  В одном запросе можно получить информацию не более чем по 200 заказам.  |**:no-translate[⚙️] Лимит:** 1 000 000 заказов в час| |-|
 
 ### Example
 
@@ -4337,8 +4518,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 $get_orders_stats_request = new \OpenAPI\Client\Model\GetOrdersStatsRequest(); // \OpenAPI\Client\Model\GetOrdersStatsRequest
 
@@ -4354,8 +4535,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 | **get_orders_stats_request** | [**\OpenAPI\Client\Model\GetOrdersStatsRequest**](../Model/GetOrdersStatsRequest.md)|  | [optional] |
 
@@ -4384,7 +4565,7 @@ getPrices($campaign_id, $page_token, $limit, $archived): \OpenAPI\Client\Model\G
 
 Список цен
 
-{% include notitle [access](../../_auto/method_scopes/getPrices.md) %}  {% note warning \"Этот метод устарел\" %}  Вместо него используйте [POST campaigns/{campaignId}/offer-prices](../../reference/assortment/getPricesByOfferIds.md).  {% endnote %}  Возвращает список цен, установленных вами на товары любым способом: например, через партнерский API или в файле с каталогом.  {% note info \"Как считается общее количество товаров\" %}  По данным за последние семь дней (не включая сегодня) и не может быть выше 2 миллионов.  {% endnote %}  Способы установки цен описаны [в Справке Маркета для продавцов](https://yandex.ru/support/marketplace/assortment/operations/prices.html).  |**⚙️ Лимит:** ```(количество товаров партнера на витрине) * 25``` товаров в сутки| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getPrices.md) %}  {% note warning \"Какой метод использовать вместо устаревшего\" %}  [POST campaigns/{campaignId}/offer-prices](../../reference/assortment/getPricesByOfferIds.md)  {% endnote %}  Возвращает список цен, установленных вами на товары любым способом: например, через :no-translate[API] или в файле с каталогом.  {% note info \"Как считается общее количество товаров\" %}  По данным за последние семь дней (не включая сегодня) и не может быть выше 2 миллионов.  {% endnote %}  Способы установки цен описаны [в Справке Маркета для продавцов](https://yandex.ru/support/marketplace/assortment/operations/prices.html).  |**:no-translate[⚙️] Лимит:** 150 000 товаров в минуту| |-|
 
 ### Example
 
@@ -4408,8 +4589,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 $archived = false; // bool | Фильтр по нахождению в архиве.
 
@@ -4425,8 +4606,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 | **archived** | **bool**| Фильтр по нахождению в архиве. | [optional] [default to false] |
 
@@ -4453,9 +4634,9 @@ try {
 getPricesByOfferIds($campaign_id, $page_token, $limit, $get_prices_by_offer_ids_request): \OpenAPI\Client\Model\GetPricesByOfferIdsResponse
 ```
 
-Просмотр цен на указанные товары в магазине
+Просмотр цен на указанные товары в конкретном магазине
 
-{% include notitle [access](../../_auto/method_scopes/getPricesByOfferIds.md) %}  Возвращает список цен на указанные товары в магазине.  {% note warning \"Метод только для отдельных магазинов\" %}  Используйте этот метод, только если в кабинете установлены уникальные цены в отдельных магазинах.  Для просмотра цен, которые действуют во всех магазинах, используйте [POST businesses/{businessId}/offer-mappings](../../reference/business-assortment/getOfferMappings.md).  {% endnote %}  |**⚙️ Лимит:** рассчитывается по [формуле](*rule)| |-|  [//]: <> (rule: суточный лимит товаров — количество товаров на витрине * 25)
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getPricesByOfferIds.md) %}  Возвращает список цен на указанные товары в магазине.  {% note warning \"Метод только для отдельных магазинов\" %}  Используйте этот метод, только если в кабинете установлены уникальные цены в отдельных магазинах.  Для просмотра цен, которые действуют во всех магазинах, используйте [POST businesses/{businessId}/offer-mappings](../../reference/business-assortment/getOfferMappings.md).  {% endnote %}  |**:no-translate[⚙️] Лимит:** 150 000 товаров в минуту| |-|
 
 ### Example
 
@@ -4479,8 +4660,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 $get_prices_by_offer_ids_request = new \OpenAPI\Client\Model\GetPricesByOfferIdsRequest(); // \OpenAPI\Client\Model\GetPricesByOfferIdsRequest
 
@@ -4496,8 +4677,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 | **get_prices_by_offer_ids_request** | [**\OpenAPI\Client\Model\GetPricesByOfferIdsRequest**](../Model/GetPricesByOfferIdsRequest.md)|  | [optional] |
 
@@ -4526,7 +4707,7 @@ getPromoOffers($business_id, $get_promo_offers_request, $page_token, $limit): \O
 
 Получение списка товаров, которые участвуют или могут участвовать в акции
 
-{% include notitle [access](../../_auto/method_scopes/getPromoOffers.md) %}  Возвращает список товаров, которые участвуют или могут участвовать в акции.  {% note warning \"Ограничение для параметра `limit`\" %}  Не передавайте значение больше 500.  {% endnote %}  |**⚙️ Лимит:** 10000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getPromoOffers.md) %}  Возвращает список товаров, которые участвуют или могут участвовать в акции.  {% note warning \"Условия участия в акциях могут меняться\" %}  Например, `maxPromoPrice`.  Установленные цены меняться не будут — `price` и `promoPrice`.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 запросов в час, не более 500 товаров в запросе| |-|
 
 ### Example
 
@@ -4550,9 +4731,9 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $get_promo_offers_request = new \OpenAPI\Client\Model\GetPromoOffersRequest(); // \OpenAPI\Client\Model\GetPromoOffersRequest
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 
 try {
@@ -4567,9 +4748,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **get_promo_offers_request** | [**\OpenAPI\Client\Model\GetPromoOffersRequest**](../Model/GetPromoOffersRequest.md)|  | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 
 ### Return type
@@ -4597,7 +4778,7 @@ getPromos($business_id, $get_promos_request): \OpenAPI\Client\Model\GetPromosRes
 
 Получение списка акций
 
-{% include notitle [access](../../_auto/method_scopes/getPromos.md) %}  Возвращает информацию об акциях Маркета.  По умолчанию возвращаются акции, в которых продавец участвует или может принять участие.  Чтобы получить текущие или завершенные акции, передайте параметр `participation`.  Типы акций, которые возвращаются в ответе:  * прямая скидка; * флеш-акция; * скидка по промокоду.  |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getPromos.md) %}  Возвращает информацию об акциях Маркета. Не возвращает данные об акциях, которые создал продавец.  По умолчанию возвращаются акции, в которых продавец участвует или может принять участие.  Чтобы получить текущие или завершенные акции, передайте параметр `participation`.  Типы акций, которые возвращаются в ответе:  * прямая скидка; * флеш-акция; * скидка по промокоду.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -4621,7 +4802,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $get_promos_request = new \OpenAPI\Client\Model\GetPromosRequest(); // \OpenAPI\Client\Model\GetPromosRequest
 
 try {
@@ -4636,7 +4817,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **get_promos_request** | [**\OpenAPI\Client\Model\GetPromosRequest**](../Model/GetPromosRequest.md)|  | [optional] |
 
 ### Return type
@@ -4664,7 +4845,7 @@ getQualityRatings($business_id, $get_quality_rating_request): \OpenAPI\Client\Mo
 
 Индекс качества магазинов
 
-{% include notitle [access](../../_auto/method_scopes/getQualityRatings.md) %}  Возвращает значение индекса качества магазинов и его составляющие.  Подробнее об индексе качества читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/quality/score/).  |**⚙️ Лимит:** 10000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getQualityRatings.md) %}  Возвращает значение индекса качества магазинов и его составляющие.  Подробнее об индексе качества читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/quality/score/).  |**:no-translate[⚙️] Лимит:** 10 000 запросов в час| |-|
 
 ### Example
 
@@ -4688,7 +4869,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $get_quality_rating_request = new \OpenAPI\Client\Model\GetQualityRatingRequest(); // \OpenAPI\Client\Model\GetQualityRatingRequest
 
 try {
@@ -4703,7 +4884,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **get_quality_rating_request** | [**\OpenAPI\Client\Model\GetQualityRatingRequest**](../Model/GetQualityRatingRequest.md)|  | |
 
 ### Return type
@@ -4723,15 +4904,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getReportInfo()`
+## `getRegionsCodes()`
 
 ```php
-getReportInfo($report_id): \OpenAPI\Client\Model\GetReportInfoResponse
+getRegionsCodes(): \OpenAPI\Client\Model\GetRegionsCodesResponse
 ```
 
-Получение заданного отчета
+Список допустимых кодов стран
 
-{% include notitle [access](../../_auto/method_scopes/getReportInfo.md) %}  Возвращает статус генерации заданного отчета и, если отчет готов, ссылку для скачивания.  Чтобы воспользоваться этим запросом, вначале нужно запустить генерацию отчета. [Инструкция](../../step-by-step/reports.md)  |**⚙️ Лимит:** 100 запросов в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getRegionsCodes.md) %}  Возвращает список стран с их кодами в формате :no-translate[ISO 3166-1 alpha-2].  Страна производства `countryCode` понадобится при продаже товаров из-за рубежа для бизнеса. [Инструкция](../../step-by-step/business-info.md)  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -4755,7 +4936,69 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$report_id = 'report_id_example'; // string | Идентификатор отчета, который вы получили после запуска генерации.
+
+try {
+    $result = $apiInstance->getRegionsCodes();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getRegionsCodes: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetRegionsCodesResponse**](../Model/GetRegionsCodesResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getReportInfo()`
+
+```php
+getReportInfo($report_id): \OpenAPI\Client\Model\GetReportInfoResponse
+```
+
+Получение заданного отчета или документа
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getReportInfo.md) %}  Возвращает статус генерации заданного отчета или документа и, если он готов, ссылку для скачивания.  Чтобы воспользоваться этим запросом, вначале нужно запустить генерацию отчета или документа. [Инструкция](../../step-by-step/reports.md)  |**:no-translate[⚙️] Лимит:** 100 запросов в минуту| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$report_id = 'report_id_example'; // string | Идентификатор отчета или документа, который вы получили после запуска генерации.
 
 try {
     $result = $apiInstance->getReportInfo($report_id);
@@ -4769,7 +5012,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **report_id** | **string**| Идентификатор отчета, который вы получили после запуска генерации. | |
+| **report_id** | **string**| Идентификатор отчета или документа, который вы получили после запуска генерации. | |
 
 ### Return type
 
@@ -4796,7 +5039,7 @@ getReturn($campaign_id, $order_id, $return_id): \OpenAPI\Client\Model\GetReturnR
 
 Информация о невыкупе или возврате
 
-{% include notitle [access](../../_auto/method_scopes/getReturn.md) %}  Получает информацию по одному невыкупу или возврату.  |**⚙️ Лимит:** 10 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getReturn.md) %}  Получает информацию по одному невыкупу или возврату.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый невыкуп или возврат.  [{#T}](../../push-notifications/index.md)  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 запросов в час| |-|
 
 ### Example
 
@@ -4820,9 +5063,9 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $order_id = 56; // int | Идентификатор заказа.
-$return_id = 56; // int | Идентификатор возврата.
+$return_id = 56; // int | Идентификатор невыкупа или возврата.
 
 try {
     $result = $apiInstance->getReturn($campaign_id, $order_id, $return_id);
@@ -4836,9 +5079,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **order_id** | **int**| Идентификатор заказа. | |
-| **return_id** | **int**| Идентификатор возврата. | |
+| **return_id** | **int**| Идентификатор невыкупа или возврата. | |
 
 ### Return type
 
@@ -4857,15 +5100,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getReturnPhoto()`
+## `getReturnApplication()`
 
 ```php
-getReturnPhoto($campaign_id, $order_id, $return_id, $item_id, $image_hash): \SplFileObject
+getReturnApplication($campaign_id, $order_id, $return_id): \SplFileObject
 ```
 
-Получение фотографии возврата
+Получение заявления на возврат
 
-{% include notitle [access](../../_auto/method_scopes/getReturnPhoto.md) %}  Получает фотографии, которые покупатель приложил к заявлению на возврат товара.  |**⚙️ Лимит:** 10 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getReturnApplication.md) %}  Загружает заявление покупателя на возврат товара.  |**:no-translate[⚙️] Лимит:** 10 000 запросов в час| |-|
 
 ### Example
 
@@ -4889,9 +5132,78 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $order_id = 56; // int | Идентификатор заказа.
-$return_id = 56; // int | Идентификатор возврата.
+$return_id = 56; // int | Идентификатор невыкупа или возврата.
+
+try {
+    $result = $apiInstance->getReturnApplication($campaign_id, $order_id, $return_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getReturnApplication: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
+| **order_id** | **int**| Идентификатор заказа. | |
+| **return_id** | **int**| Идентификатор невыкупа или возврата. | |
+
+### Return type
+
+**\SplFileObject**
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/octet-stream`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getReturnPhoto()`
+
+```php
+getReturnPhoto($campaign_id, $order_id, $return_id, $item_id, $image_hash): \SplFileObject
+```
+
+Получение фотографий товаров в возврате
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getReturnPhoto.md) %}  Получает фотографии товаров, которые покупатель приложил к заявлению на возврат.  |**:no-translate[⚙️] Лимит:** 10 000 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
+$order_id = 56; // int | Идентификатор заказа.
+$return_id = 56; // int | Идентификатор невыкупа или возврата.
 $item_id = 56; // int | Идентификатор товара в возврате.
 $image_hash = 'image_hash_example'; // string | Хеш ссылки изображения для загрузки.
 
@@ -4907,9 +5219,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **order_id** | **int**| Идентификатор заказа. | |
-| **return_id** | **int**| Идентификатор возврата. | |
+| **return_id** | **int**| Идентификатор невыкупа или возврата. | |
 | **item_id** | **int**| Идентификатор товара в возврате. | |
 | **image_hash** | **string**| Хеш ссылки изображения для загрузки. | |
 
@@ -4938,7 +5250,7 @@ getReturns($campaign_id, $page_token, $limit, $order_ids, $statuses, $type, $fro
 
 Список невыкупов и возвратов
 
-{% include notitle [access](../../_auto/method_scopes/getReturns.md) %}  Получает список невыкупов и возвратов.  Чтобы получить информацию по одному возврату или невыкупу, выполните запрос [GET campaigns/{campaignId}/orders/{orderId}/returns/{returnId}](../../reference/orders/getReturn.md).  |**⚙️ Лимит:** 10 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getReturns.md) %}  Получает список невыкупов и возвратов.  Чтобы получить информацию по одному невыкупу или возврату, выполните запрос [GET campaigns/{campaignId}/orders/{orderId}/returns/{returnId}](../../reference/orders/getReturn.md).  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый невыкуп или возврат.  [{#T}](../../push-notifications/index.md)  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 запросов в час| |-|
 
 ### Example
 
@@ -4962,16 +5274,16 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 $order_ids = array(56); // int[] | Идентификаторы заказов — для фильтрации результатов.  Несколько идентификаторов перечисляются через запятую без пробела.
-$statuses = STARTED_BY_USER,WAITING_FOR_DECISION; // \OpenAPI\Client\Model\RefundStatusType[] | Статусы возвратов или невыкупов — для фильтрации результатов.  Несколько статусов перечисляются через запятую.
-$type = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReturnType(); // \OpenAPI\Client\Model\ReturnType | Тип заказа для фильтрации:  * `RETURN` — возврат.  * `UNREDEEMED` — невыкуп.  Если не указывать, в ответе будут и возвраты, и невыкупы.
-$from_date = 2022-10-31; // \DateTime | Начальная дата для фильтрации возвратов или невыкупов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
-$to_date = 2022-11-30; // \DateTime | Конечная дата для фильтрации возвратов или невыкупов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
-$from_date2 = 2022-10-31; // \DateTime | {% note warning \"Этот параметр устарел\" %}  Вместо него используйте `fromDate`.  {% endnote %}  Начальная дата для фильтрации возвратов или невыкупов по дате обновления.
-$to_date2 = 2022-11-30; // \DateTime | {% note warning \"Этот параметр устарел\" %}  Вместо него используйте `toDate`.  {% endnote %}  Конечная дата для фильтрации возвратов или невыкупов по дате обновления.
+$statuses = STARTED_BY_USER,WAITING_FOR_DECISION; // \OpenAPI\Client\Model\RefundStatusType[] | Статусы невыкупов или возвратов — для фильтрации результатов.  Несколько статусов перечисляются через запятую.
+$type = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReturnType(); // \OpenAPI\Client\Model\ReturnType | Тип заказа для фильтрации:  * `UNREDEEMED` — невыкуп.  * `RETURN` — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты.
+$from_date = 2022-10-31; // \DateTime | Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
+$to_date = 2022-11-30; // \DateTime | Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
+$from_date2 = 2022-10-31; // \DateTime | {% note warning \"Вместо него используйте `fromDate`.\" %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления.
+$to_date2 = 2022-11-30; // \DateTime | {% note warning \"Вместо него используйте `toDate`.\" %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления.
 
 try {
     $result = $apiInstance->getReturns($campaign_id, $page_token, $limit, $order_ids, $statuses, $type, $from_date, $to_date, $from_date2, $to_date2);
@@ -4985,16 +5297,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 | **order_ids** | [**int[]**](../Model/int.md)| Идентификаторы заказов — для фильтрации результатов.  Несколько идентификаторов перечисляются через запятую без пробела. | [optional] |
-| **statuses** | [**\OpenAPI\Client\Model\RefundStatusType[]**](../Model/\OpenAPI\Client\Model\RefundStatusType.md)| Статусы возвратов или невыкупов — для фильтрации результатов.  Несколько статусов перечисляются через запятую. | [optional] |
-| **type** | [**\OpenAPI\Client\Model\ReturnType**](../Model/.md)| Тип заказа для фильтрации:  * &#x60;RETURN&#x60; — возврат.  * &#x60;UNREDEEMED&#x60; — невыкуп.  Если не указывать, в ответе будут и возвраты, и невыкупы. | [optional] |
-| **from_date** | **\DateTime**| Начальная дата для фильтрации возвратов или невыкупов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
-| **to_date** | **\DateTime**| Конечная дата для фильтрации возвратов или невыкупов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
-| **from_date2** | **\DateTime**| {% note warning \&quot;Этот параметр устарел\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации возвратов или невыкупов по дате обновления. | [optional] |
-| **to_date2** | **\DateTime**| {% note warning \&quot;Этот параметр устарел\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации возвратов или невыкупов по дате обновления. | [optional] |
+| **statuses** | [**\OpenAPI\Client\Model\RefundStatusType[]**](../Model/\OpenAPI\Client\Model\RefundStatusType.md)| Статусы невыкупов или возвратов — для фильтрации результатов.  Несколько статусов перечисляются через запятую. | [optional] |
+| **type** | [**\OpenAPI\Client\Model\ReturnType**](../Model/.md)| Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. | [optional] |
+| **from_date** | **\DateTime**| Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
+| **to_date** | **\DateTime**| Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
+| **from_date2** | **\DateTime**| {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
+| **to_date2** | **\DateTime**| {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
 
 ### Return type
 
@@ -5021,7 +5333,7 @@ getStocks($campaign_id, $page_token, $limit, $get_warehouse_stocks_request): \Op
 
 Информация об остатках и оборачиваемости
 
-{% include notitle [access](../../_auto/method_scopes/getStocks.md) %}  Возвращает данные об остатках товаров (для всех моделей) и об [оборачиваемости](*turnover) товаров (для модели FBY).  **Для модели FBY:** информация об остатках может возвращаться с нескольких складов Маркета, у которых будут разные `warehouseId`. Получить список складов Маркета можно с помощью метода [GET warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).  {% note info \"По умолчанию данные по оборачивамости не возращаются\" %}  Чтобы они были в ответе, передавайте `true` в поле `withTurnover`.  {% endnote %}  |**⚙️ Лимит:** 100 000 товаров в минуту| |-|  [//]: <> (turnover: Среднее количество дней, за которое товар продается. Подробно об оборачиваемости рассказано в Справке Маркета для продавцов https://yandex.ru/support/marketplace/analytics/turnover.html.)
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getStocks.md) %}  Возвращает данные об остатках товаров (для всех моделей) и об [оборачиваемости](:no-translate[*turnover]) товаров (для модели :no-translate[FBY]).  **Для модели :no-translate[FBY]:** информация об остатках может возвращаться с нескольких складов Маркета, у которых будут разные `warehouseId`. Получить список складов Маркета можно с помощью метода [GET warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).  {% note info \"По умолчанию данные по оборачивамости не возращаются\" %}  Чтобы они были в ответе, передавайте `true` в поле `withTurnover`.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 100 000 товаров в минуту| |-|  [//]: <> (turnover: Среднее количество дней, за которое товар продается. Подробно об оборачиваемости рассказано в Справке Маркета для продавцов https://yandex.ru/support/marketplace/analytics/turnover.html.)
 
 ### Example
 
@@ -5045,8 +5357,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 $get_warehouse_stocks_request = new \OpenAPI\Client\Model\GetWarehouseStocksRequest(); // \OpenAPI\Client\Model\GetWarehouseStocksRequest
 
@@ -5062,8 +5374,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 | **get_warehouse_stocks_request** | [**\OpenAPI\Client\Model\GetWarehouseStocksRequest**](../Model/GetWarehouseStocksRequest.md)|  | [optional] |
 
@@ -5092,7 +5404,7 @@ getSuggestedOfferMappingEntries($campaign_id, $get_suggested_offer_mapping_entri
 
 Рекомендованные карточки для товаров
 
-{% include notitle [access](../../_auto/method_scopes/getSuggestedOfferMappingEntries.md) %}  {% note warning \"Этот метод устарел\" %}  Вместо него используйте [POST businesses/{businessId}/offer-mappings/suggestions](../../reference/business-assortment/getSuggestedOfferMappings.md).  {% endnote %}  Возвращает идентификаторы карточек товаров на Маркете, рекомендованных для ваших товаров.  Каждому товару, который вы размещаете, должна соответствовать карточка товара на Маркете со своим идентификатором — SKU на Маркете. Он указывается в URL карточки товара, после «...sku=», например:  ##https://market.yandex.ru/product--yandex-kniga/484830016?sku=484830016…##  Чтобы получить для товаров рекомендованные SKU на Маркете, передайте в теле POST-запроса как можно больше информации о них: названия, производителей, штрихкоды, цены и т. д.  Полученные SKU можно передать вместе с информацией о ваших товарах с помощью запроса [POST businesses/{businessId}/offer-mappings/update](../../reference/business-assortment/updateOfferMappings.md).  В одном запросе можно получить не более 500 рекомендаций.  |**⚙️ Лимит:** 100 000 рекомендаций в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getSuggestedOfferMappingEntries.md) %}  Возвращает идентификаторы карточек товаров на Маркете, рекомендованных для ваших товаров.  Каждому товару, который вы размещаете, должна соответствовать карточка товара на Маркете со своим идентификатором — :no-translate[SKU] на Маркете. Он указывается в :no-translate[URL] карточки товара, после :no-translate[«...sku=»], например:  ##https://market.yandex.ru/product--yandex-kniga/484830016?sku=484830016…##  Чтобы получить для товаров рекомендованные :no-translate[SKU] на Маркете, передайте в теле POST-запроса как можно больше информации о них: названия, производителей, штрихкоды, цены и т. д.  Полученные :no-translate[SKU] можно передать вместе с информацией о ваших товарах с помощью запроса [POST businesses/{businessId}/offer-mappings/update](../../reference/business-assortment/updateOfferMappings.md).  В одном запросе можно получить не более 500 рекомендаций.  |**:no-translate[⚙️] Лимит:** 100 000 рекомендаций в час| |-|
 
 ### Example
 
@@ -5116,7 +5428,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $get_suggested_offer_mapping_entries_request = new \OpenAPI\Client\Model\GetSuggestedOfferMappingEntriesRequest(); // \OpenAPI\Client\Model\GetSuggestedOfferMappingEntriesRequest
 
 try {
@@ -5131,7 +5443,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **get_suggested_offer_mapping_entries_request** | [**\OpenAPI\Client\Model\GetSuggestedOfferMappingEntriesRequest**](../Model/GetSuggestedOfferMappingEntriesRequest.md)|  | |
 
 ### Return type
@@ -5159,7 +5471,7 @@ getSuggestedOfferMappings($business_id, $get_suggested_offer_mappings_request): 
 
 Просмотр карточек на Маркете, которые подходят вашим товарам
 
-{% include notitle [access](../../_auto/method_scopes/getSuggestedOfferMappings.md) %}  Возвращает идентификаторы карточек на Маркете, которые соответствуют товарам с заданными параметрами.  Пользоваться этим запросом необязательно: он просто помогает заранее убедиться, что Маркет верно определяет карточки по предоставленным вами данным.  **Как пользоваться запросом**  1. Передайте Маркету список товаров, которые нужно проверить. 2. В ответ вы получите список SKU на Маркете с расшифровкой: названием, идентификатором модели, категорией. 3. Если расшифровки мало, вы можете открыть карточку. Для этого перейдите по ссылке вида `https://market.yandex.ru/product/<marketModelId>?sku=<marketSku>`. 4. Если карточка соответствует товару, значит его можно добавлять в каталог с теми данными, что вы указали. Если карточка определилась неправильно — проверьте данные о товаре. Возможно, их нужно уточнить или дополнить. Кроме того, на этапе добавления товара вы можете указать `marketSKU`, который ему подходит по вашему мнению.  {% note info \"Как определить `marketSku` товара, найденного на Маркете?\" %}  Он есть в адресе страницы товара — расположен после `sku=`.  Например, `https://market.yandex.ru/product--yandex-kniga/484830016?sku=484830016`  {% endnote %}  |**⚙️ Лимит:** 100 000 товаров в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getSuggestedOfferMappings.md) %}  Возвращает идентификаторы карточек на Маркете, которые соответствуют товарам с заданными параметрами.  Пользоваться этим запросом необязательно: он просто помогает заранее убедиться, что Маркет верно определяет карточки по предоставленным вами данным.  **Как пользоваться запросом**  1. Передайте Маркету список товаров, которые нужно проверить. 2. В ответ вы получите список :no-translate[SKU] на Маркете с расшифровкой: названием, идентификатором модели, категорией. 3. Если расшифровки мало, вы можете открыть карточку. Для этого перейдите по ссылке вида `https://market.yandex.ru/product/<marketModelId>?sku=<marketSku>`. 4. Если карточка соответствует товару, значит его можно добавлять в каталог с теми данными, что вы указали. Если карточка определилась неправильно — проверьте данные о товаре. Возможно, их нужно уточнить или дополнить. Кроме того, на этапе добавления товара вы можете указать `marketSKU`, который ему подходит по вашему мнению.  {% note info \"Как определить `marketSku` товара, найденного на Маркете?\" %}  Он есть в адресе страницы товара — расположен после `sku=`.  Например, `https://market.yandex.ru/product--yandex-kniga/484830016?sku=484830016`  {% endnote %}  |**:no-translate[⚙️] Лимит:** 100 000 товаров в час| |-|
 
 ### Example
 
@@ -5183,7 +5495,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $get_suggested_offer_mappings_request = new \OpenAPI\Client\Model\GetSuggestedOfferMappingsRequest(); // \OpenAPI\Client\Model\GetSuggestedOfferMappingsRequest
 
 try {
@@ -5198,7 +5510,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **get_suggested_offer_mappings_request** | [**\OpenAPI\Client\Model\GetSuggestedOfferMappingsRequest**](../Model/GetSuggestedOfferMappingsRequest.md)|  | [optional] |
 
 ### Return type
@@ -5226,7 +5538,7 @@ getSuggestedPrices($campaign_id, $suggest_prices_request): \OpenAPI\Client\Model
 
 Цены для продвижения товаров
 
-{% include notitle [access](../../_auto/method_scopes/getSuggestedPrices.md) %}  {% note warning \"Этот метод устарел\" %}  Не используйте его, это может привести к ошибкам. Информацию о ценах вы можете получить в помощью [отчета «Цены на рынке»](../../reference/reports/generatePricesReport.md).  {% endnote %}  {% note warning \"Метод только для некоторых магазинов\" %}  Этот метод подходит только тем магазинам, которые устанавливают цены на товары в рублях.  {% endnote %}  Возвращает цены для продвижения товаров, которые вы размещаете на Маркете.  Товары, для которых нужно получить цены, передаются в теле POST-запроса.  Цены для продвижения зависят от цен, установленных на товары другими партнерами. Если один товар поставляют несколько партнеров, на Маркете сначала продается товар с более низкой ценой. Когда закончится товар по низкой цене, начнет продаваться товар по более высокой цене.  Выходные данные содержат для каждого товара несколько цен, соответствующих разным типам продвижения.  Установить цены на товары можно с помощью запроса [POST campaigns/{campaignId}/offer-prices/updates](../../reference/assortment/updatePrices.md) или другими способами: например, указать их в файле с каталогом. Также вы можете использовать стратегии для автоматической установки рекомендованных цен или минимальных цен на Маркете.  Подробно об автоматическом управлении ценами рассказано [в Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/prices.html).  |**⚙️ Лимит:** 100 000 товаров в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getSuggestedPrices.md) %}  {% note warning \"Не используйте его, это может привести к ошибкам. Информацию о ценах вы можете получить в помощью [отчета «Цены на рынке»](../../reference/reports/generatePricesReport.md).\" %}     {% endnote %}  {% note warning \"Метод только для некоторых магазинов\" %}  Этот метод подходит только тем магазинам, которые устанавливают цены на товары в рублях.  {% endnote %}  Возвращает цены для продвижения товаров, которые вы размещаете на Маркете.  Товары, для которых нужно получить цены, передаются в теле POST-запроса.  Цены для продвижения зависят от цен, установленных на товары другими магазинами. Если один товар поставляют несколько магазинов, на Маркете сначала продается товар с более низкой ценой. Когда закончится товар по низкой цене, начнет продаваться товар по более высокой цене.  Выходные данные содержат для каждого товара несколько цен, соответствующих разным типам продвижения.  Установить цены на товары можно с помощью запроса [POST campaigns/{campaignId}/offer-prices/updates](../../reference/assortment/updatePrices.md) или другими способами: например, указать их в файле с каталогом. Также вы можете использовать стратегии для автоматической установки рекомендованных цен или минимальных цен на Маркете.  Подробно об автоматическом управлении ценами рассказано [в Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/prices.html).  |**:no-translate[⚙️] Лимит:** 100 000 товаров в час| |-|
 
 ### Example
 
@@ -5250,7 +5562,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $suggest_prices_request = new \OpenAPI\Client\Model\SuggestPricesRequest(); // \OpenAPI\Client\Model\SuggestPricesRequest
 
 try {
@@ -5265,7 +5577,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **suggest_prices_request** | [**\OpenAPI\Client\Model\SuggestPricesRequest**](../Model/SuggestPricesRequest.md)|  | |
 
 ### Return type
@@ -5285,15 +5597,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `putBidsForBusiness()`
+## `getSupplyRequestDocuments()`
 
 ```php
-putBidsForBusiness($business_id, $put_sku_bids_request): \OpenAPI\Client\Model\ApiResponse
+getSupplyRequestDocuments($campaign_id, $get_supply_request_documents_request): \OpenAPI\Client\Model\GetSupplyRequestDocumentsResponse
 ```
 
-Включение буста продаж и установка ставок
+Получение документов по заявке на поставку, вывоз или утилизацию
 
-{% include notitle [access](../../_auto/method_scopes/putBidsForBusiness.md) %}  Запускает буст продаж — создает и включает кампанию, добавляет в нее товары и назначает на них ставки.  {% cut \"Как в кабинете выглядит кампания, созданная через API\" %}  ![](../../_images/api-boost.png)  {% endcut %}  При первом использовании запроса Маркет: создаст единую на все магазины бизнес-аккаунта кампанию, добавит в нее товары с указанными ставками, включит для них ценовую стратегию и запустит продвижение. Повторное использование запроса позволит обновить ставки на товары в этой кампании или добавить новые. Подробнее о ценовой стратегии читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html#price-strategy).  Если товара с указанным SKU нет, он будет проигнорирован. Если в будущем в каталоге появится товар с таким SKU, он автоматически будет добавлен в кампанию с указанной ставкой.  Запрос всегда работает с одной и той же созданной через API кампанией. Если в кабинете удалить ее, при следующем выполнении запроса Маркет создаст новую. Другими кампаниями управлять через API не получится. У созданной через API кампании всегда наибольший приоритет над остальными — изменить его нельзя.  Выполнение запроса включает кампанию и ценовую стратегию, если они были отключены.  Внести другие изменения в созданную через API кампанию можно в кабинете:  * выключить или включить кампанию; * изменить ее название; * выключить или включить ценовую стратегию.  Чтобы остановить продвижение отдельных товаров и удалить их из кампании, передайте для них нулевую ставку в параметре `bid`.  Подробнее о том, как работает буст продаж, читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html).  {% note info \"Как посмотреть расходы на буст продаж?\" %}  Фактические расходы на буст указаны в отчете по заказам ([POST campaigns/{campaignId}/stats/orders](../../reference/stats/getOrdersStats.md)). Сумма содержится в поле `bidFee`.  {% endnote %}  В одном запросе может быть максимум 1500 товаров.  |**⚙️ Лимит:** 1000 запросов в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getSupplyRequestDocuments.md) %}  Возвращает документы по заявке.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -5317,7 +5629,216 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
+$get_supply_request_documents_request = new \OpenAPI\Client\Model\GetSupplyRequestDocumentsRequest(); // \OpenAPI\Client\Model\GetSupplyRequestDocumentsRequest
+
+try {
+    $result = $apiInstance->getSupplyRequestDocuments($campaign_id, $get_supply_request_documents_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getSupplyRequestDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
+| **get_supply_request_documents_request** | [**\OpenAPI\Client\Model\GetSupplyRequestDocumentsRequest**](../Model/GetSupplyRequestDocumentsRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetSupplyRequestDocumentsResponse**](../Model/GetSupplyRequestDocumentsResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getSupplyRequestItems()`
+
+```php
+getSupplyRequestItems($campaign_id, $get_supply_request_items_request, $page_token, $limit): \OpenAPI\Client\Model\GetSupplyRequestItemsResponse
+```
+
+Получение товаров в заявке на поставку, вывоз или утилизацию
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getSupplyRequestItems.md) %}  Возвращает список товаров в заявке и информацию по ним.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
+$get_supply_request_items_request = new \OpenAPI\Client\Model\GetSupplyRequestItemsRequest(); // \OpenAPI\Client\Model\GetSupplyRequestItemsRequest
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
+$limit = 20; // int | Количество значений на одной странице.
+
+try {
+    $result = $apiInstance->getSupplyRequestItems($campaign_id, $get_supply_request_items_request, $page_token, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getSupplyRequestItems: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
+| **get_supply_request_items_request** | [**\OpenAPI\Client\Model\GetSupplyRequestItemsRequest**](../Model/GetSupplyRequestItemsRequest.md)|  | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
+| **limit** | **int**| Количество значений на одной странице. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetSupplyRequestItemsResponse**](../Model/GetSupplyRequestItemsResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getSupplyRequests()`
+
+```php
+getSupplyRequests($campaign_id, $page_token, $limit, $get_supply_requests_request): \OpenAPI\Client\Model\GetSupplyRequestsResponse
+```
+
+Получение информации о заявках на поставку, вывоз и утилизацию
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getSupplyRequests.md) %}  По указанным фильтрам возвращает заявки на поставку, вывоз и утилизацию, а также информацию по ним.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
+$limit = 20; // int | Количество значений на одной странице.
+$get_supply_requests_request = new \OpenAPI\Client\Model\GetSupplyRequestsRequest(); // \OpenAPI\Client\Model\GetSupplyRequestsRequest
+
+try {
+    $result = $apiInstance->getSupplyRequests($campaign_id, $page_token, $limit, $get_supply_requests_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getSupplyRequests: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
+| **limit** | **int**| Количество значений на одной странице. | [optional] |
+| **get_supply_requests_request** | [**\OpenAPI\Client\Model\GetSupplyRequestsRequest**](../Model/GetSupplyRequestsRequest.md)|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetSupplyRequestsResponse**](../Model/GetSupplyRequestsResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `putBidsForBusiness()`
+
+```php
+putBidsForBusiness($business_id, $put_sku_bids_request): \OpenAPI\Client\Model\EmptyApiResponse
+```
+
+Включение буста продаж и установка ставок
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/putBidsForBusiness.md) %}  Запускает буст продаж — создает и включает кампанию, добавляет в нее товары и назначает на них ставки.  {% cut \"Как в кабинете выглядит кампания, созданная через :no-translate[API]\" %}  ![](../../_images/api-boost.png)  {% endcut %}  При первом использовании запроса Маркет: создаст единую на все магазины бизнес-аккаунта кампанию, добавит в нее товары с указанными ставками, включит для них ценовую стратегию и запустит продвижение. Повторное использование запроса позволит обновить ставки на товары в этой кампании или добавить новые. Подробнее о ценовой стратегии читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html#price-strategy).  Если товара с указанным :no-translate[SKU] нет, он будет проигнорирован. Если в будущем в каталоге появится товар с таким :no-translate[SKU], он автоматически будет добавлен в кампанию с указанной ставкой.  Запрос всегда работает с одной и той же созданной через :no-translate[API] кампанией. Если в кабинете удалить ее, при следующем выполнении запроса Маркет создаст новую. Другими кампаниями управлять через :no-translate[API] не получится. У созданной через :no-translate[API] кампании всегда наибольший приоритет над остальными — изменить его нельзя.  Выполнение запроса включает кампанию и ценовую стратегию, если они были отключены.  Внести другие изменения в созданную через :no-translate[API] кампанию можно в кабинете:  * выключить или включить кампанию; * изменить ее название; * выключить или включить ценовую стратегию.  Чтобы остановить продвижение отдельных товаров и удалить их из кампании, передайте для них нулевую ставку в параметре `bid`.  Подробнее о том, как работает буст продаж, читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html).  Узнать расходы на буст продаж можно с помощью запроса [POST campaigns/{campaignId}/stats/orders](../../reference/stats/getOrdersStats.md). Сумма содержится в поле `bidFee`.  {% note info \"Данные обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 1 000 запросов в минуту| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $put_sku_bids_request = new \OpenAPI\Client\Model\PutSkuBidsRequest(); // \OpenAPI\Client\Model\PutSkuBidsRequest | description
 
 try {
@@ -5332,12 +5853,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **put_sku_bids_request** | [**\OpenAPI\Client\Model\PutSkuBidsRequest**](../Model/PutSkuBidsRequest.md)| description | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -5355,12 +5876,12 @@ try {
 ## `putBidsForCampaign()`
 
 ```php
-putBidsForCampaign($campaign_id, $put_sku_bids_request): \OpenAPI\Client\Model\ApiResponse
+putBidsForCampaign($campaign_id, $put_sku_bids_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Включение буста продаж и установка ставок для магазина
 
-{% include notitle [access](../../_auto/method_scopes/putBidsForCampaign.md) %}  Запускает буст продаж в указанном магазине — создает и включает кампанию, добавляет в нее товары и назначает на них ставки.  При первом использовании запроса Маркет: создаст кампанию, добавит в нее товары с указанными ставками для заданного магазина, включит для них ценовую стратегию и запустит продвижение. Повторное использование запроса позволит обновить ставки на товары в этой кампании или добавить новые. Подробнее о ценовой стратегии читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html#price-strategy).  Если товара с указанным SKU нет, он будет проигнорирован. Если в будущем в каталоге появится товар с таким SKU, он автоматически будет добавлен в кампанию с указанной ставкой.  Запрос всегда работает с одной и той же кампанией, созданной через этот запрос или [PUT businesses/{businessId}/bids](/reference/bids/putBidsForBusiness). Если в кабинете удалить ее, при следующем выполнении запроса Маркет создаст новую. У созданной через API кампании всегда наибольший приоритет над остальными — изменить его нельзя.  Выполнение запроса включает кампанию и ценовую стратегию, если они были отключены.  Внести другие изменения в созданную через API кампанию можно в кабинете:  * выключить или включить кампанию; * изменить ее название; * выключить или включить ценовую стратегию.  Чтобы остановить продвижение отдельных товаров и удалить их из кампании, передайте для них нулевую ставку в параметре `bid`.  Подробнее о том, как работает буст продаж, читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html).  {% note info \"Как посмотреть расходы на буст продаж?\" %}  Фактические расходы на буст указаны в отчете по заказам ([POST campaigns/{campaignId}/stats/orders](../../reference/stats/getOrdersStats.md)). Сумма содержится в поле `bidFee`.  {% endnote %}  В одном запросе может быть максимум 1500 товаров.  |**⚙️ Лимит:** 1000 запросов в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/putBidsForCampaign.md) %}  Запускает буст продаж в указанном магазине — создает и включает кампанию, добавляет в нее товары и назначает на них ставки.  При первом использовании запроса Маркет: создаст кампанию, добавит в нее товары с указанными ставками для заданного магазина, включит для них ценовую стратегию и запустит продвижение. Повторное использование запроса позволит обновить ставки на товары в этой кампании или добавить новые. Подробнее о ценовой стратегии читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html#price-strategy).  Если товара с указанным :no-translate[SKU] нет, он будет проигнорирован. Если в будущем в каталоге появится товар с таким :no-translate[SKU], он автоматически будет добавлен в кампанию с указанной ставкой.  Запрос всегда работает с одной и той же кампанией, созданной через этот запрос или [PUT businesses/{businessId}/bids](/reference/bids/putBidsForBusiness). Если в кабинете удалить ее, при следующем выполнении запроса Маркет создаст новую. У созданной через :no-translate[API] кампании всегда наибольший приоритет над остальными — изменить его нельзя.  Выполнение запроса включает кампанию и ценовую стратегию, если они были отключены.  Внести другие изменения в созданную через :no-translate[API] кампанию можно в кабинете:  * выключить или включить кампанию; * изменить ее название; * выключить или включить ценовую стратегию.  Чтобы остановить продвижение отдельных товаров и удалить их из кампании, передайте для них нулевую ставку в параметре `bid`.  Подробнее о том, как работает буст продаж, читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html).  Узнать расходы на буст продаж можно с помощью запроса [POST campaigns/{campaignId}/stats/orders](../../reference/stats/getOrdersStats.md). Сумма содержится в поле `bidFee`.  {% note info \"Данные обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 1 000 запросов в минуту| |-|
 
 ### Example
 
@@ -5384,7 +5905,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $put_sku_bids_request = new \OpenAPI\Client\Model\PutSkuBidsRequest(); // \OpenAPI\Client\Model\PutSkuBidsRequest | description
 
 try {
@@ -5399,12 +5920,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **put_sku_bids_request** | [**\OpenAPI\Client\Model\PutSkuBidsRequest**](../Model/PutSkuBidsRequest.md)| description | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -5419,73 +5940,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `refreshFeed()`
-
-```php
-refreshFeed($campaign_id, $feed_id): \OpenAPI\Client\Model\ApiResponse
-```
-
-Сообщить, что прайс-лист обновился
-
-{% include notitle [access](../../_auto/method_scopes/refreshFeed.md) %}  {% note warning \"Этот метод устарел\" %}  Не используйте его.  {% endnote %}  Позволяет сообщить, что магазин обновил прайс-лист. После этого Маркет начнет обновление данных на сервисе. 1. Магазин обновляет прайс-лист, ссылку на который он указал в кабинете. 2. Магазин отправляет Маркету запрос методом `POST campaigns/{campaignId}/feeds/{feedId}/refresh`. 3. Маркет начинает обновление данных магазина на сервисе.  {% note alert \"Запрос работает только для включенных магазинов\" %}  Если магазин выключен, данные на Маркете не обновятся, даже если HTTP-код — `200 OK`. Проверить статус магазина можно с помощью базовых запросов или на странице бизнес-аккаунта.  {% endnote %}  |**⚙️ Лимит:** 3 запроса в час для одного прайс-листа| |-|
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
-
-// Configure OAuth2 access token for authorization: OAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new OpenAPI\Client\Api\FbyApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$feed_id = 56; // int | Идентификатор прайс-листа.
-
-try {
-    $result = $apiInstance->refreshFeed($campaign_id, $feed_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling FbyApi->refreshFeed: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **feed_id** | **int**| Идентификатор прайс-листа. | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
-
-### Authorization
-
-[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `searchRegionChildren()`
 
 ```php
@@ -5494,7 +5948,7 @@ searchRegionChildren($region_id, $page, $page_size): \OpenAPI\Client\Model\GetRe
 
 Информация о дочерних регионах
 
-{% include notitle [access](../../_auto/method_scopes/searchRegionChildren.md) %}  Возвращает информацию о регионах, являющихся дочерними по отношению к региону, идентификатор которого указан в запросе.  Для методов `GET regions`, `GET regions/{regionId}` и `GET regions/{regionId}/children` действует групповое ресурсное ограничение. Ограничение вводится на суммарное количество регионов, информация о которых запрошена при помощи этих методов (не более 100 000 регионов).  Объем запросов к ресурсу, который возможно выполнить в течение суток, зависит от суммарного количества регионов.  |**⚙️ Лимит:** 50 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/searchRegionChildren.md) %}  Возвращает информацию о регионах, являющихся дочерними по отношению к региону, идентификатор которого указан в запросе.  Для методов `GET regions`, `GET regions/{regionId}` и `GET regions/{regionId}/children` действует групповое ресурсное ограничение. Ограничение вводится на суммарное количество регионов, информация о которых запрошена при помощи этих методов (не более 100 000 регионов).  Объем запросов к ресурсу, который возможно выполнить в течение суток, зависит от суммарного количества регионов.  |**:no-translate[⚙️] Лимит:** 50 000 запросов в час| |-|
 
 ### Example
 
@@ -5518,9 +5972,9 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$region_id = 56; // int | Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET regions](../../reference/regions/searchRegionsByName.md).
-$page = 1; // int | {% note warning \"Если в методе есть `page_token`\" %}  Используйте его вместо параметра `page`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `page_size`.  `page_number` игнорируется, если задан `page_token`, `limit` или `offset`.
-$page_size = 56; // int | Размер страницы.  Используется вместе с параметром `page_number`.  `page_size` игнорируется, если задан `page_token`, `limit` или `offset`.
+$region_id = 56; // int | Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [:no-translate[GET regions]](:no-translate[../../reference/regions/searchRegionsByName.md]).
+$page = 1; // int | {% note warning \"Если в методе есть :no-translate[`page_token`]\" %}  Используйте его вместо параметра :no-translate[`page`].  [Подробнее о типах пагинации и их использовании](:no-translate[../../concepts/pagination.md])  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром :no-translate[`pageSize`].  :no-translate[`page`] игнорируется, если задан :no-translate[`page_token`] или :no-translate[`limit`].
+$page_size = 56; // int | Размер страницы.  Используется вместе с параметром :no-translate[`page`].  :no-translate[`pageSize`] игнорируется, если задан :no-translate[`page_token`] или :no-translate[`limit`].
 
 try {
     $result = $apiInstance->searchRegionChildren($region_id, $page, $page_size);
@@ -5534,9 +5988,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **region_id** | **int**| Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET regions](../../reference/regions/searchRegionsByName.md). | |
-| **page** | **int**| {% note warning \&quot;Если в методе есть &#x60;page_token&#x60;\&quot; %}  Используйте его вместо параметра &#x60;page&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;page_size&#x60;.  &#x60;page_number&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| Размер страницы.  Используется вместе с параметром &#x60;page_number&#x60;.  &#x60;page_size&#x60; игнорируется, если задан &#x60;page_token&#x60;, &#x60;limit&#x60; или &#x60;offset&#x60;. | [optional] |
+| **region_id** | **int**| Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [:no-translate[GET regions]](:no-translate[../../reference/regions/searchRegionsByName.md]). | |
+| **page** | **int**| {% note warning \&quot;Если в методе есть :no-translate[&#x60;page_token&#x60;]\&quot; %}  Используйте его вместо параметра :no-translate[&#x60;page&#x60;].  [Подробнее о типах пагинации и их использовании](:no-translate[../../concepts/pagination.md])  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром :no-translate[&#x60;pageSize&#x60;].  :no-translate[&#x60;page&#x60;] игнорируется, если задан :no-translate[&#x60;page_token&#x60;] или :no-translate[&#x60;limit&#x60;]. | [optional] [default to 1] |
+| **page_size** | **int**| Размер страницы.  Используется вместе с параметром :no-translate[&#x60;page&#x60;].  :no-translate[&#x60;pageSize&#x60;] игнорируется, если задан :no-translate[&#x60;page_token&#x60;] или :no-translate[&#x60;limit&#x60;]. | [optional] |
 
 ### Return type
 
@@ -5563,7 +6017,7 @@ searchRegionsById($region_id): \OpenAPI\Client\Model\GetRegionsResponse
 
 Информация о регионе
 
-{% include notitle [access](../../_auto/method_scopes/searchRegionsById.md) %}  Возвращает информацию о регионе.  Для методов `GET regions`, `GET regions/{regionId}` и `GET regions/{regionId}/children` действует групповое ресурсное ограничение. Ограничение вводится на суммарное количество регионов, информация о которых запрошена при помощи этих методов (не более 100 000 регионов).  Объем запросов к ресурсу, который возможно выполнить в течение суток, зависит от суммарного количества регионов.  |**⚙️ Лимит:** 50 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/searchRegionsById.md) %}  Возвращает информацию о регионе.  Для методов `GET regions`, `GET regions/{regionId}` и `GET regions/{regionId}/children` действует групповое ресурсное ограничение. Ограничение вводится на суммарное количество регионов, информация о которых запрошена при помощи этих методов (не более 100 000 регионов).  Объем запросов к ресурсу, который возможно выполнить в течение суток, зависит от суммарного количества регионов.  |**:no-translate[⚙️] Лимит:** 50 000 запросов в час| |-|
 
 ### Example
 
@@ -5587,7 +6041,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$region_id = 56; // int | Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET regions](../../reference/regions/searchRegionsByName.md).
+$region_id = 56; // int | Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [:no-translate[GET regions]](:no-translate[../../reference/regions/searchRegionsByName.md]).
 
 try {
     $result = $apiInstance->searchRegionsById($region_id);
@@ -5601,7 +6055,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **region_id** | **int**| Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET regions](../../reference/regions/searchRegionsByName.md). | |
+| **region_id** | **int**| Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [:no-translate[GET regions]](:no-translate[../../reference/regions/searchRegionsByName.md]). | |
 
 ### Return type
 
@@ -5628,7 +6082,7 @@ searchRegionsByName($name, $page_token, $limit): \OpenAPI\Client\Model\GetRegion
 
 Поиск регионов по их имени
 
-{% include notitle [access](../../_auto/method_scopes/searchRegionsByName.md) %}  Возвращает информацию о регионе, удовлетворяющем заданным в запросе условиям поиска.  Если найдено несколько регионов, удовлетворяющих условиям поиска, возвращается информация по каждому найденному региону (но не более десяти регионов) для возможности определения нужного региона по родительским регионам.  Для методов `GET regions`, `GET regions/{regionId}` и `GET regions/{regionId}/children` действует групповое ресурсное ограничение. Ограничение вводится на суммарное количество регионов, информация о которых запрошена при помощи этих методов (не более 100 000 регионов).  Объем запросов к ресурсу, который возможно выполнить в течение суток, зависит от суммарного количества регионов.  |**⚙️ Лимит:** 50 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/searchRegionsByName.md) %}  Возвращает информацию о регионе, удовлетворяющем заданным в запросе условиям поиска.  Если найдено несколько регионов, удовлетворяющих условиям поиска, возвращается информация по каждому найденному региону (но не более десяти регионов) для возможности определения нужного региона по родительским регионам.  Для методов `GET regions`, `GET regions/{regionId}` и `GET regions/{regionId}/children` действует групповое ресурсное ограничение. Ограничение вводится на суммарное количество регионов, информация о которых запрошена при помощи этих методов (не более 100 000 регионов).  Объем запросов к ресурсу, который возможно выполнить в течение суток, зависит от суммарного количества регионов.  |**:no-translate[⚙️] Лимит:** 50 000 запросов в час| |-|
 
 ### Example
 
@@ -5652,8 +6106,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$name = 'name_example'; // string | Название региона.  Важно учитывать регистр: первая буква должна быть заглавной, остальные — строчными. Например, `Москва`.
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `offset`, `page_number` и `page_size`, они игнорируются.
+$name = 'name_example'; // string | Название региона.  Важно учитывать регистр: первая буква должна быть заглавной, остальные — строчными. Например, :no-translate[`Москва`].
+$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[`nextPageToken`], полученное при последнем запросе.  Если задан :no-translate[`page_token`] и в запросе есть параметры :no-translate[`page`] и :no-translate[`pageSize`], они игнорируются.
 $limit = 20; // int | Количество значений на одной странице.
 
 try {
@@ -5668,8 +6122,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **name** | **string**| Название региона.  Важно учитывать регистр: первая буква должна быть заглавной, остальные — строчными. Например, &#x60;Москва&#x60;. | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуется передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;offset&#x60;, &#x60;page_number&#x60; и &#x60;page_size&#x60;, они игнорируются. | [optional] |
+| **name** | **string**| Название региона.  Важно учитывать регистр: первая буква должна быть заглавной, остальные — строчными. Например, :no-translate[&#x60;Москва&#x60;]. | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра :no-translate[&#x60;nextPageToken&#x60;], полученное при последнем запросе.  Если задан :no-translate[&#x60;page_token&#x60;] и в запросе есть параметры :no-translate[&#x60;page&#x60;] и :no-translate[&#x60;pageSize&#x60;], они игнорируются. | [optional] |
 | **limit** | **int**| Количество значений на одной странице. | [optional] |
 
 ### Return type
@@ -5692,12 +6146,12 @@ try {
 ## `sendFileToChat()`
 
 ```php
-sendFileToChat($business_id, $chat_id, $file): \OpenAPI\Client\Model\ApiResponse
+sendFileToChat($business_id, $chat_id, $file): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Отправка файла в чат
 
-{% include notitle [access](../../_auto/method_scopes/sendFileToChat.md) %}  Отправляет файл в чат с покупателем.  |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/sendFileToChat.md) %}  Отправляет файл в чат с покупателем.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -5721,7 +6175,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $chat_id = 56; // int | Идентификатор чата.
 $file = '/path/to/file.txt'; // \SplFileObject | Содержимое файла. Максимальный размер файла — 5 Мбайт.
 
@@ -5737,13 +6191,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **chat_id** | **int**| Идентификатор чата. | |
 | **file** | **\SplFileObject****\SplFileObject**| Содержимое файла. Максимальный размер файла — 5 Мбайт. | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -5761,12 +6215,12 @@ try {
 ## `sendMessageToChat()`
 
 ```php
-sendMessageToChat($business_id, $chat_id, $send_message_to_chat_request): \OpenAPI\Client\Model\ApiResponse
+sendMessageToChat($business_id, $chat_id, $send_message_to_chat_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Отправка сообщения в чат
 
-{% include notitle [access](../../_auto/method_scopes/sendMessageToChat.md) %}  Отправляет сообщение в чат с покупателем.  |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/sendMessageToChat.md) %}  Отправляет сообщение в чат с покупателем.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -5790,7 +6244,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $chat_id = 56; // int | Идентификатор чата.
 $send_message_to_chat_request = new \OpenAPI\Client\Model\SendMessageToChatRequest(); // \OpenAPI\Client\Model\SendMessageToChatRequest | description
 
@@ -5806,82 +6260,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **chat_id** | **int**| Идентификатор чата. | |
 | **send_message_to_chat_request** | [**\OpenAPI\Client\Model\SendMessageToChatRequest**](../Model/SendMessageToChatRequest.md)| description | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
-
-### Authorization
-
-[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `setFeedParams()`
-
-```php
-setFeedParams($campaign_id, $feed_id, $set_feed_params_request): \OpenAPI\Client\Model\ApiResponse
-```
-
-Изменение параметров прайс-листа
-
-{% include notitle [access](../../_auto/method_scopes/setFeedParams.md) %}  {% note warning \"Этот метод устарел\" %}  Не используйте его.  {% endnote %}  Позволяет магазину изменить параметры прайс-листа.  Чтобы отредактировать параметр прайс-листа, передайте в теле запроса: `name` (название параметра) и `value` (значение параметра).  Чтобы отменить установленное значение, передайте в теле запроса: `name` (название параметра) и `delete=true` (удалить значение).  |**⚙️ Лимит:** 3 запроса в час для одного прайс-листа| |-|
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
-
-// Configure OAuth2 access token for authorization: OAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new OpenAPI\Client\Api\FbyApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$feed_id = 56; // int | Идентификатор прайс-листа.
-$set_feed_params_request = new \OpenAPI\Client\Model\SetFeedParamsRequest(); // \OpenAPI\Client\Model\SetFeedParamsRequest
-
-try {
-    $result = $apiInstance->setFeedParams($campaign_id, $feed_id, $set_feed_params_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling FbyApi->setFeedParams: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **feed_id** | **int**| Идентификатор прайс-листа. | |
-| **set_feed_params_request** | [**\OpenAPI\Client\Model\SetFeedParamsRequest**](../Model/SetFeedParamsRequest.md)|  | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -5899,12 +6284,12 @@ try {
 ## `skipGoodsFeedbacksReaction()`
 
 ```php
-skipGoodsFeedbacksReaction($business_id, $skip_goods_feedback_reaction_request): \OpenAPI\Client\Model\ApiResponse
+skipGoodsFeedbacksReaction($business_id, $skip_goods_feedback_reaction_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
-Отказ от ответа на отзывы
+Пропуск реакции на отзывы
 
-{% include notitle [access](../../_auto/method_scopes/skipGoodsFeedbacksReaction.md) %}  Пропускает отзывы — они больше не будут возвращаться в методе получения всех отзывов [POST businesses/{businessId}/goods-feedback](../../reference/goods-feedback/getGoodsFeedbacks.md).  |**⚙️ Лимит:** 1 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/skipGoodsFeedbacksReaction.md) %}  Пропускает реакцию на отзыв — параметр `needReaction` принимает значение `false` в методе получения всех отзывов [POST businesses/{businessId}/goods-feedback](../../reference/goods-feedback/getGoodsFeedbacks.md).  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -5928,7 +6313,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $skip_goods_feedback_reaction_request = new \OpenAPI\Client\Model\SkipGoodsFeedbackReactionRequest(); // \OpenAPI\Client\Model\SkipGoodsFeedbackReactionRequest
 
 try {
@@ -5943,12 +6328,83 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **skip_goods_feedback_reaction_request** | [**\OpenAPI\Client\Model\SkipGoodsFeedbackReactionRequest**](../Model/SkipGoodsFeedbackReactionRequest.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `submitReturnDecision()`
+
+```php
+submitReturnDecision($campaign_id, $order_id, $return_id, $submit_return_decision_request): \OpenAPI\Client\Model\EmptyApiResponse
+```
+
+Передача и подтверждение решения по возврату
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/submitReturnDecision.md) %}  Позволяет выполнить одну из операций:  * **Для моделей :no-translate[FBS], Экспресс и :no-translate[DBS]:** передать список решений по возврату и подтвердить их.  * **Для модели :no-translate[DBS]:** подтвердить решение, переданное в [POST campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision](../../reference/orders/setReturnDecision.md). Для этого используйте запрос без тела.  |**:no-translate[⚙️] Лимит:** 10 000 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
+$order_id = 56; // int | Идентификатор заказа.
+$return_id = 56; // int | Идентификатор невыкупа или возврата.
+$submit_return_decision_request = new \OpenAPI\Client\Model\SubmitReturnDecisionRequest(); // \OpenAPI\Client\Model\SubmitReturnDecisionRequest | description
+
+try {
+    $result = $apiInstance->submitReturnDecision($campaign_id, $order_id, $return_id, $submit_return_decision_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->submitReturnDecision: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
+| **order_id** | **int**| Идентификатор заказа. | |
+| **return_id** | **int**| Идентификатор невыкупа или возврата. | |
+| **submit_return_decision_request** | [**\OpenAPI\Client\Model\SubmitReturnDecisionRequest**](../Model/SubmitReturnDecisionRequest.md)| description | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -5966,12 +6422,12 @@ try {
 ## `updateBusinessPrices()`
 
 ```php
-updateBusinessPrices($business_id, $update_business_prices_request): \OpenAPI\Client\Model\ApiResponse
+updateBusinessPrices($business_id, $update_business_prices_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Установка цен на товары для всех магазинов
 
-{% include notitle [access](../../_auto/method_scopes/updateBusinessPrices.md) %}  Устанавливает цены, которые действуют во всех магазинах. Чтобы получить рекомендации Маркета, касающиеся цен, выполните запрос [POST businesses/{businessId}/offers/recommendations](../../reference/business-assortment/getOfferRecommendations.md).  При необходимости передавайте НДС с помощью параметра `vat` в запросе [POST campaigns/{campaignId}/offers/update](../../reference/assortment/updateCampaignOffers.md).  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**⚙️ Лимит:** 5000 товаров в минуту, не более 500 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateBusinessPrices.md) %}  Устанавливает цены, которые действуют во всех магазинах. Чтобы получить рекомендации Маркета, касающиеся цен, выполните запрос [POST businesses/{businessId}/offers/recommendations](../../reference/business-assortment/getOfferRecommendations.md).  При необходимости передавайте НДС с помощью параметра `vat` в запросе [POST campaigns/{campaignId}/offers/update](../../reference/assortment/updateCampaignOffers.md).  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 500 товаров в одном запросе| |-|
 
 ### Example
 
@@ -5995,7 +6451,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $update_business_prices_request = new \OpenAPI\Client\Model\UpdateBusinessPricesRequest(); // \OpenAPI\Client\Model\UpdateBusinessPricesRequest
 
 try {
@@ -6010,12 +6466,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **update_business_prices_request** | [**\OpenAPI\Client\Model\UpdateBusinessPricesRequest**](../Model/UpdateBusinessPricesRequest.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -6033,12 +6489,12 @@ try {
 ## `updateCampaignOffers()`
 
 ```php
-updateCampaignOffers($campaign_id, $update_campaign_offers_request): \OpenAPI\Client\Model\ApiResponse
+updateCampaignOffers($campaign_id, $update_campaign_offers_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Изменение условий продажи товаров в магазине
 
-{% include notitle [access](../../_auto/method_scopes/updateCampaignOffers.md) %}  Изменяет параметры продажи товаров в конкретном магазине: доступность товара, условия доставки и самовывоза, применяемый НДС.  |**⚙️ Лимит:** 5000 товаров в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateCampaignOffers.md) %}  Изменяет параметры размещения товаров в конкретном магазине: доступность товара, продажа квантами и применяемый НДС.  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту| |-|
 
 ### Example
 
@@ -6062,7 +6518,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $update_campaign_offers_request = new \OpenAPI\Client\Model\UpdateCampaignOffersRequest(); // \OpenAPI\Client\Model\UpdateCampaignOffersRequest
 
 try {
@@ -6077,12 +6533,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **update_campaign_offers_request** | [**\OpenAPI\Client\Model\UpdateCampaignOffersRequest**](../Model/UpdateCampaignOffersRequest.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -6105,7 +6561,7 @@ updateGoodsFeedbackComment($business_id, $update_goods_feedback_comment_request)
 
 Добавление нового или изменение созданного комментария
 
-{% include notitle [access](../../_auto/method_scopes/updateGoodsFeedbackComment.md) %}  Добавляет новый комментарий магазина или изменяет комментарий, который магазин оставлял ранее.  Для создания комментария к отзыву передайте только идентификатор отзыва `feedbackId`.  Чтобы добавить комментарий к другому комментарию, передайте:  * `feedbackId` — идентификатор отзыва; * `comment.parentId` — идентификатор родительского комментария.  Чтобы изменить комментарий, передайте:  * `feedbackId`— идентификатор отзыва; * `comment.id` — идентификатор комментария, который нужно изменить.  Если передать одновременно `comment.parentId` и `comment.id`, будет изменен существующий комментарий.  |**⚙️ Лимит:** 1 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateGoodsFeedbackComment.md) %}  Добавляет новый комментарий магазина или изменяет комментарий, который магазин оставлял ранее.  Для создания комментария к отзыву передайте только идентификатор отзыва `feedbackId`.  Чтобы добавить комментарий к другому комментарию, передайте:  * `feedbackId` — идентификатор отзыва; * `comment.parentId` — идентификатор родительского комментария.  Чтобы изменить комментарий, передайте:  * `feedbackId`— идентификатор отзыва; * `comment.id` — идентификатор комментария, который нужно изменить.  Если передать одновременно `comment.parentId` и `comment.id`, будет изменен существующий комментарий.  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -6129,7 +6585,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $update_goods_feedback_comment_request = new \OpenAPI\Client\Model\UpdateGoodsFeedbackCommentRequest(); // \OpenAPI\Client\Model\UpdateGoodsFeedbackCommentRequest
 
 try {
@@ -6144,7 +6600,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **update_goods_feedback_comment_request** | [**\OpenAPI\Client\Model\UpdateGoodsFeedbackCommentRequest**](../Model/UpdateGoodsFeedbackCommentRequest.md)|  | |
 
 ### Return type
@@ -6172,7 +6628,7 @@ updateOfferContent($business_id, $update_offer_content_request): \OpenAPI\Client
 
 Редактирование категорийных характеристик товара
 
-{% include notitle [access](../../_auto/method_scopes/updateOfferContent.md) %}  Редактирует характеристики товара, которые специфичны для категории, к которой он относится.  {% note warning \"Здесь только то, что относится к конкретной категории\" %}  Если вам нужно изменить основные параметры товара (название, описание, изображения, видео, производитель, штрихкод), воспользуйтесь запросом [POST businesses/{businessId}/offer-mappings/update](../../reference/business-assortment/updateOfferMappings.md).  {% endnote %}  Чтобы удалить характеристики, которые заданы в параметрах с типом `string`, передайте пустое значение.  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**⚙️ Лимит:** 5000 товаров в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateOfferContent.md) %}  Редактирует характеристики товара, которые специфичны для категории, к которой он относится.  {% note warning \"Здесь только то, что относится к конкретной категории\" %}  Если вам нужно изменить основные параметры товара (название, описание, изображения, видео, производитель, штрихкод), воспользуйтесь запросом [POST businesses/{businessId}/offer-mappings/update](../../reference/business-assortment/updateOfferMappings.md).  {% endnote %}  Чтобы удалить характеристики, которые заданы в параметрах с типом `string`, передайте пустое значение.  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту| |-|
 
 ### Example
 
@@ -6196,7 +6652,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $update_offer_content_request = new \OpenAPI\Client\Model\UpdateOfferContentRequest(); // \OpenAPI\Client\Model\UpdateOfferContentRequest
 
 try {
@@ -6211,7 +6667,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **update_offer_content_request** | [**\OpenAPI\Client\Model\UpdateOfferContentRequest**](../Model/UpdateOfferContentRequest.md)|  | |
 
 ### Return type
@@ -6234,12 +6690,12 @@ try {
 ## `updateOfferMappingEntries()`
 
 ```php
-updateOfferMappingEntries($campaign_id, $update_offer_mapping_entry_request): \OpenAPI\Client\Model\ApiResponse
+updateOfferMappingEntries($campaign_id, $update_offer_mapping_entry_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Добавление и редактирование товаров в каталоге
 
-{% include notitle [access](../../_auto/method_scopes/updateOfferMappingEntries.md) %}  {% note warning \"Этот метод устарел\" %}  Вместо него используйте [POST businesses/{businessId}/offer-mappings/update](../../reference/business-assortment/updateOfferMappings.md).  {% endnote %}  Добавляет товары, указанные в запросе, в ваш каталог товаров и редактирует уже имеющиеся товары.  Информацию о товарах нужно передать в теле POST-запроса.  У каждого товара должен быть ваш SKU — уникальный код, который вы используете для идентификации товара:  * Чтобы добавить в каталог новый товар, укажите в параметре `shopSku` ваш SKU, которого еще нет в каталоге. * Чтобы отредактировать товар из каталога, укажите в параметре `shopSku` ваш SKU этого товара в каталоге.  В обоих случаях в запросе нужно передать полное описание товара, даже если вы хотите изменить только несколько характеристик.  Если вы знаете, какой карточке товара на Маркете соответствует ваш товар, укажите ее идентификатор (SKU на Маркете) во входном параметре mapping. Получить SKU на Маркете рекомендованной карточки товара можно с помощью запроса [POST businesses/{businessId}/offer-mappings/suggestions](../../reference/business-assortment/getSuggestedOfferMappings.md) или через кабинет. Если SKU на Маркете не указан, сотрудники Маркета сами подберут или создадут подходящую карточку товара, либо у него появится статус `NEED_CONTENT` (нужно найти карточку или создать ее самостоятельно) в выходных данных запроса [POST businesses/{businessId}/offer-mappings](../../reference/business-assortment/getOfferMappings.md).  Перед публикацией товары проходят модерацию. Если в одном из отправленных товаров найдена ошибка, ответ на запрос будет иметь HTTP-код 400 Bad Request, и ни один из товаров не отправится на модерацию. При этом если вы не передадите все обязательные параметры для какого‑либо товара, после модерации у него появится статус `NEED_INFO` (в описании товара не хватает информации) в выходных данных запроса [POST businesses/{businessId}/offer-mappings](../../reference/business-assortment/getOfferMappings.md).  В одном запросе можно добавить не более 500 товаров.  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**⚙️ Лимит:** 5 000 товаров в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateOfferMappingEntries.md) %}  {% note warning \"Какой метод использовать вместо устаревшего\" %}  [POST businesses/{businessId}/offer-mappings/update](../../reference/business-assortment/updateOfferMappings.md)  {% endnote %}  Добавляет товары, указанные в запросе, в ваш каталог товаров и редактирует уже имеющиеся товары.  Информацию о товарах нужно передать в теле POST-запроса.  У каждого товара должен быть ваш :no-translate[SKU] — уникальный код, который вы используете для идентификации товара:  * Чтобы добавить в каталог новый товар, укажите в параметре `shopSku` ваш :no-translate[SKU], которого еще нет в каталоге. * Чтобы отредактировать товар из каталога, укажите в параметре `shopSku` ваш :no-translate[SKU] этого товара в каталоге.  В обоих случаях в запросе нужно передать полное описание товара, даже если вы хотите изменить только несколько характеристик.  Если вы знаете, какой карточке товара на Маркете соответствует ваш товар, укажите ее идентификатор (:no-translate[SKU] на Маркете) во входном параметре `mapping`. Получить :no-translate[SKU] на Маркете рекомендованной карточки товара можно через кабинет. Если :no-translate[SKU] на Маркете не указан, сотрудники Маркета сами подберут или создадут подходящую карточку товара, либо у него появится статус `NEED_CONTENT` (нужно найти карточку или создать ее самостоятельно) в выходных данных запроса [POST businesses/{businessId}/offer-mappings](../../reference/business-assortment/getOfferMappings.md).  Перед публикацией товары проходят модерацию. Если в одном из отправленных товаров найдена ошибка, ответ на запрос будет иметь HTTP-код :no-translate[400 Bad Request], и ни один из товаров не отправится на модерацию. При этом если вы не передадите все обязательные параметры для какого‑либо товара, после модерации у него появится статус `NEED_INFO` (в описании товара не хватает информации) в выходных данных запроса [POST businesses/{businessId}/offer-mappings](../../reference/business-assortment/getOfferMappings.md).  В одном запросе можно добавить не более 500 товаров.  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 5 000 товаров в минуту| |-|
 
 ### Example
 
@@ -6263,7 +6719,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $update_offer_mapping_entry_request = new \OpenAPI\Client\Model\UpdateOfferMappingEntryRequest(); // \OpenAPI\Client\Model\UpdateOfferMappingEntryRequest
 
 try {
@@ -6278,12 +6734,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **update_offer_mapping_entry_request** | [**\OpenAPI\Client\Model\UpdateOfferMappingEntryRequest**](../Model/UpdateOfferMappingEntryRequest.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -6306,7 +6762,7 @@ updateOfferMappings($business_id, $update_offer_mappings_request, $language): \O
 
 Добавление товаров в каталог и изменение информации о них
 
-{% include notitle [access](../../_auto/method_scopes/updateOfferMappings.md) %}  Добавляет товары в каталог, передает их категории на Маркете и характеристики, необходимые для этих категории. Также редактирует информацию об уже имеющихся товарах.  Список категорий Маркета можно получить с помощью запроса [POST categories/tree](../../reference/categories/getCategoriesTree.md), а характеристики товаров по категориям с помощью [POST category/{categoryId}/parameters](../../reference/content/getCategoryContentParameters.md).  Чтобы **добавить новый товар**, передайте его с новым идентификатором, который раньше никогда не использовался в каталоге. Старайтесь сразу передать как можно больше информации — она потребуется Маркету для подбора подходящей карточки или создания новой. Если известно, какой карточке на Маркете соответствует товар, можно сразу указать идентификатор этой карточки (**SKU на Маркете**) в поле `marketSKU`.  Для **новых товаров** обязательно укажите параметры: `offerId`, `name`, `marketCategoryId`, `pictures`, `vendor`, `description`.  Чтобы **отредактировать информацию о товаре**, передайте новые данные, указав в `offerId` соответствующий **ваш SKU**. Поля, в которых ничего не меняется, можно не передавать.  Чтобы **удалить характеристики**, которые заданы в параметрах с типом `string`, передайте пустое значение.  Параметр `offerId` должен быть **уникальным** для всех товаров, которые вы передаете.  {% note warning \"Правила использования SKU\" %}  * У каждого товара SKU должен быть свой.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  SKU товара можно изменить в кабинете продавца на Маркете. О том, как это сделать, читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/assortment/operations/edit-sku).  {% endnote %}  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**⚙️ Лимит:** 5000 товаров в минуту, не более 500 товаров в одном запросе| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateOfferMappings.md) %}  Добавляет товары в каталог и передает:  * их категории на Маркете и категорийные характеристики; * основные характеристики; * цены на товары в кабинете.  Также объединяет товары на карточке, редактирует и удаляет информацию об уже добавленных товарах, в том числе цены в кабинете и категории товаров.  Список категорий Маркета можно получить с помощью запроса [POST categories/tree](../../reference/categories/getCategoriesTree.md), а характеристики товаров по категориям с помощью [POST category/{categoryId}/parameters](../../reference/content/getCategoryContentParameters.md).  {% cut \"Добавить новый товар\" %}  Передайте его с новым идентификатором, который раньше никогда не использовался в каталоге.  Обязательно укажите параметры: `offerId`, `name`, `marketCategoryId`, `pictures`, `vendor`, `description`.  Старайтесь сразу передать как можно больше информации — она потребуется Маркету для подбора подходящей карточки или создания новой.  Если известно, какой карточке на Маркете соответствует товар, можно сразу указать идентификатор этой карточки (**:no-translate[SKU] на Маркете**) в поле `marketSKU`.  **Для продавцов Market Yandex Go:**  Когда вы добавляете товары в каталог, указывайте значения параметров `name` и `description` на русском языке. Чтобы на витрине они отображались и на другом языке, еще раз выполните запрос `POST businesses/{businessId}/offer-mappings/update`, где укажите:    * язык в параметре `language`;   * значения параметров `name` и `description` на указанном языке.    Повторно передавать остальные характеристики товара не нужно.  {% endcut %}  {% cut \"Изменить информацию о товаре\" %}  Передайте новые данные, указав в `offerId` соответствующий **ваш :no-translate[SKU]**.  Поля, в которых ничего не меняется, можно не передавать.  {% endcut %}  {% cut \"Удалить переданные ранее параметры товара\" %}  В `deleteParameters` укажите значения параметров, которые хотите удалить. Можно передать сразу несколько значений.  Для параметров с типом `string` также можно передать пустое значение.  {% endcut %}  Параметр `offerId` должен быть **уникальным** для всех товаров, которые вы передаете.  {% note warning \"Правила использования :no-translate[SKU]\" %}  * У каждого товара :no-translate[SKU] должен быть свой.  * Уже заданный :no-translate[SKU] нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  :no-translate[SKU] товара можно изменить в кабинете продавца на Маркете. О том, как это сделать, читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/assortment/operations/edit-sku).  {% endnote %}  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту, не более 100 товаров в одном запросе| |-|
 
 ### Example
 
@@ -6330,9 +6786,9 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $update_offer_mappings_request = new \OpenAPI\Client\Model\UpdateOfferMappingsRequest(); // \OpenAPI\Client\Model\UpdateOfferMappingsRequest
-$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\CatalogLanguageType(); // \OpenAPI\Client\Model\CatalogLanguageType | Язык, на котором принимаются и возвращаются значения в параметрах `name` и `description`.  Значение по умолчанию: `RU`.
+$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\CatalogLanguageType(); // \OpenAPI\Client\Model\CatalogLanguageType | Язык, на котором принимаются и возвращаются значения в параметрах :no-translate[`name`] и :no-translate[`description`].  Значение по умолчанию: :no-translate[`RU`].
 
 try {
     $result = $apiInstance->updateOfferMappings($business_id, $update_offer_mappings_request, $language);
@@ -6346,9 +6802,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **update_offer_mappings_request** | [**\OpenAPI\Client\Model\UpdateOfferMappingsRequest**](../Model/UpdateOfferMappingsRequest.md)|  | |
-| **language** | [**\OpenAPI\Client\Model\CatalogLanguageType**](../Model/.md)| Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. | [optional] |
+| **language** | [**\OpenAPI\Client\Model\CatalogLanguageType**](../Model/.md)| Язык, на котором принимаются и возвращаются значения в параметрах :no-translate[&#x60;name&#x60;] и :no-translate[&#x60;description&#x60;].  Значение по умолчанию: :no-translate[&#x60;RU&#x60;]. | [optional] |
 
 ### Return type
 
@@ -6370,12 +6826,12 @@ try {
 ## `updatePrices()`
 
 ```php
-updatePrices($campaign_id, $update_prices_request): \OpenAPI\Client\Model\ApiResponse
+updatePrices($campaign_id, $update_prices_request): \OpenAPI\Client\Model\EmptyApiResponse
 ```
 
 Установка цен на товары в конкретном магазине
 
-{% include notitle [access](../../_auto/method_scopes/updatePrices.md) %}  Устанавливает цены на товары в магазине. Чтобы получить рекомендации Маркета, касающиеся цен, выполните запрос [POST businesses/{businessId}/offers/recommendations](../../reference/business-assortment/getOfferRecommendations.md).  {% note warning \"Метод только для отдельных магазинов\" %}  Вам доступен этот метод, если в кабинете продавца на Маркете есть возможность установить уникальные цены в отдельных магазинах. Как это проверить — в методе [POST businesses/{businessId}/settings](../../reference/businesses/getBusinessSettings.md) в параметре `onlyDefaultPrice` возвращается значение `false`.  В ином случае используйте метод управления ценами, которые действуют во всех магазинах, — [POST businesses/{businessId}/offer-prices/updates](../../reference/business-assortment/updateBusinessPrices.md).  {% endnote %}  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**⚙️ Лимит:** 5000 товаров в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/updatePrices.md) %}  Устанавливает цены на товары в магазине. Чтобы получить рекомендации Маркета, касающиеся цен, выполните запрос [POST businesses/{businessId}/offers/recommendations](../../reference/business-assortment/getOfferRecommendations.md).  {% note warning \"Метод только для отдельных магазинов\" %}  Вам доступен этот метод, если в кабинете продавца на Маркете есть возможность установить уникальные цены в отдельных магазинах. Как это проверить — в методе [POST businesses/{businessId}/settings](../../reference/businesses/getBusinessSettings.md) в параметре `onlyDefaultPrice` возвращается значение `false`.  В ином случае используйте метод управления ценами, которые действуют во всех магазинах, — [POST businesses/{businessId}/offer-prices/updates](../../reference/business-assortment/updateBusinessPrices.md).  {% endnote %}  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  |**:no-translate[⚙️] Лимит:** 10 000 товаров в минуту| |-|
 
 ### Example
 
@@ -6399,7 +6855,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$campaign_id = 56; // int | Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$campaign_id = 56; // int | Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах.
 $update_prices_request = new \OpenAPI\Client\Model\UpdatePricesRequest(); // \OpenAPI\Client\Model\UpdatePricesRequest
 
 try {
@@ -6414,12 +6870,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **campaign_id** | **int**| Идентификатор кампании в API и магазина в кабинете. Каждая кампания в API соответствует магазину в кабинете.  Чтобы узнать идентификаторы своих магазинов, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **campaign_id** | **int**| Идентификатор кампании.  Его можно узнать с помощью запроса [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]) или найти в кабинете продавца на Маркете — нажмите на название своего бизнеса и перейдите на страницу:    * **Модули и :no-translate[API]** → блок **Передача данных Маркету**.   * **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не передавайте вместо него идентификатор магазина, который указан в кабинете продавца на Маркете рядом с названием магазина и в некоторых отчетах. | |
 | **update_prices_request** | [**\OpenAPI\Client\Model\UpdatePricesRequest**](../Model/UpdatePricesRequest.md)|  | |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ApiResponse**](../Model/ApiResponse.md)
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -6442,7 +6898,7 @@ updatePromoOffers($business_id, $update_promo_offers_request): \OpenAPI\Client\M
 
 Добавление товаров в акцию или изменение их цен
 
-{% include notitle [access](../../_auto/method_scopes/updatePromoOffers.md) %}  Добавляет товары в акцию или изменяет цены на товары, которые участвуют в акции.  Изменения начинают действовать в течение 4–6 часов.  |**⚙️ Лимит:** 10000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/updatePromoOffers.md) %}  Добавляет товары в акцию или изменяет цены на товары, которые участвуют в акции.  Изменения начинают действовать в течение 4–6 часов.  |**:no-translate[⚙️] Лимит:** 10 000 запросов в час| |-|
 
 ### Example
 
@@ -6466,7 +6922,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html])
 $update_promo_offers_request = new \OpenAPI\Client\Model\UpdatePromoOffersRequest(); // \OpenAPI\Client\Model\UpdatePromoOffersRequest
 
 try {
@@ -6481,7 +6937,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы узнать идентификатор, воспользуйтесь запросом [GET campaigns](../../reference/campaigns/getCampaigns.md#businessdto).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [:no-translate[GET campaigns]](:no-translate[../../reference/campaigns/getCampaigns.md]).  ℹ️ [Что такое кабинет и магазин на Маркете](:no-translate[https://yandex.ru/support/marketplace/account/introduction.html]) | |
 | **update_promo_offers_request** | [**\OpenAPI\Client\Model\UpdatePromoOffersRequest**](../Model/UpdatePromoOffersRequest.md)|  | |
 
 ### Return type

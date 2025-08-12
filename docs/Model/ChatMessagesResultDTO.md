@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**order_id** | **int** | Идентификатор заказа. |
+**order_id** | **int** | Идентификатор заказа. | [optional]
+**context** | [**\OpenAPI\Client\Model\ChatFullContextDTO**](ChatFullContextDTO.md) |  |
 **messages** | [**\OpenAPI\Client\Model\ChatMessageDTO[]**](ChatMessageDTO.md) | Информация о сообщениях. |
 **paging** | [**\OpenAPI\Client\Model\ForwardScrollingPagerDTO**](ForwardScrollingPagerDTO.md) |  | [optional]
 

@@ -15,7 +15,7 @@ getDeliveryServices(): \OpenAPI\Client\Model\GetDeliveryServicesResponse
 
 Справочник служб доставки
 
-{% include notitle [access](../../_auto/method_scopes/getDeliveryServices.md) %}  Возвращает справочник служб доставки: идентификаторы и наименования. |**⚙️ Лимит:** 5 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getDeliveryServices.md) %}  Возвращает справочник служб доставки: идентификаторы и наименования. |**:no-translate[⚙️] Лимит:** 5 000 запросов в час| |-|
 
 ### Example
 

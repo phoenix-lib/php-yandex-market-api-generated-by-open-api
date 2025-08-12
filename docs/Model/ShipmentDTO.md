@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Идентификатор отгрузки. |
-**plan_interval_from** | **\DateTime** | Начало планового интервала отгрузки.  Формат даты: ISO 8601 со смещением относительно UTC. |
-**plan_interval_to** | **\DateTime** | Конец планового интервала отгрузки.  Формат даты: ISO 8601 со смещением относительно UTC. |
+**plan_interval_from** | **\DateTime** | Начало планового интервала отгрузки.  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC]. |
+**plan_interval_to** | **\DateTime** | Конец планового интервала отгрузки.  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC. |
 **shipment_type** | [**\OpenAPI\Client\Model\ShipmentType**](ShipmentType.md) |  | [optional]
 **warehouse** | [**\OpenAPI\Client\Model\PartnerShipmentWarehouseDTO**](PartnerShipmentWarehouseDTO.md) |  | [optional]
 **warehouse_to** | [**\OpenAPI\Client\Model\PartnerShipmentWarehouseDTO**](PartnerShipmentWarehouseDTO.md) |  | [optional]
@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **draft_count** | **int** | Количество заказов, которое Маркет запланировал к отгрузке. |
 **planned_count** | **int** | Количество заказов, которое Маркет подтвердил к отгрузке. |
 **fact_count** | **int** | Количество заказов, принятых в сортировочном центре или пункте приема. |
+**signature** | [**\OpenAPI\Client\Model\SignatureDTO**](SignatureDTO.md) |  |
 **current_status** | [**\OpenAPI\Client\Model\ShipmentStatusChangeDTO**](ShipmentStatusChangeDTO.md) |  | [optional]
 **available_actions** | [**\OpenAPI\Client\Model\ShipmentActionType[]**](ShipmentActionType.md) | Доступные действия над отгрузкой. |
 

@@ -4,23 +4,98 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**generateBannersStatisticsReport()**](ReportsApi.md#generateBannersStatisticsReport) | **POST** /reports/banners-statistics/generate | Отчет по охватному продвижению |
 | [**generateBoostConsolidatedReport()**](ReportsApi.md#generateBoostConsolidatedReport) | **POST** /reports/boost-consolidated/generate | Отчет по бусту продаж |
+| [**generateClosureDocumentsDetalizationReport()**](ReportsApi.md#generateClosureDocumentsDetalizationReport) | **POST** /reports/closure-documents/detalization/generate | Отчет по схождению с закрывающими документами |
+| [**generateClosureDocumentsReport()**](ReportsApi.md#generateClosureDocumentsReport) | **POST** /reports/closure-documents/generate | Закрывающие документы |
 | [**generateCompetitorsPositionReport()**](ReportsApi.md#generateCompetitorsPositionReport) | **POST** /reports/competitors-position/generate | Отчет «Конкурентная позиция» |
 | [**generateGoodsFeedbackReport()**](ReportsApi.md#generateGoodsFeedbackReport) | **POST** /reports/goods-feedback/generate | Отчет по отзывам о товарах |
-| [**generateGoodsMovementReport()**](ReportsApi.md#generateGoodsMovementReport) | **POST** /reports/goods-movement/generate | Отчет по движению товаров (FBY) |
+| [**generateGoodsMovementReport()**](ReportsApi.md#generateGoodsMovementReport) | **POST** /reports/goods-movement/generate | Отчет по движению товаров |
 | [**generateGoodsRealizationReport()**](ReportsApi.md#generateGoodsRealizationReport) | **POST** /reports/goods-realization/generate | Отчет по реализации |
-| [**generateGoodsTurnoverReport()**](ReportsApi.md#generateGoodsTurnoverReport) | **POST** /reports/goods-turnover/generate | Отчет по оборачиваемости (FBY) |
+| [**generateGoodsTurnoverReport()**](ReportsApi.md#generateGoodsTurnoverReport) | **POST** /reports/goods-turnover/generate | Отчет по оборачиваемости |
+| [**generateJewelryFiscalReport()**](ReportsApi.md#generateJewelryFiscalReport) | **POST** /reports/jewelry-fiscal/generate | Отчет по заказам с ювелирными изделиями |
+| [**generateKeyIndicatorsReport()**](ReportsApi.md#generateKeyIndicatorsReport) | **POST** /reports/key-indicators/generate | Отчет по ключевым показателям |
 | [**generateMassOrderLabelsReport()**](ReportsApi.md#generateMassOrderLabelsReport) | **POST** /reports/documents/labels/generate | Готовые ярлыки‑наклейки на все коробки в нескольких заказах |
 | [**generatePricesReport()**](ReportsApi.md#generatePricesReport) | **POST** /reports/prices/generate | Отчет «Цены на рынке» |
+| [**generateSalesGeographyReport()**](ReportsApi.md#generateSalesGeographyReport) | **POST** /reports/sales-geography/generate | Отчет по географии продаж |
 | [**generateShelfsStatisticsReport()**](ReportsApi.md#generateShelfsStatisticsReport) | **POST** /reports/shelf-statistics/generate | Отчет по полкам |
 | [**generateShipmentListDocumentReport()**](ReportsApi.md#generateShipmentListDocumentReport) | **POST** /reports/documents/shipment-list/generate | Получение листа сборки |
+| [**generateShowsBoostReport()**](ReportsApi.md#generateShowsBoostReport) | **POST** /reports/shows-boost/generate | Отчет по бусту показов |
 | [**generateShowsSalesReport()**](ReportsApi.md#generateShowsSalesReport) | **POST** /reports/shows-sales/generate | Отчет «Аналитика продаж» |
 | [**generateStocksOnWarehousesReport()**](ReportsApi.md#generateStocksOnWarehousesReport) | **POST** /reports/stocks-on-warehouses/generate | Отчет по остаткам на складах |
 | [**generateUnitedMarketplaceServicesReport()**](ReportsApi.md#generateUnitedMarketplaceServicesReport) | **POST** /reports/united-marketplace-services/generate | Отчет по стоимости услуг |
 | [**generateUnitedNettingReport()**](ReportsApi.md#generateUnitedNettingReport) | **POST** /reports/united-netting/generate | Отчет по платежам |
 | [**generateUnitedOrdersReport()**](ReportsApi.md#generateUnitedOrdersReport) | **POST** /reports/united-orders/generate | Отчет по заказам |
-| [**getReportInfo()**](ReportsApi.md#getReportInfo) | **GET** /reports/info/{reportId} | Получение заданного отчета |
+| [**generateUnitedReturnsReport()**](ReportsApi.md#generateUnitedReturnsReport) | **POST** /reports/united-returns/generate | Отчет по невыкупам и возвратам |
+| [**getReportInfo()**](ReportsApi.md#getReportInfo) | **GET** /reports/info/{reportId} | Получение заданного отчета или документа |
 
+
+## `generateBannersStatisticsReport()`
+
+```php
+generateBannersStatisticsReport($generate_banners_statistics_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по охватному продвижению
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateBannersStatisticsReport.md) %}  Запускает генерацию сводного отчета по охватному продвижению. Что это за отчет: [для баннеров](https://yandex.ru/support/marketplace/ru/marketing/advertising-tools/banner#statistics), [для пуш-уведомлений](https://yandex.ru/support/marketplace/ru/marketing/advertising-tools/push-notifications#statistics).  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/incuts/banners_statistics.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ReportsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_banners_statistics_request = new \OpenAPI\Client\Model\GenerateBannersStatisticsRequest(); // \OpenAPI\Client\Model\GenerateBannersStatisticsRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateBannersStatisticsReport($generate_banners_statistics_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportsApi->generateBannersStatisticsReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_banners_statistics_request** | [**\OpenAPI\Client\Model\GenerateBannersStatisticsRequest**](../Model/GenerateBannersStatisticsRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `generateBoostConsolidatedReport()`
 
@@ -30,7 +105,7 @@ generateBoostConsolidatedReport($generate_boost_consolidated_request, $format): 
 
 Отчет по бусту продаж
 
-{% include notitle [access](../../_auto/method_scopes/generateBoostConsolidatedReport.md) %}  Запускает генерацию **сводного отчета по бусту продаж** за заданный период. Отчет содержит информацию по всем кампаниям, созданным и через API, и в кабинете.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/boost/consolidated/business_boost_consolidated.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateBoostConsolidatedReport.md) %}  Запускает генерацию сводного отчета по бусту продаж за заданный период. [Что такое буст продаж](https://yandex.ru/support/marketplace/ru/marketing/campaigns)  Отчет содержит информацию по всем кампаниям, созданным и через :no-translate[API], и в кабинете.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/boost/consolidated/business_boost_consolidated.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -55,7 +130,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_boost_consolidated_request = new \OpenAPI\Client\Model\GenerateBoostConsolidatedRequest(); // \OpenAPI\Client\Model\GenerateBoostConsolidatedRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateBoostConsolidatedReport($generate_boost_consolidated_request, $format);
@@ -70,7 +145,139 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_boost_consolidated_request** | [**\OpenAPI\Client\Model\GenerateBoostConsolidatedRequest**](../Model/GenerateBoostConsolidatedRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateClosureDocumentsDetalizationReport()`
+
+```php
+generateClosureDocumentsDetalizationReport($generate_closure_documents_detalization_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по схождению с закрывающими документами
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateClosureDocumentsDetalizationReport.md) %}  Запускает генерацию отчета по схождению с закрывающими документами в зависимости от типа договора.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Договор на размещение    {% include notitle [:no-translate[reports]](../../_auto/reports/period_closure/period_closure_income.md) %}  - Договор на продвижение    {% include notitle [:no-translate[reports]](../../_auto/reports/period_closure/period_closure_outcome.md) %}  - Договор на маркетинг    {% include notitle [:no-translate[reports]](../../_auto/reports/advertiser_billing_operations/advertiser_billing_operations.md) %}  {% endlist %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ReportsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_closure_documents_detalization_request = new \OpenAPI\Client\Model\GenerateClosureDocumentsDetalizationRequest(); // \OpenAPI\Client\Model\GenerateClosureDocumentsDetalizationRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateClosureDocumentsDetalizationReport($generate_closure_documents_detalization_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportsApi->generateClosureDocumentsDetalizationReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_closure_documents_detalization_request** | [**\OpenAPI\Client\Model\GenerateClosureDocumentsDetalizationRequest**](../Model/GenerateClosureDocumentsDetalizationRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateClosureDocumentsReport()`
+
+```php
+generateClosureDocumentsReport($generate_closure_documents_request): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Закрывающие документы
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateClosureDocumentsReport.md) %}  Возвращает ZIP-архив с закрывающими документами в формате PDF за указанный месяц.  {% cut \"Состав документов в зависимости от типа договора\" %}  * **Договор на размещение**    * [акт об оказанных услугах](:no-translate[*acts-main-act])   * [счет-фактура](:no-translate[*acts-main-invoice])   * [сводный отчет по данным статистики](:no-translate[*acts-main-report])   * [отчет об исполнении поручения и о зачете взаимных требований](:no-translate[*acts-main-agent]) (отчет агента)  * **Договор на продвижение** (в России не заключается после 30 сентября 2024 года)    * [акт об оказании услуг](:no-translate[*acts-discounts-act])   * [счет-фактура](:no-translate[*acts-discounts-invoice]), если этого требует схема налогообложения  * **Договор на маркетинг**    * [акт об оказанных услугах](:no-translate[*acts-marketing-act])   * [счет-фактура](:no-translate[*acts-main-invoice])   * [счет-фактура на аванс](:no-translate[*acts-marketing-invoice])   * [выписка по лицевому счету](:no-translate[*acts-marketing-account])   * [детализация к акту](:no-translate[*acts-marketing-details])  {% endcut %}  Узнать статус генерации и получить ссылку на архив можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ReportsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_closure_documents_request = new \OpenAPI\Client\Model\GenerateClosureDocumentsRequest(); // \OpenAPI\Client\Model\GenerateClosureDocumentsRequest
+
+try {
+    $result = $apiInstance->generateClosureDocumentsReport($generate_closure_documents_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportsApi->generateClosureDocumentsReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_closure_documents_request** | [**\OpenAPI\Client\Model\GenerateClosureDocumentsRequest**](../Model/GenerateClosureDocumentsRequest.md)|  | |
 
 ### Return type
 
@@ -97,7 +304,7 @@ generateCompetitorsPositionReport($generate_competitors_position_report_request,
 
 Отчет «Конкурентная позиция»
 
-{% include notitle [access](../../_auto/method_scopes/generateCompetitorsPositionReport.md) %}  Запускает генерацию **отчета «Конкурентная позиция»** за заданный период. [Что это за отчет](https://yandex.ru/support2/marketplace/ru/analytics/competitors.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% note info \"Значение -1 в отчете\" %}  Если в CSV-файле в столбце **POSITION** стоит -1, в этот день не было заказов с товарами в указанной категории.  {% endnote %}  {% include notitle [reports](../../_auto/reports/masterstat/competitors_position.md) %}  |**⚙️ Лимит:** 10 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateCompetitorsPositionReport.md) %}  Запускает генерацию отчета «Конкурентная позиция» за заданный период. [Что это за отчет](https://yandex.ru/support2/marketplace/ru/analytics/competitors.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% note info \"Значение -1 в отчете\" %}  Если в CSV-файле в столбце :no-translate[**POSITION**] стоит -1, в этот день не было заказов с товарами в указанной категории.  {% endnote %}  {% include notitle [:no-translate[reports]](../../_auto/reports/masterstat/competitors_position.md) %}  |**:no-translate[⚙️] Лимит:** 10 запросов в час| |-|
 
 ### Example
 
@@ -122,7 +329,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_competitors_position_report_request = new \OpenAPI\Client\Model\GenerateCompetitorsPositionReportRequest(); // \OpenAPI\Client\Model\GenerateCompetitorsPositionReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateCompetitorsPositionReport($generate_competitors_position_report_request, $format);
@@ -137,7 +344,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_competitors_position_report_request** | [**\OpenAPI\Client\Model\GenerateCompetitorsPositionReportRequest**](../Model/GenerateCompetitorsPositionReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -164,7 +371,7 @@ generateGoodsFeedbackReport($generate_goods_feedback_request, $format): \OpenAPI
 
 Отчет по отзывам о товарах
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsFeedbackReport.md) %}  Запускает генерацию **отчета по отзывам о товарах**. [Что это за отчет](https://yandex.ru/support2/marketplace/ru/marketing/plus-reviews#stat)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/paid_opinion_models/paid_opinion_models.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateGoodsFeedbackReport.md) %}  Запускает генерацию отчета по отзывам о товарах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/marketing/plus-reviews#stat)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/paid_opinion_models/paid_opinion_models.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -189,7 +396,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_goods_feedback_request = new \OpenAPI\Client\Model\GenerateGoodsFeedbackRequest(); // \OpenAPI\Client\Model\GenerateGoodsFeedbackRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateGoodsFeedbackReport($generate_goods_feedback_request, $format);
@@ -204,7 +411,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_goods_feedback_request** | [**\OpenAPI\Client\Model\GenerateGoodsFeedbackRequest**](../Model/GenerateGoodsFeedbackRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -229,9 +436,9 @@ try {
 generateGoodsMovementReport($generate_goods_movement_report_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
 ```
 
-Отчет по движению товаров (FBY)
+Отчет по движению товаров
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsMovementReport.md) %}  Запускает генерацию **отчета по движению товаров**. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/reports-fby-fbs.html#flow)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/sku/movement/movement_config.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateGoodsMovementReport.md) %}  Запускает генерацию отчета по движению товаров. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/reports-fby-fbs.html#flow)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/sku/movement/movement_config.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -256,7 +463,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_goods_movement_report_request = new \OpenAPI\Client\Model\GenerateGoodsMovementReportRequest(); // \OpenAPI\Client\Model\GenerateGoodsMovementReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateGoodsMovementReport($generate_goods_movement_report_request, $format);
@@ -271,7 +478,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_goods_movement_report_request** | [**\OpenAPI\Client\Model\GenerateGoodsMovementReportRequest**](../Model/GenerateGoodsMovementReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -298,7 +505,7 @@ generateGoodsRealizationReport($generate_goods_realization_report_request, $form
 
 Отчет по реализации
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsRealizationReport.md) %}  Запускает генерацию **отчета по реализации** за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/reports-fby-fbs.html#sales-report)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/goods/monthly/goods_realization.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateGoodsRealizationReport.md) %}  Запускает генерацию отчета по реализации за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#sales-report)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - :no-translate[FBY, FBS,] Экспресс    {% include notitle [:no-translate[reports]](../../_auto/reports/united/statistics/generator/united_statistics_v2.md) %}  - :no-translate[DBS]    {% include notitle [:no-translate[reports]](../../_auto/reports/united/statistics/generator/united_statistics_v2_dbs.md) %}  {% endlist %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -323,7 +530,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_goods_realization_report_request = new \OpenAPI\Client\Model\GenerateGoodsRealizationReportRequest(); // \OpenAPI\Client\Model\GenerateGoodsRealizationReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateGoodsRealizationReport($generate_goods_realization_report_request, $format);
@@ -338,7 +545,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_goods_realization_report_request** | [**\OpenAPI\Client\Model\GenerateGoodsRealizationReportRequest**](../Model/GenerateGoodsRealizationReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -363,9 +570,9 @@ try {
 generateGoodsTurnoverReport($generate_goods_turnover_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
 ```
 
-Отчет по оборачиваемости (FBY)
+Отчет по оборачиваемости
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsTurnoverReport.md) %}  Запускает генерацию **отчета по оборачиваемости** за заданную дату.  [Что это за отчет](https://yandex.ru/support/marketplace/analytics/turnover.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/turnover/turnover.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateGoodsTurnoverReport.md) %}  Запускает генерацию отчета по оборачиваемости за заданную дату.  [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#turnover)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/turnover/turnover.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -390,7 +597,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_goods_turnover_request = new \OpenAPI\Client\Model\GenerateGoodsTurnoverRequest(); // \OpenAPI\Client\Model\GenerateGoodsTurnoverRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateGoodsTurnoverReport($generate_goods_turnover_request, $format);
@@ -405,7 +612,141 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_goods_turnover_request** | [**\OpenAPI\Client\Model\GenerateGoodsTurnoverRequest**](../Model/GenerateGoodsTurnoverRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateJewelryFiscalReport()`
+
+```php
+generateJewelryFiscalReport($generate_jewelry_fiscal_report_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по заказам с ювелирными изделиями
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateJewelryFiscalReport.md) %}  Запускает генерацию отчета по заказам с ювелирными изделиями.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/identifiers/jewelry/orders_jewelry_fiscal.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ReportsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_jewelry_fiscal_report_request = new \OpenAPI\Client\Model\GenerateJewelryFiscalReportRequest(); // \OpenAPI\Client\Model\GenerateJewelryFiscalReportRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateJewelryFiscalReport($generate_jewelry_fiscal_report_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportsApi->generateJewelryFiscalReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_jewelry_fiscal_report_request** | [**\OpenAPI\Client\Model\GenerateJewelryFiscalReportRequest**](../Model/GenerateJewelryFiscalReportRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateKeyIndicatorsReport()`
+
+```php
+generateKeyIndicatorsReport($generate_key_indicators_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по ключевым показателям
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateKeyIndicatorsReport.md) %}  Запускает генерацию отчета по ключевым показателям. [Что это за отчет](https://yandex.ru/support/marketplace/ru/analytics/key-metrics)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/key_indicators/key_indicators.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ReportsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_key_indicators_request = new \OpenAPI\Client\Model\GenerateKeyIndicatorsRequest(); // \OpenAPI\Client\Model\GenerateKeyIndicatorsRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateKeyIndicatorsReport($generate_key_indicators_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportsApi->generateKeyIndicatorsReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_key_indicators_request** | [**\OpenAPI\Client\Model\GenerateKeyIndicatorsRequest**](../Model/GenerateKeyIndicatorsRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -432,7 +773,7 @@ generateMassOrderLabelsReport($generate_mass_order_labels_request, $format): \Op
 
 Готовые ярлыки‑наклейки на все коробки в нескольких заказах
 
-{% include notitle [access](../../_auto/method_scopes/generateMassOrderLabelsReport.md) %}  Запускает генерацию PDF-файла с ярлыками для переданных заказов. Подробно о том, зачем они нужны и как выглядят, рассказано [в Справке Маркета для продавцов](https://yandex.ru/support/marketplace/orders/fbs/packaging/marking.html).  Узнать статус генерации и получить ссылку на готовый файл можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateMassOrderLabelsReport.md) %}  Запускает генерацию PDF-файла с ярлыками для переданных заказов. Подробно о том, зачем они нужны и как выглядят, рассказано [в Справке Маркета для продавцов](https://yandex.ru/support/marketplace/orders/fbs/packaging/marking.html).  Узнать статус генерации и получить ссылку на готовый файл можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  |**:no-translate[⚙️] Лимит:** 1 000 запросов в час| |-|
 
 ### Example
 
@@ -457,7 +798,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_mass_order_labels_request = new \OpenAPI\Client\Model\GenerateMassOrderLabelsRequest(); // \OpenAPI\Client\Model\GenerateMassOrderLabelsRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\PageFormatType(); // \OpenAPI\Client\Model\PageFormatType | Настройка размещения ярлыков на странице. Если параметра нет, возвращается PDF с ярлыками формата A7.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\PageFormatType(); // \OpenAPI\Client\Model\PageFormatType | Настройка размещения ярлыков на странице. Если параметра нет, возвращается :no-translate[PDF] с ярлыками формата :no-translate[A7].
 
 try {
     $result = $apiInstance->generateMassOrderLabelsReport($generate_mass_order_labels_request, $format);
@@ -472,7 +813,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_mass_order_labels_request** | [**\OpenAPI\Client\Model\GenerateMassOrderLabelsRequest**](../Model/GenerateMassOrderLabelsRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\PageFormatType**](../Model/.md)| Настройка размещения ярлыков на странице. Если параметра нет, возвращается PDF с ярлыками формата A7. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\PageFormatType**](../Model/.md)| Настройка размещения ярлыков на странице. Если параметра нет, возвращается :no-translate[PDF] с ярлыками формата :no-translate[A7]. | [optional] |
 
 ### Return type
 
@@ -499,7 +840,7 @@ generatePricesReport($generate_prices_report_request, $format): \OpenAPI\Client\
 
 Отчет «Цены на рынке»
 
-{% include notitle [access](../../_auto/method_scopes/generatePricesReport.md) %}  Запускает генерацию **отчета «Цены на рынке»**.  {% note warning \"Данные в этом отчете постоянно обновляются\" %}  Поэтому информация в нем и в кабинете продавца на Маркете на странице **Цены** может отличаться.  {% endnote %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/prices/business_prices_v2.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generatePricesReport.md) %}  Запускает генерацию отчета «Цены на рынке».  В отчете возвращается информация только по 50 000 товаров. Если у вас их больше, используйте фильтры.  {% note warning \"Данные в этом отчете постоянно обновляются\" %}  Поэтому информация в нем и в кабинете продавца на Маркете на странице **Цены** может отличаться.  {% endnote %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/prices/business_prices_v2.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -524,7 +865,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_prices_report_request = new \OpenAPI\Client\Model\GeneratePricesReportRequest(); // \OpenAPI\Client\Model\GeneratePricesReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generatePricesReport($generate_prices_report_request, $format);
@@ -539,7 +880,74 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_prices_report_request** | [**\OpenAPI\Client\Model\GeneratePricesReportRequest**](../Model/GeneratePricesReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateSalesGeographyReport()`
+
+```php
+generateSalesGeographyReport($generate_sales_geography_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по географии продаж
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateSalesGeographyReport.md) %}  Запускает генерацию отчета по географии продаж. [Что это за отчет](https://yandex.ru/support/marketplace/ru/analytics/sales-geography)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/locality/locality_offers_report_v2.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ReportsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_sales_geography_request = new \OpenAPI\Client\Model\GenerateSalesGeographyRequest(); // \OpenAPI\Client\Model\GenerateSalesGeographyRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateSalesGeographyReport($generate_sales_geography_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportsApi->generateSalesGeographyReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_sales_geography_request** | [**\OpenAPI\Client\Model\GenerateSalesGeographyRequest**](../Model/GenerateSalesGeographyRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -566,7 +974,7 @@ generateShelfsStatisticsReport($generate_shelfs_statistics_request, $format): \O
 
 Отчет по полкам
 
-{% include notitle [access](../../_auto/method_scopes/generateShelfsStatisticsReport.md) %}  Запускает генерацию **сводного отчета по полкам** — рекламным блокам с баннером или видео и набором товаров. Подробнее о них читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/shelf).  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/incuts/shelfs_statistics.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateShelfsStatisticsReport.md) %}  Запускает генерацию сводного отчета по полкам — рекламным блокам с баннером или видео и набором товаров. Подробнее о них читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/shelf).  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/incuts/shelfs_statistics.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -591,7 +999,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_shelfs_statistics_request = new \OpenAPI\Client\Model\GenerateShelfsStatisticsRequest(); // \OpenAPI\Client\Model\GenerateShelfsStatisticsRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateShelfsStatisticsReport($generate_shelfs_statistics_request, $format);
@@ -606,7 +1014,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_shelfs_statistics_request** | [**\OpenAPI\Client\Model\GenerateShelfsStatisticsRequest**](../Model/GenerateShelfsStatisticsRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -633,7 +1041,7 @@ generateShipmentListDocumentReport($generate_shipment_list_document_report_reque
 
 Получение листа сборки
 
-{% include notitle [access](../../_auto/method_scopes/generateShipmentListDocumentReport.md) %}  Запускает генерацию **листа сборки** для отгрузки.  Узнать статус генерации и получить ссылку на готовый документ можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateShipmentListDocumentReport.md) %}  Запускает генерацию **листа сборки** для отгрузки.  Узнать статус генерации и получить ссылку на готовый документ можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -690,6 +1098,73 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `generateShowsBoostReport()`
+
+```php
+generateShowsBoostReport($generate_shows_boost_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по бусту показов
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateShowsBoostReport.md) %}  Запускает генерацию сводного отчета по бусту показов за заданный период. [Что такое буст показов](https://yandex.ru/support/marketplace/ru/marketing/boost-shows)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/cpm_boost/business_cpm_boost_consolidated.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ReportsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_shows_boost_request = new \OpenAPI\Client\Model\GenerateShowsBoostRequest(); // \OpenAPI\Client\Model\GenerateShowsBoostRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateShowsBoostReport($generate_shows_boost_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportsApi->generateShowsBoostReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_shows_boost_request** | [**\OpenAPI\Client\Model\GenerateShowsBoostRequest**](../Model/GenerateShowsBoostRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `generateShowsSalesReport()`
 
 ```php
@@ -698,7 +1173,7 @@ generateShowsSalesReport($generate_shows_sales_report_request, $format): \OpenAP
 
 Отчет «Аналитика продаж»
 
-{% include notitle [access](../../_auto/method_scopes/generateShowsSalesReport.md) %}  Запускает генерацию **отчета «Аналитика продаж»** за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/shows-sales.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/masterstat/sales_funnel.md) %}  |**⚙️ Лимит:** 10 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateShowsSalesReport.md) %}  Запускает генерацию отчета «Аналитика продаж» за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/shows-sales.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/masterstat/sales_funnel_promotions.md) %}  |**:no-translate[⚙️] Лимит:** 10 запросов в час| |-|
 
 ### Example
 
@@ -723,7 +1198,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_shows_sales_report_request = new \OpenAPI\Client\Model\GenerateShowsSalesReportRequest(); // \OpenAPI\Client\Model\GenerateShowsSalesReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateShowsSalesReport($generate_shows_sales_report_request, $format);
@@ -738,7 +1213,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_shows_sales_report_request** | [**\OpenAPI\Client\Model\GenerateShowsSalesReportRequest**](../Model/GenerateShowsSalesReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -765,7 +1240,7 @@ generateStocksOnWarehousesReport($generate_stocks_on_warehouses_report_request, 
 
 Отчет по остаткам на складах
 
-{% include notitle [access](../../_auto/method_scopes/generateStocksOnWarehousesReport.md) %}  Запускает генерацию **отчета по остаткам на складах**. Отчет содержит данные:  * Для модели FBY — об остатках на складах Маркета. * Для остальных моделей — об остатках на соответствующем складе магазина.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/stocks/stocks_on_warehouses.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateStocksOnWarehousesReport.md) %}  Запускает генерацию отчета по остаткам на складах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#remains-history)  **Какая информация вернется:**  * Для модели :no-translate[FBY] — об остатках на складах Маркета. * Для остальных моделей, если указать `businessId`, — об остатках на всех складах магазинов в кабинете, кроме :no-translate[FBY]. Используйте фильтр `campaignIds`, чтобы указать определенные магазины. * Для остальных моделей, если указать `campaignId`, — об остатках на соответствующем складе магазина. Этот тип отчета скоро станет недоступен.  ⚠️ Не передавайте одновременно `campaignId` и `businessId`.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Склад Маркета    {% include notitle [:no-translate[reports]](../../_auto/reports/stocks/stocks_on_warehouses.md) %}  - Склад магазина    {% include notitle [:no-translate[reports]](../../_auto/reports/offers/mass/mass_shared_stocks_business_csv_config.md) %}  - Все склады магазинов в кабинете, кроме :no-translate[FBY]    {% include notitle [:no-translate[reports]](../../_auto/reports/offers/stocks_business_config.md) %}  {% endlist %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -790,7 +1265,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_stocks_on_warehouses_report_request = new \OpenAPI\Client\Model\GenerateStocksOnWarehousesReportRequest(); // \OpenAPI\Client\Model\GenerateStocksOnWarehousesReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
 
 try {
     $result = $apiInstance->generateStocksOnWarehousesReport($generate_stocks_on_warehouses_report_request, $format);
@@ -805,7 +1280,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_stocks_on_warehouses_report_request** | [**\OpenAPI\Client\Model\GenerateStocksOnWarehousesReportRequest**](../Model/GenerateStocksOnWarehousesReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -832,7 +1307,7 @@ generateUnitedMarketplaceServicesReport($generate_united_marketplace_services_re
 
 Отчет по стоимости услуг
 
-{% include notitle [access](../../_auto/method_scopes/generateUnitedMarketplaceServicesReport.md) %}  Запускает генерацию **отчета по стоимости услуг** за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/reports.html)  Тип отчета зависит от того, какие поля заполнены в запросе:  |**Тип отчета**               |**Какие поля нужны**             | |-----------------------------|---------------------------------| |По дате начисления услуги    |`dateFrom` и `dateTo`            | |По дате формирования акта    |`year` и `month`                 |  Заказать отчеты обоих типов одним запросом нельзя.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/united/services/generator/united_marketplace_services.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateUnitedMarketplaceServicesReport.md) %}  Запускает генерацию отчета по стоимости услуг за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#reports)  Тип отчета зависит от того, какие поля заполнены в запросе:  |**Тип отчета**               |**Какие поля нужны**             | |-----------------------------|---------------------------------| |По дате начисления услуги    |`dateFrom` и `dateTo`            | |По дате формирования акта    |`year` и `month`                 |  Заказать отчеты обоих типов одним запросом нельзя.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/united/services/generator/united_marketplace_services.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -857,8 +1332,8 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_united_marketplace_services_report_request = new \OpenAPI\Client\Model\GenerateUnitedMarketplaceServicesReportRequest(); // \OpenAPI\Client\Model\GenerateUnitedMarketplaceServicesReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
-$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета или документа.
 
 try {
     $result = $apiInstance->generateUnitedMarketplaceServicesReport($generate_united_marketplace_services_report_request, $format, $language);
@@ -873,8 +1348,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_united_marketplace_services_report_request** | [**\OpenAPI\Client\Model\GenerateUnitedMarketplaceServicesReportRequest**](../Model/GenerateUnitedMarketplaceServicesReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
-| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета или документа. | [optional] |
 
 ### Return type
 
@@ -901,7 +1376,7 @@ generateUnitedNettingReport($generate_united_netting_report_request, $format, $l
 
 Отчет по платежам
 
-{% include notitle [access](../../_auto/method_scopes/generateUnitedNettingReport.md) %}  Запускает генерацию **отчета по платежам** за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/transactions.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  Тип отчета зависит от того, какие поля заполнены в запросе:  |**Тип отчета**           |**Какие поля нужны**                   | |-------------------------|---------------------------------------| |О платежах за период     |`dateFrom` и `dateTo`                  | |О платежном поручении    |`bankOrderId` и `bankOrderDateTime`    |  Заказать отчеты обоих типов одним запросом нельзя.  {% include notitle [reports](../../_auto/reports/united/netting/generator/united_netting.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateUnitedNettingReport.md) %}  Запускает генерацию отчета по платежам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#all-pay)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  Тип отчета зависит от того, какие поля заполнены в запросе:  #| || **Тип отчета** | **Какие поля нужны** || || О платежах за период | `dateFrom` и `dateTo` || || О платежном поручении | `bankOrderId` и `bankOrderDateTime` || || [О баллах Маркета](:no-translate[*баллы_маркета]) | `monthOfYear` || |#  Заказать отчеты нескольких типов одним запросом нельзя.  {% include notitle [:no-translate[reports]](../../_auto/reports/united/netting/generator/united_netting.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -926,8 +1401,8 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_united_netting_report_request = new \OpenAPI\Client\Model\GenerateUnitedNettingReportRequest(); // \OpenAPI\Client\Model\GenerateUnitedNettingReportRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
-$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета или документа.
 
 try {
     $result = $apiInstance->generateUnitedNettingReport($generate_united_netting_report_request, $format, $language);
@@ -942,8 +1417,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_united_netting_report_request** | [**\OpenAPI\Client\Model\GenerateUnitedNettingReportRequest**](../Model/GenerateUnitedNettingReportRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
-| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета или документа. | [optional] |
 
 ### Return type
 
@@ -970,7 +1445,7 @@ generateUnitedOrdersReport($generate_united_orders_request, $format, $language):
 
 Отчет по заказам
 
-{% include notitle [access](../../_auto/method_scopes/generateUnitedOrdersReport.md) %}  Запускает генерацию **отчета по заказам** за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/orders.html)  {% note info \"Это новый отчет\" %}  Раньше мы так называли генерацию детальной информации по заказам. [Как получить детальную информацию по заказам](../../reference/stats/getOrdersStats.md)  {% endnote %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/united/orders/generator/united_orders.md) %}  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateUnitedOrdersReport.md) %}  Запускает генерацию отчета по заказам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#get-report)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/united/orders/generator/united_orders.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
 
 ### Example
 
@@ -995,8 +1470,8 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     $config
 );
 $generate_united_orders_request = new \OpenAPI\Client\Model\GenerateUnitedOrdersRequest(); // \OpenAPI\Client\Model\GenerateUnitedOrdersRequest
-$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета.
-$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета.
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+$language = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportLanguageType(); // \OpenAPI\Client\Model\ReportLanguageType | Язык отчета или документа.
 
 try {
     $result = $apiInstance->generateUnitedOrdersReport($generate_united_orders_request, $format, $language);
@@ -1011,8 +1486,75 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_united_orders_request** | [**\OpenAPI\Client\Model\GenerateUnitedOrdersRequest**](../Model/GenerateUnitedOrdersRequest.md)|  | |
-| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета. | [optional] |
-| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета. | [optional] |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+| **language** | [**\OpenAPI\Client\Model\ReportLanguageType**](../Model/.md)| Язык отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateUnitedReturnsReport()`
+
+```php
+generateUnitedReturnsReport($generate_united_returns_request, $format): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по невыкупам и возвратам
+
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/generateUnitedReturnsReport.md) %}  Запускает генерацию сводного отчета по невыкупам и возвратам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/orders/returns/logistic#rejected-orders)  Отчет содержит информацию о невыкупах и возвратах за указанный период, а также о тех, которые готовы к выдаче.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [:no-translate[reports]](../../_auto/reports/united/returns/generator/united_returns.md) %}  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ReportsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generate_united_returns_request = new \OpenAPI\Client\Model\GenerateUnitedReturnsRequest(); // \OpenAPI\Client\Model\GenerateUnitedReturnsRequest
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+
+try {
+    $result = $apiInstance->generateUnitedReturnsReport($generate_united_returns_request, $format);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportsApi->generateUnitedReturnsReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generate_united_returns_request** | [**\OpenAPI\Client\Model\GenerateUnitedReturnsRequest**](../Model/GenerateUnitedReturnsRequest.md)|  | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
 
 ### Return type
 
@@ -1037,9 +1579,9 @@ try {
 getReportInfo($report_id): \OpenAPI\Client\Model\GetReportInfoResponse
 ```
 
-Получение заданного отчета
+Получение заданного отчета или документа
 
-{% include notitle [access](../../_auto/method_scopes/getReportInfo.md) %}  Возвращает статус генерации заданного отчета и, если отчет готов, ссылку для скачивания.  Чтобы воспользоваться этим запросом, вначале нужно запустить генерацию отчета. [Инструкция](../../step-by-step/reports.md)  |**⚙️ Лимит:** 100 запросов в минуту| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getReportInfo.md) %}  Возвращает статус генерации заданного отчета или документа и, если он готов, ссылку для скачивания.  Чтобы воспользоваться этим запросом, вначале нужно запустить генерацию отчета или документа. [Инструкция](../../step-by-step/reports.md)  |**:no-translate[⚙️] Лимит:** 100 запросов в минуту| |-|
 
 ### Example
 
@@ -1063,7 +1605,7 @@ $apiInstance = new OpenAPI\Client\Api\ReportsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$report_id = 'report_id_example'; // string | Идентификатор отчета, который вы получили после запуска генерации.
+$report_id = 'report_id_example'; // string | Идентификатор отчета или документа, который вы получили после запуска генерации.
 
 try {
     $result = $apiInstance->getReportInfo($report_id);
@@ -1077,7 +1619,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **report_id** | **string**| Идентификатор отчета, который вы получили после запуска генерации. | |
+| **report_id** | **string**| Идентификатор отчета или документа, который вы получили после запуска генерации. | |
 
 ### Return type
 

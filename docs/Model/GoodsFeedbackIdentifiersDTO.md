@@ -5,6 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **order_id** | **int** | Идентификатор заказа на Маркете. | [optional]
-**model_id** | **int** | Идентификатор модели товара. |
+**model_id** | **int** | Идентификатор модели товара. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
