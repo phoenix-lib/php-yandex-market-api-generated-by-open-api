@@ -867,7 +867,7 @@ class OrderDeliveryAddressDTO implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return boolean
      */
-    public function offsetExists(mixed $offset): bool
+    public function offsetExists( $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -880,7 +880,7 @@ class OrderDeliveryAddressDTO implements ModelInterface, ArrayAccess, \JsonSeria
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet(mixed $offset)
+    public function offsetGet( $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -909,7 +909,7 @@ class OrderDeliveryAddressDTO implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
-    public function offsetUnset(mixed $offset): void
+    public function offsetUnset( $offset): void
     {
         unset($this->container[$offset]);
     }
