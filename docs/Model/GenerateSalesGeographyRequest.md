@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**business_id** | **int** | Идентификатор кабинета. |
-**date_from** | **\DateTime** | Начало периода, включительно. |
-**date_to** | **\DateTime** | Конец периода, включительно. |
+**business_id** | **int** | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) |
+**date_from** | **\DateTime** | Начало периода, включительно.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. |
+**date_to** | **\DateTime** | Конец периода, включительно.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. |
 **category_ids** | **int[]** | Идентификаторы категорий. | [optional]
 **offer_ids** | **string[]** | Идентификаторы товаров. | [optional]
 

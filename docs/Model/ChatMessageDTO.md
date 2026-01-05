@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message_id** | **int** | Идентификатор сообщения. |
-**created_at** | **\DateTime** | Дата и время создания сообщения.  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC]. |
+**created_at** | **\DateTime** | Дата и время создания сообщения.  Формат даты: ISO 8601 со смещением относительно UTC. |
 **sender** | [**\OpenAPI\Client\Model\ChatMessageSenderType**](ChatMessageSenderType.md) |  |
 **message** | **string** | Текст сообщения.  Необязательный параметр, если возвращается параметр &#x60;payload&#x60;. | [optional]
 **payload** | [**\OpenAPI\Client\Model\ChatMessagePayloadDTO[]**](ChatMessagePayloadDTO.md) | Информация о приложенных к сообщению файлах.  Необязательный параметр, если возвращается параметр &#x60;message&#x60;. | [optional]

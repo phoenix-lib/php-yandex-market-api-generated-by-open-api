@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**\OpenAPI\Client\Model\OrderItemValidationStatusDTO[]**](OrderItemValidationStatusDTO.md) | Список идентификаторов товаров и статусы проверки УИНов. |
+**items** | [**\OpenAPI\Client\Model\OrderItemValidationStatusDTO[]**](OrderItemValidationStatusDTO.md) | Список идентификаторов товаров и информация по проверке кодов. |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

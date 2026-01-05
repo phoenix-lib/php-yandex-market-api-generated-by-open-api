@@ -1,10 +1,12 @@
 # OpenAPI\Client\DeliveryServicesApi
 
+
+
 All URIs are relative to https://api.partner.market.yandex.ru, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getDeliveryServices()**](DeliveryServicesApi.md#getDeliveryServices) | **GET** /delivery/services | Справочник служб доставки |
+| [**getDeliveryServices()**](DeliveryServicesApi.md#getDeliveryServices) | **GET** /v2/delivery/services | Справочник служб доставки |
 
 
 ## `getDeliveryServices()`
@@ -15,7 +17,7 @@ getDeliveryServices(): \OpenAPI\Client\Model\GetDeliveryServicesResponse
 
 Справочник служб доставки
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getDeliveryServices.md) %}  Возвращает справочник служб доставки: идентификаторы и наименования. |**:no-translate[⚙️] Лимит:** 5 000 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getDeliveryServices.md) %}  Возвращает справочник служб доставки: идентификаторы и наименования. |**⚙️ Лимит:** 5 000 запросов в час| |-|
 
 ### Example
 

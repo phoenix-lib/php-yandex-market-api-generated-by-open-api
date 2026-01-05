@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **shop_outlet_code** | **string** | Идентификатор точки продаж, присвоенный магазином. | [optional]
 **visibility** | [**\OpenAPI\Client\Model\OutletVisibilityType**](OutletVisibilityType.md) |  | [optional]
 **address** | [**\OpenAPI\Client\Model\OutletAddressDTO**](OutletAddressDTO.md) |  |
-**phones** | **string[]** | Номера телефонов точки продаж. Передавайте в формате: &#x60;+7 (999) 999-99-99&#x60;. |
+**phones** | **string[]** | Номера телефонов точки продаж. Передавайте номер в формате: &#x60;+&lt;код страны&gt;(&lt;код города&gt;)&lt;номер&gt;[#&lt;добавочный&gt;]&#x60;.  Примеры: - &#x60;+7 (999) 999-99-99&#x60; - &#x60;+7 (999) 999-99-99#1234&#x60; |
 **working_schedule** | [**\OpenAPI\Client\Model\OutletWorkingScheduleDTO**](OutletWorkingScheduleDTO.md) |  |
 **delivery_rules** | [**\OpenAPI\Client\Model\OutletDeliveryRuleDTO[]**](OutletDeliveryRuleDTO.md) | Информация об условиях доставки для данной точки продаж.  Обязательный параметр, если параметр &#x60;type&#x3D;DEPOT&#x60; или &#x60;type&#x3D;MIXED&#x60;. | [optional]
 **storage_period** | **int** | Срок хранения заказа в собственном пункте выдачи заказов. Считается в днях. | [optional]

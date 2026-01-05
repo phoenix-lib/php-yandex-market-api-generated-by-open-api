@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Идентификатор комментария к отзыву. |
-**text** | **string** | Текст комментария. |
+**text** | **string** | Текст комментария.  Не должен содержать контакты магазина и ссылки на сайты, кроме Маркета. |
 **can_modify** | **bool** | Может ли продавец изменять комментарий или удалять его. | [optional]
-**parent_id** | **int** | Идентификатор комментария к отзыву. | [optional]
+**parent_id** | **int** | Идентификатор родительского комментария. | [optional]
 **author** | [**\OpenAPI\Client\Model\GoodsFeedbackCommentAuthorDTO**](GoodsFeedbackCommentAuthorDTO.md) |  | [optional]
 **status** | [**\OpenAPI\Client\Model\GoodsFeedbackCommentStatusType**](GoodsFeedbackCommentStatusType.md) |  |
 **feedback_id** | **int** | Идентификатор отзыва. |

@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **box_id** | **int** | Идентификатор коробки. |
 **fulfilment_id** | **string** | Идентификатор коробки в информационной системе магазина.  Возвращается в формате: &#x60;номер заказа на Маркете-номер коробки&#x60;. Например, &#x60;7206821‑1&#x60;, &#x60;7206821‑2&#x60; и т. д. |
 **place** | **string** | Номер коробки в заказе. Возвращается в формате: &#x60;номер места/общее количество мест&#x60;. |
-**weight** | **string** | Общая масса всех товаров в заказе.  Возвращается в формате: :no-translate[&#x60;weight кг&#x60;]. |
-**delivery_service_id** | **string** | Идентификатор службы доставки. Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md). |
+**weight** | **string** | Общая масса всех товаров в заказе.  Возвращается в формате &#x60;weight кг&#x60;. |
+**delivery_service_id** | **string** | Идентификатор службы доставки. Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md). |
 **delivery_address** | **string** | Адрес получателя. | [optional]
 **shipment_date** | **string** | Дата отгрузки в формате &#x60;dd.MM.yyyy&#x60;. | [optional]
 

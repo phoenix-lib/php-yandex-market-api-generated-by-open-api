@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Идентификатор отгрузки. |
-**plan_interval_from** | **\DateTime** | Начало планового интервала отгрузки.  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC]. |
-**plan_interval_to** | **\DateTime** | Конец планового интервала отгрузки.  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC. |
+**plan_interval_from** | **\DateTime** | Начало планового интервала отгрузки.  Формат даты: ISO 8601 со смещением относительно UTC. |
+**plan_interval_to** | **\DateTime** | Конец планового интервала отгрузки.  Формат даты: ISO 8601 со смещением относительно UTC. |
 **shipment_type** | [**\OpenAPI\Client\Model\ShipmentType**](ShipmentType.md) |  | [optional]
 **warehouse** | [**\OpenAPI\Client\Model\PartnerShipmentWarehouseDTO**](PartnerShipmentWarehouseDTO.md) |  | [optional]
 **warehouse_to** | [**\OpenAPI\Client\Model\PartnerShipmentWarehouseDTO**](PartnerShipmentWarehouseDTO.md) |  | [optional]

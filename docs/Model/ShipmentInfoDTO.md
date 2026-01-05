@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Идентификатор отгрузки. |
-**plan_interval_from** | **\DateTime** | Начало планового интервала отгрузки.  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC]. |
-**plan_interval_to** | **\DateTime** | Конец планового интервала отгрузки.  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC. |
+**plan_interval_from** | **\DateTime** | Начало планового интервала отгрузки.  Формат даты: ISO 8601 со смещением относительно UTC. |
+**plan_interval_to** | **\DateTime** | Конец планового интервала отгрузки.  Формат даты: ISO 8601 со смещением относительно UTC. |
 **shipment_type** | [**\OpenAPI\Client\Model\ShipmentType**](ShipmentType.md) |  | [optional]
 **warehouse** | [**\OpenAPI\Client\Model\PartnerShipmentWarehouseDTO**](PartnerShipmentWarehouseDTO.md) |  | [optional]
 **warehouse_to** | [**\OpenAPI\Client\Model\PartnerShipmentWarehouseDTO**](PartnerShipmentWarehouseDTO.md) |  | [optional]
@@ -20,6 +20,6 @@ Name | Type | Description | Notes
 **signature** | [**\OpenAPI\Client\Model\SignatureDTO**](SignatureDTO.md) |  |
 **status** | [**\OpenAPI\Client\Model\ShipmentStatusType**](ShipmentStatusType.md) |  | [optional]
 **status_description** | **string** | Описание статуса отгрузки. | [optional]
-**status_update_time** | **\DateTime** | Время последнего изменения статуса отгрузки  Формат даты: :no-translate[ISO 8601] со смещением относительно :no-translate[UTC]. | [optional]
+**status_update_time** | **\DateTime** | Время последнего изменения статуса отгрузки  Формат даты: ISO 8601 со смещением относительно UTC. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

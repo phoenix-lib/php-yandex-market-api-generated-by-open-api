@@ -1,10 +1,12 @@
 # OpenAPI\Client\AuthApi
 
+
+
 All URIs are relative to https://api.partner.market.yandex.ru, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getAuthTokenInfo()**](AuthApi.md#getAuthTokenInfo) | **POST** /auth/token | Получение информации об авторизационном токене |
+| [**getAuthTokenInfo()**](AuthApi.md#getAuthTokenInfo) | **POST** /v2/auth/token | Получение информации о токене авторизации |
 
 
 ## `getAuthTokenInfo()`
@@ -13,9 +15,9 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 getAuthTokenInfo(): \OpenAPI\Client\Model\GetTokenInfoResponse
 ```
 
-Получение информации об авторизационном токене
+Получение информации о токене авторизации
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getAuthTokenInfo.md) %}  {% note info \"Метод доступен только для Api-Key-токена.\" %}     {% endnote %}  Возвращает информацию о переданном авторизационном токене.  |**:no-translate[⚙️] Лимит:** 100 запросов в час| |-|
+{% include notitle [:no-translate[access]](../../_auto/method_scopes/getAuthTokenInfo.md) %}  {% note info \"Метод доступен только для Api-Key-токена.\" %}     {% endnote %}  Возвращает информацию о переданном токене авторизации.  |**⚙️ Лимит:** 100 запросов в час| |-|
 
 ### Example
 
