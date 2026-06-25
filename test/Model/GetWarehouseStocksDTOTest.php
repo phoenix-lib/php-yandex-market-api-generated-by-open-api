@@ -80,18 +80,18 @@ class GetWarehouseStocksDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "paging"
+     * Test attribute "warehouses"
      */
-    public function testPropertyPaging()
+    public function testPropertyWarehouses()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "warehouses"
+     * Test attribute "paging"
      */
-    public function testPropertyWarehouses()
+    public function testPropertyPaging()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

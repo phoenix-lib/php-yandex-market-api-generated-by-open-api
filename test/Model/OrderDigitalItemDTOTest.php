@@ -89,15 +89,6 @@ class OrderDigitalItemDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "codes"
-     */
-    public function testPropertyCodes()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "slip"
      */
     public function testPropertySlip()
@@ -110,6 +101,15 @@ class OrderDigitalItemDTOTest extends TestCase
      * Test attribute "activate_till"
      */
     public function testPropertyActivateTill()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "codes"
+     */
+    public function testPropertyCodes()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

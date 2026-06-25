@@ -80,6 +80,15 @@ class UpdateGoodsQuestionTextEntityRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "operation_type"
+     */
+    public function testPropertyOperationType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "entity_id"
      */
     public function testPropertyEntityId()
@@ -101,15 +110,6 @@ class UpdateGoodsQuestionTextEntityRequestTest extends TestCase
      * Test attribute "text"
      */
     public function testPropertyText()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "operation_type"
-     */
-    public function testPropertyOperationType()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -340,7 +340,7 @@ class GenerateShelfsStatisticsRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Sets business_id
      *
-     * @param int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+     * @param int $business_id Идентификатор кабинета. {% if audience == \"partner\" %}Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) {% endif %}
      *
      * @return self
      */
@@ -446,7 +446,7 @@ class GenerateShelfsStatisticsRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -459,7 +459,7 @@ class GenerateShelfsStatisticsRequest implements ModelInterface, ArrayAccess, \J
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -488,7 +488,7 @@ class GenerateShelfsStatisticsRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

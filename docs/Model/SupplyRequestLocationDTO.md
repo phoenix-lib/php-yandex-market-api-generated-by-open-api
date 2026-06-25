@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**requested_date** | **\DateTime** | Дата и время поставки на склад или в ПВЗ. | [optional]
 **service_id** | **int** | Идентификатор склада или логистического партнера ПВЗ. |
 **name** | **string** | Название склада или ПВЗ. |
 **address** | [**\OpenAPI\Client\Model\SupplyRequestLocationAddressDTO**](SupplyRequestLocationAddressDTO.md) |  |
 **type** | [**\OpenAPI\Client\Model\SupplyRequestLocationType**](SupplyRequestLocationType.md) |  |
+**requested_date** | **\DateTime** | Дата и время поставки на склад или в ПВЗ. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

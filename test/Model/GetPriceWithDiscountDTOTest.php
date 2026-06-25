@@ -98,18 +98,18 @@ class GetPriceWithDiscountDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "discount_base"
+     * Test attribute "updated_at"
      */
-    public function testPropertyDiscountBase()
+    public function testPropertyUpdatedAt()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "updated_at"
+     * Test attribute "discount_base"
      */
-    public function testPropertyUpdatedAt()
+    public function testPropertyDiscountBase()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

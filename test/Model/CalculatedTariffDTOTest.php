@@ -89,6 +89,15 @@ class CalculatedTariffDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "parameters"
+     */
+    public function testPropertyParameters()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "amount"
      */
     public function testPropertyAmount()
@@ -101,15 +110,6 @@ class CalculatedTariffDTOTest extends TestCase
      * Test attribute "currency"
      */
     public function testPropertyCurrency()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "parameters"
-     */
-    public function testPropertyParameters()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

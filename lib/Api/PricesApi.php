@@ -142,9 +142,9 @@ class PricesApi
      *
      * Просмотр цен на указанные товары во всех магазинах
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  \OpenAPI\Client\Model\GetDefaultPricesRequest|null $get_default_prices_request get_default_prices_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDefaultPrices'] to see the possible values for this operation
      *
@@ -152,7 +152,7 @@ class PricesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetDefaultPricesResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getDefaultPrices($business_id, $page_token = null, $limit = null, $get_default_prices_request = null, string $contentType = self::contentTypes['getDefaultPrices'][0])
+    public function getDefaultPrices($business_id, $page_token = null, $limit = 250, $get_default_prices_request = null, string $contentType = self::contentTypes['getDefaultPrices'][0])
     {
         list($response) = $this->getDefaultPricesWithHttpInfo($business_id, $page_token, $limit, $get_default_prices_request, $contentType);
         return $response;
@@ -163,9 +163,9 @@ class PricesApi
      *
      * Просмотр цен на указанные товары во всех магазинах
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  \OpenAPI\Client\Model\GetDefaultPricesRequest|null $get_default_prices_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDefaultPrices'] to see the possible values for this operation
      *
@@ -173,7 +173,7 @@ class PricesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetDefaultPricesResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDefaultPricesWithHttpInfo($business_id, $page_token = null, $limit = null, $get_default_prices_request = null, string $contentType = self::contentTypes['getDefaultPrices'][0])
+    public function getDefaultPricesWithHttpInfo($business_id, $page_token = null, $limit = 250, $get_default_prices_request = null, string $contentType = self::contentTypes['getDefaultPrices'][0])
     {
         $request = $this->getDefaultPricesRequest($business_id, $page_token, $limit, $get_default_prices_request, $contentType);
 
@@ -335,16 +335,16 @@ class PricesApi
      *
      * Просмотр цен на указанные товары во всех магазинах
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  \OpenAPI\Client\Model\GetDefaultPricesRequest|null $get_default_prices_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDefaultPrices'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDefaultPricesAsync($business_id, $page_token = null, $limit = null, $get_default_prices_request = null, string $contentType = self::contentTypes['getDefaultPrices'][0])
+    public function getDefaultPricesAsync($business_id, $page_token = null, $limit = 250, $get_default_prices_request = null, string $contentType = self::contentTypes['getDefaultPrices'][0])
     {
         return $this->getDefaultPricesAsyncWithHttpInfo($business_id, $page_token, $limit, $get_default_prices_request, $contentType)
             ->then(
@@ -359,16 +359,16 @@ class PricesApi
      *
      * Просмотр цен на указанные товары во всех магазинах
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  \OpenAPI\Client\Model\GetDefaultPricesRequest|null $get_default_prices_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDefaultPrices'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDefaultPricesAsyncWithHttpInfo($business_id, $page_token = null, $limit = null, $get_default_prices_request = null, string $contentType = self::contentTypes['getDefaultPrices'][0])
+    public function getDefaultPricesAsyncWithHttpInfo($business_id, $page_token = null, $limit = 250, $get_default_prices_request = null, string $contentType = self::contentTypes['getDefaultPrices'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetDefaultPricesResponse';
         $request = $this->getDefaultPricesRequest($business_id, $page_token, $limit, $get_default_prices_request, $contentType);
@@ -412,16 +412,16 @@ class PricesApi
     /**
      * Create request for operation 'getDefaultPrices'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  \OpenAPI\Client\Model\GetDefaultPricesRequest|null $get_default_prices_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDefaultPrices'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getDefaultPricesRequest($business_id, $page_token = null, $limit = null, $get_default_prices_request = null, string $contentType = self::contentTypes['getDefaultPrices'][0])
+    public function getDefaultPricesRequest($business_id, $page_token = null, $limit = 250, $get_default_prices_request = null, string $contentType = self::contentTypes['getDefaultPrices'][0])
     {
 
         // verify the required parameter 'business_id' is set
@@ -435,6 +435,9 @@ class PricesApi
         }
         
 
+        if ($limit !== null && $limit > 500) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling PricesApi.getDefaultPrices, must be smaller than or equal to 500.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling PricesApi.getDefaultPrices, must be bigger than or equal to 1.');
         }
@@ -451,7 +454,7 @@ class PricesApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -553,8 +556,8 @@ class PricesApi
      * Список цен
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  bool|null $archived Фильтр по нахождению в архиве. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPrices'] to see the possible values for this operation
      *
@@ -563,7 +566,7 @@ class PricesApi
      * @return \OpenAPI\Client\Model\GetPricesResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      * @deprecated
      */
-    public function getPrices($campaign_id, $page_token = null, $limit = null, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
+    public function getPrices($campaign_id, $page_token = null, $limit = 250, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
     {
         list($response) = $this->getPricesWithHttpInfo($campaign_id, $page_token, $limit, $archived, $contentType);
         return $response;
@@ -575,8 +578,8 @@ class PricesApi
      * Список цен
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  bool|null $archived Фильтр по нахождению в архиве. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPrices'] to see the possible values for this operation
      *
@@ -585,7 +588,7 @@ class PricesApi
      * @return array of \OpenAPI\Client\Model\GetPricesResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function getPricesWithHttpInfo($campaign_id, $page_token = null, $limit = null, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
+    public function getPricesWithHttpInfo($campaign_id, $page_token = null, $limit = 250, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
     {
         $request = $this->getPricesRequest($campaign_id, $page_token, $limit, $archived, $contentType);
 
@@ -748,8 +751,8 @@ class PricesApi
      * Список цен
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  bool|null $archived Фильтр по нахождению в архиве. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPrices'] to see the possible values for this operation
      *
@@ -757,7 +760,7 @@ class PricesApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function getPricesAsync($campaign_id, $page_token = null, $limit = null, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
+    public function getPricesAsync($campaign_id, $page_token = null, $limit = 250, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
     {
         return $this->getPricesAsyncWithHttpInfo($campaign_id, $page_token, $limit, $archived, $contentType)
             ->then(
@@ -773,8 +776,8 @@ class PricesApi
      * Список цен
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  bool|null $archived Фильтр по нахождению в архиве. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPrices'] to see the possible values for this operation
      *
@@ -782,7 +785,7 @@ class PricesApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function getPricesAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = null, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
+    public function getPricesAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = 250, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetPricesResponse';
         $request = $this->getPricesRequest($campaign_id, $page_token, $limit, $archived, $contentType);
@@ -827,8 +830,8 @@ class PricesApi
      * Create request for operation 'getPrices'
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  bool|null $archived Фильтр по нахождению в архиве. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPrices'] to see the possible values for this operation
      *
@@ -836,7 +839,7 @@ class PricesApi
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function getPricesRequest($campaign_id, $page_token = null, $limit = null, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
+    public function getPricesRequest($campaign_id, $page_token = null, $limit = 250, $archived = false, string $contentType = self::contentTypes['getPrices'][0])
     {
 
         // verify the required parameter 'campaign_id' is set
@@ -850,6 +853,9 @@ class PricesApi
         }
         
 
+        if ($limit !== null && $limit > 500) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling PricesApi.getPrices, must be smaller than or equal to 500.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling PricesApi.getPrices, must be bigger than or equal to 1.');
         }
@@ -866,7 +872,7 @@ class PricesApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -970,8 +976,8 @@ class PricesApi
      * Просмотр цен на указанные товары в конкретном магазине
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  \OpenAPI\Client\Model\GetPricesByOfferIdsRequest|null $get_prices_by_offer_ids_request get_prices_by_offer_ids_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPricesByOfferIds'] to see the possible values for this operation
      *
@@ -979,7 +985,7 @@ class PricesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetPricesByOfferIdsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getPricesByOfferIds($campaign_id, $page_token = null, $limit = null, $get_prices_by_offer_ids_request = null, string $contentType = self::contentTypes['getPricesByOfferIds'][0])
+    public function getPricesByOfferIds($campaign_id, $page_token = null, $limit = 250, $get_prices_by_offer_ids_request = null, string $contentType = self::contentTypes['getPricesByOfferIds'][0])
     {
         list($response) = $this->getPricesByOfferIdsWithHttpInfo($campaign_id, $page_token, $limit, $get_prices_by_offer_ids_request, $contentType);
         return $response;
@@ -991,8 +997,8 @@ class PricesApi
      * Просмотр цен на указанные товары в конкретном магазине
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  \OpenAPI\Client\Model\GetPricesByOfferIdsRequest|null $get_prices_by_offer_ids_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPricesByOfferIds'] to see the possible values for this operation
      *
@@ -1000,7 +1006,7 @@ class PricesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetPricesByOfferIdsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPricesByOfferIdsWithHttpInfo($campaign_id, $page_token = null, $limit = null, $get_prices_by_offer_ids_request = null, string $contentType = self::contentTypes['getPricesByOfferIds'][0])
+    public function getPricesByOfferIdsWithHttpInfo($campaign_id, $page_token = null, $limit = 250, $get_prices_by_offer_ids_request = null, string $contentType = self::contentTypes['getPricesByOfferIds'][0])
     {
         $request = $this->getPricesByOfferIdsRequest($campaign_id, $page_token, $limit, $get_prices_by_offer_ids_request, $contentType);
 
@@ -1163,15 +1169,15 @@ class PricesApi
      * Просмотр цен на указанные товары в конкретном магазине
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  \OpenAPI\Client\Model\GetPricesByOfferIdsRequest|null $get_prices_by_offer_ids_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPricesByOfferIds'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPricesByOfferIdsAsync($campaign_id, $page_token = null, $limit = null, $get_prices_by_offer_ids_request = null, string $contentType = self::contentTypes['getPricesByOfferIds'][0])
+    public function getPricesByOfferIdsAsync($campaign_id, $page_token = null, $limit = 250, $get_prices_by_offer_ids_request = null, string $contentType = self::contentTypes['getPricesByOfferIds'][0])
     {
         return $this->getPricesByOfferIdsAsyncWithHttpInfo($campaign_id, $page_token, $limit, $get_prices_by_offer_ids_request, $contentType)
             ->then(
@@ -1187,15 +1193,15 @@ class PricesApi
      * Просмотр цен на указанные товары в конкретном магазине
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  \OpenAPI\Client\Model\GetPricesByOfferIdsRequest|null $get_prices_by_offer_ids_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPricesByOfferIds'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPricesByOfferIdsAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = null, $get_prices_by_offer_ids_request = null, string $contentType = self::contentTypes['getPricesByOfferIds'][0])
+    public function getPricesByOfferIdsAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = 250, $get_prices_by_offer_ids_request = null, string $contentType = self::contentTypes['getPricesByOfferIds'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetPricesByOfferIdsResponse';
         $request = $this->getPricesByOfferIdsRequest($campaign_id, $page_token, $limit, $get_prices_by_offer_ids_request, $contentType);
@@ -1240,15 +1246,15 @@ class PricesApi
      * Create request for operation 'getPricesByOfferIds'
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 250)
      * @param  \OpenAPI\Client\Model\GetPricesByOfferIdsRequest|null $get_prices_by_offer_ids_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPricesByOfferIds'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPricesByOfferIdsRequest($campaign_id, $page_token = null, $limit = null, $get_prices_by_offer_ids_request = null, string $contentType = self::contentTypes['getPricesByOfferIds'][0])
+    public function getPricesByOfferIdsRequest($campaign_id, $page_token = null, $limit = 250, $get_prices_by_offer_ids_request = null, string $contentType = self::contentTypes['getPricesByOfferIds'][0])
     {
 
         // verify the required parameter 'campaign_id' is set
@@ -1262,6 +1268,9 @@ class PricesApi
         }
         
 
+        if ($limit !== null && $limit > 500) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling PricesApi.getPricesByOfferIds, must be smaller than or equal to 500.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling PricesApi.getPricesByOfferIds, must be bigger than or equal to 1.');
         }
@@ -1278,7 +1287,7 @@ class PricesApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -1379,7 +1388,7 @@ class PricesApi
      *
      * Установка цен на товары для всех магазинов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateBusinessPricesRequest $update_business_prices_request update_business_prices_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBusinessPrices'] to see the possible values for this operation
      *
@@ -1398,7 +1407,7 @@ class PricesApi
      *
      * Установка цен на товары для всех магазинов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateBusinessPricesRequest $update_business_prices_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBusinessPrices'] to see the possible values for this operation
      *
@@ -1582,7 +1591,7 @@ class PricesApi
      *
      * Установка цен на товары для всех магазинов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateBusinessPricesRequest $update_business_prices_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBusinessPrices'] to see the possible values for this operation
      *
@@ -1604,7 +1613,7 @@ class PricesApi
      *
      * Установка цен на товары для всех магазинов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateBusinessPricesRequest $update_business_prices_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBusinessPrices'] to see the possible values for this operation
      *
@@ -1655,7 +1664,7 @@ class PricesApi
     /**
      * Create request for operation 'updateBusinessPrices'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateBusinessPricesRequest $update_business_prices_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateBusinessPrices'] to see the possible values for this operation
      *

@@ -59,7 +59,7 @@ class GetChatsInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'chats' => '\OpenAPI\Client\Model\GetChatInfoDTO[]',
-        'paging' => '\OpenAPI\Client\Model\ForwardScrollingPagerDTO'
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -330,7 +330,7 @@ class GetChatsInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets paging
      *
-     * @return \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
      */
     public function getPaging()
     {
@@ -340,7 +340,7 @@ class GetChatsInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets paging
      *
-     * @param \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null $paging paging
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
      *
      * @return self
      */
@@ -360,7 +360,7 @@ class GetChatsInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -373,7 +373,7 @@ class GetChatsInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,7 +402,7 @@ class GetChatsInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

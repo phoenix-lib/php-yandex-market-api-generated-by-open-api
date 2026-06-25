@@ -89,18 +89,18 @@ class QuestionIdentifiersDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "category_id"
+     * Test attribute "offer_id"
      */
-    public function testPropertyCategoryId()
+    public function testPropertyOfferId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "offer_id"
+     * Test attribute "category_id"
      */
-    public function testPropertyOfferId()
+    public function testPropertyCategoryId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

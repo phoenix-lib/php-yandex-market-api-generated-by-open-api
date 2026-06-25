@@ -80,18 +80,18 @@ class ExtensionShipmentDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "current_status"
+     * Test attribute "available_actions"
      */
-    public function testPropertyCurrentStatus()
+    public function testPropertyAvailableActions()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "available_actions"
+     * Test attribute "current_status"
      */
-    public function testPropertyAvailableActions()
+    public function testPropertyCurrentStatus()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

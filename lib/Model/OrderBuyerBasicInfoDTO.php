@@ -58,11 +58,11 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
+        'type' => '\OpenAPI\Client\Model\OrderBuyerType',
         'id' => 'string',
         'last_name' => 'string',
         'first_name' => 'string',
-        'middle_name' => 'string',
-        'type' => '\OpenAPI\Client\Model\OrderBuyerType'
+        'middle_name' => 'string'
     ];
 
     /**
@@ -73,11 +73,11 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'type' => null,
         'id' => null,
         'last_name' => null,
         'first_name' => null,
-        'middle_name' => null,
-        'type' => null
+        'middle_name' => null
     ];
 
     /**
@@ -86,11 +86,11 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'type' => false,
         'id' => false,
         'last_name' => false,
         'first_name' => false,
-        'middle_name' => false,
-        'type' => false
+        'middle_name' => false
     ];
 
     /**
@@ -179,11 +179,11 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
+        'type' => 'type',
         'id' => 'id',
         'last_name' => 'lastName',
         'first_name' => 'firstName',
-        'middle_name' => 'middleName',
-        'type' => 'type'
+        'middle_name' => 'middleName'
     ];
 
     /**
@@ -192,11 +192,11 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
+        'type' => 'setType',
         'id' => 'setId',
         'last_name' => 'setLastName',
         'first_name' => 'setFirstName',
-        'middle_name' => 'setMiddleName',
-        'type' => 'setType'
+        'middle_name' => 'setMiddleName'
     ];
 
     /**
@@ -205,11 +205,11 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
+        'type' => 'getType',
         'id' => 'getId',
         'last_name' => 'getLastName',
         'first_name' => 'getFirstName',
-        'middle_name' => 'getMiddleName',
-        'type' => 'getType'
+        'middle_name' => 'getMiddleName'
     ];
 
     /**
@@ -269,11 +269,11 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('last_name', $data ?? [], null);
         $this->setIfExists('first_name', $data ?? [], null);
         $this->setIfExists('middle_name', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -320,6 +320,33 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets type
+     *
+     * @return \OpenAPI\Client\Model\OrderBuyerType
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param \OpenAPI\Client\Model\OrderBuyerType $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -428,33 +455,6 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
-    /**
-     * Gets type
-     *
-     * @return \OpenAPI\Client\Model\OrderBuyerType
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param \OpenAPI\Client\Model\OrderBuyerType $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -462,7 +462,7 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -475,7 +475,7 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -504,7 +504,7 @@ class OrderBuyerBasicInfoDTO implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

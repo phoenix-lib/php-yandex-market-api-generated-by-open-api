@@ -80,18 +80,18 @@ class GetHiddenOffersResultDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "paging"
+     * Test attribute "hidden_offers"
      */
-    public function testPropertyPaging()
+    public function testPropertyHiddenOffers()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "hidden_offers"
+     * Test attribute "paging"
      */
-    public function testPropertyHiddenOffers()
+    public function testPropertyPaging()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

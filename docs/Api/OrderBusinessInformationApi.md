@@ -18,7 +18,7 @@ getOrderBusinessBuyerInfo($campaign_id, $order_id): \OpenAPI\Client\Model\GetBus
 
 Информация о покупателе — юридическом лице
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOrderBusinessBuyerInfo.md) %}  Возвращает информацию о покупателе по идентификатору заказа.  {% note info \"Как получить информацию о покупателе, который является физическим лицом\" %}  Воспользуйтесь запросом [GET v2/campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/orders/getOrderBuyerInfo.md).  {% endnote %}  Получить данные можно, только если заказ находится в статусе `PROCESSING`, `DELIVERY`, `PICKUP` или `DELIVERED`.  |**⚙️ Лимит:** 3 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getOrderBusinessBuyerInfo.md) %}  Возвращает информацию о покупателе по идентификатору заказа.  {% note info \"Как получить информацию о покупателе, который является физическим лицом\" %}  Воспользуйтесь запросом [GET v2/campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/order-delivery/getOrderBuyerInfo.md).  {% endnote %}  Получить данные можно, только если заказ находится в статусе `PROCESSING`, `DELIVERY`, `PICKUP` или `DELIVERED`.  {% include notitle [limit](../../_auto/method_limits/getOrderBusinessBuyerInfo.md) %}
 
 ### Example
 
@@ -85,7 +85,7 @@ getOrderBusinessDocumentsInfo($campaign_id, $order_id): \OpenAPI\Client\Model\Ge
 
 Информация о документах
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOrderBusinessDocumentsInfo.md) %}  Возвращает информацию о документах по идентификатору заказа.  Получить данные можно после того, как заказ перейдет в статус `DELIVERED`.  |**⚙️ Лимит:** 3 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getOrderBusinessDocumentsInfo.md) %}  Возвращает информацию о документах по идентификатору заказа.  Получить данные можно после того, как заказ перейдет в статус `DELIVERED`.  {% include notitle [limit](../../_auto/method_limits/getOrderBusinessDocumentsInfo.md) %}
 
 ### Example
 

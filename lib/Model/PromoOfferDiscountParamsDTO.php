@@ -289,9 +289,6 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
-        if ($this->container['max_promo_price'] === null) {
-            $invalidProperties[] = "'max_promo_price' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -364,7 +361,7 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets max_promo_price
      *
-     * @return int
+     * @return int|null
      */
     public function getMaxPromoPrice()
     {
@@ -374,7 +371,7 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets max_promo_price
      *
-     * @param int $max_promo_price Максимально возможная цена для участия в акции.  Указывается в рублях.  Возвращается для всех товаров.
+     * @param int|null $max_promo_price Максимально возможная цена для участия в акции. Если значение не заполнено, ограничение отсутствует.  Указывается в рублях.
      *
      * @return self
      */
@@ -394,7 +391,7 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -407,7 +404,7 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -436,7 +433,7 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

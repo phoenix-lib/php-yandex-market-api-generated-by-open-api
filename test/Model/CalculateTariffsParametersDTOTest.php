@@ -107,6 +107,15 @@ class CalculateTariffsParametersDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "payment_delay_weeks"
+     */
+    public function testPropertyPaymentDelayWeeks()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "currency"
      */
     public function testPropertyCurrency()

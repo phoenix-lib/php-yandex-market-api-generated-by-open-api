@@ -58,8 +58,8 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => '\OpenAPI\Client\Model\PriceQuarantineVerdictType',
-        'params' => '\OpenAPI\Client\Model\PriceQuarantineVerdictParameterDTO[]'
+        'params' => '\OpenAPI\Client\Model\PriceQuarantineVerdictParameterDTO[]',
+        'type' => '\OpenAPI\Client\Model\PriceQuarantineVerdictType'
     ];
 
     /**
@@ -70,8 +70,8 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'params' => null
+        'params' => null,
+        'type' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'type' => false,
-        'params' => false
+        'params' => false,
+        'type' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'params' => 'params'
+        'params' => 'params',
+        'type' => 'type'
     ];
 
     /**
@@ -180,8 +180,8 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'params' => 'setParams'
+        'params' => 'setParams',
+        'type' => 'setType'
     ];
 
     /**
@@ -190,8 +190,8 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'params' => 'getParams'
+        'params' => 'getParams',
+        'type' => 'getType'
     ];
 
     /**
@@ -251,8 +251,8 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('params', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -301,33 +301,6 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets type
-     *
-     * @return \OpenAPI\Client\Model\PriceQuarantineVerdictType|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param \OpenAPI\Client\Model\PriceQuarantineVerdictType|null $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
      * Gets params
      *
      * @return \OpenAPI\Client\Model\PriceQuarantineVerdictParameterDTO[]
@@ -353,6 +326,33 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
+
+    /**
+     * Gets type
+     *
+     * @return \OpenAPI\Client\Model\PriceQuarantineVerdictType|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param \OpenAPI\Client\Model\PriceQuarantineVerdictType|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -360,7 +360,7 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -373,7 +373,7 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,7 +402,7 @@ class PriceQuarantineVerdictDTO implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

@@ -137,7 +137,7 @@ class WarehousesApi
     /**
      * Operation getFulfillmentWarehouses
      *
-     * Идентификаторы складов Маркета
+     * Идентификаторы фулфилмент-складов Маркета
      *
      * @param  int|null $campaign_id Идентификатор кампании магазина.  Указывается, если нужно вернуть все склады Маркета, которые привязаны к определенной кампании магазина. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFulfillmentWarehouses'] to see the possible values for this operation
@@ -155,7 +155,7 @@ class WarehousesApi
     /**
      * Operation getFulfillmentWarehousesWithHttpInfo
      *
-     * Идентификаторы складов Маркета
+     * Идентификаторы фулфилмент-складов Маркета
      *
      * @param  int|null $campaign_id Идентификатор кампании магазина.  Указывается, если нужно вернуть все склады Маркета, которые привязаны к определенной кампании магазина. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFulfillmentWarehouses'] to see the possible values for this operation
@@ -324,7 +324,7 @@ class WarehousesApi
     /**
      * Operation getFulfillmentWarehousesAsync
      *
-     * Идентификаторы складов Маркета
+     * Идентификаторы фулфилмент-складов Маркета
      *
      * @param  int|null $campaign_id Идентификатор кампании магазина.  Указывается, если нужно вернуть все склады Маркета, которые привязаны к определенной кампании магазина. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFulfillmentWarehouses'] to see the possible values for this operation
@@ -345,7 +345,7 @@ class WarehousesApi
     /**
      * Operation getFulfillmentWarehousesAsyncWithHttpInfo
      *
-     * Идентификаторы складов Маркета
+     * Идентификаторы фулфилмент-складов Маркета
      *
      * @param  int|null $campaign_id Идентификатор кампании магазина.  Указывается, если нужно вернуть все склады Маркета, которые привязаны к определенной кампании магазина. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getFulfillmentWarehouses'] to see the possible values for this operation
@@ -498,9 +498,9 @@ class WarehousesApi
      *
      * Список складов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 15)
      * @param  \OpenAPI\Client\Model\GetPagedWarehousesRequest|null $get_paged_warehouses_request get_paged_warehouses_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPagedWarehouses'] to see the possible values for this operation
      *
@@ -508,7 +508,7 @@ class WarehousesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetPagedWarehousesResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getPagedWarehouses($business_id, $page_token = null, $limit = null, $get_paged_warehouses_request = null, string $contentType = self::contentTypes['getPagedWarehouses'][0])
+    public function getPagedWarehouses($business_id, $page_token = null, $limit = 15, $get_paged_warehouses_request = null, string $contentType = self::contentTypes['getPagedWarehouses'][0])
     {
         list($response) = $this->getPagedWarehousesWithHttpInfo($business_id, $page_token, $limit, $get_paged_warehouses_request, $contentType);
         return $response;
@@ -519,9 +519,9 @@ class WarehousesApi
      *
      * Список складов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 15)
      * @param  \OpenAPI\Client\Model\GetPagedWarehousesRequest|null $get_paged_warehouses_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPagedWarehouses'] to see the possible values for this operation
      *
@@ -529,7 +529,7 @@ class WarehousesApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetPagedWarehousesResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPagedWarehousesWithHttpInfo($business_id, $page_token = null, $limit = null, $get_paged_warehouses_request = null, string $contentType = self::contentTypes['getPagedWarehouses'][0])
+    public function getPagedWarehousesWithHttpInfo($business_id, $page_token = null, $limit = 15, $get_paged_warehouses_request = null, string $contentType = self::contentTypes['getPagedWarehouses'][0])
     {
         $request = $this->getPagedWarehousesRequest($business_id, $page_token, $limit, $get_paged_warehouses_request, $contentType);
 
@@ -677,16 +677,16 @@ class WarehousesApi
      *
      * Список складов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 15)
      * @param  \OpenAPI\Client\Model\GetPagedWarehousesRequest|null $get_paged_warehouses_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPagedWarehouses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPagedWarehousesAsync($business_id, $page_token = null, $limit = null, $get_paged_warehouses_request = null, string $contentType = self::contentTypes['getPagedWarehouses'][0])
+    public function getPagedWarehousesAsync($business_id, $page_token = null, $limit = 15, $get_paged_warehouses_request = null, string $contentType = self::contentTypes['getPagedWarehouses'][0])
     {
         return $this->getPagedWarehousesAsyncWithHttpInfo($business_id, $page_token, $limit, $get_paged_warehouses_request, $contentType)
             ->then(
@@ -701,16 +701,16 @@ class WarehousesApi
      *
      * Список складов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 15)
      * @param  \OpenAPI\Client\Model\GetPagedWarehousesRequest|null $get_paged_warehouses_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPagedWarehouses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPagedWarehousesAsyncWithHttpInfo($business_id, $page_token = null, $limit = null, $get_paged_warehouses_request = null, string $contentType = self::contentTypes['getPagedWarehouses'][0])
+    public function getPagedWarehousesAsyncWithHttpInfo($business_id, $page_token = null, $limit = 15, $get_paged_warehouses_request = null, string $contentType = self::contentTypes['getPagedWarehouses'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetPagedWarehousesResponse';
         $request = $this->getPagedWarehousesRequest($business_id, $page_token, $limit, $get_paged_warehouses_request, $contentType);
@@ -754,16 +754,16 @@ class WarehousesApi
     /**
      * Create request for operation 'getPagedWarehouses'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 15)
      * @param  \OpenAPI\Client\Model\GetPagedWarehousesRequest|null $get_paged_warehouses_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPagedWarehouses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPagedWarehousesRequest($business_id, $page_token = null, $limit = null, $get_paged_warehouses_request = null, string $contentType = self::contentTypes['getPagedWarehouses'][0])
+    public function getPagedWarehousesRequest($business_id, $page_token = null, $limit = 15, $get_paged_warehouses_request = null, string $contentType = self::contentTypes['getPagedWarehouses'][0])
     {
 
         // verify the required parameter 'business_id' is set
@@ -777,6 +777,9 @@ class WarehousesApi
         }
         
 
+        if ($limit !== null && $limit > 30) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling WarehousesApi.getPagedWarehouses, must be smaller than or equal to 30.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling WarehousesApi.getPagedWarehouses, must be bigger than or equal to 1.');
         }
@@ -793,7 +796,7 @@ class WarehousesApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -894,7 +897,7 @@ class WarehousesApi
      *
      * Список складов и групп складов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWarehouses'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -913,7 +916,7 @@ class WarehousesApi
      *
      * Список складов и групп складов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWarehouses'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1083,7 +1086,7 @@ class WarehousesApi
      *
      * Список складов и групп складов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWarehouses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1105,7 +1108,7 @@ class WarehousesApi
      *
      * Список складов и групп складов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWarehouses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1156,7 +1159,7 @@ class WarehousesApi
     /**
      * Create request for operation 'getWarehouses'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getWarehouses'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

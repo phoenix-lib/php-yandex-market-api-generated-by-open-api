@@ -326,6 +326,10 @@ class OutletDeliveryRuleDTO implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'max_delivery_days', must be bigger than or equal to 0.";
         }
 
+        if (!is_null($this->container['delivery_service_id']) && ($this->container['delivery_service_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'delivery_service_id', must be bigger than or equal to 1.";
+        }
+
         if (!is_null($this->container['order_before']) && ($this->container['order_before'] > 24)) {
             $invalidProperties[] = "invalid value for 'order_before', must be smaller than or equal to 24.";
         }
@@ -432,7 +436,7 @@ class OutletDeliveryRuleDTO implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets delivery_service_id
      *
-     * @param int|null $delivery_service_id Идентификатор службы доставки товаров в точку продаж.  Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md).
+     * @param int|null $delivery_service_id Идентификатор службы доставки товаров в точку продаж.  Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/delivery-services/getDeliveryServices.md).
      *
      * @return self
      */
@@ -441,6 +445,11 @@ class OutletDeliveryRuleDTO implements ModelInterface, ArrayAccess, \JsonSeriali
         if (is_null($delivery_service_id)) {
             throw new \InvalidArgumentException('non-nullable delivery_service_id cannot be null');
         }
+
+        if (($delivery_service_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $delivery_service_id when calling OutletDeliveryRuleDTO., must be bigger than or equal to 1.');
+        }
+
         $this->container['delivery_service_id'] = $delivery_service_id;
 
         return $this;
@@ -541,7 +550,7 @@ class OutletDeliveryRuleDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -554,7 +563,7 @@ class OutletDeliveryRuleDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -583,7 +592,7 @@ class OutletDeliveryRuleDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

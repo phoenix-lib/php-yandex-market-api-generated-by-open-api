@@ -105,4 +105,13 @@ class SetReturnDecisionRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "compensation"
+     */
+    public function testPropertyCompensation()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

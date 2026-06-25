@@ -33,7 +33,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * SellingProgramType Class Doc Comment
  *
  * @category Class
- * @description Модель работы:  * &#x60;FBY&#x60; — FBY. * &#x60;FBS&#x60; — FBS. * &#x60;DBS&#x60; — DBS. * &#x60;EXPRESS&#x60; — Экспресс.
+ * @description Модель работы:  * &#x60;FBY&#x60; — FBY. * &#x60;FBS&#x60; — FBS. * &#x60;DBS&#x60; — DBS. * &#x60;EXPRESS&#x60; — Экспресс. * &#x60;LAAS&#x60; — LaaS.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

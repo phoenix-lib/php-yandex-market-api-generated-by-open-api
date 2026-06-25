@@ -644,7 +644,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cis_list
      *
-     * @param string[]|null $cis_list Список кодов идентификации товара в системе [:no-translate[«Честный ЗНАК»]](https://честныйзнак.рф/) или [:no-translate[«ASL BELGISI»]](https://aslbelgisi.uz) (для продавцов :no-translate[Market Yandex Go]).
+     * @param string[]|null $cis_list Список кодов идентификации товара в системе [«Честный ЗНАК»](https://честныйзнак.рф/) или [«ASL BELGISI»](https://aslbelgisi.uz) (для продавцов :no-translate[Market Yandex Go]).
      *
      * @return self
      */
@@ -792,7 +792,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -805,7 +805,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -834,7 +834,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

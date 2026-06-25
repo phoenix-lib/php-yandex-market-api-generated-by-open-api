@@ -89,15 +89,6 @@ class BaseCampaignOfferDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "quantum"
-     */
-    public function testPropertyQuantum()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "available"
      */
     public function testPropertyAvailable()

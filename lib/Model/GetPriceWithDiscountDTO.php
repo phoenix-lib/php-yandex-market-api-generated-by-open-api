@@ -60,8 +60,8 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'value' => 'float',
         'currency_id' => '\OpenAPI\Client\Model\CurrencyType',
-        'discount_base' => 'float',
-        'updated_at' => '\DateTime'
+        'updated_at' => '\DateTime',
+        'discount_base' => 'float'
     ];
 
     /**
@@ -74,8 +74,8 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPIFormats = [
         'value' => null,
         'currency_id' => null,
-        'discount_base' => null,
-        'updated_at' => 'date-time'
+        'updated_at' => 'date-time',
+        'discount_base' => null
     ];
 
     /**
@@ -86,8 +86,8 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static array $openAPINullables = [
         'value' => false,
         'currency_id' => false,
-        'discount_base' => false,
-        'updated_at' => false
+        'updated_at' => false,
+        'discount_base' => false
     ];
 
     /**
@@ -178,8 +178,8 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $attributeMap = [
         'value' => 'value',
         'currency_id' => 'currencyId',
-        'discount_base' => 'discountBase',
-        'updated_at' => 'updatedAt'
+        'updated_at' => 'updatedAt',
+        'discount_base' => 'discountBase'
     ];
 
     /**
@@ -190,8 +190,8 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $setters = [
         'value' => 'setValue',
         'currency_id' => 'setCurrencyId',
-        'discount_base' => 'setDiscountBase',
-        'updated_at' => 'setUpdatedAt'
+        'updated_at' => 'setUpdatedAt',
+        'discount_base' => 'setDiscountBase'
     ];
 
     /**
@@ -202,8 +202,8 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $getters = [
         'value' => 'getValue',
         'currency_id' => 'getCurrencyId',
-        'discount_base' => 'getDiscountBase',
-        'updated_at' => 'getUpdatedAt'
+        'updated_at' => 'getUpdatedAt',
+        'discount_base' => 'getDiscountBase'
     ];
 
     /**
@@ -265,8 +265,8 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $this->setIfExists('value', $data ?? [], null);
         $this->setIfExists('currency_id', $data ?? [], null);
-        $this->setIfExists('discount_base', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('discount_base', $data ?? [], null);
     }
 
     /**
@@ -306,13 +306,13 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
         if ($this->container['currency_id'] === null) {
             $invalidProperties[] = "'currency_id' can't be null";
         }
+        if ($this->container['updated_at'] === null) {
+            $invalidProperties[] = "'updated_at' can't be null";
+        }
         if (!is_null($this->container['discount_base']) && ($this->container['discount_base'] <= 0)) {
             $invalidProperties[] = "invalid value for 'discount_base', must be bigger than 0.";
         }
 
-        if ($this->container['updated_at'] === null) {
-            $invalidProperties[] = "'updated_at' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -388,6 +388,33 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
+     * Gets updated_at
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime $updated_at Время последнего обновления.
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        if (is_null($updated_at)) {
+            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+        }
+        $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
      * Gets discount_base
      *
      * @return float|null
@@ -418,33 +445,6 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
-    /**
-     * Gets updated_at
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
-    {
-        return $this->container['updated_at'];
-    }
-
-    /**
-     * Sets updated_at
-     *
-     * @param \DateTime $updated_at Время последнего обновления.
-     *
-     * @return self
-     */
-    public function setUpdatedAt($updated_at)
-    {
-        if (is_null($updated_at)) {
-            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
-        }
-        $this->container['updated_at'] = $updated_at;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -452,7 +452,7 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -465,7 +465,7 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -494,7 +494,7 @@ class GetPriceWithDiscountDTO implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

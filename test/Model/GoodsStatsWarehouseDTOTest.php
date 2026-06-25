@@ -80,6 +80,15 @@ class GoodsStatsWarehouseDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "stocks"
+     */
+    public function testPropertyStocks()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -92,15 +101,6 @@ class GoodsStatsWarehouseDTOTest extends TestCase
      * Test attribute "name"
      */
     public function testPropertyName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "stocks"
-     */
-    public function testPropertyStocks()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

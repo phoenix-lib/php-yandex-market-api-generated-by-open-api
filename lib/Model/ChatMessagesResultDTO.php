@@ -58,10 +58,10 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'order_id' => 'int',
         'context' => '\OpenAPI\Client\Model\ChatFullContextDTO',
         'messages' => '\OpenAPI\Client\Model\ChatMessageDTO[]',
-        'paging' => '\OpenAPI\Client\Model\ForwardScrollingPagerDTO'
+        'order_id' => 'int',
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -72,9 +72,9 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'order_id' => 'int64',
         'context' => null,
         'messages' => null,
+        'order_id' => 'int64',
         'paging' => null
     ];
 
@@ -84,9 +84,9 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'order_id' => false,
         'context' => false,
         'messages' => false,
+        'order_id' => false,
         'paging' => false
     ];
 
@@ -176,9 +176,9 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'order_id' => 'orderId',
         'context' => 'context',
         'messages' => 'messages',
+        'order_id' => 'orderId',
         'paging' => 'paging'
     ];
 
@@ -188,9 +188,9 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'order_id' => 'setOrderId',
         'context' => 'setContext',
         'messages' => 'setMessages',
+        'order_id' => 'setOrderId',
         'paging' => 'setPaging'
     ];
 
@@ -200,9 +200,9 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'order_id' => 'getOrderId',
         'context' => 'getContext',
         'messages' => 'getMessages',
+        'order_id' => 'getOrderId',
         'paging' => 'getPaging'
     ];
 
@@ -263,9 +263,9 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('order_id', $data ?? [], null);
         $this->setIfExists('context', $data ?? [], null);
         $this->setIfExists('messages', $data ?? [], null);
+        $this->setIfExists('order_id', $data ?? [], null);
         $this->setIfExists('paging', $data ?? [], null);
     }
 
@@ -316,35 +316,6 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets order_id
-     *
-     * @return int|null
-     * @deprecated
-     */
-    public function getOrderId()
-    {
-        return $this->container['order_id'];
-    }
-
-    /**
-     * Sets order_id
-     *
-     * @param int|null $order_id Идентификатор заказа.
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setOrderId($order_id)
-    {
-        if (is_null($order_id)) {
-            throw new \InvalidArgumentException('non-nullable order_id cannot be null');
-        }
-        $this->container['order_id'] = $order_id;
-
-        return $this;
-    }
 
     /**
      * Gets context
@@ -401,9 +372,38 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets order_id
+     *
+     * @return int|null
+     * @deprecated
+     */
+    public function getOrderId()
+    {
+        return $this->container['order_id'];
+    }
+
+    /**
+     * Sets order_id
+     *
+     * @param int|null $order_id Идентификатор заказа.
+     *
+     * @return self
+     * @deprecated
+     */
+    public function setOrderId($order_id)
+    {
+        if (is_null($order_id)) {
+            throw new \InvalidArgumentException('non-nullable order_id cannot be null');
+        }
+        $this->container['order_id'] = $order_id;
+
+        return $this;
+    }
+
+    /**
      * Gets paging
      *
-     * @return \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
      */
     public function getPaging()
     {
@@ -413,7 +413,7 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets paging
      *
-     * @param \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null $paging paging
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
      *
      * @return self
      */
@@ -433,7 +433,7 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -446,7 +446,7 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -475,7 +475,7 @@ class ChatMessagesResultDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

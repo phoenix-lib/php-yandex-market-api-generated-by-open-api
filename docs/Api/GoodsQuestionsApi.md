@@ -19,7 +19,7 @@ getGoodsQuestionAnswers($business_id, $get_answers_request, $page_token, $limit)
 
 Получение ответов на вопрос
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getGoodsQuestionAnswers.md) %}  Возвращает ответы на вопрос о товаре по указанным фильтрам.  Результаты возвращаются постранично, одна страница содержит не более 50 ответов.  |**⚙️ Лимит:** 10 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getGoodsQuestionAnswers.md) %}  Возвращает ответы на вопрос о товаре по указанным фильтрам.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый ответ или комментарий. А полную информацию о них можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 ответов.  {% include notitle [limit](../../_auto/method_limits/getGoodsQuestionAnswers.md) %}
 
 ### Example
 
@@ -43,10 +43,10 @@ $apiInstance = new OpenAPI\Client\Api\GoodsQuestionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
 $get_answers_request = new \OpenAPI\Client\Model\GetAnswersRequest(); // \OpenAPI\Client\Model\GetAnswersRequest
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `page` и `pageSize`, они игнорируются.
-$limit = 20; // int | Количество значений на одной странице.
+$page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
+$limit = 25; // int | {{ limit-param-description }}
 
 try {
     $result = $apiInstance->getGoodsQuestionAnswers($business_id, $get_answers_request, $page_token, $limit);
@@ -60,10 +60,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
 | **get_answers_request** | [**\OpenAPI\Client\Model\GetAnswersRequest**](../Model/GetAnswersRequest.md)|  | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. | [optional] |
-| **limit** | **int**| Количество значений на одной странице. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
+| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 25] |
 
 ### Return type
 
@@ -90,7 +90,7 @@ getGoodsQuestions($business_id, $page_token, $limit, $get_questions_request): \O
 
 Получение вопросов о товарах продавца
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getGoodsQuestions.md) %}  Возвращает вопросы о товарах продавца по указанным фильтрам.  Результаты возвращаются постранично, одна страница содержит не более 50 вопросов.  |**⚙️ Лимит:** 10 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getGoodsQuestions.md) %}  Возвращает вопросы о товарах продавца по указанным фильтрам.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый вопрос. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 вопросов.  {% include notitle [limit](../../_auto/method_limits/getGoodsQuestions.md) %}
 
 ### Example
 
@@ -114,9 +114,9 @@ $apiInstance = new OpenAPI\Client\Api\GoodsQuestionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `page` и `pageSize`, они игнорируются.
-$limit = 20; // int | Количество значений на одной странице.
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
+$limit = 25; // int | {{ limit-param-description }}
 $get_questions_request = new \OpenAPI\Client\Model\GetQuestionsRequest(); // \OpenAPI\Client\Model\GetQuestionsRequest
 
 try {
@@ -131,9 +131,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. | [optional] |
-| **limit** | **int**| Количество значений на одной странице. | [optional] |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
+| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 25] |
 | **get_questions_request** | [**\OpenAPI\Client\Model\GetQuestionsRequest**](../Model/GetQuestionsRequest.md)|  | [optional] |
 
 ### Return type
@@ -161,7 +161,7 @@ updateGoodsQuestionTextEntity($business_id, $update_goods_question_text_entity_r
 
 Создание, изменение и удаление ответа или комментария
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateGoodsQuestionTextEntity.md) %}  Создание, изменение и удаление ответа или комментария.  |**⚙️ Лимит:** 1000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/updateGoodsQuestionTextEntity.md) %}  Создание, изменение и удаление ответа или комментария.  {% include notitle [limit](../../_auto/method_limits/updateGoodsQuestionTextEntity.md) %}
 
 ### Example
 
@@ -185,7 +185,7 @@ $apiInstance = new OpenAPI\Client\Api\GoodsQuestionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
 $update_goods_question_text_entity_request = new \OpenAPI\Client\Model\UpdateGoodsQuestionTextEntityRequest(); // \OpenAPI\Client\Model\UpdateGoodsQuestionTextEntityRequest
 
 try {
@@ -200,7 +200,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
 | **update_goods_question_text_entity_request** | [**\OpenAPI\Client\Model\UpdateGoodsQuestionTextEntityRequest**](../Model/UpdateGoodsQuestionTextEntityRequest.md)|  | |
 
 ### Return type

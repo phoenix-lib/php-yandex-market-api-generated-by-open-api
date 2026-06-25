@@ -58,8 +58,8 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paging' => '\OpenAPI\Client\Model\ScrollingPagerDTO',
-        'hidden_offers' => '\OpenAPI\Client\Model\HiddenOfferDTO[]'
+        'hidden_offers' => '\OpenAPI\Client\Model\HiddenOfferDTO[]',
+        'paging' => '\OpenAPI\Client\Model\PackagingScrollingPagerDTO'
     ];
 
     /**
@@ -70,8 +70,8 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'paging' => null,
-        'hidden_offers' => null
+        'hidden_offers' => null,
+        'paging' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'paging' => false,
-        'hidden_offers' => false
+        'hidden_offers' => false,
+        'paging' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'paging' => 'paging',
-        'hidden_offers' => 'hiddenOffers'
+        'hidden_offers' => 'hiddenOffers',
+        'paging' => 'paging'
     ];
 
     /**
@@ -180,8 +180,8 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'paging' => 'setPaging',
-        'hidden_offers' => 'setHiddenOffers'
+        'hidden_offers' => 'setHiddenOffers',
+        'paging' => 'setPaging'
     ];
 
     /**
@@ -190,8 +190,8 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'paging' => 'getPaging',
-        'hidden_offers' => 'getHiddenOffers'
+        'hidden_offers' => 'getHiddenOffers',
+        'paging' => 'getPaging'
     ];
 
     /**
@@ -251,8 +251,8 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('paging', $data ?? [], null);
         $this->setIfExists('hidden_offers', $data ?? [], null);
+        $this->setIfExists('paging', $data ?? [], null);
     }
 
     /**
@@ -301,33 +301,6 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets paging
-     *
-     * @return \OpenAPI\Client\Model\ScrollingPagerDTO|null
-     */
-    public function getPaging()
-    {
-        return $this->container['paging'];
-    }
-
-    /**
-     * Sets paging
-     *
-     * @param \OpenAPI\Client\Model\ScrollingPagerDTO|null $paging paging
-     *
-     * @return self
-     */
-    public function setPaging($paging)
-    {
-        if (is_null($paging)) {
-            throw new \InvalidArgumentException('non-nullable paging cannot be null');
-        }
-        $this->container['paging'] = $paging;
-
-        return $this;
-    }
-
-    /**
      * Gets hidden_offers
      *
      * @return \OpenAPI\Client\Model\HiddenOfferDTO[]
@@ -353,6 +326,33 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
+    /**
+     * Gets paging
+     *
+     * @return \OpenAPI\Client\Model\PackagingScrollingPagerDTO|null
+     */
+    public function getPaging()
+    {
+        return $this->container['paging'];
+    }
+
+    /**
+     * Sets paging
+     *
+     * @param \OpenAPI\Client\Model\PackagingScrollingPagerDTO|null $paging paging
+     *
+     * @return self
+     */
+    public function setPaging($paging)
+    {
+        if (is_null($paging)) {
+            throw new \InvalidArgumentException('non-nullable paging cannot be null');
+        }
+        $this->container['paging'] = $paging;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -360,7 +360,7 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -373,7 +373,7 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,7 +402,7 @@ class GetHiddenOffersResultDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

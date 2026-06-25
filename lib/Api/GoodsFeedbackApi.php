@@ -83,6 +83,9 @@ class GoodsFeedbackApi
         'getGoodsFeedbacks' => [
             'application/json',
         ],
+        'getGoodsFeedbacksUrbanads' => [
+            'application/json',
+        ],
         'skipGoodsFeedbacksReaction' => [
             'application/json',
         ],
@@ -142,17 +145,18 @@ class GoodsFeedbackApi
      *
      * Удаление комментария к отзыву
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteGoodsFeedbackCommentRequest $delete_goods_feedback_comment_request delete_goods_feedback_comment_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGoodsFeedbackComment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\EmptyApiResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function deleteGoodsFeedbackComment($business_id, $delete_goods_feedback_comment_request, string $contentType = self::contentTypes['deleteGoodsFeedbackComment'][0])
+    public function deleteGoodsFeedbackComment($business_id, $delete_goods_feedback_comment_request, $source_type = null, string $contentType = self::contentTypes['deleteGoodsFeedbackComment'][0])
     {
-        list($response) = $this->deleteGoodsFeedbackCommentWithHttpInfo($business_id, $delete_goods_feedback_comment_request, $contentType);
+        list($response) = $this->deleteGoodsFeedbackCommentWithHttpInfo($business_id, $delete_goods_feedback_comment_request, $source_type, $contentType);
         return $response;
     }
 
@@ -161,17 +165,18 @@ class GoodsFeedbackApi
      *
      * Удаление комментария к отзыву
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteGoodsFeedbackCommentRequest $delete_goods_feedback_comment_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGoodsFeedbackComment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\EmptyApiResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteGoodsFeedbackCommentWithHttpInfo($business_id, $delete_goods_feedback_comment_request, string $contentType = self::contentTypes['deleteGoodsFeedbackComment'][0])
+    public function deleteGoodsFeedbackCommentWithHttpInfo($business_id, $delete_goods_feedback_comment_request, $source_type = null, string $contentType = self::contentTypes['deleteGoodsFeedbackComment'][0])
     {
-        $request = $this->deleteGoodsFeedbackCommentRequest($business_id, $delete_goods_feedback_comment_request, $contentType);
+        $request = $this->deleteGoodsFeedbackCommentRequest($business_id, $delete_goods_feedback_comment_request, $source_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -331,16 +336,17 @@ class GoodsFeedbackApi
      *
      * Удаление комментария к отзыву
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteGoodsFeedbackCommentRequest $delete_goods_feedback_comment_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGoodsFeedbackComment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteGoodsFeedbackCommentAsync($business_id, $delete_goods_feedback_comment_request, string $contentType = self::contentTypes['deleteGoodsFeedbackComment'][0])
+    public function deleteGoodsFeedbackCommentAsync($business_id, $delete_goods_feedback_comment_request, $source_type = null, string $contentType = self::contentTypes['deleteGoodsFeedbackComment'][0])
     {
-        return $this->deleteGoodsFeedbackCommentAsyncWithHttpInfo($business_id, $delete_goods_feedback_comment_request, $contentType)
+        return $this->deleteGoodsFeedbackCommentAsyncWithHttpInfo($business_id, $delete_goods_feedback_comment_request, $source_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -353,17 +359,18 @@ class GoodsFeedbackApi
      *
      * Удаление комментария к отзыву
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteGoodsFeedbackCommentRequest $delete_goods_feedback_comment_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGoodsFeedbackComment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteGoodsFeedbackCommentAsyncWithHttpInfo($business_id, $delete_goods_feedback_comment_request, string $contentType = self::contentTypes['deleteGoodsFeedbackComment'][0])
+    public function deleteGoodsFeedbackCommentAsyncWithHttpInfo($business_id, $delete_goods_feedback_comment_request, $source_type = null, string $contentType = self::contentTypes['deleteGoodsFeedbackComment'][0])
     {
         $returnType = '\OpenAPI\Client\Model\EmptyApiResponse';
-        $request = $this->deleteGoodsFeedbackCommentRequest($business_id, $delete_goods_feedback_comment_request, $contentType);
+        $request = $this->deleteGoodsFeedbackCommentRequest($business_id, $delete_goods_feedback_comment_request, $source_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -404,14 +411,15 @@ class GoodsFeedbackApi
     /**
      * Create request for operation 'deleteGoodsFeedbackComment'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteGoodsFeedbackCommentRequest $delete_goods_feedback_comment_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteGoodsFeedbackComment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteGoodsFeedbackCommentRequest($business_id, $delete_goods_feedback_comment_request, string $contentType = self::contentTypes['deleteGoodsFeedbackComment'][0])
+    public function deleteGoodsFeedbackCommentRequest($business_id, $delete_goods_feedback_comment_request, $source_type = null, string $contentType = self::contentTypes['deleteGoodsFeedbackComment'][0])
     {
 
         // verify the required parameter 'business_id' is set
@@ -432,6 +440,7 @@ class GoodsFeedbackApi
         }
 
 
+
         $resourcePath = '/v2/businesses/{businessId}/goods-feedback/comments/delete';
         $formParams = [];
         $queryParams = [];
@@ -439,6 +448,15 @@ class GoodsFeedbackApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_type,
+            'sourceType', // param base name
+            'SourceType', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
 
 
         // path params
@@ -525,19 +543,20 @@ class GoodsFeedbackApi
      *
      * Получение комментариев к отзыву
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetGoodsFeedbackCommentsRequest $get_goods_feedback_comments_request get_goods_feedback_comments_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbackComments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetGoodsFeedbackCommentsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getGoodsFeedbackComments($business_id, $get_goods_feedback_comments_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getGoodsFeedbackComments'][0])
+    public function getGoodsFeedbackComments($business_id, $get_goods_feedback_comments_request, $page_token = null, $limit = 25, $source_type = null, string $contentType = self::contentTypes['getGoodsFeedbackComments'][0])
     {
-        list($response) = $this->getGoodsFeedbackCommentsWithHttpInfo($business_id, $get_goods_feedback_comments_request, $page_token, $limit, $contentType);
+        list($response) = $this->getGoodsFeedbackCommentsWithHttpInfo($business_id, $get_goods_feedback_comments_request, $page_token, $limit, $source_type, $contentType);
         return $response;
     }
 
@@ -546,19 +565,20 @@ class GoodsFeedbackApi
      *
      * Получение комментариев к отзыву
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetGoodsFeedbackCommentsRequest $get_goods_feedback_comments_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbackComments'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetGoodsFeedbackCommentsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getGoodsFeedbackCommentsWithHttpInfo($business_id, $get_goods_feedback_comments_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getGoodsFeedbackComments'][0])
+    public function getGoodsFeedbackCommentsWithHttpInfo($business_id, $get_goods_feedback_comments_request, $page_token = null, $limit = 25, $source_type = null, string $contentType = self::contentTypes['getGoodsFeedbackComments'][0])
     {
-        $request = $this->getGoodsFeedbackCommentsRequest($business_id, $get_goods_feedback_comments_request, $page_token, $limit, $contentType);
+        $request = $this->getGoodsFeedbackCommentsRequest($business_id, $get_goods_feedback_comments_request, $page_token, $limit, $source_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -718,18 +738,19 @@ class GoodsFeedbackApi
      *
      * Получение комментариев к отзыву
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetGoodsFeedbackCommentsRequest $get_goods_feedback_comments_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbackComments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGoodsFeedbackCommentsAsync($business_id, $get_goods_feedback_comments_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getGoodsFeedbackComments'][0])
+    public function getGoodsFeedbackCommentsAsync($business_id, $get_goods_feedback_comments_request, $page_token = null, $limit = 25, $source_type = null, string $contentType = self::contentTypes['getGoodsFeedbackComments'][0])
     {
-        return $this->getGoodsFeedbackCommentsAsyncWithHttpInfo($business_id, $get_goods_feedback_comments_request, $page_token, $limit, $contentType)
+        return $this->getGoodsFeedbackCommentsAsyncWithHttpInfo($business_id, $get_goods_feedback_comments_request, $page_token, $limit, $source_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -742,19 +763,20 @@ class GoodsFeedbackApi
      *
      * Получение комментариев к отзыву
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetGoodsFeedbackCommentsRequest $get_goods_feedback_comments_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbackComments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGoodsFeedbackCommentsAsyncWithHttpInfo($business_id, $get_goods_feedback_comments_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getGoodsFeedbackComments'][0])
+    public function getGoodsFeedbackCommentsAsyncWithHttpInfo($business_id, $get_goods_feedback_comments_request, $page_token = null, $limit = 25, $source_type = null, string $contentType = self::contentTypes['getGoodsFeedbackComments'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetGoodsFeedbackCommentsResponse';
-        $request = $this->getGoodsFeedbackCommentsRequest($business_id, $get_goods_feedback_comments_request, $page_token, $limit, $contentType);
+        $request = $this->getGoodsFeedbackCommentsRequest($business_id, $get_goods_feedback_comments_request, $page_token, $limit, $source_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -795,16 +817,17 @@ class GoodsFeedbackApi
     /**
      * Create request for operation 'getGoodsFeedbackComments'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetGoodsFeedbackCommentsRequest $get_goods_feedback_comments_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbackComments'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getGoodsFeedbackCommentsRequest($business_id, $get_goods_feedback_comments_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getGoodsFeedbackComments'][0])
+    public function getGoodsFeedbackCommentsRequest($business_id, $get_goods_feedback_comments_request, $page_token = null, $limit = 25, $source_type = null, string $contentType = self::contentTypes['getGoodsFeedbackComments'][0])
     {
 
         // verify the required parameter 'business_id' is set
@@ -825,10 +848,14 @@ class GoodsFeedbackApi
         }
 
 
+        if ($limit !== null && $limit > 50) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling GoodsFeedbackApi.getGoodsFeedbackComments, must be smaller than or equal to 50.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling GoodsFeedbackApi.getGoodsFeedbackComments, must be bigger than or equal to 1.');
         }
         
+
 
         $resourcePath = '/v2/businesses/{businessId}/goods-feedback/comments';
         $formParams = [];
@@ -840,7 +867,7 @@ class GoodsFeedbackApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -851,6 +878,15 @@ class GoodsFeedbackApi
             $limit,
             'limit', // param base name
             'integer', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_type,
+            'sourceType', // param base name
+            'SourceType', // openApiType
             '', // style
             false, // explode
             false // required
@@ -941,9 +977,9 @@ class GoodsFeedbackApi
      *
      * Получение отзывов о товарах продавца
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  \OpenAPI\Client\Model\GetGoodsFeedbackRequest|null $get_goods_feedback_request get_goods_feedback_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbacks'] to see the possible values for this operation
      *
@@ -951,7 +987,7 @@ class GoodsFeedbackApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetGoodsFeedbackResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getGoodsFeedbacks($business_id, $page_token = null, $limit = null, $get_goods_feedback_request = null, string $contentType = self::contentTypes['getGoodsFeedbacks'][0])
+    public function getGoodsFeedbacks($business_id, $page_token = null, $limit = 25, $get_goods_feedback_request = null, string $contentType = self::contentTypes['getGoodsFeedbacks'][0])
     {
         list($response) = $this->getGoodsFeedbacksWithHttpInfo($business_id, $page_token, $limit, $get_goods_feedback_request, $contentType);
         return $response;
@@ -962,9 +998,9 @@ class GoodsFeedbackApi
      *
      * Получение отзывов о товарах продавца
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  \OpenAPI\Client\Model\GetGoodsFeedbackRequest|null $get_goods_feedback_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbacks'] to see the possible values for this operation
      *
@@ -972,7 +1008,7 @@ class GoodsFeedbackApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetGoodsFeedbackResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getGoodsFeedbacksWithHttpInfo($business_id, $page_token = null, $limit = null, $get_goods_feedback_request = null, string $contentType = self::contentTypes['getGoodsFeedbacks'][0])
+    public function getGoodsFeedbacksWithHttpInfo($business_id, $page_token = null, $limit = 25, $get_goods_feedback_request = null, string $contentType = self::contentTypes['getGoodsFeedbacks'][0])
     {
         $request = $this->getGoodsFeedbacksRequest($business_id, $page_token, $limit, $get_goods_feedback_request, $contentType);
 
@@ -1134,16 +1170,16 @@ class GoodsFeedbackApi
      *
      * Получение отзывов о товарах продавца
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  \OpenAPI\Client\Model\GetGoodsFeedbackRequest|null $get_goods_feedback_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbacks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGoodsFeedbacksAsync($business_id, $page_token = null, $limit = null, $get_goods_feedback_request = null, string $contentType = self::contentTypes['getGoodsFeedbacks'][0])
+    public function getGoodsFeedbacksAsync($business_id, $page_token = null, $limit = 25, $get_goods_feedback_request = null, string $contentType = self::contentTypes['getGoodsFeedbacks'][0])
     {
         return $this->getGoodsFeedbacksAsyncWithHttpInfo($business_id, $page_token, $limit, $get_goods_feedback_request, $contentType)
             ->then(
@@ -1158,16 +1194,16 @@ class GoodsFeedbackApi
      *
      * Получение отзывов о товарах продавца
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  \OpenAPI\Client\Model\GetGoodsFeedbackRequest|null $get_goods_feedback_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbacks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGoodsFeedbacksAsyncWithHttpInfo($business_id, $page_token = null, $limit = null, $get_goods_feedback_request = null, string $contentType = self::contentTypes['getGoodsFeedbacks'][0])
+    public function getGoodsFeedbacksAsyncWithHttpInfo($business_id, $page_token = null, $limit = 25, $get_goods_feedback_request = null, string $contentType = self::contentTypes['getGoodsFeedbacks'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetGoodsFeedbackResponse';
         $request = $this->getGoodsFeedbacksRequest($business_id, $page_token, $limit, $get_goods_feedback_request, $contentType);
@@ -1211,16 +1247,16 @@ class GoodsFeedbackApi
     /**
      * Create request for operation 'getGoodsFeedbacks'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  \OpenAPI\Client\Model\GetGoodsFeedbackRequest|null $get_goods_feedback_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbacks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getGoodsFeedbacksRequest($business_id, $page_token = null, $limit = null, $get_goods_feedback_request = null, string $contentType = self::contentTypes['getGoodsFeedbacks'][0])
+    public function getGoodsFeedbacksRequest($business_id, $page_token = null, $limit = 25, $get_goods_feedback_request = null, string $contentType = self::contentTypes['getGoodsFeedbacks'][0])
     {
 
         // verify the required parameter 'business_id' is set
@@ -1234,6 +1270,9 @@ class GoodsFeedbackApi
         }
         
 
+        if ($limit !== null && $limit > 50) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling GoodsFeedbackApi.getGoodsFeedbacks, must be smaller than or equal to 50.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling GoodsFeedbackApi.getGoodsFeedbacks, must be bigger than or equal to 1.');
         }
@@ -1250,7 +1289,7 @@ class GoodsFeedbackApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -1347,21 +1386,450 @@ class GoodsFeedbackApi
     }
 
     /**
+     * Operation getGoodsFeedbacksUrbanads
+     *
+     * Получение отзывов о товарах для рекламодателей
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
+     * @param  \OpenAPI\Client\Model\GetGoodsFeedbackUrbanadsRequest|null $get_goods_feedback_urbanads_request get_goods_feedback_urbanads_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbacksUrbanads'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\GetGoodsFeedbackUrbanadsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     */
+    public function getGoodsFeedbacksUrbanads($business_id, $page_token = null, $limit = 25, $source_type = null, $get_goods_feedback_urbanads_request = null, string $contentType = self::contentTypes['getGoodsFeedbacksUrbanads'][0])
+    {
+        list($response) = $this->getGoodsFeedbacksUrbanadsWithHttpInfo($business_id, $page_token, $limit, $source_type, $get_goods_feedback_urbanads_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getGoodsFeedbacksUrbanadsWithHttpInfo
+     *
+     * Получение отзывов о товарах для рекламодателей
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
+     * @param  \OpenAPI\Client\Model\GetGoodsFeedbackUrbanadsRequest|null $get_goods_feedback_urbanads_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbacksUrbanads'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\GetGoodsFeedbackUrbanadsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getGoodsFeedbacksUrbanadsWithHttpInfo($business_id, $page_token = null, $limit = 25, $source_type = null, $get_goods_feedback_urbanads_request = null, string $contentType = self::contentTypes['getGoodsFeedbacksUrbanads'][0])
+    {
+        $request = $this->getGoodsFeedbacksUrbanadsRequest($business_id, $page_token, $limit, $source_type, $get_goods_feedback_urbanads_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\GetGoodsFeedbackUrbanadsResponse',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 420:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenAPI\Client\Model\GetGoodsFeedbackUrbanadsResponse',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\GetGoodsFeedbackUrbanadsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 420:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getGoodsFeedbacksUrbanadsAsync
+     *
+     * Получение отзывов о товарах для рекламодателей
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
+     * @param  \OpenAPI\Client\Model\GetGoodsFeedbackUrbanadsRequest|null $get_goods_feedback_urbanads_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbacksUrbanads'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGoodsFeedbacksUrbanadsAsync($business_id, $page_token = null, $limit = 25, $source_type = null, $get_goods_feedback_urbanads_request = null, string $contentType = self::contentTypes['getGoodsFeedbacksUrbanads'][0])
+    {
+        return $this->getGoodsFeedbacksUrbanadsAsyncWithHttpInfo($business_id, $page_token, $limit, $source_type, $get_goods_feedback_urbanads_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getGoodsFeedbacksUrbanadsAsyncWithHttpInfo
+     *
+     * Получение отзывов о товарах для рекламодателей
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
+     * @param  \OpenAPI\Client\Model\GetGoodsFeedbackUrbanadsRequest|null $get_goods_feedback_urbanads_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbacksUrbanads'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGoodsFeedbacksUrbanadsAsyncWithHttpInfo($business_id, $page_token = null, $limit = 25, $source_type = null, $get_goods_feedback_urbanads_request = null, string $contentType = self::contentTypes['getGoodsFeedbacksUrbanads'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\GetGoodsFeedbackUrbanadsResponse';
+        $request = $this->getGoodsFeedbacksUrbanadsRequest($business_id, $page_token, $limit, $source_type, $get_goods_feedback_urbanads_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getGoodsFeedbacksUrbanads'
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
+     * @param  \OpenAPI\Client\Model\GetGoodsFeedbackUrbanadsRequest|null $get_goods_feedback_urbanads_request (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsFeedbacksUrbanads'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getGoodsFeedbacksUrbanadsRequest($business_id, $page_token = null, $limit = 25, $source_type = null, $get_goods_feedback_urbanads_request = null, string $contentType = self::contentTypes['getGoodsFeedbacksUrbanads'][0])
+    {
+
+        // verify the required parameter 'business_id' is set
+        if ($business_id === null || (is_array($business_id) && count($business_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $business_id when calling getGoodsFeedbacksUrbanads'
+            );
+        }
+        if ($business_id < 1) {
+            throw new \InvalidArgumentException('invalid value for "$business_id" when calling GoodsFeedbackApi.getGoodsFeedbacksUrbanads, must be bigger than or equal to 1.');
+        }
+        
+
+        if ($limit !== null && $limit > 50) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling GoodsFeedbackApi.getGoodsFeedbacksUrbanads, must be smaller than or equal to 50.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling GoodsFeedbackApi.getGoodsFeedbacksUrbanads, must be bigger than or equal to 1.');
+        }
+        
+
+
+
+        $resourcePath = '/v1/businesses/{businessId}/goods-feedback-advertiser';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_type,
+            'sourceType', // param base name
+            'SourceType', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($business_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'businessId' . '}',
+                ObjectSerializer::toPathValue($business_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($get_goods_feedback_urbanads_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_goods_feedback_urbanads_request));
+            } else {
+                $httpBody = $get_goods_feedback_urbanads_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Api-Key');
+        if ($apiKey !== null) {
+            $headers['Api-Key'] = $apiKey;
+        }
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation skipGoodsFeedbacksReaction
      *
      * Пропуск реакции на отзывы
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\SkipGoodsFeedbackReactionRequest $skip_goods_feedback_reaction_request skip_goods_feedback_reaction_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['skipGoodsFeedbacksReaction'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\EmptyApiResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function skipGoodsFeedbacksReaction($business_id, $skip_goods_feedback_reaction_request, string $contentType = self::contentTypes['skipGoodsFeedbacksReaction'][0])
+    public function skipGoodsFeedbacksReaction($business_id, $skip_goods_feedback_reaction_request, $source_type = null, string $contentType = self::contentTypes['skipGoodsFeedbacksReaction'][0])
     {
-        list($response) = $this->skipGoodsFeedbacksReactionWithHttpInfo($business_id, $skip_goods_feedback_reaction_request, $contentType);
+        list($response) = $this->skipGoodsFeedbacksReactionWithHttpInfo($business_id, $skip_goods_feedback_reaction_request, $source_type, $contentType);
         return $response;
     }
 
@@ -1370,17 +1838,18 @@ class GoodsFeedbackApi
      *
      * Пропуск реакции на отзывы
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\SkipGoodsFeedbackReactionRequest $skip_goods_feedback_reaction_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['skipGoodsFeedbacksReaction'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\EmptyApiResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function skipGoodsFeedbacksReactionWithHttpInfo($business_id, $skip_goods_feedback_reaction_request, string $contentType = self::contentTypes['skipGoodsFeedbacksReaction'][0])
+    public function skipGoodsFeedbacksReactionWithHttpInfo($business_id, $skip_goods_feedback_reaction_request, $source_type = null, string $contentType = self::contentTypes['skipGoodsFeedbacksReaction'][0])
     {
-        $request = $this->skipGoodsFeedbacksReactionRequest($business_id, $skip_goods_feedback_reaction_request, $contentType);
+        $request = $this->skipGoodsFeedbacksReactionRequest($business_id, $skip_goods_feedback_reaction_request, $source_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1540,16 +2009,17 @@ class GoodsFeedbackApi
      *
      * Пропуск реакции на отзывы
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\SkipGoodsFeedbackReactionRequest $skip_goods_feedback_reaction_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['skipGoodsFeedbacksReaction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function skipGoodsFeedbacksReactionAsync($business_id, $skip_goods_feedback_reaction_request, string $contentType = self::contentTypes['skipGoodsFeedbacksReaction'][0])
+    public function skipGoodsFeedbacksReactionAsync($business_id, $skip_goods_feedback_reaction_request, $source_type = null, string $contentType = self::contentTypes['skipGoodsFeedbacksReaction'][0])
     {
-        return $this->skipGoodsFeedbacksReactionAsyncWithHttpInfo($business_id, $skip_goods_feedback_reaction_request, $contentType)
+        return $this->skipGoodsFeedbacksReactionAsyncWithHttpInfo($business_id, $skip_goods_feedback_reaction_request, $source_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1562,17 +2032,18 @@ class GoodsFeedbackApi
      *
      * Пропуск реакции на отзывы
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\SkipGoodsFeedbackReactionRequest $skip_goods_feedback_reaction_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['skipGoodsFeedbacksReaction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function skipGoodsFeedbacksReactionAsyncWithHttpInfo($business_id, $skip_goods_feedback_reaction_request, string $contentType = self::contentTypes['skipGoodsFeedbacksReaction'][0])
+    public function skipGoodsFeedbacksReactionAsyncWithHttpInfo($business_id, $skip_goods_feedback_reaction_request, $source_type = null, string $contentType = self::contentTypes['skipGoodsFeedbacksReaction'][0])
     {
         $returnType = '\OpenAPI\Client\Model\EmptyApiResponse';
-        $request = $this->skipGoodsFeedbacksReactionRequest($business_id, $skip_goods_feedback_reaction_request, $contentType);
+        $request = $this->skipGoodsFeedbacksReactionRequest($business_id, $skip_goods_feedback_reaction_request, $source_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1613,14 +2084,15 @@ class GoodsFeedbackApi
     /**
      * Create request for operation 'skipGoodsFeedbacksReaction'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\SkipGoodsFeedbackReactionRequest $skip_goods_feedback_reaction_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['skipGoodsFeedbacksReaction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function skipGoodsFeedbacksReactionRequest($business_id, $skip_goods_feedback_reaction_request, string $contentType = self::contentTypes['skipGoodsFeedbacksReaction'][0])
+    public function skipGoodsFeedbacksReactionRequest($business_id, $skip_goods_feedback_reaction_request, $source_type = null, string $contentType = self::contentTypes['skipGoodsFeedbacksReaction'][0])
     {
 
         // verify the required parameter 'business_id' is set
@@ -1641,6 +2113,7 @@ class GoodsFeedbackApi
         }
 
 
+
         $resourcePath = '/v2/businesses/{businessId}/goods-feedback/skip-reaction';
         $formParams = [];
         $queryParams = [];
@@ -1648,6 +2121,15 @@ class GoodsFeedbackApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_type,
+            'sourceType', // param base name
+            'SourceType', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
 
 
         // path params
@@ -1734,17 +2216,18 @@ class GoodsFeedbackApi
      *
      * Добавление нового или изменение созданного комментария
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateGoodsFeedbackCommentRequest $update_goods_feedback_comment_request update_goods_feedback_comment_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGoodsFeedbackComment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\UpdateGoodsFeedbackCommentResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function updateGoodsFeedbackComment($business_id, $update_goods_feedback_comment_request, string $contentType = self::contentTypes['updateGoodsFeedbackComment'][0])
+    public function updateGoodsFeedbackComment($business_id, $update_goods_feedback_comment_request, $source_type = null, string $contentType = self::contentTypes['updateGoodsFeedbackComment'][0])
     {
-        list($response) = $this->updateGoodsFeedbackCommentWithHttpInfo($business_id, $update_goods_feedback_comment_request, $contentType);
+        list($response) = $this->updateGoodsFeedbackCommentWithHttpInfo($business_id, $update_goods_feedback_comment_request, $source_type, $contentType);
         return $response;
     }
 
@@ -1753,17 +2236,18 @@ class GoodsFeedbackApi
      *
      * Добавление нового или изменение созданного комментария
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateGoodsFeedbackCommentRequest $update_goods_feedback_comment_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGoodsFeedbackComment'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\UpdateGoodsFeedbackCommentResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateGoodsFeedbackCommentWithHttpInfo($business_id, $update_goods_feedback_comment_request, string $contentType = self::contentTypes['updateGoodsFeedbackComment'][0])
+    public function updateGoodsFeedbackCommentWithHttpInfo($business_id, $update_goods_feedback_comment_request, $source_type = null, string $contentType = self::contentTypes['updateGoodsFeedbackComment'][0])
     {
-        $request = $this->updateGoodsFeedbackCommentRequest($business_id, $update_goods_feedback_comment_request, $contentType);
+        $request = $this->updateGoodsFeedbackCommentRequest($business_id, $update_goods_feedback_comment_request, $source_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1923,16 +2407,17 @@ class GoodsFeedbackApi
      *
      * Добавление нового или изменение созданного комментария
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateGoodsFeedbackCommentRequest $update_goods_feedback_comment_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGoodsFeedbackComment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateGoodsFeedbackCommentAsync($business_id, $update_goods_feedback_comment_request, string $contentType = self::contentTypes['updateGoodsFeedbackComment'][0])
+    public function updateGoodsFeedbackCommentAsync($business_id, $update_goods_feedback_comment_request, $source_type = null, string $contentType = self::contentTypes['updateGoodsFeedbackComment'][0])
     {
-        return $this->updateGoodsFeedbackCommentAsyncWithHttpInfo($business_id, $update_goods_feedback_comment_request, $contentType)
+        return $this->updateGoodsFeedbackCommentAsyncWithHttpInfo($business_id, $update_goods_feedback_comment_request, $source_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1945,17 +2430,18 @@ class GoodsFeedbackApi
      *
      * Добавление нового или изменение созданного комментария
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateGoodsFeedbackCommentRequest $update_goods_feedback_comment_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGoodsFeedbackComment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateGoodsFeedbackCommentAsyncWithHttpInfo($business_id, $update_goods_feedback_comment_request, string $contentType = self::contentTypes['updateGoodsFeedbackComment'][0])
+    public function updateGoodsFeedbackCommentAsyncWithHttpInfo($business_id, $update_goods_feedback_comment_request, $source_type = null, string $contentType = self::contentTypes['updateGoodsFeedbackComment'][0])
     {
         $returnType = '\OpenAPI\Client\Model\UpdateGoodsFeedbackCommentResponse';
-        $request = $this->updateGoodsFeedbackCommentRequest($business_id, $update_goods_feedback_comment_request, $contentType);
+        $request = $this->updateGoodsFeedbackCommentRequest($business_id, $update_goods_feedback_comment_request, $source_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1996,14 +2482,15 @@ class GoodsFeedbackApi
     /**
      * Create request for operation 'updateGoodsFeedbackComment'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateGoodsFeedbackCommentRequest $update_goods_feedback_comment_request (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGoodsFeedbackComment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateGoodsFeedbackCommentRequest($business_id, $update_goods_feedback_comment_request, string $contentType = self::contentTypes['updateGoodsFeedbackComment'][0])
+    public function updateGoodsFeedbackCommentRequest($business_id, $update_goods_feedback_comment_request, $source_type = null, string $contentType = self::contentTypes['updateGoodsFeedbackComment'][0])
     {
 
         // verify the required parameter 'business_id' is set
@@ -2024,6 +2511,7 @@ class GoodsFeedbackApi
         }
 
 
+
         $resourcePath = '/v2/businesses/{businessId}/goods-feedback/comments/update';
         $formParams = [];
         $queryParams = [];
@@ -2031,6 +2519,15 @@ class GoodsFeedbackApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_type,
+            'sourceType', // param base name
+            'SourceType', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
 
 
         // path params

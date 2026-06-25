@@ -96,4 +96,22 @@ class GetBusinessSettingsInfoDTOTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "subscription_level"
+     */
+    public function testPropertySubscriptionLevel()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "traits"
+     */
+    public function testPropertyTraits()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

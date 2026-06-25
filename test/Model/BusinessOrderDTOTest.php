@@ -98,24 +98,6 @@ class BusinessOrderDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "program_type"
-     */
-    public function testPropertyProgramType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "external_order_id"
-     */
-    public function testPropertyExternalOrderId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
@@ -137,15 +119,6 @@ class BusinessOrderDTOTest extends TestCase
      * Test attribute "creation_date"
      */
     public function testPropertyCreationDate()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "update_date"
-     */
-    public function testPropertyUpdateDate()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -188,18 +161,45 @@ class BusinessOrderDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "prices"
+     * Test attribute "delivery"
      */
-    public function testPropertyPrices()
+    public function testPropertyDelivery()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "delivery"
+     * Test attribute "program_type"
      */
-    public function testPropertyDelivery()
+    public function testPropertyProgramType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "external_order_id"
+     */
+    public function testPropertyExternalOrderId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "update_date"
+     */
+    public function testPropertyUpdateDate()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "prices"
+     */
+    public function testPropertyPrices()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -236,6 +236,15 @@ class BusinessOrderDTOTest extends TestCase
      * Test attribute "cancel_requested"
      */
     public function testPropertyCancelRequested()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "source_platform"
+     */
+    public function testPropertySourcePlatform()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

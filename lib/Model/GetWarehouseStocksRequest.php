@@ -343,7 +343,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets stocks_warehouse_id
      *
-     * @param int|null $stocks_warehouse_id Идентификатор склада.  Если параметр указан, возвращаются только товары на переданном складе.  **Для модели FBY:** получить список складов Маркета можно с помощью метода [GET v2/warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).
+     * @param int|null $stocks_warehouse_id Идентификатор склада.  Если параметр указан, возвращаются только товары на переданном складе.  **Для моделей FBY и LaaS:** получить список складов Маркета можно с помощью метода [GET v2/warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets has_stocks
      *
-     * @param bool|null $has_stocks **Только для модели FBY**  Фильтр по наличию товаров. Используйте только вместе со `stocksWarehouseId`.  Передайте `false`, чтобы получить информацию о товарах, которых нет в наличие. При значении `true` возвращаются данные о товарах, которые есть на указанном складе.
+     * @param bool|null $has_stocks **Только для моделей FBY и LaaS**  Фильтр по наличию товаров. Используйте только вместе со `stocksWarehouseId`.  Передайте `false`, чтобы получить информацию о товарах, которых нет в наличие. При значении `true` возвращаются данные о товарах, которые есть на указанном складе.
      *
      * @return self
      */
@@ -402,7 +402,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets with_turnover
      *
-     * @param bool|null $with_turnover **Только для модели FBY**  Возвращать ли информацию по оборачиваемости.  Значение по умолчанию: `false`. Если информация нужна, передайте значение `true`.
+     * @param bool|null $with_turnover **Только для моделей FBY и LaaS**  Возвращать ли информацию по оборачиваемости.  Значение по умолчанию: `false`. Если информация нужна, передайте значение `true`.
      *
      * @return self
      */
@@ -456,7 +456,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets offer_ids
      *
-     * @param string[]|null $offer_ids Фильтр по вашим SKU товаров.  Возвращается информация об остатках всех переданных SKU, включая товары в архиве.  {% note warning \"Такой список возвращается только целиком\" %}  Если вы запрашиваете информацию по конкретным SKU, не заполняйте:  * `page_token` * `limit` * `archived` * `stocksOnWarehouse`  {% endnote %}   
+     * @param string[]|null $offer_ids Фильтр по вашим SKU товаров.  Возвращается информация об остатках всех переданных SKU, включая товары в архиве.  {% note warning \"Такой список возвращается только целиком\" %}  Если вы запрашиваете информацию по конкретным SKU, не заполняйте:  * `pageToken` * `limit` * `archived` * `stocksOnWarehouse`  {% endnote %}   
      *
      * @return self
      */
@@ -490,7 +490,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -503,7 +503,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -532,7 +532,7 @@ class GetWarehouseStocksRequest implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

@@ -60,11 +60,11 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'id' => 'int',
         'text' => 'string',
+        'status' => '\OpenAPI\Client\Model\GoodsFeedbackCommentStatusType',
+        'feedback_id' => 'int',
         'can_modify' => 'bool',
         'parent_id' => 'int',
-        'author' => '\OpenAPI\Client\Model\GoodsFeedbackCommentAuthorDTO',
-        'status' => '\OpenAPI\Client\Model\GoodsFeedbackCommentStatusType',
-        'feedback_id' => 'int'
+        'author' => '\OpenAPI\Client\Model\GoodsFeedbackCommentAuthorDTO'
     ];
 
     /**
@@ -77,11 +77,11 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPIFormats = [
         'id' => 'int64',
         'text' => null,
+        'status' => null,
+        'feedback_id' => 'int64',
         'can_modify' => null,
         'parent_id' => 'int64',
-        'author' => null,
-        'status' => null,
-        'feedback_id' => 'int64'
+        'author' => null
     ];
 
     /**
@@ -92,11 +92,11 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static array $openAPINullables = [
         'id' => false,
         'text' => false,
+        'status' => false,
+        'feedback_id' => false,
         'can_modify' => false,
         'parent_id' => false,
-        'author' => false,
-        'status' => false,
-        'feedback_id' => false
+        'author' => false
     ];
 
     /**
@@ -187,11 +187,11 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $attributeMap = [
         'id' => 'id',
         'text' => 'text',
+        'status' => 'status',
+        'feedback_id' => 'feedbackId',
         'can_modify' => 'canModify',
         'parent_id' => 'parentId',
-        'author' => 'author',
-        'status' => 'status',
-        'feedback_id' => 'feedbackId'
+        'author' => 'author'
     ];
 
     /**
@@ -202,11 +202,11 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $setters = [
         'id' => 'setId',
         'text' => 'setText',
+        'status' => 'setStatus',
+        'feedback_id' => 'setFeedbackId',
         'can_modify' => 'setCanModify',
         'parent_id' => 'setParentId',
-        'author' => 'setAuthor',
-        'status' => 'setStatus',
-        'feedback_id' => 'setFeedbackId'
+        'author' => 'setAuthor'
     ];
 
     /**
@@ -217,11 +217,11 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $getters = [
         'id' => 'getId',
         'text' => 'getText',
+        'status' => 'getStatus',
+        'feedback_id' => 'getFeedbackId',
         'can_modify' => 'getCanModify',
         'parent_id' => 'getParentId',
-        'author' => 'getAuthor',
-        'status' => 'getStatus',
-        'feedback_id' => 'getFeedbackId'
+        'author' => 'getAuthor'
     ];
 
     /**
@@ -283,11 +283,11 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('text', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('feedback_id', $data ?? [], null);
         $this->setIfExists('can_modify', $data ?? [], null);
         $this->setIfExists('parent_id', $data ?? [], null);
         $this->setIfExists('author', $data ?? [], null);
-        $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('feedback_id', $data ?? [], null);
     }
 
     /**
@@ -414,6 +414,60 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
+     * Gets status
+     *
+     * @return \OpenAPI\Client\Model\GoodsFeedbackCommentStatusType
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param \OpenAPI\Client\Model\GoodsFeedbackCommentStatusType $status status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        if (is_null($status)) {
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        }
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets feedback_id
+     *
+     * @return int
+     */
+    public function getFeedbackId()
+    {
+        return $this->container['feedback_id'];
+    }
+
+    /**
+     * Sets feedback_id
+     *
+     * @param int $feedback_id Идентификатор отзыва.
+     *
+     * @return self
+     */
+    public function setFeedbackId($feedback_id)
+    {
+        if (is_null($feedback_id)) {
+            throw new \InvalidArgumentException('non-nullable feedback_id cannot be null');
+        }
+        $this->container['feedback_id'] = $feedback_id;
+
+        return $this;
+    }
+
+    /**
      * Gets can_modify
      *
      * @return bool|null
@@ -493,60 +547,6 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
-    /**
-     * Gets status
-     *
-     * @return \OpenAPI\Client\Model\GoodsFeedbackCommentStatusType
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param \OpenAPI\Client\Model\GoodsFeedbackCommentStatusType $status status
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-        if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
-        }
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets feedback_id
-     *
-     * @return int
-     */
-    public function getFeedbackId()
-    {
-        return $this->container['feedback_id'];
-    }
-
-    /**
-     * Sets feedback_id
-     *
-     * @param int $feedback_id Идентификатор отзыва.
-     *
-     * @return self
-     */
-    public function setFeedbackId($feedback_id)
-    {
-        if (is_null($feedback_id)) {
-            throw new \InvalidArgumentException('non-nullable feedback_id cannot be null');
-        }
-        $this->container['feedback_id'] = $feedback_id;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -554,7 +554,7 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -567,7 +567,7 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -596,7 +596,7 @@ class GoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

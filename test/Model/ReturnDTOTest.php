@@ -98,6 +98,24 @@ class ReturnDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "items"
+     */
+    public function testPropertyItems()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "return_type"
+     */
+    public function testPropertyReturnType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "creation_date"
      */
     public function testPropertyCreationDate()
@@ -173,24 +191,6 @@ class ReturnDTOTest extends TestCase
      * Test attribute "amount"
      */
     public function testPropertyAmount()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "items"
-     */
-    public function testPropertyItems()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "return_type"
-     */
-    public function testPropertyReturnType()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

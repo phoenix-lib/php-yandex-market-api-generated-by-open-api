@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * OrderItemTagTypeTest Class Doc Comment
  *
  * @category    Class
- * @description Признак товара:  * &#x60;ULTIMA&#x60; — премиум-товар. * &#x60;SAFE_TAG&#x60; — товар с [защитной меткой](*safe-tag). * &#x60;TURBO&#x60; — товар, который быстро раскупают.
+ * @description Признак товара:  * &#x60;ULTIMA&#x60; — премиум-товар. * &#x60;SAFE_TAG&#x60; — товар с [защитной меткой](*safe-tag).
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

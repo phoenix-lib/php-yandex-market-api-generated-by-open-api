@@ -1,0 +1,7 @@
+repo=https://github.com/yandex-market/yandex-market-partner-api.git
+ref=main
+commit=be177ad8ba17d292453308f2fc9311515494d722
+spec=openapi/openapi.yaml
+sha256=dd3eb391fd017fd2fa8b6bcff66a88920ddbf210f31c15b1270f0dcb4ce64461
+generator=php
+openapi_generator_version=7.18.0

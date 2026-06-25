@@ -59,7 +59,6 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'offer_id' => 'string',
-        'quantum' => '\OpenAPI\Client\Model\QuantumDTO',
         'available' => 'bool'
     ];
 
@@ -72,7 +71,6 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'offer_id' => null,
-        'quantum' => null,
         'available' => null
     ];
 
@@ -83,7 +81,6 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static array $openAPINullables = [
         'offer_id' => false,
-        'quantum' => false,
         'available' => false
     ];
 
@@ -174,7 +171,6 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $attributeMap = [
         'offer_id' => 'offerId',
-        'quantum' => 'quantum',
         'available' => 'available'
     ];
 
@@ -185,7 +181,6 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'offer_id' => 'setOfferId',
-        'quantum' => 'setQuantum',
         'available' => 'setAvailable'
     ];
 
@@ -196,7 +191,6 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'offer_id' => 'getOfferId',
-        'quantum' => 'getQuantum',
         'available' => 'getAvailable'
     ];
 
@@ -258,7 +252,6 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(?array $data = null)
     {
         $this->setIfExists('offer_id', $data ?? [], null);
-        $this->setIfExists('quantum', $data ?? [], null);
         $this->setIfExists('available', $data ?? [], null);
     }
 
@@ -357,35 +350,6 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets quantum
-     *
-     * @return \OpenAPI\Client\Model\QuantumDTO|null
-     * @deprecated
-     */
-    public function getQuantum()
-    {
-        return $this->container['quantum'];
-    }
-
-    /**
-     * Sets quantum
-     *
-     * @param \OpenAPI\Client\Model\QuantumDTO|null $quantum quantum
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setQuantum($quantum)
-    {
-        if (is_null($quantum)) {
-            throw new \InvalidArgumentException('non-nullable quantum cannot be null');
-        }
-        $this->container['quantum'] = $quantum;
-
-        return $this;
-    }
-
-    /**
      * Gets available
      *
      * @return bool|null
@@ -399,7 +363,7 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets available
      *
-     * @param bool|null $available {% note warning \"Вместо него используйте методы скрытия товаров с витрины\" %}  * [GET v2/campaigns/{campaignId}/hidden-offers](../../reference/assortment/getHiddenOffers.md) — просмотр скрытых товаров; * [POST v2/campaigns/{campaignId}/hidden-offers](../../reference/assortment/addHiddenOffers.md) — скрытие товаров; * [POST v2/campaigns/{campaignId}/hidden-offers/delete](../../reference/assortment/deleteHiddenOffers.md) — возобновление показа.  {% endnote %}  Есть ли товар в продаже.
+     * @param bool|null $available {% note warning \"Вместо него используйте методы скрытия товаров с витрины\" %}  * [GET v2/campaigns/{campaignId}/hidden-offers](../../reference/hidden-offers/getHiddenOffers.md) — просмотр скрытых товаров; * [POST v2/campaigns/{campaignId}/hidden-offers](../../reference/hidden-offers/addHiddenOffers.md) — скрытие товаров; * [POST v2/campaigns/{campaignId}/hidden-offers/delete](../../reference/hidden-offers/deleteHiddenOffers.md) — возобновление показа.  {% endnote %}  Есть ли товар в продаже.
      *
      * @return self
      * @deprecated
@@ -420,7 +384,7 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -433,7 +397,7 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -462,7 +426,7 @@ class BaseCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

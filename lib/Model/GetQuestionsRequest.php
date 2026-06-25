@@ -59,6 +59,7 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'category_ids' => 'int[]',
+        'question_ids' => 'int[]',
         'date_from' => '\DateTime',
         'date_to' => '\DateTime',
         'need_answer' => 'bool',
@@ -74,6 +75,7 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'category_ids' => 'int64',
+        'question_ids' => 'int64',
         'date_from' => 'date',
         'date_to' => 'date',
         'need_answer' => null,
@@ -87,6 +89,7 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'category_ids' => true,
+        'question_ids' => true,
         'date_from' => false,
         'date_to' => false,
         'need_answer' => false,
@@ -180,6 +183,7 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'category_ids' => 'categoryIds',
+        'question_ids' => 'questionIds',
         'date_from' => 'dateFrom',
         'date_to' => 'dateTo',
         'need_answer' => 'needAnswer',
@@ -193,6 +197,7 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'category_ids' => 'setCategoryIds',
+        'question_ids' => 'setQuestionIds',
         'date_from' => 'setDateFrom',
         'date_to' => 'setDateTo',
         'need_answer' => 'setNeedAnswer',
@@ -206,6 +211,7 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'category_ids' => 'getCategoryIds',
+        'question_ids' => 'getQuestionIds',
         'date_from' => 'getDateFrom',
         'date_to' => 'getDateTo',
         'need_answer' => 'getNeedAnswer',
@@ -270,6 +276,7 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('category_ids', $data ?? [], null);
+        $this->setIfExists('question_ids', $data ?? [], null);
         $this->setIfExists('date_from', $data ?? [], null);
         $this->setIfExists('date_to', $data ?? [], null);
         $this->setIfExists('need_answer', $data ?? [], false);
@@ -305,6 +312,14 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
 
         if (!is_null($this->container['category_ids']) && (count($this->container['category_ids']) < 1)) {
             $invalidProperties[] = "invalid value for 'category_ids', number of items must be greater than or equal to 1.";
+        }
+
+        if (!is_null($this->container['question_ids']) && (count($this->container['question_ids']) > 50)) {
+            $invalidProperties[] = "invalid value for 'question_ids', number of items must be less than or equal to 50.";
+        }
+
+        if (!is_null($this->container['question_ids']) && (count($this->container['question_ids']) < 1)) {
+            $invalidProperties[] = "invalid value for 'question_ids', number of items must be greater than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -357,6 +372,47 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('invalid length for $category_ids when calling GetQuestionsRequest., number of items must be greater than or equal to 1.');
         }
         $this->container['category_ids'] = $category_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets question_ids
+     *
+     * @return int[]|null
+     */
+    public function getQuestionIds()
+    {
+        return $this->container['question_ids'];
+    }
+
+    /**
+     * Sets question_ids
+     *
+     * @param int[]|null $question_ids Идентификаторы вопросов.
+     *
+     * @return self
+     */
+    public function setQuestionIds($question_ids)
+    {
+        if (is_null($question_ids)) {
+            array_push($this->openAPINullablesSetToNull, 'question_ids');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('question_ids', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($question_ids) && (count($question_ids) > 50)) {
+            throw new \InvalidArgumentException('invalid value for $question_ids when calling GetQuestionsRequest., number of items must be less than or equal to 50.');
+        }
+        if (!is_null($question_ids) && (count($question_ids) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $question_ids when calling GetQuestionsRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['question_ids'] = $question_ids;
 
         return $this;
     }
@@ -475,7 +531,7 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -488,7 +544,7 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -517,7 +573,7 @@ class GetQuestionsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

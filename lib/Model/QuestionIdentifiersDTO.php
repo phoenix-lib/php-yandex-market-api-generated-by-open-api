@@ -59,8 +59,8 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'category_id' => 'int',
-        'offer_id' => 'string'
+        'offer_id' => 'string',
+        'category_id' => 'int'
     ];
 
     /**
@@ -72,8 +72,8 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'id' => 'int64',
-        'category_id' => 'int64',
-        'offer_id' => null
+        'offer_id' => null,
+        'category_id' => 'int64'
     ];
 
     /**
@@ -83,8 +83,8 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'category_id' => false,
-        'offer_id' => false
+        'offer_id' => false,
+        'category_id' => false
     ];
 
     /**
@@ -174,8 +174,8 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'category_id' => 'categoryId',
-        'offer_id' => 'offerId'
+        'offer_id' => 'offerId',
+        'category_id' => 'categoryId'
     ];
 
     /**
@@ -185,8 +185,8 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'id' => 'setId',
-        'category_id' => 'setCategoryId',
-        'offer_id' => 'setOfferId'
+        'offer_id' => 'setOfferId',
+        'category_id' => 'setCategoryId'
     ];
 
     /**
@@ -196,8 +196,8 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'id' => 'getId',
-        'category_id' => 'getCategoryId',
-        'offer_id' => 'getOfferId'
+        'offer_id' => 'getOfferId',
+        'category_id' => 'getCategoryId'
     ];
 
     /**
@@ -258,8 +258,8 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(?array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('category_id', $data ?? [], null);
         $this->setIfExists('offer_id', $data ?? [], null);
+        $this->setIfExists('category_id', $data ?? [], null);
     }
 
     /**
@@ -296,10 +296,6 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
             $invalidProperties[] = "invalid value for 'id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['category_id']) && ($this->container['category_id'] < 0)) {
-            $invalidProperties[] = "invalid value for 'category_id', must be bigger than or equal to 0.";
-        }
-
         if ($this->container['offer_id'] === null) {
             $invalidProperties[] = "'offer_id' can't be null";
         }
@@ -313,6 +309,10 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
 
         if (!preg_match("/^(?=.*\\S.*)[^\\x00-\\x08\\x0A-\\x1f\\x7f]{1,255}$/", $this->container['offer_id'])) {
             $invalidProperties[] = "invalid value for 'offer_id', must be conform to the pattern /^(?=.*\\S.*)[^\\x00-\\x08\\x0A-\\x1f\\x7f]{1,255}$/.";
+        }
+
+        if (!is_null($this->container['category_id']) && ($this->container['category_id'] < 0)) {
+            $invalidProperties[] = "invalid value for 'category_id', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -363,38 +363,6 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets category_id
-     *
-     * @return int|null
-     */
-    public function getCategoryId()
-    {
-        return $this->container['category_id'];
-    }
-
-    /**
-     * Sets category_id
-     *
-     * @param int|null $category_id Идентификатор категории.
-     *
-     * @return self
-     */
-    public function setCategoryId($category_id)
-    {
-        if (is_null($category_id)) {
-            throw new \InvalidArgumentException('non-nullable category_id cannot be null');
-        }
-
-        if (($category_id < 0)) {
-            throw new \InvalidArgumentException('invalid value for $category_id when calling QuestionIdentifiersDTO., must be bigger than or equal to 0.');
-        }
-
-        $this->container['category_id'] = $category_id;
-
-        return $this;
-    }
-
-    /**
      * Gets offer_id
      *
      * @return string
@@ -430,6 +398,38 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
+
+    /**
+     * Gets category_id
+     *
+     * @return int|null
+     */
+    public function getCategoryId()
+    {
+        return $this->container['category_id'];
+    }
+
+    /**
+     * Sets category_id
+     *
+     * @param int|null $category_id Идентификатор категории.
+     *
+     * @return self
+     */
+    public function setCategoryId($category_id)
+    {
+        if (is_null($category_id)) {
+            throw new \InvalidArgumentException('non-nullable category_id cannot be null');
+        }
+
+        if (($category_id < 0)) {
+            throw new \InvalidArgumentException('invalid value for $category_id when calling QuestionIdentifiersDTO., must be bigger than or equal to 0.');
+        }
+
+        $this->container['category_id'] = $category_id;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -437,7 +437,7 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -450,7 +450,7 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -479,7 +479,7 @@ class QuestionIdentifiersDTO implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

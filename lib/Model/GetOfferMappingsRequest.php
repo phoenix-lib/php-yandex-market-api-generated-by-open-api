@@ -309,8 +309,8 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['offer_ids']) && (count($this->container['offer_ids']) > 200)) {
-            $invalidProperties[] = "invalid value for 'offer_ids', number of items must be less than or equal to 200.";
+        if (!is_null($this->container['offer_ids']) && (count($this->container['offer_ids']) > 100)) {
+            $invalidProperties[] = "invalid value for 'offer_ids', number of items must be less than or equal to 100.";
         }
 
         if (!is_null($this->container['offer_ids']) && (count($this->container['offer_ids']) < 1)) {
@@ -361,7 +361,7 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets offer_ids
      *
-     * @param string[]|null $offer_ids Идентификаторы товаров, информация о которых нужна.  {% note warning \"Такой список возвращается только целиком\" %}  Если вы запрашиваете информацию по конкретным SKU, не заполняйте: * `page_token`; * `limit`; * `cardStatuses`; * `categoryIds`; * `vendorNames`; * `tags`; * `archived`.  {% endnote %}   
+     * @param string[]|null $offer_ids Идентификаторы товаров, информация о которых нужна.  {% note warning \"Такой список возвращается только целиком\" %}  Если вы запрашиваете информацию по конкретным SKU, не заполняйте: * `pageToken`; * `limit`; * `cardStatuses`; * `categoryIds`; * `vendorNames`; * `tags`; * `archived`.  {% endnote %}   
      *
      * @return self
      */
@@ -378,8 +378,8 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
 
-        if (!is_null($offer_ids) && (count($offer_ids) > 200)) {
-            throw new \InvalidArgumentException('invalid value for $offer_ids when calling GetOfferMappingsRequest., number of items must be less than or equal to 200.');
+        if (!is_null($offer_ids) && (count($offer_ids) > 100)) {
+            throw new \InvalidArgumentException('invalid value for $offer_ids when calling GetOfferMappingsRequest., number of items must be less than or equal to 100.');
         }
         if (!is_null($offer_ids) && (count($offer_ids) < 1)) {
             throw new \InvalidArgumentException('invalid length for $offer_ids when calling GetOfferMappingsRequest., number of items must be greater than or equal to 1.');
@@ -578,7 +578,7 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -591,7 +591,7 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -620,7 +620,7 @@ class GetOfferMappingsRequest implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

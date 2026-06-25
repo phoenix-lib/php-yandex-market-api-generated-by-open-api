@@ -87,4 +87,13 @@ class UpdateOrderStatusResponseTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "operation"
+     */
+    public function testPropertyOperation()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

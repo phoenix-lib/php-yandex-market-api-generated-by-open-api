@@ -62,7 +62,8 @@ class UpdateOrderStatusDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'status' => '\OpenAPI\Client\Model\OrderStatusType',
         'substatus' => '\OpenAPI\Client\Model\OrderSubstatusType',
         'update_status' => '\OpenAPI\Client\Model\OrderUpdateStatusType',
-        'error_details' => 'string'
+        'error_details' => 'string',
+        'operation' => '\OpenAPI\Client\Model\OperationDTO'
     ];
 
     /**
@@ -77,7 +78,8 @@ class UpdateOrderStatusDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'status' => null,
         'substatus' => null,
         'update_status' => null,
-        'error_details' => null
+        'error_details' => null,
+        'operation' => null
     ];
 
     /**
@@ -90,7 +92,8 @@ class UpdateOrderStatusDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'status' => false,
         'substatus' => false,
         'update_status' => false,
-        'error_details' => false
+        'error_details' => false,
+        'operation' => false
     ];
 
     /**
@@ -183,7 +186,8 @@ class UpdateOrderStatusDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'status' => 'status',
         'substatus' => 'substatus',
         'update_status' => 'updateStatus',
-        'error_details' => 'errorDetails'
+        'error_details' => 'errorDetails',
+        'operation' => 'operation'
     ];
 
     /**
@@ -196,7 +200,8 @@ class UpdateOrderStatusDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'status' => 'setStatus',
         'substatus' => 'setSubstatus',
         'update_status' => 'setUpdateStatus',
-        'error_details' => 'setErrorDetails'
+        'error_details' => 'setErrorDetails',
+        'operation' => 'setOperation'
     ];
 
     /**
@@ -209,7 +214,8 @@ class UpdateOrderStatusDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'status' => 'getStatus',
         'substatus' => 'getSubstatus',
         'update_status' => 'getUpdateStatus',
-        'error_details' => 'getErrorDetails'
+        'error_details' => 'getErrorDetails',
+        'operation' => 'getOperation'
     ];
 
     /**
@@ -274,6 +280,7 @@ class UpdateOrderStatusDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('substatus', $data ?? [], null);
         $this->setIfExists('update_status', $data ?? [], null);
         $this->setIfExists('error_details', $data ?? [], null);
+        $this->setIfExists('operation', $data ?? [], null);
     }
 
     /**
@@ -452,6 +459,33 @@ class UpdateOrderStatusDTO implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
+    /**
+     * Gets operation
+     *
+     * @return \OpenAPI\Client\Model\OperationDTO|null
+     */
+    public function getOperation()
+    {
+        return $this->container['operation'];
+    }
+
+    /**
+     * Sets operation
+     *
+     * @param \OpenAPI\Client\Model\OperationDTO|null $operation operation
+     *
+     * @return self
+     */
+    public function setOperation($operation)
+    {
+        if (is_null($operation)) {
+            throw new \InvalidArgumentException('non-nullable operation cannot be null');
+        }
+        $this->container['operation'] = $operation;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -459,7 +493,7 @@ class UpdateOrderStatusDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -472,7 +506,7 @@ class UpdateOrderStatusDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -501,7 +535,7 @@ class UpdateOrderStatusDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

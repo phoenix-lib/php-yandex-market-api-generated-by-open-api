@@ -59,9 +59,9 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'codes' => 'string[]',
         'slip' => 'string',
-        'activate_till' => '\DateTime'
+        'activate_till' => '\DateTime',
+        'codes' => 'string[]'
     ];
 
     /**
@@ -73,9 +73,9 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'id' => 'int64',
-        'codes' => null,
         'slip' => null,
-        'activate_till' => 'date'
+        'activate_till' => 'date',
+        'codes' => null
     ];
 
     /**
@@ -85,9 +85,9 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'codes' => true,
         'slip' => false,
-        'activate_till' => false
+        'activate_till' => false,
+        'codes' => true
     ];
 
     /**
@@ -177,9 +177,9 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'codes' => 'codes',
         'slip' => 'slip',
-        'activate_till' => 'activate_till'
+        'activate_till' => 'activate_till',
+        'codes' => 'codes'
     ];
 
     /**
@@ -189,9 +189,9 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'id' => 'setId',
-        'codes' => 'setCodes',
         'slip' => 'setSlip',
-        'activate_till' => 'setActivateTill'
+        'activate_till' => 'setActivateTill',
+        'codes' => 'setCodes'
     ];
 
     /**
@@ -201,9 +201,9 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'id' => 'getId',
-        'codes' => 'getCodes',
         'slip' => 'getSlip',
-        'activate_till' => 'getActivateTill'
+        'activate_till' => 'getActivateTill',
+        'codes' => 'getCodes'
     ];
 
     /**
@@ -264,9 +264,9 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('codes', $data ?? [], null);
         $this->setIfExists('slip', $data ?? [], null);
         $this->setIfExists('activate_till', $data ?? [], null);
+        $this->setIfExists('codes', $data ?? [], null);
     }
 
     /**
@@ -299,14 +299,6 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
-        if (!is_null($this->container['codes']) && (count($this->container['codes']) > 5000)) {
-            $invalidProperties[] = "invalid value for 'codes', number of items must be less than or equal to 5000.";
-        }
-
-        if (!is_null($this->container['codes']) && (count($this->container['codes']) < 1)) {
-            $invalidProperties[] = "invalid value for 'codes', number of items must be greater than or equal to 1.";
-        }
-
         if ($this->container['slip'] === null) {
             $invalidProperties[] = "'slip' can't be null";
         }
@@ -317,6 +309,14 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['activate_till'] === null) {
             $invalidProperties[] = "'activate_till' can't be null";
         }
+        if (!is_null($this->container['codes']) && (count($this->container['codes']) > 5000)) {
+            $invalidProperties[] = "invalid value for 'codes', number of items must be less than or equal to 5000.";
+        }
+
+        if (!is_null($this->container['codes']) && (count($this->container['codes']) < 1)) {
+            $invalidProperties[] = "invalid value for 'codes', number of items must be greater than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -355,47 +355,6 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets codes
-     *
-     * @return string[]|null
-     */
-    public function getCodes()
-    {
-        return $this->container['codes'];
-    }
-
-    /**
-     * Sets codes
-     *
-     * @param string[]|null $codes Ключи, относящиеся к товару.  Поле обязательно для заполнения.
-     *
-     * @return self
-     */
-    public function setCodes($codes)
-    {
-        if (is_null($codes)) {
-            array_push($this->openAPINullablesSetToNull, 'codes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('codes', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($codes) && (count($codes) > 5000)) {
-            throw new \InvalidArgumentException('invalid value for $codes when calling OrderDigitalItemDTO., number of items must be less than or equal to 5000.');
-        }
-        if (!is_null($codes) && (count($codes) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $codes when calling OrderDigitalItemDTO., number of items must be greater than or equal to 1.');
-        }
-        $this->container['codes'] = $codes;
 
         return $this;
     }
@@ -457,6 +416,47 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
+
+    /**
+     * Gets codes
+     *
+     * @return string[]|null
+     */
+    public function getCodes()
+    {
+        return $this->container['codes'];
+    }
+
+    /**
+     * Sets codes
+     *
+     * @param string[]|null $codes Ключи, относящиеся к товару.  Поле обязательно для заполнения.
+     *
+     * @return self
+     */
+    public function setCodes($codes)
+    {
+        if (is_null($codes)) {
+            array_push($this->openAPINullablesSetToNull, 'codes');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('codes', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($codes) && (count($codes) > 5000)) {
+            throw new \InvalidArgumentException('invalid value for $codes when calling OrderDigitalItemDTO., number of items must be less than or equal to 5000.');
+        }
+        if (!is_null($codes) && (count($codes) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $codes when calling OrderDigitalItemDTO., number of items must be greater than or equal to 1.');
+        }
+        $this->container['codes'] = $codes;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -464,7 +464,7 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -477,7 +477,7 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -506,7 +506,7 @@ class OrderDigitalItemDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

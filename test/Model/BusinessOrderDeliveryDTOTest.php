@@ -107,15 +107,6 @@ class BusinessOrderDeliveryDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "warehouse_id"
-     */
-    public function testPropertyWarehouseId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "delivery_partner_type"
      */
     public function testPropertyDeliveryPartnerType()
@@ -125,18 +116,27 @@ class BusinessOrderDeliveryDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "dispatch_type"
+     * Test attribute "dates"
      */
-    public function testPropertyDispatchType()
+    public function testPropertyDates()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "dates"
+     * Test attribute "warehouse_id"
      */
-    public function testPropertyDates()
+    public function testPropertyWarehouseId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "dispatch_type"
+     */
+    public function testPropertyDispatchType()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -200,6 +200,33 @@ class BusinessOrderDeliveryDTOTest extends TestCase
      * Test attribute "estimated"
      */
     public function testPropertyEstimated()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "receive_barcode"
+     */
+    public function testPropertyReceiveBarcode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "receive_code"
+     */
+    public function testPropertyReceiveCode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "digital_goods"
+     */
+    public function testPropertyDigitalGoods()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

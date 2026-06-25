@@ -33,7 +33,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * GoodsFeedbackCommentAuthorType Class Doc Comment
  *
  * @category Class
- * @description Тип автора:  * &#x60;USER&#x60; — пользователь. * &#x60;BUSINESS&#x60; — кабинет.
+ * @description Тип автора:  * &#x60;USER&#x60; — пользователь. * &#x60;BUSINESS&#x60; — кабинет. * &#x60;BRAND&#x60; — бренд.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -47,6 +47,8 @@ class GoodsFeedbackCommentAuthorType
 
     public const BUSINESS = 'BUSINESS';
 
+    public const BRAND = 'BRAND';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -55,7 +57,8 @@ class GoodsFeedbackCommentAuthorType
     {
         return [
             self::USER,
-            self::BUSINESS
+            self::BUSINESS,
+            self::BRAND
         ];
     }
 }

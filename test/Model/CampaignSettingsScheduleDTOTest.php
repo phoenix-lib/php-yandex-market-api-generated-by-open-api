@@ -80,15 +80,6 @@ class CampaignSettingsScheduleDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "available_on_holidays"
-     */
-    public function testPropertyAvailableOnHolidays()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "custom_holidays"
      */
     public function testPropertyCustomHolidays()
@@ -107,15 +98,6 @@ class CampaignSettingsScheduleDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "period"
-     */
-    public function testPropertyPeriod()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "total_holidays"
      */
     public function testPropertyTotalHolidays()
@@ -128,6 +110,24 @@ class CampaignSettingsScheduleDTOTest extends TestCase
      * Test attribute "weekly_holidays"
      */
     public function testPropertyWeeklyHolidays()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "available_on_holidays"
+     */
+    public function testPropertyAvailableOnHolidays()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "period"
+     */
+    public function testPropertyPeriod()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

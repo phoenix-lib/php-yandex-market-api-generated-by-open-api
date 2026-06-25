@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * FulfillmentWarehousesDTOTest Class Doc Comment
  *
  * @category    Class
- * @description Список складов Маркета (FBY).
+ * @description Список фулфилмент-складов Маркета.
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

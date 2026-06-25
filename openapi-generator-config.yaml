@@ -1,0 +1,19 @@
+generatorName: php
+additionalProperties:
+  allowUnicodeIdentifiers: false
+  artifactVersion: 1.1.4
+  composerPackageName: phoenix-lib/php-yandex-market-api-generated-by-open-api
+  developerOrganization: phoenix-lib
+  developerOrganizationUrl: https://github.com/phoenix-lib
+  disallowAdditionalPropertiesIfNotPresent: false
+  enumUnknownDefaultCase: false
+  hideGenerationTimestamp: true
+  infoUrl: https://github.com/phoenix-lib/php-yandex-market-api-generated-by-open-api
+  invokerPackage: OpenAPI\Client
+  legacyDiscriminatorBehavior: false
+  licenseName: Unlicense
+  packageName: OpenAPIClient-php
+  sortModelPropertiesByRequiredFlag: true
+  sortParamsByRequiredFlag: true
+  srcBasePath: lib
+  variableNamingConvention: snake_case

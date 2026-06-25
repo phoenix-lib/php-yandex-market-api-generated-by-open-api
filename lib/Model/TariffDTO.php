@@ -59,10 +59,10 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'type' => '\OpenAPI\Client\Model\TariffType',
-        'percent' => 'float',
         'amount' => 'float',
         'currency' => '\OpenAPI\Client\Model\CurrencyType',
-        'parameters' => '\OpenAPI\Client\Model\TariffParameterDTO[]'
+        'parameters' => '\OpenAPI\Client\Model\TariffParameterDTO[]',
+        'percent' => 'float'
     ];
 
     /**
@@ -74,10 +74,10 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'type' => null,
-        'percent' => null,
         'amount' => null,
         'currency' => null,
-        'parameters' => null
+        'parameters' => null,
+        'percent' => null
     ];
 
     /**
@@ -87,10 +87,10 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'type' => false,
-        'percent' => false,
         'amount' => false,
         'currency' => false,
-        'parameters' => false
+        'parameters' => false,
+        'percent' => false
     ];
 
     /**
@@ -180,10 +180,10 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'percent' => 'percent',
         'amount' => 'amount',
         'currency' => 'currency',
-        'parameters' => 'parameters'
+        'parameters' => 'parameters',
+        'percent' => 'percent'
     ];
 
     /**
@@ -193,10 +193,10 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'type' => 'setType',
-        'percent' => 'setPercent',
         'amount' => 'setAmount',
         'currency' => 'setCurrency',
-        'parameters' => 'setParameters'
+        'parameters' => 'setParameters',
+        'percent' => 'setPercent'
     ];
 
     /**
@@ -206,10 +206,10 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'type' => 'getType',
-        'percent' => 'getPercent',
         'amount' => 'getAmount',
         'currency' => 'getCurrency',
-        'parameters' => 'getParameters'
+        'parameters' => 'getParameters',
+        'percent' => 'getPercent'
     ];
 
     /**
@@ -270,10 +270,10 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('percent', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('parameters', $data ?? [], null);
+        $this->setIfExists('percent', $data ?? [], null);
     }
 
     /**
@@ -358,35 +358,6 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets percent
-     *
-     * @return float|null
-     * @deprecated
-     */
-    public function getPercent()
-    {
-        return $this->container['percent'];
-    }
-
-    /**
-     * Sets percent
-     *
-     * @param float|null $percent Значение тарифа в процентах.
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setPercent($percent)
-    {
-        if (is_null($percent)) {
-            throw new \InvalidArgumentException('non-nullable percent cannot be null');
-        }
-        $this->container['percent'] = $percent;
-
-        return $this;
-    }
-
-    /**
      * Gets amount
      *
      * @return float
@@ -466,6 +437,35 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
+    /**
+     * Gets percent
+     *
+     * @return float|null
+     * @deprecated
+     */
+    public function getPercent()
+    {
+        return $this->container['percent'];
+    }
+
+    /**
+     * Sets percent
+     *
+     * @param float|null $percent Значение тарифа в процентах.
+     *
+     * @return self
+     * @deprecated
+     */
+    public function setPercent($percent)
+    {
+        if (is_null($percent)) {
+            throw new \InvalidArgumentException('non-nullable percent cannot be null');
+        }
+        $this->container['percent'] = $percent;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -473,7 +473,7 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -486,7 +486,7 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -515,7 +515,7 @@ class TariffDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

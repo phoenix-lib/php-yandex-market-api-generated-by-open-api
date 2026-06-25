@@ -74,7 +74,7 @@ class WarehousesApiTest extends TestCase
     /**
      * Test case for getFulfillmentWarehouses
      *
-     * Идентификаторы складов Маркета.
+     * Идентификаторы фулфилмент-складов Маркета.
      *
      */
     public function testGetFulfillmentWarehouses()

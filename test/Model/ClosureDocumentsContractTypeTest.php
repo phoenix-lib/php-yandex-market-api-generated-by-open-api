@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * ClosureDocumentsContractTypeTest Class Doc Comment
  *
  * @category    Class
- * @description Тип договора:  * &#x60;INCOME&#x60; — договор на размещение.  * &#x60;OUTCOME&#x60; — договор на продвижение.  * &#x60;MARKETING&#x60; — договор на маркетинг.
+ * @description Тип договора:  * &#x60;INCOME&#x60; — договор на размещение.  * &#x60;OUTCOME&#x60; — договор на продвижение.
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

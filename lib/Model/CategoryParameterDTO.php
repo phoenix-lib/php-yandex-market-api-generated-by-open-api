@@ -59,16 +59,16 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'name' => 'string',
         'type' => '\OpenAPI\Client\Model\ParameterType',
-        'unit' => '\OpenAPI\Client\Model\CategoryParameterUnitDTO',
-        'description' => 'string',
-        'recommendation_types' => '\OpenAPI\Client\Model\OfferCardRecommendationType[]',
         'required' => 'bool',
         'filtering' => 'bool',
         'distinctive' => 'bool',
         'multivalue' => 'bool',
         'allow_custom_values' => 'bool',
+        'name' => 'string',
+        'unit' => '\OpenAPI\Client\Model\CategoryParameterUnitDTO',
+        'description' => 'string',
+        'recommendation_types' => '\OpenAPI\Client\Model\OfferCardRecommendationType[]',
         'values' => '\OpenAPI\Client\Model\ParameterValueOptionDTO[]',
         'constraints' => '\OpenAPI\Client\Model\ParameterValueConstraintsDTO',
         'value_restrictions' => '\OpenAPI\Client\Model\ValueRestrictionDTO[]'
@@ -83,16 +83,16 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'id' => 'int64',
-        'name' => null,
         'type' => null,
-        'unit' => null,
-        'description' => null,
-        'recommendation_types' => null,
         'required' => null,
         'filtering' => null,
         'distinctive' => null,
         'multivalue' => null,
         'allow_custom_values' => null,
+        'name' => null,
+        'unit' => null,
+        'description' => null,
+        'recommendation_types' => null,
         'values' => null,
         'constraints' => null,
         'value_restrictions' => null
@@ -105,16 +105,16 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'name' => false,
         'type' => false,
-        'unit' => false,
-        'description' => false,
-        'recommendation_types' => true,
         'required' => false,
         'filtering' => false,
         'distinctive' => false,
         'multivalue' => false,
         'allow_custom_values' => false,
+        'name' => false,
+        'unit' => false,
+        'description' => false,
+        'recommendation_types' => true,
         'values' => true,
         'constraints' => false,
         'value_restrictions' => true
@@ -207,16 +207,16 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'name' => 'name',
         'type' => 'type',
-        'unit' => 'unit',
-        'description' => 'description',
-        'recommendation_types' => 'recommendationTypes',
         'required' => 'required',
         'filtering' => 'filtering',
         'distinctive' => 'distinctive',
         'multivalue' => 'multivalue',
         'allow_custom_values' => 'allowCustomValues',
+        'name' => 'name',
+        'unit' => 'unit',
+        'description' => 'description',
+        'recommendation_types' => 'recommendationTypes',
         'values' => 'values',
         'constraints' => 'constraints',
         'value_restrictions' => 'valueRestrictions'
@@ -229,16 +229,16 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'id' => 'setId',
-        'name' => 'setName',
         'type' => 'setType',
-        'unit' => 'setUnit',
-        'description' => 'setDescription',
-        'recommendation_types' => 'setRecommendationTypes',
         'required' => 'setRequired',
         'filtering' => 'setFiltering',
         'distinctive' => 'setDistinctive',
         'multivalue' => 'setMultivalue',
         'allow_custom_values' => 'setAllowCustomValues',
+        'name' => 'setName',
+        'unit' => 'setUnit',
+        'description' => 'setDescription',
+        'recommendation_types' => 'setRecommendationTypes',
         'values' => 'setValues',
         'constraints' => 'setConstraints',
         'value_restrictions' => 'setValueRestrictions'
@@ -251,16 +251,16 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'id' => 'getId',
-        'name' => 'getName',
         'type' => 'getType',
-        'unit' => 'getUnit',
-        'description' => 'getDescription',
-        'recommendation_types' => 'getRecommendationTypes',
         'required' => 'getRequired',
         'filtering' => 'getFiltering',
         'distinctive' => 'getDistinctive',
         'multivalue' => 'getMultivalue',
         'allow_custom_values' => 'getAllowCustomValues',
+        'name' => 'getName',
+        'unit' => 'getUnit',
+        'description' => 'getDescription',
+        'recommendation_types' => 'getRecommendationTypes',
         'values' => 'getValues',
         'constraints' => 'getConstraints',
         'value_restrictions' => 'getValueRestrictions'
@@ -324,16 +324,16 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(?array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('unit', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
-        $this->setIfExists('recommendation_types', $data ?? [], null);
         $this->setIfExists('required', $data ?? [], null);
         $this->setIfExists('filtering', $data ?? [], null);
         $this->setIfExists('distinctive', $data ?? [], null);
         $this->setIfExists('multivalue', $data ?? [], null);
         $this->setIfExists('allow_custom_values', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('unit', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('recommendation_types', $data ?? [], null);
         $this->setIfExists('values', $data ?? [], null);
         $this->setIfExists('constraints', $data ?? [], null);
         $this->setIfExists('value_restrictions', $data ?? [], null);
@@ -376,10 +376,6 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
-        if (!is_null($this->container['recommendation_types']) && (count($this->container['recommendation_types']) < 1)) {
-            $invalidProperties[] = "invalid value for 'recommendation_types', number of items must be greater than or equal to 1.";
-        }
-
         if ($this->container['required'] === null) {
             $invalidProperties[] = "'required' can't be null";
         }
@@ -395,6 +391,10 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         if ($this->container['allow_custom_values'] === null) {
             $invalidProperties[] = "'allow_custom_values' can't be null";
         }
+        if (!is_null($this->container['recommendation_types']) && (count($this->container['recommendation_types']) < 1)) {
+            $invalidProperties[] = "invalid value for 'recommendation_types', number of items must be greater than or equal to 1.";
+        }
+
         if (!is_null($this->container['values']) && (count($this->container['values']) < 1)) {
             $invalidProperties[] = "invalid value for 'values', number of items must be greater than or equal to 1.";
         }
@@ -451,33 +451,6 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name Название характеристики.
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets type
      *
      * @return \OpenAPI\Client\Model\ParameterType
@@ -500,99 +473,6 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
         $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets unit
-     *
-     * @return \OpenAPI\Client\Model\CategoryParameterUnitDTO|null
-     */
-    public function getUnit()
-    {
-        return $this->container['unit'];
-    }
-
-    /**
-     * Sets unit
-     *
-     * @param \OpenAPI\Client\Model\CategoryParameterUnitDTO|null $unit unit
-     *
-     * @return self
-     */
-    public function setUnit($unit)
-    {
-        if (is_null($unit)) {
-            throw new \InvalidArgumentException('non-nullable unit cannot be null');
-        }
-        $this->container['unit'] = $unit;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description Описание характеристики.
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
-        }
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets recommendation_types
-     *
-     * @return \OpenAPI\Client\Model\OfferCardRecommendationType[]|null
-     */
-    public function getRecommendationTypes()
-    {
-        return $this->container['recommendation_types'];
-    }
-
-    /**
-     * Sets recommendation_types
-     *
-     * @param \OpenAPI\Client\Model\OfferCardRecommendationType[]|null $recommendation_types Перечень возможных рекомендаций по заполнению карточки, к которым относится данная характеристика.
-     *
-     * @return self
-     */
-    public function setRecommendationTypes($recommendation_types)
-    {
-        if (is_null($recommendation_types)) {
-            array_push($this->openAPINullablesSetToNull, 'recommendation_types');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('recommendation_types', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-
-        if (!is_null($recommendation_types) && (count($recommendation_types) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $recommendation_types when calling CategoryParameterDTO., number of items must be greater than or equal to 1.');
-        }
-        $this->container['recommendation_types'] = $recommendation_types;
 
         return $this;
     }
@@ -733,6 +613,126 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name Название характеристики.
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        }
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit
+     *
+     * @return \OpenAPI\Client\Model\CategoryParameterUnitDTO|null
+     */
+    public function getUnit()
+    {
+        return $this->container['unit'];
+    }
+
+    /**
+     * Sets unit
+     *
+     * @param \OpenAPI\Client\Model\CategoryParameterUnitDTO|null $unit unit
+     *
+     * @return self
+     */
+    public function setUnit($unit)
+    {
+        if (is_null($unit)) {
+            throw new \InvalidArgumentException('non-nullable unit cannot be null');
+        }
+        $this->container['unit'] = $unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description Описание характеристики.
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        if (is_null($description)) {
+            throw new \InvalidArgumentException('non-nullable description cannot be null');
+        }
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets recommendation_types
+     *
+     * @return \OpenAPI\Client\Model\OfferCardRecommendationType[]|null
+     */
+    public function getRecommendationTypes()
+    {
+        return $this->container['recommendation_types'];
+    }
+
+    /**
+     * Sets recommendation_types
+     *
+     * @param \OpenAPI\Client\Model\OfferCardRecommendationType[]|null $recommendation_types Перечень возможных рекомендаций по заполнению карточки, к которым относится данная характеристика.
+     *
+     * @return self
+     */
+    public function setRecommendationTypes($recommendation_types)
+    {
+        if (is_null($recommendation_types)) {
+            array_push($this->openAPINullablesSetToNull, 'recommendation_types');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('recommendation_types', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+
+        if (!is_null($recommendation_types) && (count($recommendation_types) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $recommendation_types when calling CategoryParameterDTO., number of items must be greater than or equal to 1.');
+        }
+        $this->container['recommendation_types'] = $recommendation_types;
+
+        return $this;
+    }
+
+    /**
      * Gets values
      *
      * @return \OpenAPI\Client\Model\ParameterValueOptionDTO[]|null
@@ -843,7 +843,7 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -856,7 +856,7 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -885,7 +885,7 @@ class CategoryParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

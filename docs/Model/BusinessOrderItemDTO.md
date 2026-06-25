@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **prices** | [**\OpenAPI\Client\Model\ItemPriceDTO**](ItemPriceDTO.md) |  | [optional]
 **instances** | [**\OpenAPI\Client\Model\OrderItemInstanceDTO[]**](OrderItemInstanceDTO.md) | Информация о маркировке единиц товара.  Возвращаются данные для маркировки, переданные в запросе:  * Для DBS — [PUT v2/campaigns/{campaignId}/orders/{orderId}/identifiers](../../reference/orders/provideOrderItemIdentifiers.md) или [PUT v2/campaigns/{campaignId}/orders/{orderId}/boxes](../../reference/orders/setOrderBoxLayout.md). * Для FBS и EXPRESS — [PUT v2/campaigns/{campaignId}/orders/{orderId}/boxes](../../reference/orders/setOrderBoxLayout.md).  Для FBY возвращаются коды маркировки, переданные во время поставки.  Если магазин еще не передавал коды для этого заказа, &#x60;instances&#x60; отсутствует. | [optional]
 **required_instance_types** | [**\OpenAPI\Client\Model\OrderItemInstanceType[]**](OrderItemInstanceType.md) | Список необходимых маркировок товара. | [optional]
+**item_statuses** | [**\OpenAPI\Client\Model\OrderItemUnitStatusDTO[]**](OrderItemUnitStatusDTO.md) | Информация о статусах отдельных единиц товара в заказе.  Если данных о статусах отдельных единиц товара нет, поле отсутствует. | [optional]
 **tags** | [**\OpenAPI\Client\Model\OrderItemTagType[]**](OrderItemTagType.md) | Признаки товара. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

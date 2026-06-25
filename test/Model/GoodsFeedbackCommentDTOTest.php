@@ -98,6 +98,24 @@ class GoodsFeedbackCommentDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "feedback_id"
+     */
+    public function testPropertyFeedbackId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "can_modify"
      */
     public function testPropertyCanModify()
@@ -119,24 +137,6 @@ class GoodsFeedbackCommentDTOTest extends TestCase
      * Test attribute "author"
      */
     public function testPropertyAuthor()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "feedback_id"
-     */
-    public function testPropertyFeedbackId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -21,3 +21,16 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+# Repository-owned automation. These files are maintained by hand and must survive regeneration.
+.gitignore
+.travis.yml
+.github/
+scripts/
+AUTOMATION.md
+UPSTREAM_OPENAPI.lock
+git_push.sh
+openapi-generator-config.yaml
+openapitools.json
+package.json
+package-lock.json

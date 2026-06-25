@@ -17,7 +17,7 @@ getGoodsStats($campaign_id, $get_goods_stats_request): \OpenAPI\Client\Model\Get
 
 Отчет по товарам
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getGoodsStats.md) %}  Возвращает подробный отчет по товарам, которые вы разместили на Маркете. С помощью отчета вы можете узнать, например, об остатках на складе, об условиях хранения ваших товаров и т. д.  |**⚙️ Лимит:** 5 000 товаров в минуту| |-|
+{% include notitle [access](../../_auto/method_scopes/getGoodsStats.md) %}  Возвращает подробный отчет по товарам, которые вы разместили на Маркете. С помощью отчета вы можете узнать, например, об остатках на складе, об условиях хранения ваших товаров и т. д.  {% include notitle [limit](../../_auto/method_limits/getGoodsStats.md) %}
 
 ### Example
 

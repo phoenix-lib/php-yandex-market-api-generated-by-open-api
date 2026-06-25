@@ -159,4 +159,13 @@ class GetBusinessOrdersRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "source_platforms"
+     */
+    public function testPropertySourcePlatforms()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

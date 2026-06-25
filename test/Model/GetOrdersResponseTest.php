@@ -80,18 +80,18 @@ class GetOrdersResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "pager"
+     * Test attribute "orders"
      */
-    public function testPropertyPager()
+    public function testPropertyOrders()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "orders"
+     * Test attribute "pager"
      */
-    public function testPropertyOrders()
+    public function testPropertyPager()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

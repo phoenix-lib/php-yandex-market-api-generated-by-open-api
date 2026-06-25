@@ -80,18 +80,18 @@ class GetOfferMappingsResultDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "paging"
+     * Test attribute "offer_mappings"
      */
-    public function testPropertyPaging()
+    public function testPropertyOfferMappings()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "offer_mappings"
+     * Test attribute "paging"
      */
-    public function testPropertyOfferMappings()
+    public function testPropertyPaging()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -80,15 +80,6 @@ class OrderDeliveryDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "type"
      */
     public function testPropertyType()
@@ -107,15 +98,6 @@ class OrderDeliveryDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "price"
-     */
-    public function testPropertyPrice()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "delivery_partner_type"
      */
     public function testPropertyDeliveryPartnerType()
@@ -125,18 +107,45 @@ class OrderDeliveryDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "courier"
+     * Test attribute "dates"
      */
-    public function testPropertyCourier()
+    public function testPropertyDates()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "dates"
+     * Test attribute "delivery_service_id"
      */
-    public function testPropertyDates()
+    public function testPropertyDeliveryServiceId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "price"
+     */
+    public function testPropertyPrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "courier"
+     */
+    public function testPropertyCourier()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -164,15 +173,6 @@ class OrderDeliveryDTOTest extends TestCase
      * Test attribute "vat"
      */
     public function testPropertyVat()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "delivery_service_id"
-     */
-    public function testPropertyDeliveryServiceId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -263,6 +263,15 @@ class OrderDeliveryDTOTest extends TestCase
      * Test attribute "eac_code"
      */
     public function testPropertyEacCode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "receive_code"
+     */
+    public function testPropertyReceiveCode()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -1,4 +1,4 @@
-# OpenAPIClient-php
+# PHP Yandex Market Partner API Client
 
 API Яндекс Маркета помогает продавцам автоматизировать и упростить работу с маркетплейсом.
 
@@ -13,12 +13,13 @@ API Яндекс Маркета помогает продавцам автома
 * получение отчетов.
 
 
+For more information, please visit [https://github.com/phoenix-lib/php-yandex-market-api-generated-by-open-api](https://github.com/phoenix-lib/php-yandex-market-api-generated-by-open-api).
 
 ## Installation & Usage
 
 ### Requirements
 
-PHP 8.1 and later.
+PHP 7.4, PHP 8.1 and later.
 
 ### Composer
 
@@ -29,11 +30,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+      "url": "https://github.com/phoenix-lib/php-yandex-market-api-generated-by-open-api.git"
     }
   ],
   "require": {
-    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
+    "phoenix-lib/php-yandex-market-api-generated-by-open-api": "*@dev"
   }
 }
 ```
@@ -46,7 +47,7 @@ Download the files and include `autoload.php`:
 
 ```php
 <?php
-require_once('/path/to/OpenAPIClient-php/vendor/autoload.php');
+require_once('/path/to/php-yandex-market-api-generated-by-open-api/vendor/autoload.php');
 ```
 
 ## Getting Started
@@ -100,7 +101,6 @@ Class | Method | HTTP request | Description
 *BusinessOfferMappingsApi* | [**deleteOffersFromArchive**](docs/Api/BusinessOfferMappingsApi.md#deleteoffersfromarchive) | **POST** /v2/businesses/{businessId}/offer-mappings/unarchive | Удаление товаров из архива
 *BusinessOfferMappingsApi* | [**generateOfferBarcodes**](docs/Api/BusinessOfferMappingsApi.md#generateofferbarcodes) | **POST** /v1/businesses/{businessId}/offer-mappings/barcodes/generate | Генерация штрихкодов
 *BusinessOfferMappingsApi* | [**getOfferMappings**](docs/Api/BusinessOfferMappingsApi.md#getoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings | Информация о товарах в каталоге
-*BusinessOfferMappingsApi* | [**getSuggestedOfferMappings**](docs/Api/BusinessOfferMappingsApi.md#getsuggestedoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings/suggestions | Просмотр карточек на Маркете, которые подходят вашим товарам
 *BusinessOfferMappingsApi* | [**updateOfferMappings**](docs/Api/BusinessOfferMappingsApi.md#updateoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings/update | Добавление товаров в каталог и изменение информации о них
 *BusinessesApi* | [**getBusinessSettings**](docs/Api/BusinessesApi.md#getbusinesssettings) | **POST** /v2/businesses/{businessId}/settings | Настройки кабинета
 *CampaignsApi* | [**getCampaign**](docs/Api/CampaignsApi.md#getcampaign) | **GET** /v2/campaigns/{campaignId} | Информация о магазине
@@ -144,11 +144,11 @@ Class | Method | HTTP request | Description
 *DbsApi* | [**generateGoodsRealizationReport**](docs/Api/DbsApi.md#generategoodsrealizationreport) | **POST** /v2/reports/goods-realization/generate | Отчет по реализации
 *DbsApi* | [**generateJewelryFiscalReport**](docs/Api/DbsApi.md#generatejewelryfiscalreport) | **POST** /v2/reports/jewelry-fiscal/generate | Отчет по заказам с ювелирными изделиями
 *DbsApi* | [**generateKeyIndicatorsReport**](docs/Api/DbsApi.md#generatekeyindicatorsreport) | **POST** /v2/reports/key-indicators/generate | Отчет по ключевым показателям
+*DbsApi* | [**generateMarketingDetalizationReport**](docs/Api/DbsApi.md#generatemarketingdetalizationreport) | **POST** /v1/businesses/{businessId}/reports/marketing-detalization/generate | Отчет по счету маркетинга
 *DbsApi* | [**generateMassOrderLabelsReport**](docs/Api/DbsApi.md#generatemassorderlabelsreport) | **POST** /v2/reports/documents/labels/generate | Готовые ярлыки‑наклейки на все коробки в нескольких заказах
 *DbsApi* | [**generateOfferBarcodes**](docs/Api/DbsApi.md#generateofferbarcodes) | **POST** /v1/businesses/{businessId}/offer-mappings/barcodes/generate | Генерация штрихкодов
 *DbsApi* | [**generateOrderLabel**](docs/Api/DbsApi.md#generateorderlabel) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/shipments/{shipmentId}/boxes/{boxId}/label | Готовый ярлык‑наклейка для коробки в заказе
 *DbsApi* | [**generateOrderLabels**](docs/Api/DbsApi.md#generateorderlabels) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/labels | Готовые ярлыки‑наклейки на все коробки в одном заказе
-*DbsApi* | [**generatePricesReport**](docs/Api/DbsApi.md#generatepricesreport) | **POST** /v2/reports/prices/generate | Отчет «Цены на рынке»
 *DbsApi* | [**generateSalesGeographyReport**](docs/Api/DbsApi.md#generatesalesgeographyreport) | **POST** /v2/reports/sales-geography/generate | Отчет по географии продаж
 *DbsApi* | [**generateShelfsStatisticsReport**](docs/Api/DbsApi.md#generateshelfsstatisticsreport) | **POST** /v2/reports/shelf-statistics/generate | Отчет по полкам
 *DbsApi* | [**generateShowsBoostReport**](docs/Api/DbsApi.md#generateshowsboostreport) | **POST** /v2/reports/shows-boost/generate | Отчет по бусту показов
@@ -180,12 +180,12 @@ Class | Method | HTTP request | Description
 *DbsApi* | [**getDeliveryServices**](docs/Api/DbsApi.md#getdeliveryservices) | **GET** /v2/delivery/services | Справочник служб доставки
 *DbsApi* | [**getGoodsFeedbackComments**](docs/Api/DbsApi.md#getgoodsfeedbackcomments) | **POST** /v2/businesses/{businessId}/goods-feedback/comments | Получение комментариев к отзыву
 *DbsApi* | [**getGoodsFeedbacks**](docs/Api/DbsApi.md#getgoodsfeedbacks) | **POST** /v2/businesses/{businessId}/goods-feedback | Получение отзывов о товарах продавца
+*DbsApi* | [**getGoodsFeedbacksUrbanads**](docs/Api/DbsApi.md#getgoodsfeedbacksurbanads) | **POST** /v1/businesses/{businessId}/goods-feedback-advertiser | Получение отзывов о товарах для рекламодателей
 *DbsApi* | [**getGoodsQuestionAnswers**](docs/Api/DbsApi.md#getgoodsquestionanswers) | **POST** /v1/businesses/{businessId}/goods-questions/answers | Получение ответов на вопрос
 *DbsApi* | [**getGoodsQuestions**](docs/Api/DbsApi.md#getgoodsquestions) | **POST** /v1/businesses/{businessId}/goods-questions | Получение вопросов о товарах продавца
 *DbsApi* | [**getGoodsStats**](docs/Api/DbsApi.md#getgoodsstats) | **POST** /v2/campaigns/{campaignId}/stats/skus | Отчет по товарам
 *DbsApi* | [**getHiddenOffers**](docs/Api/DbsApi.md#gethiddenoffers) | **GET** /v2/campaigns/{campaignId}/hidden-offers | Информация о скрытых вами товарах
 *DbsApi* | [**getOfferCardsContentStatus**](docs/Api/DbsApi.md#getoffercardscontentstatus) | **POST** /v2/businesses/{businessId}/offer-cards | Получение информации о заполненности карточек магазина
-*DbsApi* | [**getOfferMappingEntries**](docs/Api/DbsApi.md#getoffermappingentries) | **GET** /v2/campaigns/{campaignId}/offer-mapping-entries | Список товаров в каталоге
 *DbsApi* | [**getOfferMappings**](docs/Api/DbsApi.md#getoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings | Информация о товарах в каталоге
 *DbsApi* | [**getOfferRecommendations**](docs/Api/DbsApi.md#getofferrecommendations) | **POST** /v2/businesses/{businessId}/offers/recommendations | Рекомендации Маркета, касающиеся цен
 *DbsApi* | [**getOrder**](docs/Api/DbsApi.md#getorder) | **GET** /v2/campaigns/{campaignId}/orders/{orderId} | Информация об одном заказе в магазине
@@ -209,11 +209,10 @@ Class | Method | HTTP request | Description
 *DbsApi* | [**getReportInfo**](docs/Api/DbsApi.md#getreportinfo) | **GET** /v2/reports/info/{reportId} | Получение заданного отчета или документа
 *DbsApi* | [**getReturn**](docs/Api/DbsApi.md#getreturn) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId} | Информация о невыкупе или возврате
 *DbsApi* | [**getReturnApplication**](docs/Api/DbsApi.md#getreturnapplication) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/application | Получение заявления на возврат
+*DbsApi* | [**getReturnAvailableDecisions**](docs/Api/DbsApi.md#getreturnavailabledecisions) | **POST** /v1/businesses/{businessId}/returns/decisions | Получение возможных решений по возврату
 *DbsApi* | [**getReturnPhoto**](docs/Api/DbsApi.md#getreturnphoto) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/{itemId}/image/{imageHash} | Получение фотографий товаров в возврате
 *DbsApi* | [**getReturns**](docs/Api/DbsApi.md#getreturns) | **GET** /v2/campaigns/{campaignId}/returns | Список невыкупов и возвратов
 *DbsApi* | [**getStocks**](docs/Api/DbsApi.md#getstocks) | **POST** /v2/campaigns/{campaignId}/offers/stocks | Информация об остатках и оборачиваемости
-*DbsApi* | [**getSuggestedOfferMappingEntries**](docs/Api/DbsApi.md#getsuggestedoffermappingentries) | **POST** /v2/campaigns/{campaignId}/offer-mapping-entries/suggestions | Рекомендованные карточки для товаров
-*DbsApi* | [**getSuggestedOfferMappings**](docs/Api/DbsApi.md#getsuggestedoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings/suggestions | Просмотр карточек на Маркете, которые подходят вашим товарам
 *DbsApi* | [**getWarehouses**](docs/Api/DbsApi.md#getwarehouses) | **GET** /v2/businesses/{businessId}/warehouses | Список складов и групп складов
 *DbsApi* | [**provideOrderDigitalCodes**](docs/Api/DbsApi.md#provideorderdigitalcodes) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/deliverDigitalGoods | Передача ключей цифровых товаров
 *DbsApi* | [**provideOrderItemIdentifiers**](docs/Api/DbsApi.md#provideorderitemidentifiers) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/identifiers | Передача кодов маркировки единиц товара
@@ -230,14 +229,13 @@ Class | Method | HTTP request | Description
 *DbsApi* | [**setOrderShipmentBoxes**](docs/Api/DbsApi.md#setordershipmentboxes) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/shipments/{shipmentId}/boxes | Передача количества грузовых мест в заказе
 *DbsApi* | [**setReturnDecision**](docs/Api/DbsApi.md#setreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision | Принятие или изменение решения по возврату
 *DbsApi* | [**skipGoodsFeedbacksReaction**](docs/Api/DbsApi.md#skipgoodsfeedbacksreaction) | **POST** /v2/businesses/{businessId}/goods-feedback/skip-reaction | Пропуск реакции на отзывы
-*DbsApi* | [**submitReturnDecision**](docs/Api/DbsApi.md#submitreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача и подтверждение решения по возврату
+*DbsApi* | [**submitReturnDecision**](docs/Api/DbsApi.md#submitreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача решения по возврату
 *DbsApi* | [**updateBusinessPrices**](docs/Api/DbsApi.md#updatebusinessprices) | **POST** /v2/businesses/{businessId}/offer-prices/updates | Установка цен на товары для всех магазинов
 *DbsApi* | [**updateCampaignOffers**](docs/Api/DbsApi.md#updatecampaignoffers) | **POST** /v2/campaigns/{campaignId}/offers/update | Изменение условий продажи товаров в магазине
 *DbsApi* | [**updateExternalOrderId**](docs/Api/DbsApi.md#updateexternalorderid) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/external-id | Передача внешнего идентификатора заказа
 *DbsApi* | [**updateGoodsFeedbackComment**](docs/Api/DbsApi.md#updategoodsfeedbackcomment) | **POST** /v2/businesses/{businessId}/goods-feedback/comments/update | Добавление нового или изменение созданного комментария
 *DbsApi* | [**updateGoodsQuestionTextEntity**](docs/Api/DbsApi.md#updategoodsquestiontextentity) | **POST** /v1/businesses/{businessId}/goods-questions/update | Создание, изменение и удаление ответа или комментария
 *DbsApi* | [**updateOfferContent**](docs/Api/DbsApi.md#updateoffercontent) | **POST** /v2/businesses/{businessId}/offer-cards/update | Редактирование категорийных характеристик товара
-*DbsApi* | [**updateOfferMappingEntries**](docs/Api/DbsApi.md#updateoffermappingentries) | **POST** /v2/campaigns/{campaignId}/offer-mapping-entries/updates | Добавление и редактирование товаров в каталоге
 *DbsApi* | [**updateOfferMappings**](docs/Api/DbsApi.md#updateoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings/update | Добавление товаров в каталог и изменение информации о них
 *DbsApi* | [**updateOrderItems**](docs/Api/DbsApi.md#updateorderitems) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/items | Удаление товаров из заказа или уменьшение их числа
 *DbsApi* | [**updateOrderStatus**](docs/Api/DbsApi.md#updateorderstatus) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/status | Изменение статуса одного заказа
@@ -249,6 +247,8 @@ Class | Method | HTTP request | Description
 *DbsApi* | [**updatePromoOffers**](docs/Api/DbsApi.md#updatepromooffers) | **POST** /v2/businesses/{businessId}/promos/offers/update | Добавление товаров в акцию или изменение их цен
 *DbsApi* | [**updateStocks**](docs/Api/DbsApi.md#updatestocks) | **PUT** /v2/campaigns/{campaignId}/offers/stocks | Передача информации об остатках
 *DbsApi* | [**updateWarehouseStatus**](docs/Api/DbsApi.md#updatewarehousestatus) | **POST** /v2/campaigns/{campaignId}/warehouse/status | Изменение статуса склада
+*DeliveryOptionsApi* | [**getDeliveryOptions**](docs/Api/DeliveryOptionsApi.md#getdeliveryoptions) | **POST** /v1/campaigns/{campaignId}/delivery-options | Получение доступных вариантов доставки заказов
+*DeliveryOptionsApi* | [**getReturnDeliveryOptions**](docs/Api/DeliveryOptionsApi.md#getreturndeliveryoptions) | **POST** /v1/campaigns/{campaignId}/return-delivery-options | Получение подходящих для возврата пунктов выдачи
 *DeliveryServicesApi* | [**getDeliveryServices**](docs/Api/DeliveryServicesApi.md#getdeliveryservices) | **GET** /v2/delivery/services | Справочник служб доставки
 *ExpressApi* | [**addHiddenOffers**](docs/Api/ExpressApi.md#addhiddenoffers) | **POST** /v2/campaigns/{campaignId}/hidden-offers | Скрытие товаров и настройки скрытия
 *ExpressApi* | [**addOffersToArchive**](docs/Api/ExpressApi.md#addofferstoarchive) | **POST** /v2/businesses/{businessId}/offer-mappings/archive | Добавление товаров в архив
@@ -272,11 +272,11 @@ Class | Method | HTTP request | Description
 *ExpressApi* | [**generateGoodsRealizationReport**](docs/Api/ExpressApi.md#generategoodsrealizationreport) | **POST** /v2/reports/goods-realization/generate | Отчет по реализации
 *ExpressApi* | [**generateJewelryFiscalReport**](docs/Api/ExpressApi.md#generatejewelryfiscalreport) | **POST** /v2/reports/jewelry-fiscal/generate | Отчет по заказам с ювелирными изделиями
 *ExpressApi* | [**generateKeyIndicatorsReport**](docs/Api/ExpressApi.md#generatekeyindicatorsreport) | **POST** /v2/reports/key-indicators/generate | Отчет по ключевым показателям
+*ExpressApi* | [**generateMarketingDetalizationReport**](docs/Api/ExpressApi.md#generatemarketingdetalizationreport) | **POST** /v1/businesses/{businessId}/reports/marketing-detalization/generate | Отчет по счету маркетинга
 *ExpressApi* | [**generateMassOrderLabelsReport**](docs/Api/ExpressApi.md#generatemassorderlabelsreport) | **POST** /v2/reports/documents/labels/generate | Готовые ярлыки‑наклейки на все коробки в нескольких заказах
 *ExpressApi* | [**generateOfferBarcodes**](docs/Api/ExpressApi.md#generateofferbarcodes) | **POST** /v1/businesses/{businessId}/offer-mappings/barcodes/generate | Генерация штрихкодов
 *ExpressApi* | [**generateOrderLabel**](docs/Api/ExpressApi.md#generateorderlabel) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/shipments/{shipmentId}/boxes/{boxId}/label | Готовый ярлык‑наклейка для коробки в заказе
 *ExpressApi* | [**generateOrderLabels**](docs/Api/ExpressApi.md#generateorderlabels) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/labels | Готовые ярлыки‑наклейки на все коробки в одном заказе
-*ExpressApi* | [**generatePricesReport**](docs/Api/ExpressApi.md#generatepricesreport) | **POST** /v2/reports/prices/generate | Отчет «Цены на рынке»
 *ExpressApi* | [**generateSalesGeographyReport**](docs/Api/ExpressApi.md#generatesalesgeographyreport) | **POST** /v2/reports/sales-geography/generate | Отчет по географии продаж
 *ExpressApi* | [**generateShelfsStatisticsReport**](docs/Api/ExpressApi.md#generateshelfsstatisticsreport) | **POST** /v2/reports/shelf-statistics/generate | Отчет по полкам
 *ExpressApi* | [**generateShowsBoostReport**](docs/Api/ExpressApi.md#generateshowsboostreport) | **POST** /v2/reports/shows-boost/generate | Отчет по бусту показов
@@ -308,12 +308,12 @@ Class | Method | HTTP request | Description
 *ExpressApi* | [**getDeliveryServices**](docs/Api/ExpressApi.md#getdeliveryservices) | **GET** /v2/delivery/services | Справочник служб доставки
 *ExpressApi* | [**getGoodsFeedbackComments**](docs/Api/ExpressApi.md#getgoodsfeedbackcomments) | **POST** /v2/businesses/{businessId}/goods-feedback/comments | Получение комментариев к отзыву
 *ExpressApi* | [**getGoodsFeedbacks**](docs/Api/ExpressApi.md#getgoodsfeedbacks) | **POST** /v2/businesses/{businessId}/goods-feedback | Получение отзывов о товарах продавца
+*ExpressApi* | [**getGoodsFeedbacksUrbanads**](docs/Api/ExpressApi.md#getgoodsfeedbacksurbanads) | **POST** /v1/businesses/{businessId}/goods-feedback-advertiser | Получение отзывов о товарах для рекламодателей
 *ExpressApi* | [**getGoodsQuestionAnswers**](docs/Api/ExpressApi.md#getgoodsquestionanswers) | **POST** /v1/businesses/{businessId}/goods-questions/answers | Получение ответов на вопрос
 *ExpressApi* | [**getGoodsQuestions**](docs/Api/ExpressApi.md#getgoodsquestions) | **POST** /v1/businesses/{businessId}/goods-questions | Получение вопросов о товарах продавца
 *ExpressApi* | [**getGoodsStats**](docs/Api/ExpressApi.md#getgoodsstats) | **POST** /v2/campaigns/{campaignId}/stats/skus | Отчет по товарам
 *ExpressApi* | [**getHiddenOffers**](docs/Api/ExpressApi.md#gethiddenoffers) | **GET** /v2/campaigns/{campaignId}/hidden-offers | Информация о скрытых вами товарах
 *ExpressApi* | [**getOfferCardsContentStatus**](docs/Api/ExpressApi.md#getoffercardscontentstatus) | **POST** /v2/businesses/{businessId}/offer-cards | Получение информации о заполненности карточек магазина
-*ExpressApi* | [**getOfferMappingEntries**](docs/Api/ExpressApi.md#getoffermappingentries) | **GET** /v2/campaigns/{campaignId}/offer-mapping-entries | Список товаров в каталоге
 *ExpressApi* | [**getOfferMappings**](docs/Api/ExpressApi.md#getoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings | Информация о товарах в каталоге
 *ExpressApi* | [**getOfferRecommendations**](docs/Api/ExpressApi.md#getofferrecommendations) | **POST** /v2/businesses/{businessId}/offers/recommendations | Рекомендации Маркета, касающиеся цен
 *ExpressApi* | [**getOrder**](docs/Api/ExpressApi.md#getorder) | **GET** /v2/campaigns/{campaignId}/orders/{orderId} | Информация об одном заказе в магазине
@@ -334,13 +334,11 @@ Class | Method | HTTP request | Description
 *ExpressApi* | [**getReportInfo**](docs/Api/ExpressApi.md#getreportinfo) | **GET** /v2/reports/info/{reportId} | Получение заданного отчета или документа
 *ExpressApi* | [**getReturn**](docs/Api/ExpressApi.md#getreturn) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId} | Информация о невыкупе или возврате
 *ExpressApi* | [**getReturnApplication**](docs/Api/ExpressApi.md#getreturnapplication) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/application | Получение заявления на возврат
+*ExpressApi* | [**getReturnAvailableDecisions**](docs/Api/ExpressApi.md#getreturnavailabledecisions) | **POST** /v1/businesses/{businessId}/returns/decisions | Получение возможных решений по возврату
 *ExpressApi* | [**getReturnPhoto**](docs/Api/ExpressApi.md#getreturnphoto) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/{itemId}/image/{imageHash} | Получение фотографий товаров в возврате
 *ExpressApi* | [**getReturns**](docs/Api/ExpressApi.md#getreturns) | **GET** /v2/campaigns/{campaignId}/returns | Список невыкупов и возвратов
 *ExpressApi* | [**getStocks**](docs/Api/ExpressApi.md#getstocks) | **POST** /v2/campaigns/{campaignId}/offers/stocks | Информация об остатках и оборачиваемости
-*ExpressApi* | [**getSuggestedOfferMappingEntries**](docs/Api/ExpressApi.md#getsuggestedoffermappingentries) | **POST** /v2/campaigns/{campaignId}/offer-mapping-entries/suggestions | Рекомендованные карточки для товаров
-*ExpressApi* | [**getSuggestedOfferMappings**](docs/Api/ExpressApi.md#getsuggestedoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings/suggestions | Просмотр карточек на Маркете, которые подходят вашим товарам
 *ExpressApi* | [**getWarehouses**](docs/Api/ExpressApi.md#getwarehouses) | **GET** /v2/businesses/{businessId}/warehouses | Список складов и групп складов
-*ExpressApi* | [**provideOrderItemIdentifiers**](docs/Api/ExpressApi.md#provideorderitemidentifiers) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/identifiers | Передача кодов маркировки единиц товара
 *ExpressApi* | [**putBidsForBusiness**](docs/Api/ExpressApi.md#putbidsforbusiness) | **PUT** /v2/businesses/{businessId}/bids | Включение буста продаж и установка ставок
 *ExpressApi* | [**putBidsForCampaign**](docs/Api/ExpressApi.md#putbidsforcampaign) | **PUT** /v2/campaigns/{campaignId}/bids | Включение буста продаж и установка ставок для магазина
 *ExpressApi* | [**searchRegionChildren**](docs/Api/ExpressApi.md#searchregionchildren) | **GET** /v2/regions/{regionId}/children | Информация о дочерних регионах
@@ -349,18 +347,15 @@ Class | Method | HTTP request | Description
 *ExpressApi* | [**sendFileToChat**](docs/Api/ExpressApi.md#sendfiletochat) | **POST** /v2/businesses/{businessId}/chats/file/send | Отправка файла в чат
 *ExpressApi* | [**sendMessageToChat**](docs/Api/ExpressApi.md#sendmessagetochat) | **POST** /v2/businesses/{businessId}/chats/message | Отправка сообщения в чат
 *ExpressApi* | [**setOrderBoxLayout**](docs/Api/ExpressApi.md#setorderboxlayout) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/boxes | Подготовка заказа
-*ExpressApi* | [**setOrderShipmentBoxes**](docs/Api/ExpressApi.md#setordershipmentboxes) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/shipments/{shipmentId}/boxes | Передача количества грузовых мест в заказе
 *ExpressApi* | [**skipGoodsFeedbacksReaction**](docs/Api/ExpressApi.md#skipgoodsfeedbacksreaction) | **POST** /v2/businesses/{businessId}/goods-feedback/skip-reaction | Пропуск реакции на отзывы
-*ExpressApi* | [**submitReturnDecision**](docs/Api/ExpressApi.md#submitreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача и подтверждение решения по возврату
+*ExpressApi* | [**submitReturnDecision**](docs/Api/ExpressApi.md#submitreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача решения по возврату
 *ExpressApi* | [**updateBusinessPrices**](docs/Api/ExpressApi.md#updatebusinessprices) | **POST** /v2/businesses/{businessId}/offer-prices/updates | Установка цен на товары для всех магазинов
 *ExpressApi* | [**updateCampaignOffers**](docs/Api/ExpressApi.md#updatecampaignoffers) | **POST** /v2/campaigns/{campaignId}/offers/update | Изменение условий продажи товаров в магазине
 *ExpressApi* | [**updateExternalOrderId**](docs/Api/ExpressApi.md#updateexternalorderid) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/external-id | Передача внешнего идентификатора заказа
 *ExpressApi* | [**updateGoodsFeedbackComment**](docs/Api/ExpressApi.md#updategoodsfeedbackcomment) | **POST** /v2/businesses/{businessId}/goods-feedback/comments/update | Добавление нового или изменение созданного комментария
 *ExpressApi* | [**updateGoodsQuestionTextEntity**](docs/Api/ExpressApi.md#updategoodsquestiontextentity) | **POST** /v1/businesses/{businessId}/goods-questions/update | Создание, изменение и удаление ответа или комментария
 *ExpressApi* | [**updateOfferContent**](docs/Api/ExpressApi.md#updateoffercontent) | **POST** /v2/businesses/{businessId}/offer-cards/update | Редактирование категорийных характеристик товара
-*ExpressApi* | [**updateOfferMappingEntries**](docs/Api/ExpressApi.md#updateoffermappingentries) | **POST** /v2/campaigns/{campaignId}/offer-mapping-entries/updates | Добавление и редактирование товаров в каталоге
 *ExpressApi* | [**updateOfferMappings**](docs/Api/ExpressApi.md#updateoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings/update | Добавление товаров в каталог и изменение информации о них
-*ExpressApi* | [**updateOrderItems**](docs/Api/ExpressApi.md#updateorderitems) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/items | Удаление товаров из заказа или уменьшение их числа
 *ExpressApi* | [**updateOrderStatus**](docs/Api/ExpressApi.md#updateorderstatus) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/status | Изменение статуса одного заказа
 *ExpressApi* | [**updateOrderStatuses**](docs/Api/ExpressApi.md#updateorderstatuses) | **POST** /v2/campaigns/{campaignId}/orders/status-update | Изменение статусов нескольких заказов
 *ExpressApi* | [**updatePrices**](docs/Api/ExpressApi.md#updateprices) | **POST** /v2/campaigns/{campaignId}/offer-prices/updates | Установка цен на товары в конкретном магазине
@@ -397,11 +392,11 @@ Class | Method | HTTP request | Description
 *FbsApi* | [**generateGoodsRealizationReport**](docs/Api/FbsApi.md#generategoodsrealizationreport) | **POST** /v2/reports/goods-realization/generate | Отчет по реализации
 *FbsApi* | [**generateJewelryFiscalReport**](docs/Api/FbsApi.md#generatejewelryfiscalreport) | **POST** /v2/reports/jewelry-fiscal/generate | Отчет по заказам с ювелирными изделиями
 *FbsApi* | [**generateKeyIndicatorsReport**](docs/Api/FbsApi.md#generatekeyindicatorsreport) | **POST** /v2/reports/key-indicators/generate | Отчет по ключевым показателям
+*FbsApi* | [**generateMarketingDetalizationReport**](docs/Api/FbsApi.md#generatemarketingdetalizationreport) | **POST** /v1/businesses/{businessId}/reports/marketing-detalization/generate | Отчет по счету маркетинга
 *FbsApi* | [**generateMassOrderLabelsReport**](docs/Api/FbsApi.md#generatemassorderlabelsreport) | **POST** /v2/reports/documents/labels/generate | Готовые ярлыки‑наклейки на все коробки в нескольких заказах
 *FbsApi* | [**generateOfferBarcodes**](docs/Api/FbsApi.md#generateofferbarcodes) | **POST** /v1/businesses/{businessId}/offer-mappings/barcodes/generate | Генерация штрихкодов
 *FbsApi* | [**generateOrderLabel**](docs/Api/FbsApi.md#generateorderlabel) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/shipments/{shipmentId}/boxes/{boxId}/label | Готовый ярлык‑наклейка для коробки в заказе
 *FbsApi* | [**generateOrderLabels**](docs/Api/FbsApi.md#generateorderlabels) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/labels | Готовые ярлыки‑наклейки на все коробки в одном заказе
-*FbsApi* | [**generatePricesReport**](docs/Api/FbsApi.md#generatepricesreport) | **POST** /v2/reports/prices/generate | Отчет «Цены на рынке»
 *FbsApi* | [**generateSalesGeographyReport**](docs/Api/FbsApi.md#generatesalesgeographyreport) | **POST** /v2/reports/sales-geography/generate | Отчет по географии продаж
 *FbsApi* | [**generateShelfsStatisticsReport**](docs/Api/FbsApi.md#generateshelfsstatisticsreport) | **POST** /v2/reports/shelf-statistics/generate | Отчет по полкам
 *FbsApi* | [**generateShipmentListDocumentReport**](docs/Api/FbsApi.md#generateshipmentlistdocumentreport) | **POST** /v2/reports/documents/shipment-list/generate | Получение листа сборки
@@ -434,12 +429,12 @@ Class | Method | HTTP request | Description
 *FbsApi* | [**getDeliveryServices**](docs/Api/FbsApi.md#getdeliveryservices) | **GET** /v2/delivery/services | Справочник служб доставки
 *FbsApi* | [**getGoodsFeedbackComments**](docs/Api/FbsApi.md#getgoodsfeedbackcomments) | **POST** /v2/businesses/{businessId}/goods-feedback/comments | Получение комментариев к отзыву
 *FbsApi* | [**getGoodsFeedbacks**](docs/Api/FbsApi.md#getgoodsfeedbacks) | **POST** /v2/businesses/{businessId}/goods-feedback | Получение отзывов о товарах продавца
+*FbsApi* | [**getGoodsFeedbacksUrbanads**](docs/Api/FbsApi.md#getgoodsfeedbacksurbanads) | **POST** /v1/businesses/{businessId}/goods-feedback-advertiser | Получение отзывов о товарах для рекламодателей
 *FbsApi* | [**getGoodsQuestionAnswers**](docs/Api/FbsApi.md#getgoodsquestionanswers) | **POST** /v1/businesses/{businessId}/goods-questions/answers | Получение ответов на вопрос
 *FbsApi* | [**getGoodsQuestions**](docs/Api/FbsApi.md#getgoodsquestions) | **POST** /v1/businesses/{businessId}/goods-questions | Получение вопросов о товарах продавца
 *FbsApi* | [**getGoodsStats**](docs/Api/FbsApi.md#getgoodsstats) | **POST** /v2/campaigns/{campaignId}/stats/skus | Отчет по товарам
 *FbsApi* | [**getHiddenOffers**](docs/Api/FbsApi.md#gethiddenoffers) | **GET** /v2/campaigns/{campaignId}/hidden-offers | Информация о скрытых вами товарах
 *FbsApi* | [**getOfferCardsContentStatus**](docs/Api/FbsApi.md#getoffercardscontentstatus) | **POST** /v2/businesses/{businessId}/offer-cards | Получение информации о заполненности карточек магазина
-*FbsApi* | [**getOfferMappingEntries**](docs/Api/FbsApi.md#getoffermappingentries) | **GET** /v2/campaigns/{campaignId}/offer-mapping-entries | Список товаров в каталоге
 *FbsApi* | [**getOfferMappings**](docs/Api/FbsApi.md#getoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings | Информация о товарах в каталоге
 *FbsApi* | [**getOfferRecommendations**](docs/Api/FbsApi.md#getofferrecommendations) | **POST** /v2/businesses/{businessId}/offers/recommendations | Рекомендации Маркета, касающиеся цен
 *FbsApi* | [**getOrder**](docs/Api/FbsApi.md#getorder) | **GET** /v2/campaigns/{campaignId}/orders/{orderId} | Информация об одном заказе в магазине
@@ -460,15 +455,13 @@ Class | Method | HTTP request | Description
 *FbsApi* | [**getReportInfo**](docs/Api/FbsApi.md#getreportinfo) | **GET** /v2/reports/info/{reportId} | Получение заданного отчета или документа
 *FbsApi* | [**getReturn**](docs/Api/FbsApi.md#getreturn) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId} | Информация о невыкупе или возврате
 *FbsApi* | [**getReturnApplication**](docs/Api/FbsApi.md#getreturnapplication) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/application | Получение заявления на возврат
+*FbsApi* | [**getReturnAvailableDecisions**](docs/Api/FbsApi.md#getreturnavailabledecisions) | **POST** /v1/businesses/{businessId}/returns/decisions | Получение возможных решений по возврату
 *FbsApi* | [**getReturnPhoto**](docs/Api/FbsApi.md#getreturnphoto) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/{itemId}/image/{imageHash} | Получение фотографий товаров в возврате
 *FbsApi* | [**getReturns**](docs/Api/FbsApi.md#getreturns) | **GET** /v2/campaigns/{campaignId}/returns | Список невыкупов и возвратов
 *FbsApi* | [**getShipment**](docs/Api/FbsApi.md#getshipment) | **GET** /v2/campaigns/{campaignId}/first-mile/shipments/{shipmentId} | Получение информации об одной отгрузке
 *FbsApi* | [**getShipmentOrdersInfo**](docs/Api/FbsApi.md#getshipmentordersinfo) | **GET** /v2/campaigns/{campaignId}/first-mile/shipments/{shipmentId}/orders/info | Получение информации о возможности печати ярлыков
 *FbsApi* | [**getStocks**](docs/Api/FbsApi.md#getstocks) | **POST** /v2/campaigns/{campaignId}/offers/stocks | Информация об остатках и оборачиваемости
-*FbsApi* | [**getSuggestedOfferMappingEntries**](docs/Api/FbsApi.md#getsuggestedoffermappingentries) | **POST** /v2/campaigns/{campaignId}/offer-mapping-entries/suggestions | Рекомендованные карточки для товаров
-*FbsApi* | [**getSuggestedOfferMappings**](docs/Api/FbsApi.md#getsuggestedoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings/suggestions | Просмотр карточек на Маркете, которые подходят вашим товарам
 *FbsApi* | [**getWarehouses**](docs/Api/FbsApi.md#getwarehouses) | **GET** /v2/businesses/{businessId}/warehouses | Список складов и групп складов
-*FbsApi* | [**provideOrderItemIdentifiers**](docs/Api/FbsApi.md#provideorderitemidentifiers) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/identifiers | Передача кодов маркировки единиц товара
 *FbsApi* | [**putBidsForBusiness**](docs/Api/FbsApi.md#putbidsforbusiness) | **PUT** /v2/businesses/{businessId}/bids | Включение буста продаж и установка ставок
 *FbsApi* | [**putBidsForCampaign**](docs/Api/FbsApi.md#putbidsforcampaign) | **PUT** /v2/campaigns/{campaignId}/bids | Включение буста продаж и установка ставок для магазина
 *FbsApi* | [**searchRegionChildren**](docs/Api/FbsApi.md#searchregionchildren) | **GET** /v2/regions/{regionId}/children | Информация о дочерних регионах
@@ -478,10 +471,9 @@ Class | Method | HTTP request | Description
 *FbsApi* | [**sendFileToChat**](docs/Api/FbsApi.md#sendfiletochat) | **POST** /v2/businesses/{businessId}/chats/file/send | Отправка файла в чат
 *FbsApi* | [**sendMessageToChat**](docs/Api/FbsApi.md#sendmessagetochat) | **POST** /v2/businesses/{businessId}/chats/message | Отправка сообщения в чат
 *FbsApi* | [**setOrderBoxLayout**](docs/Api/FbsApi.md#setorderboxlayout) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/boxes | Подготовка заказа
-*FbsApi* | [**setOrderShipmentBoxes**](docs/Api/FbsApi.md#setordershipmentboxes) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/shipments/{shipmentId}/boxes | Передача количества грузовых мест в заказе
 *FbsApi* | [**setShipmentPalletsCount**](docs/Api/FbsApi.md#setshipmentpalletscount) | **PUT** /v2/campaigns/{campaignId}/first-mile/shipments/{shipmentId}/pallets | Передача количества упаковок для доверительной приемки
 *FbsApi* | [**skipGoodsFeedbacksReaction**](docs/Api/FbsApi.md#skipgoodsfeedbacksreaction) | **POST** /v2/businesses/{businessId}/goods-feedback/skip-reaction | Пропуск реакции на отзывы
-*FbsApi* | [**submitReturnDecision**](docs/Api/FbsApi.md#submitreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача и подтверждение решения по возврату
+*FbsApi* | [**submitReturnDecision**](docs/Api/FbsApi.md#submitreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача решения по возврату
 *FbsApi* | [**transferOrdersFromShipment**](docs/Api/FbsApi.md#transferordersfromshipment) | **POST** /v2/campaigns/{campaignId}/first-mile/shipments/{shipmentId}/orders/transfer | Перенос заказов в следующую отгрузку
 *FbsApi* | [**updateBusinessPrices**](docs/Api/FbsApi.md#updatebusinessprices) | **POST** /v2/businesses/{businessId}/offer-prices/updates | Установка цен на товары для всех магазинов
 *FbsApi* | [**updateCampaignOffers**](docs/Api/FbsApi.md#updatecampaignoffers) | **POST** /v2/campaigns/{campaignId}/offers/update | Изменение условий продажи товаров в магазине
@@ -489,9 +481,7 @@ Class | Method | HTTP request | Description
 *FbsApi* | [**updateGoodsFeedbackComment**](docs/Api/FbsApi.md#updategoodsfeedbackcomment) | **POST** /v2/businesses/{businessId}/goods-feedback/comments/update | Добавление нового или изменение созданного комментария
 *FbsApi* | [**updateGoodsQuestionTextEntity**](docs/Api/FbsApi.md#updategoodsquestiontextentity) | **POST** /v1/businesses/{businessId}/goods-questions/update | Создание, изменение и удаление ответа или комментария
 *FbsApi* | [**updateOfferContent**](docs/Api/FbsApi.md#updateoffercontent) | **POST** /v2/businesses/{businessId}/offer-cards/update | Редактирование категорийных характеристик товара
-*FbsApi* | [**updateOfferMappingEntries**](docs/Api/FbsApi.md#updateoffermappingentries) | **POST** /v2/campaigns/{campaignId}/offer-mapping-entries/updates | Добавление и редактирование товаров в каталоге
 *FbsApi* | [**updateOfferMappings**](docs/Api/FbsApi.md#updateoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings/update | Добавление товаров в каталог и изменение информации о них
-*FbsApi* | [**updateOrderItems**](docs/Api/FbsApi.md#updateorderitems) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/items | Удаление товаров из заказа или уменьшение их числа
 *FbsApi* | [**updateOrderStatus**](docs/Api/FbsApi.md#updateorderstatus) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/status | Изменение статуса одного заказа
 *FbsApi* | [**updateOrderStatuses**](docs/Api/FbsApi.md#updateorderstatuses) | **POST** /v2/campaigns/{campaignId}/orders/status-update | Изменение статусов нескольких заказов
 *FbsApi* | [**updatePrices**](docs/Api/FbsApi.md#updateprices) | **POST** /v2/campaigns/{campaignId}/offer-prices/updates | Установка цен на товары в конкретном магазине
@@ -523,8 +513,8 @@ Class | Method | HTTP request | Description
 *FbyApi* | [**generateGoodsTurnoverReport**](docs/Api/FbyApi.md#generategoodsturnoverreport) | **POST** /v2/reports/goods-turnover/generate | Отчет по оборачиваемости
 *FbyApi* | [**generateJewelryFiscalReport**](docs/Api/FbyApi.md#generatejewelryfiscalreport) | **POST** /v2/reports/jewelry-fiscal/generate | Отчет по заказам с ювелирными изделиями
 *FbyApi* | [**generateKeyIndicatorsReport**](docs/Api/FbyApi.md#generatekeyindicatorsreport) | **POST** /v2/reports/key-indicators/generate | Отчет по ключевым показателям
+*FbyApi* | [**generateMarketingDetalizationReport**](docs/Api/FbyApi.md#generatemarketingdetalizationreport) | **POST** /v1/businesses/{businessId}/reports/marketing-detalization/generate | Отчет по счету маркетинга
 *FbyApi* | [**generateOfferBarcodes**](docs/Api/FbyApi.md#generateofferbarcodes) | **POST** /v1/businesses/{businessId}/offer-mappings/barcodes/generate | Генерация штрихкодов
-*FbyApi* | [**generatePricesReport**](docs/Api/FbyApi.md#generatepricesreport) | **POST** /v2/reports/prices/generate | Отчет «Цены на рынке»
 *FbyApi* | [**generateSalesGeographyReport**](docs/Api/FbyApi.md#generatesalesgeographyreport) | **POST** /v2/reports/sales-geography/generate | Отчет по географии продаж
 *FbyApi* | [**generateShelfsStatisticsReport**](docs/Api/FbyApi.md#generateshelfsstatisticsreport) | **POST** /v2/reports/shelf-statistics/generate | Отчет по полкам
 *FbyApi* | [**generateShowsBoostReport**](docs/Api/FbyApi.md#generateshowsboostreport) | **POST** /v2/reports/shows-boost/generate | Отчет по бусту показов
@@ -553,15 +543,15 @@ Class | Method | HTTP request | Description
 *FbyApi* | [**getChatMessage**](docs/Api/FbyApi.md#getchatmessage) | **GET** /v2/businesses/{businessId}/chats/message | Получение сообщения в чате
 *FbyApi* | [**getChats**](docs/Api/FbyApi.md#getchats) | **POST** /v2/businesses/{businessId}/chats | Получение доступных чатов
 *FbyApi* | [**getDefaultPrices**](docs/Api/FbyApi.md#getdefaultprices) | **POST** /v2/businesses/{businessId}/offer-prices | Просмотр цен на указанные товары во всех магазинах
-*FbyApi* | [**getFulfillmentWarehouses**](docs/Api/FbyApi.md#getfulfillmentwarehouses) | **GET** /v2/warehouses | Идентификаторы складов Маркета
+*FbyApi* | [**getFulfillmentWarehouses**](docs/Api/FbyApi.md#getfulfillmentwarehouses) | **GET** /v2/warehouses | Идентификаторы фулфилмент-складов Маркета
 *FbyApi* | [**getGoodsFeedbackComments**](docs/Api/FbyApi.md#getgoodsfeedbackcomments) | **POST** /v2/businesses/{businessId}/goods-feedback/comments | Получение комментариев к отзыву
 *FbyApi* | [**getGoodsFeedbacks**](docs/Api/FbyApi.md#getgoodsfeedbacks) | **POST** /v2/businesses/{businessId}/goods-feedback | Получение отзывов о товарах продавца
+*FbyApi* | [**getGoodsFeedbacksUrbanads**](docs/Api/FbyApi.md#getgoodsfeedbacksurbanads) | **POST** /v1/businesses/{businessId}/goods-feedback-advertiser | Получение отзывов о товарах для рекламодателей
 *FbyApi* | [**getGoodsQuestionAnswers**](docs/Api/FbyApi.md#getgoodsquestionanswers) | **POST** /v1/businesses/{businessId}/goods-questions/answers | Получение ответов на вопрос
 *FbyApi* | [**getGoodsQuestions**](docs/Api/FbyApi.md#getgoodsquestions) | **POST** /v1/businesses/{businessId}/goods-questions | Получение вопросов о товарах продавца
 *FbyApi* | [**getGoodsStats**](docs/Api/FbyApi.md#getgoodsstats) | **POST** /v2/campaigns/{campaignId}/stats/skus | Отчет по товарам
 *FbyApi* | [**getHiddenOffers**](docs/Api/FbyApi.md#gethiddenoffers) | **GET** /v2/campaigns/{campaignId}/hidden-offers | Информация о скрытых вами товарах
 *FbyApi* | [**getOfferCardsContentStatus**](docs/Api/FbyApi.md#getoffercardscontentstatus) | **POST** /v2/businesses/{businessId}/offer-cards | Получение информации о заполненности карточек магазина
-*FbyApi* | [**getOfferMappingEntries**](docs/Api/FbyApi.md#getoffermappingentries) | **GET** /v2/campaigns/{campaignId}/offer-mapping-entries | Список товаров в каталоге
 *FbyApi* | [**getOfferMappings**](docs/Api/FbyApi.md#getoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings | Информация о товарах в каталоге
 *FbyApi* | [**getOfferRecommendations**](docs/Api/FbyApi.md#getofferrecommendations) | **POST** /v2/businesses/{businessId}/offers/recommendations | Рекомендации Маркета, касающиеся цен
 *FbyApi* | [**getOrder**](docs/Api/FbyApi.md#getorder) | **GET** /v2/campaigns/{campaignId}/orders/{orderId} | Информация об одном заказе в магазине
@@ -578,11 +568,10 @@ Class | Method | HTTP request | Description
 *FbyApi* | [**getReportInfo**](docs/Api/FbyApi.md#getreportinfo) | **GET** /v2/reports/info/{reportId} | Получение заданного отчета или документа
 *FbyApi* | [**getReturn**](docs/Api/FbyApi.md#getreturn) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId} | Информация о невыкупе или возврате
 *FbyApi* | [**getReturnApplication**](docs/Api/FbyApi.md#getreturnapplication) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/application | Получение заявления на возврат
+*FbyApi* | [**getReturnAvailableDecisions**](docs/Api/FbyApi.md#getreturnavailabledecisions) | **POST** /v1/businesses/{businessId}/returns/decisions | Получение возможных решений по возврату
 *FbyApi* | [**getReturnPhoto**](docs/Api/FbyApi.md#getreturnphoto) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/{itemId}/image/{imageHash} | Получение фотографий товаров в возврате
 *FbyApi* | [**getReturns**](docs/Api/FbyApi.md#getreturns) | **GET** /v2/campaigns/{campaignId}/returns | Список невыкупов и возвратов
 *FbyApi* | [**getStocks**](docs/Api/FbyApi.md#getstocks) | **POST** /v2/campaigns/{campaignId}/offers/stocks | Информация об остатках и оборачиваемости
-*FbyApi* | [**getSuggestedOfferMappingEntries**](docs/Api/FbyApi.md#getsuggestedoffermappingentries) | **POST** /v2/campaigns/{campaignId}/offer-mapping-entries/suggestions | Рекомендованные карточки для товаров
-*FbyApi* | [**getSuggestedOfferMappings**](docs/Api/FbyApi.md#getsuggestedoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings/suggestions | Просмотр карточек на Маркете, которые подходят вашим товарам
 *FbyApi* | [**getSupplyRequestDocuments**](docs/Api/FbyApi.md#getsupplyrequestdocuments) | **POST** /v2/campaigns/{campaignId}/supply-requests/documents | Получение документов по заявке на поставку, вывоз или утилизацию
 *FbyApi* | [**getSupplyRequestItems**](docs/Api/FbyApi.md#getsupplyrequestitems) | **POST** /v2/campaigns/{campaignId}/supply-requests/items | Получение товаров в заявке на поставку, вывоз или утилизацию
 *FbyApi* | [**getSupplyRequests**](docs/Api/FbyApi.md#getsupplyrequests) | **POST** /v2/campaigns/{campaignId}/supply-requests | Получение информации о заявках на поставку, вывоз и утилизацию
@@ -594,19 +583,19 @@ Class | Method | HTTP request | Description
 *FbyApi* | [**sendFileToChat**](docs/Api/FbyApi.md#sendfiletochat) | **POST** /v2/businesses/{businessId}/chats/file/send | Отправка файла в чат
 *FbyApi* | [**sendMessageToChat**](docs/Api/FbyApi.md#sendmessagetochat) | **POST** /v2/businesses/{businessId}/chats/message | Отправка сообщения в чат
 *FbyApi* | [**skipGoodsFeedbacksReaction**](docs/Api/FbyApi.md#skipgoodsfeedbacksreaction) | **POST** /v2/businesses/{businessId}/goods-feedback/skip-reaction | Пропуск реакции на отзывы
-*FbyApi* | [**submitReturnDecision**](docs/Api/FbyApi.md#submitreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача и подтверждение решения по возврату
+*FbyApi* | [**submitReturnDecision**](docs/Api/FbyApi.md#submitreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача решения по возврату
 *FbyApi* | [**updateBusinessPrices**](docs/Api/FbyApi.md#updatebusinessprices) | **POST** /v2/businesses/{businessId}/offer-prices/updates | Установка цен на товары для всех магазинов
 *FbyApi* | [**updateCampaignOffers**](docs/Api/FbyApi.md#updatecampaignoffers) | **POST** /v2/campaigns/{campaignId}/offers/update | Изменение условий продажи товаров в магазине
 *FbyApi* | [**updateGoodsFeedbackComment**](docs/Api/FbyApi.md#updategoodsfeedbackcomment) | **POST** /v2/businesses/{businessId}/goods-feedback/comments/update | Добавление нового или изменение созданного комментария
 *FbyApi* | [**updateGoodsQuestionTextEntity**](docs/Api/FbyApi.md#updategoodsquestiontextentity) | **POST** /v1/businesses/{businessId}/goods-questions/update | Создание, изменение и удаление ответа или комментария
 *FbyApi* | [**updateOfferContent**](docs/Api/FbyApi.md#updateoffercontent) | **POST** /v2/businesses/{businessId}/offer-cards/update | Редактирование категорийных характеристик товара
-*FbyApi* | [**updateOfferMappingEntries**](docs/Api/FbyApi.md#updateoffermappingentries) | **POST** /v2/campaigns/{campaignId}/offer-mapping-entries/updates | Добавление и редактирование товаров в каталоге
 *FbyApi* | [**updateOfferMappings**](docs/Api/FbyApi.md#updateoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings/update | Добавление товаров в каталог и изменение информации о них
 *FbyApi* | [**updatePrices**](docs/Api/FbyApi.md#updateprices) | **POST** /v2/campaigns/{campaignId}/offer-prices/updates | Установка цен на товары в конкретном магазине
 *FbyApi* | [**updatePromoOffers**](docs/Api/FbyApi.md#updatepromooffers) | **POST** /v2/businesses/{businessId}/promos/offers/update | Добавление товаров в акцию или изменение их цен
 *GoodsFeedbackApi* | [**deleteGoodsFeedbackComment**](docs/Api/GoodsFeedbackApi.md#deletegoodsfeedbackcomment) | **POST** /v2/businesses/{businessId}/goods-feedback/comments/delete | Удаление комментария к отзыву
 *GoodsFeedbackApi* | [**getGoodsFeedbackComments**](docs/Api/GoodsFeedbackApi.md#getgoodsfeedbackcomments) | **POST** /v2/businesses/{businessId}/goods-feedback/comments | Получение комментариев к отзыву
 *GoodsFeedbackApi* | [**getGoodsFeedbacks**](docs/Api/GoodsFeedbackApi.md#getgoodsfeedbacks) | **POST** /v2/businesses/{businessId}/goods-feedback | Получение отзывов о товарах продавца
+*GoodsFeedbackApi* | [**getGoodsFeedbacksUrbanads**](docs/Api/GoodsFeedbackApi.md#getgoodsfeedbacksurbanads) | **POST** /v1/businesses/{businessId}/goods-feedback-advertiser | Получение отзывов о товарах для рекламодателей
 *GoodsFeedbackApi* | [**skipGoodsFeedbacksReaction**](docs/Api/GoodsFeedbackApi.md#skipgoodsfeedbacksreaction) | **POST** /v2/businesses/{businessId}/goods-feedback/skip-reaction | Пропуск реакции на отзывы
 *GoodsFeedbackApi* | [**updateGoodsFeedbackComment**](docs/Api/GoodsFeedbackApi.md#updategoodsfeedbackcomment) | **POST** /v2/businesses/{businessId}/goods-feedback/comments/update | Добавление нового или изменение созданного комментария
 *GoodsQuestionsApi* | [**getGoodsQuestionAnswers**](docs/Api/GoodsQuestionsApi.md#getgoodsquestionanswers) | **POST** /v1/businesses/{businessId}/goods-questions/answers | Получение ответов на вопрос
@@ -616,12 +605,16 @@ Class | Method | HTTP request | Description
 *HiddenOffersApi* | [**addHiddenOffers**](docs/Api/HiddenOffersApi.md#addhiddenoffers) | **POST** /v2/campaigns/{campaignId}/hidden-offers | Скрытие товаров и настройки скрытия
 *HiddenOffersApi* | [**deleteHiddenOffers**](docs/Api/HiddenOffersApi.md#deletehiddenoffers) | **POST** /v2/campaigns/{campaignId}/hidden-offers/delete | Возобновление показа товаров
 *HiddenOffersApi* | [**getHiddenOffers**](docs/Api/HiddenOffersApi.md#gethiddenoffers) | **GET** /v2/campaigns/{campaignId}/hidden-offers | Информация о скрытых вами товарах
+*LaasApi* | [**cancelReturn**](docs/Api/LaasApi.md#cancelreturn) | **POST** /v1/campaigns/{campaignId}/returns/cancel | Отмена возврата
+*LaasApi* | [**createOrder**](docs/Api/LaasApi.md#createorder) | **POST** /v1/campaigns/{campaignId}/orders/create | Создание заказа
+*LaasApi* | [**createReturn**](docs/Api/LaasApi.md#createreturn) | **POST** /v1/campaigns/{campaignId}/returns/create | Создание возврата
 *LaasApi* | [**deleteCampaignOffers**](docs/Api/LaasApi.md#deletecampaignoffers) | **POST** /v2/campaigns/{campaignId}/offers/delete | Удаление товаров из ассортимента магазина
 *LaasApi* | [**deleteOffers**](docs/Api/LaasApi.md#deleteoffers) | **POST** /v2/businesses/{businessId}/offer-mappings/delete | Удаление товаров из каталога
 *LaasApi* | [**generateBarcodesReport**](docs/Api/LaasApi.md#generatebarcodesreport) | **POST** /v1/reports/documents/barcodes/generate | Получение файла со штрихкодами
 *LaasApi* | [**generateClosureDocumentsDetalizationReport**](docs/Api/LaasApi.md#generateclosuredocumentsdetalizationreport) | **POST** /v2/reports/closure-documents/detalization/generate | Отчет по схождению с закрывающими документами
 *LaasApi* | [**generateClosureDocumentsReport**](docs/Api/LaasApi.md#generateclosuredocumentsreport) | **POST** /v2/reports/closure-documents/generate | Закрывающие документы
 *LaasApi* | [**generateGoodsMovementReport**](docs/Api/LaasApi.md#generategoodsmovementreport) | **POST** /v2/reports/goods-movement/generate | Отчет по движению товаров
+*LaasApi* | [**generateMarketingDetalizationReport**](docs/Api/LaasApi.md#generatemarketingdetalizationreport) | **POST** /v1/businesses/{businessId}/reports/marketing-detalization/generate | Отчет по счету маркетинга
 *LaasApi* | [**generateOfferBarcodes**](docs/Api/LaasApi.md#generateofferbarcodes) | **POST** /v1/businesses/{businessId}/offer-mappings/barcodes/generate | Генерация штрихкодов
 *LaasApi* | [**generateStocksOnWarehousesReport**](docs/Api/LaasApi.md#generatestocksonwarehousesreport) | **POST** /v2/reports/stocks-on-warehouses/generate | Отчет по остаткам на складах
 *LaasApi* | [**generateUnitedMarketplaceServicesReport**](docs/Api/LaasApi.md#generateunitedmarketplaceservicesreport) | **POST** /v2/reports/united-marketplace-services/generate | Отчет по стоимости услуг
@@ -636,16 +629,21 @@ Class | Method | HTTP request | Description
 *LaasApi* | [**getCategoriesTree**](docs/Api/LaasApi.md#getcategoriestree) | **POST** /v2/categories/tree | Дерево категорий
 *LaasApi* | [**getCategoryContentParameters**](docs/Api/LaasApi.md#getcategorycontentparameters) | **POST** /v2/category/{categoryId}/parameters | Списки характеристик товаров по категориям
 *LaasApi* | [**getDefaultPrices**](docs/Api/LaasApi.md#getdefaultprices) | **POST** /v2/businesses/{businessId}/offer-prices | Просмотр цен на указанные товары во всех магазинах
-*LaasApi* | [**getFulfillmentWarehouses**](docs/Api/LaasApi.md#getfulfillmentwarehouses) | **GET** /v2/warehouses | Идентификаторы складов Маркета
+*LaasApi* | [**getDeliveryOptions**](docs/Api/LaasApi.md#getdeliveryoptions) | **POST** /v1/campaigns/{campaignId}/delivery-options | Получение доступных вариантов доставки заказов
+*LaasApi* | [**getFulfillmentWarehouses**](docs/Api/LaasApi.md#getfulfillmentwarehouses) | **GET** /v2/warehouses | Идентификаторы фулфилмент-складов Маркета
+*LaasApi* | [**getLogisticPoints**](docs/Api/LaasApi.md#getlogisticpoints) | **POST** /v1/businesses/{businessId}/logistics-points | Получение точек ПВЗ Маркета
 *LaasApi* | [**getOfferCardsContentStatus**](docs/Api/LaasApi.md#getoffercardscontentstatus) | **POST** /v2/businesses/{businessId}/offer-cards | Получение информации о заполненности карточек магазина
 *LaasApi* | [**getOfferMappings**](docs/Api/LaasApi.md#getoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings | Информация о товарах в каталоге
+*LaasApi* | [**getOperations**](docs/Api/LaasApi.md#getoperations) | **POST** /v1/businesses/{businessId}/operations | Получение статусов операций
 *LaasApi* | [**getOrder**](docs/Api/LaasApi.md#getorder) | **GET** /v2/campaigns/{campaignId}/orders/{orderId} | Информация об одном заказе в магазине
 *LaasApi* | [**getOrderIdentifiersStatus**](docs/Api/LaasApi.md#getorderidentifiersstatus) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/identifiers/status | Статусы проверки кодов маркировки
+*LaasApi* | [**getOrderUpdateOptions**](docs/Api/LaasApi.md#getorderupdateoptions) | **POST** /v1/campaigns/{campaignId}/orders/update-options | Получение временных интервалов для изменения заказа
 *LaasApi* | [**getOrders**](docs/Api/LaasApi.md#getorders) | **GET** /v2/campaigns/{campaignId}/orders | Информация о заказах в магазине
 *LaasApi* | [**getPricesByOfferIds**](docs/Api/LaasApi.md#getpricesbyofferids) | **POST** /v2/campaigns/{campaignId}/offer-prices | Просмотр цен на указанные товары в конкретном магазине
 *LaasApi* | [**getRegionsCodes**](docs/Api/LaasApi.md#getregionscodes) | **POST** /v2/regions/countries | Список допустимых кодов стран
 *LaasApi* | [**getReportInfo**](docs/Api/LaasApi.md#getreportinfo) | **GET** /v2/reports/info/{reportId} | Получение заданного отчета или документа
 *LaasApi* | [**getReturn**](docs/Api/LaasApi.md#getreturn) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId} | Информация о невыкупе или возврате
+*LaasApi* | [**getReturnDeliveryOptions**](docs/Api/LaasApi.md#getreturndeliveryoptions) | **POST** /v1/campaigns/{campaignId}/return-delivery-options | Получение подходящих для возврата пунктов выдачи
 *LaasApi* | [**getReturns**](docs/Api/LaasApi.md#getreturns) | **GET** /v2/campaigns/{campaignId}/returns | Список невыкупов и возвратов
 *LaasApi* | [**getStocks**](docs/Api/LaasApi.md#getstocks) | **POST** /v2/campaigns/{campaignId}/offers/stocks | Информация об остатках и оборачиваемости
 *LaasApi* | [**getSupplyRequestDocuments**](docs/Api/LaasApi.md#getsupplyrequestdocuments) | **POST** /v2/campaigns/{campaignId}/supply-requests/documents | Получение документов по заявке на поставку, вывоз или утилизацию
@@ -658,16 +656,16 @@ Class | Method | HTTP request | Description
 *LaasApi* | [**updateCampaignOffers**](docs/Api/LaasApi.md#updatecampaignoffers) | **POST** /v2/campaigns/{campaignId}/offers/update | Изменение условий продажи товаров в магазине
 *LaasApi* | [**updateOfferContent**](docs/Api/LaasApi.md#updateoffercontent) | **POST** /v2/businesses/{businessId}/offer-cards/update | Редактирование категорийных характеристик товара
 *LaasApi* | [**updateOfferMappings**](docs/Api/LaasApi.md#updateoffermappings) | **POST** /v2/businesses/{businessId}/offer-mappings/update | Добавление товаров в каталог и изменение информации о них
+*LaasApi* | [**updateOrder**](docs/Api/LaasApi.md#updateorder) | **POST** /v1/campaigns/{campaignId}/orders/update | Изменение заказа
 *LaasApi* | [**updateOrderStatus**](docs/Api/LaasApi.md#updateorderstatus) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/status | Изменение статуса одного заказа
 *LaasApi* | [**updateOrderStatuses**](docs/Api/LaasApi.md#updateorderstatuses) | **POST** /v2/campaigns/{campaignId}/orders/status-update | Изменение статусов нескольких заказов
 *LaasApi* | [**updatePrices**](docs/Api/LaasApi.md#updateprices) | **POST** /v2/campaigns/{campaignId}/offer-prices/updates | Установка цен на товары в конкретном магазине
-*OfferMappingsApi* | [**getOfferMappingEntries**](docs/Api/OfferMappingsApi.md#getoffermappingentries) | **GET** /v2/campaigns/{campaignId}/offer-mapping-entries | Список товаров в каталоге
-*OfferMappingsApi* | [**getSuggestedOfferMappingEntries**](docs/Api/OfferMappingsApi.md#getsuggestedoffermappingentries) | **POST** /v2/campaigns/{campaignId}/offer-mapping-entries/suggestions | Рекомендованные карточки для товаров
-*OfferMappingsApi* | [**updateOfferMappingEntries**](docs/Api/OfferMappingsApi.md#updateoffermappingentries) | **POST** /v2/campaigns/{campaignId}/offer-mapping-entries/updates | Добавление и редактирование товаров в каталоге
+*LogisticPointsApi* | [**getLogisticPoints**](docs/Api/LogisticPointsApi.md#getlogisticpoints) | **POST** /v1/businesses/{businessId}/logistics-points | Получение точек ПВЗ Маркета
 *OffersApi* | [**deleteCampaignOffers**](docs/Api/OffersApi.md#deletecampaignoffers) | **POST** /v2/campaigns/{campaignId}/offers/delete | Удаление товаров из ассортимента магазина
 *OffersApi* | [**getCampaignOffers**](docs/Api/OffersApi.md#getcampaignoffers) | **POST** /v2/campaigns/{campaignId}/offers | Информация о товарах, которые размещены в заданном магазине
 *OffersApi* | [**getOfferRecommendations**](docs/Api/OffersApi.md#getofferrecommendations) | **POST** /v2/businesses/{businessId}/offers/recommendations | Рекомендации Маркета, касающиеся цен
 *OffersApi* | [**updateCampaignOffers**](docs/Api/OffersApi.md#updatecampaignoffers) | **POST** /v2/campaigns/{campaignId}/offers/update | Изменение условий продажи товаров в магазине
+*OperationsApi* | [**getOperations**](docs/Api/OperationsApi.md#getoperations) | **POST** /v1/businesses/{businessId}/operations | Получение статусов операций
 *OrderBusinessInformationApi* | [**getOrderBusinessBuyerInfo**](docs/Api/OrderBusinessInformationApi.md#getorderbusinessbuyerinfo) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/business-buyer | Информация о покупателе — юридическом лице
 *OrderBusinessInformationApi* | [**getOrderBusinessDocumentsInfo**](docs/Api/OrderBusinessInformationApi.md#getorderbusinessdocumentsinfo) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/documents | Информация о документах
 *OrderDeliveryApi* | [**getOrderBuyerInfo**](docs/Api/OrderDeliveryApi.md#getorderbuyerinfo) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/buyer | Информация о покупателе — физическом лице
@@ -679,15 +677,18 @@ Class | Method | HTTP request | Description
 *OrderLabelsApi* | [**generateOrderLabels**](docs/Api/OrderLabelsApi.md#generateorderlabels) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/labels | Готовые ярлыки‑наклейки на все коробки в одном заказе
 *OrderLabelsApi* | [**getOrderLabelsData**](docs/Api/OrderLabelsApi.md#getorderlabelsdata) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/labels/data | Данные для самостоятельного изготовления ярлыков
 *OrdersApi* | [**acceptOrderCancellation**](docs/Api/OrdersApi.md#acceptordercancellation) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/cancellation/accept | Отмена заказа покупателем
+*OrdersApi* | [**createOrder**](docs/Api/OrdersApi.md#createorder) | **POST** /v1/campaigns/{campaignId}/orders/create | Создание заказа
 *OrdersApi* | [**getBusinessOrders**](docs/Api/OrdersApi.md#getbusinessorders) | **POST** /v1/businesses/{businessId}/orders | Информация о заказах в кабинете
 *OrdersApi* | [**getOrder**](docs/Api/OrdersApi.md#getorder) | **GET** /v2/campaigns/{campaignId}/orders/{orderId} | Информация об одном заказе в магазине
 *OrdersApi* | [**getOrderIdentifiersStatus**](docs/Api/OrdersApi.md#getorderidentifiersstatus) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/identifiers/status | Статусы проверки кодов маркировки
+*OrdersApi* | [**getOrderUpdateOptions**](docs/Api/OrdersApi.md#getorderupdateoptions) | **POST** /v1/campaigns/{campaignId}/orders/update-options | Получение временных интервалов для изменения заказа
 *OrdersApi* | [**getOrders**](docs/Api/OrdersApi.md#getorders) | **GET** /v2/campaigns/{campaignId}/orders | Информация о заказах в магазине
 *OrdersApi* | [**provideOrderDigitalCodes**](docs/Api/OrdersApi.md#provideorderdigitalcodes) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/deliverDigitalGoods | Передача ключей цифровых товаров
 *OrdersApi* | [**provideOrderItemIdentifiers**](docs/Api/OrdersApi.md#provideorderitemidentifiers) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/identifiers | Передача кодов маркировки единиц товара
 *OrdersApi* | [**setOrderBoxLayout**](docs/Api/OrdersApi.md#setorderboxlayout) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/boxes | Подготовка заказа
 *OrdersApi* | [**setOrderShipmentBoxes**](docs/Api/OrdersApi.md#setordershipmentboxes) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/delivery/shipments/{shipmentId}/boxes | Передача количества грузовых мест в заказе
 *OrdersApi* | [**updateExternalOrderId**](docs/Api/OrdersApi.md#updateexternalorderid) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/external-id | Передача внешнего идентификатора заказа
+*OrdersApi* | [**updateOrder**](docs/Api/OrdersApi.md#updateorder) | **POST** /v1/campaigns/{campaignId}/orders/update | Изменение заказа
 *OrdersApi* | [**updateOrderItems**](docs/Api/OrdersApi.md#updateorderitems) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/items | Удаление товаров из заказа или уменьшение их числа
 *OrdersApi* | [**updateOrderStatus**](docs/Api/OrdersApi.md#updateorderstatus) | **PUT** /v2/campaigns/{campaignId}/orders/{orderId}/status | Изменение статуса одного заказа
 *OrdersApi* | [**updateOrderStatuses**](docs/Api/OrdersApi.md#updateorderstatuses) | **POST** /v2/campaigns/{campaignId}/orders/status-update | Изменение статусов нескольких заказов
@@ -732,8 +733,8 @@ Class | Method | HTTP request | Description
 *ReportsApi* | [**generateGoodsTurnoverReport**](docs/Api/ReportsApi.md#generategoodsturnoverreport) | **POST** /v2/reports/goods-turnover/generate | Отчет по оборачиваемости
 *ReportsApi* | [**generateJewelryFiscalReport**](docs/Api/ReportsApi.md#generatejewelryfiscalreport) | **POST** /v2/reports/jewelry-fiscal/generate | Отчет по заказам с ювелирными изделиями
 *ReportsApi* | [**generateKeyIndicatorsReport**](docs/Api/ReportsApi.md#generatekeyindicatorsreport) | **POST** /v2/reports/key-indicators/generate | Отчет по ключевым показателям
+*ReportsApi* | [**generateMarketingDetalizationReport**](docs/Api/ReportsApi.md#generatemarketingdetalizationreport) | **POST** /v1/businesses/{businessId}/reports/marketing-detalization/generate | Отчет по счету маркетинга
 *ReportsApi* | [**generateMassOrderLabelsReport**](docs/Api/ReportsApi.md#generatemassorderlabelsreport) | **POST** /v2/reports/documents/labels/generate | Готовые ярлыки‑наклейки на все коробки в нескольких заказах
-*ReportsApi* | [**generatePricesReport**](docs/Api/ReportsApi.md#generatepricesreport) | **POST** /v2/reports/prices/generate | Отчет «Цены на рынке»
 *ReportsApi* | [**generateSalesGeographyReport**](docs/Api/ReportsApi.md#generatesalesgeographyreport) | **POST** /v2/reports/sales-geography/generate | Отчет по географии продаж
 *ReportsApi* | [**generateShelfsStatisticsReport**](docs/Api/ReportsApi.md#generateshelfsstatisticsreport) | **POST** /v2/reports/shelf-statistics/generate | Отчет по полкам
 *ReportsApi* | [**generateShipmentListDocumentReport**](docs/Api/ReportsApi.md#generateshipmentlistdocumentreport) | **POST** /v2/reports/documents/shipment-list/generate | Получение листа сборки
@@ -745,12 +746,15 @@ Class | Method | HTTP request | Description
 *ReportsApi* | [**generateUnitedOrdersReport**](docs/Api/ReportsApi.md#generateunitedordersreport) | **POST** /v2/reports/united-orders/generate | Отчет по заказам
 *ReportsApi* | [**generateUnitedReturnsReport**](docs/Api/ReportsApi.md#generateunitedreturnsreport) | **POST** /v2/reports/united-returns/generate | Отчет по невыкупам и возвратам
 *ReportsApi* | [**getReportInfo**](docs/Api/ReportsApi.md#getreportinfo) | **GET** /v2/reports/info/{reportId} | Получение заданного отчета или документа
+*ReturnsApi* | [**cancelReturn**](docs/Api/ReturnsApi.md#cancelreturn) | **POST** /v1/campaigns/{campaignId}/returns/cancel | Отмена возврата
+*ReturnsApi* | [**createReturn**](docs/Api/ReturnsApi.md#createreturn) | **POST** /v1/campaigns/{campaignId}/returns/create | Создание возврата
 *ReturnsApi* | [**getReturn**](docs/Api/ReturnsApi.md#getreturn) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId} | Информация о невыкупе или возврате
 *ReturnsApi* | [**getReturnApplication**](docs/Api/ReturnsApi.md#getreturnapplication) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/application | Получение заявления на возврат
+*ReturnsApi* | [**getReturnAvailableDecisions**](docs/Api/ReturnsApi.md#getreturnavailabledecisions) | **POST** /v1/businesses/{businessId}/returns/decisions | Получение возможных решений по возврату
 *ReturnsApi* | [**getReturnPhoto**](docs/Api/ReturnsApi.md#getreturnphoto) | **GET** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/{itemId}/image/{imageHash} | Получение фотографий товаров в возврате
 *ReturnsApi* | [**getReturns**](docs/Api/ReturnsApi.md#getreturns) | **GET** /v2/campaigns/{campaignId}/returns | Список невыкупов и возвратов
 *ReturnsApi* | [**setReturnDecision**](docs/Api/ReturnsApi.md#setreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision | Принятие или изменение решения по возврату
-*ReturnsApi* | [**submitReturnDecision**](docs/Api/ReturnsApi.md#submitreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача и подтверждение решения по возврату
+*ReturnsApi* | [**submitReturnDecision**](docs/Api/ReturnsApi.md#submitreturndecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача решения по возврату
 *ShipmentsApi* | [**confirmShipment**](docs/Api/ShipmentsApi.md#confirmshipment) | **POST** /v2/campaigns/{campaignId}/first-mile/shipments/{shipmentId}/confirm | Подтверждение отгрузки
 *ShipmentsApi* | [**downloadShipmentAct**](docs/Api/ShipmentsApi.md#downloadshipmentact) | **GET** /v2/campaigns/{campaignId}/first-mile/shipments/{shipmentId}/act | Получение акта приема-передачи
 *ShipmentsApi* | [**downloadShipmentDiscrepancyAct**](docs/Api/ShipmentsApi.md#downloadshipmentdiscrepancyact) | **GET** /v2/campaigns/{campaignId}/first-mile/shipments/{shipmentId}/discrepancy-act | Получение акта расхождений
@@ -769,7 +773,7 @@ Class | Method | HTTP request | Description
 *SupplyRequestsApi* | [**getSupplyRequestItems**](docs/Api/SupplyRequestsApi.md#getsupplyrequestitems) | **POST** /v2/campaigns/{campaignId}/supply-requests/items | Получение товаров в заявке на поставку, вывоз или утилизацию
 *SupplyRequestsApi* | [**getSupplyRequests**](docs/Api/SupplyRequestsApi.md#getsupplyrequests) | **POST** /v2/campaigns/{campaignId}/supply-requests | Получение информации о заявках на поставку, вывоз и утилизацию
 *TariffsApi* | [**calculateTariffs**](docs/Api/TariffsApi.md#calculatetariffs) | **POST** /v2/tariffs/calculate | Калькулятор стоимости услуг
-*WarehousesApi* | [**getFulfillmentWarehouses**](docs/Api/WarehousesApi.md#getfulfillmentwarehouses) | **GET** /v2/warehouses | Идентификаторы складов Маркета
+*WarehousesApi* | [**getFulfillmentWarehouses**](docs/Api/WarehousesApi.md#getfulfillmentwarehouses) | **GET** /v2/warehouses | Идентификаторы фулфилмент-складов Маркета
 *WarehousesApi* | [**getPagedWarehouses**](docs/Api/WarehousesApi.md#getpagedwarehouses) | **POST** /v2/businesses/{businessId}/warehouses | Список складов
 *WarehousesApi* | [**getWarehouses**](docs/Api/WarehousesApi.md#getwarehouses) | **GET** /v2/businesses/{businessId}/warehouses | Список складов и групп складов
 *WarehousesApi* | [**updateWarehouseStatus**](docs/Api/WarehousesApi.md#updatewarehousestatus) | **POST** /v2/campaigns/{campaignId}/warehouse/status | Изменение статуса склада
@@ -809,6 +813,8 @@ Class | Method | HTTP request | Description
 - [BaseOfferResponseDTO](docs/Model/BaseOfferResponseDTO.md)
 - [BasePriceDTO](docs/Model/BasePriceDTO.md)
 - [BaseShipmentDTO](docs/Model/BaseShipmentDTO.md)
+- [BasicCourierDeliveryAddressDTO](docs/Model/BasicCourierDeliveryAddressDTO.md)
+- [BasicOrderItemDTO](docs/Model/BasicOrderItemDTO.md)
 - [BenefitType](docs/Model/BenefitType.md)
 - [BidRecommendationItemDTO](docs/Model/BidRecommendationItemDTO.md)
 - [BriefOrderItemDTO](docs/Model/BriefOrderItemDTO.md)
@@ -829,6 +835,8 @@ Class | Method | HTTP request | Description
 - [BusinessOrderShipmentDTO](docs/Model/BusinessOrderShipmentDTO.md)
 - [BusinessOrderTransferDTO](docs/Model/BusinessOrderTransferDTO.md)
 - [BusinessSettingsDTO](docs/Model/BusinessSettingsDTO.md)
+- [BusinessSubscriptionLevelType](docs/Model/BusinessSubscriptionLevelType.md)
+- [BusinessTraitType](docs/Model/BusinessTraitType.md)
 - [CalculateTariffsOfferDTO](docs/Model/CalculateTariffsOfferDTO.md)
 - [CalculateTariffsOfferInfoDTO](docs/Model/CalculateTariffsOfferInfoDTO.md)
 - [CalculateTariffsParametersDTO](docs/Model/CalculateTariffsParametersDTO.md)
@@ -846,6 +854,9 @@ Class | Method | HTTP request | Description
 - [CampaignSettingsScheduleSourceType](docs/Model/CampaignSettingsScheduleSourceType.md)
 - [CampaignSettingsTimePeriodDTO](docs/Model/CampaignSettingsTimePeriodDTO.md)
 - [CampaignsQualityRatingDTO](docs/Model/CampaignsQualityRatingDTO.md)
+- [CancelReturnDTO](docs/Model/CancelReturnDTO.md)
+- [CancelReturnRequest](docs/Model/CancelReturnRequest.md)
+- [CancelReturnResponse](docs/Model/CancelReturnResponse.md)
 - [CatalogLanguageType](docs/Model/CatalogLanguageType.md)
 - [CategoryContentParametersDTO](docs/Model/CategoryContentParametersDTO.md)
 - [CategoryDTO](docs/Model/CategoryDTO.md)
@@ -877,12 +888,33 @@ Class | Method | HTTP request | Description
 - [ConfirmPricesRequest](docs/Model/ConfirmPricesRequest.md)
 - [ConfirmShipmentRequest](docs/Model/ConfirmShipmentRequest.md)
 - [CountryDTO](docs/Model/CountryDTO.md)
+- [CourierDeliveryAddressDTO](docs/Model/CourierDeliveryAddressDTO.md)
+- [CourierDeliveryOptionDTO](docs/Model/CourierDeliveryOptionDTO.md)
+- [CourierDeliveryOptionsDTO](docs/Model/CourierDeliveryOptionsDTO.md)
+- [CourierDeliveryParametersDTO](docs/Model/CourierDeliveryParametersDTO.md)
 - [CreateChatRequest](docs/Model/CreateChatRequest.md)
 - [CreateChatResponse](docs/Model/CreateChatResponse.md)
 - [CreateChatResultDTO](docs/Model/CreateChatResultDTO.md)
+- [CreateOrderDTO](docs/Model/CreateOrderDTO.md)
+- [CreateOrderDeliveryOptionDTO](docs/Model/CreateOrderDeliveryOptionDTO.md)
+- [CreateOrderItemDTO](docs/Model/CreateOrderItemDTO.md)
+- [CreateOrderPackageType](docs/Model/CreateOrderPackageType.md)
+- [CreateOrderPackagingDTO](docs/Model/CreateOrderPackagingDTO.md)
+- [CreateOrderRequest](docs/Model/CreateOrderRequest.md)
+- [CreateOrderResponse](docs/Model/CreateOrderResponse.md)
+- [CreateOrderWarehouseItemsDTO](docs/Model/CreateOrderWarehouseItemsDTO.md)
 - [CreateOutletResponse](docs/Model/CreateOutletResponse.md)
+- [CreateReturnDTO](docs/Model/CreateReturnDTO.md)
+- [CreateReturnItemDTO](docs/Model/CreateReturnItemDTO.md)
+- [CreateReturnOptionDTO](docs/Model/CreateReturnOptionDTO.md)
+- [CreateReturnRequest](docs/Model/CreateReturnRequest.md)
+- [CreateReturnResponse](docs/Model/CreateReturnResponse.md)
+- [CreatedOrderDTO](docs/Model/CreatedOrderDTO.md)
+- [CreatedOrdersDTO](docs/Model/CreatedOrdersDTO.md)
+- [CreatedReturnDTO](docs/Model/CreatedReturnDTO.md)
 - [CurrencyType](docs/Model/CurrencyType.md)
 - [CurrencyValueDTO](docs/Model/CurrencyValueDTO.md)
+- [CustomerDTO](docs/Model/CustomerDTO.md)
 - [DayOfWeekType](docs/Model/DayOfWeekType.md)
 - [DeleteCampaignOffersDTO](docs/Model/DeleteCampaignOffersDTO.md)
 - [DeleteCampaignOffersRequest](docs/Model/DeleteCampaignOffersRequest.md)
@@ -899,20 +931,27 @@ Class | Method | HTTP request | Description
 - [DeletePromoOffersRequest](docs/Model/DeletePromoOffersRequest.md)
 - [DeletePromoOffersResponse](docs/Model/DeletePromoOffersResponse.md)
 - [DeletePromoOffersResultDTO](docs/Model/DeletePromoOffersResultDTO.md)
+- [DeliveryDateIntervalDTO](docs/Model/DeliveryDateIntervalDTO.md)
+- [DeliveryIntervalsUpdateOptionDTO](docs/Model/DeliveryIntervalsUpdateOptionDTO.md)
+- [DeliveryIntervalsUpdateOptionsDTO](docs/Model/DeliveryIntervalsUpdateOptionsDTO.md)
+- [DeliveryOptionPriceDTO](docs/Model/DeliveryOptionPriceDTO.md)
+- [DeliveryPaymentType](docs/Model/DeliveryPaymentType.md)
 - [DeliveryPriceDTO](docs/Model/DeliveryPriceDTO.md)
 - [DeliveryServiceDTO](docs/Model/DeliveryServiceDTO.md)
 - [DeliveryServiceInfoDTO](docs/Model/DeliveryServiceInfoDTO.md)
 - [DeliveryServicesDTO](docs/Model/DeliveryServicesDTO.md)
+- [DigitalGoodsDeliveryDetailsDTO](docs/Model/DigitalGoodsDeliveryDetailsDTO.md)
+- [DigitalGoodsDeliveryType](docs/Model/DigitalGoodsDeliveryType.md)
 - [DocumentDTO](docs/Model/DocumentDTO.md)
 - [EacVerificationResultDTO](docs/Model/EacVerificationResultDTO.md)
 - [EacVerificationStatusType](docs/Model/EacVerificationStatusType.md)
 - [EmptyApiResponse](docs/Model/EmptyApiResponse.md)
-- [EnrichedMappingsOfferDTO](docs/Model/EnrichedMappingsOfferDTO.md)
 - [EnrichedOrderBoxLayoutDTO](docs/Model/EnrichedOrderBoxLayoutDTO.md)
 - [ExtensionShipmentDTO](docs/Model/ExtensionShipmentDTO.md)
+- [ExternalReturnDecisionReasonType](docs/Model/ExternalReturnDecisionReasonType.md)
+- [ExternalReturnDecisionSubreasonType](docs/Model/ExternalReturnDecisionSubreasonType.md)
 - [FeedbackReactionStatusType](docs/Model/FeedbackReactionStatusType.md)
 - [FlippingPagerDTO](docs/Model/FlippingPagerDTO.md)
-- [ForwardScrollingPagerDTO](docs/Model/ForwardScrollingPagerDTO.md)
 - [FulfillmentWarehouseDTO](docs/Model/FulfillmentWarehouseDTO.md)
 - [FulfillmentWarehousesDTO](docs/Model/FulfillmentWarehousesDTO.md)
 - [FullOutletDTO](docs/Model/FullOutletDTO.md)
@@ -930,11 +969,11 @@ Class | Method | HTTP request | Description
 - [GenerateGoodsTurnoverRequest](docs/Model/GenerateGoodsTurnoverRequest.md)
 - [GenerateJewelryFiscalReportRequest](docs/Model/GenerateJewelryFiscalReportRequest.md)
 - [GenerateKeyIndicatorsRequest](docs/Model/GenerateKeyIndicatorsRequest.md)
+- [GenerateMarketingDetalizationRequest](docs/Model/GenerateMarketingDetalizationRequest.md)
 - [GenerateMassOrderLabelsRequest](docs/Model/GenerateMassOrderLabelsRequest.md)
 - [GenerateOfferBarcodesRequest](docs/Model/GenerateOfferBarcodesRequest.md)
 - [GenerateOfferBarcodesResponse](docs/Model/GenerateOfferBarcodesResponse.md)
 - [GenerateOfferBarcodesResultDTO](docs/Model/GenerateOfferBarcodesResultDTO.md)
-- [GeneratePricesReportRequest](docs/Model/GeneratePricesReportRequest.md)
 - [GenerateReportDTO](docs/Model/GenerateReportDTO.md)
 - [GenerateReportResponse](docs/Model/GenerateReportResponse.md)
 - [GenerateSalesGeographyRequest](docs/Model/GenerateSalesGeographyRequest.md)
@@ -984,32 +1023,44 @@ Class | Method | HTTP request | Description
 - [GetChatsResponse](docs/Model/GetChatsResponse.md)
 - [GetDefaultPricesRequest](docs/Model/GetDefaultPricesRequest.md)
 - [GetDefaultPricesResponse](docs/Model/GetDefaultPricesResponse.md)
+- [GetDeliveryOptionsDTO](docs/Model/GetDeliveryOptionsDTO.md)
+- [GetDeliveryOptionsItemDTO](docs/Model/GetDeliveryOptionsItemDTO.md)
+- [GetDeliveryOptionsRequest](docs/Model/GetDeliveryOptionsRequest.md)
+- [GetDeliveryOptionsResponse](docs/Model/GetDeliveryOptionsResponse.md)
 - [GetDeliveryServicesResponse](docs/Model/GetDeliveryServicesResponse.md)
 - [GetFulfillmentWarehousesResponse](docs/Model/GetFulfillmentWarehousesResponse.md)
 - [GetGoodsFeedbackCommentsRequest](docs/Model/GetGoodsFeedbackCommentsRequest.md)
 - [GetGoodsFeedbackCommentsResponse](docs/Model/GetGoodsFeedbackCommentsResponse.md)
 - [GetGoodsFeedbackRequest](docs/Model/GetGoodsFeedbackRequest.md)
 - [GetGoodsFeedbackResponse](docs/Model/GetGoodsFeedbackResponse.md)
+- [GetGoodsFeedbackUrbanadsRequest](docs/Model/GetGoodsFeedbackUrbanadsRequest.md)
+- [GetGoodsFeedbackUrbanadsResponse](docs/Model/GetGoodsFeedbackUrbanadsResponse.md)
 - [GetGoodsStatsRequest](docs/Model/GetGoodsStatsRequest.md)
 - [GetGoodsStatsResponse](docs/Model/GetGoodsStatsResponse.md)
 - [GetHiddenOffersResponse](docs/Model/GetHiddenOffersResponse.md)
 - [GetHiddenOffersResultDTO](docs/Model/GetHiddenOffersResultDTO.md)
+- [GetLogisticPointsResponse](docs/Model/GetLogisticPointsResponse.md)
+- [GetLogisticsPointsDTO](docs/Model/GetLogisticsPointsDTO.md)
 - [GetMappingDTO](docs/Model/GetMappingDTO.md)
 - [GetOfferCardsContentStatusRequest](docs/Model/GetOfferCardsContentStatusRequest.md)
 - [GetOfferCardsContentStatusResponse](docs/Model/GetOfferCardsContentStatusResponse.md)
 - [GetOfferDTO](docs/Model/GetOfferDTO.md)
 - [GetOfferMappingDTO](docs/Model/GetOfferMappingDTO.md)
-- [GetOfferMappingEntriesResponse](docs/Model/GetOfferMappingEntriesResponse.md)
 - [GetOfferMappingsRequest](docs/Model/GetOfferMappingsRequest.md)
 - [GetOfferMappingsResponse](docs/Model/GetOfferMappingsResponse.md)
 - [GetOfferMappingsResultDTO](docs/Model/GetOfferMappingsResultDTO.md)
 - [GetOfferRecommendationsRequest](docs/Model/GetOfferRecommendationsRequest.md)
 - [GetOfferRecommendationsResponse](docs/Model/GetOfferRecommendationsResponse.md)
+- [GetOperationsRequest](docs/Model/GetOperationsRequest.md)
+- [GetOperationsResponse](docs/Model/GetOperationsResponse.md)
+- [GetOperationsResultDTO](docs/Model/GetOperationsResultDTO.md)
 - [GetOrderBuyerInfoResponse](docs/Model/GetOrderBuyerInfoResponse.md)
 - [GetOrderIdentifiersStatusDTO](docs/Model/GetOrderIdentifiersStatusDTO.md)
 - [GetOrderIdentifiersStatusResponse](docs/Model/GetOrderIdentifiersStatusResponse.md)
 - [GetOrderLabelsDataResponse](docs/Model/GetOrderLabelsDataResponse.md)
 - [GetOrderResponse](docs/Model/GetOrderResponse.md)
+- [GetOrderUpdateOptionsRequest](docs/Model/GetOrderUpdateOptionsRequest.md)
+- [GetOrderUpdateOptionsResponse](docs/Model/GetOrderUpdateOptionsResponse.md)
 - [GetOrdersResponse](docs/Model/GetOrdersResponse.md)
 - [GetOrdersStatsRequest](docs/Model/GetOrdersStatsRequest.md)
 - [GetOrdersStatsResponse](docs/Model/GetOrdersStatsResponse.md)
@@ -1045,19 +1096,20 @@ Class | Method | HTTP request | Description
 - [GetQuarantineOffersResultDTO](docs/Model/GetQuarantineOffersResultDTO.md)
 - [GetQuestionsRequest](docs/Model/GetQuestionsRequest.md)
 - [GetQuestionsResponse](docs/Model/GetQuestionsResponse.md)
+- [GetRegionByIdResponse](docs/Model/GetRegionByIdResponse.md)
 - [GetRegionWithChildrenResponse](docs/Model/GetRegionWithChildrenResponse.md)
 - [GetRegionsCodesResponse](docs/Model/GetRegionsCodesResponse.md)
 - [GetRegionsResponse](docs/Model/GetRegionsResponse.md)
 - [GetReportInfoResponse](docs/Model/GetReportInfoResponse.md)
+- [GetReturnAvailableDecisionsRequest](docs/Model/GetReturnAvailableDecisionsRequest.md)
+- [GetReturnAvailableDecisionsResponse](docs/Model/GetReturnAvailableDecisionsResponse.md)
+- [GetReturnDeliveryOptionsDTO](docs/Model/GetReturnDeliveryOptionsDTO.md)
+- [GetReturnDeliveryOptionsRequest](docs/Model/GetReturnDeliveryOptionsRequest.md)
+- [GetReturnDeliveryOptionsResponse](docs/Model/GetReturnDeliveryOptionsResponse.md)
 - [GetReturnResponse](docs/Model/GetReturnResponse.md)
 - [GetReturnsResponse](docs/Model/GetReturnsResponse.md)
 - [GetShipmentOrdersInfoResponse](docs/Model/GetShipmentOrdersInfoResponse.md)
 - [GetShipmentResponse](docs/Model/GetShipmentResponse.md)
-- [GetSuggestedOfferMappingEntriesRequest](docs/Model/GetSuggestedOfferMappingEntriesRequest.md)
-- [GetSuggestedOfferMappingEntriesResponse](docs/Model/GetSuggestedOfferMappingEntriesResponse.md)
-- [GetSuggestedOfferMappingsRequest](docs/Model/GetSuggestedOfferMappingsRequest.md)
-- [GetSuggestedOfferMappingsResponse](docs/Model/GetSuggestedOfferMappingsResponse.md)
-- [GetSuggestedOfferMappingsResultDTO](docs/Model/GetSuggestedOfferMappingsResultDTO.md)
 - [GetSupplyRequestDocumentsDTO](docs/Model/GetSupplyRequestDocumentsDTO.md)
 - [GetSupplyRequestDocumentsRequest](docs/Model/GetSupplyRequestDocumentsRequest.md)
 - [GetSupplyRequestDocumentsResponse](docs/Model/GetSupplyRequestDocumentsResponse.md)
@@ -1077,12 +1129,15 @@ Class | Method | HTTP request | Description
 - [GoodsFeedbackCommentDTO](docs/Model/GoodsFeedbackCommentDTO.md)
 - [GoodsFeedbackCommentListDTO](docs/Model/GoodsFeedbackCommentListDTO.md)
 - [GoodsFeedbackCommentStatusType](docs/Model/GoodsFeedbackCommentStatusType.md)
+- [GoodsFeedbackContextUrbanadsDTO](docs/Model/GoodsFeedbackContextUrbanadsDTO.md)
 - [GoodsFeedbackDTO](docs/Model/GoodsFeedbackDTO.md)
 - [GoodsFeedbackDescriptionDTO](docs/Model/GoodsFeedbackDescriptionDTO.md)
 - [GoodsFeedbackIdentifiersDTO](docs/Model/GoodsFeedbackIdentifiersDTO.md)
 - [GoodsFeedbackListDTO](docs/Model/GoodsFeedbackListDTO.md)
 - [GoodsFeedbackMediaDTO](docs/Model/GoodsFeedbackMediaDTO.md)
 - [GoodsFeedbackStatisticsDTO](docs/Model/GoodsFeedbackStatisticsDTO.md)
+- [GoodsFeedbackUrbanadsDTO](docs/Model/GoodsFeedbackUrbanadsDTO.md)
+- [GoodsFeedbackUrbanadsListDTO](docs/Model/GoodsFeedbackUrbanadsListDTO.md)
 - [GoodsStatsDTO](docs/Model/GoodsStatsDTO.md)
 - [GoodsStatsGoodsDTO](docs/Model/GoodsStatsGoodsDTO.md)
 - [GoodsStatsWarehouseDTO](docs/Model/GoodsStatsWarehouseDTO.md)
@@ -1096,14 +1151,18 @@ Class | Method | HTTP request | Description
 - [LicenseCheckStatusType](docs/Model/LicenseCheckStatusType.md)
 - [LicenseType](docs/Model/LicenseType.md)
 - [LogisticPickupPointDTO](docs/Model/LogisticPickupPointDTO.md)
+- [LogisticPointAddressDTO](docs/Model/LogisticPointAddressDTO.md)
+- [LogisticPointBrandType](docs/Model/LogisticPointBrandType.md)
+- [LogisticPointDTO](docs/Model/LogisticPointDTO.md)
+- [LogisticPointDeliveryRestrictionDTO](docs/Model/LogisticPointDeliveryRestrictionDTO.md)
+- [LogisticPointDimensionRestrictionsDTO](docs/Model/LogisticPointDimensionRestrictionsDTO.md)
+- [LogisticPointFeatureType](docs/Model/LogisticPointFeatureType.md)
+- [LogisticPointScheduleDTO](docs/Model/LogisticPointScheduleDTO.md)
 - [LogisticPointType](docs/Model/LogisticPointType.md)
-- [MappingsOfferDTO](docs/Model/MappingsOfferDTO.md)
-- [MappingsOfferInfoDTO](docs/Model/MappingsOfferInfoDTO.md)
 - [MaxSaleQuantumDTO](docs/Model/MaxSaleQuantumDTO.md)
 - [MechanicsType](docs/Model/MechanicsType.md)
 - [MediaFileUploadStateType](docs/Model/MediaFileUploadStateType.md)
 - [MonthOfYearDTO](docs/Model/MonthOfYearDTO.md)
-- [OfferAvailabilityStatusType](docs/Model/OfferAvailabilityStatusType.md)
 - [OfferCampaignStatusDTO](docs/Model/OfferCampaignStatusDTO.md)
 - [OfferCampaignStatusType](docs/Model/OfferCampaignStatusType.md)
 - [OfferCardContentStatusType](docs/Model/OfferCardContentStatusType.md)
@@ -1124,14 +1183,8 @@ Class | Method | HTTP request | Description
 - [OfferErrorDTO](docs/Model/OfferErrorDTO.md)
 - [OfferForRecommendationDTO](docs/Model/OfferForRecommendationDTO.md)
 - [OfferManualDTO](docs/Model/OfferManualDTO.md)
-- [OfferMappingDTO](docs/Model/OfferMappingDTO.md)
-- [OfferMappingEntriesDTO](docs/Model/OfferMappingEntriesDTO.md)
-- [OfferMappingEntryDTO](docs/Model/OfferMappingEntryDTO.md)
 - [OfferMappingErrorDTO](docs/Model/OfferMappingErrorDTO.md)
 - [OfferMappingErrorType](docs/Model/OfferMappingErrorType.md)
-- [OfferMappingInfoDTO](docs/Model/OfferMappingInfoDTO.md)
-- [OfferMappingKindType](docs/Model/OfferMappingKindType.md)
-- [OfferMappingSuggestionsListDTO](docs/Model/OfferMappingSuggestionsListDTO.md)
 - [OfferMediaFileDTO](docs/Model/OfferMediaFileDTO.md)
 - [OfferMediaFilesDTO](docs/Model/OfferMediaFilesDTO.md)
 - [OfferParamDTO](docs/Model/OfferParamDTO.md)
@@ -1140,10 +1193,6 @@ Class | Method | HTTP request | Description
 - [OfferPriceDTO](docs/Model/OfferPriceDTO.md)
 - [OfferPriceListResponseDTO](docs/Model/OfferPriceListResponseDTO.md)
 - [OfferPriceResponseDTO](docs/Model/OfferPriceResponseDTO.md)
-- [OfferProcessingNoteDTO](docs/Model/OfferProcessingNoteDTO.md)
-- [OfferProcessingNoteType](docs/Model/OfferProcessingNoteType.md)
-- [OfferProcessingStateDTO](docs/Model/OfferProcessingStateDTO.md)
-- [OfferProcessingStatusType](docs/Model/OfferProcessingStatusType.md)
 - [OfferRecommendationDTO](docs/Model/OfferRecommendationDTO.md)
 - [OfferRecommendationInfoDTO](docs/Model/OfferRecommendationInfoDTO.md)
 - [OfferRecommendationsResultDTO](docs/Model/OfferRecommendationsResultDTO.md)
@@ -1151,6 +1200,10 @@ Class | Method | HTTP request | Description
 - [OfferSellingProgramStatusType](docs/Model/OfferSellingProgramStatusType.md)
 - [OfferType](docs/Model/OfferType.md)
 - [OfferWeightDimensionsDTO](docs/Model/OfferWeightDimensionsDTO.md)
+- [OperationDTO](docs/Model/OperationDTO.md)
+- [OperationResultDTO](docs/Model/OperationResultDTO.md)
+- [OperationStatusType](docs/Model/OperationStatusType.md)
+- [OperationType](docs/Model/OperationType.md)
 - [OptionValuesLimitedDTO](docs/Model/OptionValuesLimitedDTO.md)
 - [OrderBoxLayoutDTO](docs/Model/OrderBoxLayoutDTO.md)
 - [OrderBoxLayoutItemDTO](docs/Model/OrderBoxLayoutItemDTO.md)
@@ -1164,6 +1217,7 @@ Class | Method | HTTP request | Description
 - [OrderBuyerType](docs/Model/OrderBuyerType.md)
 - [OrderCancellationReasonType](docs/Model/OrderCancellationReasonType.md)
 - [OrderCourierDTO](docs/Model/OrderCourierDTO.md)
+- [OrderCourierDeliveryDTO](docs/Model/OrderCourierDeliveryDTO.md)
 - [OrderDTO](docs/Model/OrderDTO.md)
 - [OrderDatesFilterDTO](docs/Model/OrderDatesFilterDTO.md)
 - [OrderDeliveryAddressDTO](docs/Model/OrderDeliveryAddressDTO.md)
@@ -1188,6 +1242,8 @@ Class | Method | HTTP request | Description
 - [OrderItemSubsidyDTO](docs/Model/OrderItemSubsidyDTO.md)
 - [OrderItemSubsidyType](docs/Model/OrderItemSubsidyType.md)
 - [OrderItemTagType](docs/Model/OrderItemTagType.md)
+- [OrderItemUnitStatusDTO](docs/Model/OrderItemUnitStatusDTO.md)
+- [OrderItemUnitStatusType](docs/Model/OrderItemUnitStatusType.md)
 - [OrderItemValidationStatusDTO](docs/Model/OrderItemValidationStatusDTO.md)
 - [OrderItemsModificationRequestReasonType](docs/Model/OrderItemsModificationRequestReasonType.md)
 - [OrderItemsModificationResultDTO](docs/Model/OrderItemsModificationResultDTO.md)
@@ -1196,9 +1252,12 @@ Class | Method | HTTP request | Description
 - [OrderParcelBoxDTO](docs/Model/OrderParcelBoxDTO.md)
 - [OrderPaymentMethodType](docs/Model/OrderPaymentMethodType.md)
 - [OrderPaymentType](docs/Model/OrderPaymentType.md)
+- [OrderPickupDeliveryDTO](docs/Model/OrderPickupDeliveryDTO.md)
+- [OrderPickupReturnDTO](docs/Model/OrderPickupReturnDTO.md)
 - [OrderPriceDTO](docs/Model/OrderPriceDTO.md)
 - [OrderPromoType](docs/Model/OrderPromoType.md)
 - [OrderShipmentDTO](docs/Model/OrderShipmentDTO.md)
+- [OrderSourcePlatformType](docs/Model/OrderSourcePlatformType.md)
 - [OrderStateDTO](docs/Model/OrderStateDTO.md)
 - [OrderStatsStatusType](docs/Model/OrderStatsStatusType.md)
 - [OrderStatusChangeDTO](docs/Model/OrderStatusChangeDTO.md)
@@ -1210,6 +1269,7 @@ Class | Method | HTTP request | Description
 - [OrderSubstatusType](docs/Model/OrderSubstatusType.md)
 - [OrderTaxSystemType](docs/Model/OrderTaxSystemType.md)
 - [OrderTrackDTO](docs/Model/OrderTrackDTO.md)
+- [OrderUpdateOptionsDTO](docs/Model/OrderUpdateOptionsDTO.md)
 - [OrderUpdateStatusType](docs/Model/OrderUpdateStatusType.md)
 - [OrderVatType](docs/Model/OrderVatType.md)
 - [OrdersShipmentInfoDTO](docs/Model/OrdersShipmentInfoDTO.md)
@@ -1244,6 +1304,8 @@ Class | Method | HTTP request | Description
 - [OutletVisibilityType](docs/Model/OutletVisibilityType.md)
 - [OutletWorkingScheduleDTO](docs/Model/OutletWorkingScheduleDTO.md)
 - [OutletWorkingScheduleItemDTO](docs/Model/OutletWorkingScheduleItemDTO.md)
+- [PackagingForwardScrollingPagerDTO](docs/Model/PackagingForwardScrollingPagerDTO.md)
+- [PackagingScrollingPagerDTO](docs/Model/PackagingScrollingPagerDTO.md)
 - [PageFormatType](docs/Model/PageFormatType.md)
 - [PagedReturnsDTO](docs/Model/PagedReturnsDTO.md)
 - [PagedWarehousesDTO](docs/Model/PagedWarehousesDTO.md)
@@ -1256,9 +1318,15 @@ Class | Method | HTTP request | Description
 - [ParcelBoxLabelDTO](docs/Model/ParcelBoxLabelDTO.md)
 - [ParcelBoxRequestDTO](docs/Model/ParcelBoxRequestDTO.md)
 - [ParcelRequestDTO](docs/Model/ParcelRequestDTO.md)
+- [PartialCompensationBoundsDTO](docs/Model/PartialCompensationBoundsDTO.md)
 - [PartnerShipmentWarehouseDTO](docs/Model/PartnerShipmentWarehouseDTO.md)
 - [PaymentFrequencyType](docs/Model/PaymentFrequencyType.md)
 - [PickupAddressDTO](docs/Model/PickupAddressDTO.md)
+- [PickupDeliveryOptionsDTO](docs/Model/PickupDeliveryOptionsDTO.md)
+- [PickupDeliveryParametersDTO](docs/Model/PickupDeliveryParametersDTO.md)
+- [PickupOptionDTO](docs/Model/PickupOptionDTO.md)
+- [PickupOptionsDTO](docs/Model/PickupOptionsDTO.md)
+- [PickupReturnDeliveryOptionsDTO](docs/Model/PickupReturnDeliveryOptionsDTO.md)
 - [PlacementType](docs/Model/PlacementType.md)
 - [PriceCompetitivenessThresholdsDTO](docs/Model/PriceCompetitivenessThresholdsDTO.md)
 - [PriceCompetitivenessType](docs/Model/PriceCompetitivenessType.md)
@@ -1288,7 +1356,6 @@ Class | Method | HTTP request | Description
 - [QualityRatingComponentType](docs/Model/QualityRatingComponentType.md)
 - [QualityRatingDTO](docs/Model/QualityRatingDTO.md)
 - [QualityRatingDetailsDTO](docs/Model/QualityRatingDetailsDTO.md)
-- [QuantumDTO](docs/Model/QuantumDTO.md)
 - [QuarantineOfferDTO](docs/Model/QuarantineOfferDTO.md)
 - [QuestionDTO](docs/Model/QuestionDTO.md)
 - [QuestionIdentifiersDTO](docs/Model/QuestionIdentifiersDTO.md)
@@ -1313,6 +1380,8 @@ Class | Method | HTTP request | Description
 - [ReportLanguageType](docs/Model/ReportLanguageType.md)
 - [ReportStatusType](docs/Model/ReportStatusType.md)
 - [ReportSubStatusType](docs/Model/ReportSubStatusType.md)
+- [ReturnAvailableDecisionDTO](docs/Model/ReturnAvailableDecisionDTO.md)
+- [ReturnAvailableDecisionsResponse](docs/Model/ReturnAvailableDecisionsResponse.md)
 - [ReturnDTO](docs/Model/ReturnDTO.md)
 - [ReturnDecisionDTO](docs/Model/ReturnDecisionDTO.md)
 - [ReturnDecisionReasonType](docs/Model/ReturnDecisionReasonType.md)
@@ -1327,7 +1396,7 @@ Class | Method | HTTP request | Description
 - [ReturnRequestDecisionType](docs/Model/ReturnRequestDecisionType.md)
 - [ReturnShipmentStatusType](docs/Model/ReturnShipmentStatusType.md)
 - [ReturnType](docs/Model/ReturnType.md)
-- [ScrollingPagerDTO](docs/Model/ScrollingPagerDTO.md)
+- [ScheduleDayDTO](docs/Model/ScheduleDayDTO.md)
 - [SearchShipmentsRequest](docs/Model/SearchShipmentsRequest.md)
 - [SearchShipmentsResponse](docs/Model/SearchShipmentsResponse.md)
 - [SearchShipmentsResponseDTO](docs/Model/SearchShipmentsResponseDTO.md)
@@ -1357,10 +1426,9 @@ Class | Method | HTTP request | Description
 - [SkuBidItemDTO](docs/Model/SkuBidItemDTO.md)
 - [SkuBidRecommendationItemDTO](docs/Model/SkuBidRecommendationItemDTO.md)
 - [SortOrderType](docs/Model/SortOrderType.md)
+- [SourceType](docs/Model/SourceType.md)
 - [StatisticsAttributionType](docs/Model/StatisticsAttributionType.md)
 - [SubmitReturnDecisionRequest](docs/Model/SubmitReturnDecisionRequest.md)
-- [SuggestedOfferDTO](docs/Model/SuggestedOfferDTO.md)
-- [SuggestedOfferMappingDTO](docs/Model/SuggestedOfferMappingDTO.md)
 - [SupplyRequestCountersDTO](docs/Model/SupplyRequestCountersDTO.md)
 - [SupplyRequestDTO](docs/Model/SupplyRequestDTO.md)
 - [SupplyRequestDocumentDTO](docs/Model/SupplyRequestDocumentDTO.md)
@@ -1381,6 +1449,7 @@ Class | Method | HTTP request | Description
 - [TariffDTO](docs/Model/TariffDTO.md)
 - [TariffParameterDTO](docs/Model/TariffParameterDTO.md)
 - [TariffType](docs/Model/TariffType.md)
+- [TimeIntervalDTO](docs/Model/TimeIntervalDTO.md)
 - [TimePeriodDTO](docs/Model/TimePeriodDTO.md)
 - [TimeUnitType](docs/Model/TimeUnitType.md)
 - [TokenDTO](docs/Model/TokenDTO.md)
@@ -1406,18 +1475,19 @@ Class | Method | HTTP request | Description
 - [UpdateGoodsQuestionTextEntityRequest](docs/Model/UpdateGoodsQuestionTextEntityRequest.md)
 - [UpdateGoodsQuestionTextEntityResponse](docs/Model/UpdateGoodsQuestionTextEntityResponse.md)
 - [UpdateMappingDTO](docs/Model/UpdateMappingDTO.md)
-- [UpdateMappingsOfferDTO](docs/Model/UpdateMappingsOfferDTO.md)
 - [UpdateOfferContentRequest](docs/Model/UpdateOfferContentRequest.md)
 - [UpdateOfferContentResponse](docs/Model/UpdateOfferContentResponse.md)
 - [UpdateOfferContentResultDTO](docs/Model/UpdateOfferContentResultDTO.md)
 - [UpdateOfferDTO](docs/Model/UpdateOfferDTO.md)
 - [UpdateOfferMappingDTO](docs/Model/UpdateOfferMappingDTO.md)
-- [UpdateOfferMappingEntryDTO](docs/Model/UpdateOfferMappingEntryDTO.md)
-- [UpdateOfferMappingEntryRequest](docs/Model/UpdateOfferMappingEntryRequest.md)
 - [UpdateOfferMappingResultDTO](docs/Model/UpdateOfferMappingResultDTO.md)
 - [UpdateOfferMappingsRequest](docs/Model/UpdateOfferMappingsRequest.md)
 - [UpdateOfferMappingsResponse](docs/Model/UpdateOfferMappingsResponse.md)
+- [UpdateOrderDTO](docs/Model/UpdateOrderDTO.md)
 - [UpdateOrderItemRequest](docs/Model/UpdateOrderItemRequest.md)
+- [UpdateOrderRequest](docs/Model/UpdateOrderRequest.md)
+- [UpdateOrderResponse](docs/Model/UpdateOrderResponse.md)
+- [UpdateOrderResultDTO](docs/Model/UpdateOrderResultDTO.md)
 - [UpdateOrderStatusDTO](docs/Model/UpdateOrderStatusDTO.md)
 - [UpdateOrderStatusRequest](docs/Model/UpdateOrderStatusRequest.md)
 - [UpdateOrderStatusResponse](docs/Model/UpdateOrderStatusResponse.md)
@@ -1446,6 +1516,7 @@ Class | Method | HTTP request | Description
 - [WarehouseAddressDTO](docs/Model/WarehouseAddressDTO.md)
 - [WarehouseComponentType](docs/Model/WarehouseComponentType.md)
 - [WarehouseDTO](docs/Model/WarehouseDTO.md)
+- [WarehouseDeliveryOptionsDTO](docs/Model/WarehouseDeliveryOptionsDTO.md)
 - [WarehouseDetailsDTO](docs/Model/WarehouseDetailsDTO.md)
 - [WarehouseGroupDTO](docs/Model/WarehouseGroupDTO.md)
 - [WarehouseGroupInfoDTO](docs/Model/WarehouseGroupInfoDTO.md)
@@ -1456,6 +1527,7 @@ Class | Method | HTTP request | Description
 - [WarehouseStockDTO](docs/Model/WarehouseStockDTO.md)
 - [WarehouseStockType](docs/Model/WarehouseStockType.md)
 - [WarehousesDTO](docs/Model/WarehousesDTO.md)
+- [WarehousesDeliveryOptionsDTO](docs/Model/WarehousesDeliveryOptionsDTO.md)
 - [WarningPromoOfferUpdateDTO](docs/Model/WarningPromoOfferUpdateDTO.md)
 
 ## Authorization
@@ -1494,5 +1566,6 @@ vendor/bin/phpunit
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `LATEST`
+    - Package version: `1.1.4`
     - Generator version: `7.18.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

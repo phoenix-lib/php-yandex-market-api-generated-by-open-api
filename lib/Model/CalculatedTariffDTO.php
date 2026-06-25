@@ -59,9 +59,9 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'type' => '\OpenAPI\Client\Model\CalculatedTariffType',
+        'parameters' => '\OpenAPI\Client\Model\TariffParameterDTO[]',
         'amount' => 'float',
-        'currency' => '\OpenAPI\Client\Model\CurrencyType',
-        'parameters' => '\OpenAPI\Client\Model\TariffParameterDTO[]'
+        'currency' => '\OpenAPI\Client\Model\CurrencyType'
     ];
 
     /**
@@ -73,9 +73,9 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'type' => null,
+        'parameters' => null,
         'amount' => null,
-        'currency' => null,
-        'parameters' => null
+        'currency' => null
     ];
 
     /**
@@ -85,9 +85,9 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'type' => false,
+        'parameters' => false,
         'amount' => false,
-        'currency' => false,
-        'parameters' => false
+        'currency' => false
     ];
 
     /**
@@ -177,9 +177,9 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'type' => 'type',
+        'parameters' => 'parameters',
         'amount' => 'amount',
-        'currency' => 'currency',
-        'parameters' => 'parameters'
+        'currency' => 'currency'
     ];
 
     /**
@@ -189,9 +189,9 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'type' => 'setType',
+        'parameters' => 'setParameters',
         'amount' => 'setAmount',
-        'currency' => 'setCurrency',
-        'parameters' => 'setParameters'
+        'currency' => 'setCurrency'
     ];
 
     /**
@@ -201,9 +201,9 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'type' => 'getType',
+        'parameters' => 'getParameters',
         'amount' => 'getAmount',
-        'currency' => 'getCurrency',
-        'parameters' => 'getParameters'
+        'currency' => 'getCurrency'
     ];
 
     /**
@@ -264,9 +264,9 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('parameters', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
-        $this->setIfExists('parameters', $data ?? [], null);
     }
 
     /**
@@ -345,6 +345,33 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets parameters
+     *
+     * @return \OpenAPI\Client\Model\TariffParameterDTO[]
+     */
+    public function getParameters()
+    {
+        return $this->container['parameters'];
+    }
+
+    /**
+     * Sets parameters
+     *
+     * @param \OpenAPI\Client\Model\TariffParameterDTO[] $parameters Параметры расчета тарифа.
+     *
+     * @return self
+     */
+    public function setParameters($parameters)
+    {
+        if (is_null($parameters)) {
+            throw new \InvalidArgumentException('non-nullable parameters cannot be null');
+        }
+        $this->container['parameters'] = $parameters;
+
+        return $this;
+    }
+
+    /**
      * Gets amount
      *
      * @return float|null
@@ -397,33 +424,6 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
-    /**
-     * Gets parameters
-     *
-     * @return \OpenAPI\Client\Model\TariffParameterDTO[]
-     */
-    public function getParameters()
-    {
-        return $this->container['parameters'];
-    }
-
-    /**
-     * Sets parameters
-     *
-     * @param \OpenAPI\Client\Model\TariffParameterDTO[] $parameters Параметры расчета тарифа.
-     *
-     * @return self
-     */
-    public function setParameters($parameters)
-    {
-        if (is_null($parameters)) {
-            throw new \InvalidArgumentException('non-nullable parameters cannot be null');
-        }
-        $this->container['parameters'] = $parameters;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -431,7 +431,7 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -444,7 +444,7 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -473,7 +473,7 @@ class CalculatedTariffDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

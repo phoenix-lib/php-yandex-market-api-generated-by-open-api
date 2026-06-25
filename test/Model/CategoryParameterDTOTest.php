@@ -89,45 +89,9 @@ class CategoryParameterDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "type"
      */
     public function testPropertyType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "unit"
-     */
-    public function testPropertyUnit()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "recommendation_types"
-     */
-    public function testPropertyRecommendationTypes()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -173,6 +137,42 @@ class CategoryParameterDTOTest extends TestCase
      * Test attribute "allow_custom_values"
      */
     public function testPropertyAllowCustomValues()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "unit"
+     */
+    public function testPropertyUnit()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "recommendation_types"
+     */
+    public function testPropertyRecommendationTypes()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

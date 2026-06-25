@@ -89,15 +89,6 @@ class OrderDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "external_order_id"
-     */
-    public function testPropertyExternalOrderId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
@@ -119,15 +110,6 @@ class OrderDTOTest extends TestCase
      * Test attribute "creation_date"
      */
     public function testPropertyCreationDate()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "updated_at"
-     */
-    public function testPropertyUpdatedAt()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -161,36 +143,9 @@ class OrderDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "buyer_items_total"
-     */
-    public function testPropertyBuyerItemsTotal()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "buyer_total"
-     */
-    public function testPropertyBuyerTotal()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "buyer_items_total_before_discount"
      */
     public function testPropertyBuyerItemsTotalBeforeDiscount()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "buyer_total_before_discount"
-     */
-    public function testPropertyBuyerTotalBeforeDiscount()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -233,15 +188,6 @@ class OrderDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "subsidies"
-     */
-    public function testPropertySubsidies()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "delivery"
      */
     public function testPropertyDelivery()
@@ -260,18 +206,72 @@ class OrderDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "notes"
+     * Test attribute "tax_system"
      */
-    public function testPropertyNotes()
+    public function testPropertyTaxSystem()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "tax_system"
+     * Test attribute "external_order_id"
      */
-    public function testPropertyTaxSystem()
+    public function testPropertyExternalOrderId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "updated_at"
+     */
+    public function testPropertyUpdatedAt()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "buyer_items_total"
+     */
+    public function testPropertyBuyerItemsTotal()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "buyer_total"
+     */
+    public function testPropertyBuyerTotal()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "buyer_total_before_discount"
+     */
+    public function testPropertyBuyerTotalBeforeDiscount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "subsidies"
+     */
+    public function testPropertySubsidies()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "notes"
+     */
+    public function testPropertyNotes()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -59,7 +59,6 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'offer_id' => 'string',
-        'quantum' => '\OpenAPI\Client\Model\QuantumDTO',
         'available' => 'bool',
         'basic_price' => '\OpenAPI\Client\Model\GetPriceWithDiscountDTO',
         'campaign_price' => '\OpenAPI\Client\Model\GetPriceWithVatDTO',
@@ -77,7 +76,6 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'offer_id' => null,
-        'quantum' => null,
         'available' => null,
         'basic_price' => null,
         'campaign_price' => null,
@@ -93,7 +91,6 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'offer_id' => false,
-        'quantum' => false,
         'available' => false,
         'basic_price' => false,
         'campaign_price' => false,
@@ -189,7 +186,6 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'offer_id' => 'offerId',
-        'quantum' => 'quantum',
         'available' => 'available',
         'basic_price' => 'basicPrice',
         'campaign_price' => 'campaignPrice',
@@ -205,7 +201,6 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'offer_id' => 'setOfferId',
-        'quantum' => 'setQuantum',
         'available' => 'setAvailable',
         'basic_price' => 'setBasicPrice',
         'campaign_price' => 'setCampaignPrice',
@@ -221,7 +216,6 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'offer_id' => 'getOfferId',
-        'quantum' => 'getQuantum',
         'available' => 'getAvailable',
         'basic_price' => 'getBasicPrice',
         'campaign_price' => 'getCampaignPrice',
@@ -288,7 +282,6 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('offer_id', $data ?? [], null);
-        $this->setIfExists('quantum', $data ?? [], null);
         $this->setIfExists('available', $data ?? [], null);
         $this->setIfExists('basic_price', $data ?? [], null);
         $this->setIfExists('campaign_price', $data ?? [], null);
@@ -400,35 +393,6 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets quantum
-     *
-     * @return \OpenAPI\Client\Model\QuantumDTO|null
-     * @deprecated
-     */
-    public function getQuantum()
-    {
-        return $this->container['quantum'];
-    }
-
-    /**
-     * Sets quantum
-     *
-     * @param \OpenAPI\Client\Model\QuantumDTO|null $quantum quantum
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setQuantum($quantum)
-    {
-        if (is_null($quantum)) {
-            throw new \InvalidArgumentException('non-nullable quantum cannot be null');
-        }
-        $this->container['quantum'] = $quantum;
-
-        return $this;
-    }
-
-    /**
      * Gets available
      *
      * @return bool|null
@@ -442,7 +406,7 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets available
      *
-     * @param bool|null $available {% note warning \"Вместо него используйте методы скрытия товаров с витрины\" %}  * [GET v2/campaigns/{campaignId}/hidden-offers](../../reference/assortment/getHiddenOffers.md) — просмотр скрытых товаров; * [POST v2/campaigns/{campaignId}/hidden-offers](../../reference/assortment/addHiddenOffers.md) — скрытие товаров; * [POST v2/campaigns/{campaignId}/hidden-offers/delete](../../reference/assortment/deleteHiddenOffers.md) — возобновление показа.  {% endnote %}  Есть ли товар в продаже.
+     * @param bool|null $available {% note warning \"Вместо него используйте методы скрытия товаров с витрины\" %}  * [GET v2/campaigns/{campaignId}/hidden-offers](../../reference/hidden-offers/getHiddenOffers.md) — просмотр скрытых товаров; * [POST v2/campaigns/{campaignId}/hidden-offers](../../reference/hidden-offers/addHiddenOffers.md) — скрытие товаров; * [POST v2/campaigns/{campaignId}/hidden-offers/delete](../../reference/hidden-offers/deleteHiddenOffers.md) — возобновление показа.  {% endnote %}  Есть ли товар в продаже.
      *
      * @return self
      * @deprecated
@@ -622,7 +586,7 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -635,7 +599,7 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -664,7 +628,7 @@ class GetCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

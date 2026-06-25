@@ -60,7 +60,9 @@ class CisDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'value' => 'string',
         'status' => '\OpenAPI\Client\Model\CisStatusType',
-        'substatus' => '\OpenAPI\Client\Model\CisSubstatusType'
+        'substatus' => '\OpenAPI\Client\Model\CisSubstatusType',
+        'crpt_request_id' => 'string',
+        'crpt_request_date_time' => '\DateTime'
     ];
 
     /**
@@ -73,7 +75,9 @@ class CisDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'value' => null,
         'status' => null,
-        'substatus' => null
+        'substatus' => null,
+        'crpt_request_id' => null,
+        'crpt_request_date_time' => 'date-time'
     ];
 
     /**
@@ -84,7 +88,9 @@ class CisDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'value' => false,
         'status' => false,
-        'substatus' => false
+        'substatus' => false,
+        'crpt_request_id' => false,
+        'crpt_request_date_time' => false
     ];
 
     /**
@@ -175,7 +181,9 @@ class CisDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'value' => 'value',
         'status' => 'status',
-        'substatus' => 'substatus'
+        'substatus' => 'substatus',
+        'crpt_request_id' => 'crptRequestId',
+        'crpt_request_date_time' => 'crptRequestDateTime'
     ];
 
     /**
@@ -186,7 +194,9 @@ class CisDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'value' => 'setValue',
         'status' => 'setStatus',
-        'substatus' => 'setSubstatus'
+        'substatus' => 'setSubstatus',
+        'crpt_request_id' => 'setCrptRequestId',
+        'crpt_request_date_time' => 'setCrptRequestDateTime'
     ];
 
     /**
@@ -197,7 +207,9 @@ class CisDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'value' => 'getValue',
         'status' => 'getStatus',
-        'substatus' => 'getSubstatus'
+        'substatus' => 'getSubstatus',
+        'crpt_request_id' => 'getCrptRequestId',
+        'crpt_request_date_time' => 'getCrptRequestDateTime'
     ];
 
     /**
@@ -260,6 +272,8 @@ class CisDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('value', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('substatus', $data ?? [], null);
+        $this->setIfExists('crpt_request_id', $data ?? [], null);
+        $this->setIfExists('crpt_request_date_time', $data ?? [], null);
     }
 
     /**
@@ -390,6 +404,60 @@ class CisDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
+    /**
+     * Gets crpt_request_id
+     *
+     * @return string|null
+     */
+    public function getCrptRequestId()
+    {
+        return $this->container['crpt_request_id'];
+    }
+
+    /**
+     * Sets crpt_request_id
+     *
+     * @param string|null $crpt_request_id **Только для модели LaaS**  Идентификатор запроса проверки кода маркировки в [ЦРПТ](https://crpt.ru/), на основании которой принято решение о продаже товара.
+     *
+     * @return self
+     */
+    public function setCrptRequestId($crpt_request_id)
+    {
+        if (is_null($crpt_request_id)) {
+            throw new \InvalidArgumentException('non-nullable crpt_request_id cannot be null');
+        }
+        $this->container['crpt_request_id'] = $crpt_request_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets crpt_request_date_time
+     *
+     * @return \DateTime|null
+     */
+    public function getCrptRequestDateTime()
+    {
+        return $this->container['crpt_request_date_time'];
+    }
+
+    /**
+     * Sets crpt_request_date_time
+     *
+     * @param \DateTime|null $crpt_request_date_time **Только для модели LaaS**  Время проверки кода маркировки в [ЦРПТ](https://crpt.ru/), на основании которой принято решение о продаже товара.
+     *
+     * @return self
+     */
+    public function setCrptRequestDateTime($crpt_request_date_time)
+    {
+        if (is_null($crpt_request_date_time)) {
+            throw new \InvalidArgumentException('non-nullable crpt_request_date_time cannot be null');
+        }
+        $this->container['crpt_request_date_time'] = $crpt_request_date_time;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -397,7 +465,7 @@ class CisDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -410,7 +478,7 @@ class CisDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -439,7 +507,7 @@ class CisDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

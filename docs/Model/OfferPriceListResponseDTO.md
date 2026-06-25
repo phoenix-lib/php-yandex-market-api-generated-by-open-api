@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **offers** | [**\OpenAPI\Client\Model\OfferPriceResponseDTO[]**](OfferPriceResponseDTO.md) | Страница списка. |
-**paging** | [**\OpenAPI\Client\Model\ForwardScrollingPagerDTO**](ForwardScrollingPagerDTO.md) |  | [optional]
+**paging** | [**\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO**](PackagingForwardScrollingPagerDTO.md) |  | [optional]
 **total** | **int** | Количество всех цен магазина, измененных через API. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

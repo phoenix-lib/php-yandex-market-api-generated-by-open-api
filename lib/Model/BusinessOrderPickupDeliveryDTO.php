@@ -448,7 +448,7 @@ class BusinessOrderPickupDeliveryDTO implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets outlet_storage_limit_date
      *
-     * @param \DateTime|null $outlet_storage_limit_date Дата, до которой заказ будет храниться в пункте выдачи. Возвращается, когда заказ переходит в статус `PICKUP`.  Один раз дату можно поменять с помощью метода [PUT v2/campaigns/{campaignId}/orders/{orderId}/delivery/storage-limit](../../reference/orders/updateOrderStorageLimit.md).  Формат даты: `ГГГГ-ММ-ДД`.
+     * @param \DateTime|null $outlet_storage_limit_date Дата, до которой заказ будет храниться в пункте выдачи. Возвращается, когда заказ переходит в статус `PICKUP`.  Один раз дату можно поменять с помощью метода [PUT v2/campaigns/{campaignId}/orders/{orderId}/delivery/storage-limit](../../reference/order-delivery/updateOrderStorageLimit.md).  Формат даты: `ГГГГ-ММ-ДД`.
      *
      * @return self
      */
@@ -468,7 +468,7 @@ class BusinessOrderPickupDeliveryDTO implements ModelInterface, ArrayAccess, \Js
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -481,7 +481,7 @@ class BusinessOrderPickupDeliveryDTO implements ModelInterface, ArrayAccess, \Js
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -510,7 +510,7 @@ class BusinessOrderPickupDeliveryDTO implements ModelInterface, ArrayAccess, \Js
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

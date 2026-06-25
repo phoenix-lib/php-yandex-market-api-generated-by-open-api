@@ -131,8 +131,8 @@ class OrdersStatsApi
      * Детальная информация по заказам
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  \OpenAPI\Client\Model\GetOrdersStatsRequest|null $get_orders_stats_request get_orders_stats_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrdersStats'] to see the possible values for this operation
      *
@@ -140,7 +140,7 @@ class OrdersStatsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetOrdersStatsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getOrdersStats($campaign_id, $page_token = null, $limit = null, $get_orders_stats_request = null, string $contentType = self::contentTypes['getOrdersStats'][0])
+    public function getOrdersStats($campaign_id, $page_token = null, $limit = 100, $get_orders_stats_request = null, string $contentType = self::contentTypes['getOrdersStats'][0])
     {
         list($response) = $this->getOrdersStatsWithHttpInfo($campaign_id, $page_token, $limit, $get_orders_stats_request, $contentType);
         return $response;
@@ -152,8 +152,8 @@ class OrdersStatsApi
      * Детальная информация по заказам
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  \OpenAPI\Client\Model\GetOrdersStatsRequest|null $get_orders_stats_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrdersStats'] to see the possible values for this operation
      *
@@ -161,7 +161,7 @@ class OrdersStatsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetOrdersStatsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrdersStatsWithHttpInfo($campaign_id, $page_token = null, $limit = null, $get_orders_stats_request = null, string $contentType = self::contentTypes['getOrdersStats'][0])
+    public function getOrdersStatsWithHttpInfo($campaign_id, $page_token = null, $limit = 100, $get_orders_stats_request = null, string $contentType = self::contentTypes['getOrdersStats'][0])
     {
         $request = $this->getOrdersStatsRequest($campaign_id, $page_token, $limit, $get_orders_stats_request, $contentType);
 
@@ -324,15 +324,15 @@ class OrdersStatsApi
      * Детальная информация по заказам
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  \OpenAPI\Client\Model\GetOrdersStatsRequest|null $get_orders_stats_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrdersStats'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrdersStatsAsync($campaign_id, $page_token = null, $limit = null, $get_orders_stats_request = null, string $contentType = self::contentTypes['getOrdersStats'][0])
+    public function getOrdersStatsAsync($campaign_id, $page_token = null, $limit = 100, $get_orders_stats_request = null, string $contentType = self::contentTypes['getOrdersStats'][0])
     {
         return $this->getOrdersStatsAsyncWithHttpInfo($campaign_id, $page_token, $limit, $get_orders_stats_request, $contentType)
             ->then(
@@ -348,15 +348,15 @@ class OrdersStatsApi
      * Детальная информация по заказам
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  \OpenAPI\Client\Model\GetOrdersStatsRequest|null $get_orders_stats_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrdersStats'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrdersStatsAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = null, $get_orders_stats_request = null, string $contentType = self::contentTypes['getOrdersStats'][0])
+    public function getOrdersStatsAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = 100, $get_orders_stats_request = null, string $contentType = self::contentTypes['getOrdersStats'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetOrdersStatsResponse';
         $request = $this->getOrdersStatsRequest($campaign_id, $page_token, $limit, $get_orders_stats_request, $contentType);
@@ -401,15 +401,15 @@ class OrdersStatsApi
      * Create request for operation 'getOrdersStats'
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  \OpenAPI\Client\Model\GetOrdersStatsRequest|null $get_orders_stats_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrdersStats'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOrdersStatsRequest($campaign_id, $page_token = null, $limit = null, $get_orders_stats_request = null, string $contentType = self::contentTypes['getOrdersStats'][0])
+    public function getOrdersStatsRequest($campaign_id, $page_token = null, $limit = 100, $get_orders_stats_request = null, string $contentType = self::contentTypes['getOrdersStats'][0])
     {
 
         // verify the required parameter 'campaign_id' is set
@@ -423,6 +423,9 @@ class OrdersStatsApi
         }
         
 
+        if ($limit !== null && $limit > 200) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling OrdersStatsApi.getOrdersStats, must be smaller than or equal to 200.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling OrdersStatsApi.getOrdersStats, must be bigger than or equal to 1.');
         }
@@ -439,7 +442,7 @@ class OrdersStatsApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode

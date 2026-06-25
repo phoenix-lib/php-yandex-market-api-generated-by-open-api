@@ -116,6 +116,15 @@ class GoodsFeedbackDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "statistics"
+     */
+    public function testPropertyStatistics()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "author"
      */
     public function testPropertyAuthor()
@@ -137,15 +146,6 @@ class GoodsFeedbackDTOTest extends TestCase
      * Test attribute "media"
      */
     public function testPropertyMedia()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "statistics"
-     */
-    public function testPropertyStatistics()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

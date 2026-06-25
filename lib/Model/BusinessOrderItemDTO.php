@@ -65,6 +65,7 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'prices' => '\OpenAPI\Client\Model\ItemPriceDTO',
         'instances' => '\OpenAPI\Client\Model\OrderItemInstanceDTO[]',
         'required_instance_types' => '\OpenAPI\Client\Model\OrderItemInstanceType[]',
+        'item_statuses' => '\OpenAPI\Client\Model\OrderItemUnitStatusDTO[]',
         'tags' => '\OpenAPI\Client\Model\OrderItemTagType[]'
     ];
 
@@ -83,6 +84,7 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'prices' => null,
         'instances' => null,
         'required_instance_types' => null,
+        'item_statuses' => null,
         'tags' => null
     ];
 
@@ -99,6 +101,7 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'prices' => false,
         'instances' => true,
         'required_instance_types' => true,
+        'item_statuses' => true,
         'tags' => true
     ];
 
@@ -195,6 +198,7 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'prices' => 'prices',
         'instances' => 'instances',
         'required_instance_types' => 'requiredInstanceTypes',
+        'item_statuses' => 'itemStatuses',
         'tags' => 'tags'
     ];
 
@@ -211,6 +215,7 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'prices' => 'setPrices',
         'instances' => 'setInstances',
         'required_instance_types' => 'setRequiredInstanceTypes',
+        'item_statuses' => 'setItemStatuses',
         'tags' => 'setTags'
     ];
 
@@ -227,6 +232,7 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         'prices' => 'getPrices',
         'instances' => 'getInstances',
         'required_instance_types' => 'getRequiredInstanceTypes',
+        'item_statuses' => 'getItemStatuses',
         'tags' => 'getTags'
     ];
 
@@ -294,6 +300,7 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('prices', $data ?? [], null);
         $this->setIfExists('instances', $data ?? [], null);
         $this->setIfExists('required_instance_types', $data ?? [], null);
+        $this->setIfExists('item_statuses', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
     }
 
@@ -354,6 +361,10 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
 
         if (!is_null($this->container['required_instance_types']) && (count($this->container['required_instance_types']) < 1)) {
             $invalidProperties[] = "invalid value for 'required_instance_types', number of items must be greater than or equal to 1.";
+        }
+
+        if (!is_null($this->container['item_statuses']) && (count($this->container['item_statuses']) < 1)) {
+            $invalidProperties[] = "invalid value for 'item_statuses', number of items must be greater than or equal to 1.";
         }
 
         if (!is_null($this->container['tags']) && (count($this->container['tags']) < 1)) {
@@ -599,6 +610,45 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
+     * Gets item_statuses
+     *
+     * @return \OpenAPI\Client\Model\OrderItemUnitStatusDTO[]|null
+     */
+    public function getItemStatuses()
+    {
+        return $this->container['item_statuses'];
+    }
+
+    /**
+     * Sets item_statuses
+     *
+     * @param \OpenAPI\Client\Model\OrderItemUnitStatusDTO[]|null $item_statuses Информация о статусах отдельных единиц товара в заказе.  Если данных о статусах отдельных единиц товара нет, поле отсутствует.
+     *
+     * @return self
+     */
+    public function setItemStatuses($item_statuses)
+    {
+        if (is_null($item_statuses)) {
+            array_push($this->openAPINullablesSetToNull, 'item_statuses');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('item_statuses', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+
+        if (!is_null($item_statuses) && (count($item_statuses) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $item_statuses when calling BusinessOrderItemDTO., number of items must be greater than or equal to 1.');
+        }
+        $this->container['item_statuses'] = $item_statuses;
+
+        return $this;
+    }
+
+    /**
      * Gets tags
      *
      * @return \OpenAPI\Client\Model\OrderItemTagType[]|null
@@ -643,7 +693,7 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -656,7 +706,7 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -685,7 +735,7 @@ class BusinessOrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

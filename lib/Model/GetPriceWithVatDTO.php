@@ -58,11 +58,11 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
+        'updated_at' => '\DateTime',
         'value' => 'float',
         'discount_base' => 'float',
         'currency_id' => '\OpenAPI\Client\Model\CurrencyType',
-        'vat' => 'int',
-        'updated_at' => '\DateTime'
+        'vat' => 'int'
     ];
 
     /**
@@ -73,11 +73,11 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'updated_at' => 'date-time',
         'value' => null,
         'discount_base' => null,
         'currency_id' => null,
-        'vat' => 'int32',
-        'updated_at' => 'date-time'
+        'vat' => 'int32'
     ];
 
     /**
@@ -86,11 +86,11 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'updated_at' => false,
         'value' => false,
         'discount_base' => false,
         'currency_id' => false,
-        'vat' => false,
-        'updated_at' => false
+        'vat' => false
     ];
 
     /**
@@ -179,11 +179,11 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
+        'updated_at' => 'updatedAt',
         'value' => 'value',
         'discount_base' => 'discountBase',
         'currency_id' => 'currencyId',
-        'vat' => 'vat',
-        'updated_at' => 'updatedAt'
+        'vat' => 'vat'
     ];
 
     /**
@@ -192,11 +192,11 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
+        'updated_at' => 'setUpdatedAt',
         'value' => 'setValue',
         'discount_base' => 'setDiscountBase',
         'currency_id' => 'setCurrencyId',
-        'vat' => 'setVat',
-        'updated_at' => 'setUpdatedAt'
+        'vat' => 'setVat'
     ];
 
     /**
@@ -205,11 +205,11 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
+        'updated_at' => 'getUpdatedAt',
         'value' => 'getValue',
         'discount_base' => 'getDiscountBase',
         'currency_id' => 'getCurrencyId',
-        'vat' => 'getVat',
-        'updated_at' => 'getUpdatedAt'
+        'vat' => 'getVat'
     ];
 
     /**
@@ -269,11 +269,11 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('value', $data ?? [], null);
         $this->setIfExists('discount_base', $data ?? [], null);
         $this->setIfExists('currency_id', $data ?? [], null);
         $this->setIfExists('vat', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
     }
 
     /**
@@ -303,6 +303,9 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
+        if ($this->container['updated_at'] === null) {
+            $invalidProperties[] = "'updated_at' can't be null";
+        }
         if (!is_null($this->container['value']) && ($this->container['value'] <= 0)) {
             $invalidProperties[] = "invalid value for 'value', must be bigger than 0.";
         }
@@ -311,9 +314,6 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'discount_base', must be bigger than 0.";
         }
 
-        if ($this->container['updated_at'] === null) {
-            $invalidProperties[] = "'updated_at' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -328,6 +328,33 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime $updated_at Время последнего обновления.
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        if (is_null($updated_at)) {
+            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+        }
+        $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
 
     /**
      * Gets value
@@ -433,7 +460,7 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets vat
      *
-     * @param int|null $vat Идентификатор НДС, применяемый для товара:  * `2` — НДС 10%. Например, используется при реализации отдельных продовольственных и медицинских товаров. * `5` — НДС 0%. Например, используется при продаже товаров, вывезенных в таможенной процедуре экспорта, или при оказании услуг по международной перевозке товаров. * `6` — НДС не облагается, используется только для отдельных видов услуг. * `7` — НДС 20%. Основной НДС с 2019 года до 1 января 2026 года. * `10` — НДС 5%. НДС для упрощенной системы налогообложения (УСН). * `11` — НДС 7%. НДС для упрощенной системы налогообложения (УСН). * `14` — НДС 22%. Основной НДС с 1 января 2026 года.  Если параметр не указан, используется НДС, установленный в кабинете.  **Для продавцов :no-translate[Market Yandex Go]** недоступна передача и получение НДС.
+     * @param int|null $vat Идентификатор НДС, применяемый для товара:  * `2` — НДС 10%. Например, используется при реализации отдельных продовольственных и медицинских товаров. * `5` — НДС 0%. Например, используется при продаже товаров, вывезенных в таможенной процедуре экспорта, или при оказании услуг по международной перевозке товаров. * `6` — НДС не облагается, используется только для отдельных видов услуг. * `7` — НДС 20%. Основной НДС с 2019 года до 1 января 2026 года. При передаче автоматически заменяется на НДС 22% (14). С 1 июля 2026 года значение будет больше недоступно для передачи. * `10` — НДС 5%. НДС для упрощенной системы налогообложения (УСН). * `11` — НДС 7%. НДС для упрощенной системы налогообложения (УСН). * `14` — НДС 22%. Основной НДС с 1 января 2026 года.  Если параметр не указан, используется НДС, установленный в кабинете.  **Для продавцов :no-translate[Market Yandex Go]** недоступна передача и получение НДС.
      *
      * @return self
      */
@@ -446,33 +473,6 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
-    /**
-     * Gets updated_at
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
-    {
-        return $this->container['updated_at'];
-    }
-
-    /**
-     * Sets updated_at
-     *
-     * @param \DateTime $updated_at Время последнего обновления.
-     *
-     * @return self
-     */
-    public function setUpdatedAt($updated_at)
-    {
-        if (is_null($updated_at)) {
-            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
-        }
-        $this->container['updated_at'] = $updated_at;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -480,7 +480,7 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -493,7 +493,7 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -522,7 +522,7 @@ class GetPriceWithVatDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

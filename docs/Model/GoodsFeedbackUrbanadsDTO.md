@@ -1,0 +1,16 @@
+# # GoodsFeedbackUrbanadsDTO
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**feedback_id** | **int** | Идентификатор отзыва. |
+**created_at** | **\DateTime** | Дата и время создания отзыва. |
+**need_reaction** | **bool** | Прочитан ли отзыв.  Принимает значение &#x60;false&#x60;, если рекламодатель:  * Прочитал отзыв в кабинете UrbanAds. * Пропустил реакцию на отзыв — метод [POST v2/businesses/{businessId}/goods-feedback/skip-reaction](../../reference/goods-feedback/skipGoodsFeedbacksReaction.md). * Оставил комментарий к отзыву — метод [POST v2/businesses/{businessId}/goods-feedback/comments/update](../../reference/goods-feedback/updateGoodsFeedbackComment.md). |
+**context** | [**\OpenAPI\Client\Model\GoodsFeedbackContextUrbanadsDTO**](GoodsFeedbackContextUrbanadsDTO.md) |  |
+**statistics** | [**\OpenAPI\Client\Model\GoodsFeedbackStatisticsDTO**](GoodsFeedbackStatisticsDTO.md) |  |
+**author** | **string** | Имя автора отзыва. | [optional]
+**description** | [**\OpenAPI\Client\Model\GoodsFeedbackDescriptionDTO**](GoodsFeedbackDescriptionDTO.md) |  | [optional]
+**media** | [**\OpenAPI\Client\Model\GoodsFeedbackMediaDTO**](GoodsFeedbackMediaDTO.md) |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

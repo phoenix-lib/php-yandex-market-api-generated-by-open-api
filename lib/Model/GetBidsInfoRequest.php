@@ -275,8 +275,8 @@ class GetBidsInfoRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['skus']) && (count($this->container['skus']) > 1500)) {
-            $invalidProperties[] = "invalid value for 'skus', number of items must be less than or equal to 1500.";
+        if (!is_null($this->container['skus']) && (count($this->container['skus']) > 500)) {
+            $invalidProperties[] = "invalid value for 'skus', number of items must be less than or equal to 500.";
         }
 
         if (!is_null($this->container['skus']) && (count($this->container['skus']) < 1)) {
@@ -311,7 +311,7 @@ class GetBidsInfoRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets skus
      *
-     * @param string[]|null $skus Список товаров, для которых нужно получить значения ставок.  Если список не задан, постранично возвращаются все товары со ставками.  Если список задан, результаты возвращаются одной страницей, а параметры `page_token` и `limit` игнорируются.
+     * @param string[]|null $skus Список товаров, для которых нужно получить значения ставок.  Если список не задан, постранично возвращаются все товары со ставками.  Если список задан, результаты возвращаются одной страницей, а параметры `pageToken` и `limit` игнорируются.
      *
      * @return self
      */
@@ -328,8 +328,8 @@ class GetBidsInfoRequest implements ModelInterface, ArrayAccess, \JsonSerializab
             }
         }
 
-        if (!is_null($skus) && (count($skus) > 1500)) {
-            throw new \InvalidArgumentException('invalid value for $skus when calling GetBidsInfoRequest., number of items must be less than or equal to 1500.');
+        if (!is_null($skus) && (count($skus) > 500)) {
+            throw new \InvalidArgumentException('invalid value for $skus when calling GetBidsInfoRequest., number of items must be less than or equal to 500.');
         }
         if (!is_null($skus) && (count($skus) < 1)) {
             throw new \InvalidArgumentException('invalid length for $skus when calling GetBidsInfoRequest., number of items must be greater than or equal to 1.');
@@ -345,7 +345,7 @@ class GetBidsInfoRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -358,7 +358,7 @@ class GetBidsInfoRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -387,7 +387,7 @@ class GetBidsInfoRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

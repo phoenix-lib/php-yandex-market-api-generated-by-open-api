@@ -58,11 +58,11 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'business_id' => 'int',
-        'campaign_id' => 'int',
         'date_from' => '\DateTime',
         'date_to' => '\DateTime',
-        'grouping' => '\OpenAPI\Client\Model\ShowsSalesGroupingType'
+        'grouping' => '\OpenAPI\Client\Model\ShowsSalesGroupingType',
+        'business_id' => 'int',
+        'campaign_id' => 'int'
     ];
 
     /**
@@ -73,11 +73,11 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'business_id' => 'int64',
-        'campaign_id' => 'int64',
         'date_from' => 'date',
         'date_to' => 'date',
-        'grouping' => null
+        'grouping' => null,
+        'business_id' => 'int64',
+        'campaign_id' => 'int64'
     ];
 
     /**
@@ -86,11 +86,11 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'business_id' => false,
-        'campaign_id' => false,
         'date_from' => false,
         'date_to' => false,
-        'grouping' => false
+        'grouping' => false,
+        'business_id' => false,
+        'campaign_id' => false
     ];
 
     /**
@@ -179,11 +179,11 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'business_id' => 'businessId',
-        'campaign_id' => 'campaignId',
         'date_from' => 'dateFrom',
         'date_to' => 'dateTo',
-        'grouping' => 'grouping'
+        'grouping' => 'grouping',
+        'business_id' => 'businessId',
+        'campaign_id' => 'campaignId'
     ];
 
     /**
@@ -192,11 +192,11 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'business_id' => 'setBusinessId',
-        'campaign_id' => 'setCampaignId',
         'date_from' => 'setDateFrom',
         'date_to' => 'setDateTo',
-        'grouping' => 'setGrouping'
+        'grouping' => 'setGrouping',
+        'business_id' => 'setBusinessId',
+        'campaign_id' => 'setCampaignId'
     ];
 
     /**
@@ -205,11 +205,11 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'business_id' => 'getBusinessId',
-        'campaign_id' => 'getCampaignId',
         'date_from' => 'getDateFrom',
         'date_to' => 'getDateTo',
-        'grouping' => 'getGrouping'
+        'grouping' => 'getGrouping',
+        'business_id' => 'getBusinessId',
+        'campaign_id' => 'getCampaignId'
     ];
 
     /**
@@ -269,11 +269,11 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('business_id', $data ?? [], null);
-        $this->setIfExists('campaign_id', $data ?? [], null);
         $this->setIfExists('date_from', $data ?? [], null);
         $this->setIfExists('date_to', $data ?? [], null);
         $this->setIfExists('grouping', $data ?? [], null);
+        $this->setIfExists('business_id', $data ?? [], null);
+        $this->setIfExists('campaign_id', $data ?? [], null);
     }
 
     /**
@@ -303,14 +303,6 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['business_id']) && ($this->container['business_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'business_id', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['campaign_id']) && ($this->container['campaign_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'campaign_id', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['date_from'] === null) {
             $invalidProperties[] = "'date_from' can't be null";
         }
@@ -320,6 +312,14 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
         if ($this->container['grouping'] === null) {
             $invalidProperties[] = "'grouping' can't be null";
         }
+        if (!is_null($this->container['business_id']) && ($this->container['business_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'business_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['campaign_id']) && ($this->container['campaign_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'campaign_id', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -334,70 +334,6 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets business_id
-     *
-     * @return int|null
-     */
-    public function getBusinessId()
-    {
-        return $this->container['business_id'];
-    }
-
-    /**
-     * Sets business_id
-     *
-     * @param int|null $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-     *
-     * @return self
-     */
-    public function setBusinessId($business_id)
-    {
-        if (is_null($business_id)) {
-            throw new \InvalidArgumentException('non-nullable business_id cannot be null');
-        }
-
-        if (($business_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $business_id when calling GenerateShowsSalesReportRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['business_id'] = $business_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets campaign_id
-     *
-     * @return int|null
-     */
-    public function getCampaignId()
-    {
-        return $this->container['campaign_id'];
-    }
-
-    /**
-     * Sets campaign_id
-     *
-     * @param int|null $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями.
-     *
-     * @return self
-     */
-    public function setCampaignId($campaign_id)
-    {
-        if (is_null($campaign_id)) {
-            throw new \InvalidArgumentException('non-nullable campaign_id cannot be null');
-        }
-
-        if (($campaign_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $campaign_id when calling GenerateShowsSalesReportRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['campaign_id'] = $campaign_id;
-
-        return $this;
-    }
 
     /**
      * Gets date_from
@@ -479,6 +415,70 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
 
         return $this;
     }
+
+    /**
+     * Gets business_id
+     *
+     * @return int|null
+     */
+    public function getBusinessId()
+    {
+        return $this->container['business_id'];
+    }
+
+    /**
+     * Sets business_id
+     *
+     * @param int|null $business_id Идентификатор кабинета. {% if audience == \"partner\" %}Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) {% endif %}
+     *
+     * @return self
+     */
+    public function setBusinessId($business_id)
+    {
+        if (is_null($business_id)) {
+            throw new \InvalidArgumentException('non-nullable business_id cannot be null');
+        }
+
+        if (($business_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $business_id when calling GenerateShowsSalesReportRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['business_id'] = $business_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets campaign_id
+     *
+     * @return int|null
+     */
+    public function getCampaignId()
+    {
+        return $this->container['campaign_id'];
+    }
+
+    /**
+     * Sets campaign_id
+     *
+     * @param int|null $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями.
+     *
+     * @return self
+     */
+    public function setCampaignId($campaign_id)
+    {
+        if (is_null($campaign_id)) {
+            throw new \InvalidArgumentException('non-nullable campaign_id cannot be null');
+        }
+
+        if (($campaign_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $campaign_id when calling GenerateShowsSalesReportRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['campaign_id'] = $campaign_id;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -486,7 +486,7 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -499,7 +499,7 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -528,7 +528,7 @@ class GenerateShowsSalesReportRequest implements ModelInterface, ArrayAccess, \J
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

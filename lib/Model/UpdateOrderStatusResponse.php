@@ -58,7 +58,8 @@ class UpdateOrderStatusResponse implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'order' => '\OpenAPI\Client\Model\OrderDTO'
+        'order' => '\OpenAPI\Client\Model\OrderDTO',
+        'operation' => '\OpenAPI\Client\Model\OperationDTO'
     ];
 
     /**
@@ -69,7 +70,8 @@ class UpdateOrderStatusResponse implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'order' => null
+        'order' => null,
+        'operation' => null
     ];
 
     /**
@@ -78,7 +80,8 @@ class UpdateOrderStatusResponse implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'order' => false
+        'order' => false,
+        'operation' => false
     ];
 
     /**
@@ -167,7 +170,8 @@ class UpdateOrderStatusResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'order' => 'order'
+        'order' => 'order',
+        'operation' => 'operation'
     ];
 
     /**
@@ -176,7 +180,8 @@ class UpdateOrderStatusResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'order' => 'setOrder'
+        'order' => 'setOrder',
+        'operation' => 'setOperation'
     ];
 
     /**
@@ -185,7 +190,8 @@ class UpdateOrderStatusResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'order' => 'getOrder'
+        'order' => 'getOrder',
+        'operation' => 'getOperation'
     ];
 
     /**
@@ -246,6 +252,7 @@ class UpdateOrderStatusResponse implements ModelInterface, ArrayAccess, \JsonSer
     public function __construct(?array $data = null)
     {
         $this->setIfExists('order', $data ?? [], null);
+        $this->setIfExists('operation', $data ?? [], null);
     }
 
     /**
@@ -316,6 +323,33 @@ class UpdateOrderStatusResponse implements ModelInterface, ArrayAccess, \JsonSer
 
         return $this;
     }
+
+    /**
+     * Gets operation
+     *
+     * @return \OpenAPI\Client\Model\OperationDTO|null
+     */
+    public function getOperation()
+    {
+        return $this->container['operation'];
+    }
+
+    /**
+     * Sets operation
+     *
+     * @param \OpenAPI\Client\Model\OperationDTO|null $operation operation
+     *
+     * @return self
+     */
+    public function setOperation($operation)
+    {
+        if (is_null($operation)) {
+            throw new \InvalidArgumentException('non-nullable operation cannot be null');
+        }
+        $this->container['operation'] = $operation;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -323,7 +357,7 @@ class UpdateOrderStatusResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -336,7 +370,7 @@ class UpdateOrderStatusResponse implements ModelInterface, ArrayAccess, \JsonSer
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -365,7 +399,7 @@ class UpdateOrderStatusResponse implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

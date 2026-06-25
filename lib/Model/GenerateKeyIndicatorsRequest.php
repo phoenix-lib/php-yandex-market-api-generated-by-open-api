@@ -58,9 +58,9 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
+        'detalization_level' => '\OpenAPI\Client\Model\KeyIndicatorsReportDetalizationLevelType',
         'business_id' => 'int',
-        'campaign_id' => 'int',
-        'detalization_level' => '\OpenAPI\Client\Model\KeyIndicatorsReportDetalizationLevelType'
+        'campaign_id' => 'int'
     ];
 
     /**
@@ -71,9 +71,9 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'detalization_level' => null,
         'business_id' => 'int64',
-        'campaign_id' => 'int64',
-        'detalization_level' => null
+        'campaign_id' => 'int64'
     ];
 
     /**
@@ -82,9 +82,9 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'detalization_level' => false,
         'business_id' => false,
-        'campaign_id' => false,
-        'detalization_level' => false
+        'campaign_id' => false
     ];
 
     /**
@@ -173,9 +173,9 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
+        'detalization_level' => 'detalizationLevel',
         'business_id' => 'businessId',
-        'campaign_id' => 'campaignId',
-        'detalization_level' => 'detalizationLevel'
+        'campaign_id' => 'campaignId'
     ];
 
     /**
@@ -184,9 +184,9 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
+        'detalization_level' => 'setDetalizationLevel',
         'business_id' => 'setBusinessId',
-        'campaign_id' => 'setCampaignId',
-        'detalization_level' => 'setDetalizationLevel'
+        'campaign_id' => 'setCampaignId'
     ];
 
     /**
@@ -195,9 +195,9 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
+        'detalization_level' => 'getDetalizationLevel',
         'business_id' => 'getBusinessId',
-        'campaign_id' => 'getCampaignId',
-        'detalization_level' => 'getDetalizationLevel'
+        'campaign_id' => 'getCampaignId'
     ];
 
     /**
@@ -257,9 +257,9 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('detalization_level', $data ?? [], null);
         $this->setIfExists('business_id', $data ?? [], null);
         $this->setIfExists('campaign_id', $data ?? [], null);
-        $this->setIfExists('detalization_level', $data ?? [], null);
     }
 
     /**
@@ -289,6 +289,9 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
+        if ($this->container['detalization_level'] === null) {
+            $invalidProperties[] = "'detalization_level' can't be null";
+        }
         if (!is_null($this->container['business_id']) && ($this->container['business_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'business_id', must be bigger than or equal to 1.";
         }
@@ -297,9 +300,6 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
             $invalidProperties[] = "invalid value for 'campaign_id', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['detalization_level'] === null) {
-            $invalidProperties[] = "'detalization_level' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -316,6 +316,33 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
 
 
     /**
+     * Gets detalization_level
+     *
+     * @return \OpenAPI\Client\Model\KeyIndicatorsReportDetalizationLevelType
+     */
+    public function getDetalizationLevel()
+    {
+        return $this->container['detalization_level'];
+    }
+
+    /**
+     * Sets detalization_level
+     *
+     * @param \OpenAPI\Client\Model\KeyIndicatorsReportDetalizationLevelType $detalization_level detalization_level
+     *
+     * @return self
+     */
+    public function setDetalizationLevel($detalization_level)
+    {
+        if (is_null($detalization_level)) {
+            throw new \InvalidArgumentException('non-nullable detalization_level cannot be null');
+        }
+        $this->container['detalization_level'] = $detalization_level;
+
+        return $this;
+    }
+
+    /**
      * Gets business_id
      *
      * @return int|null
@@ -328,7 +355,7 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets business_id
      *
-     * @param int|null $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+     * @param int|null $business_id Идентификатор кабинета. {% if audience == \"partner\" %}Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) {% endif %}
      *
      * @return self
      */
@@ -378,33 +405,6 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
-
-    /**
-     * Gets detalization_level
-     *
-     * @return \OpenAPI\Client\Model\KeyIndicatorsReportDetalizationLevelType
-     */
-    public function getDetalizationLevel()
-    {
-        return $this->container['detalization_level'];
-    }
-
-    /**
-     * Sets detalization_level
-     *
-     * @param \OpenAPI\Client\Model\KeyIndicatorsReportDetalizationLevelType $detalization_level detalization_level
-     *
-     * @return self
-     */
-    public function setDetalizationLevel($detalization_level)
-    {
-        if (is_null($detalization_level)) {
-            throw new \InvalidArgumentException('non-nullable detalization_level cannot be null');
-        }
-        $this->container['detalization_level'] = $detalization_level;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -412,7 +412,7 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -425,7 +425,7 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -454,7 +454,7 @@ class GenerateKeyIndicatorsRequest implements ModelInterface, ArrayAccess, \Json
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

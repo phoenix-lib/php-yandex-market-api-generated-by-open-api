@@ -60,7 +60,8 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPITypes = [
         'return_item_id' => 'int',
         'decision_type' => '\OpenAPI\Client\Model\ReturnRequestDecisionType',
-        'comment' => 'string'
+        'comment' => 'string',
+        'compensation' => '\OpenAPI\Client\Model\BasePriceDTO'
     ];
 
     /**
@@ -73,7 +74,8 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPIFormats = [
         'return_item_id' => 'int64',
         'decision_type' => null,
-        'comment' => null
+        'comment' => null,
+        'compensation' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     protected static array $openAPINullables = [
         'return_item_id' => false,
         'decision_type' => false,
-        'comment' => false
+        'comment' => false,
+        'compensation' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $attributeMap = [
         'return_item_id' => 'returnItemId',
         'decision_type' => 'decisionType',
-        'comment' => 'comment'
+        'comment' => 'comment',
+        'compensation' => 'compensation'
     ];
 
     /**
@@ -186,7 +190,8 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $setters = [
         'return_item_id' => 'setReturnItemId',
         'decision_type' => 'setDecisionType',
-        'comment' => 'setComment'
+        'comment' => 'setComment',
+        'compensation' => 'setCompensation'
     ];
 
     /**
@@ -197,7 +202,8 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $getters = [
         'return_item_id' => 'getReturnItemId',
         'decision_type' => 'getDecisionType',
-        'comment' => 'getComment'
+        'comment' => 'getComment',
+        'compensation' => 'getCompensation'
     ];
 
     /**
@@ -260,6 +266,7 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('return_item_id', $data ?? [], null);
         $this->setIfExists('decision_type', $data ?? [], null);
         $this->setIfExists('comment', $data ?? [], null);
+        $this->setIfExists('compensation', $data ?? [], null);
     }
 
     /**
@@ -390,6 +397,33 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
+    /**
+     * Gets compensation
+     *
+     * @return \OpenAPI\Client\Model\BasePriceDTO|null
+     */
+    public function getCompensation()
+    {
+        return $this->container['compensation'];
+    }
+
+    /**
+     * Sets compensation
+     *
+     * @param \OpenAPI\Client\Model\BasePriceDTO|null $compensation compensation
+     *
+     * @return self
+     */
+    public function setCompensation($compensation)
+    {
+        if (is_null($compensation)) {
+            throw new \InvalidArgumentException('non-nullable compensation cannot be null');
+        }
+        $this->container['compensation'] = $compensation;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -397,7 +431,7 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -410,7 +444,7 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -439,7 +473,7 @@ class SetReturnDecisionRequest implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

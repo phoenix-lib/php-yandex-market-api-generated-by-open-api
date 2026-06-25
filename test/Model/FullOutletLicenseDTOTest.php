@@ -80,15 +80,6 @@ class FullOutletLicenseDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "outlet_id"
      */
     public function testPropertyOutletId()
@@ -128,6 +119,15 @@ class FullOutletLicenseDTOTest extends TestCase
      * Test attribute "date_of_expiry"
      */
     public function testPropertyDateOfExpiry()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

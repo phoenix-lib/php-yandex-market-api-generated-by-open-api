@@ -58,7 +58,8 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'question_id' => 'int'
+        'question_id' => 'int',
+        'answer_ids' => 'int[]'
     ];
 
     /**
@@ -69,7 +70,8 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'question_id' => 'int64'
+        'question_id' => 'int64',
+        'answer_ids' => 'int64'
     ];
 
     /**
@@ -78,7 +80,8 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'question_id' => false
+        'question_id' => false,
+        'answer_ids' => true
     ];
 
     /**
@@ -167,7 +170,8 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'question_id' => 'questionId'
+        'question_id' => 'questionId',
+        'answer_ids' => 'answerIds'
     ];
 
     /**
@@ -176,7 +180,8 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'question_id' => 'setQuestionId'
+        'question_id' => 'setQuestionId',
+        'answer_ids' => 'setAnswerIds'
     ];
 
     /**
@@ -185,7 +190,8 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'question_id' => 'getQuestionId'
+        'question_id' => 'getQuestionId',
+        'answer_ids' => 'getAnswerIds'
     ];
 
     /**
@@ -246,6 +252,7 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(?array $data = null)
     {
         $this->setIfExists('question_id', $data ?? [], null);
+        $this->setIfExists('answer_ids', $data ?? [], null);
     }
 
     /**
@@ -277,6 +284,14 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         if (!is_null($this->container['question_id']) && ($this->container['question_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'question_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['answer_ids']) && (count($this->container['answer_ids']) > 50)) {
+            $invalidProperties[] = "invalid value for 'answer_ids', number of items must be less than or equal to 50.";
+        }
+
+        if (!is_null($this->container['answer_ids']) && (count($this->container['answer_ids']) < 1)) {
+            $invalidProperties[] = "invalid value for 'answer_ids', number of items must be greater than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -325,6 +340,47 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
+    /**
+     * Gets answer_ids
+     *
+     * @return int[]|null
+     */
+    public function getAnswerIds()
+    {
+        return $this->container['answer_ids'];
+    }
+
+    /**
+     * Sets answer_ids
+     *
+     * @param int[]|null $answer_ids Идентификаторы ответов.
+     *
+     * @return self
+     */
+    public function setAnswerIds($answer_ids)
+    {
+        if (is_null($answer_ids)) {
+            array_push($this->openAPINullablesSetToNull, 'answer_ids');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('answer_ids', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($answer_ids) && (count($answer_ids) > 50)) {
+            throw new \InvalidArgumentException('invalid value for $answer_ids when calling GetAnswersRequest., number of items must be less than or equal to 50.');
+        }
+        if (!is_null($answer_ids) && (count($answer_ids) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $answer_ids when calling GetAnswersRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['answer_ids'] = $answer_ids;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -332,7 +388,7 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -345,7 +401,7 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -374,7 +430,7 @@ class GetAnswersRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

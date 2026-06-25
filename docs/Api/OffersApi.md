@@ -20,7 +20,7 @@ deleteCampaignOffers($campaign_id, $delete_campaign_offers_request): \OpenAPI\Cl
 
 Удаление товаров из ассортимента магазина
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/deleteCampaignOffers.md) %}  Удаляет заданные товары из заданного магазина.  {% note warning \"Запрос удаляет товары из конкретного магазина\" %}  На продажи в других магазинах и на наличие товара в общем каталоге он не влияет.  {% endnote %}  Товар не получится удалить, если он хранится на складах Маркета.  |**⚙️ Лимит:** 10 000 товаров в минуту| |-|
+{% include notitle [access](../../_auto/method_scopes/deleteCampaignOffers.md) %}  Удаляет заданные товары из заданного магазина.  {% note warning \"Запрос удаляет товары из конкретного магазина\" %}  На продажи в других магазинах и на наличие товара в общем каталоге он не влияет.  {% endnote %}  Товар не получится удалить, если он хранится на складах Маркета.  {% include notitle [limit](../../_auto/method_limits/deleteCampaignOffers.md) %}
 
 ### Example
 
@@ -87,7 +87,7 @@ getCampaignOffers($campaign_id, $get_campaign_offers_request, $page_token, $limi
 
 Информация о товарах, которые размещены в заданном магазине
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getCampaignOffers.md) %}  Возвращает список товаров, которые размещены в заданном магазине. Для каждого товара указываются параметры размещения.  |**⚙️ Лимит:** 10 000 товаров в минуту| |-|
+{% include notitle [access](../../_auto/method_scopes/getCampaignOffers.md) %}  Возвращает список товаров, которые размещены в заданном магазине. Для каждого товара указываются параметры размещения.  {% include notitle [limit](../../_auto/method_limits/getCampaignOffers.md) %}
 
 ### Example
 
@@ -113,8 +113,8 @@ $apiInstance = new OpenAPI\Client\Api\OffersApi(
 );
 $campaign_id = 56; // int | Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями.
 $get_campaign_offers_request = new \OpenAPI\Client\Model\GetCampaignOffersRequest(); // \OpenAPI\Client\Model\GetCampaignOffersRequest
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `page` и `pageSize`, они игнорируются.
-$limit = 20; // int | Количество значений на одной странице.
+$page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
+$limit = 100; // int | {{ limit-param-description }}
 
 try {
     $result = $apiInstance->getCampaignOffers($campaign_id, $get_campaign_offers_request, $page_token, $limit);
@@ -130,8 +130,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **campaign_id** | **int**| Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. | |
 | **get_campaign_offers_request** | [**\OpenAPI\Client\Model\GetCampaignOffersRequest**](../Model/GetCampaignOffersRequest.md)|  | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. | [optional] |
-| **limit** | **int**| Количество значений на одной странице. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
+| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 100] |
 
 ### Return type
 
@@ -158,7 +158,7 @@ getOfferRecommendations($business_id, $get_offer_recommendations_request, $page_
 
 Рекомендации Маркета, касающиеся цен
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOfferRecommendations.md) %}  Метод возвращает рекомендации нескольких типов.  1. Порог для привлекательной цены. 2. Оценка привлекательности цен на витрине.  Рекомендации показывают, какие цены нужно установить, чтобы привлечь покупателя.  В запросе можно использовать фильтры. Результаты возвращаются постранично.  |**⚙️ Лимит:** 100 запросов в минуту| |-|
+{% include notitle [access](../../_auto/method_scopes/getOfferRecommendations.md) %}  Метод возвращает рекомендации нескольких типов.  1. Порог для привлекательной цены. 2. Оценка привлекательности цен на витрине.  Рекомендации показывают, какие цены нужно установить, чтобы привлечь покупателя.  В запросе можно использовать фильтры. Результаты возвращаются постранично.  {% include notitle [limit](../../_auto/method_limits/getOfferRecommendations.md) %}
 
 ### Example
 
@@ -182,10 +182,10 @@ $apiInstance = new OpenAPI\Client\Api\OffersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
 $get_offer_recommendations_request = new \OpenAPI\Client\Model\GetOfferRecommendationsRequest(); // \OpenAPI\Client\Model\GetOfferRecommendationsRequest
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `page` и `pageSize`, они игнорируются.
-$limit = 20; // int | Количество значений на одной странице.
+$page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
+$limit = 100; // int | {{ limit-param-description }}
 
 try {
     $result = $apiInstance->getOfferRecommendations($business_id, $get_offer_recommendations_request, $page_token, $limit);
@@ -199,10 +199,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
 | **get_offer_recommendations_request** | [**\OpenAPI\Client\Model\GetOfferRecommendationsRequest**](../Model/GetOfferRecommendationsRequest.md)|  | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. | [optional] |
-| **limit** | **int**| Количество значений на одной странице. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
+| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 100] |
 
 ### Return type
 
@@ -229,7 +229,7 @@ updateCampaignOffers($campaign_id, $update_campaign_offers_request): \OpenAPI\Cl
 
 Изменение условий продажи товаров в магазине
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateCampaignOffers.md) %}  Изменяет параметры размещения товаров в конкретном магазине: доступность товара, продажа квантами и применяемый НДС.  |**⚙️ Лимит:** 10 000 товаров в минуту| |-|
+{% include notitle [access](../../_auto/method_scopes/updateCampaignOffers.md) %}  Изменяет параметры размещения товаров в конкретном магазине: доступность товара и применяемый НДС.  {% include notitle [limit](../../_auto/method_limits/updateCampaignOffers.md) %}
 
 ### Example
 

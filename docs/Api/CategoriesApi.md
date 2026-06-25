@@ -18,7 +18,7 @@ getCategoriesMaxSaleQuantum($get_categories_max_sale_quantum_request): \OpenAPI\
 
 Лимит на установку кванта продажи и минимального количества товаров в заказе
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getCategoriesMaxSaleQuantum.md) %}  Возвращает лимит на установку [кванта](*quantum) и минимального количества товаров в заказе, которые вы можете задать для товаров указанных категорий.  Если вы передадите значение кванта или минимального количества товаров выше установленного Маркетом ограничения, товар будет скрыт с витрины.  Подробнее о том, как продавать товары по несколько штук, читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/assortment/fields/quantum).  |**⚙️ Лимит:** 5 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getCategoriesMaxSaleQuantum.md) %}  Возвращает лимит на установку [кванта](*quantum) и минимального количества товаров в заказе, которые вы можете задать для товаров указанных категорий.  Если вы передадите значение кванта или минимального количества товаров выше установленного Маркетом ограничения, товар будет скрыт с витрины.  Подробнее о том, как продавать товары по несколько штук, читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/assortment/fields/quantum).  {% include notitle [limit](../../_auto/method_limits/getCategoriesMaxSaleQuantum.md) %}
 
 ### Example
 
@@ -83,7 +83,7 @@ getCategoriesTree($get_categories_request): \OpenAPI\Client\Model\GetCategoriesR
 
 Дерево категорий
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getCategoriesTree.md) %}  Возвращает дерево категорий Маркета.  |**⚙️ Лимит:** 1 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getCategoriesTree.md) %}  Возвращает дерево категорий Маркета.  {% include notitle [limit](../../_auto/method_limits/getCategoriesTree.md) %}
 
 ### Example
 

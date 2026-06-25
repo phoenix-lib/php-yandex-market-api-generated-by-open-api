@@ -59,8 +59,7 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'outlets' => '\OpenAPI\Client\Model\FullOutletDTO[]',
-        'paging' => '\OpenAPI\Client\Model\ScrollingPagerDTO',
-        'pager' => '\OpenAPI\Client\Model\FlippingPagerDTO'
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -72,8 +71,7 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'outlets' => null,
-        'paging' => null,
-        'pager' => null
+        'paging' => null
     ];
 
     /**
@@ -83,8 +81,7 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static array $openAPINullables = [
         'outlets' => false,
-        'paging' => false,
-        'pager' => false
+        'paging' => false
     ];
 
     /**
@@ -174,8 +171,7 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $attributeMap = [
         'outlets' => 'outlets',
-        'paging' => 'paging',
-        'pager' => 'pager'
+        'paging' => 'paging'
     ];
 
     /**
@@ -185,8 +181,7 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'outlets' => 'setOutlets',
-        'paging' => 'setPaging',
-        'pager' => 'setPager'
+        'paging' => 'setPaging'
     ];
 
     /**
@@ -196,8 +191,7 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'outlets' => 'getOutlets',
-        'paging' => 'getPaging',
-        'pager' => 'getPager'
+        'paging' => 'getPaging'
     ];
 
     /**
@@ -259,7 +253,6 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $this->setIfExists('outlets', $data ?? [], null);
         $this->setIfExists('paging', $data ?? [], null);
-        $this->setIfExists('pager', $data ?? [], null);
     }
 
     /**
@@ -337,7 +330,7 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets paging
      *
-     * @return \OpenAPI\Client\Model\ScrollingPagerDTO|null
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
      */
     public function getPaging()
     {
@@ -347,7 +340,7 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paging
      *
-     * @param \OpenAPI\Client\Model\ScrollingPagerDTO|null $paging paging
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
      *
      * @return self
      */
@@ -360,33 +353,6 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
-    /**
-     * Gets pager
-     *
-     * @return \OpenAPI\Client\Model\FlippingPagerDTO|null
-     */
-    public function getPager()
-    {
-        return $this->container['pager'];
-    }
-
-    /**
-     * Sets pager
-     *
-     * @param \OpenAPI\Client\Model\FlippingPagerDTO|null $pager pager
-     *
-     * @return self
-     */
-    public function setPager($pager)
-    {
-        if (is_null($pager)) {
-            throw new \InvalidArgumentException('non-nullable pager cannot be null');
-        }
-        $this->container['pager'] = $pager;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -394,7 +360,7 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -407,7 +373,7 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -436,7 +402,7 @@ class GetOutletsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

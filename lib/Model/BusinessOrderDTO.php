@@ -60,22 +60,23 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'order_id' => 'int',
         'campaign_id' => 'int',
-        'program_type' => '\OpenAPI\Client\Model\SellingProgramType',
-        'external_order_id' => 'string',
         'status' => '\OpenAPI\Client\Model\OrderStatusType',
         'substatus' => '\OpenAPI\Client\Model\OrderSubstatusType',
         'creation_date' => '\DateTime',
-        'update_date' => '\DateTime',
         'payment_type' => '\OpenAPI\Client\Model\OrderPaymentType',
         'payment_method' => '\OpenAPI\Client\Model\OrderPaymentMethodType',
         'fake' => 'bool',
         'items' => '\OpenAPI\Client\Model\BusinessOrderItemDTO[]',
-        'prices' => '\OpenAPI\Client\Model\OrderPriceDTO',
         'delivery' => '\OpenAPI\Client\Model\BusinessOrderDeliveryDTO',
+        'program_type' => '\OpenAPI\Client\Model\SellingProgramType',
+        'external_order_id' => 'string',
+        'update_date' => '\DateTime',
+        'prices' => '\OpenAPI\Client\Model\OrderPriceDTO',
         'services' => '\OpenAPI\Client\Model\BusinessOrderServicesDTO',
         'buyer_type' => '\OpenAPI\Client\Model\OrderBuyerType',
         'notes' => 'string',
-        'cancel_requested' => 'bool'
+        'cancel_requested' => 'bool',
+        'source_platform' => '\OpenAPI\Client\Model\OrderSourcePlatformType'
     ];
 
     /**
@@ -88,22 +89,23 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'order_id' => 'int64',
         'campaign_id' => 'int64',
-        'program_type' => null,
-        'external_order_id' => null,
         'status' => null,
         'substatus' => null,
         'creation_date' => 'date-time',
-        'update_date' => 'date-time',
         'payment_type' => null,
         'payment_method' => null,
         'fake' => null,
         'items' => null,
-        'prices' => null,
         'delivery' => null,
+        'program_type' => null,
+        'external_order_id' => null,
+        'update_date' => 'date-time',
+        'prices' => null,
         'services' => null,
         'buyer_type' => null,
         'notes' => null,
-        'cancel_requested' => null
+        'cancel_requested' => null,
+        'source_platform' => null
     ];
 
     /**
@@ -114,22 +116,23 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'order_id' => false,
         'campaign_id' => false,
-        'program_type' => false,
-        'external_order_id' => false,
         'status' => false,
         'substatus' => false,
         'creation_date' => false,
-        'update_date' => false,
         'payment_type' => false,
         'payment_method' => false,
         'fake' => false,
         'items' => false,
-        'prices' => false,
         'delivery' => false,
+        'program_type' => false,
+        'external_order_id' => false,
+        'update_date' => false,
+        'prices' => false,
         'services' => false,
         'buyer_type' => false,
         'notes' => false,
-        'cancel_requested' => false
+        'cancel_requested' => false,
+        'source_platform' => false
     ];
 
     /**
@@ -220,22 +223,23 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'order_id' => 'orderId',
         'campaign_id' => 'campaignId',
-        'program_type' => 'programType',
-        'external_order_id' => 'externalOrderId',
         'status' => 'status',
         'substatus' => 'substatus',
         'creation_date' => 'creationDate',
-        'update_date' => 'updateDate',
         'payment_type' => 'paymentType',
         'payment_method' => 'paymentMethod',
         'fake' => 'fake',
         'items' => 'items',
-        'prices' => 'prices',
         'delivery' => 'delivery',
+        'program_type' => 'programType',
+        'external_order_id' => 'externalOrderId',
+        'update_date' => 'updateDate',
+        'prices' => 'prices',
         'services' => 'services',
         'buyer_type' => 'buyerType',
         'notes' => 'notes',
-        'cancel_requested' => 'cancelRequested'
+        'cancel_requested' => 'cancelRequested',
+        'source_platform' => 'sourcePlatform'
     ];
 
     /**
@@ -246,22 +250,23 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'order_id' => 'setOrderId',
         'campaign_id' => 'setCampaignId',
-        'program_type' => 'setProgramType',
-        'external_order_id' => 'setExternalOrderId',
         'status' => 'setStatus',
         'substatus' => 'setSubstatus',
         'creation_date' => 'setCreationDate',
-        'update_date' => 'setUpdateDate',
         'payment_type' => 'setPaymentType',
         'payment_method' => 'setPaymentMethod',
         'fake' => 'setFake',
         'items' => 'setItems',
-        'prices' => 'setPrices',
         'delivery' => 'setDelivery',
+        'program_type' => 'setProgramType',
+        'external_order_id' => 'setExternalOrderId',
+        'update_date' => 'setUpdateDate',
+        'prices' => 'setPrices',
         'services' => 'setServices',
         'buyer_type' => 'setBuyerType',
         'notes' => 'setNotes',
-        'cancel_requested' => 'setCancelRequested'
+        'cancel_requested' => 'setCancelRequested',
+        'source_platform' => 'setSourcePlatform'
     ];
 
     /**
@@ -272,22 +277,23 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'order_id' => 'getOrderId',
         'campaign_id' => 'getCampaignId',
-        'program_type' => 'getProgramType',
-        'external_order_id' => 'getExternalOrderId',
         'status' => 'getStatus',
         'substatus' => 'getSubstatus',
         'creation_date' => 'getCreationDate',
-        'update_date' => 'getUpdateDate',
         'payment_type' => 'getPaymentType',
         'payment_method' => 'getPaymentMethod',
         'fake' => 'getFake',
         'items' => 'getItems',
-        'prices' => 'getPrices',
         'delivery' => 'getDelivery',
+        'program_type' => 'getProgramType',
+        'external_order_id' => 'getExternalOrderId',
+        'update_date' => 'getUpdateDate',
+        'prices' => 'getPrices',
         'services' => 'getServices',
         'buyer_type' => 'getBuyerType',
         'notes' => 'getNotes',
-        'cancel_requested' => 'getCancelRequested'
+        'cancel_requested' => 'getCancelRequested',
+        'source_platform' => 'getSourcePlatform'
     ];
 
     /**
@@ -349,22 +355,23 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('order_id', $data ?? [], null);
         $this->setIfExists('campaign_id', $data ?? [], null);
-        $this->setIfExists('program_type', $data ?? [], null);
-        $this->setIfExists('external_order_id', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('substatus', $data ?? [], null);
         $this->setIfExists('creation_date', $data ?? [], null);
-        $this->setIfExists('update_date', $data ?? [], null);
         $this->setIfExists('payment_type', $data ?? [], null);
         $this->setIfExists('payment_method', $data ?? [], null);
         $this->setIfExists('fake', $data ?? [], null);
         $this->setIfExists('items', $data ?? [], null);
-        $this->setIfExists('prices', $data ?? [], null);
         $this->setIfExists('delivery', $data ?? [], null);
+        $this->setIfExists('program_type', $data ?? [], null);
+        $this->setIfExists('external_order_id', $data ?? [], null);
+        $this->setIfExists('update_date', $data ?? [], null);
+        $this->setIfExists('prices', $data ?? [], null);
         $this->setIfExists('services', $data ?? [], null);
         $this->setIfExists('buyer_type', $data ?? [], null);
         $this->setIfExists('notes', $data ?? [], null);
         $this->setIfExists('cancel_requested', $data ?? [], null);
+        $this->setIfExists('source_platform', $data ?? [], null);
     }
 
     /**
@@ -404,10 +411,6 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'campaign_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['external_order_id']) && (mb_strlen($this->container['external_order_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'external_order_id', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
@@ -432,6 +435,10 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['delivery'] === null) {
             $invalidProperties[] = "'delivery' can't be null";
         }
+        if (!is_null($this->container['external_order_id']) && (mb_strlen($this->container['external_order_id']) < 1)) {
+            $invalidProperties[] = "invalid value for 'external_order_id', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -502,65 +509,6 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['campaign_id'] = $campaign_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets program_type
-     *
-     * @return \OpenAPI\Client\Model\SellingProgramType|null
-     */
-    public function getProgramType()
-    {
-        return $this->container['program_type'];
-    }
-
-    /**
-     * Sets program_type
-     *
-     * @param \OpenAPI\Client\Model\SellingProgramType|null $program_type program_type
-     *
-     * @return self
-     */
-    public function setProgramType($program_type)
-    {
-        if (is_null($program_type)) {
-            throw new \InvalidArgumentException('non-nullable program_type cannot be null');
-        }
-        $this->container['program_type'] = $program_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets external_order_id
-     *
-     * @return string|null
-     */
-    public function getExternalOrderId()
-    {
-        return $this->container['external_order_id'];
-    }
-
-    /**
-     * Sets external_order_id
-     *
-     * @param string|null $external_order_id Внешний идентификатор заказа, который вы передали в [POST v2/campaigns/{campaignId}/orders/{orderId}/external-id](../../reference/orders/updateExternalOrderId.md).
-     *
-     * @return self
-     */
-    public function setExternalOrderId($external_order_id)
-    {
-        if (is_null($external_order_id)) {
-            throw new \InvalidArgumentException('non-nullable external_order_id cannot be null');
-        }
-
-        if ((mb_strlen($external_order_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $external_order_id when calling BusinessOrderDTO., must be bigger than or equal to 1.');
-        }
-
-        $this->container['external_order_id'] = $external_order_id;
 
         return $this;
     }
@@ -642,33 +590,6 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable creation_date cannot be null');
         }
         $this->container['creation_date'] = $creation_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets update_date
-     *
-     * @return \DateTime|null
-     */
-    public function getUpdateDate()
-    {
-        return $this->container['update_date'];
-    }
-
-    /**
-     * Sets update_date
-     *
-     * @param \DateTime|null $update_date Дата и время последнего обновления заказа.  Формат даты: ISO 8601 со смещением относительно UTC.
-     *
-     * @return self
-     */
-    public function setUpdateDate($update_date)
-    {
-        if (is_null($update_date)) {
-            throw new \InvalidArgumentException('non-nullable update_date cannot be null');
-        }
-        $this->container['update_date'] = $update_date;
 
         return $this;
     }
@@ -782,33 +703,6 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets prices
-     *
-     * @return \OpenAPI\Client\Model\OrderPriceDTO|null
-     */
-    public function getPrices()
-    {
-        return $this->container['prices'];
-    }
-
-    /**
-     * Sets prices
-     *
-     * @param \OpenAPI\Client\Model\OrderPriceDTO|null $prices prices
-     *
-     * @return self
-     */
-    public function setPrices($prices)
-    {
-        if (is_null($prices)) {
-            throw new \InvalidArgumentException('non-nullable prices cannot be null');
-        }
-        $this->container['prices'] = $prices;
-
-        return $this;
-    }
-
-    /**
      * Gets delivery
      *
      * @return \OpenAPI\Client\Model\BusinessOrderDeliveryDTO
@@ -831,6 +725,119 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable delivery cannot be null');
         }
         $this->container['delivery'] = $delivery;
+
+        return $this;
+    }
+
+    /**
+     * Gets program_type
+     *
+     * @return \OpenAPI\Client\Model\SellingProgramType|null
+     */
+    public function getProgramType()
+    {
+        return $this->container['program_type'];
+    }
+
+    /**
+     * Sets program_type
+     *
+     * @param \OpenAPI\Client\Model\SellingProgramType|null $program_type program_type
+     *
+     * @return self
+     */
+    public function setProgramType($program_type)
+    {
+        if (is_null($program_type)) {
+            throw new \InvalidArgumentException('non-nullable program_type cannot be null');
+        }
+        $this->container['program_type'] = $program_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_order_id
+     *
+     * @return string|null
+     */
+    public function getExternalOrderId()
+    {
+        return $this->container['external_order_id'];
+    }
+
+    /**
+     * Sets external_order_id
+     *
+     * @param string|null $external_order_id Внешний идентификатор заказа, который вы передали в [POST v2/campaigns/{campaignId}/orders/{orderId}/external-id](../../reference/orders/updateExternalOrderId.md).
+     *
+     * @return self
+     */
+    public function setExternalOrderId($external_order_id)
+    {
+        if (is_null($external_order_id)) {
+            throw new \InvalidArgumentException('non-nullable external_order_id cannot be null');
+        }
+
+        if ((mb_strlen($external_order_id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $external_order_id when calling BusinessOrderDTO., must be bigger than or equal to 1.');
+        }
+
+        $this->container['external_order_id'] = $external_order_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets update_date
+     *
+     * @return \DateTime|null
+     */
+    public function getUpdateDate()
+    {
+        return $this->container['update_date'];
+    }
+
+    /**
+     * Sets update_date
+     *
+     * @param \DateTime|null $update_date Дата и время последнего обновления заказа.  Формат даты: ISO 8601 со смещением относительно UTC.
+     *
+     * @return self
+     */
+    public function setUpdateDate($update_date)
+    {
+        if (is_null($update_date)) {
+            throw new \InvalidArgumentException('non-nullable update_date cannot be null');
+        }
+        $this->container['update_date'] = $update_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets prices
+     *
+     * @return \OpenAPI\Client\Model\OrderPriceDTO|null
+     */
+    public function getPrices()
+    {
+        return $this->container['prices'];
+    }
+
+    /**
+     * Sets prices
+     *
+     * @param \OpenAPI\Client\Model\OrderPriceDTO|null $prices prices
+     *
+     * @return self
+     */
+    public function setPrices($prices)
+    {
+        if (is_null($prices)) {
+            throw new \InvalidArgumentException('non-nullable prices cannot be null');
+        }
+        $this->container['prices'] = $prices;
 
         return $this;
     }
@@ -942,6 +949,33 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
+    /**
+     * Gets source_platform
+     *
+     * @return \OpenAPI\Client\Model\OrderSourcePlatformType|null
+     */
+    public function getSourcePlatform()
+    {
+        return $this->container['source_platform'];
+    }
+
+    /**
+     * Sets source_platform
+     *
+     * @param \OpenAPI\Client\Model\OrderSourcePlatformType|null $source_platform source_platform
+     *
+     * @return self
+     */
+    public function setSourcePlatform($source_platform)
+    {
+        if (is_null($source_platform)) {
+            throw new \InvalidArgumentException('non-nullable source_platform cannot be null');
+        }
+        $this->container['source_platform'] = $source_platform;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -949,7 +983,7 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -962,7 +996,7 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -991,7 +1025,7 @@ class BusinessOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

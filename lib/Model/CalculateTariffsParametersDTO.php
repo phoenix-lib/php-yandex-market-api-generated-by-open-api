@@ -61,6 +61,7 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
         'campaign_id' => 'int',
         'selling_program' => '\OpenAPI\Client\Model\SellingProgramType',
         'frequency' => '\OpenAPI\Client\Model\PaymentFrequencyType',
+        'payment_delay_weeks' => 'int',
         'currency' => '\OpenAPI\Client\Model\CurrencyType'
     ];
 
@@ -75,6 +76,7 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
         'campaign_id' => 'int64',
         'selling_program' => null,
         'frequency' => null,
+        'payment_delay_weeks' => 'int32',
         'currency' => null
     ];
 
@@ -87,6 +89,7 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
         'campaign_id' => false,
         'selling_program' => false,
         'frequency' => false,
+        'payment_delay_weeks' => false,
         'currency' => false
     ];
 
@@ -179,6 +182,7 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
         'campaign_id' => 'campaignId',
         'selling_program' => 'sellingProgram',
         'frequency' => 'frequency',
+        'payment_delay_weeks' => 'paymentDelayWeeks',
         'currency' => 'currency'
     ];
 
@@ -191,6 +195,7 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
         'campaign_id' => 'setCampaignId',
         'selling_program' => 'setSellingProgram',
         'frequency' => 'setFrequency',
+        'payment_delay_weeks' => 'setPaymentDelayWeeks',
         'currency' => 'setCurrency'
     ];
 
@@ -203,6 +208,7 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
         'campaign_id' => 'getCampaignId',
         'selling_program' => 'getSellingProgram',
         'frequency' => 'getFrequency',
+        'payment_delay_weeks' => 'getPaymentDelayWeeks',
         'currency' => 'getCurrency'
     ];
 
@@ -266,6 +272,7 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('campaign_id', $data ?? [], null);
         $this->setIfExists('selling_program', $data ?? [], null);
         $this->setIfExists('frequency', $data ?? [], null);
+        $this->setIfExists('payment_delay_weeks', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
     }
 
@@ -298,6 +305,14 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
 
         if (!is_null($this->container['campaign_id']) && ($this->container['campaign_id'] < 1)) {
             $invalidProperties[] = "invalid value for 'campaign_id', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['payment_delay_weeks']) && ($this->container['payment_delay_weeks'] > 4)) {
+            $invalidProperties[] = "invalid value for 'payment_delay_weeks', must be smaller than or equal to 4.";
+        }
+
+        if (!is_null($this->container['payment_delay_weeks']) && ($this->container['payment_delay_weeks'] < 0)) {
+            $invalidProperties[] = "invalid value for 'payment_delay_weeks', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -402,6 +417,41 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Gets payment_delay_weeks
+     *
+     * @return int|null
+     */
+    public function getPaymentDelayWeeks()
+    {
+        return $this->container['payment_delay_weeks'];
+    }
+
+    /**
+     * Sets payment_delay_weeks
+     *
+     * @param int|null $payment_delay_weeks Отсрочка выплат при еженедельном графике — сколько недель назад были доставлены заказы, за которые приходит выплата.  Допустимые значения: 0, 1, 2 или 4.  Значения параметра `paymentDelayWeeks`, отличные от 0, допускаются только вместе с параметром `frequency` равным 'WEEKLY'. Использование других значений параметра `frequency` совместно с `paymentDelayWeeks` приведет к ошибке.
+     *
+     * @return self
+     */
+    public function setPaymentDelayWeeks($payment_delay_weeks)
+    {
+        if (is_null($payment_delay_weeks)) {
+            throw new \InvalidArgumentException('non-nullable payment_delay_weeks cannot be null');
+        }
+
+        if (($payment_delay_weeks > 4)) {
+            throw new \InvalidArgumentException('invalid value for $payment_delay_weeks when calling CalculateTariffsParametersDTO., must be smaller than or equal to 4.');
+        }
+        if (($payment_delay_weeks < 0)) {
+            throw new \InvalidArgumentException('invalid value for $payment_delay_weeks when calling CalculateTariffsParametersDTO., must be bigger than or equal to 0.');
+        }
+
+        $this->container['payment_delay_weeks'] = $payment_delay_weeks;
+
+        return $this;
+    }
+
+    /**
      * Gets currency
      *
      * @return \OpenAPI\Client\Model\CurrencyType|null
@@ -434,7 +484,7 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -447,7 +497,7 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -476,7 +526,7 @@ class CalculateTariffsParametersDTO implements ModelInterface, ArrayAccess, \Jso
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

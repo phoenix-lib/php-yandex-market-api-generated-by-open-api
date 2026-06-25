@@ -89,18 +89,18 @@ class OfferContentErrorDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "parameter_id"
+     * Test attribute "message"
      */
-    public function testPropertyParameterId()
+    public function testPropertyMessage()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "parameter_id"
      */
-    public function testPropertyMessage()
+    public function testPropertyParameterId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

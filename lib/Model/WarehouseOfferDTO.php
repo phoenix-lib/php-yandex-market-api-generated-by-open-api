@@ -59,8 +59,8 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'offer_id' => 'string',
-        'turnover_summary' => '\OpenAPI\Client\Model\TurnoverDTO',
         'stocks' => '\OpenAPI\Client\Model\WarehouseStockDTO[]',
+        'turnover_summary' => '\OpenAPI\Client\Model\TurnoverDTO',
         'updated_at' => '\DateTime'
     ];
 
@@ -73,8 +73,8 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'offer_id' => null,
-        'turnover_summary' => null,
         'stocks' => null,
+        'turnover_summary' => null,
         'updated_at' => 'date-time'
     ];
 
@@ -85,8 +85,8 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static array $openAPINullables = [
         'offer_id' => false,
-        'turnover_summary' => false,
         'stocks' => false,
+        'turnover_summary' => false,
         'updated_at' => false
     ];
 
@@ -177,8 +177,8 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'offer_id' => 'offerId',
-        'turnover_summary' => 'turnoverSummary',
         'stocks' => 'stocks',
+        'turnover_summary' => 'turnoverSummary',
         'updated_at' => 'updatedAt'
     ];
 
@@ -189,8 +189,8 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'offer_id' => 'setOfferId',
-        'turnover_summary' => 'setTurnoverSummary',
         'stocks' => 'setStocks',
+        'turnover_summary' => 'setTurnoverSummary',
         'updated_at' => 'setUpdatedAt'
     ];
 
@@ -201,8 +201,8 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'offer_id' => 'getOfferId',
-        'turnover_summary' => 'getTurnoverSummary',
         'stocks' => 'getStocks',
+        'turnover_summary' => 'getTurnoverSummary',
         'updated_at' => 'getUpdatedAt'
     ];
 
@@ -264,8 +264,8 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(?array $data = null)
     {
         $this->setIfExists('offer_id', $data ?? [], null);
-        $this->setIfExists('turnover_summary', $data ?? [], null);
         $this->setIfExists('stocks', $data ?? [], null);
+        $this->setIfExists('turnover_summary', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
     }
 
@@ -367,33 +367,6 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets turnover_summary
-     *
-     * @return \OpenAPI\Client\Model\TurnoverDTO|null
-     */
-    public function getTurnoverSummary()
-    {
-        return $this->container['turnover_summary'];
-    }
-
-    /**
-     * Sets turnover_summary
-     *
-     * @param \OpenAPI\Client\Model\TurnoverDTO|null $turnover_summary turnover_summary
-     *
-     * @return self
-     */
-    public function setTurnoverSummary($turnover_summary)
-    {
-        if (is_null($turnover_summary)) {
-            throw new \InvalidArgumentException('non-nullable turnover_summary cannot be null');
-        }
-        $this->container['turnover_summary'] = $turnover_summary;
-
-        return $this;
-    }
-
-    /**
      * Gets stocks
      *
      * @return \OpenAPI\Client\Model\WarehouseStockDTO[]
@@ -416,6 +389,33 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable stocks cannot be null');
         }
         $this->container['stocks'] = $stocks;
+
+        return $this;
+    }
+
+    /**
+     * Gets turnover_summary
+     *
+     * @return \OpenAPI\Client\Model\TurnoverDTO|null
+     */
+    public function getTurnoverSummary()
+    {
+        return $this->container['turnover_summary'];
+    }
+
+    /**
+     * Sets turnover_summary
+     *
+     * @param \OpenAPI\Client\Model\TurnoverDTO|null $turnover_summary turnover_summary
+     *
+     * @return self
+     */
+    public function setTurnoverSummary($turnover_summary)
+    {
+        if (is_null($turnover_summary)) {
+            throw new \InvalidArgumentException('non-nullable turnover_summary cannot be null');
+        }
+        $this->container['turnover_summary'] = $turnover_summary;
 
         return $this;
     }
@@ -453,7 +453,7 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -466,7 +466,7 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -495,7 +495,7 @@ class WarehouseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

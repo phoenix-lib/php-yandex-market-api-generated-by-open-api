@@ -60,6 +60,8 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'order_id' => 'int',
+        'items' => '\OpenAPI\Client\Model\ReturnItemDTO[]',
+        'return_type' => '\OpenAPI\Client\Model\ReturnType',
         'creation_date' => '\DateTime',
         'update_date' => '\DateTime',
         'refund_status' => '\OpenAPI\Client\Model\RefundStatusType',
@@ -69,8 +71,6 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_status' => '\OpenAPI\Client\Model\ReturnShipmentStatusType',
         'refund_amount' => 'int',
         'amount' => '\OpenAPI\Client\Model\CurrencyValueDTO',
-        'items' => '\OpenAPI\Client\Model\ReturnItemDTO[]',
-        'return_type' => '\OpenAPI\Client\Model\ReturnType',
         'fast_return' => 'bool'
     ];
 
@@ -84,6 +84,8 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => 'int64',
         'order_id' => 'int64',
+        'items' => null,
+        'return_type' => null,
         'creation_date' => 'date-time',
         'update_date' => 'date-time',
         'refund_status' => null,
@@ -93,8 +95,6 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_status' => null,
         'refund_amount' => 'int64',
         'amount' => null,
-        'items' => null,
-        'return_type' => null,
         'fast_return' => null
     ];
 
@@ -106,6 +106,8 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'order_id' => false,
+        'items' => false,
+        'return_type' => false,
         'creation_date' => false,
         'update_date' => false,
         'refund_status' => false,
@@ -115,8 +117,6 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_status' => false,
         'refund_amount' => false,
         'amount' => false,
-        'items' => false,
-        'return_type' => false,
         'fast_return' => false
     ];
 
@@ -208,6 +208,8 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'order_id' => 'orderId',
+        'items' => 'items',
+        'return_type' => 'returnType',
         'creation_date' => 'creationDate',
         'update_date' => 'updateDate',
         'refund_status' => 'refundStatus',
@@ -217,8 +219,6 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_status' => 'shipmentStatus',
         'refund_amount' => 'refundAmount',
         'amount' => 'amount',
-        'items' => 'items',
-        'return_type' => 'returnType',
         'fast_return' => 'fastReturn'
     ];
 
@@ -230,6 +230,8 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'order_id' => 'setOrderId',
+        'items' => 'setItems',
+        'return_type' => 'setReturnType',
         'creation_date' => 'setCreationDate',
         'update_date' => 'setUpdateDate',
         'refund_status' => 'setRefundStatus',
@@ -239,8 +241,6 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_status' => 'setShipmentStatus',
         'refund_amount' => 'setRefundAmount',
         'amount' => 'setAmount',
-        'items' => 'setItems',
-        'return_type' => 'setReturnType',
         'fast_return' => 'setFastReturn'
     ];
 
@@ -252,6 +252,8 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'order_id' => 'getOrderId',
+        'items' => 'getItems',
+        'return_type' => 'getReturnType',
         'creation_date' => 'getCreationDate',
         'update_date' => 'getUpdateDate',
         'refund_status' => 'getRefundStatus',
@@ -261,8 +263,6 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipment_status' => 'getShipmentStatus',
         'refund_amount' => 'getRefundAmount',
         'amount' => 'getAmount',
-        'items' => 'getItems',
-        'return_type' => 'getReturnType',
         'fast_return' => 'getFastReturn'
     ];
 
@@ -325,6 +325,8 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('order_id', $data ?? [], null);
+        $this->setIfExists('items', $data ?? [], null);
+        $this->setIfExists('return_type', $data ?? [], null);
         $this->setIfExists('creation_date', $data ?? [], null);
         $this->setIfExists('update_date', $data ?? [], null);
         $this->setIfExists('refund_status', $data ?? [], null);
@@ -334,8 +336,6 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('shipment_status', $data ?? [], null);
         $this->setIfExists('refund_amount', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
-        $this->setIfExists('items', $data ?? [], null);
-        $this->setIfExists('return_type', $data ?? [], null);
         $this->setIfExists('fast_return', $data ?? [], null);
     }
 
@@ -443,6 +443,60 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable order_id cannot be null');
         }
         $this->container['order_id'] = $order_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets items
+     *
+     * @return \OpenAPI\Client\Model\ReturnItemDTO[]
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \OpenAPI\Client\Model\ReturnItemDTO[] $items Список товаров в невыкупе или возврате.
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        if (is_null($items)) {
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
+        }
+        $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets return_type
+     *
+     * @return \OpenAPI\Client\Model\ReturnType
+     */
+    public function getReturnType()
+    {
+        return $this->container['return_type'];
+    }
+
+    /**
+     * Sets return_type
+     *
+     * @param \OpenAPI\Client\Model\ReturnType $return_type return_type
+     *
+     * @return self
+     */
+    public function setReturnType($return_type)
+    {
+        if (is_null($return_type)) {
+            throw new \InvalidArgumentException('non-nullable return_type cannot be null');
+        }
+        $this->container['return_type'] = $return_type;
 
         return $this;
     }
@@ -693,60 +747,6 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets items
-     *
-     * @return \OpenAPI\Client\Model\ReturnItemDTO[]
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     *
-     * @param \OpenAPI\Client\Model\ReturnItemDTO[] $items Список товаров в невыкупе или возврате.
-     *
-     * @return self
-     */
-    public function setItems($items)
-    {
-        if (is_null($items)) {
-            throw new \InvalidArgumentException('non-nullable items cannot be null');
-        }
-        $this->container['items'] = $items;
-
-        return $this;
-    }
-
-    /**
-     * Gets return_type
-     *
-     * @return \OpenAPI\Client\Model\ReturnType
-     */
-    public function getReturnType()
-    {
-        return $this->container['return_type'];
-    }
-
-    /**
-     * Sets return_type
-     *
-     * @param \OpenAPI\Client\Model\ReturnType $return_type return_type
-     *
-     * @return self
-     */
-    public function setReturnType($return_type)
-    {
-        if (is_null($return_type)) {
-            throw new \InvalidArgumentException('non-nullable return_type cannot be null');
-        }
-        $this->container['return_type'] = $return_type;
-
-        return $this;
-    }
-
-    /**
      * Gets fast_return
      *
      * @return bool|null
@@ -779,7 +779,7 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -792,7 +792,7 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -821,7 +821,7 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

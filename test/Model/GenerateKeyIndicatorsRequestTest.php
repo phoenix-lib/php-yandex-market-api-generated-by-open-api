@@ -80,6 +80,15 @@ class GenerateKeyIndicatorsRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "detalization_level"
+     */
+    public function testPropertyDetalizationLevel()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "business_id"
      */
     public function testPropertyBusinessId()
@@ -92,15 +101,6 @@ class GenerateKeyIndicatorsRequestTest extends TestCase
      * Test attribute "campaign_id"
      */
     public function testPropertyCampaignId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "detalization_level"
-     */
-    public function testPropertyDetalizationLevel()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

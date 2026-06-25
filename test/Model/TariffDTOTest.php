@@ -89,15 +89,6 @@ class TariffDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "percent"
-     */
-    public function testPropertyPercent()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "amount"
      */
     public function testPropertyAmount()
@@ -119,6 +110,15 @@ class TariffDTOTest extends TestCase
      * Test attribute "parameters"
      */
     public function testPropertyParameters()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "percent"
+     */
+    public function testPropertyPercent()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

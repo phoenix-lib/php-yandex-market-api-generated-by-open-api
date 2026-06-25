@@ -59,7 +59,9 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'info' => '\OpenAPI\Client\Model\BusinessDTO',
-        'settings' => '\OpenAPI\Client\Model\BusinessSettingsDTO'
+        'settings' => '\OpenAPI\Client\Model\BusinessSettingsDTO',
+        'subscription_level' => '\OpenAPI\Client\Model\BusinessSubscriptionLevelType',
+        'traits' => '\OpenAPI\Client\Model\BusinessTraitType[]'
     ];
 
     /**
@@ -71,7 +73,9 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPIFormats = [
         'info' => null,
-        'settings' => null
+        'settings' => null,
+        'subscription_level' => null,
+        'traits' => null
     ];
 
     /**
@@ -81,7 +85,9 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static array $openAPINullables = [
         'info' => false,
-        'settings' => false
+        'settings' => false,
+        'subscription_level' => false,
+        'traits' => true
     ];
 
     /**
@@ -171,7 +177,9 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $attributeMap = [
         'info' => 'info',
-        'settings' => 'settings'
+        'settings' => 'settings',
+        'subscription_level' => 'subscriptionLevel',
+        'traits' => 'traits'
     ];
 
     /**
@@ -181,7 +189,9 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $setters = [
         'info' => 'setInfo',
-        'settings' => 'setSettings'
+        'settings' => 'setSettings',
+        'subscription_level' => 'setSubscriptionLevel',
+        'traits' => 'setTraits'
     ];
 
     /**
@@ -191,7 +201,9 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $getters = [
         'info' => 'getInfo',
-        'settings' => 'getSettings'
+        'settings' => 'getSettings',
+        'subscription_level' => 'getSubscriptionLevel',
+        'traits' => 'getTraits'
     ];
 
     /**
@@ -253,6 +265,8 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
     {
         $this->setIfExists('info', $data ?? [], null);
         $this->setIfExists('settings', $data ?? [], null);
+        $this->setIfExists('subscription_level', $data ?? [], null);
+        $this->setIfExists('traits', $data ?? [], null);
     }
 
     /**
@@ -281,6 +295,10 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['traits']) && (count($this->container['traits']) < 1)) {
+            $invalidProperties[] = "invalid value for 'traits', number of items must be greater than or equal to 1.";
+        }
 
         return $invalidProperties;
     }
@@ -350,6 +368,72 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
 
         return $this;
     }
+
+    /**
+     * Gets subscription_level
+     *
+     * @return \OpenAPI\Client\Model\BusinessSubscriptionLevelType|null
+     */
+    public function getSubscriptionLevel()
+    {
+        return $this->container['subscription_level'];
+    }
+
+    /**
+     * Sets subscription_level
+     *
+     * @param \OpenAPI\Client\Model\BusinessSubscriptionLevelType|null $subscription_level subscription_level
+     *
+     * @return self
+     */
+    public function setSubscriptionLevel($subscription_level)
+    {
+        if (is_null($subscription_level)) {
+            throw new \InvalidArgumentException('non-nullable subscription_level cannot be null');
+        }
+        $this->container['subscription_level'] = $subscription_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets traits
+     *
+     * @return \OpenAPI\Client\Model\BusinessTraitType[]|null
+     */
+    public function getTraits()
+    {
+        return $this->container['traits'];
+    }
+
+    /**
+     * Sets traits
+     *
+     * @param \OpenAPI\Client\Model\BusinessTraitType[]|null $traits Свойства кабинета.
+     *
+     * @return self
+     */
+    public function setTraits($traits)
+    {
+        if (is_null($traits)) {
+            array_push($this->openAPINullablesSetToNull, 'traits');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('traits', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+
+        if (!is_null($traits) && (count($traits) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $traits when calling GetBusinessSettingsInfoDTO., number of items must be greater than or equal to 1.');
+        }
+        $this->container['traits'] = $traits;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -357,7 +441,7 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -370,7 +454,7 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -399,7 +483,7 @@ class GetBusinessSettingsInfoDTO implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

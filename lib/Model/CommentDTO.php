@@ -60,12 +60,12 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'text' => 'string',
-        'can_modify' => 'bool',
-        'parent_id' => 'int',
-        'author' => '\OpenAPI\Client\Model\QuestionsTextContentAuthorDTO',
         'status' => '\OpenAPI\Client\Model\QuestionsTextContentModerationStatusType',
         'answer_id' => 'int',
         'created_at' => '\DateTime',
+        'can_modify' => 'bool',
+        'parent_id' => 'int',
+        'author' => '\OpenAPI\Client\Model\QuestionsTextContentAuthorDTO',
         'votes' => '\OpenAPI\Client\Model\VotesDTO'
     ];
 
@@ -79,12 +79,12 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => 'int64',
         'text' => null,
-        'can_modify' => null,
-        'parent_id' => 'int64',
-        'author' => null,
         'status' => null,
         'answer_id' => 'int64',
         'created_at' => 'date-time',
+        'can_modify' => null,
+        'parent_id' => 'int64',
+        'author' => null,
         'votes' => null
     ];
 
@@ -96,12 +96,12 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'text' => false,
-        'can_modify' => false,
-        'parent_id' => false,
-        'author' => false,
         'status' => false,
         'answer_id' => false,
         'created_at' => false,
+        'can_modify' => false,
+        'parent_id' => false,
+        'author' => false,
         'votes' => false
     ];
 
@@ -193,12 +193,12 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'text' => 'text',
-        'can_modify' => 'canModify',
-        'parent_id' => 'parentId',
-        'author' => 'author',
         'status' => 'status',
         'answer_id' => 'answerId',
         'created_at' => 'createdAt',
+        'can_modify' => 'canModify',
+        'parent_id' => 'parentId',
+        'author' => 'author',
         'votes' => 'votes'
     ];
 
@@ -210,12 +210,12 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'text' => 'setText',
-        'can_modify' => 'setCanModify',
-        'parent_id' => 'setParentId',
-        'author' => 'setAuthor',
         'status' => 'setStatus',
         'answer_id' => 'setAnswerId',
         'created_at' => 'setCreatedAt',
+        'can_modify' => 'setCanModify',
+        'parent_id' => 'setParentId',
+        'author' => 'setAuthor',
         'votes' => 'setVotes'
     ];
 
@@ -227,12 +227,12 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'text' => 'getText',
-        'can_modify' => 'getCanModify',
-        'parent_id' => 'getParentId',
-        'author' => 'getAuthor',
         'status' => 'getStatus',
         'answer_id' => 'getAnswerId',
         'created_at' => 'getCreatedAt',
+        'can_modify' => 'getCanModify',
+        'parent_id' => 'getParentId',
+        'author' => 'getAuthor',
         'votes' => 'getVotes'
     ];
 
@@ -295,12 +295,12 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('text', $data ?? [], null);
-        $this->setIfExists('can_modify', $data ?? [], null);
-        $this->setIfExists('parent_id', $data ?? [], null);
-        $this->setIfExists('author', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('answer_id', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('can_modify', $data ?? [], null);
+        $this->setIfExists('parent_id', $data ?? [], null);
+        $this->setIfExists('author', $data ?? [], null);
         $this->setIfExists('votes', $data ?? [], null);
     }
 
@@ -349,10 +349,6 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'text', the character length must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['parent_id']) && ($this->container['parent_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'parent_id', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
@@ -366,6 +362,10 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['created_at'] === null) {
             $invalidProperties[] = "'created_at' can't be null";
         }
+        if (!is_null($this->container['parent_id']) && ($this->container['parent_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'parent_id', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -443,92 +443,6 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Gets can_modify
-     *
-     * @return bool|null
-     */
-    public function getCanModify()
-    {
-        return $this->container['can_modify'];
-    }
-
-    /**
-     * Sets can_modify
-     *
-     * @param bool|null $can_modify Может ли продавец изменять комментарий или удалять его.
-     *
-     * @return self
-     */
-    public function setCanModify($can_modify)
-    {
-        if (is_null($can_modify)) {
-            throw new \InvalidArgumentException('non-nullable can_modify cannot be null');
-        }
-        $this->container['can_modify'] = $can_modify;
-
-        return $this;
-    }
-
-    /**
-     * Gets parent_id
-     *
-     * @return int|null
-     */
-    public function getParentId()
-    {
-        return $this->container['parent_id'];
-    }
-
-    /**
-     * Sets parent_id
-     *
-     * @param int|null $parent_id Идентификатор комментария к ответу.
-     *
-     * @return self
-     */
-    public function setParentId($parent_id)
-    {
-        if (is_null($parent_id)) {
-            throw new \InvalidArgumentException('non-nullable parent_id cannot be null');
-        }
-
-        if (($parent_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $parent_id when calling CommentDTO., must be bigger than or equal to 1.');
-        }
-
-        $this->container['parent_id'] = $parent_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets author
-     *
-     * @return \OpenAPI\Client\Model\QuestionsTextContentAuthorDTO|null
-     */
-    public function getAuthor()
-    {
-        return $this->container['author'];
-    }
-
-    /**
-     * Sets author
-     *
-     * @param \OpenAPI\Client\Model\QuestionsTextContentAuthorDTO|null $author author
-     *
-     * @return self
-     */
-    public function setAuthor($author)
-    {
-        if (is_null($author)) {
-            throw new \InvalidArgumentException('non-nullable author cannot be null');
-        }
-        $this->container['author'] = $author;
 
         return $this;
     }
@@ -620,6 +534,92 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets can_modify
+     *
+     * @return bool|null
+     */
+    public function getCanModify()
+    {
+        return $this->container['can_modify'];
+    }
+
+    /**
+     * Sets can_modify
+     *
+     * @param bool|null $can_modify Может ли продавец изменять комментарий или удалять его.
+     *
+     * @return self
+     */
+    public function setCanModify($can_modify)
+    {
+        if (is_null($can_modify)) {
+            throw new \InvalidArgumentException('non-nullable can_modify cannot be null');
+        }
+        $this->container['can_modify'] = $can_modify;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent_id
+     *
+     * @return int|null
+     */
+    public function getParentId()
+    {
+        return $this->container['parent_id'];
+    }
+
+    /**
+     * Sets parent_id
+     *
+     * @param int|null $parent_id Идентификатор комментария к ответу.
+     *
+     * @return self
+     */
+    public function setParentId($parent_id)
+    {
+        if (is_null($parent_id)) {
+            throw new \InvalidArgumentException('non-nullable parent_id cannot be null');
+        }
+
+        if (($parent_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $parent_id when calling CommentDTO., must be bigger than or equal to 1.');
+        }
+
+        $this->container['parent_id'] = $parent_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets author
+     *
+     * @return \OpenAPI\Client\Model\QuestionsTextContentAuthorDTO|null
+     */
+    public function getAuthor()
+    {
+        return $this->container['author'];
+    }
+
+    /**
+     * Sets author
+     *
+     * @param \OpenAPI\Client\Model\QuestionsTextContentAuthorDTO|null $author author
+     *
+     * @return self
+     */
+    public function setAuthor($author)
+    {
+        if (is_null($author)) {
+            throw new \InvalidArgumentException('non-nullable author cannot be null');
+        }
+        $this->container['author'] = $author;
+
+        return $this;
+    }
+
+    /**
      * Gets votes
      *
      * @return \OpenAPI\Client\Model\VotesDTO|null
@@ -652,7 +652,7 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -665,7 +665,7 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -694,7 +694,7 @@ class CommentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

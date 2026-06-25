@@ -59,7 +59,7 @@ class GetSupplyRequestItemsDTO implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPITypes = [
         'items' => '\OpenAPI\Client\Model\SupplyRequestItemDTO[]',
-        'paging' => '\OpenAPI\Client\Model\ForwardScrollingPagerDTO'
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -345,7 +345,7 @@ class GetSupplyRequestItemsDTO implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets paging
      *
-     * @return \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
      */
     public function getPaging()
     {
@@ -355,7 +355,7 @@ class GetSupplyRequestItemsDTO implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets paging
      *
-     * @param \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null $paging paging
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
      *
      * @return self
      */
@@ -375,7 +375,7 @@ class GetSupplyRequestItemsDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -388,7 +388,7 @@ class GetSupplyRequestItemsDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -417,7 +417,7 @@ class GetSupplyRequestItemsDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }
