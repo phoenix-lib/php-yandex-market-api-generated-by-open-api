@@ -5,7 +5,39 @@ import { fileURLToPath } from 'node:url'
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const composerPath = path.join(rootDir, 'composer.json')
 const readmePath = path.join(rootDir, 'README.md')
+const libPath = path.join(rootDir, 'lib')
 const staleGeneratedFiles = ['.travis.yml', 'git_push.sh']
+
+function walkPhpFiles(dir) {
+  if (!fs.existsSync(dir)) {
+    return []
+  }
+
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const entryPath = path.join(dir, entry.name)
+
+    if (entry.isDirectory()) {
+      return walkPhpFiles(entryPath)
+    }
+
+    if (entry.isFile() && entry.name.endsWith('.php')) {
+      return [entryPath]
+    }
+
+    return []
+  })
+}
+
+function removePhp8MixedRuntimeTypes(filePath) {
+  let source = fs.readFileSync(filePath, 'utf8')
+
+  source = source
+    .replace(/(\(|,\s*)mixed\s+(\$[A-Za-z_][A-Za-z0-9_]*)/g, '$1$2')
+    .replace(/\):\s*mixed\b/g, ')')
+    .replace(/\b(public|protected|private)\s+mixed\s+(\$[A-Za-z_][A-Za-z0-9_]*)/g, '$1 $2')
+
+  fs.writeFileSync(filePath, source)
+}
 
 for (const file of staleGeneratedFiles) {
   const stalePath = path.join(rootDir, file)
@@ -46,6 +78,10 @@ composer['autoload-dev'] = {
 }
 
 fs.writeFileSync(composerPath, `${JSON.stringify(composer, null, 4)}\n`)
+
+for (const file of walkPhpFiles(libPath)) {
+  removePhp8MixedRuntimeTypes(file)
+}
 
 if (fs.existsSync(readmePath)) {
   let readme = fs.readFileSync(readmePath, 'utf8')

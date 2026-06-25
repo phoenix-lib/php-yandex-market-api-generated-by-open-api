@@ -41,5 +41,8 @@ jobs:
       - name: Validate PHP syntax
         run: scripts/validate-php-syntax.sh
 
+      - name: Validate runtime compatibility
+        run: php scripts/check-php74-runtime-compatibility.php
+
       - name: Run PHPUnit
         run: vendor/bin/phpunit --colors=never
