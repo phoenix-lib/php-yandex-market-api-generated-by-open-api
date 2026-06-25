@@ -27,7 +27,7 @@ UPSTREAM_REF=<branch-or-commit> npm run generate
 ## CI Flow
 
 - `CI` runs on pushes and pull requests.
-- It validates Composer metadata, installs dependencies, checks PHP syntax, and runs PHPUnit on PHP 7.4 and 8.1.
+- It validates Composer metadata, installs dependencies, checks PHP syntax, loads generated classes at runtime, and runs PHPUnit on PHP 7.4 and 8.1.
 - `Update OpenAPI Client` runs on a schedule and can also be started manually. It regenerates the client and opens a pull request only when the generated files changed.
 - `Release` runs for semver-like tags and creates a GitHub Release after package validation passes.
 
@@ -42,4 +42,4 @@ Packagist should be configured to consume repository tags. No Packagist token is
 
 ## PHP Compatibility Contract
 
-The package declares `^7.4|^8.1` support. Every generated update must pass syntax validation and PHPUnit under PHP 7.4. If a future OpenAPI Generator release starts emitting PHP 8-only syntax, do not patch generated files manually. Add a generator template override or postprocess rule and keep the rule in this repository.
+The package declares `^7.4|^8.1` support. Every generated update must pass syntax validation, runtime class loading, and PHPUnit under PHP 7.4. If a future OpenAPI Generator release starts emitting PHP 8-only syntax or signatures, do not patch generated files manually. Add a generator template override or postprocess rule and keep the rule in this repository.

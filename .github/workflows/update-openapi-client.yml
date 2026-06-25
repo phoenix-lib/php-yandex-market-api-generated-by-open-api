@@ -88,6 +88,7 @@ jobs:
             - Composer metadata validation
             - Composer install under PHP 7.4
             - PHP syntax validation
+            - Runtime class loading under PHP 7.4
             - PHPUnit
 
             Review `UPSTREAM_OPENAPI.lock` to see the exact upstream commit and spec hash.
