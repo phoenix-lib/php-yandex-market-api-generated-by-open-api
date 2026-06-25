@@ -143,6 +143,15 @@ class BusinessOrderItemDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "item_statuses"
+     */
+    public function testPropertyItemStatuses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "tags"
      */
     public function testPropertyTags()

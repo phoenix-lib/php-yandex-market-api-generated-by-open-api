@@ -72,6 +72,30 @@ class ReturnsApiTest extends TestCase
     }
 
     /**
+     * Test case for cancelReturn
+     *
+     * Отмена возврата.
+     *
+     */
+    public function testCancelReturn()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for createReturn
+     *
+     * Создание возврата.
+     *
+     */
+    public function testCreateReturn()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getReturn
      *
      * Информация о невыкупе или возврате.
@@ -90,6 +114,18 @@ class ReturnsApiTest extends TestCase
      *
      */
     public function testGetReturnApplication()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getReturnAvailableDecisions
+     *
+     * Получение возможных решений по возврату.
+     *
+     */
+    public function testGetReturnAvailableDecisions()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -134,7 +170,7 @@ class ReturnsApiTest extends TestCase
     /**
      * Test case for submitReturnDecision
      *
-     * Передача и подтверждение решения по возврату.
+     * Передача решения по возврату.
      *
      */
     public function testSubmitReturnDecision()

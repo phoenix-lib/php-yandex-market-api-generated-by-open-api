@@ -423,7 +423,7 @@ class PriceDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vat
      *
-     * @param int|null $vat Идентификатор НДС, применяемый для товара:  * `2` — НДС 10%. Например, используется при реализации отдельных продовольственных и медицинских товаров. * `5` — НДС 0%. Например, используется при продаже товаров, вывезенных в таможенной процедуре экспорта, или при оказании услуг по международной перевозке товаров. * `6` — НДС не облагается, используется только для отдельных видов услуг. * `7` — НДС 20%. Основной НДС с 2019 года до 1 января 2026 года. * `10` — НДС 5%. НДС для упрощенной системы налогообложения (УСН). * `11` — НДС 7%. НДС для упрощенной системы налогообложения (УСН). * `14` — НДС 22%. Основной НДС с 1 января 2026 года.  Если параметр не указан, используется НДС, установленный в кабинете.  **Для продавцов :no-translate[Market Yandex Go]** недоступна передача и получение НДС.
+     * @param int|null $vat Идентификатор НДС, применяемый для товара:  * `2` — НДС 10%. Например, используется при реализации отдельных продовольственных и медицинских товаров. * `5` — НДС 0%. Например, используется при продаже товаров, вывезенных в таможенной процедуре экспорта, или при оказании услуг по международной перевозке товаров. * `6` — НДС не облагается, используется только для отдельных видов услуг. * `7` — НДС 20%. Основной НДС с 2019 года до 1 января 2026 года. При передаче автоматически заменяется на НДС 22% (14). С 1 июля 2026 года значение будет больше недоступно для передачи. * `10` — НДС 5%. НДС для упрощенной системы налогообложения (УСН). * `11` — НДС 7%. НДС для упрощенной системы налогообложения (УСН). * `14` — НДС 22%. Основной НДС с 1 января 2026 года.  Если параметр не указан, используется НДС, установленный в кабинете.  **Для продавцов :no-translate[Market Yandex Go]** недоступна передача и получение НДС.
      *
      * @return self
      */
@@ -443,7 +443,7 @@ class PriceDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -456,7 +456,7 @@ class PriceDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -485,7 +485,7 @@ class PriceDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

@@ -59,7 +59,7 @@ class OfferPriceListResponseDTO implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'offers' => '\OpenAPI\Client\Model\OfferPriceResponseDTO[]',
-        'paging' => '\OpenAPI\Client\Model\ForwardScrollingPagerDTO',
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO',
         'total' => 'int'
     ];
 
@@ -337,7 +337,7 @@ class OfferPriceListResponseDTO implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets paging
      *
-     * @return \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
      */
     public function getPaging()
     {
@@ -347,7 +347,7 @@ class OfferPriceListResponseDTO implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets paging
      *
-     * @param \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null $paging paging
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class OfferPriceListResponseDTO implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -407,7 +407,7 @@ class OfferPriceListResponseDTO implements ModelInterface, ArrayAccess, \JsonSer
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -436,7 +436,7 @@ class OfferPriceListResponseDTO implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

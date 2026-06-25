@@ -372,24 +372,24 @@ class FbyApiTest extends TestCase
     }
 
     /**
-     * Test case for generateOfferBarcodes
+     * Test case for generateMarketingDetalizationReport
      *
-     * Генерация штрихкодов.
+     * Отчет по счету маркетинга.
      *
      */
-    public function testGenerateOfferBarcodes()
+    public function testGenerateMarketingDetalizationReport()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for generatePricesReport
+     * Test case for generateOfferBarcodes
      *
-     * Отчет «Цены на рынке».
+     * Генерация штрихкодов.
      *
      */
-    public function testGeneratePricesReport()
+    public function testGenerateOfferBarcodes()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -734,7 +734,7 @@ class FbyApiTest extends TestCase
     /**
      * Test case for getFulfillmentWarehouses
      *
-     * Идентификаторы складов Маркета.
+     * Идентификаторы фулфилмент-складов Маркета.
      *
      */
     public function testGetFulfillmentWarehouses()
@@ -762,6 +762,18 @@ class FbyApiTest extends TestCase
      *
      */
     public function testGetGoodsFeedbacks()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getGoodsFeedbacksUrbanads
+     *
+     * Получение отзывов о товарах для рекламодателей.
+     *
+     */
+    public function testGetGoodsFeedbacksUrbanads()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -822,18 +834,6 @@ class FbyApiTest extends TestCase
      *
      */
     public function testGetOfferCardsContentStatus()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for getOfferMappingEntries
-     *
-     * Список товаров в каталоге.
-     *
-     */
-    public function testGetOfferMappingEntries()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -1032,6 +1032,18 @@ class FbyApiTest extends TestCase
     }
 
     /**
+     * Test case for getReturnAvailableDecisions
+     *
+     * Получение возможных решений по возврату.
+     *
+     */
+    public function testGetReturnAvailableDecisions()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getReturnPhoto
      *
      * Получение фотографий товаров в возврате.
@@ -1062,30 +1074,6 @@ class FbyApiTest extends TestCase
      *
      */
     public function testGetStocks()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for getSuggestedOfferMappingEntries
-     *
-     * Рекомендованные карточки для товаров.
-     *
-     */
-    public function testGetSuggestedOfferMappingEntries()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for getSuggestedOfferMappings
-     *
-     * Просмотр карточек на Маркете, которые подходят вашим товарам.
-     *
-     */
-    public function testGetSuggestedOfferMappings()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -1226,7 +1214,7 @@ class FbyApiTest extends TestCase
     /**
      * Test case for submitReturnDecision
      *
-     * Передача и подтверждение решения по возврату.
+     * Передача решения по возврату.
      *
      */
     public function testSubmitReturnDecision()
@@ -1290,18 +1278,6 @@ class FbyApiTest extends TestCase
      *
      */
     public function testUpdateOfferContent()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for updateOfferMappingEntries
-     *
-     * Добавление и редактирование товаров в каталоге.
-     *
-     */
-    public function testUpdateOfferMappingEntries()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

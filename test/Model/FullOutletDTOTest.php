@@ -98,6 +98,42 @@ class FullOutletDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "address"
+     */
+    public function testPropertyAddress()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "phones"
+     */
+    public function testPropertyPhones()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "working_schedule"
+     */
+    public function testPropertyWorkingSchedule()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "coords"
      */
     public function testPropertyCoords()
@@ -134,33 +170,6 @@ class FullOutletDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "address"
-     */
-    public function testPropertyAddress()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "phones"
-     */
-    public function testPropertyPhones()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "working_schedule"
-     */
-    public function testPropertyWorkingSchedule()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "delivery_rules"
      */
     public function testPropertyDeliveryRules()
@@ -173,15 +182,6 @@ class FullOutletDTOTest extends TestCase
      * Test attribute "storage_period"
      */
     public function testPropertyStoragePeriod()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

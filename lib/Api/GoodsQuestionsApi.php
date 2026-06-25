@@ -136,17 +136,17 @@ class GoodsQuestionsApi
      *
      * Получение ответов на вопрос
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetAnswersRequest $get_answers_request get_answers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsQuestionAnswers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetAnswersResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getGoodsQuestionAnswers($business_id, $get_answers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getGoodsQuestionAnswers'][0])
+    public function getGoodsQuestionAnswers($business_id, $get_answers_request, $page_token = null, $limit = 25, string $contentType = self::contentTypes['getGoodsQuestionAnswers'][0])
     {
         list($response) = $this->getGoodsQuestionAnswersWithHttpInfo($business_id, $get_answers_request, $page_token, $limit, $contentType);
         return $response;
@@ -157,17 +157,17 @@ class GoodsQuestionsApi
      *
      * Получение ответов на вопрос
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetAnswersRequest $get_answers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsQuestionAnswers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetAnswersResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getGoodsQuestionAnswersWithHttpInfo($business_id, $get_answers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getGoodsQuestionAnswers'][0])
+    public function getGoodsQuestionAnswersWithHttpInfo($business_id, $get_answers_request, $page_token = null, $limit = 25, string $contentType = self::contentTypes['getGoodsQuestionAnswers'][0])
     {
         $request = $this->getGoodsQuestionAnswersRequest($business_id, $get_answers_request, $page_token, $limit, $contentType);
 
@@ -329,16 +329,16 @@ class GoodsQuestionsApi
      *
      * Получение ответов на вопрос
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetAnswersRequest $get_answers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsQuestionAnswers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGoodsQuestionAnswersAsync($business_id, $get_answers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getGoodsQuestionAnswers'][0])
+    public function getGoodsQuestionAnswersAsync($business_id, $get_answers_request, $page_token = null, $limit = 25, string $contentType = self::contentTypes['getGoodsQuestionAnswers'][0])
     {
         return $this->getGoodsQuestionAnswersAsyncWithHttpInfo($business_id, $get_answers_request, $page_token, $limit, $contentType)
             ->then(
@@ -353,16 +353,16 @@ class GoodsQuestionsApi
      *
      * Получение ответов на вопрос
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetAnswersRequest $get_answers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsQuestionAnswers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGoodsQuestionAnswersAsyncWithHttpInfo($business_id, $get_answers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getGoodsQuestionAnswers'][0])
+    public function getGoodsQuestionAnswersAsyncWithHttpInfo($business_id, $get_answers_request, $page_token = null, $limit = 25, string $contentType = self::contentTypes['getGoodsQuestionAnswers'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetAnswersResponse';
         $request = $this->getGoodsQuestionAnswersRequest($business_id, $get_answers_request, $page_token, $limit, $contentType);
@@ -406,16 +406,16 @@ class GoodsQuestionsApi
     /**
      * Create request for operation 'getGoodsQuestionAnswers'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetAnswersRequest $get_answers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsQuestionAnswers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getGoodsQuestionAnswersRequest($business_id, $get_answers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getGoodsQuestionAnswers'][0])
+    public function getGoodsQuestionAnswersRequest($business_id, $get_answers_request, $page_token = null, $limit = 25, string $contentType = self::contentTypes['getGoodsQuestionAnswers'][0])
     {
 
         // verify the required parameter 'business_id' is set
@@ -436,6 +436,9 @@ class GoodsQuestionsApi
         }
 
 
+        if ($limit !== null && $limit > 50) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling GoodsQuestionsApi.getGoodsQuestionAnswers, must be smaller than or equal to 50.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling GoodsQuestionsApi.getGoodsQuestionAnswers, must be bigger than or equal to 1.');
         }
@@ -451,7 +454,7 @@ class GoodsQuestionsApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -552,9 +555,9 @@ class GoodsQuestionsApi
      *
      * Получение вопросов о товарах продавца
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  \OpenAPI\Client\Model\GetQuestionsRequest|null $get_questions_request get_questions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsQuestions'] to see the possible values for this operation
      *
@@ -562,7 +565,7 @@ class GoodsQuestionsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetQuestionsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getGoodsQuestions($business_id, $page_token = null, $limit = null, $get_questions_request = null, string $contentType = self::contentTypes['getGoodsQuestions'][0])
+    public function getGoodsQuestions($business_id, $page_token = null, $limit = 25, $get_questions_request = null, string $contentType = self::contentTypes['getGoodsQuestions'][0])
     {
         list($response) = $this->getGoodsQuestionsWithHttpInfo($business_id, $page_token, $limit, $get_questions_request, $contentType);
         return $response;
@@ -573,9 +576,9 @@ class GoodsQuestionsApi
      *
      * Получение вопросов о товарах продавца
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  \OpenAPI\Client\Model\GetQuestionsRequest|null $get_questions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsQuestions'] to see the possible values for this operation
      *
@@ -583,7 +586,7 @@ class GoodsQuestionsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetQuestionsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getGoodsQuestionsWithHttpInfo($business_id, $page_token = null, $limit = null, $get_questions_request = null, string $contentType = self::contentTypes['getGoodsQuestions'][0])
+    public function getGoodsQuestionsWithHttpInfo($business_id, $page_token = null, $limit = 25, $get_questions_request = null, string $contentType = self::contentTypes['getGoodsQuestions'][0])
     {
         $request = $this->getGoodsQuestionsRequest($business_id, $page_token, $limit, $get_questions_request, $contentType);
 
@@ -745,16 +748,16 @@ class GoodsQuestionsApi
      *
      * Получение вопросов о товарах продавца
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  \OpenAPI\Client\Model\GetQuestionsRequest|null $get_questions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsQuestions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGoodsQuestionsAsync($business_id, $page_token = null, $limit = null, $get_questions_request = null, string $contentType = self::contentTypes['getGoodsQuestions'][0])
+    public function getGoodsQuestionsAsync($business_id, $page_token = null, $limit = 25, $get_questions_request = null, string $contentType = self::contentTypes['getGoodsQuestions'][0])
     {
         return $this->getGoodsQuestionsAsyncWithHttpInfo($business_id, $page_token, $limit, $get_questions_request, $contentType)
             ->then(
@@ -769,16 +772,16 @@ class GoodsQuestionsApi
      *
      * Получение вопросов о товарах продавца
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  \OpenAPI\Client\Model\GetQuestionsRequest|null $get_questions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsQuestions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getGoodsQuestionsAsyncWithHttpInfo($business_id, $page_token = null, $limit = null, $get_questions_request = null, string $contentType = self::contentTypes['getGoodsQuestions'][0])
+    public function getGoodsQuestionsAsyncWithHttpInfo($business_id, $page_token = null, $limit = 25, $get_questions_request = null, string $contentType = self::contentTypes['getGoodsQuestions'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetQuestionsResponse';
         $request = $this->getGoodsQuestionsRequest($business_id, $page_token, $limit, $get_questions_request, $contentType);
@@ -822,16 +825,16 @@ class GoodsQuestionsApi
     /**
      * Create request for operation 'getGoodsQuestions'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  \OpenAPI\Client\Model\GetQuestionsRequest|null $get_questions_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getGoodsQuestions'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getGoodsQuestionsRequest($business_id, $page_token = null, $limit = null, $get_questions_request = null, string $contentType = self::contentTypes['getGoodsQuestions'][0])
+    public function getGoodsQuestionsRequest($business_id, $page_token = null, $limit = 25, $get_questions_request = null, string $contentType = self::contentTypes['getGoodsQuestions'][0])
     {
 
         // verify the required parameter 'business_id' is set
@@ -845,6 +848,9 @@ class GoodsQuestionsApi
         }
         
 
+        if ($limit !== null && $limit > 50) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling GoodsQuestionsApi.getGoodsQuestions, must be smaller than or equal to 50.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling GoodsQuestionsApi.getGoodsQuestions, must be bigger than or equal to 1.');
         }
@@ -861,7 +867,7 @@ class GoodsQuestionsApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -962,7 +968,7 @@ class GoodsQuestionsApi
      *
      * Создание, изменение и удаление ответа или комментария
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateGoodsQuestionTextEntityRequest $update_goods_question_text_entity_request update_goods_question_text_entity_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGoodsQuestionTextEntity'] to see the possible values for this operation
      *
@@ -981,7 +987,7 @@ class GoodsQuestionsApi
      *
      * Создание, изменение и удаление ответа или комментария
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateGoodsQuestionTextEntityRequest $update_goods_question_text_entity_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGoodsQuestionTextEntity'] to see the possible values for this operation
      *
@@ -1151,7 +1157,7 @@ class GoodsQuestionsApi
      *
      * Создание, изменение и удаление ответа или комментария
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateGoodsQuestionTextEntityRequest $update_goods_question_text_entity_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGoodsQuestionTextEntity'] to see the possible values for this operation
      *
@@ -1173,7 +1179,7 @@ class GoodsQuestionsApi
      *
      * Создание, изменение и удаление ответа или комментария
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateGoodsQuestionTextEntityRequest $update_goods_question_text_entity_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGoodsQuestionTextEntity'] to see the possible values for this operation
      *
@@ -1224,7 +1230,7 @@ class GoodsQuestionsApi
     /**
      * Create request for operation 'updateGoodsQuestionTextEntity'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateGoodsQuestionTextEntityRequest $update_goods_question_text_entity_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateGoodsQuestionTextEntity'] to see the possible values for this operation
      *

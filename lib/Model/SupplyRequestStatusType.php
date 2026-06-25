@@ -33,7 +33,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * SupplyRequestStatusType Class Doc Comment
  *
  * @category Class
- * @description Статус заявки на поставку:  * &#x60;CREATED&#x60; — создан черновик заявки. * &#x60;FINISHED&#x60; — заявка завершена, товары:   * приняты на складе;   * переданы на другой склад при перемещении;   * переданы продавцу при вывозе;   * утилизированы. * &#x60;CANCELLED&#x60; — заявка отменена. * &#x60;INVALID&#x60; — ошибка обработки. * &#x60;VALIDATED&#x60; — заявка в обработке. * &#x60;PUBLISHED&#x60; — создана заявка. * &#x60;ARRIVED_TO_SERVICE&#x60; — поставка прибыла на склад хранения. * &#x60;ARRIVED_TO_XDOC_SERVICE&#x60; — поставка прибыла на транзитный склад. * &#x60;SHIPPED_TO_SERVICE&#x60; — поставка отправлена с транзитного склада на склад хранения. * &#x60;CANCELLATION_REQUESTED&#x60; — запрошена отмена заявки. * &#x60;CANCELLATION_REJECTED&#x60; — заявка не будет отменена. * &#x60;REGISTERED_IN_ELECTRONIC_QUEUE&#x60; — поставка зарегистрирована в электронной очереди. * &#x60;READY_FOR_UTILIZATION&#x60; — товары готовы к утилизации. * &#x60;TRANSIT_MOVING&#x60; — перемещение товаров на склад вывоза. * &#x60;WAREHOUSE_HANDLING&#x60; — вторичная приемка товаров или их сборка для вывоза или утилизации. * &#x60;ACCEPTED_BY_WAREHOUSE_SYSTEM&#x60; — информация о заявке направлена на склад. * &#x60;READY_TO_WITHDRAW&#x60; — товары готовы к выдаче. * &#x60;NEED_PREPARATION&#x60; — ожидается информация от продавца.
+ * @description Статус заявки на поставку:  * &#x60;CREATED&#x60; — заявка создана. * &#x60;FINISHED&#x60; — заявка завершена, товары:   * приняты на складе;   * переданы на другой склад при перемещении;   * переданы продавцу при вывозе;   * утилизированы. * &#x60;CANCELLED&#x60; — заявка отменена. * &#x60;INVALID&#x60; — ошибка обработки. * &#x60;VALIDATED&#x60; — заявка в обработке. * &#x60;PUBLISHED&#x60; — заявка отправлена на утверждение. * &#x60;ARRIVED_TO_SERVICE&#x60; — поставка отгружена. * &#x60;ARRIVED_TO_XDOC_SERVICE&#x60; — поставка ждет отправки на конечный склад. * &#x60;SHIPPED_TO_SERVICE&#x60; — поставка отправлена с транзитного склада на склад хранения. * &#x60;CANCELLATION_REQUESTED&#x60; — запрошена отмена заявки. * &#x60;CANCELLATION_REJECTED&#x60; — заявка не будет отменена. * &#x60;REGISTERED_IN_ELECTRONIC_QUEUE&#x60; — поставка зарегистрирована в электронной очереди. * &#x60;READY_FOR_UTILIZATION&#x60; — товары готовы к утилизации. * &#x60;TRANSIT_MOVING&#x60; — перемещение товаров на склад вывоза. * &#x60;WAREHOUSE_HANDLING&#x60; — вторичная приемка товаров или их сборка для вывоза или утилизации (потоварная приемка). * &#x60;ACCEPTED_BY_WAREHOUSE_SYSTEM&#x60; — заявка утверждена. * &#x60;READY_TO_WITHDRAW&#x60; — товары готовы к выдаче. * &#x60;NEED_PREPARATION&#x60; — ожидается информация от продавца. * &#x60;WAREHOUSE_SIGNED_ACT&#x60; — ЭАПП подписан складом.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -79,6 +79,8 @@ class SupplyRequestStatusType
 
     public const NEED_PREPARATION = 'NEED_PREPARATION';
 
+    public const WAREHOUSE_SIGNED_ACT = 'WAREHOUSE_SIGNED_ACT';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -103,7 +105,8 @@ class SupplyRequestStatusType
             self::WAREHOUSE_HANDLING,
             self::ACCEPTED_BY_WAREHOUSE_SYSTEM,
             self::READY_TO_WITHDRAW,
-            self::NEED_PREPARATION
+            self::NEED_PREPARATION,
+            self::WAREHOUSE_SIGNED_ACT
         ];
     }
 }

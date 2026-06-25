@@ -59,7 +59,8 @@ class GetCampaignsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'campaigns' => '\OpenAPI\Client\Model\CampaignDTO[]',
-        'pager' => '\OpenAPI\Client\Model\FlippingPagerDTO'
+        'pager' => '\OpenAPI\Client\Model\FlippingPagerDTO',
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -71,7 +72,8 @@ class GetCampaignsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'campaigns' => null,
-        'pager' => null
+        'pager' => null,
+        'paging' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class GetCampaignsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static array $openAPINullables = [
         'campaigns' => false,
-        'pager' => false
+        'pager' => false,
+        'paging' => false
     ];
 
     /**
@@ -171,7 +174,8 @@ class GetCampaignsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $attributeMap = [
         'campaigns' => 'campaigns',
-        'pager' => 'pager'
+        'pager' => 'pager',
+        'paging' => 'paging'
     ];
 
     /**
@@ -181,7 +185,8 @@ class GetCampaignsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'campaigns' => 'setCampaigns',
-        'pager' => 'setPager'
+        'pager' => 'setPager',
+        'paging' => 'setPaging'
     ];
 
     /**
@@ -191,7 +196,8 @@ class GetCampaignsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'campaigns' => 'getCampaigns',
-        'pager' => 'getPager'
+        'pager' => 'getPager',
+        'paging' => 'getPaging'
     ];
 
     /**
@@ -253,6 +259,7 @@ class GetCampaignsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $this->setIfExists('campaigns', $data ?? [], null);
         $this->setIfExists('pager', $data ?? [], null);
+        $this->setIfExists('paging', $data ?? [], null);
     }
 
     /**
@@ -353,6 +360,33 @@ class GetCampaignsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
+    /**
+     * Gets paging
+     *
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
+     */
+    public function getPaging()
+    {
+        return $this->container['paging'];
+    }
+
+    /**
+     * Sets paging
+     *
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
+     *
+     * @return self
+     */
+    public function setPaging($paging)
+    {
+        if (is_null($paging)) {
+            throw new \InvalidArgumentException('non-nullable paging cannot be null');
+        }
+        $this->container['paging'] = $paging;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -360,7 +394,7 @@ class GetCampaignsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -373,7 +407,7 @@ class GetCampaignsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,7 +436,7 @@ class GetCampaignsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

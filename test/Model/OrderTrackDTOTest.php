@@ -80,18 +80,18 @@ class OrderTrackDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "track_code"
+     * Test attribute "delivery_service_id"
      */
-    public function testPropertyTrackCode()
+    public function testPropertyDeliveryServiceId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "delivery_service_id"
+     * Test attribute "track_code"
      */
-    public function testPropertyDeliveryServiceId()
+    public function testPropertyTrackCode()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

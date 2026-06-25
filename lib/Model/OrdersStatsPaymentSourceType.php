@@ -33,7 +33,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * OrdersStatsPaymentSourceType Class Doc Comment
  *
  * @category Class
- * @description Способ денежного перевода: - &#x60;BUYER&#x60; — оплата или возврат деньгами.  Устаревшие способы: - &#x60;CASHBACK&#x60;. - &#x60;MARKETPLACE&#x60;. - &#x60;SPLIT&#x60;.
+ * @description Способ денежного перевода: - &#x60;BUYER&#x60; — оплата или возврат деньгами. - &#x60;MARKET_CESSION&#x60; — уступка задолженности покупателя.  Устаревшие способы: - &#x60;CASHBACK&#x60;. - &#x60;MARKETPLACE&#x60;. - &#x60;SPLIT&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -49,6 +49,8 @@ class OrdersStatsPaymentSourceType
 
     public const MARKETPLACE = 'MARKETPLACE';
 
+    public const MARKET_CESSION = 'MARKET_CESSION';
+
     public const SPLIT = 'SPLIT';
 
     /**
@@ -61,6 +63,7 @@ class OrdersStatsPaymentSourceType
             self::BUYER,
             self::CASHBACK,
             self::MARKETPLACE,
+            self::MARKET_CESSION,
             self::SPLIT
         ];
     }

@@ -58,9 +58,9 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
+        'stocks' => '\OpenAPI\Client\Model\WarehouseStockDTO[]',
         'id' => 'int',
-        'name' => 'string',
-        'stocks' => '\OpenAPI\Client\Model\WarehouseStockDTO[]'
+        'name' => 'string'
     ];
 
     /**
@@ -71,9 +71,9 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'stocks' => null,
         'id' => 'int64',
-        'name' => null,
-        'stocks' => null
+        'name' => null
     ];
 
     /**
@@ -82,9 +82,9 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'stocks' => false,
         'id' => false,
-        'name' => false,
-        'stocks' => false
+        'name' => false
     ];
 
     /**
@@ -173,9 +173,9 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
+        'stocks' => 'stocks',
         'id' => 'id',
-        'name' => 'name',
-        'stocks' => 'stocks'
+        'name' => 'name'
     ];
 
     /**
@@ -184,9 +184,9 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
+        'stocks' => 'setStocks',
         'id' => 'setId',
-        'name' => 'setName',
-        'stocks' => 'setStocks'
+        'name' => 'setName'
     ];
 
     /**
@@ -195,9 +195,9 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
+        'stocks' => 'getStocks',
         'id' => 'getId',
-        'name' => 'getName',
-        'stocks' => 'getStocks'
+        'name' => 'getName'
     ];
 
     /**
@@ -257,9 +257,9 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('stocks', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('stocks', $data ?? [], null);
     }
 
     /**
@@ -306,6 +306,33 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets stocks
+     *
+     * @return \OpenAPI\Client\Model\WarehouseStockDTO[]
+     */
+    public function getStocks()
+    {
+        return $this->container['stocks'];
+    }
+
+    /**
+     * Sets stocks
+     *
+     * @param \OpenAPI\Client\Model\WarehouseStockDTO[] $stocks Информация об остатках товаров на складе.
+     *
+     * @return self
+     */
+    public function setStocks($stocks)
+    {
+        if (is_null($stocks)) {
+            throw new \InvalidArgumentException('non-nullable stocks cannot be null');
+        }
+        $this->container['stocks'] = $stocks;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -360,33 +387,6 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
-    /**
-     * Gets stocks
-     *
-     * @return \OpenAPI\Client\Model\WarehouseStockDTO[]
-     */
-    public function getStocks()
-    {
-        return $this->container['stocks'];
-    }
-
-    /**
-     * Sets stocks
-     *
-     * @param \OpenAPI\Client\Model\WarehouseStockDTO[] $stocks Информация об остатках товаров на складе.
-     *
-     * @return self
-     */
-    public function setStocks($stocks)
-    {
-        if (is_null($stocks)) {
-            throw new \InvalidArgumentException('non-nullable stocks cannot be null');
-        }
-        $this->container['stocks'] = $stocks;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -394,7 +394,7 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -407,7 +407,7 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -436,7 +436,7 @@ class GoodsStatsWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

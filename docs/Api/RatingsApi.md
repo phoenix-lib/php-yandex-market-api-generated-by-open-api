@@ -18,7 +18,7 @@ getQualityRatingDetails($campaign_id): \OpenAPI\Client\Model\GetQualityRatingDet
 
 Заказы, которые повлияли на индекс качества
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getQualityRatingDetails.md) %}  Возвращает список заказов, которые повлияли на индекс качества магазина. Чтобы узнать значение индекса качества, выполните запрос [POST v2/businesses/{businessId}/ratings/quality](../../reference/ratings/getQualityRatings.md).  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getQualityRatingDetails.md) %}  Возвращает список заказов, которые повлияли на индекс качества магазина. Чтобы узнать значение индекса качества, выполните запрос [POST v2/businesses/{businessId}/ratings/quality](../../reference/ratings/getQualityRatings.md).  {% include notitle [limit](../../_auto/method_limits/getQualityRatingDetails.md) %}
 
 ### Example
 
@@ -83,7 +83,7 @@ getQualityRatings($business_id, $get_quality_rating_request): \OpenAPI\Client\Mo
 
 Индекс качества магазинов
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getQualityRatings.md) %}  Возвращает значение индекса качества магазинов и его составляющие.  Подробнее об индексе качества читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/quality/score/).  |**⚙️ Лимит:** 10 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getQualityRatings.md) %}  Возвращает значение индекса качества магазинов и его составляющие.  Подробнее об индексе качества читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/quality/score/).  {% include notitle [limit](../../_auto/method_limits/getQualityRatings.md) %}
 
 ### Example
 
@@ -107,7 +107,7 @@ $apiInstance = new OpenAPI\Client\Api\RatingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
 $get_quality_rating_request = new \OpenAPI\Client\Model\GetQualityRatingRequest(); // \OpenAPI\Client\Model\GetQualityRatingRequest
 
 try {
@@ -122,7 +122,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
 | **get_quality_rating_request** | [**\OpenAPI\Client\Model\GetQualityRatingRequest**](../Model/GetQualityRatingRequest.md)|  | |
 
 ### Return type

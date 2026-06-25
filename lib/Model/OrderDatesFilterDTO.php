@@ -338,7 +338,7 @@ class OrderDatesFilterDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets creation_date_from
      *
-     * @param \DateTime|null $creation_date_from Начальная дата оформления заказа (ГГГГ-ММ-ДД).
+     * @param \DateTime|null $creation_date_from Начальная дата для фильтрации заказов по дате оформления.  Формат даты: `ГГГГ-ММ-ДД`.  Между начальной и конечной датой (параметр `creationDateTo`) должно быть не больше 30 дней.  Значение по умолчанию: 30 дней назад от текущей даты.  Начальная дата включается в интервал для фильтрации.
      *
      * @return self
      */
@@ -365,7 +365,7 @@ class OrderDatesFilterDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets creation_date_to
      *
-     * @param \DateTime|null $creation_date_to Конечная дата оформления заказа (ГГГГ-ММ-ДД).
+     * @param \DateTime|null $creation_date_to Конечная дата для фильтрации заказов по дате оформления.  Формат даты: `ГГГГ-ММ-ДД`.  Между начальной (параметр `creationDateFrom`) и конечной датой должно быть не больше 30 дней.  Значение по умолчанию: текущая дата.  Если промежуток времени между `creationDateTo` и `creationDateFrom` меньше суток, то `creationDateTo` равен `creationDateFrom` + сутки.  Конечная дата не включается в интервал для фильтрации.
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class OrderDatesFilterDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets shipment_date_from
      *
-     * @param \DateTime|null $shipment_date_from Начальная дата отгрузки (ГГГГ-ММ-ДД).
+     * @param \DateTime|null $shipment_date_from Начальная дата для фильтрации заказов по дате отгрузки в службу доставки (параметр `shipmentDate`).  Формат даты: `ГГГГ-ММ-ДД`.  Между начальной и конечной датой (параметр `shipmentDateTo`) должно быть не больше 30 дней.  Начальная дата включается в интервал для фильтрации.
      *
      * @return self
      */
@@ -419,7 +419,7 @@ class OrderDatesFilterDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets shipment_date_to
      *
-     * @param \DateTime|null $shipment_date_to Конечная дата отгрузки (ГГГГ-ММ-ДД).
+     * @param \DateTime|null $shipment_date_to Конечная дата для фильтрации заказов по дате отгрузки в службу доставки (параметр `shipmentDate`).  Формат даты: `ГГГГ-ММ-ДД`.  Между начальной (параметр `shipmentDateFrom`) и конечной датой должно быть не больше 30 дней.  Если промежуток времени между `shipmentDateTo` и `shipmentDateFrom` меньше суток, то `shipmentDateTo` равен `shipmentDateFrom` + сутки.  Конечная дата не включается в интервал для фильтрации.
      *
      * @return self
      */
@@ -493,7 +493,7 @@ class OrderDatesFilterDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -506,7 +506,7 @@ class OrderDatesFilterDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -535,7 +535,7 @@ class OrderDatesFilterDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

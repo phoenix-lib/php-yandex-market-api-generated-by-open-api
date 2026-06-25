@@ -21,7 +21,7 @@ getOrderBuyerInfo($campaign_id, $order_id): \OpenAPI\Client\Model\GetOrderBuyerI
 
 Информация о покупателе — физическом лице
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOrderBuyerInfo.md) %}  Возвращает информацию о покупателе по идентификатору заказа.  {% note info \"Как получить информацию о покупателе, который является юридическим лицом\" %}  Воспользуйтесь запросом [POST v2/campaigns/{campaignId}/orders/{orderId}/business-buyer](../../reference/order-business-information/getOrderBusinessBuyerInfo.md).  {% endnote %}  Получить данные можно, только если заказ находится в статусе `PROCESSING`, `DELIVERY` или `PICKUP`.  |**⚙️ Лимит:** 3 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getOrderBuyerInfo.md) %}  Возвращает информацию о покупателе по идентификатору заказа.  {% note info \"Как получить информацию о покупателе, который является юридическим лицом\" %}  Воспользуйтесь запросом [POST v2/campaigns/{campaignId}/orders/{orderId}/business-buyer](../../reference/order-business-information/getOrderBusinessBuyerInfo.md).  {% endnote %}  Получить данные можно, только если заказ находится в статусе `PROCESSING`, `DELIVERY` или `PICKUP`.  {% include notitle [limit](../../_auto/method_limits/getOrderBuyerInfo.md) %}
 
 ### Example
 
@@ -88,7 +88,7 @@ setOrderDeliveryDate($campaign_id, $order_id, $set_order_delivery_date_request):
 
 Изменение даты доставки заказа
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/setOrderDeliveryDate.md) %}  Метод изменяет дату доставки заказа в статусе `PROCESSING` или `DELIVERY`. Для заказов с другими статусами дату доставки изменить нельзя.  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/setOrderDeliveryDate.md) %}  Метод изменяет дату доставки заказа в статусе `PROCESSING` или `DELIVERY`. Для заказов с другими статусами дату доставки изменить нельзя.  {% include notitle [limit](../../_auto/method_limits/setOrderDeliveryDate.md) %}
 
 ### Example
 
@@ -157,7 +157,7 @@ setOrderDeliveryTrackCode($campaign_id, $order_id, $set_order_delivery_track_cod
 
 Передача трек‑номера посылки
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/setOrderDeliveryTrackCode.md) %}  Передает Маркету трек‑номер, по которому покупатель может отследить посылку со своим заказом через службу доставки. Если покупатели смогут узнать, на каком этапе доставки находятся их заказы, доверие покупателей к вашему магазину может возрасти.  Передать трек‑номер можно, только если заказ находится в статусе `PROCESSING`, `DELIVERY` или `PICKUP`.  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/setOrderDeliveryTrackCode.md) %}  Передает Маркету трек‑номер, по которому покупатель может отследить посылку со своим заказом через службу доставки. Если покупатели смогут узнать, на каком этапе доставки находятся их заказы, доверие покупателей к вашему магазину может возрасти.  Передать трек‑номер можно, только если заказ находится в статусе `PROCESSING`, `DELIVERY` или `PICKUP`.  {% include notitle [limit](../../_auto/method_limits/setOrderDeliveryTrackCode.md) %}
 
 ### Example
 
@@ -226,7 +226,7 @@ updateOrderStorageLimit($campaign_id, $order_id, $update_order_storage_limit_req
 
 Продление срока хранения заказа
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateOrderStorageLimit.md) %}  Продлевает срок хранения заказа в пункте выдачи продавца.  Заказ должен быть в статусе `PICKUP`. Продлить срок можно только один раз, не больше чем на 30 дней.  Новый срок хранения можно получить в параметре `outletStorageLimitDate` в ответе метода [POST v1/businesses/{businessId}/orders](../../reference/orders/getBusinessOrders.md).  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/updateOrderStorageLimit.md) %}  Продлевает срок хранения заказа в пункте выдачи продавца.  Заказ должен быть в статусе `PICKUP`. Продлить срок можно только один раз, не больше чем на 30 дней.  Новый срок хранения можно получить в параметре `outletStorageLimitDate` в ответе метода [POST v1/businesses/{businessId}/orders](../../reference/orders/getBusinessOrders.md).  {% include notitle [limit](../../_auto/method_limits/updateOrderStorageLimit.md) %}
 
 ### Example
 
@@ -295,7 +295,7 @@ verifyOrderEac($campaign_id, $order_id, $verify_order_eac_request): \OpenAPI\Cli
 
 Передача кода подтверждения
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/verifyOrderEac.md) %}  Отправляет Маркету код подтверждения для его проверки.  **Если у магазина настроена работа с кодами подтверждения:**    В параметре `delivery`, вложенном в `order`, возвращается параметр `eacType` с типом `Enum` (тип кода подтверждения для передачи заказа) в методах:    * [POST v1/businesses/{businessId}/orders](../../reference/orders/getBusinessOrders.md);   * [PUT v2/campaigns/{campaignId}/orders/{orderId}/status](../../reference/orders/updateOrderStatus.md).    Возможные значения:    * `MERCHANT_TO_COURIER` (временно не возвращается) — продавец передает код курьеру для получения невыкупа;   * `COURIER_TO_MERCHANT` — курьер передает код продавцу для получения заказа.    Параметр `eacType` возвращается при статусах заказа `COURIER_FOUND`, `COURIER_ARRIVED_TO_SENDER` и `DELIVERY_SERVICE_UNDELIVERED`. Если заказ в других статусах, параметр может отсутствовать.  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/verifyOrderEac.md) %}  Отправляет Маркету код подтверждения для его проверки.  **Если у магазина настроена работа с кодами подтверждения:**    В параметре `delivery`, вложенном в `order`, возвращается параметр `eacType` с типом `Enum` (тип кода подтверждения для передачи заказа) в методах:    * [POST v1/businesses/{businessId}/orders](../../reference/orders/getBusinessOrders.md);   * [PUT v2/campaigns/{campaignId}/orders/{orderId}/status](../../reference/orders/updateOrderStatus.md).    Возможные значения:    * `MERCHANT_TO_COURIER` (временно не возвращается) — продавец передает код курьеру для получения невыкупа;   * `COURIER_TO_MERCHANT` — курьер передает код продавцу для получения заказа.    Параметр `eacType` возвращается при статусах заказа `COURIER_FOUND`, `COURIER_ARRIVED_TO_SENDER` и `DELIVERY_SERVICE_UNDELIVERED`. Если заказ в других статусах, параметр может отсутствовать.  {% include notitle [limit](../../_auto/method_limits/verifyOrderEac.md) %}
 
 ### Example
 

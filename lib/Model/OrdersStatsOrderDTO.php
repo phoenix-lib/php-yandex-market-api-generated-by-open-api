@@ -58,6 +58,10 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
+        'items' => '\OpenAPI\Client\Model\OrdersStatsItemDTO[]',
+        'payments' => '\OpenAPI\Client\Model\OrdersStatsPaymentDTO[]',
+        'commissions' => '\OpenAPI\Client\Model\OrdersStatsCommissionDTO[]',
+        'currency' => '\OpenAPI\Client\Model\CurrencyType',
         'id' => 'int',
         'creation_date' => '\DateTime',
         'status_update_date' => '\DateTime',
@@ -66,12 +70,8 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         'payment_type' => '\OpenAPI\Client\Model\OrdersStatsOrderPaymentType',
         'fake' => 'bool',
         'delivery_region' => '\OpenAPI\Client\Model\OrdersStatsDeliveryRegionDTO',
-        'items' => '\OpenAPI\Client\Model\OrdersStatsItemDTO[]',
         'initial_items' => '\OpenAPI\Client\Model\OrdersStatsItemDTO[]',
-        'payments' => '\OpenAPI\Client\Model\OrdersStatsPaymentDTO[]',
-        'commissions' => '\OpenAPI\Client\Model\OrdersStatsCommissionDTO[]',
-        'subsidies' => '\OpenAPI\Client\Model\OrdersStatsSubsidyDTO[]',
-        'currency' => '\OpenAPI\Client\Model\CurrencyType'
+        'subsidies' => '\OpenAPI\Client\Model\OrdersStatsSubsidyDTO[]'
     ];
 
     /**
@@ -82,6 +82,10 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'items' => null,
+        'payments' => null,
+        'commissions' => null,
+        'currency' => null,
         'id' => 'int64',
         'creation_date' => 'date',
         'status_update_date' => 'date-time',
@@ -90,12 +94,8 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         'payment_type' => null,
         'fake' => null,
         'delivery_region' => null,
-        'items' => null,
         'initial_items' => null,
-        'payments' => null,
-        'commissions' => null,
-        'subsidies' => null,
-        'currency' => null
+        'subsidies' => null
     ];
 
     /**
@@ -104,6 +104,10 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'items' => false,
+        'payments' => false,
+        'commissions' => false,
+        'currency' => false,
         'id' => false,
         'creation_date' => false,
         'status_update_date' => false,
@@ -112,12 +116,8 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         'payment_type' => false,
         'fake' => false,
         'delivery_region' => false,
-        'items' => false,
         'initial_items' => true,
-        'payments' => false,
-        'commissions' => false,
-        'subsidies' => true,
-        'currency' => false
+        'subsidies' => true
     ];
 
     /**
@@ -206,6 +206,10 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
+        'items' => 'items',
+        'payments' => 'payments',
+        'commissions' => 'commissions',
+        'currency' => 'currency',
         'id' => 'id',
         'creation_date' => 'creationDate',
         'status_update_date' => 'statusUpdateDate',
@@ -214,12 +218,8 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         'payment_type' => 'paymentType',
         'fake' => 'fake',
         'delivery_region' => 'deliveryRegion',
-        'items' => 'items',
         'initial_items' => 'initialItems',
-        'payments' => 'payments',
-        'commissions' => 'commissions',
-        'subsidies' => 'subsidies',
-        'currency' => 'currency'
+        'subsidies' => 'subsidies'
     ];
 
     /**
@@ -228,6 +228,10 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
+        'items' => 'setItems',
+        'payments' => 'setPayments',
+        'commissions' => 'setCommissions',
+        'currency' => 'setCurrency',
         'id' => 'setId',
         'creation_date' => 'setCreationDate',
         'status_update_date' => 'setStatusUpdateDate',
@@ -236,12 +240,8 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         'payment_type' => 'setPaymentType',
         'fake' => 'setFake',
         'delivery_region' => 'setDeliveryRegion',
-        'items' => 'setItems',
         'initial_items' => 'setInitialItems',
-        'payments' => 'setPayments',
-        'commissions' => 'setCommissions',
-        'subsidies' => 'setSubsidies',
-        'currency' => 'setCurrency'
+        'subsidies' => 'setSubsidies'
     ];
 
     /**
@@ -250,6 +250,10 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
+        'items' => 'getItems',
+        'payments' => 'getPayments',
+        'commissions' => 'getCommissions',
+        'currency' => 'getCurrency',
         'id' => 'getId',
         'creation_date' => 'getCreationDate',
         'status_update_date' => 'getStatusUpdateDate',
@@ -258,12 +262,8 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         'payment_type' => 'getPaymentType',
         'fake' => 'getFake',
         'delivery_region' => 'getDeliveryRegion',
-        'items' => 'getItems',
         'initial_items' => 'getInitialItems',
-        'payments' => 'getPayments',
-        'commissions' => 'getCommissions',
-        'subsidies' => 'getSubsidies',
-        'currency' => 'getCurrency'
+        'subsidies' => 'getSubsidies'
     ];
 
     /**
@@ -323,6 +323,10 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('items', $data ?? [], null);
+        $this->setIfExists('payments', $data ?? [], null);
+        $this->setIfExists('commissions', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('creation_date', $data ?? [], null);
         $this->setIfExists('status_update_date', $data ?? [], null);
@@ -331,12 +335,8 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('payment_type', $data ?? [], null);
         $this->setIfExists('fake', $data ?? [], null);
         $this->setIfExists('delivery_region', $data ?? [], null);
-        $this->setIfExists('items', $data ?? [], null);
         $this->setIfExists('initial_items', $data ?? [], null);
-        $this->setIfExists('payments', $data ?? [], null);
-        $this->setIfExists('commissions', $data ?? [], null);
         $this->setIfExists('subsidies', $data ?? [], null);
-        $this->setIfExists('currency', $data ?? [], null);
     }
 
     /**
@@ -369,23 +369,23 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         if ($this->container['items'] === null) {
             $invalidProperties[] = "'items' can't be null";
         }
-        if (!is_null($this->container['initial_items']) && (count($this->container['initial_items']) < 1)) {
-            $invalidProperties[] = "invalid value for 'initial_items', number of items must be greater than or equal to 1.";
-        }
-
         if ($this->container['payments'] === null) {
             $invalidProperties[] = "'payments' can't be null";
         }
         if ($this->container['commissions'] === null) {
             $invalidProperties[] = "'commissions' can't be null";
         }
+        if ($this->container['currency'] === null) {
+            $invalidProperties[] = "'currency' can't be null";
+        }
+        if (!is_null($this->container['initial_items']) && (count($this->container['initial_items']) < 1)) {
+            $invalidProperties[] = "invalid value for 'initial_items', number of items must be greater than or equal to 1.";
+        }
+
         if (!is_null($this->container['subsidies']) && (count($this->container['subsidies']) < 1)) {
             $invalidProperties[] = "invalid value for 'subsidies', number of items must be greater than or equal to 1.";
         }
 
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -400,6 +400,114 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets items
+     *
+     * @return \OpenAPI\Client\Model\OrdersStatsItemDTO[]
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \OpenAPI\Client\Model\OrdersStatsItemDTO[] $items Список товаров в заказе после возможных изменений.  Информация о доставке заказа добавляется отдельным элементом в массиве `items`— параметр `offerName` со значением `Доставка`.
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        if (is_null($items)) {
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
+        }
+        $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets payments
+     *
+     * @return \OpenAPI\Client\Model\OrdersStatsPaymentDTO[]
+     */
+    public function getPayments()
+    {
+        return $this->container['payments'];
+    }
+
+    /**
+     * Sets payments
+     *
+     * @param \OpenAPI\Client\Model\OrdersStatsPaymentDTO[] $payments Информация о расчетах по заказу.  Возвращается пустым, если заказ:   * только начали обрабатывать (даже если он оплачен);   * отменили до момента передачи в доставку.  Окончательная информация о расчетах по заказу вернется после его финальной обработки (например, после перехода в статус `DELIVERED`).
+     *
+     * @return self
+     */
+    public function setPayments($payments)
+    {
+        if (is_null($payments)) {
+            throw new \InvalidArgumentException('non-nullable payments cannot be null');
+        }
+        $this->container['payments'] = $payments;
+
+        return $this;
+    }
+
+    /**
+     * Gets commissions
+     *
+     * @return \OpenAPI\Client\Model\OrdersStatsCommissionDTO[]
+     */
+    public function getCommissions()
+    {
+        return $this->container['commissions'];
+    }
+
+    /**
+     * Sets commissions
+     *
+     * @param \OpenAPI\Client\Model\OrdersStatsCommissionDTO[] $commissions Информация о стоимости услуг.
+     *
+     * @return self
+     */
+    public function setCommissions($commissions)
+    {
+        if (is_null($commissions)) {
+            throw new \InvalidArgumentException('non-nullable commissions cannot be null');
+        }
+        $this->container['commissions'] = $commissions;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return \OpenAPI\Client\Model\CurrencyType
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param \OpenAPI\Client\Model\CurrencyType $currency currency
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
 
     /**
      * Gets id
@@ -618,33 +726,6 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets items
-     *
-     * @return \OpenAPI\Client\Model\OrdersStatsItemDTO[]
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     *
-     * @param \OpenAPI\Client\Model\OrdersStatsItemDTO[] $items Список товаров в заказе после возможных изменений.  Информация о доставке заказа добавляется отдельным элементом в массиве `items`— параметр `offerName` со значением `Доставка`.
-     *
-     * @return self
-     */
-    public function setItems($items)
-    {
-        if (is_null($items)) {
-            throw new \InvalidArgumentException('non-nullable items cannot be null');
-        }
-        $this->container['items'] = $items;
-
-        return $this;
-    }
-
-    /**
      * Gets initial_items
      *
      * @return \OpenAPI\Client\Model\OrdersStatsItemDTO[]|null
@@ -679,60 +760,6 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('invalid length for $initial_items when calling OrdersStatsOrderDTO., number of items must be greater than or equal to 1.');
         }
         $this->container['initial_items'] = $initial_items;
-
-        return $this;
-    }
-
-    /**
-     * Gets payments
-     *
-     * @return \OpenAPI\Client\Model\OrdersStatsPaymentDTO[]
-     */
-    public function getPayments()
-    {
-        return $this->container['payments'];
-    }
-
-    /**
-     * Sets payments
-     *
-     * @param \OpenAPI\Client\Model\OrdersStatsPaymentDTO[] $payments Информация о расчетах по заказу.  Возвращается пустым, если заказ:   * только начали обрабатывать (даже если он оплачен);   * отменили до момента передачи в доставку.  Окончательная информация о расчетах по заказу вернется после его финальной обработки (например, после перехода в статус `DELIVERED`).
-     *
-     * @return self
-     */
-    public function setPayments($payments)
-    {
-        if (is_null($payments)) {
-            throw new \InvalidArgumentException('non-nullable payments cannot be null');
-        }
-        $this->container['payments'] = $payments;
-
-        return $this;
-    }
-
-    /**
-     * Gets commissions
-     *
-     * @return \OpenAPI\Client\Model\OrdersStatsCommissionDTO[]
-     */
-    public function getCommissions()
-    {
-        return $this->container['commissions'];
-    }
-
-    /**
-     * Sets commissions
-     *
-     * @param \OpenAPI\Client\Model\OrdersStatsCommissionDTO[] $commissions Информация о стоимости услуг.
-     *
-     * @return self
-     */
-    public function setCommissions($commissions)
-    {
-        if (is_null($commissions)) {
-            throw new \InvalidArgumentException('non-nullable commissions cannot be null');
-        }
-        $this->container['commissions'] = $commissions;
 
         return $this;
     }
@@ -775,33 +802,6 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
-    /**
-     * Gets currency
-     *
-     * @return \OpenAPI\Client\Model\CurrencyType
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param \OpenAPI\Client\Model\CurrencyType $currency currency
-     *
-     * @return self
-     */
-    public function setCurrency($currency)
-    {
-        if (is_null($currency)) {
-            throw new \InvalidArgumentException('non-nullable currency cannot be null');
-        }
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -809,7 +809,7 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -822,7 +822,7 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -851,7 +851,7 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

@@ -316,7 +316,7 @@ class WarehouseOffersDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets warehouse_id
      *
-     * @param int $warehouse_id Идентификатор склада.  **Для модели FBY:** возвращается идентификатор склада Маркета.  **Для модели FBS:** может возвращаться идентификатор как партнерского склада, так и склада возвратов Маркета.
+     * @param int $warehouse_id Идентификатор склада.  **Для моделей FBY и LaaS:** возвращается идентификатор склада Маркета.  **Для модели FBS:** может возвращаться идентификатор как партнерского склада, так и склада возвратов Маркета.
      *
      * @return self
      */
@@ -363,7 +363,7 @@ class WarehouseOffersDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -376,7 +376,7 @@ class WarehouseOffersDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -405,7 +405,7 @@ class WarehouseOffersDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

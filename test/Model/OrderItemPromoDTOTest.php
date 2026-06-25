@@ -89,18 +89,18 @@ class OrderItemPromoDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "discount"
+     * Test attribute "subsidy"
      */
-    public function testPropertyDiscount()
+    public function testPropertySubsidy()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "subsidy"
+     * Test attribute "discount"
      */
-    public function testPropertySubsidy()
+    public function testPropertyDiscount()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

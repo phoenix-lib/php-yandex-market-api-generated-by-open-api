@@ -342,7 +342,7 @@ class SetOrderDeliveryTrackCodeRequest implements ModelInterface, ArrayAccess, \
     /**
      * Sets delivery_service_id
      *
-     * @param int $delivery_service_id Идентификатор службы доставки. Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md).
+     * @param int $delivery_service_id Идентификатор службы доставки. Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/delivery-services/getDeliveryServices.md).
      *
      * @return self
      */
@@ -362,7 +362,7 @@ class SetOrderDeliveryTrackCodeRequest implements ModelInterface, ArrayAccess, \
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -375,7 +375,7 @@ class SetOrderDeliveryTrackCodeRequest implements ModelInterface, ArrayAccess, \
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +404,7 @@ class SetOrderDeliveryTrackCodeRequest implements ModelInterface, ArrayAccess, \
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

@@ -58,8 +58,8 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'work_in_holiday' => 'bool',
-        'schedule_items' => '\OpenAPI\Client\Model\OutletWorkingScheduleItemDTO[]'
+        'schedule_items' => '\OpenAPI\Client\Model\OutletWorkingScheduleItemDTO[]',
+        'work_in_holiday' => 'bool'
     ];
 
     /**
@@ -70,8 +70,8 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'work_in_holiday' => null,
-        'schedule_items' => null
+        'schedule_items' => null,
+        'work_in_holiday' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'work_in_holiday' => false,
-        'schedule_items' => false
+        'schedule_items' => false,
+        'work_in_holiday' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'work_in_holiday' => 'workInHoliday',
-        'schedule_items' => 'scheduleItems'
+        'schedule_items' => 'scheduleItems',
+        'work_in_holiday' => 'workInHoliday'
     ];
 
     /**
@@ -180,8 +180,8 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'work_in_holiday' => 'setWorkInHoliday',
-        'schedule_items' => 'setScheduleItems'
+        'schedule_items' => 'setScheduleItems',
+        'work_in_holiday' => 'setWorkInHoliday'
     ];
 
     /**
@@ -190,8 +190,8 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'work_in_holiday' => 'getWorkInHoliday',
-        'schedule_items' => 'getScheduleItems'
+        'schedule_items' => 'getScheduleItems',
+        'work_in_holiday' => 'getWorkInHoliday'
     ];
 
     /**
@@ -251,8 +251,8 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('work_in_holiday', $data ?? [], null);
         $this->setIfExists('schedule_items', $data ?? [], null);
+        $this->setIfExists('work_in_holiday', $data ?? [], null);
     }
 
     /**
@@ -305,33 +305,6 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets work_in_holiday
-     *
-     * @return bool|null
-     */
-    public function getWorkInHoliday()
-    {
-        return $this->container['work_in_holiday'];
-    }
-
-    /**
-     * Sets work_in_holiday
-     *
-     * @param bool|null $work_in_holiday Признак, работает ли точка продаж в дни государственных праздников.  Возможные значения:  * `false` — точка продаж не работает в дни государственных праздников. * `true` — точка продаж работает в дни государственных праздников.
-     *
-     * @return self
-     */
-    public function setWorkInHoliday($work_in_holiday)
-    {
-        if (is_null($work_in_holiday)) {
-            throw new \InvalidArgumentException('non-nullable work_in_holiday cannot be null');
-        }
-        $this->container['work_in_holiday'] = $work_in_holiday;
-
-        return $this;
-    }
-
-    /**
      * Gets schedule_items
      *
      * @return \OpenAPI\Client\Model\OutletWorkingScheduleItemDTO[]
@@ -362,6 +335,33 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
+    /**
+     * Gets work_in_holiday
+     *
+     * @return bool|null
+     */
+    public function getWorkInHoliday()
+    {
+        return $this->container['work_in_holiday'];
+    }
+
+    /**
+     * Sets work_in_holiday
+     *
+     * @param bool|null $work_in_holiday Признак, работает ли точка продаж в дни государственных праздников.  Возможные значения:  * `false` — точка продаж не работает в дни государственных праздников. * `true` — точка продаж работает в дни государственных праздников.
+     *
+     * @return self
+     */
+    public function setWorkInHoliday($work_in_holiday)
+    {
+        if (is_null($work_in_holiday)) {
+            throw new \InvalidArgumentException('non-nullable work_in_holiday cannot be null');
+        }
+        $this->container['work_in_holiday'] = $work_in_holiday;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -369,7 +369,7 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -382,7 +382,7 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -411,7 +411,7 @@ class OutletWorkingScheduleDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

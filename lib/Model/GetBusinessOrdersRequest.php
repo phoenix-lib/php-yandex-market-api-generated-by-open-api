@@ -66,7 +66,8 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'substatuses' => '\OpenAPI\Client\Model\OrderSubstatusType[]',
         'dates' => '\OpenAPI\Client\Model\OrderDatesFilterDTO',
         'fake' => 'bool',
-        'waiting_for_cancellation_approve' => 'bool'
+        'waiting_for_cancellation_approve' => 'bool',
+        'source_platforms' => '\OpenAPI\Client\Model\OrderSourcePlatformType[]'
     ];
 
     /**
@@ -85,7 +86,8 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'substatuses' => null,
         'dates' => null,
         'fake' => null,
-        'waiting_for_cancellation_approve' => null
+        'waiting_for_cancellation_approve' => null,
+        'source_platforms' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'substatuses' => true,
         'dates' => false,
         'fake' => false,
-        'waiting_for_cancellation_approve' => false
+        'waiting_for_cancellation_approve' => false,
+        'source_platforms' => true
     ];
 
     /**
@@ -199,7 +202,8 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'substatuses' => 'substatuses',
         'dates' => 'dates',
         'fake' => 'fake',
-        'waiting_for_cancellation_approve' => 'waitingForCancellationApprove'
+        'waiting_for_cancellation_approve' => 'waitingForCancellationApprove',
+        'source_platforms' => 'sourcePlatforms'
     ];
 
     /**
@@ -216,7 +220,8 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'substatuses' => 'setSubstatuses',
         'dates' => 'setDates',
         'fake' => 'setFake',
-        'waiting_for_cancellation_approve' => 'setWaitingForCancellationApprove'
+        'waiting_for_cancellation_approve' => 'setWaitingForCancellationApprove',
+        'source_platforms' => 'setSourcePlatforms'
     ];
 
     /**
@@ -233,7 +238,8 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'substatuses' => 'getSubstatuses',
         'dates' => 'getDates',
         'fake' => 'getFake',
-        'waiting_for_cancellation_approve' => 'getWaitingForCancellationApprove'
+        'waiting_for_cancellation_approve' => 'getWaitingForCancellationApprove',
+        'source_platforms' => 'getSourcePlatforms'
     ];
 
     /**
@@ -302,6 +308,7 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('dates', $data ?? [], null);
         $this->setIfExists('fake', $data ?? [], null);
         $this->setIfExists('waiting_for_cancellation_approve', $data ?? [], null);
+        $this->setIfExists('source_platforms', $data ?? [], null);
     }
 
     /**
@@ -365,6 +372,10 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
 
         if (!is_null($this->container['substatuses']) && (count($this->container['substatuses']) < 1)) {
             $invalidProperties[] = "invalid value for 'substatuses', number of items must be greater than or equal to 1.";
+        }
+
+        if (!is_null($this->container['source_platforms']) && (count($this->container['source_platforms']) < 1)) {
+            $invalidProperties[] = "invalid value for 'source_platforms', number of items must be greater than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -702,6 +713,45 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
+    /**
+     * Gets source_platforms
+     *
+     * @return \OpenAPI\Client\Model\OrderSourcePlatformType[]|null
+     */
+    public function getSourcePlatforms()
+    {
+        return $this->container['source_platforms'];
+    }
+
+    /**
+     * Sets source_platforms
+     *
+     * @param \OpenAPI\Client\Model\OrderSourcePlatformType[]|null $source_platforms Площадки-источники заказов.
+     *
+     * @return self
+     */
+    public function setSourcePlatforms($source_platforms)
+    {
+        if (is_null($source_platforms)) {
+            array_push($this->openAPINullablesSetToNull, 'source_platforms');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('source_platforms', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+
+        if (!is_null($source_platforms) && (count($source_platforms) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $source_platforms when calling GetBusinessOrdersRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['source_platforms'] = $source_platforms;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -709,7 +759,7 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -722,7 +772,7 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -751,7 +801,7 @@ class GetBusinessOrdersRequest implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

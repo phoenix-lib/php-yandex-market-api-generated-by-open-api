@@ -59,27 +59,27 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'int',
-        'external_order_id' => 'string',
         'status' => '\OpenAPI\Client\Model\OrderStatusType',
         'substatus' => '\OpenAPI\Client\Model\OrderSubstatusType',
         'creation_date' => 'string',
-        'updated_at' => 'string',
         'currency' => '\OpenAPI\Client\Model\CurrencyType',
         'items_total' => 'float',
         'delivery_total' => 'float',
-        'buyer_items_total' => 'float',
-        'buyer_total' => 'float',
         'buyer_items_total_before_discount' => 'float',
-        'buyer_total_before_discount' => 'float',
         'payment_type' => '\OpenAPI\Client\Model\OrderPaymentType',
         'payment_method' => '\OpenAPI\Client\Model\OrderPaymentMethodType',
         'fake' => 'bool',
         'items' => '\OpenAPI\Client\Model\OrderItemDTO[]',
-        'subsidies' => '\OpenAPI\Client\Model\OrderSubsidyDTO[]',
         'delivery' => '\OpenAPI\Client\Model\OrderDeliveryDTO',
         'buyer' => '\OpenAPI\Client\Model\OrderBuyerDTO',
-        'notes' => 'string',
         'tax_system' => '\OpenAPI\Client\Model\OrderTaxSystemType',
+        'external_order_id' => 'string',
+        'updated_at' => 'string',
+        'buyer_items_total' => 'float',
+        'buyer_total' => 'float',
+        'buyer_total_before_discount' => 'float',
+        'subsidies' => '\OpenAPI\Client\Model\OrderSubsidyDTO[]',
+        'notes' => 'string',
         'cancel_requested' => 'bool',
         'expiry_date' => 'string'
     ];
@@ -93,27 +93,27 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => 'int64',
-        'external_order_id' => null,
         'status' => null,
         'substatus' => null,
         'creation_date' => 'date-dd-MM-yyyy-HH-mm-ss',
-        'updated_at' => 'date-dd-MM-yyyy-HH-mm-ss',
         'currency' => null,
         'items_total' => null,
         'delivery_total' => null,
-        'buyer_items_total' => null,
-        'buyer_total' => null,
         'buyer_items_total_before_discount' => null,
-        'buyer_total_before_discount' => null,
         'payment_type' => null,
         'payment_method' => null,
         'fake' => null,
         'items' => null,
-        'subsidies' => null,
         'delivery' => null,
         'buyer' => null,
-        'notes' => null,
         'tax_system' => null,
+        'external_order_id' => null,
+        'updated_at' => 'date-dd-MM-yyyy-HH-mm-ss',
+        'buyer_items_total' => null,
+        'buyer_total' => null,
+        'buyer_total_before_discount' => null,
+        'subsidies' => null,
+        'notes' => null,
         'cancel_requested' => null,
         'expiry_date' => 'date-dd-MM-yyyy-HH-mm-ss'
     ];
@@ -125,27 +125,27 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'external_order_id' => false,
         'status' => false,
         'substatus' => false,
         'creation_date' => false,
-        'updated_at' => false,
         'currency' => false,
         'items_total' => false,
         'delivery_total' => false,
-        'buyer_items_total' => false,
-        'buyer_total' => false,
         'buyer_items_total_before_discount' => false,
-        'buyer_total_before_discount' => false,
         'payment_type' => false,
         'payment_method' => false,
         'fake' => false,
         'items' => false,
-        'subsidies' => true,
         'delivery' => false,
         'buyer' => false,
-        'notes' => false,
         'tax_system' => false,
+        'external_order_id' => false,
+        'updated_at' => false,
+        'buyer_items_total' => false,
+        'buyer_total' => false,
+        'buyer_total_before_discount' => false,
+        'subsidies' => true,
+        'notes' => false,
         'cancel_requested' => false,
         'expiry_date' => false
     ];
@@ -237,27 +237,27 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'external_order_id' => 'externalOrderId',
         'status' => 'status',
         'substatus' => 'substatus',
         'creation_date' => 'creationDate',
-        'updated_at' => 'updatedAt',
         'currency' => 'currency',
         'items_total' => 'itemsTotal',
         'delivery_total' => 'deliveryTotal',
-        'buyer_items_total' => 'buyerItemsTotal',
-        'buyer_total' => 'buyerTotal',
         'buyer_items_total_before_discount' => 'buyerItemsTotalBeforeDiscount',
-        'buyer_total_before_discount' => 'buyerTotalBeforeDiscount',
         'payment_type' => 'paymentType',
         'payment_method' => 'paymentMethod',
         'fake' => 'fake',
         'items' => 'items',
-        'subsidies' => 'subsidies',
         'delivery' => 'delivery',
         'buyer' => 'buyer',
-        'notes' => 'notes',
         'tax_system' => 'taxSystem',
+        'external_order_id' => 'externalOrderId',
+        'updated_at' => 'updatedAt',
+        'buyer_items_total' => 'buyerItemsTotal',
+        'buyer_total' => 'buyerTotal',
+        'buyer_total_before_discount' => 'buyerTotalBeforeDiscount',
+        'subsidies' => 'subsidies',
+        'notes' => 'notes',
         'cancel_requested' => 'cancelRequested',
         'expiry_date' => 'expiryDate'
     ];
@@ -269,27 +269,27 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
-        'external_order_id' => 'setExternalOrderId',
         'status' => 'setStatus',
         'substatus' => 'setSubstatus',
         'creation_date' => 'setCreationDate',
-        'updated_at' => 'setUpdatedAt',
         'currency' => 'setCurrency',
         'items_total' => 'setItemsTotal',
         'delivery_total' => 'setDeliveryTotal',
-        'buyer_items_total' => 'setBuyerItemsTotal',
-        'buyer_total' => 'setBuyerTotal',
         'buyer_items_total_before_discount' => 'setBuyerItemsTotalBeforeDiscount',
-        'buyer_total_before_discount' => 'setBuyerTotalBeforeDiscount',
         'payment_type' => 'setPaymentType',
         'payment_method' => 'setPaymentMethod',
         'fake' => 'setFake',
         'items' => 'setItems',
-        'subsidies' => 'setSubsidies',
         'delivery' => 'setDelivery',
         'buyer' => 'setBuyer',
-        'notes' => 'setNotes',
         'tax_system' => 'setTaxSystem',
+        'external_order_id' => 'setExternalOrderId',
+        'updated_at' => 'setUpdatedAt',
+        'buyer_items_total' => 'setBuyerItemsTotal',
+        'buyer_total' => 'setBuyerTotal',
+        'buyer_total_before_discount' => 'setBuyerTotalBeforeDiscount',
+        'subsidies' => 'setSubsidies',
+        'notes' => 'setNotes',
         'cancel_requested' => 'setCancelRequested',
         'expiry_date' => 'setExpiryDate'
     ];
@@ -301,27 +301,27 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
-        'external_order_id' => 'getExternalOrderId',
         'status' => 'getStatus',
         'substatus' => 'getSubstatus',
         'creation_date' => 'getCreationDate',
-        'updated_at' => 'getUpdatedAt',
         'currency' => 'getCurrency',
         'items_total' => 'getItemsTotal',
         'delivery_total' => 'getDeliveryTotal',
-        'buyer_items_total' => 'getBuyerItemsTotal',
-        'buyer_total' => 'getBuyerTotal',
         'buyer_items_total_before_discount' => 'getBuyerItemsTotalBeforeDiscount',
-        'buyer_total_before_discount' => 'getBuyerTotalBeforeDiscount',
         'payment_type' => 'getPaymentType',
         'payment_method' => 'getPaymentMethod',
         'fake' => 'getFake',
         'items' => 'getItems',
-        'subsidies' => 'getSubsidies',
         'delivery' => 'getDelivery',
         'buyer' => 'getBuyer',
-        'notes' => 'getNotes',
         'tax_system' => 'getTaxSystem',
+        'external_order_id' => 'getExternalOrderId',
+        'updated_at' => 'getUpdatedAt',
+        'buyer_items_total' => 'getBuyerItemsTotal',
+        'buyer_total' => 'getBuyerTotal',
+        'buyer_total_before_discount' => 'getBuyerTotalBeforeDiscount',
+        'subsidies' => 'getSubsidies',
+        'notes' => 'getNotes',
         'cancel_requested' => 'getCancelRequested',
         'expiry_date' => 'getExpiryDate'
     ];
@@ -384,27 +384,27 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('external_order_id', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('substatus', $data ?? [], null);
         $this->setIfExists('creation_date', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('items_total', $data ?? [], null);
         $this->setIfExists('delivery_total', $data ?? [], null);
-        $this->setIfExists('buyer_items_total', $data ?? [], null);
-        $this->setIfExists('buyer_total', $data ?? [], null);
         $this->setIfExists('buyer_items_total_before_discount', $data ?? [], null);
-        $this->setIfExists('buyer_total_before_discount', $data ?? [], null);
         $this->setIfExists('payment_type', $data ?? [], null);
         $this->setIfExists('payment_method', $data ?? [], null);
         $this->setIfExists('fake', $data ?? [], null);
         $this->setIfExists('items', $data ?? [], null);
-        $this->setIfExists('subsidies', $data ?? [], null);
         $this->setIfExists('delivery', $data ?? [], null);
         $this->setIfExists('buyer', $data ?? [], null);
-        $this->setIfExists('notes', $data ?? [], null);
         $this->setIfExists('tax_system', $data ?? [], null);
+        $this->setIfExists('external_order_id', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('buyer_items_total', $data ?? [], null);
+        $this->setIfExists('buyer_total', $data ?? [], null);
+        $this->setIfExists('buyer_total_before_discount', $data ?? [], null);
+        $this->setIfExists('subsidies', $data ?? [], null);
+        $this->setIfExists('notes', $data ?? [], null);
         $this->setIfExists('cancel_requested', $data ?? [], null);
         $this->setIfExists('expiry_date', $data ?? [], null);
     }
@@ -439,10 +439,6 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
-        if (!is_null($this->container['external_order_id']) && (mb_strlen($this->container['external_order_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'external_order_id', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
@@ -476,10 +472,6 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['items'] === null) {
             $invalidProperties[] = "'items' can't be null";
         }
-        if (!is_null($this->container['subsidies']) && (count($this->container['subsidies']) < 1)) {
-            $invalidProperties[] = "invalid value for 'subsidies', number of items must be greater than or equal to 1.";
-        }
-
         if ($this->container['delivery'] === null) {
             $invalidProperties[] = "'delivery' can't be null";
         }
@@ -489,6 +481,14 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['tax_system'] === null) {
             $invalidProperties[] = "'tax_system' can't be null";
         }
+        if (!is_null($this->container['external_order_id']) && (mb_strlen($this->container['external_order_id']) < 1)) {
+            $invalidProperties[] = "invalid value for 'external_order_id', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['subsidies']) && (count($this->container['subsidies']) < 1)) {
+            $invalidProperties[] = "invalid value for 'subsidies', number of items must be greater than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -527,38 +527,6 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets external_order_id
-     *
-     * @return string|null
-     */
-    public function getExternalOrderId()
-    {
-        return $this->container['external_order_id'];
-    }
-
-    /**
-     * Sets external_order_id
-     *
-     * @param string|null $external_order_id Внешний идентификатор заказа, который вы передали в [POST v2/campaigns/{campaignId}/orders/{orderId}/external-id](../../reference/orders/updateExternalOrderId.md).
-     *
-     * @return self
-     */
-    public function setExternalOrderId($external_order_id)
-    {
-        if (is_null($external_order_id)) {
-            throw new \InvalidArgumentException('non-nullable external_order_id cannot be null');
-        }
-
-        if ((mb_strlen($external_order_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $external_order_id when calling OrderDTO., must be bigger than or equal to 1.');
-        }
-
-        $this->container['external_order_id'] = $external_order_id;
 
         return $this;
     }
@@ -645,33 +613,6 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets updated_at
-     *
-     * @return string|null
-     */
-    public function getUpdatedAt()
-    {
-        return $this->container['updated_at'];
-    }
-
-    /**
-     * Sets updated_at
-     *
-     * @param string|null $updated_at updated_at
-     *
-     * @return self
-     */
-    public function setUpdatedAt($updated_at)
-    {
-        if (is_null($updated_at)) {
-            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
-        }
-        $this->container['updated_at'] = $updated_at;
-
-        return $this;
-    }
-
-    /**
      * Gets currency
      *
      * @return \OpenAPI\Client\Model\CurrencyType
@@ -753,64 +694,6 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets buyer_items_total
-     *
-     * @return float|null
-     * @deprecated
-     */
-    public function getBuyerItemsTotal()
-    {
-        return $this->container['buyer_items_total'];
-    }
-
-    /**
-     * Sets buyer_items_total
-     *
-     * @param float|null $buyer_items_total Стоимость всех товаров в заказе в валюте покупателя после применения скидок и без учета стоимости доставки.
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setBuyerItemsTotal($buyer_items_total)
-    {
-        if (is_null($buyer_items_total)) {
-            throw new \InvalidArgumentException('non-nullable buyer_items_total cannot be null');
-        }
-        $this->container['buyer_items_total'] = $buyer_items_total;
-
-        return $this;
-    }
-
-    /**
-     * Gets buyer_total
-     *
-     * @return float|null
-     * @deprecated
-     */
-    public function getBuyerTotal()
-    {
-        return $this->container['buyer_total'];
-    }
-
-    /**
-     * Sets buyer_total
-     *
-     * @param float|null $buyer_total Стоимость всех товаров в заказе в валюте покупателя после применения скидок и с учетом стоимости доставки.
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setBuyerTotal($buyer_total)
-    {
-        if (is_null($buyer_total)) {
-            throw new \InvalidArgumentException('non-nullable buyer_total cannot be null');
-        }
-        $this->container['buyer_total'] = $buyer_total;
-
-        return $this;
-    }
-
-    /**
      * Gets buyer_items_total_before_discount
      *
      * @return float
@@ -833,35 +716,6 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable buyer_items_total_before_discount cannot be null');
         }
         $this->container['buyer_items_total_before_discount'] = $buyer_items_total_before_discount;
-
-        return $this;
-    }
-
-    /**
-     * Gets buyer_total_before_discount
-     *
-     * @return float|null
-     * @deprecated
-     */
-    public function getBuyerTotalBeforeDiscount()
-    {
-        return $this->container['buyer_total_before_discount'];
-    }
-
-    /**
-     * Sets buyer_total_before_discount
-     *
-     * @param float|null $buyer_total_before_discount Стоимость всех товаров в заказе в валюте покупателя до применения скидок и с учетом стоимости доставки (`buyerItemsTotalBeforeDiscount` + стоимость доставки).
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setBuyerTotalBeforeDiscount($buyer_total_before_discount)
-    {
-        if (is_null($buyer_total_before_discount)) {
-            throw new \InvalidArgumentException('non-nullable buyer_total_before_discount cannot be null');
-        }
-        $this->container['buyer_total_before_discount'] = $buyer_total_before_discount;
 
         return $this;
     }
@@ -975,45 +829,6 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets subsidies
-     *
-     * @return \OpenAPI\Client\Model\OrderSubsidyDTO[]|null
-     */
-    public function getSubsidies()
-    {
-        return $this->container['subsidies'];
-    }
-
-    /**
-     * Sets subsidies
-     *
-     * @param \OpenAPI\Client\Model\OrderSubsidyDTO[]|null $subsidies Список субсидий по типам.
-     *
-     * @return self
-     */
-    public function setSubsidies($subsidies)
-    {
-        if (is_null($subsidies)) {
-            array_push($this->openAPINullablesSetToNull, 'subsidies');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('subsidies', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-
-        if (!is_null($subsidies) && (count($subsidies) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $subsidies when calling OrderDTO., number of items must be greater than or equal to 1.');
-        }
-        $this->container['subsidies'] = $subsidies;
-
-        return $this;
-    }
-
-    /**
      * Gets delivery
      *
      * @return \OpenAPI\Client\Model\OrderDeliveryDTO
@@ -1068,33 +883,6 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets notes
-     *
-     * @return string|null
-     */
-    public function getNotes()
-    {
-        return $this->container['notes'];
-    }
-
-    /**
-     * Sets notes
-     *
-     * @param string|null $notes Комментарий к заказу.
-     *
-     * @return self
-     */
-    public function setNotes($notes)
-    {
-        if (is_null($notes)) {
-            throw new \InvalidArgumentException('non-nullable notes cannot be null');
-        }
-        $this->container['notes'] = $notes;
-
-        return $this;
-    }
-
-    /**
      * Gets tax_system
      *
      * @return \OpenAPI\Client\Model\OrderTaxSystemType
@@ -1117,6 +905,218 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable tax_system cannot be null');
         }
         $this->container['tax_system'] = $tax_system;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_order_id
+     *
+     * @return string|null
+     */
+    public function getExternalOrderId()
+    {
+        return $this->container['external_order_id'];
+    }
+
+    /**
+     * Sets external_order_id
+     *
+     * @param string|null $external_order_id Внешний идентификатор заказа, который вы передали в [POST v2/campaigns/{campaignId}/orders/{orderId}/external-id](../../reference/orders/updateExternalOrderId.md).
+     *
+     * @return self
+     */
+    public function setExternalOrderId($external_order_id)
+    {
+        if (is_null($external_order_id)) {
+            throw new \InvalidArgumentException('non-nullable external_order_id cannot be null');
+        }
+
+        if ((mb_strlen($external_order_id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $external_order_id when calling OrderDTO., must be bigger than or equal to 1.');
+        }
+
+        $this->container['external_order_id'] = $external_order_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return string|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param string|null $updated_at updated_at
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        if (is_null($updated_at)) {
+            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+        }
+        $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_items_total
+     *
+     * @return float|null
+     * @deprecated
+     */
+    public function getBuyerItemsTotal()
+    {
+        return $this->container['buyer_items_total'];
+    }
+
+    /**
+     * Sets buyer_items_total
+     *
+     * @param float|null $buyer_items_total Стоимость всех товаров в заказе в валюте покупателя после применения скидок и без учета стоимости доставки.
+     *
+     * @return self
+     * @deprecated
+     */
+    public function setBuyerItemsTotal($buyer_items_total)
+    {
+        if (is_null($buyer_items_total)) {
+            throw new \InvalidArgumentException('non-nullable buyer_items_total cannot be null');
+        }
+        $this->container['buyer_items_total'] = $buyer_items_total;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_total
+     *
+     * @return float|null
+     * @deprecated
+     */
+    public function getBuyerTotal()
+    {
+        return $this->container['buyer_total'];
+    }
+
+    /**
+     * Sets buyer_total
+     *
+     * @param float|null $buyer_total Стоимость всех товаров в заказе в валюте покупателя после применения скидок и с учетом стоимости доставки.
+     *
+     * @return self
+     * @deprecated
+     */
+    public function setBuyerTotal($buyer_total)
+    {
+        if (is_null($buyer_total)) {
+            throw new \InvalidArgumentException('non-nullable buyer_total cannot be null');
+        }
+        $this->container['buyer_total'] = $buyer_total;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_total_before_discount
+     *
+     * @return float|null
+     * @deprecated
+     */
+    public function getBuyerTotalBeforeDiscount()
+    {
+        return $this->container['buyer_total_before_discount'];
+    }
+
+    /**
+     * Sets buyer_total_before_discount
+     *
+     * @param float|null $buyer_total_before_discount Стоимость всех товаров в заказе в валюте покупателя до применения скидок и с учетом стоимости доставки (`buyerItemsTotalBeforeDiscount` + стоимость доставки).
+     *
+     * @return self
+     * @deprecated
+     */
+    public function setBuyerTotalBeforeDiscount($buyer_total_before_discount)
+    {
+        if (is_null($buyer_total_before_discount)) {
+            throw new \InvalidArgumentException('non-nullable buyer_total_before_discount cannot be null');
+        }
+        $this->container['buyer_total_before_discount'] = $buyer_total_before_discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets subsidies
+     *
+     * @return \OpenAPI\Client\Model\OrderSubsidyDTO[]|null
+     */
+    public function getSubsidies()
+    {
+        return $this->container['subsidies'];
+    }
+
+    /**
+     * Sets subsidies
+     *
+     * @param \OpenAPI\Client\Model\OrderSubsidyDTO[]|null $subsidies Список субсидий по типам.
+     *
+     * @return self
+     */
+    public function setSubsidies($subsidies)
+    {
+        if (is_null($subsidies)) {
+            array_push($this->openAPINullablesSetToNull, 'subsidies');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('subsidies', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+
+        if (!is_null($subsidies) && (count($subsidies) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $subsidies when calling OrderDTO., number of items must be greater than or equal to 1.');
+        }
+        $this->container['subsidies'] = $subsidies;
+
+        return $this;
+    }
+
+    /**
+     * Gets notes
+     *
+     * @return string|null
+     */
+    public function getNotes()
+    {
+        return $this->container['notes'];
+    }
+
+    /**
+     * Sets notes
+     *
+     * @param string|null $notes Комментарий к заказу.
+     *
+     * @return self
+     */
+    public function setNotes($notes)
+    {
+        if (is_null($notes)) {
+            throw new \InvalidArgumentException('non-nullable notes cannot be null');
+        }
+        $this->container['notes'] = $notes;
 
         return $this;
     }
@@ -1181,7 +1181,7 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -1194,7 +1194,7 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -1223,7 +1223,7 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

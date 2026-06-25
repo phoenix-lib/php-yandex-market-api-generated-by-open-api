@@ -58,9 +58,9 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
+        'campaign_ids' => 'int[]',
         'date_from' => '\DateTime',
-        'date_to' => '\DateTime',
-        'campaign_ids' => 'int[]'
+        'date_to' => '\DateTime'
     ];
 
     /**
@@ -71,9 +71,9 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'campaign_ids' => 'int64',
         'date_from' => 'date',
-        'date_to' => 'date',
-        'campaign_ids' => 'int64'
+        'date_to' => 'date'
     ];
 
     /**
@@ -82,9 +82,9 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'campaign_ids' => false,
         'date_from' => false,
-        'date_to' => false,
-        'campaign_ids' => false
+        'date_to' => false
     ];
 
     /**
@@ -173,9 +173,9 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
+        'campaign_ids' => 'campaignIds',
         'date_from' => 'dateFrom',
-        'date_to' => 'dateTo',
-        'campaign_ids' => 'campaignIds'
+        'date_to' => 'dateTo'
     ];
 
     /**
@@ -184,9 +184,9 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
+        'campaign_ids' => 'setCampaignIds',
         'date_from' => 'setDateFrom',
-        'date_to' => 'setDateTo',
-        'campaign_ids' => 'setCampaignIds'
+        'date_to' => 'setDateTo'
     ];
 
     /**
@@ -195,9 +195,9 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
+        'campaign_ids' => 'getCampaignIds',
         'date_from' => 'getDateFrom',
-        'date_to' => 'getDateTo',
-        'campaign_ids' => 'getCampaignIds'
+        'date_to' => 'getDateTo'
     ];
 
     /**
@@ -257,9 +257,9 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('campaign_ids', $data ?? [], null);
         $this->setIfExists('date_from', $data ?? [], null);
         $this->setIfExists('date_to', $data ?? [], null);
-        $this->setIfExists('campaign_ids', $data ?? [], null);
     }
 
     /**
@@ -316,6 +316,40 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
 
 
     /**
+     * Gets campaign_ids
+     *
+     * @return int[]
+     */
+    public function getCampaignIds()
+    {
+        return $this->container['campaign_ids'];
+    }
+
+    /**
+     * Sets campaign_ids
+     *
+     * @param int[] $campaign_ids Список идентификаторов кампаний магазинов.
+     *
+     * @return self
+     */
+    public function setCampaignIds($campaign_ids)
+    {
+        if (is_null($campaign_ids)) {
+            throw new \InvalidArgumentException('non-nullable campaign_ids cannot be null');
+        }
+
+        if ((count($campaign_ids) > 50)) {
+            throw new \InvalidArgumentException('invalid value for $campaign_ids when calling GetQualityRatingRequest., number of items must be less than or equal to 50.');
+        }
+        if ((count($campaign_ids) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $campaign_ids when calling GetQualityRatingRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['campaign_ids'] = $campaign_ids;
+
+        return $this;
+    }
+
+    /**
      * Gets date_from
      *
      * @return \DateTime|null
@@ -368,40 +402,6 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
-    /**
-     * Gets campaign_ids
-     *
-     * @return int[]
-     */
-    public function getCampaignIds()
-    {
-        return $this->container['campaign_ids'];
-    }
-
-    /**
-     * Sets campaign_ids
-     *
-     * @param int[] $campaign_ids Список идентификаторов кампаний магазинов.
-     *
-     * @return self
-     */
-    public function setCampaignIds($campaign_ids)
-    {
-        if (is_null($campaign_ids)) {
-            throw new \InvalidArgumentException('non-nullable campaign_ids cannot be null');
-        }
-
-        if ((count($campaign_ids) > 50)) {
-            throw new \InvalidArgumentException('invalid value for $campaign_ids when calling GetQualityRatingRequest., number of items must be less than or equal to 50.');
-        }
-        if ((count($campaign_ids) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $campaign_ids when calling GetQualityRatingRequest., number of items must be greater than or equal to 1.');
-        }
-        $this->container['campaign_ids'] = $campaign_ids;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -409,7 +409,7 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -422,7 +422,7 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -451,7 +451,7 @@ class GetQualityRatingRequest implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

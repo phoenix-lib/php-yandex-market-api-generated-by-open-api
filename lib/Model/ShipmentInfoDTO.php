@@ -61,17 +61,17 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'plan_interval_from' => '\DateTime',
         'plan_interval_to' => '\DateTime',
+        'order_ids' => 'int[]',
+        'draft_count' => 'int',
+        'planned_count' => 'int',
+        'fact_count' => 'int',
+        'signature' => '\OpenAPI\Client\Model\SignatureDTO',
         'shipment_type' => '\OpenAPI\Client\Model\ShipmentType',
         'warehouse' => '\OpenAPI\Client\Model\PartnerShipmentWarehouseDTO',
         'warehouse_to' => '\OpenAPI\Client\Model\PartnerShipmentWarehouseDTO',
         'external_id' => 'string',
         'delivery_service' => '\OpenAPI\Client\Model\DeliveryServiceDTO',
         'pallets_count' => '\OpenAPI\Client\Model\PalletsCountDTO',
-        'order_ids' => 'int[]',
-        'draft_count' => 'int',
-        'planned_count' => 'int',
-        'fact_count' => 'int',
-        'signature' => '\OpenAPI\Client\Model\SignatureDTO',
         'status' => '\OpenAPI\Client\Model\ShipmentStatusType',
         'status_description' => 'string',
         'status_update_time' => '\DateTime'
@@ -88,17 +88,17 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int64',
         'plan_interval_from' => 'date-time',
         'plan_interval_to' => 'date-time',
+        'order_ids' => 'int64',
+        'draft_count' => 'int32',
+        'planned_count' => 'int32',
+        'fact_count' => 'int32',
+        'signature' => null,
         'shipment_type' => null,
         'warehouse' => null,
         'warehouse_to' => null,
         'external_id' => null,
         'delivery_service' => null,
         'pallets_count' => null,
-        'order_ids' => 'int64',
-        'draft_count' => 'int32',
-        'planned_count' => 'int32',
-        'fact_count' => 'int32',
-        'signature' => null,
         'status' => null,
         'status_description' => null,
         'status_update_time' => 'date-time'
@@ -113,17 +113,17 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => false,
         'plan_interval_from' => false,
         'plan_interval_to' => false,
+        'order_ids' => false,
+        'draft_count' => false,
+        'planned_count' => false,
+        'fact_count' => false,
+        'signature' => false,
         'shipment_type' => false,
         'warehouse' => false,
         'warehouse_to' => false,
         'external_id' => false,
         'delivery_service' => false,
         'pallets_count' => false,
-        'order_ids' => false,
-        'draft_count' => false,
-        'planned_count' => false,
-        'fact_count' => false,
-        'signature' => false,
         'status' => false,
         'status_description' => false,
         'status_update_time' => false
@@ -218,17 +218,17 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'plan_interval_from' => 'planIntervalFrom',
         'plan_interval_to' => 'planIntervalTo',
+        'order_ids' => 'orderIds',
+        'draft_count' => 'draftCount',
+        'planned_count' => 'plannedCount',
+        'fact_count' => 'factCount',
+        'signature' => 'signature',
         'shipment_type' => 'shipmentType',
         'warehouse' => 'warehouse',
         'warehouse_to' => 'warehouseTo',
         'external_id' => 'externalId',
         'delivery_service' => 'deliveryService',
         'pallets_count' => 'palletsCount',
-        'order_ids' => 'orderIds',
-        'draft_count' => 'draftCount',
-        'planned_count' => 'plannedCount',
-        'fact_count' => 'factCount',
-        'signature' => 'signature',
         'status' => 'status',
         'status_description' => 'statusDescription',
         'status_update_time' => 'statusUpdateTime'
@@ -243,17 +243,17 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'plan_interval_from' => 'setPlanIntervalFrom',
         'plan_interval_to' => 'setPlanIntervalTo',
+        'order_ids' => 'setOrderIds',
+        'draft_count' => 'setDraftCount',
+        'planned_count' => 'setPlannedCount',
+        'fact_count' => 'setFactCount',
+        'signature' => 'setSignature',
         'shipment_type' => 'setShipmentType',
         'warehouse' => 'setWarehouse',
         'warehouse_to' => 'setWarehouseTo',
         'external_id' => 'setExternalId',
         'delivery_service' => 'setDeliveryService',
         'pallets_count' => 'setPalletsCount',
-        'order_ids' => 'setOrderIds',
-        'draft_count' => 'setDraftCount',
-        'planned_count' => 'setPlannedCount',
-        'fact_count' => 'setFactCount',
-        'signature' => 'setSignature',
         'status' => 'setStatus',
         'status_description' => 'setStatusDescription',
         'status_update_time' => 'setStatusUpdateTime'
@@ -268,17 +268,17 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'plan_interval_from' => 'getPlanIntervalFrom',
         'plan_interval_to' => 'getPlanIntervalTo',
+        'order_ids' => 'getOrderIds',
+        'draft_count' => 'getDraftCount',
+        'planned_count' => 'getPlannedCount',
+        'fact_count' => 'getFactCount',
+        'signature' => 'getSignature',
         'shipment_type' => 'getShipmentType',
         'warehouse' => 'getWarehouse',
         'warehouse_to' => 'getWarehouseTo',
         'external_id' => 'getExternalId',
         'delivery_service' => 'getDeliveryService',
         'pallets_count' => 'getPalletsCount',
-        'order_ids' => 'getOrderIds',
-        'draft_count' => 'getDraftCount',
-        'planned_count' => 'getPlannedCount',
-        'fact_count' => 'getFactCount',
-        'signature' => 'getSignature',
         'status' => 'getStatus',
         'status_description' => 'getStatusDescription',
         'status_update_time' => 'getStatusUpdateTime'
@@ -344,17 +344,17 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('plan_interval_from', $data ?? [], null);
         $this->setIfExists('plan_interval_to', $data ?? [], null);
+        $this->setIfExists('order_ids', $data ?? [], null);
+        $this->setIfExists('draft_count', $data ?? [], null);
+        $this->setIfExists('planned_count', $data ?? [], null);
+        $this->setIfExists('fact_count', $data ?? [], null);
+        $this->setIfExists('signature', $data ?? [], null);
         $this->setIfExists('shipment_type', $data ?? [], null);
         $this->setIfExists('warehouse', $data ?? [], null);
         $this->setIfExists('warehouse_to', $data ?? [], null);
         $this->setIfExists('external_id', $data ?? [], null);
         $this->setIfExists('delivery_service', $data ?? [], null);
         $this->setIfExists('pallets_count', $data ?? [], null);
-        $this->setIfExists('order_ids', $data ?? [], null);
-        $this->setIfExists('draft_count', $data ?? [], null);
-        $this->setIfExists('planned_count', $data ?? [], null);
-        $this->setIfExists('fact_count', $data ?? [], null);
-        $this->setIfExists('signature', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('status_description', $data ?? [], null);
         $this->setIfExists('status_update_time', $data ?? [], null);
@@ -529,6 +529,158 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets order_ids
+     *
+     * @return int[]
+     */
+    public function getOrderIds()
+    {
+        return $this->container['order_ids'];
+    }
+
+    /**
+     * Sets order_ids
+     *
+     * @param int[] $order_ids Идентификаторы заказов в отгрузке.
+     *
+     * @return self
+     */
+    public function setOrderIds($order_ids)
+    {
+        if (is_null($order_ids)) {
+            throw new \InvalidArgumentException('non-nullable order_ids cannot be null');
+        }
+
+
+        $this->container['order_ids'] = $order_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets draft_count
+     *
+     * @return int
+     */
+    public function getDraftCount()
+    {
+        return $this->container['draft_count'];
+    }
+
+    /**
+     * Sets draft_count
+     *
+     * @param int $draft_count Количество заказов, которое Маркет запланировал к отгрузке.
+     *
+     * @return self
+     */
+    public function setDraftCount($draft_count)
+    {
+        if (is_null($draft_count)) {
+            throw new \InvalidArgumentException('non-nullable draft_count cannot be null');
+        }
+
+        if (($draft_count < 0)) {
+            throw new \InvalidArgumentException('invalid value for $draft_count when calling ShipmentInfoDTO., must be bigger than or equal to 0.');
+        }
+
+        $this->container['draft_count'] = $draft_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets planned_count
+     *
+     * @return int
+     */
+    public function getPlannedCount()
+    {
+        return $this->container['planned_count'];
+    }
+
+    /**
+     * Sets planned_count
+     *
+     * @param int $planned_count Количество заказов, которое Маркет подтвердил к отгрузке.
+     *
+     * @return self
+     */
+    public function setPlannedCount($planned_count)
+    {
+        if (is_null($planned_count)) {
+            throw new \InvalidArgumentException('non-nullable planned_count cannot be null');
+        }
+
+        if (($planned_count < 0)) {
+            throw new \InvalidArgumentException('invalid value for $planned_count when calling ShipmentInfoDTO., must be bigger than or equal to 0.');
+        }
+
+        $this->container['planned_count'] = $planned_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets fact_count
+     *
+     * @return int
+     */
+    public function getFactCount()
+    {
+        return $this->container['fact_count'];
+    }
+
+    /**
+     * Sets fact_count
+     *
+     * @param int $fact_count Количество заказов, принятых в сортировочном центре или пункте приема.
+     *
+     * @return self
+     */
+    public function setFactCount($fact_count)
+    {
+        if (is_null($fact_count)) {
+            throw new \InvalidArgumentException('non-nullable fact_count cannot be null');
+        }
+
+        if (($fact_count < 0)) {
+            throw new \InvalidArgumentException('invalid value for $fact_count when calling ShipmentInfoDTO., must be bigger than or equal to 0.');
+        }
+
+        $this->container['fact_count'] = $fact_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets signature
+     *
+     * @return \OpenAPI\Client\Model\SignatureDTO
+     */
+    public function getSignature()
+    {
+        return $this->container['signature'];
+    }
+
+    /**
+     * Sets signature
+     *
+     * @param \OpenAPI\Client\Model\SignatureDTO $signature signature
+     *
+     * @return self
+     */
+    public function setSignature($signature)
+    {
+        if (is_null($signature)) {
+            throw new \InvalidArgumentException('non-nullable signature cannot be null');
+        }
+        $this->container['signature'] = $signature;
+
+        return $this;
+    }
+
+    /**
      * Gets shipment_type
      *
      * @return \OpenAPI\Client\Model\ShipmentType|null
@@ -691,158 +843,6 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets order_ids
-     *
-     * @return int[]
-     */
-    public function getOrderIds()
-    {
-        return $this->container['order_ids'];
-    }
-
-    /**
-     * Sets order_ids
-     *
-     * @param int[] $order_ids Идентификаторы заказов в отгрузке.
-     *
-     * @return self
-     */
-    public function setOrderIds($order_ids)
-    {
-        if (is_null($order_ids)) {
-            throw new \InvalidArgumentException('non-nullable order_ids cannot be null');
-        }
-
-
-        $this->container['order_ids'] = $order_ids;
-
-        return $this;
-    }
-
-    /**
-     * Gets draft_count
-     *
-     * @return int
-     */
-    public function getDraftCount()
-    {
-        return $this->container['draft_count'];
-    }
-
-    /**
-     * Sets draft_count
-     *
-     * @param int $draft_count Количество заказов, которое Маркет запланировал к отгрузке.
-     *
-     * @return self
-     */
-    public function setDraftCount($draft_count)
-    {
-        if (is_null($draft_count)) {
-            throw new \InvalidArgumentException('non-nullable draft_count cannot be null');
-        }
-
-        if (($draft_count < 0)) {
-            throw new \InvalidArgumentException('invalid value for $draft_count when calling ShipmentInfoDTO., must be bigger than or equal to 0.');
-        }
-
-        $this->container['draft_count'] = $draft_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets planned_count
-     *
-     * @return int
-     */
-    public function getPlannedCount()
-    {
-        return $this->container['planned_count'];
-    }
-
-    /**
-     * Sets planned_count
-     *
-     * @param int $planned_count Количество заказов, которое Маркет подтвердил к отгрузке.
-     *
-     * @return self
-     */
-    public function setPlannedCount($planned_count)
-    {
-        if (is_null($planned_count)) {
-            throw new \InvalidArgumentException('non-nullable planned_count cannot be null');
-        }
-
-        if (($planned_count < 0)) {
-            throw new \InvalidArgumentException('invalid value for $planned_count when calling ShipmentInfoDTO., must be bigger than or equal to 0.');
-        }
-
-        $this->container['planned_count'] = $planned_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets fact_count
-     *
-     * @return int
-     */
-    public function getFactCount()
-    {
-        return $this->container['fact_count'];
-    }
-
-    /**
-     * Sets fact_count
-     *
-     * @param int $fact_count Количество заказов, принятых в сортировочном центре или пункте приема.
-     *
-     * @return self
-     */
-    public function setFactCount($fact_count)
-    {
-        if (is_null($fact_count)) {
-            throw new \InvalidArgumentException('non-nullable fact_count cannot be null');
-        }
-
-        if (($fact_count < 0)) {
-            throw new \InvalidArgumentException('invalid value for $fact_count when calling ShipmentInfoDTO., must be bigger than or equal to 0.');
-        }
-
-        $this->container['fact_count'] = $fact_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets signature
-     *
-     * @return \OpenAPI\Client\Model\SignatureDTO
-     */
-    public function getSignature()
-    {
-        return $this->container['signature'];
-    }
-
-    /**
-     * Sets signature
-     *
-     * @param \OpenAPI\Client\Model\SignatureDTO $signature signature
-     *
-     * @return self
-     */
-    public function setSignature($signature)
-    {
-        if (is_null($signature)) {
-            throw new \InvalidArgumentException('non-nullable signature cannot be null');
-        }
-        $this->container['signature'] = $signature;
-
-        return $this;
-    }
-
-    /**
      * Gets status
      *
      * @return \OpenAPI\Client\Model\ShipmentStatusType|null
@@ -929,7 +929,7 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -942,7 +942,7 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -971,7 +971,7 @@ class ShipmentInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

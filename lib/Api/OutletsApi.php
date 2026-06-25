@@ -1300,8 +1300,8 @@ class OutletsApi
      * Информация о нескольких точках продаж
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  int|null $region_id Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). (optional)
      * @param  string|null $shop_outlet_code Идентификатор точки продаж, присвоенный магазином. (optional)
      * @param  int|null $region_id2 {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} (optional) (deprecated)
@@ -1311,7 +1311,7 @@ class OutletsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetOutletsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getOutlets($campaign_id, $page_token = null, $limit = null, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
+    public function getOutlets($campaign_id, $page_token = null, $limit = 25, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
     {
         list($response) = $this->getOutletsWithHttpInfo($campaign_id, $page_token, $limit, $region_id, $shop_outlet_code, $region_id2, $contentType);
         return $response;
@@ -1323,8 +1323,8 @@ class OutletsApi
      * Информация о нескольких точках продаж
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  int|null $region_id Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). (optional)
      * @param  string|null $shop_outlet_code Идентификатор точки продаж, присвоенный магазином. (optional)
      * @param  int|null $region_id2 {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} (optional) (deprecated)
@@ -1334,7 +1334,7 @@ class OutletsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetOutletsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOutletsWithHttpInfo($campaign_id, $page_token = null, $limit = null, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
+    public function getOutletsWithHttpInfo($campaign_id, $page_token = null, $limit = 25, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
     {
         $request = $this->getOutletsRequest($campaign_id, $page_token, $limit, $region_id, $shop_outlet_code, $region_id2, $contentType);
 
@@ -1497,8 +1497,8 @@ class OutletsApi
      * Информация о нескольких точках продаж
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  int|null $region_id Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). (optional)
      * @param  string|null $shop_outlet_code Идентификатор точки продаж, присвоенный магазином. (optional)
      * @param  int|null $region_id2 {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} (optional) (deprecated)
@@ -1507,7 +1507,7 @@ class OutletsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOutletsAsync($campaign_id, $page_token = null, $limit = null, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
+    public function getOutletsAsync($campaign_id, $page_token = null, $limit = 25, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
     {
         return $this->getOutletsAsyncWithHttpInfo($campaign_id, $page_token, $limit, $region_id, $shop_outlet_code, $region_id2, $contentType)
             ->then(
@@ -1523,8 +1523,8 @@ class OutletsApi
      * Информация о нескольких точках продаж
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  int|null $region_id Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). (optional)
      * @param  string|null $shop_outlet_code Идентификатор точки продаж, присвоенный магазином. (optional)
      * @param  int|null $region_id2 {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} (optional) (deprecated)
@@ -1533,7 +1533,7 @@ class OutletsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOutletsAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = null, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
+    public function getOutletsAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = 25, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetOutletsResponse';
         $request = $this->getOutletsRequest($campaign_id, $page_token, $limit, $region_id, $shop_outlet_code, $region_id2, $contentType);
@@ -1578,8 +1578,8 @@ class OutletsApi
      * Create request for operation 'getOutlets'
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  int|null $region_id Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). (optional)
      * @param  string|null $shop_outlet_code Идентификатор точки продаж, присвоенный магазином. (optional)
      * @param  int|null $region_id2 {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} (optional) (deprecated)
@@ -1588,7 +1588,7 @@ class OutletsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOutletsRequest($campaign_id, $page_token = null, $limit = null, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
+    public function getOutletsRequest($campaign_id, $page_token = null, $limit = 25, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
     {
 
         // verify the required parameter 'campaign_id' is set
@@ -1602,6 +1602,9 @@ class OutletsApi
         }
         
 
+        if ($limit !== null && $limit > 50) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling OutletsApi.getOutlets, must be smaller than or equal to 50.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling OutletsApi.getOutlets, must be bigger than or equal to 1.');
         }
@@ -1620,7 +1623,7 @@ class OutletsApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode

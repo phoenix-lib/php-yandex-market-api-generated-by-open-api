@@ -58,12 +58,12 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'available_on_holidays' => 'bool',
         'custom_holidays' => 'string[]',
         'custom_working_days' => 'string[]',
-        'period' => '\OpenAPI\Client\Model\CampaignSettingsTimePeriodDTO',
         'total_holidays' => 'string[]',
-        'weekly_holidays' => 'int[]'
+        'weekly_holidays' => 'int[]',
+        'available_on_holidays' => 'bool',
+        'period' => '\OpenAPI\Client\Model\CampaignSettingsTimePeriodDTO'
     ];
 
     /**
@@ -74,12 +74,12 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'available_on_holidays' => null,
         'custom_holidays' => 'date-dd-MM-yyyy',
         'custom_working_days' => 'date-dd-MM-yyyy',
-        'period' => null,
         'total_holidays' => 'date-dd-MM-yyyy',
-        'weekly_holidays' => 'int32'
+        'weekly_holidays' => 'int32',
+        'available_on_holidays' => null,
+        'period' => null
     ];
 
     /**
@@ -88,12 +88,12 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'available_on_holidays' => false,
         'custom_holidays' => false,
         'custom_working_days' => false,
-        'period' => false,
         'total_holidays' => false,
-        'weekly_holidays' => false
+        'weekly_holidays' => false,
+        'available_on_holidays' => false,
+        'period' => false
     ];
 
     /**
@@ -182,12 +182,12 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'available_on_holidays' => 'availableOnHolidays',
         'custom_holidays' => 'customHolidays',
         'custom_working_days' => 'customWorkingDays',
-        'period' => 'period',
         'total_holidays' => 'totalHolidays',
-        'weekly_holidays' => 'weeklyHolidays'
+        'weekly_holidays' => 'weeklyHolidays',
+        'available_on_holidays' => 'availableOnHolidays',
+        'period' => 'period'
     ];
 
     /**
@@ -196,12 +196,12 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'available_on_holidays' => 'setAvailableOnHolidays',
         'custom_holidays' => 'setCustomHolidays',
         'custom_working_days' => 'setCustomWorkingDays',
-        'period' => 'setPeriod',
         'total_holidays' => 'setTotalHolidays',
-        'weekly_holidays' => 'setWeeklyHolidays'
+        'weekly_holidays' => 'setWeeklyHolidays',
+        'available_on_holidays' => 'setAvailableOnHolidays',
+        'period' => 'setPeriod'
     ];
 
     /**
@@ -210,12 +210,12 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'available_on_holidays' => 'getAvailableOnHolidays',
         'custom_holidays' => 'getCustomHolidays',
         'custom_working_days' => 'getCustomWorkingDays',
-        'period' => 'getPeriod',
         'total_holidays' => 'getTotalHolidays',
-        'weekly_holidays' => 'getWeeklyHolidays'
+        'weekly_holidays' => 'getWeeklyHolidays',
+        'available_on_holidays' => 'getAvailableOnHolidays',
+        'period' => 'getPeriod'
     ];
 
     /**
@@ -275,12 +275,12 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('available_on_holidays', $data ?? [], null);
         $this->setIfExists('custom_holidays', $data ?? [], null);
         $this->setIfExists('custom_working_days', $data ?? [], null);
-        $this->setIfExists('period', $data ?? [], null);
         $this->setIfExists('total_holidays', $data ?? [], null);
         $this->setIfExists('weekly_holidays', $data ?? [], null);
+        $this->setIfExists('available_on_holidays', $data ?? [], null);
+        $this->setIfExists('period', $data ?? [], null);
     }
 
     /**
@@ -338,33 +338,6 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets available_on_holidays
-     *
-     * @return bool|null
-     */
-    public function getAvailableOnHolidays()
-    {
-        return $this->container['available_on_holidays'];
-    }
-
-    /**
-     * Sets available_on_holidays
-     *
-     * @param bool|null $available_on_holidays Признак работы службы доставки в государственные праздники. Возможные значения. * `false` — служба доставки не работает в праздничные дни. * `true` — служба доставки работает в праздничные дни.
-     *
-     * @return self
-     */
-    public function setAvailableOnHolidays($available_on_holidays)
-    {
-        if (is_null($available_on_holidays)) {
-            throw new \InvalidArgumentException('non-nullable available_on_holidays cannot be null');
-        }
-        $this->container['available_on_holidays'] = $available_on_holidays;
-
-        return $this;
-    }
-
-    /**
      * Gets custom_holidays
      *
      * @return string[]
@@ -418,33 +391,6 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
 
 
         $this->container['custom_working_days'] = $custom_working_days;
-
-        return $this;
-    }
-
-    /**
-     * Gets period
-     *
-     * @return \OpenAPI\Client\Model\CampaignSettingsTimePeriodDTO|null
-     */
-    public function getPeriod()
-    {
-        return $this->container['period'];
-    }
-
-    /**
-     * Sets period
-     *
-     * @param \OpenAPI\Client\Model\CampaignSettingsTimePeriodDTO|null $period period
-     *
-     * @return self
-     */
-    public function setPeriod($period)
-    {
-        if (is_null($period)) {
-            throw new \InvalidArgumentException('non-nullable period cannot be null');
-        }
-        $this->container['period'] = $period;
 
         return $this;
     }
@@ -506,6 +452,60 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
+
+    /**
+     * Gets available_on_holidays
+     *
+     * @return bool|null
+     */
+    public function getAvailableOnHolidays()
+    {
+        return $this->container['available_on_holidays'];
+    }
+
+    /**
+     * Sets available_on_holidays
+     *
+     * @param bool|null $available_on_holidays Признак работы службы доставки в государственные праздники. Возможные значения. * `false` — служба доставки не работает в праздничные дни. * `true` — служба доставки работает в праздничные дни.
+     *
+     * @return self
+     */
+    public function setAvailableOnHolidays($available_on_holidays)
+    {
+        if (is_null($available_on_holidays)) {
+            throw new \InvalidArgumentException('non-nullable available_on_holidays cannot be null');
+        }
+        $this->container['available_on_holidays'] = $available_on_holidays;
+
+        return $this;
+    }
+
+    /**
+     * Gets period
+     *
+     * @return \OpenAPI\Client\Model\CampaignSettingsTimePeriodDTO|null
+     */
+    public function getPeriod()
+    {
+        return $this->container['period'];
+    }
+
+    /**
+     * Sets period
+     *
+     * @param \OpenAPI\Client\Model\CampaignSettingsTimePeriodDTO|null $period period
+     *
+     * @return self
+     */
+    public function setPeriod($period)
+    {
+        if (is_null($period)) {
+            throw new \InvalidArgumentException('non-nullable period cannot be null');
+        }
+        $this->container['period'] = $period;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -513,7 +513,7 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -526,7 +526,7 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -555,7 +555,7 @@ class CampaignSettingsScheduleDTO implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

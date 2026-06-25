@@ -64,8 +64,8 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => 'float',
         'buyer_price' => 'float',
         'buyer_price_before_discount' => 'float',
-        'price_before_discount' => 'float',
         'count' => 'int',
+        'price_before_discount' => 'float',
         'vat' => '\OpenAPI\Client\Model\OrderVatType',
         'shop_sku' => 'string',
         'subsidy' => 'float',
@@ -92,8 +92,8 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => null,
         'buyer_price' => null,
         'buyer_price_before_discount' => null,
-        'price_before_discount' => null,
         'count' => null,
+        'price_before_discount' => null,
         'vat' => null,
         'shop_sku' => null,
         'subsidy' => null,
@@ -118,8 +118,8 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => false,
         'buyer_price' => false,
         'buyer_price_before_discount' => false,
-        'price_before_discount' => false,
         'count' => false,
+        'price_before_discount' => false,
         'vat' => false,
         'shop_sku' => false,
         'subsidy' => false,
@@ -224,8 +224,8 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => 'price',
         'buyer_price' => 'buyerPrice',
         'buyer_price_before_discount' => 'buyerPriceBeforeDiscount',
-        'price_before_discount' => 'priceBeforeDiscount',
         'count' => 'count',
+        'price_before_discount' => 'priceBeforeDiscount',
         'vat' => 'vat',
         'shop_sku' => 'shopSku',
         'subsidy' => 'subsidy',
@@ -250,8 +250,8 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => 'setPrice',
         'buyer_price' => 'setBuyerPrice',
         'buyer_price_before_discount' => 'setBuyerPriceBeforeDiscount',
-        'price_before_discount' => 'setPriceBeforeDiscount',
         'count' => 'setCount',
+        'price_before_discount' => 'setPriceBeforeDiscount',
         'vat' => 'setVat',
         'shop_sku' => 'setShopSku',
         'subsidy' => 'setSubsidy',
@@ -276,8 +276,8 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'price' => 'getPrice',
         'buyer_price' => 'getBuyerPrice',
         'buyer_price_before_discount' => 'getBuyerPriceBeforeDiscount',
-        'price_before_discount' => 'getPriceBeforeDiscount',
         'count' => 'getCount',
+        'price_before_discount' => 'getPriceBeforeDiscount',
         'vat' => 'getVat',
         'shop_sku' => 'getShopSku',
         'subsidy' => 'getSubsidy',
@@ -353,8 +353,8 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('buyer_price', $data ?? [], null);
         $this->setIfExists('buyer_price_before_discount', $data ?? [], null);
-        $this->setIfExists('price_before_discount', $data ?? [], null);
         $this->setIfExists('count', $data ?? [], null);
+        $this->setIfExists('price_before_discount', $data ?? [], null);
         $this->setIfExists('vat', $data ?? [], null);
         $this->setIfExists('shop_sku', $data ?? [], null);
         $this->setIfExists('subsidy', $data ?? [], null);
@@ -651,6 +651,33 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets count
+     *
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     *
+     * @param int $count Количество единиц товара.
+     *
+     * @return self
+     */
+    public function setCount($count)
+    {
+        if (is_null($count)) {
+            throw new \InvalidArgumentException('non-nullable count cannot be null');
+        }
+        $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
      * Gets price_before_discount
      *
      * @return float|null
@@ -675,33 +702,6 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable price_before_discount cannot be null');
         }
         $this->container['price_before_discount'] = $price_before_discount;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     *
-     * @return int
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     *
-     * @param int $count Количество единиц товара.
-     *
-     * @return self
-     */
-    public function setCount($count)
-    {
-        if (is_null($count)) {
-            throw new \InvalidArgumentException('non-nullable count cannot be null');
-        }
-        $this->container['count'] = $count;
 
         return $this;
     }
@@ -812,7 +812,7 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets partner_warehouse_id
      *
-     * @param string|null $partner_warehouse_id **Только для модели FBY**  Идентификатор склада, на который сформирован заказ.
+     * @param string|null $partner_warehouse_id **Только для моделей FBY и LaaS**  Идентификатор склада, на который сформирован заказ.
      *
      * @return self
      */
@@ -918,7 +918,7 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets details
      *
-     * @param \OpenAPI\Client\Model\OrderItemDetailDTO[]|null $details {% note warning \"Для получения информации о невыкупах и возвратах используйте [GET v2/campaigns/{campaignId}/returns](../../reference/orders/getReturns.md).\" %}     {% endnote %}  Информация о невыкупленных или возвращенных товарах в заказе.
+     * @param \OpenAPI\Client\Model\OrderItemDetailDTO[]|null $details {% note warning \"Для получения информации о невыкупах и возвратах используйте [GET v2/campaigns/{campaignId}/returns](../../reference/returns/getReturns.md).\" %}     {% endnote %}  Информация о невыкупленных или возвращенных товарах в заказе.
      *
      * @return self
      * @deprecated
@@ -1068,7 +1068,7 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -1081,7 +1081,7 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -1110,7 +1110,7 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

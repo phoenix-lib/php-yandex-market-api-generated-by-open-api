@@ -80,18 +80,18 @@ class BusinessOrderShipmentDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "shipment_date"
      */
-    public function testPropertyId()
+    public function testPropertyShipmentDate()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "shipment_date"
+     * Test attribute "id"
      */
-    public function testPropertyShipmentDate()
+    public function testPropertyId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

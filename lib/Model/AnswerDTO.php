@@ -61,11 +61,11 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'text' => 'string',
         'can_modify' => 'bool',
-        'author' => '\OpenAPI\Client\Model\QuestionsTextContentAuthorDTO',
         'status' => '\OpenAPI\Client\Model\QuestionsTextContentModerationStatusType',
         'question_id' => 'int',
         'created_at' => '\DateTime',
         'votes' => '\OpenAPI\Client\Model\VotesDTO',
+        'author' => '\OpenAPI\Client\Model\QuestionsTextContentAuthorDTO',
         'comments' => '\OpenAPI\Client\Model\CommentDTO[]'
     ];
 
@@ -80,11 +80,11 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int64',
         'text' => null,
         'can_modify' => null,
-        'author' => null,
         'status' => null,
         'question_id' => 'int64',
         'created_at' => 'date-time',
         'votes' => null,
+        'author' => null,
         'comments' => null
     ];
 
@@ -97,11 +97,11 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => false,
         'text' => false,
         'can_modify' => false,
-        'author' => false,
         'status' => false,
         'question_id' => false,
         'created_at' => false,
         'votes' => false,
+        'author' => false,
         'comments' => true
     ];
 
@@ -194,11 +194,11 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'text' => 'text',
         'can_modify' => 'canModify',
-        'author' => 'author',
         'status' => 'status',
         'question_id' => 'questionId',
         'created_at' => 'createdAt',
         'votes' => 'votes',
+        'author' => 'author',
         'comments' => 'comments'
     ];
 
@@ -211,11 +211,11 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'text' => 'setText',
         'can_modify' => 'setCanModify',
-        'author' => 'setAuthor',
         'status' => 'setStatus',
         'question_id' => 'setQuestionId',
         'created_at' => 'setCreatedAt',
         'votes' => 'setVotes',
+        'author' => 'setAuthor',
         'comments' => 'setComments'
     ];
 
@@ -228,11 +228,11 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'text' => 'getText',
         'can_modify' => 'getCanModify',
-        'author' => 'getAuthor',
         'status' => 'getStatus',
         'question_id' => 'getQuestionId',
         'created_at' => 'getCreatedAt',
         'votes' => 'getVotes',
+        'author' => 'getAuthor',
         'comments' => 'getComments'
     ];
 
@@ -296,11 +296,11 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('text', $data ?? [], null);
         $this->setIfExists('can_modify', $data ?? [], null);
-        $this->setIfExists('author', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('question_id', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('votes', $data ?? [], null);
+        $this->setIfExists('author', $data ?? [], null);
         $this->setIfExists('comments', $data ?? [], null);
     }
 
@@ -485,33 +485,6 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets author
-     *
-     * @return \OpenAPI\Client\Model\QuestionsTextContentAuthorDTO|null
-     */
-    public function getAuthor()
-    {
-        return $this->container['author'];
-    }
-
-    /**
-     * Sets author
-     *
-     * @param \OpenAPI\Client\Model\QuestionsTextContentAuthorDTO|null $author author
-     *
-     * @return self
-     */
-    public function setAuthor($author)
-    {
-        if (is_null($author)) {
-            throw new \InvalidArgumentException('non-nullable author cannot be null');
-        }
-        $this->container['author'] = $author;
-
-        return $this;
-    }
-
-    /**
      * Gets status
      *
      * @return \OpenAPI\Client\Model\QuestionsTextContentModerationStatusType
@@ -625,6 +598,33 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets author
+     *
+     * @return \OpenAPI\Client\Model\QuestionsTextContentAuthorDTO|null
+     */
+    public function getAuthor()
+    {
+        return $this->container['author'];
+    }
+
+    /**
+     * Sets author
+     *
+     * @param \OpenAPI\Client\Model\QuestionsTextContentAuthorDTO|null $author author
+     *
+     * @return self
+     */
+    public function setAuthor($author)
+    {
+        if (is_null($author)) {
+            throw new \InvalidArgumentException('non-nullable author cannot be null');
+        }
+        $this->container['author'] = $author;
+
+        return $this;
+    }
+
+    /**
      * Gets comments
      *
      * @return \OpenAPI\Client\Model\CommentDTO[]|null
@@ -671,7 +671,7 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -684,7 +684,7 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -713,7 +713,7 @@ class AnswerDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

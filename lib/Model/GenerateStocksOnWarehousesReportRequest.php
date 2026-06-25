@@ -397,7 +397,7 @@ class GenerateStocksOnWarehousesReportRequest implements ModelInterface, ArrayAc
     /**
      * Sets business_id
      *
-     * @param int|null $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+     * @param int|null $business_id Идентификатор кабинета. {% if audience == \"partner\" %}Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) {% endif %}
      *
      * @return self
      */
@@ -429,7 +429,7 @@ class GenerateStocksOnWarehousesReportRequest implements ModelInterface, ArrayAc
     /**
      * Sets warehouse_ids
      *
-     * @param int[]|null $warehouse_ids Фильтр по идентификаторам складов (только модель FBY). Чтобы узнать идентификатор, воспользуйтесь запросом [GET v2/warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).
+     * @param int[]|null $warehouse_ids Фильтр по идентификаторам складов (только модели FBY и LaaS). Чтобы узнать идентификатор, воспользуйтесь запросом [GET v2/warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).
      *
      * @return self
      */
@@ -468,7 +468,7 @@ class GenerateStocksOnWarehousesReportRequest implements ModelInterface, ArrayAc
     /**
      * Sets report_date
      *
-     * @param \DateTime|null $report_date Фильтр по дате (для модели FBY). В отчет попадут данные за **предшествующий** дате день.  Формат даты: `ГГГГ-ММ-ДД`.
+     * @param \DateTime|null $report_date Фильтр по дате (для моделей FBY и LaaS). В отчет попадут данные за **предшествующий** дате день.  Формат даты: `ГГГГ-ММ-ДД`.
      *
      * @return self
      */
@@ -495,7 +495,7 @@ class GenerateStocksOnWarehousesReportRequest implements ModelInterface, ArrayAc
     /**
      * Sets category_ids
      *
-     * @param int[]|null $category_ids Фильтр по категориям на Маркете (кроме модели FBY).
+     * @param int[]|null $category_ids Фильтр по категориям на Маркете (кроме моделей FBY и LaaS).
      *
      * @return self
      */
@@ -534,7 +534,7 @@ class GenerateStocksOnWarehousesReportRequest implements ModelInterface, ArrayAc
     /**
      * Sets has_stocks
      *
-     * @param bool|null $has_stocks Фильтр по наличию остатков (кроме модели FBY).
+     * @param bool|null $has_stocks Фильтр по наличию остатков (кроме моделей FBY и LaaS).
      *
      * @return self
      */
@@ -561,7 +561,7 @@ class GenerateStocksOnWarehousesReportRequest implements ModelInterface, ArrayAc
     /**
      * Sets campaign_ids
      *
-     * @param int[]|null $campaign_ids Фильтр по магазинам для отчета по кабинету (кроме модели FBY).  Передавайте вместе с `businessId`.
+     * @param int[]|null $campaign_ids Фильтр по магазинам для отчета по кабинету (кроме моделей FBY и LaaS).  Передавайте вместе с `businessId`.
      *
      * @return self
      */
@@ -593,7 +593,7 @@ class GenerateStocksOnWarehousesReportRequest implements ModelInterface, ArrayAc
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -606,7 +606,7 @@ class GenerateStocksOnWarehousesReportRequest implements ModelInterface, ArrayAc
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -635,7 +635,7 @@ class GenerateStocksOnWarehousesReportRequest implements ModelInterface, ArrayAc
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

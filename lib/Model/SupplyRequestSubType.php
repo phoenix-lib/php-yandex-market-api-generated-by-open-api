@@ -33,7 +33,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * SupplyRequestSubType Class Doc Comment
  *
  * @category Class
- * @description Подтип заявки:  * &#x60;DEFAULT&#x60; — поставка товаров на склад хранения или вывоз с него. * &#x60;XDOC&#x60; — поставка товаров через транзитный склад или вывоз с него. * &#x60;INVENTORYING_SUPPLY&#x60; — инвентаризация на складе по запросу магазина. * &#x60;INVENTORYING_SUPPLY_WAREHOUSE_BASED_PER_SUPPLIER&#x60; — инвентаризация на складе по запросу склада. * &#x60;MOVEMENT_SUPPLY&#x60; — входящее перемещение между складами.      При перемещении между складами создаются 2 заявки — &#x60;MOVEMENT_SUPPLY&#x60; и &#x60;MOVEMENT_WITHDRAW&#x60;. * &#x60;ADDITIONAL_SUPPLY&#x60; — дополнительная поставка непринятых товаров. * &#x60;VIRTUAL_DISTRIBUTION_CENTER&#x60; — родительская заявка при поставке товаров на склад хранения или [мультипоставке](*multisupply). * &#x60;VIRTUAL_DISTRIBUTION_CENTER_CHILD&#x60; — дочерняя заявка при поставке товаров на склад хранения или [мультипоставке](*multisupply).      Для нее не возвращается &#x60;transitLocation&#x60;. * &#x60;FORCE_PLAN&#x60; — автоматическая утилизация по запросу склада. * &#x60;FORCE_PLAN_ANOMALY_PER_SUPPLY&#x60; — утилизация непринятых товаров. * &#x60;PLAN_BY_SUPPLIER&#x60; — утилизация по запросу магазина. * &#x60;ANOMALY_WITHDRAW&#x60; — вывоз непринятых товаров. * &#x60;FIX_LOST_INVENTORYING&#x60; — товары, которые не нашли после второй инвентаризации. * &#x60;OPER_LOST_INVENTORYING&#x60; — товары, которые не нашли после первой инвентаризации. * &#x60;MOVEMENT_WITHDRAW&#x60; — исходящее перемещение между складами.      При перемещении между складами создаются 2 заявки — &#x60;MOVEMENT_SUPPLY&#x60; и &#x60;MOVEMENT_WITHDRAW&#x60;. * &#x60;MISGRADING_SUPPLY&#x60; — пересортица в большую сторону. * &#x60;MISGRADING_WITHDRAW&#x60; — пересортица в меньшую сторону. * &#x60;MAN_UTIL&#x60; — ручная утилизация по запросу склада. * &#x60;WITHDRAW_AUTO_UTILIZATION&#x60; — автоматическая утилизация товаров в заявке на вывоз, когда истек срок их хранения.
+ * @description Подтип заявки:  * &#x60;DEFAULT&#x60; — поставка товаров на склад хранения или вывоз с него. * &#x60;XDOC&#x60; — поставка товаров через транзитный склад или вывоз с него. * &#x60;INVENTORYING_SUPPLY&#x60; — инвентаризация на складе по запросу магазина. * &#x60;INVENTORYING_SUPPLY_WAREHOUSE_BASED_PER_SUPPLIER&#x60; — инвентаризация на складе по запросу склада. * &#x60;MOVEMENT_SUPPLY&#x60; — входящее перемещение между складами.      При перемещении между складами создаются 2 заявки — &#x60;MOVEMENT_SUPPLY&#x60; и &#x60;MOVEMENT_WITHDRAW&#x60;. * &#x60;ADDITIONAL_SUPPLY&#x60; — дополнительная поставка непринятых товаров. * &#x60;VIRTUAL_DISTRIBUTION_CENTER&#x60; — родительская заявка при поставке товаров на склад хранения или [мультипоставке](*multisupply). * &#x60;VIRTUAL_DISTRIBUTION_CENTER_CHILD&#x60; — дочерняя заявка при поставке товаров на склад хранения или [мультипоставке](*multisupply).      Для нее не возвращается &#x60;transitLocation&#x60;. * &#x60;FORCE_PLAN&#x60; — автоматическая утилизация по запросу склада. * &#x60;FORCE_PLAN_ANOMALY_PER_SUPPLY&#x60; — утилизация непринятых товаров. * &#x60;PLAN_BY_SUPPLIER&#x60; — утилизация по запросу магазина. * &#x60;ANOMALY_WITHDRAW&#x60; — вывоз непринятых товаров. * &#x60;FIX_LOST_INVENTORYING&#x60; — товары, которые не нашли после второй инвентаризации. * &#x60;OPER_LOST_INVENTORYING&#x60; — товары, которые не нашли после первой инвентаризации. * &#x60;MOVEMENT_WITHDRAW&#x60; — исходящее перемещение между складами.      При перемещении между складами создаются 2 заявки — &#x60;MOVEMENT_SUPPLY&#x60; и &#x60;MOVEMENT_WITHDRAW&#x60;. * &#x60;MISGRADING_SUPPLY&#x60; — пересортица в большую сторону. * &#x60;MISGRADING_WITHDRAW&#x60; — пересортица в меньшую сторону. * &#x60;MAN_UTIL&#x60; — ручная утилизация по запросу склада. * &#x60;WITHDRAW_AUTO_UTILIZATION&#x60; — автоматическая утилизация товаров в заявке на вывоз, когда истек срок их хранения. * &#x60;EXTERNAL_WITHDRAW_INT_OZON&#x60; — вывоз товаров на маркетплейс Ozon. Заявка на поставку оформлена в Личном кабинете Ozon. * &#x60;EXTERNAL_WITHDRAW_INT_WB&#x60; — вывоз товаров на маркетплейс Wildberries. Заявка на поставку оформлена в Личном кабинете Wildberries.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -81,6 +81,10 @@ class SupplyRequestSubType
 
     public const WITHDRAW_AUTO_UTILIZATION = 'WITHDRAW_AUTO_UTILIZATION';
 
+    public const EXTERNAL_WITHDRAW_INT_OZON = 'EXTERNAL_WITHDRAW_INT_OZON';
+
+    public const EXTERNAL_WITHDRAW_INT_WB = 'EXTERNAL_WITHDRAW_INT_WB';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -106,7 +110,9 @@ class SupplyRequestSubType
             self::MISGRADING_SUPPLY,
             self::MISGRADING_WITHDRAW,
             self::MAN_UTIL,
-            self::WITHDRAW_AUTO_UTILIZATION
+            self::WITHDRAW_AUTO_UTILIZATION,
+            self::EXTERNAL_WITHDRAW_INT_OZON,
+            self::EXTERNAL_WITHDRAW_INT_WB
         ];
     }
 }

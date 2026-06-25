@@ -58,8 +58,8 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paging' => '\OpenAPI\Client\Model\ForwardScrollingPagerDTO',
-        'returns' => '\OpenAPI\Client\Model\ReturnDTO[]'
+        'returns' => '\OpenAPI\Client\Model\ReturnDTO[]',
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -70,8 +70,8 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'paging' => null,
-        'returns' => null
+        'returns' => null,
+        'paging' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'paging' => false,
-        'returns' => false
+        'returns' => false,
+        'paging' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'paging' => 'paging',
-        'returns' => 'returns'
+        'returns' => 'returns',
+        'paging' => 'paging'
     ];
 
     /**
@@ -180,8 +180,8 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'paging' => 'setPaging',
-        'returns' => 'setReturns'
+        'returns' => 'setReturns',
+        'paging' => 'setPaging'
     ];
 
     /**
@@ -190,8 +190,8 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'paging' => 'getPaging',
-        'returns' => 'getReturns'
+        'returns' => 'getReturns',
+        'paging' => 'getPaging'
     ];
 
     /**
@@ -251,8 +251,8 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('paging', $data ?? [], null);
         $this->setIfExists('returns', $data ?? [], null);
+        $this->setIfExists('paging', $data ?? [], null);
     }
 
     /**
@@ -301,33 +301,6 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets paging
-     *
-     * @return \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null
-     */
-    public function getPaging()
-    {
-        return $this->container['paging'];
-    }
-
-    /**
-     * Sets paging
-     *
-     * @param \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null $paging paging
-     *
-     * @return self
-     */
-    public function setPaging($paging)
-    {
-        if (is_null($paging)) {
-            throw new \InvalidArgumentException('non-nullable paging cannot be null');
-        }
-        $this->container['paging'] = $paging;
-
-        return $this;
-    }
-
-    /**
      * Gets returns
      *
      * @return \OpenAPI\Client\Model\ReturnDTO[]
@@ -353,6 +326,33 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
+    /**
+     * Gets paging
+     *
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
+     */
+    public function getPaging()
+    {
+        return $this->container['paging'];
+    }
+
+    /**
+     * Sets paging
+     *
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
+     *
+     * @return self
+     */
+    public function setPaging($paging)
+    {
+        if (is_null($paging)) {
+            throw new \InvalidArgumentException('non-nullable paging cannot be null');
+        }
+        $this->container['paging'] = $paging;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -360,7 +360,7 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -373,7 +373,7 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,7 +402,7 @@ class PagedReturnsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

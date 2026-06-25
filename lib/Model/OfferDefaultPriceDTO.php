@@ -354,7 +354,7 @@ class OfferDefaultPriceDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets minimum_for_bestseller
      *
-     * @param float|null $minimum_for_bestseller Минимальная цена товара для попадания в акцию «Бестселлеры Маркета». Подробнее об этом способе участия читайте [в Справке Маркета для продавцов](https://yandex.ru/support/marketplace/ru/marketing/promos/market/bestsellers#minimum).  Передается в методе [POST v2/businesses/{businessId}/offer-prices/updates](../../reference/business-assortment/updateBusinessPrices.md).
+     * @param float|null $minimum_for_bestseller Минимальная цена товара для попадания в акцию «Бестселлеры Маркета». Подробнее об этом способе участия читайте [в Справке Маркета для продавцов](https://yandex.ru/support/marketplace/ru/marketing/promos/market/bestsellers#minimum).  Передается в методе [POST v2/businesses/{businessId}/offer-prices/updates](../../reference/prices/updateBusinessPrices.md).
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class OfferDefaultPriceDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets excluded_from_bestsellers
      *
-     * @param bool|null $excluded_from_bestsellers Признак того, что товар не попадает в акцию «Бестселлеры Маркета». Подробнее об акции читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/promos/market/bestsellers).  Если значение `true`, в методе [POST v2/businesses/{businessId}/offer-prices/updates](../../reference/business-assortment/updateBusinessPrices.md) параметр `minimumForBestseller` игнорируется.
+     * @param bool|null $excluded_from_bestsellers Признак того, что товар не попадает в акцию «Бестселлеры Маркета». Подробнее об акции читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/promos/market/bestsellers).  Если значение `true`, в методе [POST v2/businesses/{businessId}/offer-prices/updates](../../reference/prices/updateBusinessPrices.md) параметр `minimumForBestseller` игнорируется.
      *
      * @return self
      */
@@ -527,7 +527,7 @@ class OfferDefaultPriceDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -540,7 +540,7 @@ class OfferDefaultPriceDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -569,7 +569,7 @@ class OfferDefaultPriceDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

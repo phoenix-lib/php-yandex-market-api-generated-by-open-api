@@ -80,18 +80,18 @@ class PagedReturnsDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "paging"
+     * Test attribute "returns"
      */
-    public function testPropertyPaging()
+    public function testPropertyReturns()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "returns"
+     * Test attribute "paging"
      */
-    public function testPropertyReturns()
+    public function testPropertyPaging()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -59,13 +59,13 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'name' => 'string',
         'type' => '\OpenAPI\Client\Model\OutletType',
+        'address' => '\OpenAPI\Client\Model\OutletAddressDTO',
+        'phones' => 'string[]',
+        'working_schedule' => '\OpenAPI\Client\Model\OutletWorkingScheduleDTO',
         'coords' => 'string',
         'is_main' => 'bool',
         'shop_outlet_code' => 'string',
         'visibility' => '\OpenAPI\Client\Model\OutletVisibilityType',
-        'address' => '\OpenAPI\Client\Model\OutletAddressDTO',
-        'phones' => 'string[]',
-        'working_schedule' => '\OpenAPI\Client\Model\OutletWorkingScheduleDTO',
         'delivery_rules' => '\OpenAPI\Client\Model\OutletDeliveryRuleDTO[]',
         'storage_period' => 'int'
     ];
@@ -80,13 +80,13 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPIFormats = [
         'name' => null,
         'type' => null,
+        'address' => null,
+        'phones' => null,
+        'working_schedule' => null,
         'coords' => null,
         'is_main' => null,
         'shop_outlet_code' => null,
         'visibility' => null,
-        'address' => null,
-        'phones' => null,
-        'working_schedule' => null,
         'delivery_rules' => null,
         'storage_period' => 'int64'
     ];
@@ -99,13 +99,13 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static array $openAPINullables = [
         'name' => false,
         'type' => false,
+        'address' => false,
+        'phones' => false,
+        'working_schedule' => false,
         'coords' => false,
         'is_main' => false,
         'shop_outlet_code' => false,
         'visibility' => false,
-        'address' => false,
-        'phones' => false,
-        'working_schedule' => false,
         'delivery_rules' => true,
         'storage_period' => false
     ];
@@ -198,13 +198,13 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $attributeMap = [
         'name' => 'name',
         'type' => 'type',
+        'address' => 'address',
+        'phones' => 'phones',
+        'working_schedule' => 'workingSchedule',
         'coords' => 'coords',
         'is_main' => 'isMain',
         'shop_outlet_code' => 'shopOutletCode',
         'visibility' => 'visibility',
-        'address' => 'address',
-        'phones' => 'phones',
-        'working_schedule' => 'workingSchedule',
         'delivery_rules' => 'deliveryRules',
         'storage_period' => 'storagePeriod'
     ];
@@ -217,13 +217,13 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $setters = [
         'name' => 'setName',
         'type' => 'setType',
+        'address' => 'setAddress',
+        'phones' => 'setPhones',
+        'working_schedule' => 'setWorkingSchedule',
         'coords' => 'setCoords',
         'is_main' => 'setIsMain',
         'shop_outlet_code' => 'setShopOutletCode',
         'visibility' => 'setVisibility',
-        'address' => 'setAddress',
-        'phones' => 'setPhones',
-        'working_schedule' => 'setWorkingSchedule',
         'delivery_rules' => 'setDeliveryRules',
         'storage_period' => 'setStoragePeriod'
     ];
@@ -236,13 +236,13 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'name' => 'getName',
         'type' => 'getType',
+        'address' => 'getAddress',
+        'phones' => 'getPhones',
+        'working_schedule' => 'getWorkingSchedule',
         'coords' => 'getCoords',
         'is_main' => 'getIsMain',
         'shop_outlet_code' => 'getShopOutletCode',
         'visibility' => 'getVisibility',
-        'address' => 'getAddress',
-        'phones' => 'getPhones',
-        'working_schedule' => 'getWorkingSchedule',
         'delivery_rules' => 'getDeliveryRules',
         'storage_period' => 'getStoragePeriod'
     ];
@@ -306,13 +306,13 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('address', $data ?? [], null);
+        $this->setIfExists('phones', $data ?? [], null);
+        $this->setIfExists('working_schedule', $data ?? [], null);
         $this->setIfExists('coords', $data ?? [], null);
         $this->setIfExists('is_main', $data ?? [], null);
         $this->setIfExists('shop_outlet_code', $data ?? [], null);
         $this->setIfExists('visibility', $data ?? [], null);
-        $this->setIfExists('address', $data ?? [], null);
-        $this->setIfExists('phones', $data ?? [], null);
-        $this->setIfExists('working_schedule', $data ?? [], null);
         $this->setIfExists('delivery_rules', $data ?? [], null);
         $this->setIfExists('storage_period', $data ?? [], null);
     }
@@ -437,6 +437,92 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets address
+     *
+     * @return \OpenAPI\Client\Model\OutletAddressDTO
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param \OpenAPI\Client\Model\OutletAddressDTO $address address
+     *
+     * @return self
+     */
+    public function setAddress($address)
+    {
+        if (is_null($address)) {
+            throw new \InvalidArgumentException('non-nullable address cannot be null');
+        }
+        $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets phones
+     *
+     * @return string[]
+     */
+    public function getPhones()
+    {
+        return $this->container['phones'];
+    }
+
+    /**
+     * Sets phones
+     *
+     * @param string[] $phones Номера телефонов точки продаж. Передавайте номер в формате: `+<код страны>(<код города>)<номер>[#<добавочный>]`.  Примеры: - `+7 (999) 999-99-99` - `+7 (999) 999-99-99#1234`
+     *
+     * @return self
+     */
+    public function setPhones($phones)
+    {
+        if (is_null($phones)) {
+            throw new \InvalidArgumentException('non-nullable phones cannot be null');
+        }
+
+
+        if ((count($phones) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $phones when calling ChangeOutletRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['phones'] = $phones;
+
+        return $this;
+    }
+
+    /**
+     * Gets working_schedule
+     *
+     * @return \OpenAPI\Client\Model\OutletWorkingScheduleDTO
+     */
+    public function getWorkingSchedule()
+    {
+        return $this->container['working_schedule'];
+    }
+
+    /**
+     * Sets working_schedule
+     *
+     * @param \OpenAPI\Client\Model\OutletWorkingScheduleDTO $working_schedule working_schedule
+     *
+     * @return self
+     */
+    public function setWorkingSchedule($working_schedule)
+    {
+        if (is_null($working_schedule)) {
+            throw new \InvalidArgumentException('non-nullable working_schedule cannot be null');
+        }
+        $this->container['working_schedule'] = $working_schedule;
+
+        return $this;
+    }
+
+    /**
      * Gets coords
      *
      * @return string|null
@@ -545,92 +631,6 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets address
-     *
-     * @return \OpenAPI\Client\Model\OutletAddressDTO
-     */
-    public function getAddress()
-    {
-        return $this->container['address'];
-    }
-
-    /**
-     * Sets address
-     *
-     * @param \OpenAPI\Client\Model\OutletAddressDTO $address address
-     *
-     * @return self
-     */
-    public function setAddress($address)
-    {
-        if (is_null($address)) {
-            throw new \InvalidArgumentException('non-nullable address cannot be null');
-        }
-        $this->container['address'] = $address;
-
-        return $this;
-    }
-
-    /**
-     * Gets phones
-     *
-     * @return string[]
-     */
-    public function getPhones()
-    {
-        return $this->container['phones'];
-    }
-
-    /**
-     * Sets phones
-     *
-     * @param string[] $phones Номера телефонов точки продаж. Передавайте номер в формате: `+<код страны>(<код города>)<номер>[#<добавочный>]`.  Примеры: - `+7 (999) 999-99-99` - `+7 (999) 999-99-99#1234`
-     *
-     * @return self
-     */
-    public function setPhones($phones)
-    {
-        if (is_null($phones)) {
-            throw new \InvalidArgumentException('non-nullable phones cannot be null');
-        }
-
-
-        if ((count($phones) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $phones when calling ChangeOutletRequest., number of items must be greater than or equal to 1.');
-        }
-        $this->container['phones'] = $phones;
-
-        return $this;
-    }
-
-    /**
-     * Gets working_schedule
-     *
-     * @return \OpenAPI\Client\Model\OutletWorkingScheduleDTO
-     */
-    public function getWorkingSchedule()
-    {
-        return $this->container['working_schedule'];
-    }
-
-    /**
-     * Sets working_schedule
-     *
-     * @param \OpenAPI\Client\Model\OutletWorkingScheduleDTO $working_schedule working_schedule
-     *
-     * @return self
-     */
-    public function setWorkingSchedule($working_schedule)
-    {
-        if (is_null($working_schedule)) {
-            throw new \InvalidArgumentException('non-nullable working_schedule cannot be null');
-        }
-        $this->container['working_schedule'] = $working_schedule;
-
-        return $this;
-    }
-
-    /**
      * Gets delivery_rules
      *
      * @return \OpenAPI\Client\Model\OutletDeliveryRuleDTO[]|null
@@ -702,7 +702,7 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -715,7 +715,7 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -744,7 +744,7 @@ class ChangeOutletRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

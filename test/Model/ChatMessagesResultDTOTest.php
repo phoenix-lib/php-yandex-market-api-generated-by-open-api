@@ -80,15 +80,6 @@ class ChatMessagesResultDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "order_id"
-     */
-    public function testPropertyOrderId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "context"
      */
     public function testPropertyContext()
@@ -101,6 +92,15 @@ class ChatMessagesResultDTOTest extends TestCase
      * Test attribute "messages"
      */
     public function testPropertyMessages()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "order_id"
+     */
+    public function testPropertyOrderId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

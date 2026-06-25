@@ -108,6 +108,18 @@ class GoodsFeedbackApiTest extends TestCase
     }
 
     /**
+     * Test case for getGoodsFeedbacksUrbanads
+     *
+     * Получение отзывов о товарах для рекламодателей.
+     *
+     */
+    public function testGetGoodsFeedbacksUrbanads()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for skipGoodsFeedbacksReaction
      *
      * Пропуск реакции на отзывы.

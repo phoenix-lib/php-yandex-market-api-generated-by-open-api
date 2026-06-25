@@ -58,17 +58,17 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
         'type' => '\OpenAPI\Client\Model\OrderDeliveryType',
         'service_name' => 'string',
-        'price' => 'float',
         'delivery_partner_type' => '\OpenAPI\Client\Model\OrderDeliveryPartnerType',
-        'courier' => '\OpenAPI\Client\Model\OrderCourierDTO',
         'dates' => '\OpenAPI\Client\Model\OrderDeliveryDatesDTO',
+        'delivery_service_id' => 'int',
+        'id' => 'string',
+        'price' => 'float',
+        'courier' => '\OpenAPI\Client\Model\OrderCourierDTO',
         'region' => '\OpenAPI\Client\Model\RegionDTO',
         'address' => '\OpenAPI\Client\Model\OrderDeliveryAddressDTO',
         'vat' => '\OpenAPI\Client\Model\OrderVatType',
-        'delivery_service_id' => 'int',
         'lift_type' => '\OpenAPI\Client\Model\OrderLiftType',
         'lift_price' => 'float',
         'outlet_code' => 'string',
@@ -78,7 +78,8 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipments' => '\OpenAPI\Client\Model\OrderShipmentDTO[]',
         'estimated' => 'bool',
         'eac_type' => '\OpenAPI\Client\Model\OrderDeliveryEacType',
-        'eac_code' => 'string'
+        'eac_code' => 'string',
+        'receive_code' => 'string'
     ];
 
     /**
@@ -89,17 +90,17 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
         'type' => null,
         'service_name' => null,
-        'price' => null,
         'delivery_partner_type' => null,
-        'courier' => null,
         'dates' => null,
+        'delivery_service_id' => 'int64',
+        'id' => null,
+        'price' => null,
+        'courier' => null,
         'region' => null,
         'address' => null,
         'vat' => null,
-        'delivery_service_id' => 'int64',
         'lift_type' => null,
         'lift_price' => null,
         'outlet_code' => null,
@@ -109,7 +110,8 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipments' => null,
         'estimated' => null,
         'eac_type' => null,
-        'eac_code' => null
+        'eac_code' => null,
+        'receive_code' => null
     ];
 
     /**
@@ -118,17 +120,17 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
         'type' => false,
         'service_name' => false,
-        'price' => false,
         'delivery_partner_type' => false,
-        'courier' => false,
         'dates' => false,
+        'delivery_service_id' => false,
+        'id' => false,
+        'price' => false,
+        'courier' => false,
         'region' => false,
         'address' => false,
         'vat' => false,
-        'delivery_service_id' => false,
         'lift_type' => false,
         'lift_price' => false,
         'outlet_code' => false,
@@ -138,7 +140,8 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipments' => true,
         'estimated' => false,
         'eac_type' => false,
-        'eac_code' => false
+        'eac_code' => false,
+        'receive_code' => false
     ];
 
     /**
@@ -227,17 +230,17 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'type' => 'type',
         'service_name' => 'serviceName',
-        'price' => 'price',
         'delivery_partner_type' => 'deliveryPartnerType',
-        'courier' => 'courier',
         'dates' => 'dates',
+        'delivery_service_id' => 'deliveryServiceId',
+        'id' => 'id',
+        'price' => 'price',
+        'courier' => 'courier',
         'region' => 'region',
         'address' => 'address',
         'vat' => 'vat',
-        'delivery_service_id' => 'deliveryServiceId',
         'lift_type' => 'liftType',
         'lift_price' => 'liftPrice',
         'outlet_code' => 'outletCode',
@@ -247,7 +250,8 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipments' => 'shipments',
         'estimated' => 'estimated',
         'eac_type' => 'eacType',
-        'eac_code' => 'eacCode'
+        'eac_code' => 'eacCode',
+        'receive_code' => 'receiveCode'
     ];
 
     /**
@@ -256,17 +260,17 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'type' => 'setType',
         'service_name' => 'setServiceName',
-        'price' => 'setPrice',
         'delivery_partner_type' => 'setDeliveryPartnerType',
-        'courier' => 'setCourier',
         'dates' => 'setDates',
+        'delivery_service_id' => 'setDeliveryServiceId',
+        'id' => 'setId',
+        'price' => 'setPrice',
+        'courier' => 'setCourier',
         'region' => 'setRegion',
         'address' => 'setAddress',
         'vat' => 'setVat',
-        'delivery_service_id' => 'setDeliveryServiceId',
         'lift_type' => 'setLiftType',
         'lift_price' => 'setLiftPrice',
         'outlet_code' => 'setOutletCode',
@@ -276,7 +280,8 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipments' => 'setShipments',
         'estimated' => 'setEstimated',
         'eac_type' => 'setEacType',
-        'eac_code' => 'setEacCode'
+        'eac_code' => 'setEacCode',
+        'receive_code' => 'setReceiveCode'
     ];
 
     /**
@@ -285,17 +290,17 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'type' => 'getType',
         'service_name' => 'getServiceName',
-        'price' => 'getPrice',
         'delivery_partner_type' => 'getDeliveryPartnerType',
-        'courier' => 'getCourier',
         'dates' => 'getDates',
+        'delivery_service_id' => 'getDeliveryServiceId',
+        'id' => 'getId',
+        'price' => 'getPrice',
+        'courier' => 'getCourier',
         'region' => 'getRegion',
         'address' => 'getAddress',
         'vat' => 'getVat',
-        'delivery_service_id' => 'getDeliveryServiceId',
         'lift_type' => 'getLiftType',
         'lift_price' => 'getLiftPrice',
         'outlet_code' => 'getOutletCode',
@@ -305,7 +310,8 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'shipments' => 'getShipments',
         'estimated' => 'getEstimated',
         'eac_type' => 'getEacType',
-        'eac_code' => 'getEacCode'
+        'eac_code' => 'getEacCode',
+        'receive_code' => 'getReceiveCode'
     ];
 
     /**
@@ -365,17 +371,17 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('service_name', $data ?? [], null);
-        $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('delivery_partner_type', $data ?? [], null);
-        $this->setIfExists('courier', $data ?? [], null);
         $this->setIfExists('dates', $data ?? [], null);
+        $this->setIfExists('delivery_service_id', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('courier', $data ?? [], null);
         $this->setIfExists('region', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
         $this->setIfExists('vat', $data ?? [], null);
-        $this->setIfExists('delivery_service_id', $data ?? [], null);
         $this->setIfExists('lift_type', $data ?? [], null);
         $this->setIfExists('lift_price', $data ?? [], null);
         $this->setIfExists('outlet_code', $data ?? [], null);
@@ -386,6 +392,7 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('estimated', $data ?? [], null);
         $this->setIfExists('eac_type', $data ?? [], null);
         $this->setIfExists('eac_code', $data ?? [], null);
+        $this->setIfExists('receive_code', $data ?? [], null);
     }
 
     /**
@@ -454,35 +461,6 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return string|null
-     * @deprecated
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string|null $id Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом `POST cart`.
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets type
      *
      * @return \OpenAPI\Client\Model\OrderDeliveryType
@@ -537,6 +515,116 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets delivery_partner_type
+     *
+     * @return \OpenAPI\Client\Model\OrderDeliveryPartnerType
+     */
+    public function getDeliveryPartnerType()
+    {
+        return $this->container['delivery_partner_type'];
+    }
+
+    /**
+     * Sets delivery_partner_type
+     *
+     * @param \OpenAPI\Client\Model\OrderDeliveryPartnerType $delivery_partner_type delivery_partner_type
+     *
+     * @return self
+     */
+    public function setDeliveryPartnerType($delivery_partner_type)
+    {
+        if (is_null($delivery_partner_type)) {
+            throw new \InvalidArgumentException('non-nullable delivery_partner_type cannot be null');
+        }
+        $this->container['delivery_partner_type'] = $delivery_partner_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets dates
+     *
+     * @return \OpenAPI\Client\Model\OrderDeliveryDatesDTO
+     */
+    public function getDates()
+    {
+        return $this->container['dates'];
+    }
+
+    /**
+     * Sets dates
+     *
+     * @param \OpenAPI\Client\Model\OrderDeliveryDatesDTO $dates dates
+     *
+     * @return self
+     */
+    public function setDates($dates)
+    {
+        if (is_null($dates)) {
+            throw new \InvalidArgumentException('non-nullable dates cannot be null');
+        }
+        $this->container['dates'] = $dates;
+
+        return $this;
+    }
+
+    /**
+     * Gets delivery_service_id
+     *
+     * @return int
+     */
+    public function getDeliveryServiceId()
+    {
+        return $this->container['delivery_service_id'];
+    }
+
+    /**
+     * Sets delivery_service_id
+     *
+     * @param int $delivery_service_id Идентификатор службы доставки.
+     *
+     * @return self
+     */
+    public function setDeliveryServiceId($delivery_service_id)
+    {
+        if (is_null($delivery_service_id)) {
+            throw new \InvalidArgumentException('non-nullable delivery_service_id cannot be null');
+        }
+        $this->container['delivery_service_id'] = $delivery_service_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     * @deprecated
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом `POST cart`.
+     *
+     * @return self
+     * @deprecated
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        }
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets price
      *
      * @return float|null
@@ -566,33 +654,6 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets delivery_partner_type
-     *
-     * @return \OpenAPI\Client\Model\OrderDeliveryPartnerType
-     */
-    public function getDeliveryPartnerType()
-    {
-        return $this->container['delivery_partner_type'];
-    }
-
-    /**
-     * Sets delivery_partner_type
-     *
-     * @param \OpenAPI\Client\Model\OrderDeliveryPartnerType $delivery_partner_type delivery_partner_type
-     *
-     * @return self
-     */
-    public function setDeliveryPartnerType($delivery_partner_type)
-    {
-        if (is_null($delivery_partner_type)) {
-            throw new \InvalidArgumentException('non-nullable delivery_partner_type cannot be null');
-        }
-        $this->container['delivery_partner_type'] = $delivery_partner_type;
-
-        return $this;
-    }
-
-    /**
      * Gets courier
      *
      * @return \OpenAPI\Client\Model\OrderCourierDTO|null
@@ -615,33 +676,6 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable courier cannot be null');
         }
         $this->container['courier'] = $courier;
-
-        return $this;
-    }
-
-    /**
-     * Gets dates
-     *
-     * @return \OpenAPI\Client\Model\OrderDeliveryDatesDTO
-     */
-    public function getDates()
-    {
-        return $this->container['dates'];
-    }
-
-    /**
-     * Sets dates
-     *
-     * @param \OpenAPI\Client\Model\OrderDeliveryDatesDTO $dates dates
-     *
-     * @return self
-     */
-    public function setDates($dates)
-    {
-        if (is_null($dates)) {
-            throw new \InvalidArgumentException('non-nullable dates cannot be null');
-        }
-        $this->container['dates'] = $dates;
 
         return $this;
     }
@@ -723,33 +757,6 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable vat cannot be null');
         }
         $this->container['vat'] = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets delivery_service_id
-     *
-     * @return int
-     */
-    public function getDeliveryServiceId()
-    {
-        return $this->container['delivery_service_id'];
-    }
-
-    /**
-     * Sets delivery_service_id
-     *
-     * @param int $delivery_service_id Идентификатор службы доставки.
-     *
-     * @return self
-     */
-    public function setDeliveryServiceId($delivery_service_id)
-    {
-        if (is_null($delivery_service_id)) {
-            throw new \InvalidArgumentException('non-nullable delivery_service_id cannot be null');
-        }
-        $this->container['delivery_service_id'] = $delivery_service_id;
 
         return $this;
     }
@@ -1047,6 +1054,33 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
+    /**
+     * Gets receive_code
+     *
+     * @return string|null
+     */
+    public function getReceiveCode()
+    {
+        return $this->container['receive_code'];
+    }
+
+    /**
+     * Sets receive_code
+     *
+     * @param string|null $receive_code **Только для модели LaaS**  Код получения заказа на ПВЗ.
+     *
+     * @return self
+     */
+    public function setReceiveCode($receive_code)
+    {
+        if (is_null($receive_code)) {
+            throw new \InvalidArgumentException('non-nullable receive_code cannot be null');
+        }
+        $this->container['receive_code'] = $receive_code;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -1054,7 +1088,7 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -1067,7 +1101,7 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -1096,7 +1130,7 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

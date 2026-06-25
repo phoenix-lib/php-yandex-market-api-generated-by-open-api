@@ -316,7 +316,7 @@ class TariffParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets name
      *
-     * @param string $name Название параметра.
+     * @param string $name {% cut \"Название параметра.\" %}  Параметр `name` может принимать следующие значения:  **Основные параметры:**   - `value` — значение тарифа.   - `billingUnit` — единицы измерения для товара.   - `valueType` — тип значения тарифа: `absolute` (денежное значение) или `relative` (процент).   - `priceDependence` — зависимость тарифа от цены товара.  **Параметры диапазонов цен товара:** - `priceFrom` — минимальная цена товара, от которой применяется тариф. - `priceTo` — максимальная цена товара, до которой применяется тариф.  **Параметры ограничений значения тарифа:** - `minValue` — минимальное значение тарифа. - `maxValue` — максимальное значение тарифа.  **Параметры диапазонов дней:** - `dayFrom` — день, с которого начинает действовать тариф (для хранения). - `dayTo` — день, на который тариф прекращает действие (для хранения).  **Параметры маршрута транзитной поставки:** - `xdocFrom` — начальная точка маршрута. - `xdocTo` — конечная точка маршрута.  **Параметры частоты:** - `frequency` — частота выплат. - `paymentDelayWeeks` — отсрочка выплат при еженедельном графике — сколько недель назад были доставлены заказы, за которые приходит выплата.  **Параметры складов и логистики:** - `transitWarehouseType` — тип места привоза товаров продавцом. - `orderCargoType` — тип груза заказа.  **Параметры оборачиваемости:** - `turnoverFrom` — нижняя граница диапазона оборачиваемости, начиная с которой применяется тариф. - `turnoverTo` — верхняя граница диапазона оборачиваемости, исключая которую применяется тариф.  **Параметры рейтинга:** - `ratingLowerBound` — нижняя граница диапазона рейтинга, по которому применяется тариф. - `ratingUpperBound` — верхняя граница диапазона рейтинга, по которому применяется тариф.  **Параметры количества заказов:** - `fromOrders` — количество заказов, начиная с которого применяется тариф (включительно). - `toOrders` — количество заказов, до которого применяется тариф (не включительно).  **Параметры доставки из-за рубежа:** - `shippingPrice` — стоимость отправления при доставке из-за рубежа. - `totalSurchargeForWeight` — сумма наценки за вес отправления при доставке из-за рубежа.  {% note info \"Не все параметры возвращаются для каждого тарифа.\" %}  Набор параметров зависит от типа услуги и условий применения тарифа.  {% endnote %}  {% endcut %}
      *
      * @return self
      */
@@ -363,7 +363,7 @@ class TariffParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -376,7 +376,7 @@ class TariffParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -405,7 +405,7 @@ class TariffParameterDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

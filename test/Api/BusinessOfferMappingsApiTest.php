@@ -132,18 +132,6 @@ class BusinessOfferMappingsApiTest extends TestCase
     }
 
     /**
-     * Test case for getSuggestedOfferMappings
-     *
-     * Просмотр карточек на Маркете, которые подходят вашим товарам.
-     *
-     */
-    public function testGetSuggestedOfferMappings()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for updateOfferMappings
      *
      * Добавление товаров в каталог и изменение информации о них.

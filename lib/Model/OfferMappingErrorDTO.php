@@ -59,8 +59,8 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'type' => '\OpenAPI\Client\Model\OfferMappingErrorType',
-        'parameter_id' => 'int',
-        'message' => 'string'
+        'message' => 'string',
+        'parameter_id' => 'int'
     ];
 
     /**
@@ -72,8 +72,8 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPIFormats = [
         'type' => null,
-        'parameter_id' => 'int64',
-        'message' => null
+        'message' => null,
+        'parameter_id' => 'int64'
     ];
 
     /**
@@ -83,8 +83,8 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static array $openAPINullables = [
         'type' => false,
-        'parameter_id' => false,
-        'message' => false
+        'message' => false,
+        'parameter_id' => false
     ];
 
     /**
@@ -174,8 +174,8 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'parameter_id' => 'parameterId',
-        'message' => 'message'
+        'message' => 'message',
+        'parameter_id' => 'parameterId'
     ];
 
     /**
@@ -185,8 +185,8 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $setters = [
         'type' => 'setType',
-        'parameter_id' => 'setParameterId',
-        'message' => 'setMessage'
+        'message' => 'setMessage',
+        'parameter_id' => 'setParameterId'
     ];
 
     /**
@@ -196,8 +196,8 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     protected static $getters = [
         'type' => 'getType',
-        'parameter_id' => 'getParameterId',
-        'message' => 'getMessage'
+        'message' => 'getMessage',
+        'parameter_id' => 'getParameterId'
     ];
 
     /**
@@ -258,8 +258,8 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(?array $data = null)
     {
         $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('parameter_id', $data ?? [], null);
         $this->setIfExists('message', $data ?? [], null);
+        $this->setIfExists('parameter_id', $data ?? [], null);
     }
 
     /**
@@ -338,33 +338,6 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets parameter_id
-     *
-     * @return int|null
-     */
-    public function getParameterId()
-    {
-        return $this->container['parameter_id'];
-    }
-
-    /**
-     * Sets parameter_id
-     *
-     * @param int|null $parameter_id Идентификатор характеристики, с которой связана ошибка или предупреждение.
-     *
-     * @return self
-     */
-    public function setParameterId($parameter_id)
-    {
-        if (is_null($parameter_id)) {
-            throw new \InvalidArgumentException('non-nullable parameter_id cannot be null');
-        }
-        $this->container['parameter_id'] = $parameter_id;
-
-        return $this;
-    }
-
-    /**
      * Gets message
      *
      * @return string
@@ -390,6 +363,33 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
+    /**
+     * Gets parameter_id
+     *
+     * @return int|null
+     */
+    public function getParameterId()
+    {
+        return $this->container['parameter_id'];
+    }
+
+    /**
+     * Sets parameter_id
+     *
+     * @param int|null $parameter_id Идентификатор характеристики, с которой связана ошибка или предупреждение.
+     *
+     * @return self
+     */
+    public function setParameterId($parameter_id)
+    {
+        if (is_null($parameter_id)) {
+            throw new \InvalidArgumentException('non-nullable parameter_id cannot be null');
+        }
+        $this->container['parameter_id'] = $parameter_id;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -397,7 +397,7 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -410,7 +410,7 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -439,7 +439,7 @@ class OfferMappingErrorDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

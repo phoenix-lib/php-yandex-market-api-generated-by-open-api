@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **question_identifiers** | [**\OpenAPI\Client\Model\QuestionIdentifiersDTO**](QuestionIdentifiersDTO.md) |  |
-**business_id** | **int** | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) |
+**business_id** | **int** | Идентификатор кабинета. {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) {% endif %} |
 **text** | **string** | Текстовое содержимое. |
 **created_at** | **\DateTime** | Дата и время создания вопроса. |
 **votes** | [**\OpenAPI\Client\Model\VotesDTO**](VotesDTO.md) |  |

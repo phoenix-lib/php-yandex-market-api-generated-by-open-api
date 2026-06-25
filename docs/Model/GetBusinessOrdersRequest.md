@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **dates** | [**\OpenAPI\Client\Model\OrderDatesFilterDTO**](OrderDatesFilterDTO.md) |  | [optional]
 **fake** | **bool** | Тип заказа:  * &#x60;false&#x60; — настоящий заказ покупателя.  * &#x60;true&#x60; — [тестовый заказ](../../concepts/sandbox.md) Маркета. | [optional]
 **waiting_for_cancellation_approve** | **bool** | **Только для модели DBS**  Фильтр для получения заказов, по которым есть запросы на отмену.  При значении &#x60;true&#x60; возвращаются только те заказы, которые находятся в статусе &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60;, и пользователи решили их отменить. | [optional]
+**source_platforms** | [**\OpenAPI\Client\Model\OrderSourcePlatformType[]**](OrderSourcePlatformType.md) | Площадки-источники заказов. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

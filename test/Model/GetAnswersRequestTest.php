@@ -87,4 +87,13 @@ class GetAnswersRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "answer_ids"
+     */
+    public function testPropertyAnswerIds()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

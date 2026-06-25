@@ -89,18 +89,18 @@ class QuestionListDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "paging"
+     * Test attribute "total_count"
      */
-    public function testPropertyPaging()
+    public function testPropertyTotalCount()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "total_count"
+     * Test attribute "paging"
      */
-    public function testPropertyTotalCount()
+    public function testPropertyPaging()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

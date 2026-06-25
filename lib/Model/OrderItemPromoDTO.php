@@ -59,8 +59,8 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'type' => '\OpenAPI\Client\Model\OrderPromoType',
-        'discount' => 'float',
         'subsidy' => 'float',
+        'discount' => 'float',
         'shop_promo_id' => 'string',
         'market_promo_id' => 'string'
     ];
@@ -74,8 +74,8 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'type' => null,
-        'discount' => null,
         'subsidy' => null,
+        'discount' => null,
         'shop_promo_id' => null,
         'market_promo_id' => null
     ];
@@ -87,8 +87,8 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static array $openAPINullables = [
         'type' => false,
-        'discount' => false,
         'subsidy' => false,
+        'discount' => false,
         'shop_promo_id' => false,
         'market_promo_id' => false
     ];
@@ -180,8 +180,8 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'discount' => 'discount',
         'subsidy' => 'subsidy',
+        'discount' => 'discount',
         'shop_promo_id' => 'shopPromoId',
         'market_promo_id' => 'marketPromoId'
     ];
@@ -193,8 +193,8 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'type' => 'setType',
-        'discount' => 'setDiscount',
         'subsidy' => 'setSubsidy',
+        'discount' => 'setDiscount',
         'shop_promo_id' => 'setShopPromoId',
         'market_promo_id' => 'setMarketPromoId'
     ];
@@ -206,8 +206,8 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'type' => 'getType',
-        'discount' => 'getDiscount',
         'subsidy' => 'getSubsidy',
+        'discount' => 'getDiscount',
         'shop_promo_id' => 'getShopPromoId',
         'market_promo_id' => 'getMarketPromoId'
     ];
@@ -270,8 +270,8 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(?array $data = null)
     {
         $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('discount', $data ?? [], null);
         $this->setIfExists('subsidy', $data ?? [], null);
+        $this->setIfExists('discount', $data ?? [], null);
         $this->setIfExists('shop_promo_id', $data ?? [], null);
         $this->setIfExists('market_promo_id', $data ?? [], null);
     }
@@ -352,33 +352,6 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets discount
-     *
-     * @return float|null
-     */
-    public function getDiscount()
-    {
-        return $this->container['discount'];
-    }
-
-    /**
-     * Sets discount
-     *
-     * @param float|null $discount Размер пользовательской скидки в валюте покупателя.
-     *
-     * @return self
-     */
-    public function setDiscount($discount)
-    {
-        if (is_null($discount)) {
-            throw new \InvalidArgumentException('non-nullable discount cannot be null');
-        }
-        $this->container['discount'] = $discount;
-
-        return $this;
-    }
-
-    /**
      * Gets subsidy
      *
      * @return float
@@ -401,6 +374,33 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable subsidy cannot be null');
         }
         $this->container['subsidy'] = $subsidy;
+
+        return $this;
+    }
+
+    /**
+     * Gets discount
+     *
+     * @return float|null
+     */
+    public function getDiscount()
+    {
+        return $this->container['discount'];
+    }
+
+    /**
+     * Sets discount
+     *
+     * @param float|null $discount Размер пользовательской скидки в валюте покупателя.
+     *
+     * @return self
+     */
+    public function setDiscount($discount)
+    {
+        if (is_null($discount)) {
+            throw new \InvalidArgumentException('non-nullable discount cannot be null');
+        }
+        $this->container['discount'] = $discount;
 
         return $this;
     }
@@ -465,7 +465,7 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -478,7 +478,7 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -507,7 +507,7 @@ class OrderItemPromoDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

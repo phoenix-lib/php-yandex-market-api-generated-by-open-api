@@ -58,8 +58,8 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paging' => '\OpenAPI\Client\Model\ScrollingPagerDTO',
-        'offers' => '\OpenAPI\Client\Model\QuarantineOfferDTO[]'
+        'offers' => '\OpenAPI\Client\Model\QuarantineOfferDTO[]',
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -70,8 +70,8 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'paging' => null,
-        'offers' => null
+        'offers' => null,
+        'paging' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'paging' => false,
-        'offers' => false
+        'offers' => false,
+        'paging' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'paging' => 'paging',
-        'offers' => 'offers'
+        'offers' => 'offers',
+        'paging' => 'paging'
     ];
 
     /**
@@ -180,8 +180,8 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'paging' => 'setPaging',
-        'offers' => 'setOffers'
+        'offers' => 'setOffers',
+        'paging' => 'setPaging'
     ];
 
     /**
@@ -190,8 +190,8 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'paging' => 'getPaging',
-        'offers' => 'getOffers'
+        'offers' => 'getOffers',
+        'paging' => 'getPaging'
     ];
 
     /**
@@ -251,8 +251,8 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('paging', $data ?? [], null);
         $this->setIfExists('offers', $data ?? [], null);
+        $this->setIfExists('paging', $data ?? [], null);
     }
 
     /**
@@ -301,33 +301,6 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets paging
-     *
-     * @return \OpenAPI\Client\Model\ScrollingPagerDTO|null
-     */
-    public function getPaging()
-    {
-        return $this->container['paging'];
-    }
-
-    /**
-     * Sets paging
-     *
-     * @param \OpenAPI\Client\Model\ScrollingPagerDTO|null $paging paging
-     *
-     * @return self
-     */
-    public function setPaging($paging)
-    {
-        if (is_null($paging)) {
-            throw new \InvalidArgumentException('non-nullable paging cannot be null');
-        }
-        $this->container['paging'] = $paging;
-
-        return $this;
-    }
-
-    /**
      * Gets offers
      *
      * @return \OpenAPI\Client\Model\QuarantineOfferDTO[]
@@ -353,6 +326,33 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
 
         return $this;
     }
+
+    /**
+     * Gets paging
+     *
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
+     */
+    public function getPaging()
+    {
+        return $this->container['paging'];
+    }
+
+    /**
+     * Sets paging
+     *
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
+     *
+     * @return self
+     */
+    public function setPaging($paging)
+    {
+        if (is_null($paging)) {
+            throw new \InvalidArgumentException('non-nullable paging cannot be null');
+        }
+        $this->container['paging'] = $paging;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -360,7 +360,7 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -373,7 +373,7 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,7 +402,7 @@ class GetQuarantineOffersResultDTO implements ModelInterface, ArrayAccess, \Json
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

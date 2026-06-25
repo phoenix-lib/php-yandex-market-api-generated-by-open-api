@@ -58,8 +58,8 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'track_code' => 'string',
-        'delivery_service_id' => 'int'
+        'delivery_service_id' => 'int',
+        'track_code' => 'string'
     ];
 
     /**
@@ -70,8 +70,8 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'track_code' => null,
-        'delivery_service_id' => 'int64'
+        'delivery_service_id' => 'int64',
+        'track_code' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'track_code' => false,
-        'delivery_service_id' => false
+        'delivery_service_id' => false,
+        'track_code' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'track_code' => 'trackCode',
-        'delivery_service_id' => 'deliveryServiceId'
+        'delivery_service_id' => 'deliveryServiceId',
+        'track_code' => 'trackCode'
     ];
 
     /**
@@ -180,8 +180,8 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'track_code' => 'setTrackCode',
-        'delivery_service_id' => 'setDeliveryServiceId'
+        'delivery_service_id' => 'setDeliveryServiceId',
+        'track_code' => 'setTrackCode'
     ];
 
     /**
@@ -190,8 +190,8 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'track_code' => 'getTrackCode',
-        'delivery_service_id' => 'getDeliveryServiceId'
+        'delivery_service_id' => 'getDeliveryServiceId',
+        'track_code' => 'getTrackCode'
     ];
 
     /**
@@ -251,8 +251,8 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('track_code', $data ?? [], null);
         $this->setIfExists('delivery_service_id', $data ?? [], null);
+        $this->setIfExists('track_code', $data ?? [], null);
     }
 
     /**
@@ -301,6 +301,33 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets delivery_service_id
+     *
+     * @return int
+     */
+    public function getDeliveryServiceId()
+    {
+        return $this->container['delivery_service_id'];
+    }
+
+    /**
+     * Sets delivery_service_id
+     *
+     * @param int $delivery_service_id Идентификатор службы доставки. Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/delivery-services/getDeliveryServices.md).
+     *
+     * @return self
+     */
+    public function setDeliveryServiceId($delivery_service_id)
+    {
+        if (is_null($delivery_service_id)) {
+            throw new \InvalidArgumentException('non-nullable delivery_service_id cannot be null');
+        }
+        $this->container['delivery_service_id'] = $delivery_service_id;
+
+        return $this;
+    }
+
+    /**
      * Gets track_code
      *
      * @return string|null
@@ -326,33 +353,6 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-    /**
-     * Gets delivery_service_id
-     *
-     * @return int
-     */
-    public function getDeliveryServiceId()
-    {
-        return $this->container['delivery_service_id'];
-    }
-
-    /**
-     * Sets delivery_service_id
-     *
-     * @param int $delivery_service_id Идентификатор службы доставки. Информацию о службе доставки можно получить с помощью запроса [GET delivery/services](../../reference/orders/getDeliveryServices.md).
-     *
-     * @return self
-     */
-    public function setDeliveryServiceId($delivery_service_id)
-    {
-        if (is_null($delivery_service_id)) {
-            throw new \InvalidArgumentException('non-nullable delivery_service_id cannot be null');
-        }
-        $this->container['delivery_service_id'] = $delivery_service_id;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -360,7 +360,7 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -373,7 +373,7 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,7 +402,7 @@ class OrderTrackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

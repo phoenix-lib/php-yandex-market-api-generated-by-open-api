@@ -80,15 +80,6 @@ class ReturnItemDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "market_sku"
-     */
-    public function testPropertyMarketSku()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "shop_sku"
      */
     public function testPropertyShopSku()
@@ -101,6 +92,15 @@ class ReturnItemDTOTest extends TestCase
      * Test attribute "count"
      */
     public function testPropertyCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "market_sku"
+     */
+    public function testPropertyMarketSku()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

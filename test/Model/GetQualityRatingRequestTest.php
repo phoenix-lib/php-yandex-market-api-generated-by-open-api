@@ -80,6 +80,15 @@ class GetQualityRatingRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "campaign_ids"
+     */
+    public function testPropertyCampaignIds()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "date_from"
      */
     public function testPropertyDateFrom()
@@ -92,15 +101,6 @@ class GetQualityRatingRequestTest extends TestCase
      * Test attribute "date_to"
      */
     public function testPropertyDateTo()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "campaign_ids"
-     */
-    public function testPropertyCampaignIds()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

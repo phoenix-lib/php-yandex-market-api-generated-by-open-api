@@ -1,6 +1,6 @@
 {
     "name": "phoenix-lib/php-yandex-market-api-generated-by-open-api",
-    "description": "API Яндекс Маркета помогает продавцам автоматизировать и упростить работу с маркетплейсом.  В числе возможностей интеграции:  * управление каталогом товаров и витриной,  * обработка заказов,  * изменение настроек магазина,  * получение отчетов.",
+    "description": "Generated PHP client for Yandex Market Partner API.",
     "keywords": [
         "openapitools",
         "openapi-generator",
@@ -10,12 +10,12 @@
         "rest",
         "api"
     ],
-    "homepage": "https://openapi-generator.tech",
-    "license": "unlicense",
+    "homepage": "https://github.com/phoenix-lib/php-yandex-market-api-generated-by-open-api",
+    "license": "Unlicense",
     "authors": [
         {
-            "name": "OpenAPI",
-            "homepage": "https://openapi-generator.tech"
+            "name": "phoenix-lib",
+            "homepage": "https://github.com/phoenix-lib"
         }
     ],
     "require": {
@@ -31,9 +31,13 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "OpenAPI\\Client\\" : "lib/" }
+        "psr-4": {
+            "OpenAPI\\Client\\": "lib/"
+        }
     },
     "autoload-dev": {
-        "psr-4": { "OpenAPI\\Client\\Test\\" : "test/" }
+        "psr-4": {
+            "OpenAPI\\Client\\Test\\": "test/"
+        }
     }
 }

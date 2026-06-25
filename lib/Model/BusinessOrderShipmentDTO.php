@@ -58,8 +58,8 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
         'shipment_date' => '\DateTime',
+        'id' => 'int',
         'shipment_time' => 'string'
     ];
 
@@ -71,8 +71,8 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => 'int64',
         'shipment_date' => 'date',
+        'id' => 'int64',
         'shipment_time' => 'time'
     ];
 
@@ -82,8 +82,8 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => true,
         'shipment_date' => false,
+        'id' => true,
         'shipment_time' => true
     ];
 
@@ -173,8 +173,8 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'shipment_date' => 'shipmentDate',
+        'id' => 'id',
         'shipment_time' => 'shipmentTime'
     ];
 
@@ -184,8 +184,8 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'shipment_date' => 'setShipmentDate',
+        'id' => 'setId',
         'shipment_time' => 'setShipmentTime'
     ];
 
@@ -195,8 +195,8 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'shipment_date' => 'getShipmentDate',
+        'id' => 'getId',
         'shipment_time' => 'getShipmentTime'
     ];
 
@@ -257,8 +257,8 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('shipment_date', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('shipment_time', $data ?? [], null);
     }
 
@@ -308,6 +308,33 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
+     * Gets shipment_date
+     *
+     * @return \DateTime
+     */
+    public function getShipmentDate()
+    {
+        return $this->container['shipment_date'];
+    }
+
+    /**
+     * Sets shipment_date
+     *
+     * @param \DateTime $shipment_date Дата отгрузки.  Формат даты: `ГГГГ-ММ-ДД`.
+     *
+     * @return self
+     */
+    public function setShipmentDate($shipment_date)
+    {
+        if (is_null($shipment_date)) {
+            throw new \InvalidArgumentException('non-nullable shipment_date cannot be null');
+        }
+        $this->container['shipment_date'] = $shipment_date;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -337,33 +364,6 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
             }
         }
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipment_date
-     *
-     * @return \DateTime
-     */
-    public function getShipmentDate()
-    {
-        return $this->container['shipment_date'];
-    }
-
-    /**
-     * Sets shipment_date
-     *
-     * @param \DateTime $shipment_date Дата отгрузки.  Формат даты: `ГГГГ-ММ-ДД`.
-     *
-     * @return self
-     */
-    public function setShipmentDate($shipment_date)
-    {
-        if (is_null($shipment_date)) {
-            throw new \InvalidArgumentException('non-nullable shipment_date cannot be null');
-        }
-        $this->container['shipment_date'] = $shipment_date;
 
         return $this;
     }
@@ -408,7 +408,7 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -421,7 +421,7 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -450,7 +450,7 @@ class BusinessOrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

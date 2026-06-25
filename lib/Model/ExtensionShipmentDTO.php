@@ -58,8 +58,8 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'current_status' => '\OpenAPI\Client\Model\ShipmentStatusChangeDTO',
-        'available_actions' => '\OpenAPI\Client\Model\ShipmentActionType[]'
+        'available_actions' => '\OpenAPI\Client\Model\ShipmentActionType[]',
+        'current_status' => '\OpenAPI\Client\Model\ShipmentStatusChangeDTO'
     ];
 
     /**
@@ -70,8 +70,8 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'current_status' => null,
-        'available_actions' => null
+        'available_actions' => null,
+        'current_status' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'current_status' => false,
-        'available_actions' => false
+        'available_actions' => false,
+        'current_status' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'current_status' => 'currentStatus',
-        'available_actions' => 'availableActions'
+        'available_actions' => 'availableActions',
+        'current_status' => 'currentStatus'
     ];
 
     /**
@@ -180,8 +180,8 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'current_status' => 'setCurrentStatus',
-        'available_actions' => 'setAvailableActions'
+        'available_actions' => 'setAvailableActions',
+        'current_status' => 'setCurrentStatus'
     ];
 
     /**
@@ -190,8 +190,8 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'current_status' => 'getCurrentStatus',
-        'available_actions' => 'getAvailableActions'
+        'available_actions' => 'getAvailableActions',
+        'current_status' => 'getCurrentStatus'
     ];
 
     /**
@@ -251,8 +251,8 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('current_status', $data ?? [], null);
         $this->setIfExists('available_actions', $data ?? [], null);
+        $this->setIfExists('current_status', $data ?? [], null);
     }
 
     /**
@@ -301,33 +301,6 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets current_status
-     *
-     * @return \OpenAPI\Client\Model\ShipmentStatusChangeDTO|null
-     */
-    public function getCurrentStatus()
-    {
-        return $this->container['current_status'];
-    }
-
-    /**
-     * Sets current_status
-     *
-     * @param \OpenAPI\Client\Model\ShipmentStatusChangeDTO|null $current_status current_status
-     *
-     * @return self
-     */
-    public function setCurrentStatus($current_status)
-    {
-        if (is_null($current_status)) {
-            throw new \InvalidArgumentException('non-nullable current_status cannot be null');
-        }
-        $this->container['current_status'] = $current_status;
-
-        return $this;
-    }
-
-    /**
      * Gets available_actions
      *
      * @return \OpenAPI\Client\Model\ShipmentActionType[]
@@ -355,6 +328,33 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
+    /**
+     * Gets current_status
+     *
+     * @return \OpenAPI\Client\Model\ShipmentStatusChangeDTO|null
+     */
+    public function getCurrentStatus()
+    {
+        return $this->container['current_status'];
+    }
+
+    /**
+     * Sets current_status
+     *
+     * @param \OpenAPI\Client\Model\ShipmentStatusChangeDTO|null $current_status current_status
+     *
+     * @return self
+     */
+    public function setCurrentStatus($current_status)
+    {
+        if (is_null($current_status)) {
+            throw new \InvalidArgumentException('non-nullable current_status cannot be null');
+        }
+        $this->container['current_status'] = $current_status;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -362,7 +362,7 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -375,7 +375,7 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +404,7 @@ class ExtensionShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

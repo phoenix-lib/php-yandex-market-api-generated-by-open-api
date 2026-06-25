@@ -21,7 +21,7 @@ createOutlet($campaign_id, $change_outlet_request): \OpenAPI\Client\Model\Create
 
 Создание точки продаж
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/createOutlet.md) %}  Создает точку продаж магазина на Маркете.  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/createOutlet.md) %}  Создает точку продаж магазина на Маркете.  {% include notitle [limit](../../_auto/method_limits/createOutlet.md) %}
 
 ### Example
 
@@ -88,7 +88,7 @@ deleteOutlet($campaign_id, $outlet_id): \OpenAPI\Client\Model\EmptyApiResponse
 
 Удаление точки продаж
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/deleteOutlet.md) %}  Удаляет точку продаж магазина на Маркете.  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/deleteOutlet.md) %}  Удаляет точку продаж магазина на Маркете.  {% include notitle [limit](../../_auto/method_limits/deleteOutlet.md) %}
 
 ### Example
 
@@ -155,7 +155,7 @@ getOutlet($campaign_id, $outlet_id): \OpenAPI\Client\Model\GetOutletResponse
 
 Информация об одной точке продаж
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOutlet.md) %}  Возвращает информацию о точках продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getOutlet.md) %}  Возвращает информацию о точках продаж магазина.  {% include notitle [limit](../../_auto/method_limits/getOutlet.md) %}
 
 ### Example
 
@@ -222,7 +222,7 @@ getOutlets($campaign_id, $page_token, $limit, $region_id, $shop_outlet_code, $re
 
 Информация о нескольких точках продаж
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOutlets.md) %}  Возвращает список точек продаж магазина.  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getOutlets.md) %}  Возвращает список точек продаж магазина.  {% include notitle [limit](../../_auto/method_limits/getOutlets.md) %}
 
 ### Example
 
@@ -247,8 +247,8 @@ $apiInstance = new OpenAPI\Client\Api\OutletsApi(
     $config
 );
 $campaign_id = 56; // int | Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями.
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `page` и `pageSize`, они игнорируются.
-$limit = 20; // int | Количество значений на одной странице.
+$page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
+$limit = 25; // int | {{ limit-param-description }}
 $region_id = 56; // int | Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md).
 $shop_outlet_code = 'shop_outlet_code_example'; // string | Идентификатор точки продаж, присвоенный магазином.
 $region_id2 = 56; // int | {% note warning \"Вместо него используйте `region_id`.\" %}     {% endnote %}
@@ -266,8 +266,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **campaign_id** | **int**| Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. | [optional] |
-| **limit** | **int**| Количество значений на одной странице. | [optional] |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
+| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 25] |
 | **region_id** | **int**| Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). | [optional] |
 | **shop_outlet_code** | **string**| Идентификатор точки продаж, присвоенный магазином. | [optional] |
 | **region_id2** | **int**| {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} | [optional] |
@@ -297,7 +297,7 @@ updateOutlet($campaign_id, $outlet_id, $change_outlet_request): \OpenAPI\Client\
 
 Изменение информации о точке продаж
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateOutlet.md) %}  Изменяет информацию о точке продаж магазина на Маркете.  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/updateOutlet.md) %}  Изменяет информацию о точке продаж магазина на Маркете.  {% include notitle [limit](../../_auto/method_limits/updateOutlet.md) %}
 
 ### Example
 

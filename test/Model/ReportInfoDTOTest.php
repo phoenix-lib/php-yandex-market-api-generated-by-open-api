@@ -89,18 +89,18 @@ class ReportInfoDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "sub_status"
+     * Test attribute "generation_requested_at"
      */
-    public function testPropertySubStatus()
+    public function testPropertyGenerationRequestedAt()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "generation_requested_at"
+     * Test attribute "sub_status"
      */
-    public function testPropertyGenerationRequestedAt()
+    public function testPropertySubStatus()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

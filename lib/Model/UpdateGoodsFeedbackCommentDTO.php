@@ -58,9 +58,9 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
+        'text' => 'string',
         'id' => 'int',
-        'parent_id' => 'int',
-        'text' => 'string'
+        'parent_id' => 'int'
     ];
 
     /**
@@ -71,9 +71,9 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'text' => null,
         'id' => 'int64',
-        'parent_id' => 'int64',
-        'text' => null
+        'parent_id' => 'int64'
     ];
 
     /**
@@ -82,9 +82,9 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'text' => false,
         'id' => false,
-        'parent_id' => false,
-        'text' => false
+        'parent_id' => false
     ];
 
     /**
@@ -173,9 +173,9 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
+        'text' => 'text',
         'id' => 'id',
-        'parent_id' => 'parentId',
-        'text' => 'text'
+        'parent_id' => 'parentId'
     ];
 
     /**
@@ -184,9 +184,9 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
+        'text' => 'setText',
         'id' => 'setId',
-        'parent_id' => 'setParentId',
-        'text' => 'setText'
+        'parent_id' => 'setParentId'
     ];
 
     /**
@@ -195,9 +195,9 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
+        'text' => 'getText',
         'id' => 'getId',
-        'parent_id' => 'getParentId',
-        'text' => 'getText'
+        'parent_id' => 'getParentId'
     ];
 
     /**
@@ -257,9 +257,9 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('text', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('parent_id', $data ?? [], null);
-        $this->setIfExists('text', $data ?? [], null);
     }
 
     /**
@@ -316,6 +316,40 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
+     * Gets text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->container['text'];
+    }
+
+    /**
+     * Sets text
+     *
+     * @param string $text Текст комментария.  Не должен содержать контакты магазина и ссылки на сайты, кроме Маркета.
+     *
+     * @return self
+     */
+    public function setText($text)
+    {
+        if (is_null($text)) {
+            throw new \InvalidArgumentException('non-nullable text cannot be null');
+        }
+        if ((mb_strlen($text) > 4096)) {
+            throw new \InvalidArgumentException('invalid length for $text when calling UpdateGoodsFeedbackCommentDTO., must be smaller than or equal to 4096.');
+        }
+        if ((mb_strlen($text) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $text when calling UpdateGoodsFeedbackCommentDTO., must be bigger than or equal to 1.');
+        }
+
+        $this->container['text'] = $text;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return int|null
@@ -368,40 +402,6 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
-
-    /**
-     * Gets text
-     *
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->container['text'];
-    }
-
-    /**
-     * Sets text
-     *
-     * @param string $text Текст комментария.  Не должен содержать контакты магазина и ссылки на сайты, кроме Маркета.
-     *
-     * @return self
-     */
-    public function setText($text)
-    {
-        if (is_null($text)) {
-            throw new \InvalidArgumentException('non-nullable text cannot be null');
-        }
-        if ((mb_strlen($text) > 4096)) {
-            throw new \InvalidArgumentException('invalid length for $text when calling UpdateGoodsFeedbackCommentDTO., must be smaller than or equal to 4096.');
-        }
-        if ((mb_strlen($text) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $text when calling UpdateGoodsFeedbackCommentDTO., must be bigger than or equal to 1.');
-        }
-
-        $this->container['text'] = $text;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -409,7 +409,7 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -422,7 +422,7 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -451,7 +451,7 @@ class UpdateGoodsFeedbackCommentDTO implements ModelInterface, ArrayAccess, \Jso
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

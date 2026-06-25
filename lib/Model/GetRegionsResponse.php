@@ -58,7 +58,7 @@ class GetRegionsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'regions' => '\OpenAPI\Client\Model\RegionDTO[]',
-        'paging' => '\OpenAPI\Client\Model\ForwardScrollingPagerDTO'
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -329,7 +329,7 @@ class GetRegionsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets paging
      *
-     * @return \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
      */
     public function getPaging()
     {
@@ -339,7 +339,7 @@ class GetRegionsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets paging
      *
-     * @param \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null $paging paging
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
      *
      * @return self
      */
@@ -359,7 +359,7 @@ class GetRegionsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -372,7 +372,7 @@ class GetRegionsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -401,7 +401,7 @@ class GetRegionsResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

@@ -336,6 +336,18 @@ class ExpressApiTest extends TestCase
     }
 
     /**
+     * Test case for generateMarketingDetalizationReport
+     *
+     * Отчет по счету маркетинга.
+     *
+     */
+    public function testGenerateMarketingDetalizationReport()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for generateMassOrderLabelsReport
      *
      * Готовые ярлыки‑наклейки на все коробки в нескольких заказах.
@@ -378,18 +390,6 @@ class ExpressApiTest extends TestCase
      *
      */
     public function testGenerateOrderLabels()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for generatePricesReport
-     *
-     * Отчет «Цены на рынке».
-     *
-     */
-    public function testGeneratePricesReport()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -768,6 +768,18 @@ class ExpressApiTest extends TestCase
     }
 
     /**
+     * Test case for getGoodsFeedbacksUrbanads
+     *
+     * Получение отзывов о товарах для рекламодателей.
+     *
+     */
+    public function testGetGoodsFeedbacksUrbanads()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getGoodsQuestionAnswers
      *
      * Получение ответов на вопрос.
@@ -822,18 +834,6 @@ class ExpressApiTest extends TestCase
      *
      */
     public function testGetOfferCardsContentStatus()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for getOfferMappingEntries
-     *
-     * Список товаров в каталоге.
-     *
-     */
-    public function testGetOfferMappingEntries()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -1080,6 +1080,18 @@ class ExpressApiTest extends TestCase
     }
 
     /**
+     * Test case for getReturnAvailableDecisions
+     *
+     * Получение возможных решений по возврату.
+     *
+     */
+    public function testGetReturnAvailableDecisions()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getReturnPhoto
      *
      * Получение фотографий товаров в возврате.
@@ -1116,48 +1128,12 @@ class ExpressApiTest extends TestCase
     }
 
     /**
-     * Test case for getSuggestedOfferMappingEntries
-     *
-     * Рекомендованные карточки для товаров.
-     *
-     */
-    public function testGetSuggestedOfferMappingEntries()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for getSuggestedOfferMappings
-     *
-     * Просмотр карточек на Маркете, которые подходят вашим товарам.
-     *
-     */
-    public function testGetSuggestedOfferMappings()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for getWarehouses
      *
      * Список складов и групп складов.
      *
      */
     public function testGetWarehouses()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for provideOrderItemIdentifiers
-     *
-     * Передача кодов маркировки единиц товара.
-     *
-     */
-    public function testProvideOrderItemIdentifiers()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -1260,18 +1236,6 @@ class ExpressApiTest extends TestCase
     }
 
     /**
-     * Test case for setOrderShipmentBoxes
-     *
-     * Передача количества грузовых мест в заказе.
-     *
-     */
-    public function testSetOrderShipmentBoxes()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for skipGoodsFeedbacksReaction
      *
      * Пропуск реакции на отзывы.
@@ -1286,7 +1250,7 @@ class ExpressApiTest extends TestCase
     /**
      * Test case for submitReturnDecision
      *
-     * Передача и подтверждение решения по возврату.
+     * Передача решения по возврату.
      *
      */
     public function testSubmitReturnDecision()
@@ -1368,36 +1332,12 @@ class ExpressApiTest extends TestCase
     }
 
     /**
-     * Test case for updateOfferMappingEntries
-     *
-     * Добавление и редактирование товаров в каталоге.
-     *
-     */
-    public function testUpdateOfferMappingEntries()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for updateOfferMappings
      *
      * Добавление товаров в каталог и изменение информации о них.
      *
      */
     public function testUpdateOfferMappings()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for updateOrderItems
-     *
-     * Удаление товаров из заказа или уменьшение их числа.
-     *
-     */
-    public function testUpdateOrderItems()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

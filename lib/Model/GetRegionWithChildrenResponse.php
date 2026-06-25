@@ -58,6 +58,7 @@ class GetRegionWithChildrenResponse implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPITypes = [
         'pager' => '\OpenAPI\Client\Model\FlippingPagerDTO',
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO',
         'regions' => '\OpenAPI\Client\Model\RegionWithChildrenDTO'
     ];
 
@@ -70,6 +71,7 @@ class GetRegionWithChildrenResponse implements ModelInterface, ArrayAccess, \Jso
       */
     protected static $openAPIFormats = [
         'pager' => null,
+        'paging' => null,
         'regions' => null
     ];
 
@@ -80,6 +82,7 @@ class GetRegionWithChildrenResponse implements ModelInterface, ArrayAccess, \Jso
       */
     protected static array $openAPINullables = [
         'pager' => false,
+        'paging' => false,
         'regions' => false
     ];
 
@@ -170,6 +173,7 @@ class GetRegionWithChildrenResponse implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $attributeMap = [
         'pager' => 'pager',
+        'paging' => 'paging',
         'regions' => 'regions'
     ];
 
@@ -180,6 +184,7 @@ class GetRegionWithChildrenResponse implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $setters = [
         'pager' => 'setPager',
+        'paging' => 'setPaging',
         'regions' => 'setRegions'
     ];
 
@@ -190,6 +195,7 @@ class GetRegionWithChildrenResponse implements ModelInterface, ArrayAccess, \Jso
      */
     protected static $getters = [
         'pager' => 'getPager',
+        'paging' => 'getPaging',
         'regions' => 'getRegions'
     ];
 
@@ -251,6 +257,7 @@ class GetRegionWithChildrenResponse implements ModelInterface, ArrayAccess, \Jso
     public function __construct(?array $data = null)
     {
         $this->setIfExists('pager', $data ?? [], null);
+        $this->setIfExists('paging', $data ?? [], null);
         $this->setIfExists('regions', $data ?? [], null);
     }
 
@@ -324,6 +331,33 @@ class GetRegionWithChildrenResponse implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
+     * Gets paging
+     *
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
+     */
+    public function getPaging()
+    {
+        return $this->container['paging'];
+    }
+
+    /**
+     * Sets paging
+     *
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
+     *
+     * @return self
+     */
+    public function setPaging($paging)
+    {
+        if (is_null($paging)) {
+            throw new \InvalidArgumentException('non-nullable paging cannot be null');
+        }
+        $this->container['paging'] = $paging;
+
+        return $this;
+    }
+
+    /**
      * Gets regions
      *
      * @return \OpenAPI\Client\Model\RegionWithChildrenDTO|null
@@ -356,7 +390,7 @@ class GetRegionWithChildrenResponse implements ModelInterface, ArrayAccess, \Jso
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -369,7 +403,7 @@ class GetRegionWithChildrenResponse implements ModelInterface, ArrayAccess, \Jso
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -398,7 +432,7 @@ class GetRegionWithChildrenResponse implements ModelInterface, ArrayAccess, \Jso
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

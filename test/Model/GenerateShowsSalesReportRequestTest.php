@@ -80,24 +80,6 @@ class GenerateShowsSalesReportRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "business_id"
-     */
-    public function testPropertyBusinessId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "campaign_id"
-     */
-    public function testPropertyCampaignId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "date_from"
      */
     public function testPropertyDateFrom()
@@ -119,6 +101,24 @@ class GenerateShowsSalesReportRequestTest extends TestCase
      * Test attribute "grouping"
      */
     public function testPropertyGrouping()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "business_id"
+     */
+    public function testPropertyBusinessId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "campaign_id"
+     */
+    public function testPropertyCampaignId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

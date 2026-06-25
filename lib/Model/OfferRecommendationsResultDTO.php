@@ -58,8 +58,8 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paging' => '\OpenAPI\Client\Model\ScrollingPagerDTO',
-        'offer_recommendations' => '\OpenAPI\Client\Model\OfferRecommendationDTO[]'
+        'offer_recommendations' => '\OpenAPI\Client\Model\OfferRecommendationDTO[]',
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -70,8 +70,8 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'paging' => null,
-        'offer_recommendations' => null
+        'offer_recommendations' => null,
+        'paging' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'paging' => false,
-        'offer_recommendations' => false
+        'offer_recommendations' => false,
+        'paging' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'paging' => 'paging',
-        'offer_recommendations' => 'offerRecommendations'
+        'offer_recommendations' => 'offerRecommendations',
+        'paging' => 'paging'
     ];
 
     /**
@@ -180,8 +180,8 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'paging' => 'setPaging',
-        'offer_recommendations' => 'setOfferRecommendations'
+        'offer_recommendations' => 'setOfferRecommendations',
+        'paging' => 'setPaging'
     ];
 
     /**
@@ -190,8 +190,8 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'paging' => 'getPaging',
-        'offer_recommendations' => 'getOfferRecommendations'
+        'offer_recommendations' => 'getOfferRecommendations',
+        'paging' => 'getPaging'
     ];
 
     /**
@@ -251,8 +251,8 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('paging', $data ?? [], null);
         $this->setIfExists('offer_recommendations', $data ?? [], null);
+        $this->setIfExists('paging', $data ?? [], null);
     }
 
     /**
@@ -301,33 +301,6 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets paging
-     *
-     * @return \OpenAPI\Client\Model\ScrollingPagerDTO|null
-     */
-    public function getPaging()
-    {
-        return $this->container['paging'];
-    }
-
-    /**
-     * Sets paging
-     *
-     * @param \OpenAPI\Client\Model\ScrollingPagerDTO|null $paging paging
-     *
-     * @return self
-     */
-    public function setPaging($paging)
-    {
-        if (is_null($paging)) {
-            throw new \InvalidArgumentException('non-nullable paging cannot be null');
-        }
-        $this->container['paging'] = $paging;
-
-        return $this;
-    }
-
-    /**
      * Gets offer_recommendations
      *
      * @return \OpenAPI\Client\Model\OfferRecommendationDTO[]
@@ -353,6 +326,33 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
 
         return $this;
     }
+
+    /**
+     * Gets paging
+     *
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
+     */
+    public function getPaging()
+    {
+        return $this->container['paging'];
+    }
+
+    /**
+     * Sets paging
+     *
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
+     *
+     * @return self
+     */
+    public function setPaging($paging)
+    {
+        if (is_null($paging)) {
+            throw new \InvalidArgumentException('non-nullable paging cannot be null');
+        }
+        $this->container['paging'] = $paging;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -360,7 +360,7 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -373,7 +373,7 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,7 +402,7 @@ class OfferRecommendationsResultDTO implements ModelInterface, ArrayAccess, \Jso
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

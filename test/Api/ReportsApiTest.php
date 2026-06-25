@@ -228,24 +228,24 @@ class ReportsApiTest extends TestCase
     }
 
     /**
-     * Test case for generateMassOrderLabelsReport
+     * Test case for generateMarketingDetalizationReport
      *
-     * Готовые ярлыки‑наклейки на все коробки в нескольких заказах.
+     * Отчет по счету маркетинга.
      *
      */
-    public function testGenerateMassOrderLabelsReport()
+    public function testGenerateMarketingDetalizationReport()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for generatePricesReport
+     * Test case for generateMassOrderLabelsReport
      *
-     * Отчет «Цены на рынке».
+     * Готовые ярлыки‑наклейки на все коробки в нескольких заказах.
      *
      */
-    public function testGeneratePricesReport()
+    public function testGenerateMassOrderLabelsReport()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

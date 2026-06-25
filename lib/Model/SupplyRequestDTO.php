@@ -64,9 +64,9 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => '\OpenAPI\Client\Model\SupplyRequestStatusType',
         'updated_at' => '\DateTime',
         'counters' => '\OpenAPI\Client\Model\SupplyRequestCountersDTO',
+        'target_location' => '\OpenAPI\Client\Model\SupplyRequestLocationDTO',
         'parent_link' => '\OpenAPI\Client\Model\SupplyRequestReferenceDTO',
         'children_links' => '\OpenAPI\Client\Model\SupplyRequestReferenceDTO[]',
-        'target_location' => '\OpenAPI\Client\Model\SupplyRequestLocationDTO',
         'transit_location' => '\OpenAPI\Client\Model\SupplyRequestLocationDTO'
     ];
 
@@ -84,9 +84,9 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => null,
         'updated_at' => 'date-time',
         'counters' => null,
+        'target_location' => null,
         'parent_link' => null,
         'children_links' => null,
-        'target_location' => null,
         'transit_location' => null
     ];
 
@@ -102,9 +102,9 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => false,
         'updated_at' => false,
         'counters' => false,
+        'target_location' => false,
         'parent_link' => false,
         'children_links' => true,
-        'target_location' => false,
         'transit_location' => false
     ];
 
@@ -200,9 +200,9 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'status',
         'updated_at' => 'updatedAt',
         'counters' => 'counters',
+        'target_location' => 'targetLocation',
         'parent_link' => 'parentLink',
         'children_links' => 'childrenLinks',
-        'target_location' => 'targetLocation',
         'transit_location' => 'transitLocation'
     ];
 
@@ -218,9 +218,9 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'setStatus',
         'updated_at' => 'setUpdatedAt',
         'counters' => 'setCounters',
+        'target_location' => 'setTargetLocation',
         'parent_link' => 'setParentLink',
         'children_links' => 'setChildrenLinks',
-        'target_location' => 'setTargetLocation',
         'transit_location' => 'setTransitLocation'
     ];
 
@@ -236,9 +236,9 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'getStatus',
         'updated_at' => 'getUpdatedAt',
         'counters' => 'getCounters',
+        'target_location' => 'getTargetLocation',
         'parent_link' => 'getParentLink',
         'children_links' => 'getChildrenLinks',
-        'target_location' => 'getTargetLocation',
         'transit_location' => 'getTransitLocation'
     ];
 
@@ -305,9 +305,9 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('counters', $data ?? [], null);
+        $this->setIfExists('target_location', $data ?? [], null);
         $this->setIfExists('parent_link', $data ?? [], null);
         $this->setIfExists('children_links', $data ?? [], null);
-        $this->setIfExists('target_location', $data ?? [], null);
         $this->setIfExists('transit_location', $data ?? [], null);
     }
 
@@ -356,13 +356,13 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['counters'] === null) {
             $invalidProperties[] = "'counters' can't be null";
         }
+        if ($this->container['target_location'] === null) {
+            $invalidProperties[] = "'target_location' can't be null";
+        }
         if (!is_null($this->container['children_links']) && (count($this->container['children_links']) < 1)) {
             $invalidProperties[] = "invalid value for 'children_links', number of items must be greater than or equal to 1.";
         }
 
-        if ($this->container['target_location'] === null) {
-            $invalidProperties[] = "'target_location' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -541,6 +541,33 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets target_location
+     *
+     * @return \OpenAPI\Client\Model\SupplyRequestLocationDTO
+     */
+    public function getTargetLocation()
+    {
+        return $this->container['target_location'];
+    }
+
+    /**
+     * Sets target_location
+     *
+     * @param \OpenAPI\Client\Model\SupplyRequestLocationDTO $target_location target_location
+     *
+     * @return self
+     */
+    public function setTargetLocation($target_location)
+    {
+        if (is_null($target_location)) {
+            throw new \InvalidArgumentException('non-nullable target_location cannot be null');
+        }
+        $this->container['target_location'] = $target_location;
+
+        return $this;
+    }
+
+    /**
      * Gets parent_link
      *
      * @return \OpenAPI\Client\Model\SupplyRequestReferenceDTO|null
@@ -607,33 +634,6 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets target_location
-     *
-     * @return \OpenAPI\Client\Model\SupplyRequestLocationDTO
-     */
-    public function getTargetLocation()
-    {
-        return $this->container['target_location'];
-    }
-
-    /**
-     * Sets target_location
-     *
-     * @param \OpenAPI\Client\Model\SupplyRequestLocationDTO $target_location target_location
-     *
-     * @return self
-     */
-    public function setTargetLocation($target_location)
-    {
-        if (is_null($target_location)) {
-            throw new \InvalidArgumentException('non-nullable target_location cannot be null');
-        }
-        $this->container['target_location'] = $target_location;
-
-        return $this;
-    }
-
-    /**
      * Gets transit_location
      *
      * @return \OpenAPI\Client\Model\SupplyRequestLocationDTO|null
@@ -666,7 +666,7 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -679,7 +679,7 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -708,7 +708,7 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

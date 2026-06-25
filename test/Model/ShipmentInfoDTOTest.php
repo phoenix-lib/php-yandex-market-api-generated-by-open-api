@@ -107,6 +107,51 @@ class ShipmentInfoDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "order_ids"
+     */
+    public function testPropertyOrderIds()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "draft_count"
+     */
+    public function testPropertyDraftCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "planned_count"
+     */
+    public function testPropertyPlannedCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fact_count"
+     */
+    public function testPropertyFactCount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "signature"
+     */
+    public function testPropertySignature()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "shipment_type"
      */
     public function testPropertyShipmentType()
@@ -155,51 +200,6 @@ class ShipmentInfoDTOTest extends TestCase
      * Test attribute "pallets_count"
      */
     public function testPropertyPalletsCount()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "order_ids"
-     */
-    public function testPropertyOrderIds()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "draft_count"
-     */
-    public function testPropertyDraftCount()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "planned_count"
-     */
-    public function testPropertyPlannedCount()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fact_count"
-     */
-    public function testPropertyFactCount()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "signature"
-     */
-    public function testPropertySignature()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

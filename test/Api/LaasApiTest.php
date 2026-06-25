@@ -72,6 +72,42 @@ class LaasApiTest extends TestCase
     }
 
     /**
+     * Test case for cancelReturn
+     *
+     * Отмена возврата.
+     *
+     */
+    public function testCancelReturn()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for createOrder
+     *
+     * Создание заказа.
+     *
+     */
+    public function testCreateOrder()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for createReturn
+     *
+     * Создание возврата.
+     *
+     */
+    public function testCreateReturn()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for deleteCampaignOffers
      *
      * Удаление товаров из ассортимента магазина.
@@ -138,6 +174,18 @@ class LaasApiTest extends TestCase
      *
      */
     public function testGenerateGoodsMovementReport()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for generateMarketingDetalizationReport
+     *
+     * Отчет по счету маркетинга.
+     *
+     */
+    public function testGenerateMarketingDetalizationReport()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -312,12 +360,36 @@ class LaasApiTest extends TestCase
     }
 
     /**
+     * Test case for getDeliveryOptions
+     *
+     * Получение доступных вариантов доставки заказов.
+     *
+     */
+    public function testGetDeliveryOptions()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getFulfillmentWarehouses
      *
-     * Идентификаторы складов Маркета.
+     * Идентификаторы фулфилмент-складов Маркета.
      *
      */
     public function testGetFulfillmentWarehouses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getLogisticPoints
+     *
+     * Получение точек ПВЗ Маркета.
+     *
+     */
+    public function testGetLogisticPoints()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -348,6 +420,18 @@ class LaasApiTest extends TestCase
     }
 
     /**
+     * Test case for getOperations
+     *
+     * Получение статусов операций.
+     *
+     */
+    public function testGetOperations()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getOrder
      *
      * Информация об одном заказе в магазине.
@@ -366,6 +450,18 @@ class LaasApiTest extends TestCase
      *
      */
     public function testGetOrderIdentifiersStatus()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getOrderUpdateOptions
+     *
+     * Получение временных интервалов для изменения заказа.
+     *
+     */
+    public function testGetOrderUpdateOptions()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -426,6 +522,18 @@ class LaasApiTest extends TestCase
      *
      */
     public function testGetReturn()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getReturnDeliveryOptions
+     *
+     * Получение подходящих для возврата пунктов выдачи.
+     *
+     */
+    public function testGetReturnDeliveryOptions()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -570,6 +678,18 @@ class LaasApiTest extends TestCase
      *
      */
     public function testUpdateOfferMappings()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateOrder
+     *
+     * Изменение заказа.
+     *
+     */
+    public function testUpdateOrder()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

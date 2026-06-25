@@ -59,11 +59,11 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'city' => 'string',
+        'gps' => '\OpenAPI\Client\Model\GpsDTO',
         'street' => 'string',
         'number' => 'string',
         'building' => 'string',
-        'block' => 'string',
-        'gps' => '\OpenAPI\Client\Model\GpsDTO'
+        'block' => 'string'
     ];
 
     /**
@@ -75,11 +75,11 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'city' => null,
+        'gps' => null,
         'street' => null,
         'number' => null,
         'building' => null,
-        'block' => null,
-        'gps' => null
+        'block' => null
     ];
 
     /**
@@ -89,11 +89,11 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static array $openAPINullables = [
         'city' => false,
+        'gps' => false,
         'street' => false,
         'number' => false,
         'building' => false,
-        'block' => false,
-        'gps' => false
+        'block' => false
     ];
 
     /**
@@ -183,11 +183,11 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'city' => 'city',
+        'gps' => 'gps',
         'street' => 'street',
         'number' => 'number',
         'building' => 'building',
-        'block' => 'block',
-        'gps' => 'gps'
+        'block' => 'block'
     ];
 
     /**
@@ -197,11 +197,11 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'city' => 'setCity',
+        'gps' => 'setGps',
         'street' => 'setStreet',
         'number' => 'setNumber',
         'building' => 'setBuilding',
-        'block' => 'setBlock',
-        'gps' => 'setGps'
+        'block' => 'setBlock'
     ];
 
     /**
@@ -211,11 +211,11 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'city' => 'getCity',
+        'gps' => 'getGps',
         'street' => 'getStreet',
         'number' => 'getNumber',
         'building' => 'getBuilding',
-        'block' => 'getBlock',
-        'gps' => 'getGps'
+        'block' => 'getBlock'
     ];
 
     /**
@@ -276,11 +276,11 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(?array $data = null)
     {
         $this->setIfExists('city', $data ?? [], null);
+        $this->setIfExists('gps', $data ?? [], null);
         $this->setIfExists('street', $data ?? [], null);
         $this->setIfExists('number', $data ?? [], null);
         $this->setIfExists('building', $data ?? [], null);
         $this->setIfExists('block', $data ?? [], null);
-        $this->setIfExists('gps', $data ?? [], null);
     }
 
     /**
@@ -317,6 +317,9 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'city', the character length must be smaller than or equal to 200.";
         }
 
+        if ($this->container['gps'] === null) {
+            $invalidProperties[] = "'gps' can't be null";
+        }
         if (!is_null($this->container['street']) && (mb_strlen($this->container['street']) > 512)) {
             $invalidProperties[] = "invalid value for 'street', the character length must be smaller than or equal to 512.";
         }
@@ -333,9 +336,6 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'block', the character length must be smaller than or equal to 16.";
         }
 
-        if ($this->container['gps'] === null) {
-            $invalidProperties[] = "'gps' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -378,6 +378,33 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         }
 
         $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets gps
+     *
+     * @return \OpenAPI\Client\Model\GpsDTO
+     */
+    public function getGps()
+    {
+        return $this->container['gps'];
+    }
+
+    /**
+     * Sets gps
+     *
+     * @param \OpenAPI\Client\Model\GpsDTO $gps gps
+     *
+     * @return self
+     */
+    public function setGps($gps)
+    {
+        if (is_null($gps)) {
+            throw new \InvalidArgumentException('non-nullable gps cannot be null');
+        }
+        $this->container['gps'] = $gps;
 
         return $this;
     }
@@ -505,33 +532,6 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
 
         return $this;
     }
-
-    /**
-     * Gets gps
-     *
-     * @return \OpenAPI\Client\Model\GpsDTO
-     */
-    public function getGps()
-    {
-        return $this->container['gps'];
-    }
-
-    /**
-     * Sets gps
-     *
-     * @param \OpenAPI\Client\Model\GpsDTO $gps gps
-     *
-     * @return self
-     */
-    public function setGps($gps)
-    {
-        if (is_null($gps)) {
-            throw new \InvalidArgumentException('non-nullable gps cannot be null');
-        }
-        $this->container['gps'] = $gps;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -539,7 +539,7 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -552,7 +552,7 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -581,7 +581,7 @@ class WarehouseAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

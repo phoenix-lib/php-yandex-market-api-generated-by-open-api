@@ -113,10 +113,10 @@ class ReportsApi
         'generateKeyIndicatorsReport' => [
             'application/json',
         ],
-        'generateMassOrderLabelsReport' => [
+        'generateMarketingDetalizationReport' => [
             'application/json',
         ],
-        'generatePricesReport' => [
+        'generateMassOrderLabelsReport' => [
             'application/json',
         ],
         'generateSalesGeographyReport' => [
@@ -207,15 +207,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateBannersStatisticsRequest $generate_banners_statistics_request generate_banners_statistics_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateBannersStatisticsReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function generateBannersStatisticsReport($generate_banners_statistics_request, $format = null, string $contentType = self::contentTypes['generateBannersStatisticsReport'][0])
+    public function generateBannersStatisticsReport($generate_banners_statistics_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateBannersStatisticsReport'][0])
     {
-        list($response) = $this->generateBannersStatisticsReportWithHttpInfo($generate_banners_statistics_request, $format, $contentType);
+        list($response) = $this->generateBannersStatisticsReportWithHttpInfo($generate_banners_statistics_request, $format, $source_type, $contentType);
         return $response;
     }
 
@@ -226,15 +227,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateBannersStatisticsRequest $generate_banners_statistics_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateBannersStatisticsReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generateBannersStatisticsReportWithHttpInfo($generate_banners_statistics_request, $format = null, string $contentType = self::contentTypes['generateBannersStatisticsReport'][0])
+    public function generateBannersStatisticsReportWithHttpInfo($generate_banners_statistics_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateBannersStatisticsReport'][0])
     {
-        $request = $this->generateBannersStatisticsReportRequest($generate_banners_statistics_request, $format, $contentType);
+        $request = $this->generateBannersStatisticsReportRequest($generate_banners_statistics_request, $format, $source_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -382,14 +384,15 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateBannersStatisticsRequest $generate_banners_statistics_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateBannersStatisticsReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateBannersStatisticsReportAsync($generate_banners_statistics_request, $format = null, string $contentType = self::contentTypes['generateBannersStatisticsReport'][0])
+    public function generateBannersStatisticsReportAsync($generate_banners_statistics_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateBannersStatisticsReport'][0])
     {
-        return $this->generateBannersStatisticsReportAsyncWithHttpInfo($generate_banners_statistics_request, $format, $contentType)
+        return $this->generateBannersStatisticsReportAsyncWithHttpInfo($generate_banners_statistics_request, $format, $source_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -404,15 +407,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateBannersStatisticsRequest $generate_banners_statistics_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateBannersStatisticsReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateBannersStatisticsReportAsyncWithHttpInfo($generate_banners_statistics_request, $format = null, string $contentType = self::contentTypes['generateBannersStatisticsReport'][0])
+    public function generateBannersStatisticsReportAsyncWithHttpInfo($generate_banners_statistics_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateBannersStatisticsReport'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GenerateReportResponse';
-        $request = $this->generateBannersStatisticsReportRequest($generate_banners_statistics_request, $format, $contentType);
+        $request = $this->generateBannersStatisticsReportRequest($generate_banners_statistics_request, $format, $source_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -455,12 +459,13 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateBannersStatisticsRequest $generate_banners_statistics_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateBannersStatisticsReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function generateBannersStatisticsReportRequest($generate_banners_statistics_request, $format = null, string $contentType = self::contentTypes['generateBannersStatisticsReport'][0])
+    public function generateBannersStatisticsReportRequest($generate_banners_statistics_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateBannersStatisticsReport'][0])
     {
 
         // verify the required parameter 'generate_banners_statistics_request' is set
@@ -469,6 +474,7 @@ class ReportsApi
                 'Missing the required parameter $generate_banners_statistics_request when calling generateBannersStatisticsReport'
             );
         }
+
 
 
 
@@ -484,6 +490,15 @@ class ReportsApi
             $format,
             'format', // param base name
             'ReportFormatType', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_type,
+            'sourceType', // param base name
+            'SourceType', // openApiType
             '', // style
             false, // explode
             false // required
@@ -914,15 +929,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateBoostConsolidatedRequest $generate_boost_consolidated_request generate_boost_consolidated_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateBoostConsolidatedReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function generateBoostConsolidatedReport($generate_boost_consolidated_request, $format = null, string $contentType = self::contentTypes['generateBoostConsolidatedReport'][0])
+    public function generateBoostConsolidatedReport($generate_boost_consolidated_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateBoostConsolidatedReport'][0])
     {
-        list($response) = $this->generateBoostConsolidatedReportWithHttpInfo($generate_boost_consolidated_request, $format, $contentType);
+        list($response) = $this->generateBoostConsolidatedReportWithHttpInfo($generate_boost_consolidated_request, $format, $source_type, $contentType);
         return $response;
     }
 
@@ -933,15 +949,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateBoostConsolidatedRequest $generate_boost_consolidated_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateBoostConsolidatedReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generateBoostConsolidatedReportWithHttpInfo($generate_boost_consolidated_request, $format = null, string $contentType = self::contentTypes['generateBoostConsolidatedReport'][0])
+    public function generateBoostConsolidatedReportWithHttpInfo($generate_boost_consolidated_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateBoostConsolidatedReport'][0])
     {
-        $request = $this->generateBoostConsolidatedReportRequest($generate_boost_consolidated_request, $format, $contentType);
+        $request = $this->generateBoostConsolidatedReportRequest($generate_boost_consolidated_request, $format, $source_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1089,14 +1106,15 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateBoostConsolidatedRequest $generate_boost_consolidated_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateBoostConsolidatedReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateBoostConsolidatedReportAsync($generate_boost_consolidated_request, $format = null, string $contentType = self::contentTypes['generateBoostConsolidatedReport'][0])
+    public function generateBoostConsolidatedReportAsync($generate_boost_consolidated_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateBoostConsolidatedReport'][0])
     {
-        return $this->generateBoostConsolidatedReportAsyncWithHttpInfo($generate_boost_consolidated_request, $format, $contentType)
+        return $this->generateBoostConsolidatedReportAsyncWithHttpInfo($generate_boost_consolidated_request, $format, $source_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1111,15 +1129,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateBoostConsolidatedRequest $generate_boost_consolidated_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateBoostConsolidatedReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateBoostConsolidatedReportAsyncWithHttpInfo($generate_boost_consolidated_request, $format = null, string $contentType = self::contentTypes['generateBoostConsolidatedReport'][0])
+    public function generateBoostConsolidatedReportAsyncWithHttpInfo($generate_boost_consolidated_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateBoostConsolidatedReport'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GenerateReportResponse';
-        $request = $this->generateBoostConsolidatedReportRequest($generate_boost_consolidated_request, $format, $contentType);
+        $request = $this->generateBoostConsolidatedReportRequest($generate_boost_consolidated_request, $format, $source_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1162,12 +1181,13 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateBoostConsolidatedRequest $generate_boost_consolidated_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateBoostConsolidatedReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function generateBoostConsolidatedReportRequest($generate_boost_consolidated_request, $format = null, string $contentType = self::contentTypes['generateBoostConsolidatedReport'][0])
+    public function generateBoostConsolidatedReportRequest($generate_boost_consolidated_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateBoostConsolidatedReport'][0])
     {
 
         // verify the required parameter 'generate_boost_consolidated_request' is set
@@ -1176,6 +1196,7 @@ class ReportsApi
                 'Missing the required parameter $generate_boost_consolidated_request when calling generateBoostConsolidatedReport'
             );
         }
+
 
 
 
@@ -1191,6 +1212,15 @@ class ReportsApi
             $format,
             'format', // param base name
             'ReportFormatType', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_type,
+            'sourceType', // param base name
+            'SourceType', // openApiType
             '', // style
             false, // explode
             false // required
@@ -1279,7 +1309,7 @@ class ReportsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     * @return \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
     public function generateClosureDocumentsDetalizationReport($generate_closure_documents_detalization_request, $format = null, string $contentType = self::contentTypes['generateClosureDocumentsDetalizationReport'][0])
     {
@@ -1298,7 +1328,7 @@ class ReportsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function generateClosureDocumentsDetalizationReportWithHttpInfo($generate_closure_documents_detalization_request, $format = null, string $contentType = self::contentTypes['generateClosureDocumentsDetalizationReport'][0])
     {
@@ -1349,6 +1379,12 @@ class ReportsApi
                 case 403:
                     return $this->handleResponseWithDataType(
                         '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
                         $request,
                         $response,
                     );
@@ -1416,6 +1452,14 @@ class ReportsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4878,6 +4922,419 @@ class ReportsApi
     }
 
     /**
+     * Operation generateMarketingDetalizationReport
+     *
+     * Отчет по счету маркетинга
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\GenerateMarketingDetalizationRequest $generate_marketing_detalization_request generate_marketing_detalization_request (required)
+     * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateMarketingDetalizationReport'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     */
+    public function generateMarketingDetalizationReport($business_id, $generate_marketing_detalization_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateMarketingDetalizationReport'][0])
+    {
+        list($response) = $this->generateMarketingDetalizationReportWithHttpInfo($business_id, $generate_marketing_detalization_request, $format, $source_type, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation generateMarketingDetalizationReportWithHttpInfo
+     *
+     * Отчет по счету маркетинга
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\GenerateMarketingDetalizationRequest $generate_marketing_detalization_request (required)
+     * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateMarketingDetalizationReport'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function generateMarketingDetalizationReportWithHttpInfo($business_id, $generate_marketing_detalization_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateMarketingDetalizationReport'][0])
+    {
+        $request = $this->generateMarketingDetalizationReportRequest($business_id, $generate_marketing_detalization_request, $format, $source_type, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\GenerateReportResponse',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 420:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenAPI\Client\Model\GenerateReportResponse',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\GenerateReportResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 420:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation generateMarketingDetalizationReportAsync
+     *
+     * Отчет по счету маркетинга
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\GenerateMarketingDetalizationRequest $generate_marketing_detalization_request (required)
+     * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateMarketingDetalizationReport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function generateMarketingDetalizationReportAsync($business_id, $generate_marketing_detalization_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateMarketingDetalizationReport'][0])
+    {
+        return $this->generateMarketingDetalizationReportAsyncWithHttpInfo($business_id, $generate_marketing_detalization_request, $format, $source_type, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation generateMarketingDetalizationReportAsyncWithHttpInfo
+     *
+     * Отчет по счету маркетинга
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\GenerateMarketingDetalizationRequest $generate_marketing_detalization_request (required)
+     * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateMarketingDetalizationReport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function generateMarketingDetalizationReportAsyncWithHttpInfo($business_id, $generate_marketing_detalization_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateMarketingDetalizationReport'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\GenerateReportResponse';
+        $request = $this->generateMarketingDetalizationReportRequest($business_id, $generate_marketing_detalization_request, $format, $source_type, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'generateMarketingDetalizationReport'
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\GenerateMarketingDetalizationRequest $generate_marketing_detalization_request (required)
+     * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateMarketingDetalizationReport'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function generateMarketingDetalizationReportRequest($business_id, $generate_marketing_detalization_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateMarketingDetalizationReport'][0])
+    {
+
+        // verify the required parameter 'business_id' is set
+        if ($business_id === null || (is_array($business_id) && count($business_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $business_id when calling generateMarketingDetalizationReport'
+            );
+        }
+        if ($business_id < 1) {
+            throw new \InvalidArgumentException('invalid value for "$business_id" when calling ReportsApi.generateMarketingDetalizationReport, must be bigger than or equal to 1.');
+        }
+        
+        // verify the required parameter 'generate_marketing_detalization_request' is set
+        if ($generate_marketing_detalization_request === null || (is_array($generate_marketing_detalization_request) && count($generate_marketing_detalization_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $generate_marketing_detalization_request when calling generateMarketingDetalizationReport'
+            );
+        }
+
+
+
+
+        $resourcePath = '/v1/businesses/{businessId}/reports/marketing-detalization/generate';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $format,
+            'format', // param base name
+            'ReportFormatType', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_type,
+            'sourceType', // param base name
+            'SourceType', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($business_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'businessId' . '}',
+                ObjectSerializer::toPathValue($business_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($generate_marketing_detalization_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($generate_marketing_detalization_request));
+            } else {
+                $httpBody = $generate_marketing_detalization_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Api-Key');
+        if ($apiKey !== null) {
+            $headers['Api-Key'] = $apiKey;
+        }
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation generateMassOrderLabelsReport
      *
      * Готовые ярлыки‑наклейки на все коробки в нескольких заказах
@@ -5182,372 +5639,6 @@ class ReportsApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($generate_mass_order_labels_request));
             } else {
                 $httpBody = $generate_mass_order_labels_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Api-Key');
-        if ($apiKey !== null) {
-            $headers['Api-Key'] = $apiKey;
-        }
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation generatePricesReport
-     *
-     * Отчет «Цены на рынке»
-     *
-     * @param  \OpenAPI\Client\Model\GeneratePricesReportRequest $generate_prices_report_request generate_prices_report_request (required)
-     * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generatePricesReport'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
-     * @deprecated
-     */
-    public function generatePricesReport($generate_prices_report_request, $format = null, string $contentType = self::contentTypes['generatePricesReport'][0])
-    {
-        list($response) = $this->generatePricesReportWithHttpInfo($generate_prices_report_request, $format, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation generatePricesReportWithHttpInfo
-     *
-     * Отчет «Цены на рынке»
-     *
-     * @param  \OpenAPI\Client\Model\GeneratePricesReportRequest $generate_prices_report_request (required)
-     * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generatePricesReport'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
-     * @deprecated
-     */
-    public function generatePricesReportWithHttpInfo($generate_prices_report_request, $format = null, string $contentType = self::contentTypes['generatePricesReport'][0])
-    {
-        $request = $this->generatePricesReportRequest($generate_prices_report_request, $format, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\GenerateReportResponse',
-                        $request,
-                        $response,
-                    );
-                case 400:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 401:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 403:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 420:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 500:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\GenerateReportResponse',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GenerateReportResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 420:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation generatePricesReportAsync
-     *
-     * Отчет «Цены на рынке»
-     *
-     * @param  \OpenAPI\Client\Model\GeneratePricesReportRequest $generate_prices_report_request (required)
-     * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generatePricesReport'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     * @deprecated
-     */
-    public function generatePricesReportAsync($generate_prices_report_request, $format = null, string $contentType = self::contentTypes['generatePricesReport'][0])
-    {
-        return $this->generatePricesReportAsyncWithHttpInfo($generate_prices_report_request, $format, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation generatePricesReportAsyncWithHttpInfo
-     *
-     * Отчет «Цены на рынке»
-     *
-     * @param  \OpenAPI\Client\Model\GeneratePricesReportRequest $generate_prices_report_request (required)
-     * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generatePricesReport'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     * @deprecated
-     */
-    public function generatePricesReportAsyncWithHttpInfo($generate_prices_report_request, $format = null, string $contentType = self::contentTypes['generatePricesReport'][0])
-    {
-        $returnType = '\OpenAPI\Client\Model\GenerateReportResponse';
-        $request = $this->generatePricesReportRequest($generate_prices_report_request, $format, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'generatePricesReport'
-     *
-     * @param  \OpenAPI\Client\Model\GeneratePricesReportRequest $generate_prices_report_request (required)
-     * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generatePricesReport'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     * @deprecated
-     */
-    public function generatePricesReportRequest($generate_prices_report_request, $format = null, string $contentType = self::contentTypes['generatePricesReport'][0])
-    {
-
-        // verify the required parameter 'generate_prices_report_request' is set
-        if ($generate_prices_report_request === null || (is_array($generate_prices_report_request) && count($generate_prices_report_request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $generate_prices_report_request when calling generatePricesReport'
-            );
-        }
-
-
-
-        $resourcePath = '/v2/reports/prices/generate';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $format,
-            'format', // param base name
-            'ReportFormatType', // openApiType
-            '', // style
-            false, // explode
-            false // required
-        ) ?? []);
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($generate_prices_report_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($generate_prices_report_request));
-            } else {
-                $httpBody = $generate_prices_report_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5972,15 +6063,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateShelfsStatisticsRequest $generate_shelfs_statistics_request generate_shelfs_statistics_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateShelfsStatisticsReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function generateShelfsStatisticsReport($generate_shelfs_statistics_request, $format = null, string $contentType = self::contentTypes['generateShelfsStatisticsReport'][0])
+    public function generateShelfsStatisticsReport($generate_shelfs_statistics_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateShelfsStatisticsReport'][0])
     {
-        list($response) = $this->generateShelfsStatisticsReportWithHttpInfo($generate_shelfs_statistics_request, $format, $contentType);
+        list($response) = $this->generateShelfsStatisticsReportWithHttpInfo($generate_shelfs_statistics_request, $format, $source_type, $contentType);
         return $response;
     }
 
@@ -5991,15 +6083,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateShelfsStatisticsRequest $generate_shelfs_statistics_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateShelfsStatisticsReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generateShelfsStatisticsReportWithHttpInfo($generate_shelfs_statistics_request, $format = null, string $contentType = self::contentTypes['generateShelfsStatisticsReport'][0])
+    public function generateShelfsStatisticsReportWithHttpInfo($generate_shelfs_statistics_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateShelfsStatisticsReport'][0])
     {
-        $request = $this->generateShelfsStatisticsReportRequest($generate_shelfs_statistics_request, $format, $contentType);
+        $request = $this->generateShelfsStatisticsReportRequest($generate_shelfs_statistics_request, $format, $source_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6147,14 +6240,15 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateShelfsStatisticsRequest $generate_shelfs_statistics_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateShelfsStatisticsReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateShelfsStatisticsReportAsync($generate_shelfs_statistics_request, $format = null, string $contentType = self::contentTypes['generateShelfsStatisticsReport'][0])
+    public function generateShelfsStatisticsReportAsync($generate_shelfs_statistics_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateShelfsStatisticsReport'][0])
     {
-        return $this->generateShelfsStatisticsReportAsyncWithHttpInfo($generate_shelfs_statistics_request, $format, $contentType)
+        return $this->generateShelfsStatisticsReportAsyncWithHttpInfo($generate_shelfs_statistics_request, $format, $source_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6169,15 +6263,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateShelfsStatisticsRequest $generate_shelfs_statistics_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateShelfsStatisticsReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateShelfsStatisticsReportAsyncWithHttpInfo($generate_shelfs_statistics_request, $format = null, string $contentType = self::contentTypes['generateShelfsStatisticsReport'][0])
+    public function generateShelfsStatisticsReportAsyncWithHttpInfo($generate_shelfs_statistics_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateShelfsStatisticsReport'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GenerateReportResponse';
-        $request = $this->generateShelfsStatisticsReportRequest($generate_shelfs_statistics_request, $format, $contentType);
+        $request = $this->generateShelfsStatisticsReportRequest($generate_shelfs_statistics_request, $format, $source_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6220,12 +6315,13 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateShelfsStatisticsRequest $generate_shelfs_statistics_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateShelfsStatisticsReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function generateShelfsStatisticsReportRequest($generate_shelfs_statistics_request, $format = null, string $contentType = self::contentTypes['generateShelfsStatisticsReport'][0])
+    public function generateShelfsStatisticsReportRequest($generate_shelfs_statistics_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateShelfsStatisticsReport'][0])
     {
 
         // verify the required parameter 'generate_shelfs_statistics_request' is set
@@ -6234,6 +6330,7 @@ class ReportsApi
                 'Missing the required parameter $generate_shelfs_statistics_request when calling generateShelfsStatisticsReport'
             );
         }
+
 
 
 
@@ -6249,6 +6346,15 @@ class ReportsApi
             $format,
             'format', // param base name
             'ReportFormatType', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_type,
+            'sourceType', // param base name
+            'SourceType', // openApiType
             '', // style
             false, // explode
             false // required
@@ -6679,15 +6785,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateShowsBoostRequest $generate_shows_boost_request generate_shows_boost_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateShowsBoostReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function generateShowsBoostReport($generate_shows_boost_request, $format = null, string $contentType = self::contentTypes['generateShowsBoostReport'][0])
+    public function generateShowsBoostReport($generate_shows_boost_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateShowsBoostReport'][0])
     {
-        list($response) = $this->generateShowsBoostReportWithHttpInfo($generate_shows_boost_request, $format, $contentType);
+        list($response) = $this->generateShowsBoostReportWithHttpInfo($generate_shows_boost_request, $format, $source_type, $contentType);
         return $response;
     }
 
@@ -6698,15 +6805,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateShowsBoostRequest $generate_shows_boost_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateShowsBoostReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generateShowsBoostReportWithHttpInfo($generate_shows_boost_request, $format = null, string $contentType = self::contentTypes['generateShowsBoostReport'][0])
+    public function generateShowsBoostReportWithHttpInfo($generate_shows_boost_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateShowsBoostReport'][0])
     {
-        $request = $this->generateShowsBoostReportRequest($generate_shows_boost_request, $format, $contentType);
+        $request = $this->generateShowsBoostReportRequest($generate_shows_boost_request, $format, $source_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6854,14 +6962,15 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateShowsBoostRequest $generate_shows_boost_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateShowsBoostReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateShowsBoostReportAsync($generate_shows_boost_request, $format = null, string $contentType = self::contentTypes['generateShowsBoostReport'][0])
+    public function generateShowsBoostReportAsync($generate_shows_boost_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateShowsBoostReport'][0])
     {
-        return $this->generateShowsBoostReportAsyncWithHttpInfo($generate_shows_boost_request, $format, $contentType)
+        return $this->generateShowsBoostReportAsyncWithHttpInfo($generate_shows_boost_request, $format, $source_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6876,15 +6985,16 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateShowsBoostRequest $generate_shows_boost_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateShowsBoostReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateShowsBoostReportAsyncWithHttpInfo($generate_shows_boost_request, $format = null, string $contentType = self::contentTypes['generateShowsBoostReport'][0])
+    public function generateShowsBoostReportAsyncWithHttpInfo($generate_shows_boost_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateShowsBoostReport'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GenerateReportResponse';
-        $request = $this->generateShowsBoostReportRequest($generate_shows_boost_request, $format, $contentType);
+        $request = $this->generateShowsBoostReportRequest($generate_shows_boost_request, $format, $source_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6927,12 +7037,13 @@ class ReportsApi
      *
      * @param  \OpenAPI\Client\Model\GenerateShowsBoostRequest $generate_shows_boost_request (required)
      * @param  \OpenAPI\Client\Model\ReportFormatType|null $format Формат отчета или документа. (optional)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateShowsBoostReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function generateShowsBoostReportRequest($generate_shows_boost_request, $format = null, string $contentType = self::contentTypes['generateShowsBoostReport'][0])
+    public function generateShowsBoostReportRequest($generate_shows_boost_request, $format = null, $source_type = null, string $contentType = self::contentTypes['generateShowsBoostReport'][0])
     {
 
         // verify the required parameter 'generate_shows_boost_request' is set
@@ -6941,6 +7052,7 @@ class ReportsApi
                 'Missing the required parameter $generate_shows_boost_request when calling generateShowsBoostReport'
             );
         }
+
 
 
 
@@ -6956,6 +7068,15 @@ class ReportsApi
             $format,
             'format', // param base name
             'ReportFormatType', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_type,
+            'sourceType', // param base name
+            'SourceType', // openApiType
             '', // style
             false, // explode
             false // required
@@ -8575,7 +8696,7 @@ class ReportsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     * @return \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
     public function generateUnitedOrdersReport($generate_united_orders_request, $format = null, $language = null, string $contentType = self::contentTypes['generateUnitedOrdersReport'][0])
     {
@@ -8595,7 +8716,7 @@ class ReportsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\GenerateReportResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function generateUnitedOrdersReportWithHttpInfo($generate_united_orders_request, $format = null, $language = null, string $contentType = self::contentTypes['generateUnitedOrdersReport'][0])
     {
@@ -8646,6 +8767,12 @@ class ReportsApi
                 case 403:
                     return $this->handleResponseWithDataType(
                         '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
                         $request,
                         $response,
                     );
@@ -8713,6 +8840,14 @@ class ReportsApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9306,15 +9441,16 @@ class ReportsApi
      * Получение заданного отчета или документа
      *
      * @param  string $report_id Идентификатор отчета или документа, который вы получили после запуска генерации. (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReportInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetReportInfoResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getReportInfo($report_id, string $contentType = self::contentTypes['getReportInfo'][0])
+    public function getReportInfo($report_id, $source_type = null, string $contentType = self::contentTypes['getReportInfo'][0])
     {
-        list($response) = $this->getReportInfoWithHttpInfo($report_id, $contentType);
+        list($response) = $this->getReportInfoWithHttpInfo($report_id, $source_type, $contentType);
         return $response;
     }
 
@@ -9324,15 +9460,16 @@ class ReportsApi
      * Получение заданного отчета или документа
      *
      * @param  string $report_id Идентификатор отчета или документа, который вы получили после запуска генерации. (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReportInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetReportInfoResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getReportInfoWithHttpInfo($report_id, string $contentType = self::contentTypes['getReportInfo'][0])
+    public function getReportInfoWithHttpInfo($report_id, $source_type = null, string $contentType = self::contentTypes['getReportInfo'][0])
     {
-        $request = $this->getReportInfoRequest($report_id, $contentType);
+        $request = $this->getReportInfoRequest($report_id, $source_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9493,14 +9630,15 @@ class ReportsApi
      * Получение заданного отчета или документа
      *
      * @param  string $report_id Идентификатор отчета или документа, который вы получили после запуска генерации. (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReportInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReportInfoAsync($report_id, string $contentType = self::contentTypes['getReportInfo'][0])
+    public function getReportInfoAsync($report_id, $source_type = null, string $contentType = self::contentTypes['getReportInfo'][0])
     {
-        return $this->getReportInfoAsyncWithHttpInfo($report_id, $contentType)
+        return $this->getReportInfoAsyncWithHttpInfo($report_id, $source_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9514,15 +9652,16 @@ class ReportsApi
      * Получение заданного отчета или документа
      *
      * @param  string $report_id Идентификатор отчета или документа, который вы получили после запуска генерации. (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReportInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReportInfoAsyncWithHttpInfo($report_id, string $contentType = self::contentTypes['getReportInfo'][0])
+    public function getReportInfoAsyncWithHttpInfo($report_id, $source_type = null, string $contentType = self::contentTypes['getReportInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetReportInfoResponse';
-        $request = $this->getReportInfoRequest($report_id, $contentType);
+        $request = $this->getReportInfoRequest($report_id, $source_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9564,12 +9703,13 @@ class ReportsApi
      * Create request for operation 'getReportInfo'
      *
      * @param  string $report_id Идентификатор отчета или документа, который вы получили после запуска генерации. (required)
+     * @param  \OpenAPI\Client\Model\SourceType|null $source_type Признак типа кабинета, от имени которого вызывается метод: {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  - &#x60;SELLER&#x60; — продавец.  {% endif %}  - &#x60;ADVERTISER&#x60; — рекламодатель.  {% if audience &#x3D;&#x3D; \&quot;advertiser\&quot; %}  {% note info \&quot;Обязательно указывайте sourceType&#x3D;ADVERTISER в каждом запросе.\&quot; %}     {% endnote %}  {% endif %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReportInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getReportInfoRequest($report_id, string $contentType = self::contentTypes['getReportInfo'][0])
+    public function getReportInfoRequest($report_id, $source_type = null, string $contentType = self::contentTypes['getReportInfo'][0])
     {
 
         // verify the required parameter 'report_id' is set
@@ -9586,6 +9726,7 @@ class ReportsApi
         }
         
 
+
         $resourcePath = '/v2/reports/info/{reportId}';
         $formParams = [];
         $queryParams = [];
@@ -9593,6 +9734,15 @@ class ReportsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $source_type,
+            'sourceType', // param base name
+            'SourceType', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
 
 
         // path params

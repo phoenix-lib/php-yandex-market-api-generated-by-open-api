@@ -98,18 +98,18 @@ class SupplyRequestItemDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "price"
+     * Test attribute "counters"
      */
-    public function testPropertyPrice()
+    public function testPropertyCounters()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "counters"
+     * Test attribute "price"
      */
-    public function testPropertyCounters()
+    public function testPropertyPrice()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

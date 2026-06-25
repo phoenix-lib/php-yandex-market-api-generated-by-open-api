@@ -80,18 +80,18 @@ class OutletWorkingScheduleDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "work_in_holiday"
+     * Test attribute "schedule_items"
      */
-    public function testPropertyWorkInHoliday()
+    public function testPropertyScheduleItems()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "schedule_items"
+     * Test attribute "work_in_holiday"
      */
-    public function testPropertyScheduleItems()
+    public function testPropertyWorkInHoliday()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

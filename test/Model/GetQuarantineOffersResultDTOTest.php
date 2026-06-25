@@ -80,18 +80,18 @@ class GetQuarantineOffersResultDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "paging"
+     * Test attribute "offers"
      */
-    public function testPropertyPaging()
+    public function testPropertyOffers()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "offers"
+     * Test attribute "paging"
      */
-    public function testPropertyOffers()
+    public function testPropertyPaging()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

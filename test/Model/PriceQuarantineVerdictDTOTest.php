@@ -80,18 +80,18 @@ class PriceQuarantineVerdictDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "params"
      */
-    public function testPropertyType()
+    public function testPropertyParams()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "params"
+     * Test attribute "type"
      */
-    public function testPropertyParams()
+    public function testPropertyType()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

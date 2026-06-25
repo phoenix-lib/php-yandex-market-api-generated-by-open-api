@@ -1,0 +1,93 @@
+name: Update OpenAPI Client
+
+on:
+  workflow_dispatch:
+    inputs:
+      upstream_ref:
+        description: Yandex upstream branch, tag, or commit
+        required: false
+        default: main
+        type: string
+      dry_run:
+        description: Generate and validate without opening a pull request
+        required: false
+        default: false
+        type: boolean
+  schedule:
+    - cron: '17 5 * * 1-5'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: yandex-market-openapi-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      UPSTREAM_REF: ${{ github.event.inputs.upstream_ref || 'main' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup PHP 7.4
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          extensions: curl, json, mbstring
+          coverage: none
+
+      - name: Install generator tooling
+        run: npm ci
+
+      - name: Regenerate client
+        run: npm run generate
+
+      - name: Validate Composer metadata
+        run: composer validate --strict
+
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Validate generated client
+        run: scripts/validate-generated-client.sh
+
+      - name: Show generated diff
+        run: |
+          git status --short
+          git diff --stat
+
+      - name: Create pull request
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run != 'true' }}
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: automation/yandex-market-openapi
+          delete-branch: true
+          title: Regenerate Yandex Market OpenAPI client
+          commit-message: Regenerate Yandex Market OpenAPI client
+          body: |
+            Automated regeneration of the Yandex Market Partner API PHP client.
+
+            Validation performed by this workflow:
+            - Composer metadata validation
+            - Composer install under PHP 7.4
+            - PHP syntax validation
+            - PHPUnit
+
+            Review `UPSTREAM_OPENAPI.lock` to see the exact upstream commit and spec hash.

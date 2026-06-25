@@ -98,6 +98,33 @@ class ChangeOutletRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "address"
+     */
+    public function testPropertyAddress()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "phones"
+     */
+    public function testPropertyPhones()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "working_schedule"
+     */
+    public function testPropertyWorkingSchedule()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "coords"
      */
     public function testPropertyCoords()
@@ -128,33 +155,6 @@ class ChangeOutletRequestTest extends TestCase
      * Test attribute "visibility"
      */
     public function testPropertyVisibility()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "address"
-     */
-    public function testPropertyAddress()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "phones"
-     */
-    public function testPropertyPhones()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "working_schedule"
-     */
-    public function testPropertyWorkingSchedule()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

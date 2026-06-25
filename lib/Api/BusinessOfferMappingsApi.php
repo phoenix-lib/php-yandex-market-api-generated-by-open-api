@@ -89,9 +89,6 @@ class BusinessOfferMappingsApi
         'getOfferMappings' => [
             'application/json',
         ],
-        'getSuggestedOfferMappings' => [
-            'application/json',
-        ],
         'updateOfferMappings' => [
             'application/json',
         ],
@@ -148,7 +145,7 @@ class BusinessOfferMappingsApi
      *
      * Добавление товаров в архив
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\AddOffersToArchiveRequest $add_offers_to_archive_request add_offers_to_archive_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOffersToArchive'] to see the possible values for this operation
      *
@@ -167,7 +164,7 @@ class BusinessOfferMappingsApi
      *
      * Добавление товаров в архив
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\AddOffersToArchiveRequest $add_offers_to_archive_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOffersToArchive'] to see the possible values for this operation
      *
@@ -351,7 +348,7 @@ class BusinessOfferMappingsApi
      *
      * Добавление товаров в архив
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\AddOffersToArchiveRequest $add_offers_to_archive_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOffersToArchive'] to see the possible values for this operation
      *
@@ -373,7 +370,7 @@ class BusinessOfferMappingsApi
      *
      * Добавление товаров в архив
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\AddOffersToArchiveRequest $add_offers_to_archive_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOffersToArchive'] to see the possible values for this operation
      *
@@ -424,7 +421,7 @@ class BusinessOfferMappingsApi
     /**
      * Create request for operation 'addOffersToArchive'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\AddOffersToArchiveRequest $add_offers_to_archive_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['addOffersToArchive'] to see the possible values for this operation
      *
@@ -545,7 +542,7 @@ class BusinessOfferMappingsApi
      *
      * Удаление товаров из каталога
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteOffersRequest $delete_offers_request delete_offers_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOffers'] to see the possible values for this operation
      *
@@ -564,7 +561,7 @@ class BusinessOfferMappingsApi
      *
      * Удаление товаров из каталога
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteOffersRequest $delete_offers_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOffers'] to see the possible values for this operation
      *
@@ -748,7 +745,7 @@ class BusinessOfferMappingsApi
      *
      * Удаление товаров из каталога
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteOffersRequest $delete_offers_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOffers'] to see the possible values for this operation
      *
@@ -770,7 +767,7 @@ class BusinessOfferMappingsApi
      *
      * Удаление товаров из каталога
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteOffersRequest $delete_offers_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOffers'] to see the possible values for this operation
      *
@@ -821,7 +818,7 @@ class BusinessOfferMappingsApi
     /**
      * Create request for operation 'deleteOffers'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteOffersRequest $delete_offers_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOffers'] to see the possible values for this operation
      *
@@ -942,7 +939,7 @@ class BusinessOfferMappingsApi
      *
      * Удаление товаров из архива
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteOffersFromArchiveRequest $delete_offers_from_archive_request delete_offers_from_archive_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOffersFromArchive'] to see the possible values for this operation
      *
@@ -961,7 +958,7 @@ class BusinessOfferMappingsApi
      *
      * Удаление товаров из архива
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteOffersFromArchiveRequest $delete_offers_from_archive_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOffersFromArchive'] to see the possible values for this operation
      *
@@ -1145,7 +1142,7 @@ class BusinessOfferMappingsApi
      *
      * Удаление товаров из архива
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteOffersFromArchiveRequest $delete_offers_from_archive_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOffersFromArchive'] to see the possible values for this operation
      *
@@ -1167,7 +1164,7 @@ class BusinessOfferMappingsApi
      *
      * Удаление товаров из архива
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteOffersFromArchiveRequest $delete_offers_from_archive_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOffersFromArchive'] to see the possible values for this operation
      *
@@ -1218,7 +1215,7 @@ class BusinessOfferMappingsApi
     /**
      * Create request for operation 'deleteOffersFromArchive'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\DeleteOffersFromArchiveRequest $delete_offers_from_archive_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteOffersFromArchive'] to see the possible values for this operation
      *
@@ -1339,7 +1336,7 @@ class BusinessOfferMappingsApi
      *
      * Генерация штрихкодов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GenerateOfferBarcodesRequest $generate_offer_barcodes_request generate_offer_barcodes_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateOfferBarcodes'] to see the possible values for this operation
      *
@@ -1358,7 +1355,7 @@ class BusinessOfferMappingsApi
      *
      * Генерация штрихкодов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GenerateOfferBarcodesRequest $generate_offer_barcodes_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateOfferBarcodes'] to see the possible values for this operation
      *
@@ -1528,7 +1525,7 @@ class BusinessOfferMappingsApi
      *
      * Генерация штрихкодов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GenerateOfferBarcodesRequest $generate_offer_barcodes_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateOfferBarcodes'] to see the possible values for this operation
      *
@@ -1550,7 +1547,7 @@ class BusinessOfferMappingsApi
      *
      * Генерация штрихкодов
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GenerateOfferBarcodesRequest $generate_offer_barcodes_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateOfferBarcodes'] to see the possible values for this operation
      *
@@ -1601,7 +1598,7 @@ class BusinessOfferMappingsApi
     /**
      * Create request for operation 'generateOfferBarcodes'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GenerateOfferBarcodesRequest $generate_offer_barcodes_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateOfferBarcodes'] to see the possible values for this operation
      *
@@ -1722,9 +1719,9 @@ class BusinessOfferMappingsApi
      *
      * Информация о товарах в каталоге
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\CatalogLanguageType|null $language Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. (optional)
      * @param  \OpenAPI\Client\Model\GetOfferMappingsRequest|null $get_offer_mappings_request get_offer_mappings_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferMappings'] to see the possible values for this operation
@@ -1733,7 +1730,7 @@ class BusinessOfferMappingsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetOfferMappingsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getOfferMappings($business_id, $page_token = null, $limit = null, $language = null, $get_offer_mappings_request = null, string $contentType = self::contentTypes['getOfferMappings'][0])
+    public function getOfferMappings($business_id, $page_token = null, $limit = 50, $language = null, $get_offer_mappings_request = null, string $contentType = self::contentTypes['getOfferMappings'][0])
     {
         list($response) = $this->getOfferMappingsWithHttpInfo($business_id, $page_token, $limit, $language, $get_offer_mappings_request, $contentType);
         return $response;
@@ -1744,9 +1741,9 @@ class BusinessOfferMappingsApi
      *
      * Информация о товарах в каталоге
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\CatalogLanguageType|null $language Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. (optional)
      * @param  \OpenAPI\Client\Model\GetOfferMappingsRequest|null $get_offer_mappings_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferMappings'] to see the possible values for this operation
@@ -1755,7 +1752,7 @@ class BusinessOfferMappingsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetOfferMappingsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOfferMappingsWithHttpInfo($business_id, $page_token = null, $limit = null, $language = null, $get_offer_mappings_request = null, string $contentType = self::contentTypes['getOfferMappings'][0])
+    public function getOfferMappingsWithHttpInfo($business_id, $page_token = null, $limit = 50, $language = null, $get_offer_mappings_request = null, string $contentType = self::contentTypes['getOfferMappings'][0])
     {
         $request = $this->getOfferMappingsRequest($business_id, $page_token, $limit, $language, $get_offer_mappings_request, $contentType);
 
@@ -1917,9 +1914,9 @@ class BusinessOfferMappingsApi
      *
      * Информация о товарах в каталоге
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\CatalogLanguageType|null $language Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. (optional)
      * @param  \OpenAPI\Client\Model\GetOfferMappingsRequest|null $get_offer_mappings_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferMappings'] to see the possible values for this operation
@@ -1927,7 +1924,7 @@ class BusinessOfferMappingsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfferMappingsAsync($business_id, $page_token = null, $limit = null, $language = null, $get_offer_mappings_request = null, string $contentType = self::contentTypes['getOfferMappings'][0])
+    public function getOfferMappingsAsync($business_id, $page_token = null, $limit = 50, $language = null, $get_offer_mappings_request = null, string $contentType = self::contentTypes['getOfferMappings'][0])
     {
         return $this->getOfferMappingsAsyncWithHttpInfo($business_id, $page_token, $limit, $language, $get_offer_mappings_request, $contentType)
             ->then(
@@ -1942,9 +1939,9 @@ class BusinessOfferMappingsApi
      *
      * Информация о товарах в каталоге
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\CatalogLanguageType|null $language Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. (optional)
      * @param  \OpenAPI\Client\Model\GetOfferMappingsRequest|null $get_offer_mappings_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferMappings'] to see the possible values for this operation
@@ -1952,7 +1949,7 @@ class BusinessOfferMappingsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOfferMappingsAsyncWithHttpInfo($business_id, $page_token = null, $limit = null, $language = null, $get_offer_mappings_request = null, string $contentType = self::contentTypes['getOfferMappings'][0])
+    public function getOfferMappingsAsyncWithHttpInfo($business_id, $page_token = null, $limit = 50, $language = null, $get_offer_mappings_request = null, string $contentType = self::contentTypes['getOfferMappings'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetOfferMappingsResponse';
         $request = $this->getOfferMappingsRequest($business_id, $page_token, $limit, $language, $get_offer_mappings_request, $contentType);
@@ -1996,9 +1993,9 @@ class BusinessOfferMappingsApi
     /**
      * Create request for operation 'getOfferMappings'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\CatalogLanguageType|null $language Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. (optional)
      * @param  \OpenAPI\Client\Model\GetOfferMappingsRequest|null $get_offer_mappings_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOfferMappings'] to see the possible values for this operation
@@ -2006,7 +2003,7 @@ class BusinessOfferMappingsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOfferMappingsRequest($business_id, $page_token = null, $limit = null, $language = null, $get_offer_mappings_request = null, string $contentType = self::contentTypes['getOfferMappings'][0])
+    public function getOfferMappingsRequest($business_id, $page_token = null, $limit = 50, $language = null, $get_offer_mappings_request = null, string $contentType = self::contentTypes['getOfferMappings'][0])
     {
 
         // verify the required parameter 'business_id' is set
@@ -2020,6 +2017,9 @@ class BusinessOfferMappingsApi
         }
         
 
+        if ($limit !== null && $limit > 100) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling BusinessOfferMappingsApi.getOfferMappings, must be smaller than or equal to 100.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling BusinessOfferMappingsApi.getOfferMappings, must be bigger than or equal to 1.');
         }
@@ -2037,7 +2037,7 @@ class BusinessOfferMappingsApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -2143,393 +2143,11 @@ class BusinessOfferMappingsApi
     }
 
     /**
-     * Operation getSuggestedOfferMappings
-     *
-     * Просмотр карточек на Маркете, которые подходят вашим товарам
-     *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  \OpenAPI\Client\Model\GetSuggestedOfferMappingsRequest|null $get_suggested_offer_mappings_request get_suggested_offer_mappings_request (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSuggestedOfferMappings'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GetSuggestedOfferMappingsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
-     * @deprecated
-     */
-    public function getSuggestedOfferMappings($business_id, $get_suggested_offer_mappings_request = null, string $contentType = self::contentTypes['getSuggestedOfferMappings'][0])
-    {
-        list($response) = $this->getSuggestedOfferMappingsWithHttpInfo($business_id, $get_suggested_offer_mappings_request, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation getSuggestedOfferMappingsWithHttpInfo
-     *
-     * Просмотр карточек на Маркете, которые подходят вашим товарам
-     *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  \OpenAPI\Client\Model\GetSuggestedOfferMappingsRequest|null $get_suggested_offer_mappings_request (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSuggestedOfferMappings'] to see the possible values for this operation
-     *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GetSuggestedOfferMappingsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
-     * @deprecated
-     */
-    public function getSuggestedOfferMappingsWithHttpInfo($business_id, $get_suggested_offer_mappings_request = null, string $contentType = self::contentTypes['getSuggestedOfferMappings'][0])
-    {
-        $request = $this->getSuggestedOfferMappingsRequest($business_id, $get_suggested_offer_mappings_request, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\GetSuggestedOfferMappingsResponse',
-                        $request,
-                        $response,
-                    );
-                case 400:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 401:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 403:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 404:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 420:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 500:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\GetSuggestedOfferMappingsResponse',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\GetSuggestedOfferMappingsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 420:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getSuggestedOfferMappingsAsync
-     *
-     * Просмотр карточек на Маркете, которые подходят вашим товарам
-     *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  \OpenAPI\Client\Model\GetSuggestedOfferMappingsRequest|null $get_suggested_offer_mappings_request (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSuggestedOfferMappings'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     * @deprecated
-     */
-    public function getSuggestedOfferMappingsAsync($business_id, $get_suggested_offer_mappings_request = null, string $contentType = self::contentTypes['getSuggestedOfferMappings'][0])
-    {
-        return $this->getSuggestedOfferMappingsAsyncWithHttpInfo($business_id, $get_suggested_offer_mappings_request, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getSuggestedOfferMappingsAsyncWithHttpInfo
-     *
-     * Просмотр карточек на Маркете, которые подходят вашим товарам
-     *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  \OpenAPI\Client\Model\GetSuggestedOfferMappingsRequest|null $get_suggested_offer_mappings_request (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSuggestedOfferMappings'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     * @deprecated
-     */
-    public function getSuggestedOfferMappingsAsyncWithHttpInfo($business_id, $get_suggested_offer_mappings_request = null, string $contentType = self::contentTypes['getSuggestedOfferMappings'][0])
-    {
-        $returnType = '\OpenAPI\Client\Model\GetSuggestedOfferMappingsResponse';
-        $request = $this->getSuggestedOfferMappingsRequest($business_id, $get_suggested_offer_mappings_request, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getSuggestedOfferMappings'
-     *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
-     * @param  \OpenAPI\Client\Model\GetSuggestedOfferMappingsRequest|null $get_suggested_offer_mappings_request (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSuggestedOfferMappings'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     * @deprecated
-     */
-    public function getSuggestedOfferMappingsRequest($business_id, $get_suggested_offer_mappings_request = null, string $contentType = self::contentTypes['getSuggestedOfferMappings'][0])
-    {
-
-        // verify the required parameter 'business_id' is set
-        if ($business_id === null || (is_array($business_id) && count($business_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $business_id when calling getSuggestedOfferMappings'
-            );
-        }
-        if ($business_id < 1) {
-            throw new \InvalidArgumentException('invalid value for "$business_id" when calling BusinessOfferMappingsApi.getSuggestedOfferMappings, must be bigger than or equal to 1.');
-        }
-        
-
-
-        $resourcePath = '/v2/businesses/{businessId}/offer-mappings/suggestions';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($business_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'businessId' . '}',
-                ObjectSerializer::toPathValue($business_id),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($get_suggested_offer_mappings_request)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_suggested_offer_mappings_request));
-            } else {
-                $httpBody = $get_suggested_offer_mappings_request;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Api-Key');
-        if ($apiKey !== null) {
-            $headers['Api-Key'] = $apiKey;
-        }
-        // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation updateOfferMappings
      *
      * Добавление товаров в каталог и изменение информации о них
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateOfferMappingsRequest $update_offer_mappings_request update_offer_mappings_request (required)
      * @param  \OpenAPI\Client\Model\CatalogLanguageType|null $language Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOfferMappings'] to see the possible values for this operation
@@ -2549,7 +2167,7 @@ class BusinessOfferMappingsApi
      *
      * Добавление товаров в каталог и изменение информации о них
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateOfferMappingsRequest $update_offer_mappings_request (required)
      * @param  \OpenAPI\Client\Model\CatalogLanguageType|null $language Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOfferMappings'] to see the possible values for this operation
@@ -2734,7 +2352,7 @@ class BusinessOfferMappingsApi
      *
      * Добавление товаров в каталог и изменение информации о них
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateOfferMappingsRequest $update_offer_mappings_request (required)
      * @param  \OpenAPI\Client\Model\CatalogLanguageType|null $language Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOfferMappings'] to see the possible values for this operation
@@ -2757,7 +2375,7 @@ class BusinessOfferMappingsApi
      *
      * Добавление товаров в каталог и изменение информации о них
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateOfferMappingsRequest $update_offer_mappings_request (required)
      * @param  \OpenAPI\Client\Model\CatalogLanguageType|null $language Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOfferMappings'] to see the possible values for this operation
@@ -2809,7 +2427,7 @@ class BusinessOfferMappingsApi
     /**
      * Create request for operation 'updateOfferMappings'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\UpdateOfferMappingsRequest $update_offer_mappings_request (required)
      * @param  \OpenAPI\Client\Model\CatalogLanguageType|null $language Язык, на котором принимаются и возвращаются значения в параметрах &#x60;name&#x60; и &#x60;description&#x60;.  Значение по умолчанию: &#x60;RU&#x60;. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateOfferMappings'] to see the possible values for this operation

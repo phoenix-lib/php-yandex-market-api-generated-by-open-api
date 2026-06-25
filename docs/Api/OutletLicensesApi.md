@@ -19,7 +19,7 @@ deleteOutletLicenses($campaign_id, $ids): \OpenAPI\Client\Model\EmptyApiResponse
 
 Удаление лицензий для точек продаж
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/deleteOutletLicenses.md) %}  Удаляет информацию о лицензиях для точек продаж.  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/deleteOutletLicenses.md) %}  Удаляет информацию о лицензиях для точек продаж.  {% include notitle [limit](../../_auto/method_limits/deleteOutletLicenses.md) %}
 
 ### Example
 
@@ -86,7 +86,7 @@ getOutletLicenses($campaign_id, $outlet_ids, $ids): \OpenAPI\Client\Model\GetOut
 
 Информация о лицензиях для точек продаж
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getOutletLicenses.md) %}  Возвращает информацию о лицензиях для точек продаж.  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getOutletLicenses.md) %}  Возвращает информацию о лицензиях для точек продаж.  {% include notitle [limit](../../_auto/method_limits/getOutletLicenses.md) %}
 
 ### Example
 
@@ -155,7 +155,7 @@ updateOutletLicenses($campaign_id, $update_outlet_license_request): \OpenAPI\Cli
 
 Создание и изменение лицензий для точек продаж
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateOutletLicenses.md) %}  Передает информацию о новых и существующих лицензиях для точек продаж. Поддерживаются только лицензии на розничную продажу алкоголя.  Чтобы размещать алкогольную продукцию на Маркете, надо также прислать гарантийное письмо (если вы еще не делали этого раньше) и правильно оформить предложения в прайс-листе. Далее информация о лицензиях проходит проверку.  |**⚙️ Лимит:** 100 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/updateOutletLicenses.md) %}  Передает информацию о новых и существующих лицензиях для точек продаж. Поддерживаются только лицензии на розничную продажу алкоголя.  Чтобы размещать алкогольную продукцию на Маркете, надо также прислать гарантийное письмо (если вы еще не делали этого раньше) и правильно оформить предложения в прайс-листе. Далее информация о лицензиях проходит проверку.  {% include notitle [limit](../../_auto/method_limits/updateOutletLicenses.md) %}
 
 ### Example
 

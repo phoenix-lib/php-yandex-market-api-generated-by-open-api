@@ -59,8 +59,8 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'questions' => '\OpenAPI\Client\Model\QuestionDTO[]',
-        'paging' => '\OpenAPI\Client\Model\ForwardScrollingPagerDTO',
-        'total_count' => 'int'
+        'total_count' => 'int',
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -72,8 +72,8 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'questions' => null,
-        'paging' => null,
-        'total_count' => 'int64'
+        'total_count' => 'int64',
+        'paging' => null
     ];
 
     /**
@@ -83,8 +83,8 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'questions' => false,
-        'paging' => false,
-        'total_count' => false
+        'total_count' => false,
+        'paging' => false
     ];
 
     /**
@@ -174,8 +174,8 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'questions' => 'questions',
-        'paging' => 'paging',
-        'total_count' => 'totalCount'
+        'total_count' => 'totalCount',
+        'paging' => 'paging'
     ];
 
     /**
@@ -185,8 +185,8 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'questions' => 'setQuestions',
-        'paging' => 'setPaging',
-        'total_count' => 'setTotalCount'
+        'total_count' => 'setTotalCount',
+        'paging' => 'setPaging'
     ];
 
     /**
@@ -196,8 +196,8 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'questions' => 'getQuestions',
-        'paging' => 'getPaging',
-        'total_count' => 'getTotalCount'
+        'total_count' => 'getTotalCount',
+        'paging' => 'getPaging'
     ];
 
     /**
@@ -258,8 +258,8 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('questions', $data ?? [], null);
-        $this->setIfExists('paging', $data ?? [], null);
         $this->setIfExists('total_count', $data ?? [], null);
+        $this->setIfExists('paging', $data ?? [], null);
     }
 
     /**
@@ -338,33 +338,6 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets paging
-     *
-     * @return \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null
-     */
-    public function getPaging()
-    {
-        return $this->container['paging'];
-    }
-
-    /**
-     * Sets paging
-     *
-     * @param \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null $paging paging
-     *
-     * @return self
-     */
-    public function setPaging($paging)
-    {
-        if (is_null($paging)) {
-            throw new \InvalidArgumentException('non-nullable paging cannot be null');
-        }
-        $this->container['paging'] = $paging;
-
-        return $this;
-    }
-
-    /**
      * Gets total_count
      *
      * @return int
@@ -390,6 +363,33 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
+    /**
+     * Gets paging
+     *
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
+     */
+    public function getPaging()
+    {
+        return $this->container['paging'];
+    }
+
+    /**
+     * Sets paging
+     *
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
+     *
+     * @return self
+     */
+    public function setPaging($paging)
+    {
+        if (is_null($paging)) {
+            throw new \InvalidArgumentException('non-nullable paging cannot be null');
+        }
+        $this->container['paging'] = $paging;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -397,7 +397,7 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -410,7 +410,7 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -439,7 +439,7 @@ class QuestionListDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

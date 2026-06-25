@@ -58,9 +58,9 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'market_sku' => 'int',
         'shop_sku' => 'string',
         'count' => 'int',
+        'market_sku' => 'int',
         'decisions' => '\OpenAPI\Client\Model\ReturnDecisionDTO[]',
         'instances' => '\OpenAPI\Client\Model\ReturnInstanceDTO[]',
         'tracks' => '\OpenAPI\Client\Model\TrackDTO[]'
@@ -74,9 +74,9 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'market_sku' => 'int64',
         'shop_sku' => null,
         'count' => 'int64',
+        'market_sku' => 'int64',
         'decisions' => null,
         'instances' => null,
         'tracks' => null
@@ -88,9 +88,9 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'market_sku' => false,
         'shop_sku' => false,
         'count' => false,
+        'market_sku' => false,
         'decisions' => true,
         'instances' => true,
         'tracks' => true
@@ -182,9 +182,9 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'market_sku' => 'marketSku',
         'shop_sku' => 'shopSku',
         'count' => 'count',
+        'market_sku' => 'marketSku',
         'decisions' => 'decisions',
         'instances' => 'instances',
         'tracks' => 'tracks'
@@ -196,9 +196,9 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'market_sku' => 'setMarketSku',
         'shop_sku' => 'setShopSku',
         'count' => 'setCount',
+        'market_sku' => 'setMarketSku',
         'decisions' => 'setDecisions',
         'instances' => 'setInstances',
         'tracks' => 'setTracks'
@@ -210,9 +210,9 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'market_sku' => 'getMarketSku',
         'shop_sku' => 'getShopSku',
         'count' => 'getCount',
+        'market_sku' => 'getMarketSku',
         'decisions' => 'getDecisions',
         'instances' => 'getInstances',
         'tracks' => 'getTracks'
@@ -275,9 +275,9 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('market_sku', $data ?? [], null);
         $this->setIfExists('shop_sku', $data ?? [], null);
         $this->setIfExists('count', $data ?? [], null);
+        $this->setIfExists('market_sku', $data ?? [], null);
         $this->setIfExists('decisions', $data ?? [], null);
         $this->setIfExists('instances', $data ?? [], null);
         $this->setIfExists('tracks', $data ?? [], null);
@@ -310,10 +310,6 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['market_sku']) && ($this->container['market_sku'] < 1)) {
-            $invalidProperties[] = "invalid value for 'market_sku', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['shop_sku'] === null) {
             $invalidProperties[] = "'shop_sku' can't be null";
         }
@@ -332,6 +328,10 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['count'] === null) {
             $invalidProperties[] = "'count' can't be null";
         }
+        if (!is_null($this->container['market_sku']) && ($this->container['market_sku'] < 1)) {
+            $invalidProperties[] = "invalid value for 'market_sku', must be bigger than or equal to 1.";
+        }
+
         if (!is_null($this->container['decisions']) && (count($this->container['decisions']) < 1)) {
             $invalidProperties[] = "invalid value for 'decisions', number of items must be greater than or equal to 1.";
         }
@@ -358,38 +358,6 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets market_sku
-     *
-     * @return int|null
-     */
-    public function getMarketSku()
-    {
-        return $this->container['market_sku'];
-    }
-
-    /**
-     * Sets market_sku
-     *
-     * @param int|null $market_sku Идентификатор карточки товара на Маркете.
-     *
-     * @return self
-     */
-    public function setMarketSku($market_sku)
-    {
-        if (is_null($market_sku)) {
-            throw new \InvalidArgumentException('non-nullable market_sku cannot be null');
-        }
-
-        if (($market_sku < 1)) {
-            throw new \InvalidArgumentException('invalid value for $market_sku when calling ReturnItemDTO., must be bigger than or equal to 1.');
-        }
-
-        $this->container['market_sku'] = $market_sku;
-
-        return $this;
-    }
 
     /**
      * Gets shop_sku
@@ -451,6 +419,38 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable count cannot be null');
         }
         $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
+     * Gets market_sku
+     *
+     * @return int|null
+     */
+    public function getMarketSku()
+    {
+        return $this->container['market_sku'];
+    }
+
+    /**
+     * Sets market_sku
+     *
+     * @param int|null $market_sku Идентификатор карточки товара на Маркете.
+     *
+     * @return self
+     */
+    public function setMarketSku($market_sku)
+    {
+        if (is_null($market_sku)) {
+            throw new \InvalidArgumentException('non-nullable market_sku cannot be null');
+        }
+
+        if (($market_sku < 1)) {
+            throw new \InvalidArgumentException('invalid value for $market_sku when calling ReturnItemDTO., must be bigger than or equal to 1.');
+        }
+
+        $this->container['market_sku'] = $market_sku;
 
         return $this;
     }
@@ -578,7 +578,7 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -591,7 +591,7 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -620,7 +620,7 @@ class ReturnItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

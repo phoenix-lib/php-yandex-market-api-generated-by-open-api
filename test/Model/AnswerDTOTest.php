@@ -107,15 +107,6 @@ class AnswerDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "author"
-     */
-    public function testPropertyAuthor()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()
@@ -146,6 +137,15 @@ class AnswerDTOTest extends TestCase
      * Test attribute "votes"
      */
     public function testPropertyVotes()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "author"
+     */
+    public function testPropertyAuthor()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -6,7 +6,7 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getFulfillmentWarehouses()**](WarehousesApi.md#getFulfillmentWarehouses) | **GET** /v2/warehouses | Идентификаторы складов Маркета |
+| [**getFulfillmentWarehouses()**](WarehousesApi.md#getFulfillmentWarehouses) | **GET** /v2/warehouses | Идентификаторы фулфилмент-складов Маркета |
 | [**getPagedWarehouses()**](WarehousesApi.md#getPagedWarehouses) | **POST** /v2/businesses/{businessId}/warehouses | Список складов |
 | [**getWarehouses()**](WarehousesApi.md#getWarehouses) | **GET** /v2/businesses/{businessId}/warehouses | Список складов и групп складов |
 | [**updateWarehouseStatus()**](WarehousesApi.md#updateWarehouseStatus) | **POST** /v2/campaigns/{campaignId}/warehouse/status | Изменение статуса склада |
@@ -18,9 +18,9 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 getFulfillmentWarehouses($campaign_id): \OpenAPI\Client\Model\GetFulfillmentWarehousesResponse
 ```
 
-Идентификаторы складов Маркета
+Идентификаторы фулфилмент-складов Маркета
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getFulfillmentWarehouses.md) %}  Возвращает список складов Маркета с их идентификаторами.  |**⚙️ Лимит:** 100 запросов в минуту| |-|
+{% include notitle [access](../../_auto/method_scopes/getFulfillmentWarehouses.md) %}  Возвращает список фулфилмент-складов Маркета с их идентификаторами.  {% include notitle [limit](../../_auto/method_limits/getFulfillmentWarehouses.md) %}
 
 ### Example
 
@@ -85,7 +85,7 @@ getPagedWarehouses($business_id, $page_token, $limit, $get_paged_warehouses_requ
 
 Список складов
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getPagedWarehouses.md) %}  Возвращает список складов и информацию о них.  {% note warning \"Ограничение для параметра `limit`\" %}  Не передавайте значение больше 25.  {% endnote %}  |**⚙️ Лимит:** 1 000 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/getPagedWarehouses.md) %}  Возвращает список складов и информацию о них.  {% include notitle [limit](../../_auto/method_limits/getPagedWarehouses.md) %}
 
 ### Example
 
@@ -109,9 +109,9 @@ $apiInstance = new OpenAPI\Client\Api\WarehousesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
-$page_token = eyBuZXh0SWQ6IDIzNDIgfQ==; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра `nextPageToken`, полученное при последнем запросе.  Если задан `page_token` и в запросе есть параметры `page` и `pageSize`, они игнорируются.
-$limit = 20; // int | Количество значений на одной странице.
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
+$limit = 15; // int | {{ limit-param-description }}
 $get_paged_warehouses_request = new \OpenAPI\Client\Model\GetPagedWarehousesRequest(); // \OpenAPI\Client\Model\GetPagedWarehousesRequest
 
 try {
@@ -126,9 +126,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
-| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. | [optional] |
-| **limit** | **int**| Количество значений на одной странице. | [optional] |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
+| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 15] |
 | **get_paged_warehouses_request** | [**\OpenAPI\Client\Model\GetPagedWarehousesRequest**](../Model/GetPagedWarehousesRequest.md)|  | [optional] |
 
 ### Return type
@@ -156,7 +156,7 @@ getWarehouses($business_id): \OpenAPI\Client\Model\GetWarehousesResponse
 
 Список складов и групп складов
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/getWarehouses.md) %}  {% note warning \"Какой метод использовать вместо устаревшего\" %}  [POST v2/businesses/{businessId}/warehouses](../../reference/warehouses/getPagedWarehouses.md)  {% endnote %}  Возвращает список складов и, если склады объединены, список групп складов. [Что такое группы складов и зачем они нужны](https://yandex.ru/support/marketplace/assortment/operations/stocks.html#unified-stocks)  Среди прочего запрос позволяет определить идентификатор, который нужно использовать при передаче остатков для группы складов.  |**⚙️ Лимит:** 100 запросов в минуту| |-|
+{% include notitle [access](../../_auto/method_scopes/getWarehouses.md) %}  Возвращает список складов и, если склады объединены, список групп складов. [Что такое группы складов и зачем они нужны](https://yandex.ru/support/marketplace/assortment/operations/stocks.html#unified-stocks)  Среди прочего запрос позволяет определить идентификатор, который нужно использовать при передаче остатков для группы складов.  {% include notitle [limit](../../_auto/method_limits/getWarehouses.md) %}
 
 ### Example
 
@@ -180,7 +180,7 @@ $apiInstance = new OpenAPI\Client\Api\WarehousesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$business_id = 56; // int | Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
 
 try {
     $result = $apiInstance->getWarehouses($business_id);
@@ -194,7 +194,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **business_id** | **int**| Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) | |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
 
 ### Return type
 
@@ -221,7 +221,7 @@ updateWarehouseStatus($campaign_id, $update_warehouse_status_request): \OpenAPI\
 
 Изменение статуса склада
 
-{% include notitle [:no-translate[access]](../../_auto/method_scopes/updateWarehouseStatus.md) %}  Отключает или включает склад.  После отключения склада товары, которые находятся на нем, скрываются через 15 минут. После включения они возвращаются на витрину через 15 минут, а если склад был выключен 30 дней или дольше — через 4 часа.  |**⚙️ Лимит:** 100 запросов в час| |-|
+{% include notitle [access](../../_auto/method_scopes/updateWarehouseStatus.md) %}  Отключает или включает склад.  После отключения склада товары, которые находятся на нем, скрываются через 15 минут. После включения они возвращаются на витрину через 15 минут, а если склад был выключен 30 дней или дольше — через 4 часа.  {% include notitle [limit](../../_auto/method_limits/updateWarehouseStatus.md) %}
 
 ### Example
 

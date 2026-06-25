@@ -80,6 +80,15 @@ class UpdateGoodsFeedbackCommentDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "text"
+     */
+    public function testPropertyText()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -92,15 +101,6 @@ class UpdateGoodsFeedbackCommentDTOTest extends TestCase
      * Test attribute "parent_id"
      */
     public function testPropertyParentId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "text"
-     */
-    public function testPropertyText()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

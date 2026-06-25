@@ -58,8 +58,8 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'paging' => '\OpenAPI\Client\Model\ScrollingPagerDTO',
-        'warehouses' => '\OpenAPI\Client\Model\WarehouseOffersDTO[]'
+        'warehouses' => '\OpenAPI\Client\Model\WarehouseOffersDTO[]',
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -70,8 +70,8 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'paging' => null,
-        'warehouses' => null
+        'warehouses' => null,
+        'paging' => null
     ];
 
     /**
@@ -80,8 +80,8 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'paging' => false,
-        'warehouses' => false
+        'warehouses' => false,
+        'paging' => false
     ];
 
     /**
@@ -170,8 +170,8 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'paging' => 'paging',
-        'warehouses' => 'warehouses'
+        'warehouses' => 'warehouses',
+        'paging' => 'paging'
     ];
 
     /**
@@ -180,8 +180,8 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'paging' => 'setPaging',
-        'warehouses' => 'setWarehouses'
+        'warehouses' => 'setWarehouses',
+        'paging' => 'setPaging'
     ];
 
     /**
@@ -190,8 +190,8 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'paging' => 'getPaging',
-        'warehouses' => 'getWarehouses'
+        'warehouses' => 'getWarehouses',
+        'paging' => 'getPaging'
     ];
 
     /**
@@ -251,8 +251,8 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('paging', $data ?? [], null);
         $this->setIfExists('warehouses', $data ?? [], null);
+        $this->setIfExists('paging', $data ?? [], null);
     }
 
     /**
@@ -301,33 +301,6 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets paging
-     *
-     * @return \OpenAPI\Client\Model\ScrollingPagerDTO|null
-     */
-    public function getPaging()
-    {
-        return $this->container['paging'];
-    }
-
-    /**
-     * Sets paging
-     *
-     * @param \OpenAPI\Client\Model\ScrollingPagerDTO|null $paging paging
-     *
-     * @return self
-     */
-    public function setPaging($paging)
-    {
-        if (is_null($paging)) {
-            throw new \InvalidArgumentException('non-nullable paging cannot be null');
-        }
-        $this->container['paging'] = $paging;
-
-        return $this;
-    }
-
-    /**
      * Gets warehouses
      *
      * @return \OpenAPI\Client\Model\WarehouseOffersDTO[]
@@ -340,7 +313,7 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets warehouses
      *
-     * @param \OpenAPI\Client\Model\WarehouseOffersDTO[] $warehouses Страница списка складов.  **Для модели FBY:** может содержать несколько складов Маркета.  **Для модели FBS:** может содержать как партнерский склад, так и склад возвратов Маркета.
+     * @param \OpenAPI\Client\Model\WarehouseOffersDTO[] $warehouses Страница списка складов.  **Для моделей FBY и LaaS:** может содержать несколько складов Маркета.  **Для модели FBS:** может содержать как партнерский склад, так и склад возвратов Маркета.
      *
      * @return self
      */
@@ -353,6 +326,33 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
+    /**
+     * Gets paging
+     *
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
+     */
+    public function getPaging()
+    {
+        return $this->container['paging'];
+    }
+
+    /**
+     * Sets paging
+     *
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
+     *
+     * @return self
+     */
+    public function setPaging($paging)
+    {
+        if (is_null($paging)) {
+            throw new \InvalidArgumentException('non-nullable paging cannot be null');
+        }
+        $this->container['paging'] = $paging;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -360,7 +360,7 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -373,7 +373,7 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,7 +402,7 @@ class GetWarehouseStocksDTO implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

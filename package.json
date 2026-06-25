@@ -1,0 +1,12 @@
+{
+  "name": "php-yandex-market-api-generated-by-open-api-tooling",
+  "private": true,
+  "description": "Tooling for regenerating phoenix-lib/php-yandex-market-api-generated-by-open-api from Yandex Market OpenAPI.",
+  "scripts": {
+    "generate": "scripts/generate.sh",
+    "validate": "scripts/validate-generated-client.sh"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "2.39.0"
+  }
+}

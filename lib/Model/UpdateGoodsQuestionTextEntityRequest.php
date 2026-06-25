@@ -58,10 +58,10 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
+        'operation_type' => '\OpenAPI\Client\Model\QuestionsTextEntityOperationType',
         'entity_id' => '\OpenAPI\Client\Model\TypedQuestionsTextEntityIdDTO',
         'parent_entity_id' => '\OpenAPI\Client\Model\TypedQuestionsTextEntityIdDTO',
-        'text' => 'string',
-        'operation_type' => '\OpenAPI\Client\Model\QuestionsTextEntityOperationType'
+        'text' => 'string'
     ];
 
     /**
@@ -72,10 +72,10 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'operation_type' => null,
         'entity_id' => null,
         'parent_entity_id' => null,
-        'text' => null,
-        'operation_type' => null
+        'text' => null
     ];
 
     /**
@@ -84,10 +84,10 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'operation_type' => false,
         'entity_id' => false,
         'parent_entity_id' => false,
-        'text' => false,
-        'operation_type' => false
+        'text' => false
     ];
 
     /**
@@ -176,10 +176,10 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
+        'operation_type' => 'operationType',
         'entity_id' => 'entityId',
         'parent_entity_id' => 'parentEntityId',
-        'text' => 'text',
-        'operation_type' => 'operationType'
+        'text' => 'text'
     ];
 
     /**
@@ -188,10 +188,10 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
+        'operation_type' => 'setOperationType',
         'entity_id' => 'setEntityId',
         'parent_entity_id' => 'setParentEntityId',
-        'text' => 'setText',
-        'operation_type' => 'setOperationType'
+        'text' => 'setText'
     ];
 
     /**
@@ -200,10 +200,10 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
+        'operation_type' => 'getOperationType',
         'entity_id' => 'getEntityId',
         'parent_entity_id' => 'getParentEntityId',
-        'text' => 'getText',
-        'operation_type' => 'getOperationType'
+        'text' => 'getText'
     ];
 
     /**
@@ -263,10 +263,10 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('operation_type', $data ?? [], null);
         $this->setIfExists('entity_id', $data ?? [], null);
         $this->setIfExists('parent_entity_id', $data ?? [], null);
         $this->setIfExists('text', $data ?? [], null);
-        $this->setIfExists('operation_type', $data ?? [], null);
     }
 
     /**
@@ -296,6 +296,9 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
     {
         $invalidProperties = [];
 
+        if ($this->container['operation_type'] === null) {
+            $invalidProperties[] = "'operation_type' can't be null";
+        }
         if (!is_null($this->container['text']) && (mb_strlen($this->container['text']) > 5000)) {
             $invalidProperties[] = "invalid value for 'text', the character length must be smaller than or equal to 5000.";
         }
@@ -304,9 +307,6 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
             $invalidProperties[] = "invalid value for 'text', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['operation_type'] === null) {
-            $invalidProperties[] = "'operation_type' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -321,6 +321,33 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets operation_type
+     *
+     * @return \OpenAPI\Client\Model\QuestionsTextEntityOperationType
+     */
+    public function getOperationType()
+    {
+        return $this->container['operation_type'];
+    }
+
+    /**
+     * Sets operation_type
+     *
+     * @param \OpenAPI\Client\Model\QuestionsTextEntityOperationType $operation_type operation_type
+     *
+     * @return self
+     */
+    public function setOperationType($operation_type)
+    {
+        if (is_null($operation_type)) {
+            throw new \InvalidArgumentException('non-nullable operation_type cannot be null');
+        }
+        $this->container['operation_type'] = $operation_type;
+
+        return $this;
+    }
 
     /**
      * Gets entity_id
@@ -409,33 +436,6 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
 
         return $this;
     }
-
-    /**
-     * Gets operation_type
-     *
-     * @return \OpenAPI\Client\Model\QuestionsTextEntityOperationType
-     */
-    public function getOperationType()
-    {
-        return $this->container['operation_type'];
-    }
-
-    /**
-     * Sets operation_type
-     *
-     * @param \OpenAPI\Client\Model\QuestionsTextEntityOperationType $operation_type operation_type
-     *
-     * @return self
-     */
-    public function setOperationType($operation_type)
-    {
-        if (is_null($operation_type)) {
-            throw new \InvalidArgumentException('non-nullable operation_type cannot be null');
-        }
-        $this->container['operation_type'] = $operation_type;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -443,7 +443,7 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -456,7 +456,7 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -485,7 +485,7 @@ class UpdateGoodsQuestionTextEntityRequest implements ModelInterface, ArrayAcces
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

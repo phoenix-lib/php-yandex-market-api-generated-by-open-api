@@ -84,6 +84,18 @@ class OrdersApiTest extends TestCase
     }
 
     /**
+     * Test case for createOrder
+     *
+     * Создание заказа.
+     *
+     */
+    public function testCreateOrder()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getBusinessOrders
      *
      * Информация о заказах в кабинете.
@@ -114,6 +126,18 @@ class OrdersApiTest extends TestCase
      *
      */
     public function testGetOrderIdentifiersStatus()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getOrderUpdateOptions
+     *
+     * Получение временных интервалов для изменения заказа.
+     *
+     */
+    public function testGetOrderUpdateOptions()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -186,6 +210,18 @@ class OrdersApiTest extends TestCase
      *
      */
     public function testUpdateExternalOrderId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateOrder
+     *
+     * Изменение заказа.
+     *
+     */
+    public function testUpdateOrder()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

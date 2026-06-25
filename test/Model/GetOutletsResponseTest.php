@@ -96,13 +96,4 @@ class GetOutletsResponseTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "pager"
-     */
-    public function testPropertyPager()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

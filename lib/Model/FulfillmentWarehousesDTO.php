@@ -35,7 +35,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * FulfillmentWarehousesDTO Class Doc Comment
  *
  * @category Class
- * @description Список складов Маркета (FBY).
+ * @description Список фулфилмент-складов Маркета.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -306,7 +306,7 @@ class FulfillmentWarehousesDTO implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets warehouses
      *
-     * @param \OpenAPI\Client\Model\FulfillmentWarehouseDTO[] $warehouses Список складов Маркета (FBY).
+     * @param \OpenAPI\Client\Model\FulfillmentWarehouseDTO[] $warehouses Список фулфилмент-складов Маркета.
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class FulfillmentWarehousesDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -339,7 +339,7 @@ class FulfillmentWarehousesDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -368,7 +368,7 @@ class FulfillmentWarehousesDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

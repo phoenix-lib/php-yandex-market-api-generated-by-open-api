@@ -281,6 +281,10 @@ class GetOfferRecommendationsRequest implements ModelInterface, ArrayAccess, \Js
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['offer_ids']) && (count($this->container['offer_ids']) > 200)) {
+            $invalidProperties[] = "invalid value for 'offer_ids', number of items must be less than or equal to 200.";
+        }
+
         if (!is_null($this->container['offer_ids']) && (count($this->container['offer_ids']) < 1)) {
             $invalidProperties[] = "invalid value for 'offer_ids', number of items must be greater than or equal to 1.";
         }
@@ -330,7 +334,9 @@ class GetOfferRecommendationsRequest implements ModelInterface, ArrayAccess, \Js
             }
         }
 
-
+        if (!is_null($offer_ids) && (count($offer_ids) > 200)) {
+            throw new \InvalidArgumentException('invalid value for $offer_ids when calling GetOfferRecommendationsRequest., number of items must be less than or equal to 200.');
+        }
         if (!is_null($offer_ids) && (count($offer_ids) < 1)) {
             throw new \InvalidArgumentException('invalid length for $offer_ids when calling GetOfferRecommendationsRequest., number of items must be greater than or equal to 1.');
         }
@@ -372,7 +378,7 @@ class GetOfferRecommendationsRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -385,7 +391,7 @@ class GetOfferRecommendationsRequest implements ModelInterface, ArrayAccess, \Js
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -414,7 +420,7 @@ class GetOfferRecommendationsRequest implements ModelInterface, ArrayAccess, \Js
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

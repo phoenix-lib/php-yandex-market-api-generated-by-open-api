@@ -521,15 +521,15 @@ class SupplyRequestsApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  \OpenAPI\Client\Model\GetSupplyRequestItemsRequest $get_supply_request_items_request get_supply_request_items_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 250)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSupplyRequestItems'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetSupplyRequestItemsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getSupplyRequestItems($campaign_id, $get_supply_request_items_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getSupplyRequestItems'][0])
+    public function getSupplyRequestItems($campaign_id, $get_supply_request_items_request, $page_token = null, $limit = 250, string $contentType = self::contentTypes['getSupplyRequestItems'][0])
     {
         list($response) = $this->getSupplyRequestItemsWithHttpInfo($campaign_id, $get_supply_request_items_request, $page_token, $limit, $contentType);
         return $response;
@@ -542,15 +542,15 @@ class SupplyRequestsApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  \OpenAPI\Client\Model\GetSupplyRequestItemsRequest $get_supply_request_items_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 250)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSupplyRequestItems'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetSupplyRequestItemsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSupplyRequestItemsWithHttpInfo($campaign_id, $get_supply_request_items_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getSupplyRequestItems'][0])
+    public function getSupplyRequestItemsWithHttpInfo($campaign_id, $get_supply_request_items_request, $page_token = null, $limit = 250, string $contentType = self::contentTypes['getSupplyRequestItems'][0])
     {
         $request = $this->getSupplyRequestItemsRequest($campaign_id, $get_supply_request_items_request, $page_token, $limit, $contentType);
 
@@ -714,14 +714,14 @@ class SupplyRequestsApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  \OpenAPI\Client\Model\GetSupplyRequestItemsRequest $get_supply_request_items_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 250)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSupplyRequestItems'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSupplyRequestItemsAsync($campaign_id, $get_supply_request_items_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getSupplyRequestItems'][0])
+    public function getSupplyRequestItemsAsync($campaign_id, $get_supply_request_items_request, $page_token = null, $limit = 250, string $contentType = self::contentTypes['getSupplyRequestItems'][0])
     {
         return $this->getSupplyRequestItemsAsyncWithHttpInfo($campaign_id, $get_supply_request_items_request, $page_token, $limit, $contentType)
             ->then(
@@ -738,14 +738,14 @@ class SupplyRequestsApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  \OpenAPI\Client\Model\GetSupplyRequestItemsRequest $get_supply_request_items_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 250)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSupplyRequestItems'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSupplyRequestItemsAsyncWithHttpInfo($campaign_id, $get_supply_request_items_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getSupplyRequestItems'][0])
+    public function getSupplyRequestItemsAsyncWithHttpInfo($campaign_id, $get_supply_request_items_request, $page_token = null, $limit = 250, string $contentType = self::contentTypes['getSupplyRequestItems'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetSupplyRequestItemsResponse';
         $request = $this->getSupplyRequestItemsRequest($campaign_id, $get_supply_request_items_request, $page_token, $limit, $contentType);
@@ -791,14 +791,14 @@ class SupplyRequestsApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  \OpenAPI\Client\Model\GetSupplyRequestItemsRequest $get_supply_request_items_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 250)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSupplyRequestItems'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getSupplyRequestItemsRequest($campaign_id, $get_supply_request_items_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getSupplyRequestItems'][0])
+    public function getSupplyRequestItemsRequest($campaign_id, $get_supply_request_items_request, $page_token = null, $limit = 250, string $contentType = self::contentTypes['getSupplyRequestItems'][0])
     {
 
         // verify the required parameter 'campaign_id' is set
@@ -819,6 +819,9 @@ class SupplyRequestsApi
         }
 
 
+        if ($limit !== null && $limit > 500) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling SupplyRequestsApi.getSupplyRequestItems, must be smaller than or equal to 500.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling SupplyRequestsApi.getSupplyRequestItems, must be bigger than or equal to 1.');
         }
@@ -834,7 +837,7 @@ class SupplyRequestsApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -936,8 +939,8 @@ class SupplyRequestsApi
      * Получение информации о заявках на поставку, вывоз и утилизацию
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\GetSupplyRequestsRequest|null $get_supply_requests_request get_supply_requests_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSupplyRequests'] to see the possible values for this operation
      *
@@ -945,7 +948,7 @@ class SupplyRequestsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetSupplyRequestsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getSupplyRequests($campaign_id, $page_token = null, $limit = null, $get_supply_requests_request = null, string $contentType = self::contentTypes['getSupplyRequests'][0])
+    public function getSupplyRequests($campaign_id, $page_token = null, $limit = 50, $get_supply_requests_request = null, string $contentType = self::contentTypes['getSupplyRequests'][0])
     {
         list($response) = $this->getSupplyRequestsWithHttpInfo($campaign_id, $page_token, $limit, $get_supply_requests_request, $contentType);
         return $response;
@@ -957,8 +960,8 @@ class SupplyRequestsApi
      * Получение информации о заявках на поставку, вывоз и утилизацию
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\GetSupplyRequestsRequest|null $get_supply_requests_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSupplyRequests'] to see the possible values for this operation
      *
@@ -966,7 +969,7 @@ class SupplyRequestsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetSupplyRequestsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSupplyRequestsWithHttpInfo($campaign_id, $page_token = null, $limit = null, $get_supply_requests_request = null, string $contentType = self::contentTypes['getSupplyRequests'][0])
+    public function getSupplyRequestsWithHttpInfo($campaign_id, $page_token = null, $limit = 50, $get_supply_requests_request = null, string $contentType = self::contentTypes['getSupplyRequests'][0])
     {
         $request = $this->getSupplyRequestsRequest($campaign_id, $page_token, $limit, $get_supply_requests_request, $contentType);
 
@@ -1115,15 +1118,15 @@ class SupplyRequestsApi
      * Получение информации о заявках на поставку, вывоз и утилизацию
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\GetSupplyRequestsRequest|null $get_supply_requests_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSupplyRequests'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSupplyRequestsAsync($campaign_id, $page_token = null, $limit = null, $get_supply_requests_request = null, string $contentType = self::contentTypes['getSupplyRequests'][0])
+    public function getSupplyRequestsAsync($campaign_id, $page_token = null, $limit = 50, $get_supply_requests_request = null, string $contentType = self::contentTypes['getSupplyRequests'][0])
     {
         return $this->getSupplyRequestsAsyncWithHttpInfo($campaign_id, $page_token, $limit, $get_supply_requests_request, $contentType)
             ->then(
@@ -1139,15 +1142,15 @@ class SupplyRequestsApi
      * Получение информации о заявках на поставку, вывоз и утилизацию
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\GetSupplyRequestsRequest|null $get_supply_requests_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSupplyRequests'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSupplyRequestsAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = null, $get_supply_requests_request = null, string $contentType = self::contentTypes['getSupplyRequests'][0])
+    public function getSupplyRequestsAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = 50, $get_supply_requests_request = null, string $contentType = self::contentTypes['getSupplyRequests'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetSupplyRequestsResponse';
         $request = $this->getSupplyRequestsRequest($campaign_id, $page_token, $limit, $get_supply_requests_request, $contentType);
@@ -1192,15 +1195,15 @@ class SupplyRequestsApi
      * Create request for operation 'getSupplyRequests'
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\GetSupplyRequestsRequest|null $get_supply_requests_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSupplyRequests'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getSupplyRequestsRequest($campaign_id, $page_token = null, $limit = null, $get_supply_requests_request = null, string $contentType = self::contentTypes['getSupplyRequests'][0])
+    public function getSupplyRequestsRequest($campaign_id, $page_token = null, $limit = 50, $get_supply_requests_request = null, string $contentType = self::contentTypes['getSupplyRequests'][0])
     {
 
         // verify the required parameter 'campaign_id' is set
@@ -1214,6 +1217,9 @@ class SupplyRequestsApi
         }
         
 
+        if ($limit !== null && $limit > 100) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling SupplyRequestsApi.getSupplyRequests, must be smaller than or equal to 100.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling SupplyRequestsApi.getSupplyRequests, must be bigger than or equal to 1.');
         }
@@ -1230,7 +1236,7 @@ class SupplyRequestsApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode

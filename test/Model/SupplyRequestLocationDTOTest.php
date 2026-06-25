@@ -80,15 +80,6 @@ class SupplyRequestLocationDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "requested_date"
-     */
-    public function testPropertyRequestedDate()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "service_id"
      */
     public function testPropertyServiceId()
@@ -119,6 +110,15 @@ class SupplyRequestLocationDTOTest extends TestCase
      * Test attribute "type"
      */
     public function testPropertyType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "requested_date"
+     */
+    public function testPropertyRequestedDate()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

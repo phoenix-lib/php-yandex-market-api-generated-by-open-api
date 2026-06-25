@@ -134,18 +134,18 @@ class OrderItemDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "price_before_discount"
+     * Test attribute "count"
      */
-    public function testPropertyPriceBeforeDiscount()
+    public function testPropertyCount()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "count"
+     * Test attribute "price_before_discount"
      */
-    public function testPropertyCount()
+    public function testPropertyPriceBeforeDiscount()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

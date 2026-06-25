@@ -59,7 +59,6 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'offer_id' => 'string',
-        'quantum' => '\OpenAPI\Client\Model\QuantumDTO',
         'available' => 'bool',
         'vat' => 'int'
     ];
@@ -73,7 +72,6 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPIFormats = [
         'offer_id' => null,
-        'quantum' => null,
         'available' => null,
         'vat' => 'int32'
     ];
@@ -85,7 +83,6 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static array $openAPINullables = [
         'offer_id' => false,
-        'quantum' => false,
         'available' => false,
         'vat' => false
     ];
@@ -177,7 +174,6 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $attributeMap = [
         'offer_id' => 'offerId',
-        'quantum' => 'quantum',
         'available' => 'available',
         'vat' => 'vat'
     ];
@@ -189,7 +185,6 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $setters = [
         'offer_id' => 'setOfferId',
-        'quantum' => 'setQuantum',
         'available' => 'setAvailable',
         'vat' => 'setVat'
     ];
@@ -201,7 +196,6 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
      */
     protected static $getters = [
         'offer_id' => 'getOfferId',
-        'quantum' => 'getQuantum',
         'available' => 'getAvailable',
         'vat' => 'getVat'
     ];
@@ -264,7 +258,6 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(?array $data = null)
     {
         $this->setIfExists('offer_id', $data ?? [], null);
-        $this->setIfExists('quantum', $data ?? [], null);
         $this->setIfExists('available', $data ?? [], null);
         $this->setIfExists('vat', $data ?? [], null);
     }
@@ -364,35 +357,6 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
-     * Gets quantum
-     *
-     * @return \OpenAPI\Client\Model\QuantumDTO|null
-     * @deprecated
-     */
-    public function getQuantum()
-    {
-        return $this->container['quantum'];
-    }
-
-    /**
-     * Sets quantum
-     *
-     * @param \OpenAPI\Client\Model\QuantumDTO|null $quantum quantum
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setQuantum($quantum)
-    {
-        if (is_null($quantum)) {
-            throw new \InvalidArgumentException('non-nullable quantum cannot be null');
-        }
-        $this->container['quantum'] = $quantum;
-
-        return $this;
-    }
-
-    /**
      * Gets available
      *
      * @return bool|null
@@ -406,7 +370,7 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets available
      *
-     * @param bool|null $available {% note warning \"Вместо него используйте методы скрытия товаров с витрины\" %}  * [GET v2/campaigns/{campaignId}/hidden-offers](../../reference/assortment/getHiddenOffers.md) — просмотр скрытых товаров; * [POST v2/campaigns/{campaignId}/hidden-offers](../../reference/assortment/addHiddenOffers.md) — скрытие товаров; * [POST v2/campaigns/{campaignId}/hidden-offers/delete](../../reference/assortment/deleteHiddenOffers.md) — возобновление показа.  {% endnote %}  Есть ли товар в продаже.
+     * @param bool|null $available {% note warning \"Вместо него используйте методы скрытия товаров с витрины\" %}  * [GET v2/campaigns/{campaignId}/hidden-offers](../../reference/hidden-offers/getHiddenOffers.md) — просмотр скрытых товаров; * [POST v2/campaigns/{campaignId}/hidden-offers](../../reference/hidden-offers/addHiddenOffers.md) — скрытие товаров; * [POST v2/campaigns/{campaignId}/hidden-offers/delete](../../reference/hidden-offers/deleteHiddenOffers.md) — возобновление показа.  {% endnote %}  Есть ли товар в продаже.
      *
      * @return self
      * @deprecated
@@ -434,7 +398,7 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets vat
      *
-     * @param int|null $vat Идентификатор НДС, применяемый для товара:  * `2` — НДС 10%. Например, используется при реализации отдельных продовольственных и медицинских товаров. * `5` — НДС 0%. Например, используется при продаже товаров, вывезенных в таможенной процедуре экспорта, или при оказании услуг по международной перевозке товаров. * `6` — НДС не облагается, используется только для отдельных видов услуг. * `7` — НДС 20%. Основной НДС с 2019 года до 1 января 2026 года. * `10` — НДС 5%. НДС для упрощенной системы налогообложения (УСН). * `11` — НДС 7%. НДС для упрощенной системы налогообложения (УСН). * `14` — НДС 22%. Основной НДС с 1 января 2026 года.  Если параметр не указан, используется НДС, установленный в кабинете.  **Для продавцов :no-translate[Market Yandex Go]** недоступна передача и получение НДС.
+     * @param int|null $vat Идентификатор НДС, применяемый для товара:  * `2` — НДС 10%. Например, используется при реализации отдельных продовольственных и медицинских товаров. * `5` — НДС 0%. Например, используется при продаже товаров, вывезенных в таможенной процедуре экспорта, или при оказании услуг по международной перевозке товаров. * `6` — НДС не облагается, используется только для отдельных видов услуг. * `7` — НДС 20%. Основной НДС с 2019 года до 1 января 2026 года. При передаче автоматически заменяется на НДС 22% (14). С 1 июля 2026 года значение будет больше недоступно для передачи. * `10` — НДС 5%. НДС для упрощенной системы налогообложения (УСН). * `11` — НДС 7%. НДС для упрощенной системы налогообложения (УСН). * `14` — НДС 22%. Основной НДС с 1 января 2026 года.  Если параметр не указан, используется НДС, установленный в кабинете.  **Для продавцов :no-translate[Market Yandex Go]** недоступна передача и получение НДС.
      *
      * @return self
      */
@@ -454,7 +418,7 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -467,7 +431,7 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -496,7 +460,7 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

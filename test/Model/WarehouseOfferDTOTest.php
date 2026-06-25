@@ -89,18 +89,18 @@ class WarehouseOfferDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "turnover_summary"
+     * Test attribute "stocks"
      */
-    public function testPropertyTurnoverSummary()
+    public function testPropertyStocks()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "stocks"
+     * Test attribute "turnover_summary"
      */
-    public function testPropertyStocks()
+    public function testPropertyTurnoverSummary()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

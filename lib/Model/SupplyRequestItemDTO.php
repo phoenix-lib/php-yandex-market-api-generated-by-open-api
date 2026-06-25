@@ -60,8 +60,8 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPITypes = [
         'offer_id' => 'string',
         'name' => 'string',
-        'price' => '\OpenAPI\Client\Model\CurrencyValueDTO',
-        'counters' => '\OpenAPI\Client\Model\SupplyRequestItemCountersDTO'
+        'counters' => '\OpenAPI\Client\Model\SupplyRequestItemCountersDTO',
+        'price' => '\OpenAPI\Client\Model\CurrencyValueDTO'
     ];
 
     /**
@@ -74,8 +74,8 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPIFormats = [
         'offer_id' => null,
         'name' => null,
-        'price' => null,
-        'counters' => null
+        'counters' => null,
+        'price' => null
     ];
 
     /**
@@ -86,8 +86,8 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static array $openAPINullables = [
         'offer_id' => false,
         'name' => false,
-        'price' => false,
-        'counters' => false
+        'counters' => false,
+        'price' => false
     ];
 
     /**
@@ -178,8 +178,8 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $attributeMap = [
         'offer_id' => 'offerId',
         'name' => 'name',
-        'price' => 'price',
-        'counters' => 'counters'
+        'counters' => 'counters',
+        'price' => 'price'
     ];
 
     /**
@@ -190,8 +190,8 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $setters = [
         'offer_id' => 'setOfferId',
         'name' => 'setName',
-        'price' => 'setPrice',
-        'counters' => 'setCounters'
+        'counters' => 'setCounters',
+        'price' => 'setPrice'
     ];
 
     /**
@@ -202,8 +202,8 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $getters = [
         'offer_id' => 'getOfferId',
         'name' => 'getName',
-        'price' => 'getPrice',
-        'counters' => 'getCounters'
+        'counters' => 'getCounters',
+        'price' => 'getPrice'
     ];
 
     /**
@@ -265,8 +265,8 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $this->setIfExists('offer_id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('counters', $data ?? [], null);
+        $this->setIfExists('price', $data ?? [], null);
     }
 
     /**
@@ -397,33 +397,6 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets price
-     *
-     * @return \OpenAPI\Client\Model\CurrencyValueDTO|null
-     */
-    public function getPrice()
-    {
-        return $this->container['price'];
-    }
-
-    /**
-     * Sets price
-     *
-     * @param \OpenAPI\Client\Model\CurrencyValueDTO|null $price price
-     *
-     * @return self
-     */
-    public function setPrice($price)
-    {
-        if (is_null($price)) {
-            throw new \InvalidArgumentException('non-nullable price cannot be null');
-        }
-        $this->container['price'] = $price;
-
-        return $this;
-    }
-
-    /**
      * Gets counters
      *
      * @return \OpenAPI\Client\Model\SupplyRequestItemCountersDTO
@@ -449,6 +422,33 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
 
         return $this;
     }
+
+    /**
+     * Gets price
+     *
+     * @return \OpenAPI\Client\Model\CurrencyValueDTO|null
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     *
+     * @param \OpenAPI\Client\Model\CurrencyValueDTO|null $price price
+     *
+     * @return self
+     */
+    public function setPrice($price)
+    {
+        if (is_null($price)) {
+            throw new \InvalidArgumentException('non-nullable price cannot be null');
+        }
+        $this->container['price'] = $price;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -456,7 +456,7 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -469,7 +469,7 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -498,7 +498,7 @@ class SupplyRequestItemDTO implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

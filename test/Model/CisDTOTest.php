@@ -105,4 +105,22 @@ class CisDTOTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "crpt_request_id"
+     */
+    public function testPropertyCrptRequestId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "crpt_request_date_time"
+     */
+    public function testPropertyCrptRequestDateTime()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

@@ -58,12 +58,12 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
         'outlet_id' => 'int',
         'license_type' => '\OpenAPI\Client\Model\LicenseType',
         'number' => 'string',
         'date_of_issue' => '\DateTime',
-        'date_of_expiry' => '\DateTime'
+        'date_of_expiry' => '\DateTime',
+        'id' => 'int'
     ];
 
     /**
@@ -74,12 +74,12 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => 'int64',
         'outlet_id' => 'int64',
         'license_type' => null,
         'number' => null,
         'date_of_issue' => 'date-time',
-        'date_of_expiry' => 'date-time'
+        'date_of_expiry' => 'date-time',
+        'id' => 'int64'
     ];
 
     /**
@@ -88,12 +88,12 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
         'outlet_id' => false,
         'license_type' => false,
         'number' => false,
         'date_of_issue' => false,
-        'date_of_expiry' => false
+        'date_of_expiry' => false,
+        'id' => false
     ];
 
     /**
@@ -182,12 +182,12 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'outlet_id' => 'outletId',
         'license_type' => 'licenseType',
         'number' => 'number',
         'date_of_issue' => 'dateOfIssue',
-        'date_of_expiry' => 'dateOfExpiry'
+        'date_of_expiry' => 'dateOfExpiry',
+        'id' => 'id'
     ];
 
     /**
@@ -196,12 +196,12 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'outlet_id' => 'setOutletId',
         'license_type' => 'setLicenseType',
         'number' => 'setNumber',
         'date_of_issue' => 'setDateOfIssue',
-        'date_of_expiry' => 'setDateOfExpiry'
+        'date_of_expiry' => 'setDateOfExpiry',
+        'id' => 'setId'
     ];
 
     /**
@@ -210,12 +210,12 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'outlet_id' => 'getOutletId',
         'license_type' => 'getLicenseType',
         'number' => 'getNumber',
         'date_of_issue' => 'getDateOfIssue',
-        'date_of_expiry' => 'getDateOfExpiry'
+        'date_of_expiry' => 'getDateOfExpiry',
+        'id' => 'getId'
     ];
 
     /**
@@ -275,12 +275,12 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('outlet_id', $data ?? [], null);
         $this->setIfExists('license_type', $data ?? [], null);
         $this->setIfExists('number', $data ?? [], null);
         $this->setIfExists('date_of_issue', $data ?? [], null);
         $this->setIfExists('date_of_expiry', $data ?? [], null);
+        $this->setIfExists('id', $data ?? [], null);
     }
 
     /**
@@ -343,33 +343,6 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return int|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int|null $id Идентификатор лицензии.  Параметр указывается, только если нужно изменить информацию о существующей лицензии. Ее идентификатор можно узнать с помощью запроса [GET v2/campaigns/{campaignId}/outlets/licenses](../../reference/outlets/getOutletLicenses.md). При передаче информации о новой лицензии указывать идентификатор не нужно.  Идентификатор лицензии присваивается Маркетом. Не путайте его с номером, указанным на лицензии: он передается в параметре `number`.
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
 
     /**
      * Gets outlet_id
@@ -510,6 +483,33 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id Идентификатор лицензии.  Параметр указывается, только если нужно изменить информацию о существующей лицензии. Ее идентификатор можно узнать с помощью запроса [GET v2/campaigns/{campaignId}/outlets/licenses](../../reference/outlet-licenses/getOutletLicenses.md). При передаче информации о новой лицензии указывать идентификатор не нужно.  Идентификатор лицензии присваивается Маркетом. Не путайте его с номером, указанным на лицензии: он передается в параметре `number`.
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        }
+        $this->container['id'] = $id;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -517,7 +517,7 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -530,7 +530,7 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -559,7 +559,7 @@ class OutletLicenseDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

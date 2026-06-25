@@ -80,18 +80,18 @@ class OfferRecommendationsResultDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "paging"
+     * Test attribute "offer_recommendations"
      */
-    public function testPropertyPaging()
+    public function testPropertyOfferRecommendations()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "offer_recommendations"
+     * Test attribute "paging"
      */
-    public function testPropertyOfferRecommendations()
+    public function testPropertyPaging()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

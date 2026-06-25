@@ -62,10 +62,10 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => '\DateTime',
         'need_reaction' => 'bool',
         'identifiers' => '\OpenAPI\Client\Model\GoodsFeedbackIdentifiersDTO',
+        'statistics' => '\OpenAPI\Client\Model\GoodsFeedbackStatisticsDTO',
         'author' => 'string',
         'description' => '\OpenAPI\Client\Model\GoodsFeedbackDescriptionDTO',
-        'media' => '\OpenAPI\Client\Model\GoodsFeedbackMediaDTO',
-        'statistics' => '\OpenAPI\Client\Model\GoodsFeedbackStatisticsDTO'
+        'media' => '\OpenAPI\Client\Model\GoodsFeedbackMediaDTO'
     ];
 
     /**
@@ -80,10 +80,10 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'date-time',
         'need_reaction' => null,
         'identifiers' => null,
+        'statistics' => null,
         'author' => null,
         'description' => null,
-        'media' => null,
-        'statistics' => null
+        'media' => null
     ];
 
     /**
@@ -96,10 +96,10 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => false,
         'need_reaction' => false,
         'identifiers' => false,
+        'statistics' => false,
         'author' => false,
         'description' => false,
-        'media' => false,
-        'statistics' => false
+        'media' => false
     ];
 
     /**
@@ -192,10 +192,10 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'createdAt',
         'need_reaction' => 'needReaction',
         'identifiers' => 'identifiers',
+        'statistics' => 'statistics',
         'author' => 'author',
         'description' => 'description',
-        'media' => 'media',
-        'statistics' => 'statistics'
+        'media' => 'media'
     ];
 
     /**
@@ -208,10 +208,10 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'setCreatedAt',
         'need_reaction' => 'setNeedReaction',
         'identifiers' => 'setIdentifiers',
+        'statistics' => 'setStatistics',
         'author' => 'setAuthor',
         'description' => 'setDescription',
-        'media' => 'setMedia',
-        'statistics' => 'setStatistics'
+        'media' => 'setMedia'
     ];
 
     /**
@@ -224,10 +224,10 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'created_at' => 'getCreatedAt',
         'need_reaction' => 'getNeedReaction',
         'identifiers' => 'getIdentifiers',
+        'statistics' => 'getStatistics',
         'author' => 'getAuthor',
         'description' => 'getDescription',
-        'media' => 'getMedia',
-        'statistics' => 'getStatistics'
+        'media' => 'getMedia'
     ];
 
     /**
@@ -291,10 +291,10 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('need_reaction', $data ?? [], null);
         $this->setIfExists('identifiers', $data ?? [], null);
+        $this->setIfExists('statistics', $data ?? [], null);
         $this->setIfExists('author', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('media', $data ?? [], null);
-        $this->setIfExists('statistics', $data ?? [], null);
     }
 
     /**
@@ -463,6 +463,33 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets statistics
+     *
+     * @return \OpenAPI\Client\Model\GoodsFeedbackStatisticsDTO
+     */
+    public function getStatistics()
+    {
+        return $this->container['statistics'];
+    }
+
+    /**
+     * Sets statistics
+     *
+     * @param \OpenAPI\Client\Model\GoodsFeedbackStatisticsDTO $statistics statistics
+     *
+     * @return self
+     */
+    public function setStatistics($statistics)
+    {
+        if (is_null($statistics)) {
+            throw new \InvalidArgumentException('non-nullable statistics cannot be null');
+        }
+        $this->container['statistics'] = $statistics;
+
+        return $this;
+    }
+
+    /**
      * Gets author
      *
      * @return string|null
@@ -542,33 +569,6 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-    /**
-     * Gets statistics
-     *
-     * @return \OpenAPI\Client\Model\GoodsFeedbackStatisticsDTO
-     */
-    public function getStatistics()
-    {
-        return $this->container['statistics'];
-    }
-
-    /**
-     * Sets statistics
-     *
-     * @param \OpenAPI\Client\Model\GoodsFeedbackStatisticsDTO $statistics statistics
-     *
-     * @return self
-     */
-    public function setStatistics($statistics)
-    {
-        if (is_null($statistics)) {
-            throw new \InvalidArgumentException('non-nullable statistics cannot be null');
-        }
-        $this->container['statistics'] = $statistics;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -576,7 +576,7 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -589,7 +589,7 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -618,7 +618,7 @@ class GoodsFeedbackDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

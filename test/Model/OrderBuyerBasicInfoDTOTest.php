@@ -80,6 +80,15 @@ class OrderBuyerBasicInfoDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -110,15 +119,6 @@ class OrderBuyerBasicInfoDTOTest extends TestCase
      * Test attribute "middle_name"
      */
     public function testPropertyMiddleName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

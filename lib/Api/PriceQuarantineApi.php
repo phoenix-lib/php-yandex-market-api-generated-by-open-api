@@ -139,7 +139,7 @@ class PriceQuarantineApi
      *
      * Удаление товара из карантина по цене в кабинете
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\ConfirmPricesRequest $confirm_prices_request confirm_prices_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['confirmBusinessPrices'] to see the possible values for this operation
      *
@@ -158,7 +158,7 @@ class PriceQuarantineApi
      *
      * Удаление товара из карантина по цене в кабинете
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\ConfirmPricesRequest $confirm_prices_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['confirmBusinessPrices'] to see the possible values for this operation
      *
@@ -342,7 +342,7 @@ class PriceQuarantineApi
      *
      * Удаление товара из карантина по цене в кабинете
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\ConfirmPricesRequest $confirm_prices_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['confirmBusinessPrices'] to see the possible values for this operation
      *
@@ -364,7 +364,7 @@ class PriceQuarantineApi
      *
      * Удаление товара из карантина по цене в кабинете
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\ConfirmPricesRequest $confirm_prices_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['confirmBusinessPrices'] to see the possible values for this operation
      *
@@ -415,7 +415,7 @@ class PriceQuarantineApi
     /**
      * Create request for operation 'confirmBusinessPrices'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\ConfirmPricesRequest $confirm_prices_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['confirmBusinessPrices'] to see the possible values for this operation
      *
@@ -933,17 +933,17 @@ class PriceQuarantineApi
      *
      * Список товаров, находящихся в карантине по цене в кабинете
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetQuarantineOffersRequest $get_quarantine_offers_request get_quarantine_offers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBusinessQuarantineOffers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetQuarantineOffersResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getBusinessQuarantineOffers($business_id, $get_quarantine_offers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getBusinessQuarantineOffers'][0])
+    public function getBusinessQuarantineOffers($business_id, $get_quarantine_offers_request, $page_token = null, $limit = 100, string $contentType = self::contentTypes['getBusinessQuarantineOffers'][0])
     {
         list($response) = $this->getBusinessQuarantineOffersWithHttpInfo($business_id, $get_quarantine_offers_request, $page_token, $limit, $contentType);
         return $response;
@@ -954,17 +954,17 @@ class PriceQuarantineApi
      *
      * Список товаров, находящихся в карантине по цене в кабинете
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetQuarantineOffersRequest $get_quarantine_offers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBusinessQuarantineOffers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetQuarantineOffersResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBusinessQuarantineOffersWithHttpInfo($business_id, $get_quarantine_offers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getBusinessQuarantineOffers'][0])
+    public function getBusinessQuarantineOffersWithHttpInfo($business_id, $get_quarantine_offers_request, $page_token = null, $limit = 100, string $contentType = self::contentTypes['getBusinessQuarantineOffers'][0])
     {
         $request = $this->getBusinessQuarantineOffersRequest($business_id, $get_quarantine_offers_request, $page_token, $limit, $contentType);
 
@@ -1126,16 +1126,16 @@ class PriceQuarantineApi
      *
      * Список товаров, находящихся в карантине по цене в кабинете
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetQuarantineOffersRequest $get_quarantine_offers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBusinessQuarantineOffers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessQuarantineOffersAsync($business_id, $get_quarantine_offers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getBusinessQuarantineOffers'][0])
+    public function getBusinessQuarantineOffersAsync($business_id, $get_quarantine_offers_request, $page_token = null, $limit = 100, string $contentType = self::contentTypes['getBusinessQuarantineOffers'][0])
     {
         return $this->getBusinessQuarantineOffersAsyncWithHttpInfo($business_id, $get_quarantine_offers_request, $page_token, $limit, $contentType)
             ->then(
@@ -1150,16 +1150,16 @@ class PriceQuarantineApi
      *
      * Список товаров, находящихся в карантине по цене в кабинете
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetQuarantineOffersRequest $get_quarantine_offers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBusinessQuarantineOffers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBusinessQuarantineOffersAsyncWithHttpInfo($business_id, $get_quarantine_offers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getBusinessQuarantineOffers'][0])
+    public function getBusinessQuarantineOffersAsyncWithHttpInfo($business_id, $get_quarantine_offers_request, $page_token = null, $limit = 100, string $contentType = self::contentTypes['getBusinessQuarantineOffers'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetQuarantineOffersResponse';
         $request = $this->getBusinessQuarantineOffersRequest($business_id, $get_quarantine_offers_request, $page_token, $limit, $contentType);
@@ -1203,16 +1203,16 @@ class PriceQuarantineApi
     /**
      * Create request for operation 'getBusinessQuarantineOffers'
      *
-     * @param  int $business_id Идентификатор кабинета. Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) (required)
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
      * @param  \OpenAPI\Client\Model\GetQuarantineOffersRequest $get_quarantine_offers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBusinessQuarantineOffers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBusinessQuarantineOffersRequest($business_id, $get_quarantine_offers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getBusinessQuarantineOffers'][0])
+    public function getBusinessQuarantineOffersRequest($business_id, $get_quarantine_offers_request, $page_token = null, $limit = 100, string $contentType = self::contentTypes['getBusinessQuarantineOffers'][0])
     {
 
         // verify the required parameter 'business_id' is set
@@ -1233,6 +1233,9 @@ class PriceQuarantineApi
         }
 
 
+        if ($limit !== null && $limit > 200) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling PriceQuarantineApi.getBusinessQuarantineOffers, must be smaller than or equal to 200.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling PriceQuarantineApi.getBusinessQuarantineOffers, must be bigger than or equal to 1.');
         }
@@ -1248,7 +1251,7 @@ class PriceQuarantineApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode
@@ -1351,15 +1354,15 @@ class PriceQuarantineApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  \OpenAPI\Client\Model\GetQuarantineOffersRequest $get_quarantine_offers_request get_quarantine_offers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaignQuarantineOffers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetQuarantineOffersResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getCampaignQuarantineOffers($campaign_id, $get_quarantine_offers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getCampaignQuarantineOffers'][0])
+    public function getCampaignQuarantineOffers($campaign_id, $get_quarantine_offers_request, $page_token = null, $limit = 100, string $contentType = self::contentTypes['getCampaignQuarantineOffers'][0])
     {
         list($response) = $this->getCampaignQuarantineOffersWithHttpInfo($campaign_id, $get_quarantine_offers_request, $page_token, $limit, $contentType);
         return $response;
@@ -1372,15 +1375,15 @@ class PriceQuarantineApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  \OpenAPI\Client\Model\GetQuarantineOffersRequest $get_quarantine_offers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaignQuarantineOffers'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetQuarantineOffersResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCampaignQuarantineOffersWithHttpInfo($campaign_id, $get_quarantine_offers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getCampaignQuarantineOffers'][0])
+    public function getCampaignQuarantineOffersWithHttpInfo($campaign_id, $get_quarantine_offers_request, $page_token = null, $limit = 100, string $contentType = self::contentTypes['getCampaignQuarantineOffers'][0])
     {
         $request = $this->getCampaignQuarantineOffersRequest($campaign_id, $get_quarantine_offers_request, $page_token, $limit, $contentType);
 
@@ -1544,14 +1547,14 @@ class PriceQuarantineApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  \OpenAPI\Client\Model\GetQuarantineOffersRequest $get_quarantine_offers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaignQuarantineOffers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCampaignQuarantineOffersAsync($campaign_id, $get_quarantine_offers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getCampaignQuarantineOffers'][0])
+    public function getCampaignQuarantineOffersAsync($campaign_id, $get_quarantine_offers_request, $page_token = null, $limit = 100, string $contentType = self::contentTypes['getCampaignQuarantineOffers'][0])
     {
         return $this->getCampaignQuarantineOffersAsyncWithHttpInfo($campaign_id, $get_quarantine_offers_request, $page_token, $limit, $contentType)
             ->then(
@@ -1568,14 +1571,14 @@ class PriceQuarantineApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  \OpenAPI\Client\Model\GetQuarantineOffersRequest $get_quarantine_offers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaignQuarantineOffers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCampaignQuarantineOffersAsyncWithHttpInfo($campaign_id, $get_quarantine_offers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getCampaignQuarantineOffers'][0])
+    public function getCampaignQuarantineOffersAsyncWithHttpInfo($campaign_id, $get_quarantine_offers_request, $page_token = null, $limit = 100, string $contentType = self::contentTypes['getCampaignQuarantineOffers'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetQuarantineOffersResponse';
         $request = $this->getCampaignQuarantineOffersRequest($campaign_id, $get_quarantine_offers_request, $page_token, $limit, $contentType);
@@ -1621,14 +1624,14 @@ class PriceQuarantineApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  \OpenAPI\Client\Model\GetQuarantineOffersRequest $get_quarantine_offers_request (required)
-     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Рекомендуем передавать значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе.  Если задан &#x60;page_token&#x60; и в запросе есть параметры &#x60;page&#x60; и &#x60;pageSize&#x60;, они игнорируются. (optional)
-     * @param  int|null $limit Количество значений на одной странице. (optional)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaignQuarantineOffers'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getCampaignQuarantineOffersRequest($campaign_id, $get_quarantine_offers_request, $page_token = null, $limit = null, string $contentType = self::contentTypes['getCampaignQuarantineOffers'][0])
+    public function getCampaignQuarantineOffersRequest($campaign_id, $get_quarantine_offers_request, $page_token = null, $limit = 100, string $contentType = self::contentTypes['getCampaignQuarantineOffers'][0])
     {
 
         // verify the required parameter 'campaign_id' is set
@@ -1649,6 +1652,9 @@ class PriceQuarantineApi
         }
 
 
+        if ($limit !== null && $limit > 200) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling PriceQuarantineApi.getCampaignQuarantineOffers, must be smaller than or equal to 200.');
+        }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling PriceQuarantineApi.getCampaignQuarantineOffers, must be bigger than or equal to 1.');
         }
@@ -1664,7 +1670,7 @@ class PriceQuarantineApi
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_token,
-            'page_token', // param base name
+            'pageToken', // param base name
             'string', // openApiType
             '', // style
             false, // explode

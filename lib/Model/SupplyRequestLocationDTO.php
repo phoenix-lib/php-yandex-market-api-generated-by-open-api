@@ -58,11 +58,11 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'requested_date' => '\DateTime',
         'service_id' => 'int',
         'name' => 'string',
         'address' => '\OpenAPI\Client\Model\SupplyRequestLocationAddressDTO',
-        'type' => '\OpenAPI\Client\Model\SupplyRequestLocationType'
+        'type' => '\OpenAPI\Client\Model\SupplyRequestLocationType',
+        'requested_date' => '\DateTime'
     ];
 
     /**
@@ -73,11 +73,11 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'requested_date' => 'date-time',
         'service_id' => 'int64',
         'name' => null,
         'address' => null,
-        'type' => null
+        'type' => null,
+        'requested_date' => 'date-time'
     ];
 
     /**
@@ -86,11 +86,11 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'requested_date' => false,
         'service_id' => false,
         'name' => false,
         'address' => false,
-        'type' => false
+        'type' => false,
+        'requested_date' => false
     ];
 
     /**
@@ -179,11 +179,11 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'requested_date' => 'requestedDate',
         'service_id' => 'serviceId',
         'name' => 'name',
         'address' => 'address',
-        'type' => 'type'
+        'type' => 'type',
+        'requested_date' => 'requestedDate'
     ];
 
     /**
@@ -192,11 +192,11 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'requested_date' => 'setRequestedDate',
         'service_id' => 'setServiceId',
         'name' => 'setName',
         'address' => 'setAddress',
-        'type' => 'setType'
+        'type' => 'setType',
+        'requested_date' => 'setRequestedDate'
     ];
 
     /**
@@ -205,11 +205,11 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'requested_date' => 'getRequestedDate',
         'service_id' => 'getServiceId',
         'name' => 'getName',
         'address' => 'getAddress',
-        'type' => 'getType'
+        'type' => 'getType',
+        'requested_date' => 'getRequestedDate'
     ];
 
     /**
@@ -269,11 +269,11 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('requested_date', $data ?? [], null);
         $this->setIfExists('service_id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('requested_date', $data ?? [], null);
     }
 
     /**
@@ -329,33 +329,6 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets requested_date
-     *
-     * @return \DateTime|null
-     */
-    public function getRequestedDate()
-    {
-        return $this->container['requested_date'];
-    }
-
-    /**
-     * Sets requested_date
-     *
-     * @param \DateTime|null $requested_date Дата и время поставки на склад или в ПВЗ.
-     *
-     * @return self
-     */
-    public function setRequestedDate($requested_date)
-    {
-        if (is_null($requested_date)) {
-            throw new \InvalidArgumentException('non-nullable requested_date cannot be null');
-        }
-        $this->container['requested_date'] = $requested_date;
-
-        return $this;
-    }
 
     /**
      * Gets service_id
@@ -464,6 +437,33 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
+    /**
+     * Gets requested_date
+     *
+     * @return \DateTime|null
+     */
+    public function getRequestedDate()
+    {
+        return $this->container['requested_date'];
+    }
+
+    /**
+     * Sets requested_date
+     *
+     * @param \DateTime|null $requested_date Дата и время поставки на склад или в ПВЗ.
+     *
+     * @return self
+     */
+    public function setRequestedDate($requested_date)
+    {
+        if (is_null($requested_date)) {
+            throw new \InvalidArgumentException('non-nullable requested_date cannot be null');
+        }
+        $this->container['requested_date'] = $requested_date;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -471,7 +471,7 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -484,7 +484,7 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -513,7 +513,7 @@ class SupplyRequestLocationDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

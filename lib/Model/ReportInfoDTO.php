@@ -59,8 +59,8 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'status' => '\OpenAPI\Client\Model\ReportStatusType',
-        'sub_status' => '\OpenAPI\Client\Model\ReportSubStatusType',
         'generation_requested_at' => '\DateTime',
+        'sub_status' => '\OpenAPI\Client\Model\ReportSubStatusType',
         'generation_finished_at' => '\DateTime',
         'file' => 'string',
         'estimated_generation_time' => 'int'
@@ -75,8 +75,8 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'status' => null,
-        'sub_status' => null,
         'generation_requested_at' => 'date-time',
+        'sub_status' => null,
         'generation_finished_at' => 'date-time',
         'file' => null,
         'estimated_generation_time' => 'int64'
@@ -89,8 +89,8 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'status' => false,
-        'sub_status' => false,
         'generation_requested_at' => false,
+        'sub_status' => false,
         'generation_finished_at' => false,
         'file' => false,
         'estimated_generation_time' => false
@@ -183,8 +183,8 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'status' => 'status',
-        'sub_status' => 'subStatus',
         'generation_requested_at' => 'generationRequestedAt',
+        'sub_status' => 'subStatus',
         'generation_finished_at' => 'generationFinishedAt',
         'file' => 'file',
         'estimated_generation_time' => 'estimatedGenerationTime'
@@ -197,8 +197,8 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'status' => 'setStatus',
-        'sub_status' => 'setSubStatus',
         'generation_requested_at' => 'setGenerationRequestedAt',
+        'sub_status' => 'setSubStatus',
         'generation_finished_at' => 'setGenerationFinishedAt',
         'file' => 'setFile',
         'estimated_generation_time' => 'setEstimatedGenerationTime'
@@ -211,8 +211,8 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'status' => 'getStatus',
-        'sub_status' => 'getSubStatus',
         'generation_requested_at' => 'getGenerationRequestedAt',
+        'sub_status' => 'getSubStatus',
         'generation_finished_at' => 'getGenerationFinishedAt',
         'file' => 'getFile',
         'estimated_generation_time' => 'getEstimatedGenerationTime'
@@ -276,8 +276,8 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('sub_status', $data ?? [], null);
         $this->setIfExists('generation_requested_at', $data ?? [], null);
+        $this->setIfExists('sub_status', $data ?? [], null);
         $this->setIfExists('generation_finished_at', $data ?? [], null);
         $this->setIfExists('file', $data ?? [], null);
         $this->setIfExists('estimated_generation_time', $data ?? [], null);
@@ -359,33 +359,6 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets sub_status
-     *
-     * @return \OpenAPI\Client\Model\ReportSubStatusType|null
-     */
-    public function getSubStatus()
-    {
-        return $this->container['sub_status'];
-    }
-
-    /**
-     * Sets sub_status
-     *
-     * @param \OpenAPI\Client\Model\ReportSubStatusType|null $sub_status sub_status
-     *
-     * @return self
-     */
-    public function setSubStatus($sub_status)
-    {
-        if (is_null($sub_status)) {
-            throw new \InvalidArgumentException('non-nullable sub_status cannot be null');
-        }
-        $this->container['sub_status'] = $sub_status;
-
-        return $this;
-    }
-
-    /**
      * Gets generation_requested_at
      *
      * @return \DateTime
@@ -408,6 +381,33 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable generation_requested_at cannot be null');
         }
         $this->container['generation_requested_at'] = $generation_requested_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets sub_status
+     *
+     * @return \OpenAPI\Client\Model\ReportSubStatusType|null
+     */
+    public function getSubStatus()
+    {
+        return $this->container['sub_status'];
+    }
+
+    /**
+     * Sets sub_status
+     *
+     * @param \OpenAPI\Client\Model\ReportSubStatusType|null $sub_status sub_status
+     *
+     * @return self
+     */
+    public function setSubStatus($sub_status)
+    {
+        if (is_null($sub_status)) {
+            throw new \InvalidArgumentException('non-nullable sub_status cannot be null');
+        }
+        $this->container['sub_status'] = $sub_status;
 
         return $this;
     }
@@ -499,7 +499,7 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -512,7 +512,7 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -541,7 +541,7 @@ class ReportInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

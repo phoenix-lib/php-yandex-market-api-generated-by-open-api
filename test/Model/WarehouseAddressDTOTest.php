@@ -89,6 +89,15 @@ class WarehouseAddressDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "gps"
+     */
+    public function testPropertyGps()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "street"
      */
     public function testPropertyStreet()
@@ -119,15 +128,6 @@ class WarehouseAddressDTOTest extends TestCase
      * Test attribute "block"
      */
     public function testPropertyBlock()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "gps"
-     */
-    public function testPropertyGps()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

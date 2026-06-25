@@ -61,17 +61,20 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
         'type' => '\OpenAPI\Client\Model\OrderDeliveryType',
         'service_name' => 'string',
         'delivery_service_id' => 'int',
-        'warehouse_id' => 'string',
         'delivery_partner_type' => '\OpenAPI\Client\Model\OrderDeliveryPartnerType',
-        'dispatch_type' => '\OpenAPI\Client\Model\OrderDeliveryDispatchType',
         'dates' => '\OpenAPI\Client\Model\BusinessOrderDeliveryDatesDTO',
+        'warehouse_id' => 'string',
+        'dispatch_type' => '\OpenAPI\Client\Model\OrderDeliveryDispatchType',
         'shipment' => '\OpenAPI\Client\Model\BusinessOrderShipmentDTO',
         'courier' => '\OpenAPI\Client\Model\BusinessOrderCourierDeliveryDTO',
         'pickup' => '\OpenAPI\Client\Model\BusinessOrderPickupDeliveryDTO',
         'transfer' => '\OpenAPI\Client\Model\BusinessOrderTransferDTO',
         'boxes_layout' => '\OpenAPI\Client\Model\BusinessOrderBoxLayoutDTO[]',
         'tracks' => '\OpenAPI\Client\Model\OrderTrackDTO[]',
-        'estimated' => 'bool'
+        'estimated' => 'bool',
+        'receive_barcode' => 'string',
+        'receive_code' => 'string',
+        'digital_goods' => '\OpenAPI\Client\Model\DigitalGoodsDeliveryDetailsDTO'
     ];
 
     /**
@@ -85,17 +88,20 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
         'type' => null,
         'service_name' => null,
         'delivery_service_id' => 'int64',
-        'warehouse_id' => null,
         'delivery_partner_type' => null,
-        'dispatch_type' => null,
         'dates' => null,
+        'warehouse_id' => null,
+        'dispatch_type' => null,
         'shipment' => null,
         'courier' => null,
         'pickup' => null,
         'transfer' => null,
         'boxes_layout' => null,
         'tracks' => null,
-        'estimated' => null
+        'estimated' => null,
+        'receive_barcode' => null,
+        'receive_code' => null,
+        'digital_goods' => null
     ];
 
     /**
@@ -107,17 +113,20 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
         'type' => false,
         'service_name' => false,
         'delivery_service_id' => false,
-        'warehouse_id' => false,
         'delivery_partner_type' => false,
-        'dispatch_type' => false,
         'dates' => false,
+        'warehouse_id' => false,
+        'dispatch_type' => false,
         'shipment' => false,
         'courier' => false,
         'pickup' => false,
         'transfer' => false,
         'boxes_layout' => true,
         'tracks' => true,
-        'estimated' => false
+        'estimated' => false,
+        'receive_barcode' => false,
+        'receive_code' => false,
+        'digital_goods' => false
     ];
 
     /**
@@ -209,17 +218,20 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
         'type' => 'type',
         'service_name' => 'serviceName',
         'delivery_service_id' => 'deliveryServiceId',
-        'warehouse_id' => 'warehouseId',
         'delivery_partner_type' => 'deliveryPartnerType',
-        'dispatch_type' => 'dispatchType',
         'dates' => 'dates',
+        'warehouse_id' => 'warehouseId',
+        'dispatch_type' => 'dispatchType',
         'shipment' => 'shipment',
         'courier' => 'courier',
         'pickup' => 'pickup',
         'transfer' => 'transfer',
         'boxes_layout' => 'boxesLayout',
         'tracks' => 'tracks',
-        'estimated' => 'estimated'
+        'estimated' => 'estimated',
+        'receive_barcode' => 'receiveBarcode',
+        'receive_code' => 'receiveCode',
+        'digital_goods' => 'digitalGoods'
     ];
 
     /**
@@ -231,17 +243,20 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
         'type' => 'setType',
         'service_name' => 'setServiceName',
         'delivery_service_id' => 'setDeliveryServiceId',
-        'warehouse_id' => 'setWarehouseId',
         'delivery_partner_type' => 'setDeliveryPartnerType',
-        'dispatch_type' => 'setDispatchType',
         'dates' => 'setDates',
+        'warehouse_id' => 'setWarehouseId',
+        'dispatch_type' => 'setDispatchType',
         'shipment' => 'setShipment',
         'courier' => 'setCourier',
         'pickup' => 'setPickup',
         'transfer' => 'setTransfer',
         'boxes_layout' => 'setBoxesLayout',
         'tracks' => 'setTracks',
-        'estimated' => 'setEstimated'
+        'estimated' => 'setEstimated',
+        'receive_barcode' => 'setReceiveBarcode',
+        'receive_code' => 'setReceiveCode',
+        'digital_goods' => 'setDigitalGoods'
     ];
 
     /**
@@ -253,17 +268,20 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
         'type' => 'getType',
         'service_name' => 'getServiceName',
         'delivery_service_id' => 'getDeliveryServiceId',
-        'warehouse_id' => 'getWarehouseId',
         'delivery_partner_type' => 'getDeliveryPartnerType',
-        'dispatch_type' => 'getDispatchType',
         'dates' => 'getDates',
+        'warehouse_id' => 'getWarehouseId',
+        'dispatch_type' => 'getDispatchType',
         'shipment' => 'getShipment',
         'courier' => 'getCourier',
         'pickup' => 'getPickup',
         'transfer' => 'getTransfer',
         'boxes_layout' => 'getBoxesLayout',
         'tracks' => 'getTracks',
-        'estimated' => 'getEstimated'
+        'estimated' => 'getEstimated',
+        'receive_barcode' => 'getReceiveBarcode',
+        'receive_code' => 'getReceiveCode',
+        'digital_goods' => 'getDigitalGoods'
     ];
 
     /**
@@ -326,10 +344,10 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('service_name', $data ?? [], null);
         $this->setIfExists('delivery_service_id', $data ?? [], null);
-        $this->setIfExists('warehouse_id', $data ?? [], null);
         $this->setIfExists('delivery_partner_type', $data ?? [], null);
-        $this->setIfExists('dispatch_type', $data ?? [], null);
         $this->setIfExists('dates', $data ?? [], null);
+        $this->setIfExists('warehouse_id', $data ?? [], null);
+        $this->setIfExists('dispatch_type', $data ?? [], null);
         $this->setIfExists('shipment', $data ?? [], null);
         $this->setIfExists('courier', $data ?? [], null);
         $this->setIfExists('pickup', $data ?? [], null);
@@ -337,6 +355,9 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('boxes_layout', $data ?? [], null);
         $this->setIfExists('tracks', $data ?? [], null);
         $this->setIfExists('estimated', $data ?? [], null);
+        $this->setIfExists('receive_barcode', $data ?? [], null);
+        $this->setIfExists('receive_code', $data ?? [], null);
+        $this->setIfExists('digital_goods', $data ?? [], null);
     }
 
     /**
@@ -486,33 +507,6 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets warehouse_id
-     *
-     * @return string|null
-     */
-    public function getWarehouseId()
-    {
-        return $this->container['warehouse_id'];
-    }
-
-    /**
-     * Sets warehouse_id
-     *
-     * @param string|null $warehouse_id Идентификатор склада в системе магазина, на который сформирован заказ.
-     *
-     * @return self
-     */
-    public function setWarehouseId($warehouse_id)
-    {
-        if (is_null($warehouse_id)) {
-            throw new \InvalidArgumentException('non-nullable warehouse_id cannot be null');
-        }
-        $this->container['warehouse_id'] = $warehouse_id;
-
-        return $this;
-    }
-
-    /**
      * Gets delivery_partner_type
      *
      * @return \OpenAPI\Client\Model\OrderDeliveryPartnerType
@@ -540,33 +534,6 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets dispatch_type
-     *
-     * @return \OpenAPI\Client\Model\OrderDeliveryDispatchType|null
-     */
-    public function getDispatchType()
-    {
-        return $this->container['dispatch_type'];
-    }
-
-    /**
-     * Sets dispatch_type
-     *
-     * @param \OpenAPI\Client\Model\OrderDeliveryDispatchType|null $dispatch_type dispatch_type
-     *
-     * @return self
-     */
-    public function setDispatchType($dispatch_type)
-    {
-        if (is_null($dispatch_type)) {
-            throw new \InvalidArgumentException('non-nullable dispatch_type cannot be null');
-        }
-        $this->container['dispatch_type'] = $dispatch_type;
-
-        return $this;
-    }
-
-    /**
      * Gets dates
      *
      * @return \OpenAPI\Client\Model\BusinessOrderDeliveryDatesDTO
@@ -589,6 +556,60 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
             throw new \InvalidArgumentException('non-nullable dates cannot be null');
         }
         $this->container['dates'] = $dates;
+
+        return $this;
+    }
+
+    /**
+     * Gets warehouse_id
+     *
+     * @return string|null
+     */
+    public function getWarehouseId()
+    {
+        return $this->container['warehouse_id'];
+    }
+
+    /**
+     * Sets warehouse_id
+     *
+     * @param string|null $warehouse_id Идентификатор склада в системе магазина, на который сформирован заказ.
+     *
+     * @return self
+     */
+    public function setWarehouseId($warehouse_id)
+    {
+        if (is_null($warehouse_id)) {
+            throw new \InvalidArgumentException('non-nullable warehouse_id cannot be null');
+        }
+        $this->container['warehouse_id'] = $warehouse_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets dispatch_type
+     *
+     * @return \OpenAPI\Client\Model\OrderDeliveryDispatchType|null
+     */
+    public function getDispatchType()
+    {
+        return $this->container['dispatch_type'];
+    }
+
+    /**
+     * Sets dispatch_type
+     *
+     * @param \OpenAPI\Client\Model\OrderDeliveryDispatchType|null $dispatch_type dispatch_type
+     *
+     * @return self
+     */
+    public function setDispatchType($dispatch_type)
+    {
+        if (is_null($dispatch_type)) {
+            throw new \InvalidArgumentException('non-nullable dispatch_type cannot be null');
+        }
+        $this->container['dispatch_type'] = $dispatch_type;
 
         return $this;
     }
@@ -805,6 +826,87 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
+
+    /**
+     * Gets receive_barcode
+     *
+     * @return string|null
+     */
+    public function getReceiveBarcode()
+    {
+        return $this->container['receive_barcode'];
+    }
+
+    /**
+     * Sets receive_barcode
+     *
+     * @param string|null $receive_barcode **Только для модели LaaS**  Штрихкод получения заказа на ПВЗ.
+     *
+     * @return self
+     */
+    public function setReceiveBarcode($receive_barcode)
+    {
+        if (is_null($receive_barcode)) {
+            throw new \InvalidArgumentException('non-nullable receive_barcode cannot be null');
+        }
+        $this->container['receive_barcode'] = $receive_barcode;
+
+        return $this;
+    }
+
+    /**
+     * Gets receive_code
+     *
+     * @return string|null
+     */
+    public function getReceiveCode()
+    {
+        return $this->container['receive_code'];
+    }
+
+    /**
+     * Sets receive_code
+     *
+     * @param string|null $receive_code **Только для модели LaaS**  Код получения заказа на ПВЗ.
+     *
+     * @return self
+     */
+    public function setReceiveCode($receive_code)
+    {
+        if (is_null($receive_code)) {
+            throw new \InvalidArgumentException('non-nullable receive_code cannot be null');
+        }
+        $this->container['receive_code'] = $receive_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets digital_goods
+     *
+     * @return \OpenAPI\Client\Model\DigitalGoodsDeliveryDetailsDTO|null
+     */
+    public function getDigitalGoods()
+    {
+        return $this->container['digital_goods'];
+    }
+
+    /**
+     * Sets digital_goods
+     *
+     * @param \OpenAPI\Client\Model\DigitalGoodsDeliveryDetailsDTO|null $digital_goods digital_goods
+     *
+     * @return self
+     */
+    public function setDigitalGoods($digital_goods)
+    {
+        if (is_null($digital_goods)) {
+            throw new \InvalidArgumentException('non-nullable digital_goods cannot be null');
+        }
+        $this->container['digital_goods'] = $digital_goods;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -812,7 +914,7 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -825,7 +927,7 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -854,7 +956,7 @@ class BusinessOrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

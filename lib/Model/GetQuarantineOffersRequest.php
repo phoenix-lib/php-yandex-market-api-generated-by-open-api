@@ -303,8 +303,8 @@ class GetQuarantineOffersRequest implements ModelInterface, ArrayAccess, \JsonSe
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['offer_ids']) && (count($this->container['offer_ids']) > 500)) {
-            $invalidProperties[] = "invalid value for 'offer_ids', number of items must be less than or equal to 500.";
+        if (!is_null($this->container['offer_ids']) && (count($this->container['offer_ids']) > 200)) {
+            $invalidProperties[] = "invalid value for 'offer_ids', number of items must be less than or equal to 200.";
         }
 
         if (!is_null($this->container['offer_ids']) && (count($this->container['offer_ids']) < 1)) {
@@ -372,8 +372,8 @@ class GetQuarantineOffersRequest implements ModelInterface, ArrayAccess, \JsonSe
             }
         }
 
-        if (!is_null($offer_ids) && (count($offer_ids) > 500)) {
-            throw new \InvalidArgumentException('invalid value for $offer_ids when calling GetQuarantineOffersRequest., number of items must be less than or equal to 500.');
+        if (!is_null($offer_ids) && (count($offer_ids) > 200)) {
+            throw new \InvalidArgumentException('invalid value for $offer_ids when calling GetQuarantineOffersRequest., number of items must be less than or equal to 200.');
         }
         if (!is_null($offer_ids) && (count($offer_ids) < 1)) {
             throw new \InvalidArgumentException('invalid length for $offer_ids when calling GetQuarantineOffersRequest., number of items must be greater than or equal to 1.');
@@ -545,7 +545,7 @@ class GetQuarantineOffersRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -558,7 +558,7 @@ class GetQuarantineOffersRequest implements ModelInterface, ArrayAccess, \JsonSe
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -587,7 +587,7 @@ class GetQuarantineOffersRequest implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

@@ -80,6 +80,15 @@ class GetPriceWithVatDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "updated_at"
+     */
+    public function testPropertyUpdatedAt()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "value"
      */
     public function testPropertyValue()
@@ -110,15 +119,6 @@ class GetPriceWithVatDTOTest extends TestCase
      * Test attribute "vat"
      */
     public function testPropertyVat()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "updated_at"
-     */
-    public function testPropertyUpdatedAt()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

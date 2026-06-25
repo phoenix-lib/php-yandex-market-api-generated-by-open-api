@@ -89,6 +89,15 @@ class GetRegionWithChildrenResponseTest extends TestCase
     }
 
     /**
+     * Test attribute "paging"
+     */
+    public function testPropertyPaging()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "regions"
      */
     public function testPropertyRegions()

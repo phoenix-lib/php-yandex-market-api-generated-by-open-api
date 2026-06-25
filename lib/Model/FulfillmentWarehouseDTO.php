@@ -35,7 +35,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * FulfillmentWarehouseDTO Class Doc Comment
  *
  * @category Class
- * @description Склад Маркета (FBY).
+ * @description Фулфилмент-склад Маркета.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -397,7 +397,7 @@ class FulfillmentWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -410,7 +410,7 @@ class FulfillmentWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSeria
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -439,7 +439,7 @@ class FulfillmentWarehouseDTO implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

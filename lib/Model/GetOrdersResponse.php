@@ -58,9 +58,9 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pager' => '\OpenAPI\Client\Model\FlippingPagerDTO',
         'orders' => '\OpenAPI\Client\Model\OrderDTO[]',
-        'paging' => '\OpenAPI\Client\Model\ForwardScrollingPagerDTO'
+        'pager' => '\OpenAPI\Client\Model\FlippingPagerDTO',
+        'paging' => '\OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO'
     ];
 
     /**
@@ -71,8 +71,8 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pager' => null,
         'orders' => null,
+        'pager' => null,
         'paging' => null
     ];
 
@@ -82,8 +82,8 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pager' => false,
         'orders' => false,
+        'pager' => false,
         'paging' => false
     ];
 
@@ -173,8 +173,8 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'pager' => 'pager',
         'orders' => 'orders',
+        'pager' => 'pager',
         'paging' => 'paging'
     ];
 
@@ -184,8 +184,8 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'pager' => 'setPager',
         'orders' => 'setOrders',
+        'pager' => 'setPager',
         'paging' => 'setPaging'
     ];
 
@@ -195,8 +195,8 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'pager' => 'getPager',
         'orders' => 'getOrders',
+        'pager' => 'getPager',
         'paging' => 'getPaging'
     ];
 
@@ -257,8 +257,8 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('pager', $data ?? [], null);
         $this->setIfExists('orders', $data ?? [], null);
+        $this->setIfExists('pager', $data ?? [], null);
         $this->setIfExists('paging', $data ?? [], null);
     }
 
@@ -312,33 +312,6 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets pager
-     *
-     * @return \OpenAPI\Client\Model\FlippingPagerDTO|null
-     */
-    public function getPager()
-    {
-        return $this->container['pager'];
-    }
-
-    /**
-     * Sets pager
-     *
-     * @param \OpenAPI\Client\Model\FlippingPagerDTO|null $pager pager
-     *
-     * @return self
-     */
-    public function setPager($pager)
-    {
-        if (is_null($pager)) {
-            throw new \InvalidArgumentException('non-nullable pager cannot be null');
-        }
-        $this->container['pager'] = $pager;
-
-        return $this;
-    }
-
-    /**
      * Gets orders
      *
      * @return \OpenAPI\Client\Model\OrderDTO[]
@@ -370,9 +343,36 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
+     * Gets pager
+     *
+     * @return \OpenAPI\Client\Model\FlippingPagerDTO|null
+     */
+    public function getPager()
+    {
+        return $this->container['pager'];
+    }
+
+    /**
+     * Sets pager
+     *
+     * @param \OpenAPI\Client\Model\FlippingPagerDTO|null $pager pager
+     *
+     * @return self
+     */
+    public function setPager($pager)
+    {
+        if (is_null($pager)) {
+            throw new \InvalidArgumentException('non-nullable pager cannot be null');
+        }
+        $this->container['pager'] = $pager;
+
+        return $this;
+    }
+
+    /**
      * Gets paging
      *
-     * @return \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null
+     * @return \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null
      */
     public function getPaging()
     {
@@ -382,7 +382,7 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets paging
      *
-     * @param \OpenAPI\Client\Model\ForwardScrollingPagerDTO|null $paging paging
+     * @param \OpenAPI\Client\Model\PackagingForwardScrollingPagerDTO|null $paging paging
      *
      * @return self
      */
@@ -402,7 +402,7 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return boolean
      */
-    public function offsetExists($offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -415,7 +415,7 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -444,7 +444,7 @@ class GetOrdersResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return void
      */
-    public function offsetUnset($offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }

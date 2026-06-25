@@ -134,6 +134,15 @@ class SupplyRequestDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "target_location"
+     */
+    public function testPropertyTargetLocation()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "parent_link"
      */
     public function testPropertyParentLink()
@@ -146,15 +155,6 @@ class SupplyRequestDTOTest extends TestCase
      * Test attribute "children_links"
      */
     public function testPropertyChildrenLinks()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "target_location"
-     */
-    public function testPropertyTargetLocation()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

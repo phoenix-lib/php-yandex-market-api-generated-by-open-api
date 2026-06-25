@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * ReturnDecisionTypeTest Class Doc Comment
  *
  * @category    Class
- * @description Решение по возврату:  * &#x60;FAST_REFUND_MONEY&#x60; — вернуть покупателю деньги без возврата товара.  * &#x60;REFUND_MONEY&#x60; — вернуть покупателю деньги за товар.  * &#x60;REFUND_MONEY_INCLUDING_SHIPMENT&#x60; — вернуть покупателю деньги за товар и обратную пересылку.  * &#x60;REPAIR&#x60; — отремонтировать товар.  * &#x60;REPLACE&#x60; — заменить товар.  * &#x60;SEND_TO_EXAMINATION&#x60; — взять товар на экспертизу.  * &#x60;DECLINE_REFUND&#x60; — отказать в возврате.  * &#x60;OTHER_DECISION&#x60; — другое решение.  * &#x60;UNKNOWN&#x60; — не указано.
+ * @description Решение по возврату:  * &#x60;FAST_REFUND_MONEY&#x60; — вернуть покупателю деньги без возврата товара.  * &#x60;REFUND_MONEY&#x60; — вернуть покупателю деньги за товар.  * &#x60;REFUND_MONEY_INCLUDING_SHIPMENT&#x60; — вернуть покупателю деньги за товар и обратную пересылку.  * &#x60;REPAIR&#x60; — отремонтировать товар.  * &#x60;REPLACE&#x60; — заменить товар.  * &#x60;SEND_TO_EXAMINATION&#x60; — взять товар на экспертизу.  * &#x60;DECLINE_REFUND&#x60; — отказать в возврате.  * &#x60;PARTIAL_MONEY_REFUND&#x60; — частичный возврат денег.  * &#x60;OTHER_DECISION&#x60; — другое решение.  * &#x60;UNKNOWN&#x60; — не указано.
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

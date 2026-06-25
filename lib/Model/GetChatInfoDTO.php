@@ -59,12 +59,12 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'chat_id' => 'int',
-        'order_id' => 'int',
         'context' => '\OpenAPI\Client\Model\ChatFullContextDTO',
         'type' => '\OpenAPI\Client\Model\ChatType',
         'status' => '\OpenAPI\Client\Model\ChatStatusType',
         'created_at' => '\DateTime',
-        'updated_at' => '\DateTime'
+        'updated_at' => '\DateTime',
+        'order_id' => 'int'
     ];
 
     /**
@@ -76,12 +76,12 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'chat_id' => 'int64',
-        'order_id' => 'int64',
         'context' => null,
         'type' => null,
         'status' => null,
         'created_at' => 'date-time',
-        'updated_at' => 'date-time'
+        'updated_at' => 'date-time',
+        'order_id' => 'int64'
     ];
 
     /**
@@ -91,12 +91,12 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'chat_id' => false,
-        'order_id' => false,
         'context' => false,
         'type' => false,
         'status' => false,
         'created_at' => false,
-        'updated_at' => false
+        'updated_at' => false,
+        'order_id' => false
     ];
 
     /**
@@ -186,12 +186,12 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'chat_id' => 'chatId',
-        'order_id' => 'orderId',
         'context' => 'context',
         'type' => 'type',
         'status' => 'status',
         'created_at' => 'createdAt',
-        'updated_at' => 'updatedAt'
+        'updated_at' => 'updatedAt',
+        'order_id' => 'orderId'
     ];
 
     /**
@@ -201,12 +201,12 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'chat_id' => 'setChatId',
-        'order_id' => 'setOrderId',
         'context' => 'setContext',
         'type' => 'setType',
         'status' => 'setStatus',
         'created_at' => 'setCreatedAt',
-        'updated_at' => 'setUpdatedAt'
+        'updated_at' => 'setUpdatedAt',
+        'order_id' => 'setOrderId'
     ];
 
     /**
@@ -216,12 +216,12 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'chat_id' => 'getChatId',
-        'order_id' => 'getOrderId',
         'context' => 'getContext',
         'type' => 'getType',
         'status' => 'getStatus',
         'created_at' => 'getCreatedAt',
-        'updated_at' => 'getUpdatedAt'
+        'updated_at' => 'getUpdatedAt',
+        'order_id' => 'getOrderId'
     ];
 
     /**
@@ -282,12 +282,12 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('chat_id', $data ?? [], null);
-        $this->setIfExists('order_id', $data ?? [], null);
         $this->setIfExists('context', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('order_id', $data ?? [], null);
     }
 
     /**
@@ -324,10 +324,6 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'chat_id', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['order_id']) && ($this->container['order_id'] < 1)) {
-            $invalidProperties[] = "invalid value for 'order_id', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['context'] === null) {
             $invalidProperties[] = "'context' can't be null";
         }
@@ -343,6 +339,10 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['updated_at'] === null) {
             $invalidProperties[] = "'updated_at' can't be null";
         }
+        if (!is_null($this->container['order_id']) && ($this->container['order_id'] < 1)) {
+            $invalidProperties[] = "invalid value for 'order_id', must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -386,40 +386,6 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['chat_id'] = $chat_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_id
-     *
-     * @return int|null
-     * @deprecated
-     */
-    public function getOrderId()
-    {
-        return $this->container['order_id'];
-    }
-
-    /**
-     * Sets order_id
-     *
-     * @param int|null $order_id Идентификатор заказа.
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setOrderId($order_id)
-    {
-        if (is_null($order_id)) {
-            throw new \InvalidArgumentException('non-nullable order_id cannot be null');
-        }
-
-        if (($order_id < 1)) {
-            throw new \InvalidArgumentException('invalid value for $order_id when calling GetChatInfoDTO., must be bigger than or equal to 1.');
-        }
-
-        $this->container['order_id'] = $order_id;
 
         return $this;
     }
@@ -558,6 +524,40 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
+
+    /**
+     * Gets order_id
+     *
+     * @return int|null
+     * @deprecated
+     */
+    public function getOrderId()
+    {
+        return $this->container['order_id'];
+    }
+
+    /**
+     * Sets order_id
+     *
+     * @param int|null $order_id Идентификатор заказа.
+     *
+     * @return self
+     * @deprecated
+     */
+    public function setOrderId($order_id)
+    {
+        if (is_null($order_id)) {
+            throw new \InvalidArgumentException('non-nullable order_id cannot be null');
+        }
+
+        if (($order_id < 1)) {
+            throw new \InvalidArgumentException('invalid value for $order_id when calling GetChatInfoDTO., must be bigger than or equal to 1.');
+        }
+
+        $this->container['order_id'] = $order_id;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -565,7 +565,7 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return boolean
      */
-    public function offsetExists( $offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -578,7 +578,7 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet( $offset)
+    public function offsetGet(mixed $offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -607,7 +607,7 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetUnset( $offset): void
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->container[$offset]);
     }
