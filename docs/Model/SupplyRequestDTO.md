@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **parent_link** | [**\OpenAPI\Client\Model\SupplyRequestReferenceDTO**](SupplyRequestReferenceDTO.md) |  | [optional]
 **children_links** | [**\OpenAPI\Client\Model\SupplyRequestReferenceDTO[]**](SupplyRequestReferenceDTO.md) | Ссылки на дочерние заявки. | [optional]
 **transit_location** | [**\OpenAPI\Client\Model\SupplyRequestLocationDTO**](SupplyRequestLocationDTO.md) |  | [optional]
+**etrn_identifier** | [**\OpenAPI\Client\Model\EtrnIdentifierDTO**](EtrnIdentifierDTO.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

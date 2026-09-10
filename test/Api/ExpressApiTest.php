@@ -144,12 +144,36 @@ class ExpressApiTest extends TestCase
     }
 
     /**
+     * Test case for createDocuments
+     *
+     * Создание документов.
+     *
+     */
+    public function testCreateDocuments()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for deleteCampaignOffers
      *
      * Удаление товаров из ассортимента магазина.
      *
      */
     public function testDeleteCampaignOffers()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for deleteDocuments
+     *
+     * Удаление документов.
+     *
+     */
+    public function testDeleteDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -456,6 +480,18 @@ class ExpressApiTest extends TestCase
     }
 
     /**
+     * Test case for generateStocksReport
+     *
+     * Отчет по остаткам на складах партнера.
+     *
+     */
+    public function testGenerateStocksReport()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for generateUnitedMarketplaceServicesReport
      *
      * Отчет по стоимости услуг.
@@ -744,6 +780,18 @@ class ExpressApiTest extends TestCase
     }
 
     /**
+     * Test case for getDocuments
+     *
+     * Получение документов.
+     *
+     */
+    public function testGetDocuments()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getGoodsFeedbackComments
      *
      * Получение комментариев к отзыву.
@@ -960,6 +1008,18 @@ class ExpressApiTest extends TestCase
     }
 
     /**
+     * Test case for getPartnerWarehouses
+     *
+     * Список складов.
+     *
+     */
+    public function testGetPartnerWarehouses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getPrices
      *
      * Список цен.
@@ -1128,6 +1188,18 @@ class ExpressApiTest extends TestCase
     }
 
     /**
+     * Test case for getStocksOnPartnerWarehouses
+     *
+     * Информация об остатках.
+     *
+     */
+    public function testGetStocksOnPartnerWarehouses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getWarehouses
      *
      * Список складов и групп складов.
@@ -1284,6 +1356,18 @@ class ExpressApiTest extends TestCase
     }
 
     /**
+     * Test case for updateDocuments
+     *
+     * Обновление документов.
+     *
+     */
+    public function testUpdateDocuments()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for updateExternalOrderId
      *
      * Передача внешнего идентификатора заказа.
@@ -1398,6 +1482,30 @@ class ExpressApiTest extends TestCase
      *
      */
     public function testUpdateStocks()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateStocksOnPartnerWarehouses
+     *
+     * Передача информации об остатках.
+     *
+     */
+    public function testUpdateStocksOnPartnerWarehouses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateWarehouseModelStatus
+     *
+     * Включение/выключение модели работы склада.
+     *
+     */
+    public function testUpdateWarehouseModelStatus()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

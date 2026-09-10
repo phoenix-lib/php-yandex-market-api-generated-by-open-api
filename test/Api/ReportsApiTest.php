@@ -324,6 +324,18 @@ class ReportsApiTest extends TestCase
     }
 
     /**
+     * Test case for generateStocksReport
+     *
+     * Отчет по остаткам на складах партнера.
+     *
+     */
+    public function testGenerateStocksReport()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for generateUnitedMarketplaceServicesReport
      *
      * Отчет по стоимости услуг.

@@ -673,7 +673,7 @@ class BaseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets category
      *
-     * @param string|null $category {% note warning \"Вместо него используйте `marketCategoryId`.\" %}     {% endnote %}  Категория товара в вашем магазине.
+     * @param string|null $category {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `marketCategoryId`.  {% endnote %}  Категория товара в вашем магазине.
      *
      * @return self
      * @deprecated
@@ -1137,7 +1137,7 @@ class BaseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customs_commodity_code
      *
-     * @param string|null $customs_commodity_code {% note warning \"Вместо него используйте `commodityCodes` с типом `CUSTOMS_COMMODITY_CODE`.\" %}     {% endnote %}  Код товара в единой Товарной номенклатуре внешнеэкономической деятельности (ТН ВЭД) — 10 или 14 цифр без пробелов.  Обязательно укажите, если он есть.
+     * @param string|null $customs_commodity_code {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `commodityCodes` с типом `CUSTOMS_COMMODITY_CODE`.  {% endnote %}  Код товара в единой Товарной номенклатуре внешнеэкономической деятельности (ТН ВЭД) — 10 или 14 цифр без пробелов.  Обязательно укажите, если он есть.
      *
      * @return self
      * @deprecated
@@ -1204,7 +1204,7 @@ class BaseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets certificates
      *
-     * @param string[]|null $certificates Номера документов на товар: сертификата, декларации соответствия и т. п.  Передавать можно только номера документов, сканы которого загружены в кабинете продавца по [инструкции](https://yandex.ru/support/marketplace/assortment/restrictions/certificates.html).
+     * @param string[]|null $certificates Номера документов на товар: сертификата, декларации соответствия и т. п.  Документы можно создать с помощью [POST v1/businesses/{businessId}/offers/documents/create](../../reference/documents/createDocuments.md).
      *
      * @return self
      */
@@ -1413,7 +1413,7 @@ class BaseOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets params
      *
-     * @param \OpenAPI\Client\Model\OfferParamDTO[]|null $params {% note warning \"При передаче характеристик используйте `parameterValues`.\" %}     {% endnote %}  Характеристики, которые есть только у товаров конкретной категории — например, диаметр колес велосипеда или материал подошвы обуви.
+     * @param \OpenAPI\Client\Model\OfferParamDTO[]|null $params {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  При передаче характеристик используйте `parameterValues`.  {% endnote %}  Характеристики, которые есть только у товаров конкретной категории — например, диаметр колес велосипеда или материал подошвы обуви.
      *
      * @return self
      * @deprecated

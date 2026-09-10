@@ -691,7 +691,7 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_before_discount
      *
-     * @param float|null $price_before_discount Стоимость товара в валюте магазина до применения скидок.
+     * @param float|null $price_before_discount {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}     {% endnote %}  Стоимость товара в валюте магазина до применения скидок.
      *
      * @return self
      * @deprecated
@@ -784,7 +784,7 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets subsidy
      *
-     * @param float|null $subsidy {% note warning \"Вместо него используйте `subsidies`.\" %}     {% endnote %}  Общее вознаграждение продавцу за DBS-доставку и все скидки на товар:  * по промокодам; * по купонам; * по баллам Плюса; * по акциям.
+     * @param float|null $subsidy {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо него используйте `subsidies`.  {% endnote %}  Общее вознаграждение продавцу за DBS-доставку и все скидки на товар:  * по промокодам; * по купонам; * по баллам Плюса; * по акциям.
      *
      * @return self
      * @deprecated
@@ -918,7 +918,7 @@ class OrderItemDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets details
      *
-     * @param \OpenAPI\Client\Model\OrderItemDetailDTO[]|null $details {% note warning \"Для получения информации о невыкупах и возвратах используйте [GET v2/campaigns/{campaignId}/returns](../../reference/returns/getReturns.md).\" %}     {% endnote %}  Информация о невыкупленных или возвращенных товарах в заказе.
+     * @param \OpenAPI\Client\Model\OrderItemDetailDTO[]|null $details {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Для получения информации о невыкупах и возвратах используйте [GET v2/campaigns/{campaignId}/returns](../../reference/returns/getReturns.md).  {% endnote %}  Информация о невыкупленных или возвращенных товарах в заказе.
      *
      * @return self
      * @deprecated

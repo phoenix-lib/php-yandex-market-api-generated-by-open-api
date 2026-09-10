@@ -2536,8 +2536,8 @@ class ReturnsApi
      * @param  \OpenAPI\Client\Model\ReturnType|null $type Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. (optional)
      * @param  \DateTime|null $from_date Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
      * @param  \DateTime|null $to_date Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
-     * @param  \DateTime|null $from_date2 {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
-     * @param  \DateTime|null $to_date2 {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $from_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $to_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReturns'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2564,8 +2564,8 @@ class ReturnsApi
      * @param  \OpenAPI\Client\Model\ReturnType|null $type Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. (optional)
      * @param  \DateTime|null $from_date Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
      * @param  \DateTime|null $to_date Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
-     * @param  \DateTime|null $from_date2 {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
-     * @param  \DateTime|null $to_date2 {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $from_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $to_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReturns'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2743,8 +2743,8 @@ class ReturnsApi
      * @param  \OpenAPI\Client\Model\ReturnType|null $type Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. (optional)
      * @param  \DateTime|null $from_date Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
      * @param  \DateTime|null $to_date Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
-     * @param  \DateTime|null $from_date2 {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
-     * @param  \DateTime|null $to_date2 {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $from_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $to_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReturns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2774,8 +2774,8 @@ class ReturnsApi
      * @param  \OpenAPI\Client\Model\ReturnType|null $type Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. (optional)
      * @param  \DateTime|null $from_date Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
      * @param  \DateTime|null $to_date Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
-     * @param  \DateTime|null $from_date2 {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
-     * @param  \DateTime|null $to_date2 {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $from_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $to_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReturns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2834,8 +2834,8 @@ class ReturnsApi
      * @param  \OpenAPI\Client\Model\ReturnType|null $type Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. (optional)
      * @param  \DateTime|null $from_date Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
      * @param  \DateTime|null $to_date Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
-     * @param  \DateTime|null $from_date2 {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
-     * @param  \DateTime|null $to_date2 {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $from_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $to_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReturns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

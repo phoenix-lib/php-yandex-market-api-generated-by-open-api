@@ -370,7 +370,7 @@ class UpdateCampaignOfferDTO implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets available
      *
-     * @param bool|null $available {% note warning \"Вместо него используйте методы скрытия товаров с витрины\" %}  * [GET v2/campaigns/{campaignId}/hidden-offers](../../reference/hidden-offers/getHiddenOffers.md) — просмотр скрытых товаров; * [POST v2/campaigns/{campaignId}/hidden-offers](../../reference/hidden-offers/addHiddenOffers.md) — скрытие товаров; * [POST v2/campaigns/{campaignId}/hidden-offers/delete](../../reference/hidden-offers/deleteHiddenOffers.md) — возобновление показа.  {% endnote %}  Есть ли товар в продаже.
+     * @param bool|null $available {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}  Вместо него используйте методы скрытия товаров с витрины  * [GET v2/campaigns/{campaignId}/hidden-offers](../../reference/hidden-offers/getHiddenOffers.md) — просмотр скрытых товаров; * [POST v2/campaigns/{campaignId}/hidden-offers](../../reference/hidden-offers/addHiddenOffers.md) — скрытие товаров; * [POST v2/campaigns/{campaignId}/hidden-offers/delete](../../reference/hidden-offers/deleteHiddenOffers.md) — возобновление показа.  {% endnote %}  Есть ли товар в продаже.
      *
      * @return self
      * @deprecated

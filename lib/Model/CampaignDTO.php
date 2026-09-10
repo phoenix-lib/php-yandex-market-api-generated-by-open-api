@@ -402,7 +402,7 @@ class CampaignDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets client_id
      *
-     * @param int|null $client_id Идентификатор плательщика в Яндекс Балансе.
+     * @param int|null $client_id {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}     {% endnote %}  Идентификатор плательщика в Яндекс Балансе.
      *
      * @return self
      * @deprecated

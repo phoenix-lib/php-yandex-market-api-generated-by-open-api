@@ -352,7 +352,7 @@ class GetChatsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_ids
      *
-     * @param int[]|null $order_ids Фильтр по идентификаторам заказов на Маркете.
+     * @param int[]|null $order_ids {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}  Вместо него используйте `contexts`.  {% endnote %}  Фильтр по идентификаторам заказов на Маркете.
      *
      * @return self
      * @deprecated

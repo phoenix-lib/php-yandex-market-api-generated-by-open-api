@@ -338,7 +338,7 @@ class PackagingScrollingPagerDTO implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets prev_page_token
      *
-     * @param string|null $prev_page_token Идентификатор предыдущей страницы результатов.
+     * @param string|null $prev_page_token {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}     {% endnote %}  Идентификатор предыдущей страницы результатов.
      *
      * @return self
      * @deprecated

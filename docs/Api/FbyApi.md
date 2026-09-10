@@ -12,7 +12,9 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 | [**confirmBusinessPrices()**](FbyApi.md#confirmBusinessPrices) | **POST** /v2/businesses/{businessId}/price-quarantine/confirm | Удаление товара из карантина по цене в кабинете |
 | [**confirmCampaignPrices()**](FbyApi.md#confirmCampaignPrices) | **POST** /v2/campaigns/{campaignId}/price-quarantine/confirm | Удаление товара из карантина по цене в магазине |
 | [**createChat()**](FbyApi.md#createChat) | **POST** /v2/businesses/{businessId}/chats/new | Создание нового чата с покупателем |
+| [**createDocuments()**](FbyApi.md#createDocuments) | **POST** /v1/businesses/{businessId}/offers/documents/create | Создание документов |
 | [**deleteCampaignOffers()**](FbyApi.md#deleteCampaignOffers) | **POST** /v2/campaigns/{campaignId}/offers/delete | Удаление товаров из ассортимента магазина |
+| [**deleteDocuments()**](FbyApi.md#deleteDocuments) | **POST** /v1/businesses/{businessId}/offers/documents/delete | Удаление документов |
 | [**deleteGoodsFeedbackComment()**](FbyApi.md#deleteGoodsFeedbackComment) | **POST** /v2/businesses/{businessId}/goods-feedback/comments/delete | Удаление комментария к отзыву |
 | [**deleteHiddenOffers()**](FbyApi.md#deleteHiddenOffers) | **POST** /v2/campaigns/{campaignId}/hidden-offers/delete | Возобновление показа товаров |
 | [**deleteOffers()**](FbyApi.md#deleteOffers) | **POST** /v2/businesses/{businessId}/offer-mappings/delete | Удаление товаров из каталога |
@@ -61,6 +63,7 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 | [**getChatMessage()**](FbyApi.md#getChatMessage) | **GET** /v2/businesses/{businessId}/chats/message | Получение сообщения в чате |
 | [**getChats()**](FbyApi.md#getChats) | **POST** /v2/businesses/{businessId}/chats | Получение доступных чатов |
 | [**getDefaultPrices()**](FbyApi.md#getDefaultPrices) | **POST** /v2/businesses/{businessId}/offer-prices | Просмотр цен на указанные товары во всех магазинах |
+| [**getDocuments()**](FbyApi.md#getDocuments) | **POST** /v1/businesses/{businessId}/offers/documents | Получение документов |
 | [**getFulfillmentWarehouses()**](FbyApi.md#getFulfillmentWarehouses) | **GET** /v2/warehouses | Идентификаторы фулфилмент-складов Маркета |
 | [**getGoodsFeedbackComments()**](FbyApi.md#getGoodsFeedbackComments) | **POST** /v2/businesses/{businessId}/goods-feedback/comments | Получение комментариев к отзыву |
 | [**getGoodsFeedbacks()**](FbyApi.md#getGoodsFeedbacks) | **POST** /v2/businesses/{businessId}/goods-feedback | Получение отзывов о товарах продавца |
@@ -104,6 +107,7 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 | [**submitReturnDecision()**](FbyApi.md#submitReturnDecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача решения по возврату |
 | [**updateBusinessPrices()**](FbyApi.md#updateBusinessPrices) | **POST** /v2/businesses/{businessId}/offer-prices/updates | Установка цен на товары для всех магазинов |
 | [**updateCampaignOffers()**](FbyApi.md#updateCampaignOffers) | **POST** /v2/campaigns/{campaignId}/offers/update | Изменение условий продажи товаров в магазине |
+| [**updateDocuments()**](FbyApi.md#updateDocuments) | **POST** /v1/businesses/{businessId}/offers/documents/update | Обновление документов |
 | [**updateGoodsFeedbackComment()**](FbyApi.md#updateGoodsFeedbackComment) | **POST** /v2/businesses/{businessId}/goods-feedback/comments/update | Добавление нового или изменение созданного комментария |
 | [**updateGoodsQuestionTextEntity()**](FbyApi.md#updateGoodsQuestionTextEntity) | **POST** /v1/businesses/{businessId}/goods-questions/update | Создание, изменение и удаление ответа или комментария |
 | [**updateOfferContent()**](FbyApi.md#updateOfferContent) | **POST** /v2/businesses/{businessId}/offer-cards/update | Редактирование категорийных характеристик товара |
@@ -512,6 +516,73 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `createDocuments()`
+
+```php
+createDocuments($business_id, $create_documents_request): \OpenAPI\Client\Model\CreateDocumentsResponse
+```
+
+Создание документов
+
+{% include notitle [access](../../_auto/method_scopes/createDocuments.md) %}  Создает для указанного бизнеса документы на товары. За один запрос можно создать не более 100 документов.  Для привязки документа к товару передайте его номер в поле `certificates` метода [POST v2/businesses/{businessId}/offer-mappings/update](../../reference/business-offer-mappings/updateOfferMappings.md).  Если документ с таким номером уже существует, результат для документа содержит ошибку `DOCUMENT_ALREADY_EXISTS`. Существующий документ при этом не возвращается. Ошибка одного документа не мешает обработке остальных.  {% include notitle [limit](../../_auto/method_limits/createDocuments.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$create_documents_request = new \OpenAPI\Client\Model\CreateDocumentsRequest(); // \OpenAPI\Client\Model\CreateDocumentsRequest
+
+try {
+    $result = $apiInstance->createDocuments($business_id, $create_documents_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->createDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **create_documents_request** | [**\OpenAPI\Client\Model\CreateDocumentsRequest**](../Model/CreateDocumentsRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CreateDocumentsResponse**](../Model/CreateDocumentsResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `deleteCampaignOffers()`
 
 ```php
@@ -565,6 +636,73 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\DeleteCampaignOffersResponse**](../Model/DeleteCampaignOffersResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteDocuments()`
+
+```php
+deleteDocuments($business_id, $delete_documents_request): \OpenAPI\Client\Model\EmptyApiResponse
+```
+
+Удаление документов
+
+{% include notitle [access](../../_auto/method_scopes/deleteDocuments.md) %}  Удаляет документы на товары по их идентификаторам. За один запрос можно удалить не более 100 документов.  Повторный запрос на удаление возвращает успешный ответ. Отсутствие одного документа не мешает обработке остальных.  {% include notitle [limit](../../_auto/method_limits/deleteDocuments.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$delete_documents_request = new \OpenAPI\Client\Model\DeleteDocumentsRequest(); // \OpenAPI\Client\Model\DeleteDocumentsRequest
+
+try {
+    $result = $apiInstance->deleteDocuments($business_id, $delete_documents_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->deleteDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **delete_documents_request** | [**\OpenAPI\Client\Model\DeleteDocumentsRequest**](../Model/DeleteDocumentsRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
 
 ### Authorization
 
@@ -2205,7 +2343,7 @@ generateStocksOnWarehousesReport($generate_stocks_on_warehouses_report_request, 
 
 Отчет по остаткам на складах
 
-{% include notitle [access](../../_auto/method_scopes/generateStocksOnWarehousesReport.md) %}  Запускает генерацию отчета по остаткам на складах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#remains-history)  **Какая информация вернется:**  * Для моделей FBY и LaaS, если указать `campaignId`, — об остатках на складах Маркета. * Для остальных моделей, если указать `campaignId`, — об остатках на соответствующем складе магазина. * Для остальных моделей, если указать `businessId`, — об остатках на всех складах магазинов в кабинете, кроме FBY и LaaS. Используйте фильтр `campaignIds`, чтобы указать определенные магазины.  ⚠️ Не передавайте одновременно `campaignId` и `businessId`.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Склад Маркета    {% include notitle [reports](../../_auto/reports/stocks/stocks_on_warehouses.md) %}  - Склад магазина    {% include notitle [reports](../../_auto/reports/offers/mass/mass_shared_stocks_business_csv_config.md) %}  - Все склады магазинов в кабинете, кроме FBY и LaaS    {% include notitle [reports](../../_auto/reports/offers/stocks_business_config.md) %}  {% endlist %}  {% include notitle [limit](../../_auto/method_limits/generateStocksOnWarehousesReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateStocksOnWarehousesReport.md) %}  Запускает генерацию отчета по остаткам на складах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#remains-history)  {% note warning \"Когда использовать этот метод\" %}  Метод актуален:  * для моделей FBY и LaaS; * для моделей FBS, DBS и Экспресс, если в кабинете есть группы складов.  Если в кабинете нет групп складов и вы работаете с моделями FBS, DBS или Экспресс, используйте метод [POST v3/businesses/{businessId}/reports/stocks/generate](../../reference/reports/generateStocksReport.md). [Что такое группы складов и зачем они нужны](https://yandex.ru/support/marketplace/assortment/operations/stocks.html#unified-stocks).  {% endnote %}  **Какая информация вернется:**  * Для моделей FBY и LaaS, если указать `campaignId`, — об остатках на складах Маркета. * Для остальных моделей, если указать `campaignId`, — об остатках на соответствующем складе магазина. * Для остальных моделей, если указать `businessId`, — об остатках на всех складах магазинов в кабинете, кроме FBY и LaaS. Используйте фильтр `campaignIds`, чтобы указать определенные магазины.  ⚠️ Не передавайте одновременно `campaignId` и `businessId`.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Склад Маркета    {% include notitle [reports](../../_auto/reports/stocks/stocks_on_warehouses.md) %}  - Склад магазина    {% include notitle [reports](../../_auto/reports/offers/mass/mass_shared_stocks_business_csv_config.md) %}  - Все склады магазинов в кабинете, кроме FBY и LaaS    {% include notitle [reports](../../_auto/reports/offers/stocks_business_config.md) %}  {% endlist %}  {% include notitle [limit](../../_auto/method_limits/generateStocksOnWarehousesReport.md) %}
 
 ### Example
 
@@ -3251,8 +3389,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
 );
 $page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
 $limit = 56; // int | {{ limit-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %}
-$page = 1; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
-$page_size = 56; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
+$page = 1; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
+$page_size = 56; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
 
 try {
     $result = $apiInstance->getCampaigns($page_token, $limit, $page, $page_size);
@@ -3268,8 +3406,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
 | **limit** | **int**| {{ limit-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} | [optional] |
-| **page** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
+| **page** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
+| **page_size** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
 
 ### Return type
 
@@ -3822,6 +3960,77 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\GetDefaultPricesResponse**](../Model/GetDefaultPricesResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getDocuments()`
+
+```php
+getDocuments($business_id, $get_documents_request, $page_token, $limit): \OpenAPI\Client\Model\GetDocumentsResponse
+```
+
+Получение документов
+
+{% include notitle [access](../../_auto/method_scopes/getDocuments.md) %}  Возвращает страницу документов на товары с учетом переданных фильтров.  {% include notitle [limit](../../_auto/method_limits/getDocuments.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$get_documents_request = new \OpenAPI\Client\Model\GetDocumentsRequest(); // \OpenAPI\Client\Model\GetDocumentsRequest
+$page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
+$limit = 50; // int | {{ limit-param-description }}
+
+try {
+    $result = $apiInstance->getDocuments($business_id, $get_documents_request, $page_token, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **get_documents_request** | [**\OpenAPI\Client\Model\GetDocumentsRequest**](../Model/GetDocumentsRequest.md)|  | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
+| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 50] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetDocumentsResponse**](../Model/GetDocumentsResponse.md)
 
 ### Authorization
 
@@ -4862,8 +5071,8 @@ $has_cis = false; // bool | Фильтр для получения заказо�
 $only_waiting_for_cancellation_approve = false; // bool | **Только для модели DBS**  Фильтр для получения заказов, по которым был запрос на отмену.  При значении `true` возвращаются только заказы, которые находятся в статусе `DELIVERY` или `PICKUP` и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT v2/campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation).
 $only_estimated_delivery = false; // bool | Фильтрация заказов с долгой доставкой (31-60 дней) по подтвержденной дате доставки:  * `true` — возвращаются только заказы с неподтвержденной датой доставки. * `false` — фильтрация не применяется.
 $buyer_type = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OrderBuyerType(); // \OpenAPI\Client\Model\OrderBuyerType | Фильтрация заказов по типу покупателя.
-$page = 1; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
-$page_size = 56; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
+$page = 1; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
+$page_size = 56; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
 $page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
 $limit = 56; // int | {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %}
 
@@ -4895,8 +5104,8 @@ try {
 | **only_waiting_for_cancellation_approve** | **bool**| **Только для модели DBS**  Фильтр для получения заказов, по которым был запрос на отмену.  При значении &#x60;true&#x60; возвращаются только заказы, которые находятся в статусе &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60; и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT v2/campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation). | [optional] [default to false] |
 | **only_estimated_delivery** | **bool**| Фильтрация заказов с долгой доставкой (31-60 дней) по подтвержденной дате доставки:  * &#x60;true&#x60; — возвращаются только заказы с неподтвержденной датой доставки. * &#x60;false&#x60; — фильтрация не применяется. | [optional] [default to false] |
 | **buyer_type** | [**\OpenAPI\Client\Model\OrderBuyerType**](../Model/.md)| Фильтрация заказов по типу покупателя. | [optional] |
-| **page** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
+| **page** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
+| **page_size** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
 | **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
 | **limit** | **int**| {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} | [optional] |
 
@@ -5783,8 +5992,8 @@ $shipment_statuses = [READY_FOR_PICKUP, IN_TRANSIT]; // \OpenAPI\Client\Model\Re
 $type = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReturnType(); // \OpenAPI\Client\Model\ReturnType | Тип заказа для фильтрации:  * `UNREDEEMED` — невыкуп.  * `RETURN` — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты.
 $from_date = 2022-10-31; // \DateTime | Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
 $to_date = 2022-11-30; // \DateTime | Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
-$from_date2 = 2022-10-31; // \DateTime | {% note warning \"Вместо него используйте `fromDate`.\" %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления.
-$to_date2 = 2022-11-30; // \DateTime | {% note warning \"Вместо него используйте `toDate`.\" %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления.
+$from_date2 = 2022-10-31; // \DateTime | {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `fromDate`.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления.
+$to_date2 = 2022-11-30; // \DateTime | {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `toDate`.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления.
 
 try {
     $result = $apiInstance->getReturns($campaign_id, $page_token, $limit, $order_ids, $statuses, $shipment_statuses, $type, $from_date, $to_date, $from_date2, $to_date2);
@@ -5807,8 +6016,8 @@ try {
 | **type** | [**\OpenAPI\Client\Model\ReturnType**](../Model/.md)| Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. | [optional] |
 | **from_date** | **\DateTime**| Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
 | **to_date** | **\DateTime**| Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
-| **from_date2** | **\DateTime**| {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
-| **to_date2** | **\DateTime**| {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
+| **from_date2** | **\DateTime**| {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
+| **to_date2** | **\DateTime**| {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
 
 ### Return type
 
@@ -5835,7 +6044,7 @@ getStocks($campaign_id, $page_token, $limit, $get_warehouse_stocks_request): \Op
 
 Информация об остатках и оборачиваемости
 
-{% include notitle [access](../../_auto/method_scopes/getStocks.md) %}  Возвращает данные об остатках товаров (для всех моделей) и об [оборачиваемости](*turnover) товаров (для модели FBY).  {% note info \"По умолчанию данные по оборачивамости не возращаются\" %}  Чтобы они были в ответе, передавайте `true` в поле `withTurnover`.  {% endnote %}  **Для моделей FBY и LaaS:** информация об остатках может возвращаться с нескольких складов Маркета, у которых будут разные `warehouseId`. Получить список складов Маркета можно с помощью метода [GET v2/warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).  **Для модели FBS:** в ответе может вернуться не только партнерский склад, но и склад возвратов Маркета. Это возможно, если возврат поступил в указанную продавцом точку возвратов и долго не был забран.  {% include notitle [limit](../../_auto/method_limits/getStocks.md) %}  [//]: <> (turnover: Среднее количество дней, за которое товар продается. Подробно об оборачиваемости рассказано в Справке Маркета для продавцов https://yandex.ru/support/marketplace/analytics/turnover.html.)
+{% include notitle [access](../../_auto/method_scopes/getStocks.md) %}  Возвращает данные об остатках товаров (для всех моделей) и об [оборачиваемости](*turnover) товаров (для модели FBY).  {% note warning \"Когда использовать этот метод\" %}  Метод актуален:  * для моделей FBY и LaaS; * для моделей FBS, DBS и Экспресс, если в кабинете есть группы складов.  Если в кабинете нет групп складов и вы работаете с моделями FBS, DBS или Экспресс, используйте метод [POST v3/businesses/{businessId}/offers/stocks](../../reference/stocks/getStocksOnPartnerWarehouses.md). [Что такое группы складов и зачем они нужны](https://yandex.ru/support/marketplace/assortment/operations/stocks.html#unified-stocks).  {% endnote %}  {% note info \"По умолчанию данные по оборачивамости не возращаются\" %}  Чтобы они были в ответе, передавайте `true` в поле `withTurnover`.  {% endnote %}  **Для моделей FBY и LaaS:** информация об остатках может возвращаться с нескольких складов Маркета, у которых будут разные `warehouseId`. Получить список складов Маркета можно с помощью метода [GET v2/warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).  **Для модели FBS:** в ответе может вернуться не только партнерский склад, но и склад возвратов Маркета. Это возможно, если возврат поступил в указанную продавцом точку возвратов и долго не был забран.  {% include notitle [limit](../../_auto/method_limits/getStocks.md) %}  [//]: <> (turnover: Среднее количество дней, за которое товар продается. Подробно об оборачиваемости рассказано в Справке Маркета для продавцов https://yandex.ru/support/marketplace/analytics/turnover.html.)
 
 ### Example
 
@@ -5861,7 +6070,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
 );
 $campaign_id = 56; // int | Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями.
 $page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
-$limit = 100; // int | {{ limit-param-description }}
+$limit = 50; // int | {{ limit-truncate-param-description }}
 $get_warehouse_stocks_request = new \OpenAPI\Client\Model\GetWarehouseStocksRequest(); // \OpenAPI\Client\Model\GetWarehouseStocksRequest
 
 try {
@@ -5878,7 +6087,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **campaign_id** | **int**| Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. | |
 | **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
-| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 100] |
+| **limit** | **int**| {{ limit-truncate-param-description }} | [optional] [default to 50] |
 | **get_warehouse_stocks_request** | [**\OpenAPI\Client\Model\GetWarehouseStocksRequest**](../Model/GetWarehouseStocksRequest.md)|  | [optional] |
 
 ### Return type
@@ -6276,8 +6485,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
 $region_id = 56; // int | Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET v2/regions](../../reference/regions/searchRegionsByName.md).
 $page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
 $limit = 56; // int | {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %}
-$page = 1; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
-$page_size = 56; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
+$page = 1; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
+$page_size = 56; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
 
 try {
     $result = $apiInstance->searchRegionChildren($region_id, $page_token, $limit, $page, $page_size);
@@ -6294,8 +6503,8 @@ try {
 | **region_id** | **int**| Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET v2/regions](../../reference/regions/searchRegionsByName.md). | |
 | **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
 | **limit** | **int**| {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} | [optional] |
-| **page** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
+| **page** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
+| **page_size** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
 
 ### Return type
 
@@ -6846,6 +7055,73 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateDocuments()`
+
+```php
+updateDocuments($business_id, $update_documents_request): \OpenAPI\Client\Model\UpdateDocumentsResponse
+```
+
+Обновление документов
+
+{% include notitle [access](../../_auto/method_scopes/updateDocuments.md) %}  Полностью обновляет номер, тип и даты документов на товары. За один запрос можно обновить не более 100 документов.  Для каждого документа передайте его идентификатор и актуальные значения номера, типа и дат. Если дата не указана, ранее сохраненная дата будет удалена. Ошибка одного документа не мешает обработке остальных.  {% include notitle [limit](../../_auto/method_limits/updateDocuments.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$update_documents_request = new \OpenAPI\Client\Model\UpdateDocumentsRequest(); // \OpenAPI\Client\Model\UpdateDocumentsRequest
+
+try {
+    $result = $apiInstance->updateDocuments($business_id, $update_documents_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->updateDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **update_documents_request** | [**\OpenAPI\Client\Model\UpdateDocumentsRequest**](../Model/UpdateDocumentsRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\UpdateDocumentsResponse**](../Model/UpdateDocumentsResponse.md)
 
 ### Authorization
 
