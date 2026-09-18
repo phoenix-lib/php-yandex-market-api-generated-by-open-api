@@ -67,7 +67,8 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'target_location' => '\OpenAPI\Client\Model\SupplyRequestLocationDTO',
         'parent_link' => '\OpenAPI\Client\Model\SupplyRequestReferenceDTO',
         'children_links' => '\OpenAPI\Client\Model\SupplyRequestReferenceDTO[]',
-        'transit_location' => '\OpenAPI\Client\Model\SupplyRequestLocationDTO'
+        'transit_location' => '\OpenAPI\Client\Model\SupplyRequestLocationDTO',
+        'etrn_identifier' => '\OpenAPI\Client\Model\EtrnIdentifierDTO'
     ];
 
     /**
@@ -87,7 +88,8 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'target_location' => null,
         'parent_link' => null,
         'children_links' => null,
-        'transit_location' => null
+        'transit_location' => null,
+        'etrn_identifier' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'target_location' => false,
         'parent_link' => false,
         'children_links' => true,
-        'transit_location' => false
+        'transit_location' => false,
+        'etrn_identifier' => false
     ];
 
     /**
@@ -203,7 +206,8 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'target_location' => 'targetLocation',
         'parent_link' => 'parentLink',
         'children_links' => 'childrenLinks',
-        'transit_location' => 'transitLocation'
+        'transit_location' => 'transitLocation',
+        'etrn_identifier' => 'etrnIdentifier'
     ];
 
     /**
@@ -221,7 +225,8 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'target_location' => 'setTargetLocation',
         'parent_link' => 'setParentLink',
         'children_links' => 'setChildrenLinks',
-        'transit_location' => 'setTransitLocation'
+        'transit_location' => 'setTransitLocation',
+        'etrn_identifier' => 'setEtrnIdentifier'
     ];
 
     /**
@@ -239,7 +244,8 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'target_location' => 'getTargetLocation',
         'parent_link' => 'getParentLink',
         'children_links' => 'getChildrenLinks',
-        'transit_location' => 'getTransitLocation'
+        'transit_location' => 'getTransitLocation',
+        'etrn_identifier' => 'getEtrnIdentifier'
     ];
 
     /**
@@ -309,6 +315,7 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('parent_link', $data ?? [], null);
         $this->setIfExists('children_links', $data ?? [], null);
         $this->setIfExists('transit_location', $data ?? [], null);
+        $this->setIfExists('etrn_identifier', $data ?? [], null);
     }
 
     /**
@@ -656,6 +663,33 @@ class SupplyRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable transit_location cannot be null');
         }
         $this->container['transit_location'] = $transit_location;
+
+        return $this;
+    }
+
+    /**
+     * Gets etrn_identifier
+     *
+     * @return \OpenAPI\Client\Model\EtrnIdentifierDTO|null
+     */
+    public function getEtrnIdentifier()
+    {
+        return $this->container['etrn_identifier'];
+    }
+
+    /**
+     * Sets etrn_identifier
+     *
+     * @param \OpenAPI\Client\Model\EtrnIdentifierDTO|null $etrn_identifier etrn_identifier
+     *
+     * @return self
+     */
+    public function setEtrnIdentifier($etrn_identifier)
+    {
+        if (is_null($etrn_identifier)) {
+            throw new \InvalidArgumentException('non-nullable etrn_identifier cannot be null');
+        }
+        $this->container['etrn_identifier'] = $etrn_identifier;
 
         return $this;
     }

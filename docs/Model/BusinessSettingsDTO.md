@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**warehouse_model** | [**\OpenAPI\Client\Model\BusinessWarehouseModelType**](BusinessWarehouseModelType.md) |  | [optional]
 **only_default_price** | **bool** | Управление ценами на товары:  * &#x60;false&#x60; — можно установить цену, которая действует:   * во всех магазинах кабинета — [POST v2/businesses/{businessId}/offer-prices/updates](../../reference/prices/updateBusinessPrices.md);   * в конкретном магазине — [POST v2/campaigns/{campaignId}/offer-prices/updates](../../reference/prices/updatePrices.md). * &#x60;true&#x60; — можно установить только цену, которая действует во всех магазинах кабинета, — [POST v2/businesses/{businessId}/offer-prices/updates](../../reference/prices/updateBusinessPrices.md). | [optional]
 **currency** | [**\OpenAPI\Client\Model\CurrencyType**](CurrencyType.md) |  | [optional]
 

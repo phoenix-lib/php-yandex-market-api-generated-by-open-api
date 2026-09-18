@@ -58,6 +58,7 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
+        'taxation' => '\OpenAPI\Client\Model\TaxationInfoDTO',
         'country_region' => 'int',
         'shop_name' => 'string',
         'show_in_context' => 'bool',
@@ -74,6 +75,7 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'taxation' => null,
         'country_region' => 'int64',
         'shop_name' => null,
         'show_in_context' => null,
@@ -88,6 +90,7 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'taxation' => false,
         'country_region' => false,
         'shop_name' => false,
         'show_in_context' => false,
@@ -182,6 +185,7 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
+        'taxation' => 'taxation',
         'country_region' => 'countryRegion',
         'shop_name' => 'shopName',
         'show_in_context' => 'showInContext',
@@ -196,6 +200,7 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
+        'taxation' => 'setTaxation',
         'country_region' => 'setCountryRegion',
         'shop_name' => 'setShopName',
         'show_in_context' => 'setShowInContext',
@@ -210,6 +215,7 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
+        'taxation' => 'getTaxation',
         'country_region' => 'getCountryRegion',
         'shop_name' => 'getShopName',
         'show_in_context' => 'getShowInContext',
@@ -275,6 +281,7 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('taxation', $data ?? [], null);
         $this->setIfExists('country_region', $data ?? [], null);
         $this->setIfExists('shop_name', $data ?? [], null);
         $this->setIfExists('show_in_context', $data ?? [], null);
@@ -310,6 +317,9 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
+        if ($this->container['taxation'] === null) {
+            $invalidProperties[] = "'taxation' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -324,6 +334,33 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets taxation
+     *
+     * @return \OpenAPI\Client\Model\TaxationInfoDTO
+     */
+    public function getTaxation()
+    {
+        return $this->container['taxation'];
+    }
+
+    /**
+     * Sets taxation
+     *
+     * @param \OpenAPI\Client\Model\TaxationInfoDTO $taxation taxation
+     *
+     * @return self
+     */
+    public function setTaxation($taxation)
+    {
+        if (is_null($taxation)) {
+            throw new \InvalidArgumentException('non-nullable taxation cannot be null');
+        }
+        $this->container['taxation'] = $taxation;
+
+        return $this;
+    }
 
     /**
      * Gets country_region
@@ -393,7 +430,7 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets show_in_context
      *
-     * @param bool|null $show_in_context Признак размещения магазина на сайтах партнеров Яндекс Дистрибуции. Возможные значения: * `false` — магазин не размещен на сайтах партнеров Яндекс Дистрибуции. * `true` — магазин размещен на сайтах партнеров Яндекс Дистрибуции.
+     * @param bool|null $show_in_context {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}     {% endnote %}  Признак размещения магазина на сайтах партнеров Яндекс Дистрибуции. Возможные значения: * `false` — магазин не размещен на сайтах партнеров Яндекс Дистрибуции. * `true` — магазин размещен на сайтах партнеров Яндекс Дистрибуции.
      *
      * @return self
      * @deprecated
@@ -422,7 +459,7 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets show_in_premium
      *
-     * @param bool|null $show_in_premium Признак показа предложений магазина в блоке над результатами поиска (cпецразмещение). Возможные значения: * `false` — предложения не показываются в блоке cпецразмещения. * `true` — предложения показываются в блоке cпецразмещения.
+     * @param bool|null $show_in_premium {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}     {% endnote %}  Признак показа предложений магазина в блоке над результатами поиска (cпецразмещение). Возможные значения: * `false` — предложения не показываются в блоке cпецразмещения. * `true` — предложения показываются в блоке cпецразмещения.
      *
      * @return self
      * @deprecated
@@ -451,7 +488,7 @@ class CampaignSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets use_open_stat
      *
-     * @param bool|null $use_open_stat Признак использования внешней интернет-статистики. Возможные значения: * `false` — внешняя интернет-статистика не используется. * `true` — внешняя интернет-статистика используется.
+     * @param bool|null $use_open_stat {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}     {% endnote %}  Признак использования внешней интернет-статистики. Возможные значения: * `false` — внешняя интернет-статистика не используется. * `true` — внешняя интернет-статистика используется.
      *
      * @return self
      * @deprecated

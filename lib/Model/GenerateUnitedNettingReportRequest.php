@@ -425,7 +425,7 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets date_time_from
      *
-     * @param \DateTime|null $date_time_from Начало периода, включительно.
+     * @param \DateTime|null $date_time_from {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `dateFrom`.  {% endnote %}  Начало периода, включительно.
      *
      * @return self
      * @deprecated
@@ -454,7 +454,7 @@ class GenerateUnitedNettingReportRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets date_time_to
      *
-     * @param \DateTime|null $date_time_to Конец периода, включительно. Максимальный период — 3 месяца.
+     * @param \DateTime|null $date_time_to {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `dateTo`.  {% endnote %}  Конец периода, включительно. Максимальный период — 3 месяца.
      *
      * @return self
      * @deprecated

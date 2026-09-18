@@ -308,7 +308,7 @@ class ParcelBoxRequestDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets fulfilment_id
      *
-     * @param string|null $fulfilment_id {% note warning \"Не используйте этот параметр.\" %}     {% endnote %}
+     * @param string|null $fulfilment_id {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}  Не используйте этот параметр.  {% endnote %}
      *
      * @return self
      * @deprecated

@@ -540,7 +540,7 @@ class ReturnDecisionDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets refund_amount
      *
-     * @param int|null $refund_amount {% note warning \"Вместо него используйте `amount`.\" %}     {% endnote %}  Сумма возврата в копейках.
+     * @param int|null $refund_amount {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `amount`.  {% endnote %}  Сумма возврата в копейках.
      *
      * @return self
      * @deprecated
@@ -596,7 +596,7 @@ class ReturnDecisionDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets partner_compensation
      *
-     * @param int|null $partner_compensation {% note warning \"Вместо него используйте `partnerCompensationAmount`.\" %}     {% endnote %}  Компенсация за обратную доставку в копейках.
+     * @param int|null $partner_compensation {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `partnerCompensationAmount`.  {% endnote %}  Компенсация за обратную доставку в копейках.
      *
      * @return self
      * @deprecated

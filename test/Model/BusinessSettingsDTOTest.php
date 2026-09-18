@@ -80,6 +80,15 @@ class BusinessSettingsDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "warehouse_model"
+     */
+    public function testPropertyWarehouseModel()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "only_default_price"
      */
     public function testPropertyOnlyDefaultPrice()

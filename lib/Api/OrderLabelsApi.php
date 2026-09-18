@@ -138,7 +138,7 @@ class OrderLabelsApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  int $order_id Идентификатор заказа. (required)
-     * @param  int $shipment_id { % note warning \&quot;Параметр больше не используется\&quot; % }  Передайте любое число, чтобы получился корректный URL.  { % endnote % }  Идентификатор грузового места. (required) (deprecated)
+     * @param  int $shipment_id {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Передайте любое число, чтобы получился корректный URL.  {% endnote %}  Идентификатор грузового места. (required) (deprecated)
      * @param  int $box_id Идентификатор коробки. (required)
      * @param  \OpenAPI\Client\Model\PageFormatType|null $format Настройка размещения ярлыков на странице. Если параметра нет, возвращается PDF с ярлыками формата :no-translate[A7]. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateOrderLabel'] to see the possible values for this operation
@@ -160,7 +160,7 @@ class OrderLabelsApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  int $order_id Идентификатор заказа. (required)
-     * @param  int $shipment_id { % note warning \&quot;Параметр больше не используется\&quot; % }  Передайте любое число, чтобы получился корректный URL.  { % endnote % }  Идентификатор грузового места. (required) (deprecated)
+     * @param  int $shipment_id {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Передайте любое число, чтобы получился корректный URL.  {% endnote %}  Идентификатор грузового места. (required) (deprecated)
      * @param  int $box_id Идентификатор коробки. (required)
      * @param  \OpenAPI\Client\Model\PageFormatType|null $format Настройка размещения ярлыков на странице. Если параметра нет, возвращается PDF с ярлыками формата :no-translate[A7]. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateOrderLabel'] to see the possible values for this operation
@@ -333,7 +333,7 @@ class OrderLabelsApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  int $order_id Идентификатор заказа. (required)
-     * @param  int $shipment_id { % note warning \&quot;Параметр больше не используется\&quot; % }  Передайте любое число, чтобы получился корректный URL.  { % endnote % }  Идентификатор грузового места. (required) (deprecated)
+     * @param  int $shipment_id {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Передайте любое число, чтобы получился корректный URL.  {% endnote %}  Идентификатор грузового места. (required) (deprecated)
      * @param  int $box_id Идентификатор коробки. (required)
      * @param  \OpenAPI\Client\Model\PageFormatType|null $format Настройка размещения ярлыков на странице. Если параметра нет, возвращается PDF с ярлыками формата :no-translate[A7]. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateOrderLabel'] to see the possible values for this operation
@@ -358,7 +358,7 @@ class OrderLabelsApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  int $order_id Идентификатор заказа. (required)
-     * @param  int $shipment_id { % note warning \&quot;Параметр больше не используется\&quot; % }  Передайте любое число, чтобы получился корректный URL.  { % endnote % }  Идентификатор грузового места. (required) (deprecated)
+     * @param  int $shipment_id {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Передайте любое число, чтобы получился корректный URL.  {% endnote %}  Идентификатор грузового места. (required) (deprecated)
      * @param  int $box_id Идентификатор коробки. (required)
      * @param  \OpenAPI\Client\Model\PageFormatType|null $format Настройка размещения ярлыков на странице. Если параметра нет, возвращается PDF с ярлыками формата :no-translate[A7]. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateOrderLabel'] to see the possible values for this operation
@@ -412,7 +412,7 @@ class OrderLabelsApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  int $order_id Идентификатор заказа. (required)
-     * @param  int $shipment_id { % note warning \&quot;Параметр больше не используется\&quot; % }  Передайте любое число, чтобы получился корректный URL.  { % endnote % }  Идентификатор грузового места. (required) (deprecated)
+     * @param  int $shipment_id {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Передайте любое число, чтобы получился корректный URL.  {% endnote %}  Идентификатор грузового места. (required) (deprecated)
      * @param  int $box_id Идентификатор коробки. (required)
      * @param  \OpenAPI\Client\Model\PageFormatType|null $format Настройка размещения ярлыков на странице. Если параметра нет, возвращается PDF с ярлыками формата :no-translate[A7]. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['generateOrderLabel'] to see the possible values for this operation

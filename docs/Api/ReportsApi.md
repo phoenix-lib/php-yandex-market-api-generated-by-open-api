@@ -27,6 +27,7 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 | [**generateShowsBoostReport()**](ReportsApi.md#generateShowsBoostReport) | **POST** /v2/reports/shows-boost/generate | Отчет по бусту показов |
 | [**generateShowsSalesReport()**](ReportsApi.md#generateShowsSalesReport) | **POST** /v2/reports/shows-sales/generate | Отчет «Аналитика продаж» |
 | [**generateStocksOnWarehousesReport()**](ReportsApi.md#generateStocksOnWarehousesReport) | **POST** /v2/reports/stocks-on-warehouses/generate | Отчет по остаткам на складах |
+| [**generateStocksReport()**](ReportsApi.md#generateStocksReport) | **POST** /v3/businesses/{businessId}/reports/stocks/generate | Отчет по остаткам на складах партнера |
 | [**generateUnitedMarketplaceServicesReport()**](ReportsApi.md#generateUnitedMarketplaceServicesReport) | **POST** /v2/reports/united-marketplace-services/generate | Отчет по стоимости услуг |
 | [**generateUnitedNettingReport()**](ReportsApi.md#generateUnitedNettingReport) | **POST** /v2/reports/united-netting/generate | Отчет по платежам |
 | [**generateUnitedOrdersReport()**](ReportsApi.md#generateUnitedOrdersReport) | **POST** /v2/reports/united-orders/generate | Отчет по заказам |
@@ -312,7 +313,7 @@ generateClosureDocumentsReport($generate_closure_documents_request): \OpenAPI\Cl
 
 Закрывающие документы
 
-{% include notitle [access](../../_auto/method_scopes/generateClosureDocumentsReport.md) %}  Возвращает ZIP-архив с закрывающими документами в формате PDF за указанный месяц.  {% cut \"Состав документов в зависимости от типа договора\" %}  * **Договор на размещение**    * [акт об оказанных услугах](*acts-main-act)   * [счет-фактура](*acts-main-invoice)   * [сводный отчет по данным статистики](*acts-main-report)   * [отчет об исполнении поручения и о зачете взаимных требований](*acts-main-agent) (отчет агента)  * **Договор на продвижение** (в России не заключается после 30 сентября 2024 года)    * [акт об оказании услуг](*acts-discounts-act)   * [счет-фактура](*acts-discounts-invoice), если этого требует схема налогообложения  * **Договор на маркетинг**    * [акт об оказанных услугах](*acts-marketing-act)   * [счет-фактура](*acts-main-invoice)   * [счет-фактура на аванс](*acts-marketing-invoice)   * [выписка по лицевому счету](*acts-marketing-account)   * [детализация к акту](*acts-marketing-details)  {% endcut %}  Узнать статус генерации и получить ссылку на архив можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [limit](../../_auto/method_limits/generateClosureDocumentsReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateClosureDocumentsReport.md) %}  Возвращает ZIP-архив с закрывающими документами в формате PDF за указанный месяц.  {% cut \"Состав документов в зависимости от типа договора\" %}  * **Договор на размещение**    * [универсальный передаточный документ (УПД-1)](*acts-main-utd) (в России формируется за октябрь 2026 года и последующие месяцы, вместо акта об оказанных услугах и счета-фактуры)   * [акт об оказанных услугах](*acts-main-act) (в России формируется за месяцы до октября 2026 года)   * [счет-фактура](*acts-main-invoice) (в России формируется за месяцы до октября 2026 года)   * [сводный отчет по данным статистики](*acts-main-report)   * [отчет об исполнении поручения и о зачете взаимных требований](*acts-main-agent) (отчет агента)  * **Договор на продвижение** (в России не заключается после 30 сентября 2024 года)    * [акт об оказании услуг](*acts-discounts-act)   * [счет-фактура](*acts-discounts-invoice), если этого требует схема налогообложения  * **Договор на маркетинг**    * [универсальный передаточный документ (УПД-1)](*acts-main-utd) (в России формируется за август 2026 года и последующие месяцы, вместо акта об оказанных услугах и счета-фактуры)   * [акт об оказанных услугах](*acts-marketing-act) (в России формируется за месяцы до августа 2026 года)   * [счет-фактура](*acts-main-invoice) (в России формируется за месяцы до августа 2026 года)   * [счет-фактура на аванс](*acts-marketing-invoice)   * [детализация к акту](*acts-marketing-details)  {% endcut %}  Узнать статус генерации и получить ссылку на архив можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [limit](../../_auto/method_limits/generateClosureDocumentsReport.md) %}
 
 ### Example
 
@@ -1388,7 +1389,7 @@ generateStocksOnWarehousesReport($generate_stocks_on_warehouses_report_request, 
 
 Отчет по остаткам на складах
 
-{% include notitle [access](../../_auto/method_scopes/generateStocksOnWarehousesReport.md) %}  Запускает генерацию отчета по остаткам на складах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#remains-history)  **Какая информация вернется:**  * Для моделей FBY и LaaS, если указать `campaignId`, — об остатках на складах Маркета. * Для остальных моделей, если указать `campaignId`, — об остатках на соответствующем складе магазина. * Для остальных моделей, если указать `businessId`, — об остатках на всех складах магазинов в кабинете, кроме FBY и LaaS. Используйте фильтр `campaignIds`, чтобы указать определенные магазины.  ⚠️ Не передавайте одновременно `campaignId` и `businessId`.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Склад Маркета    {% include notitle [reports](../../_auto/reports/stocks/stocks_on_warehouses.md) %}  - Склад магазина    {% include notitle [reports](../../_auto/reports/offers/mass/mass_shared_stocks_business_csv_config.md) %}  - Все склады магазинов в кабинете, кроме FBY и LaaS    {% include notitle [reports](../../_auto/reports/offers/stocks_business_config.md) %}  {% endlist %}  {% include notitle [limit](../../_auto/method_limits/generateStocksOnWarehousesReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateStocksOnWarehousesReport.md) %}  Запускает генерацию отчета по остаткам на складах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#remains-history)  {% note warning \"Когда использовать этот метод\" %}  Метод актуален:  * для моделей FBY и LaaS; * для моделей FBS, DBS и Экспресс, если в кабинете есть группы складов.  Если в кабинете нет групп складов и вы работаете с моделями FBS, DBS или Экспресс, используйте метод [POST v3/businesses/{businessId}/reports/stocks/generate](../../reference/reports/generateStocksReport.md). [Что такое группы складов и зачем они нужны](https://yandex.ru/support/marketplace/assortment/operations/stocks.html#unified-stocks).  {% endnote %}  **Какая информация вернется:**  * Для моделей FBY и LaaS, если указать `campaignId`, — об остатках на складах Маркета. * Для остальных моделей, если указать `campaignId`, — об остатках на соответствующем складе магазина. * Для остальных моделей, если указать `businessId`, — об остатках на всех складах магазинов в кабинете, кроме FBY и LaaS. Используйте фильтр `campaignIds`, чтобы указать определенные магазины.  ⚠️ Не передавайте одновременно `campaignId` и `businessId`.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Склад Маркета    {% include notitle [reports](../../_auto/reports/stocks/stocks_on_warehouses.md) %}  - Склад магазина    {% include notitle [reports](../../_auto/reports/offers/mass/mass_shared_stocks_business_csv_config.md) %}  - Все склады магазинов в кабинете, кроме FBY и LaaS    {% include notitle [reports](../../_auto/reports/offers/stocks_business_config.md) %}  {% endlist %}  {% include notitle [limit](../../_auto/method_limits/generateStocksOnWarehousesReport.md) %}
 
 ### Example
 
@@ -1429,6 +1430,75 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **generate_stocks_on_warehouses_report_request** | [**\OpenAPI\Client\Model\GenerateStocksOnWarehousesReportRequest**](../Model/GenerateStocksOnWarehousesReportRequest.md)|  | |
 | **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GenerateReportResponse**](../Model/GenerateReportResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `generateStocksReport()`
+
+```php
+generateStocksReport($business_id, $format, $generate_stocks_report_request): \OpenAPI\Client\Model\GenerateReportResponse
+```
+
+Отчет по остаткам на складах партнера
+
+{% include notitle [access](../../_auto/method_scopes/generateStocksReport.md) %}  Запускает генерацию отчета по остаткам на складах магазинов в кабинете. [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#remains-history)  **Какая информация вернется:**  * Об остатках на всех складах магазинов в кабинете (модели DBS, FBS и Экспресс). * По каждому товару — ваш SKU, название, модель работы, склад, доступное для заказа количество, резерв, цену и статус.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Все склады магазинов в кабинете    {% include notitle [reports](../../_auto/reports/offers/stocks_business_config.md) %}  {% endlist %}  {% note warning \"Метод подходит, только если в кабинете нет групп складов\" %}  Если в кабинете есть группы складов, используйте метод [POST v2/reports/stocks-on-warehouses/generate](../../reference/reports/generateStocksOnWarehousesReport.md). [Что такое группы складов и зачем они нужны](https://yandex.ru/support/marketplace/assortment/operations/stocks.html#unified-stocks).  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/generateStocksReport.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\ReportsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$format = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReportFormatType(); // \OpenAPI\Client\Model\ReportFormatType | Формат отчета или документа.
+$generate_stocks_report_request = new \OpenAPI\Client\Model\GenerateStocksReportRequest(); // \OpenAPI\Client\Model\GenerateStocksReportRequest
+
+try {
+    $result = $apiInstance->generateStocksReport($business_id, $format, $generate_stocks_report_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReportsApi->generateStocksReport: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **format** | [**\OpenAPI\Client\Model\ReportFormatType**](../Model/.md)| Формат отчета или документа. | [optional] |
+| **generate_stocks_report_request** | [**\OpenAPI\Client\Model\GenerateStocksReportRequest**](../Model/GenerateStocksReportRequest.md)|  | [optional] |
 
 ### Return type
 

@@ -623,7 +623,7 @@ class OutletAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string|null $city {% note warning \"В ответах города и населенные пункты возвращаются в параметре `regionId`.\" %}     {% endnote %}
+     * @param string|null $city {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}  В ответах города и населенные пункты возвращаются в параметре `regionId`.  {% endnote %}
      *
      * @return self
      * @deprecated

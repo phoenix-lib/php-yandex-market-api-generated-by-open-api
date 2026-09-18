@@ -348,7 +348,7 @@ class GetRegionByIdResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets regions
      *
-     * @param \OpenAPI\Client\Model\RegionDTO[]|null $regions Регион доставки.  {% note warning %}  В массиве всегда возвращается один регион, используйте поле `region` вместо него.  {% endnote %}
+     * @param \OpenAPI\Client\Model\RegionDTO[]|null $regions Регион доставки.  {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}  В массиве всегда возвращается один регион, используйте поле `region` вместо него.  {% endnote %}
      *
      * @return self
      * @deprecated

@@ -96,12 +96,36 @@ class WarehousesApiTest extends TestCase
     }
 
     /**
+     * Test case for getPartnerWarehouses
+     *
+     * Список складов.
+     *
+     */
+    public function testGetPartnerWarehouses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getWarehouses
      *
      * Список складов и групп складов.
      *
      */
     public function testGetWarehouses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateWarehouseModelStatus
+     *
+     * Включение/выключение модели работы склада.
+     *
+     */
+    public function testUpdateWarehouseModelStatus()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

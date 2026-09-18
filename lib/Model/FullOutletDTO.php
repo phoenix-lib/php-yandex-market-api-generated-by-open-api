@@ -837,7 +837,7 @@ class FullOutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shop_outlet_id
      *
-     * @param string|null $shop_outlet_id {% note warning \"Вместо него используйте `shopOutletCode`.\" %}     {% endnote %}  Идентификатор точки продаж, заданный магазином.
+     * @param string|null $shop_outlet_id {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}  Вместо него используйте `shopOutletCode`.  {% endnote %}  Идентификатор точки продаж, заданный магазином.
      *
      * @return self
      * @deprecated
@@ -866,7 +866,7 @@ class FullOutletDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets working_time
      *
-     * @param string|null $working_time {% note warning \"Вместо него используйте `workingSchedule`.\" %}     {% endnote %}  Рабочее время.
+     * @param string|null $working_time {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}  Вместо него используйте `workingSchedule`.  {% endnote %}  Рабочее время.
      *
      * @return self
      * @deprecated

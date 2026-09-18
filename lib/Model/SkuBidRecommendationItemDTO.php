@@ -470,7 +470,7 @@ class SkuBidRecommendationItemDTO implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets price_recommendations
      *
-     * @param \OpenAPI\Client\Model\PriceRecommendationItemDTO[]|null $price_recommendations Рекомендованные цены.
+     * @param \OpenAPI\Client\Model\PriceRecommendationItemDTO[]|null $price_recommendations {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}     {% endnote %}  Рекомендованные цены.
      *
      * @return self
      * @deprecated

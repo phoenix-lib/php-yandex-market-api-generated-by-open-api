@@ -679,7 +679,7 @@ class ParcelBoxLabelDTO implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets weight
      *
-     * @param string $weight Общая масса всех товаров в заказе.  Возвращается в формате `weight кг`.
+     * @param string $weight {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}     {% endnote %}  Общая масса всех товаров в заказе.  Возвращается в формате `weight кг`.
      *
      * @return self
      * @deprecated

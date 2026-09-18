@@ -87,7 +87,7 @@ getPromoOffers($business_id, $get_promo_offers_request, $page_token, $limit): \O
 
 Получение списка товаров, которые участвуют или могут участвовать в акции
 
-{% include notitle [access](../../_auto/method_scopes/getPromoOffers.md) %}  Возвращает список товаров, которые участвуют или могут участвовать в акции.  {% note warning \"Условия участия в акциях могут меняться\" %}  Например, `maxPromoPrice`.  Установленные цены меняться не будут — `price` и `promoPrice`.  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getPromoOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/getPromoOffers.md) %}  Возвращает список товаров, которые участвуют или могут участвовать в акции.  {% note warning \"Условия участия в акциях могут меняться\" %}  Например, `maxPromoPrice` и `bestPriceLevels`.  Установленные цены меняться не будут — `price` и `promoPrice`.  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getPromoOffers.md) %}
 
 ### Example
 
