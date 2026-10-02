@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **reason_type** | [**\OpenAPI\Client\Model\ReturnDecisionReasonType**](ReturnDecisionReasonType.md) |  | [optional]
 **subreason_type** | [**\OpenAPI\Client\Model\ReturnDecisionSubreasonType**](ReturnDecisionSubreasonType.md) |  | [optional]
 **decision_type** | [**\OpenAPI\Client\Model\ReturnDecisionType**](ReturnDecisionType.md) |  | [optional]
-**refund_amount** | **int** | {% note warning \&quot;Вместо него используйте &#x60;amount&#x60;.\&quot; %}     {% endnote %}  Сумма возврата в копейках. | [optional]
+**refund_amount** | **int** | {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;amount&#x60;.  {% endnote %}  Сумма возврата в копейках. | [optional]
 **amount** | [**\OpenAPI\Client\Model\CurrencyValueDTO**](CurrencyValueDTO.md) |  | [optional]
-**partner_compensation** | **int** | {% note warning \&quot;Вместо него используйте &#x60;partnerCompensationAmount&#x60;.\&quot; %}     {% endnote %}  Компенсация за обратную доставку в копейках. | [optional]
+**partner_compensation** | **int** | {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;partnerCompensationAmount&#x60;.  {% endnote %}  Компенсация за обратную доставку в копейках. | [optional]
 **partner_compensation_amount** | [**\OpenAPI\Client\Model\CurrencyValueDTO**](CurrencyValueDTO.md) |  | [optional]
 **images** | **string[]** | Список хеш-кодов фотографий товара от покупателя. | [optional]
 

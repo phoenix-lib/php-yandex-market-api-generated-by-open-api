@@ -8,7 +8,9 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 | ------------- | ------------- | ------------- |
 | [**getFulfillmentWarehouses()**](WarehousesApi.md#getFulfillmentWarehouses) | **GET** /v2/warehouses | Идентификаторы фулфилмент-складов Маркета |
 | [**getPagedWarehouses()**](WarehousesApi.md#getPagedWarehouses) | **POST** /v2/businesses/{businessId}/warehouses | Список складов |
+| [**getPartnerWarehouses()**](WarehousesApi.md#getPartnerWarehouses) | **POST** /v3/businesses/{businessId}/warehouses | Список складов |
 | [**getWarehouses()**](WarehousesApi.md#getWarehouses) | **GET** /v2/businesses/{businessId}/warehouses | Список складов и групп складов |
+| [**updateWarehouseModelStatus()**](WarehousesApi.md#updateWarehouseModelStatus) | **POST** /v3/businesses/{businessId}/warehouse/models/status | Включение/выключение модели работы склада |
 | [**updateWarehouseStatus()**](WarehousesApi.md#updateWarehouseStatus) | **POST** /v2/campaigns/{campaignId}/warehouse/status | Изменение статуса склада |
 
 
@@ -85,7 +87,7 @@ getPagedWarehouses($business_id, $page_token, $limit, $get_paged_warehouses_requ
 
 Список складов
 
-{% include notitle [access](../../_auto/method_scopes/getPagedWarehouses.md) %}  Возвращает список складов и информацию о них.  {% include notitle [limit](../../_auto/method_limits/getPagedWarehouses.md) %}
+{% include notitle [access](../../_auto/method_scopes/getPagedWarehouses.md) %}  Возвращает список складов и информацию о них.  {% note warning \"Когда использовать этот метод\" %}  Метод актуален для кабинетов с группами складов. Если в кабинете нет групп складов, используйте метод [POST v3/businesses/{businessId}/warehouses](../../reference/warehouses/getPartnerWarehouses.md). [Что такое группы складов и зачем они нужны](https://yandex.ru/support/marketplace/assortment/operations/stocks.html#unified-stocks).  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getPagedWarehouses.md) %}
 
 ### Example
 
@@ -134,6 +136,77 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\GetPagedWarehousesResponse**](../Model/GetPagedWarehousesResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getPartnerWarehouses()`
+
+```php
+getPartnerWarehouses($business_id, $page_token, $limit, $get_partner_warehouses_request): \OpenAPI\Client\Model\GetPartnerWarehousesResponse
+```
+
+Список складов
+
+{% include notitle [access](../../_auto/method_scopes/getPartnerWarehouses.md) %}  Возвращает список складов кабинета и информацию о них.  Для каждого склада возвращается список моделей работы (FBS, DBS, Экспресс) и доступность API для каждой модели.  {% note warning \"Метод подходит, только если в кабинете нет групп складов\" %}  Метод возвращает только отдельные склады и не возвращает группы складов. Если в кабинете есть группы складов, используйте метод [POST v2/businesses/{businessId}/warehouses](../../reference/warehouses/getPagedWarehouses.md). [Что такое группы складов и зачем они нужны](https://yandex.ru/support/marketplace/assortment/operations/stocks.html#unified-stocks).  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getPartnerWarehouses.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\WarehousesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
+$limit = 15; // int | {{ limit-param-description }}
+$get_partner_warehouses_request = new \OpenAPI\Client\Model\GetPartnerWarehousesRequest(); // \OpenAPI\Client\Model\GetPartnerWarehousesRequest
+
+try {
+    $result = $apiInstance->getPartnerWarehouses($business_id, $page_token, $limit, $get_partner_warehouses_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WarehousesApi->getPartnerWarehouses: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
+| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 15] |
+| **get_partner_warehouses_request** | [**\OpenAPI\Client\Model\GetPartnerWarehousesRequest**](../Model/GetPartnerWarehousesRequest.md)|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetPartnerWarehousesResponse**](../Model/GetPartnerWarehousesResponse.md)
 
 ### Authorization
 
@@ -207,6 +280,73 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateWarehouseModelStatus()`
+
+```php
+updateWarehouseModelStatus($business_id, $update_warehouse_model_status_request): \OpenAPI\Client\Model\UpdateWarehouseModelStatusResponse
+```
+
+Включение/выключение модели работы склада
+
+{% include notitle [access](../../_auto/method_scopes/updateWarehouseModelStatus.md) %}  Отключает или включает модель работы (FBS, DBS или Экспресс) для указанного склада.  После отключения модели товары, которые работают по ней на данном складе, скрываются через 15 минут. После включения они возвращаются на витрину через 15 минут, а если модель была выключена 30 дней или дольше — через 4 часа.  {% include notitle [limit](../../_auto/method_limits/updateWarehouseModelStatus.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\WarehousesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$update_warehouse_model_status_request = new \OpenAPI\Client\Model\UpdateWarehouseModelStatusRequest(); // \OpenAPI\Client\Model\UpdateWarehouseModelStatusRequest
+
+try {
+    $result = $apiInstance->updateWarehouseModelStatus($business_id, $update_warehouse_model_status_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WarehousesApi->updateWarehouseModelStatus: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **update_warehouse_model_status_request** | [**\OpenAPI\Client\Model\UpdateWarehouseModelStatusRequest**](../Model/UpdateWarehouseModelStatusRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\UpdateWarehouseModelStatusResponse**](../Model/UpdateWarehouseModelStatusResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

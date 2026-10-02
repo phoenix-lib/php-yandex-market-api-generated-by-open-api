@@ -60,7 +60,8 @@ class UpdateOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'delivery_interval' => '\OpenAPI\Client\Model\DeliveryIntervalsUpdateOptionDTO',
-        'customer' => '\OpenAPI\Client\Model\CustomerDTO'
+        'customer' => '\OpenAPI\Client\Model\CustomerDTO',
+        'extend_storage_period' => 'bool'
     ];
 
     /**
@@ -73,7 +74,8 @@ class UpdateOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => 'int64',
         'delivery_interval' => null,
-        'customer' => null
+        'customer' => null,
+        'extend_storage_period' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class UpdateOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'delivery_interval' => false,
-        'customer' => false
+        'customer' => false,
+        'extend_storage_period' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class UpdateOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'delivery_interval' => 'deliveryInterval',
-        'customer' => 'customer'
+        'customer' => 'customer',
+        'extend_storage_period' => 'extendStoragePeriod'
     ];
 
     /**
@@ -186,7 +190,8 @@ class UpdateOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'delivery_interval' => 'setDeliveryInterval',
-        'customer' => 'setCustomer'
+        'customer' => 'setCustomer',
+        'extend_storage_period' => 'setExtendStoragePeriod'
     ];
 
     /**
@@ -197,7 +202,8 @@ class UpdateOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'delivery_interval' => 'getDeliveryInterval',
-        'customer' => 'getCustomer'
+        'customer' => 'getCustomer',
+        'extend_storage_period' => 'getExtendStoragePeriod'
     ];
 
     /**
@@ -260,6 +266,7 @@ class UpdateOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('delivery_interval', $data ?? [], null);
         $this->setIfExists('customer', $data ?? [], null);
+        $this->setIfExists('extend_storage_period', $data ?? [], null);
     }
 
     /**
@@ -384,6 +391,33 @@ class UpdateOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable customer cannot be null');
         }
         $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets extend_storage_period
+     *
+     * @return bool|null
+     */
+    public function getExtendStoragePeriod()
+    {
+        return $this->container['extend_storage_period'];
+    }
+
+    /**
+     * Sets extend_storage_period
+     *
+     * @param bool|null $extend_storage_period Продлить срок хранения заказа в пункте выдачи.
+     *
+     * @return self
+     */
+    public function setExtendStoragePeriod($extend_storage_period)
+    {
+        if (is_null($extend_storage_period)) {
+            throw new \InvalidArgumentException('non-nullable extend_storage_period cannot be null');
+        }
+        $this->container['extend_storage_period'] = $extend_storage_period;
 
         return $this;
     }

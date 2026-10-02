@@ -33,7 +33,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * OrdersStatsCommissionType Class Doc Comment
  *
  * @category Class
- * @description Услуга:  * &#x60;FEE&#x60; — размещение товара на Маркете. * &#x60;FULFILLMENT&#x60; — складская обработка. Не возвращается с 1 января 2024 года. * &#x60;LOYALTY_PARTICIPATION_FEE&#x60; — участие в программе лояльности и отзывы за баллы. * &#x60;AUCTION_PROMOTION&#x60; — буст продаж с оплатой за продажи. * &#x60;INSTALLMENT&#x60; — рассрочка. Не возвращается с 24 февраля 2022 года. * &#x60;DELIVERY_TO_CUSTOMER&#x60; — доставка покупателю (FBY, FBS). Для DBS и Экспресс — если заказ возвращается через логистику Маркета. * &#x60;EXPRESS_DELIVERY_TO_CUSTOMER&#x60; — экспресс-доставка покупателю (Экспресс). * &#x60;AGENCY&#x60; — прием платежа покупателя. * &#x60;PAYMENT_TRANSFER&#x60; — перевод платежа покупателя. * &#x60;RETURNED_ORDERS_STORAGE&#x60; — хранение невыкупов и возвратов (FBS). Для DBS и Экспресс — если заказ возвращается через логистику Маркета. * &#x60;SORTING&#x60; — обработка заказа (FBS). * &#x60;INTAKE_SORTING&#x60; — организация забора заказов со склада продавца (FBS). * &#x60;RETURN_PROCESSING&#x60; — обработка заказов на складе (FBS). Для DBS и Экспресс — если заказ возвращается через логистику Маркета. * &#x60;ILLIQUID_GOODS_SALE&#x60; — вознаграждение за продажу невывезенных товаров. * &#x60;CROSSREGIONAL_DELIVERY&#x60; - доставка средней мили. * &#x60;FULFILLMENT_WITHDRAW&#x60; - вывоз со склада. * &#x60;ITEM_BOOKING&#x60; - бронирование товара (только для продавцов Market Yandex Go).
+ * @description Услуга:  * &#x60;FEE&#x60; — размещение товара на Маркете. * &#x60;FULFILLMENT&#x60; — складская обработка. Не возвращается с 1 января 2024 года. * &#x60;LOYALTY_PARTICIPATION_FEE&#x60; — участие в программе лояльности и отзывы за баллы. * &#x60;AUCTION_PROMOTION&#x60; — буст продаж с оплатой за продажи. * &#x60;INSTALLMENT&#x60; — рассрочка. Не возвращается с 24 февраля 2022 года. * &#x60;DELIVERY_TO_CUSTOMER&#x60; — доставка покупателю (FBY, FBS). Для DBS и Экспресс — если заказ возвращается через логистику Маркета. * &#x60;EXPRESS_DELIVERY_TO_CUSTOMER&#x60; — экспресс-доставка покупателю (Экспресс). * &#x60;AGENCY&#x60; — прием платежа покупателя. * &#x60;AGENCY_COMMISSION_3PL&#x60; — услуги перевозки и ТЭО. * &#x60;PAYMENT_TRANSFER&#x60; — перевод платежа покупателя. * &#x60;RETURNED_ORDERS_STORAGE&#x60; — хранение невыкупов и возвратов (FBS). Для DBS и Экспресс — если заказ возвращается через логистику Маркета. * &#x60;SORTING&#x60; — обработка заказа (FBS). * &#x60;INTAKE_SORTING&#x60; — организация забора заказов со склада продавца (FBS). * &#x60;RETURN_PROCESSING&#x60; — обработка заказов на складе (FBS). Для DBS и Экспресс — если заказ возвращается через логистику Маркета. * &#x60;ILLIQUID_GOODS_SALE&#x60; — вознаграждение за продажу невывезенных товаров. * &#x60;CROSSREGIONAL_DELIVERY&#x60; - доставка средней мили. * &#x60;FULFILLMENT_WITHDRAW&#x60; - вывоз со склада. * &#x60;ITEM_BOOKING&#x60; - бронирование товара (только для продавцов Market Yandex Go).
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -58,6 +58,8 @@ class OrdersStatsCommissionType
     public const EXPRESS_DELIVERY_TO_CUSTOMER = 'EXPRESS_DELIVERY_TO_CUSTOMER';
 
     public const AGENCY = 'AGENCY';
+
+    public const AGENCY_COMMISSION_3_PL = 'AGENCY_COMMISSION_3PL';
 
     public const PAYMENT_TRANSFER = 'PAYMENT_TRANSFER';
 
@@ -92,6 +94,7 @@ class OrdersStatsCommissionType
             self::DELIVERY_TO_CUSTOMER,
             self::EXPRESS_DELIVERY_TO_CUSTOMER,
             self::AGENCY,
+            self::AGENCY_COMMISSION_3_PL,
             self::PAYMENT_TRANSFER,
             self::RETURNED_ORDERS_STORAGE,
             self::SORTING,
