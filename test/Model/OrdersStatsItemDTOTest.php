@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * OrdersStatsItemDTOTest Class Doc Comment
  *
  * @category    Class
- * @description Список товаров в заказе после возможных изменений.  В ходе обработки заказа Маркет может удалить из него единицы товаров — при проблемах на складе или по инициативе пользователя.  * Если из заказа удалены все единицы товара, его не будет в списке &#x60;items&#x60; — только в списке &#x60;initialItems&#x60;.  * Если в заказе осталась хотя бы одна единица товара, он будет и в списке &#x60;items&#x60; (с уменьшенным количеством единиц &#x60;count&#x60;), и в списке &#x60;initialItems&#x60; (с первоначальным количеством единиц &#x60;initialCount&#x60;).
+ * @description Список товаров в заказе после возможных изменений.  Услуги установки, сборки и утилизации по модели DBS возвращаются отдельными позициями. Позицию услуги можно отличить от товара по наличию &#x60;shopServiceType&#x60;; ее &#x60;offerName&#x60; — &#x60;Установка&#x60;, &#x60;Сборка&#x60; или &#x60;Утилизация&#x60;. У одного товара может быть несколько позиций услуг.  Значения &#x60;marketSku&#x60; и &#x60;shopSku&#x60; позиции услуги совпадают со значениями товара, для которого она заказана. При подсчете количества товаров исключайте позиции с &#x60;shopServiceType&#x60;.  Отмена услуг отражается по тем же правилам, что и удаление товаров: при частичной отмене позиция есть в &#x60;items&#x60; с уменьшенным &#x60;count&#x60; и в &#x60;initialItems&#x60; с первоначальным &#x60;initialCount&#x60;, при полной — только в &#x60;initialItems&#x60;.  В ходе обработки заказа Маркет может удалить из него единицы товаров — при проблемах на складе или по инициативе пользователя.  * Если из заказа удалены все единицы товара, его не будет в списке &#x60;items&#x60; — только в списке &#x60;initialItems&#x60;.  * Если в заказе осталась хотя бы одна единица товара, он будет и в списке &#x60;items&#x60; (с уменьшенным количеством единиц &#x60;count&#x60;), и в списке &#x60;initialItems&#x60; (с первоначальным количеством единиц &#x60;initialCount&#x60;).
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -83,6 +83,15 @@ class OrdersStatsItemDTOTest extends TestCase
      * Test attribute "offer_name"
      */
     public function testPropertyOfferName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shop_service_type"
+     */
+    public function testPropertyShopServiceType()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

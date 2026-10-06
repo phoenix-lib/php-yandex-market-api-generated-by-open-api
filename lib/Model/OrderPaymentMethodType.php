@@ -33,7 +33,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * OrderPaymentMethodType Class Doc Comment
  *
  * @category Class
- * @description Способ оплаты заказа:  * Значения, если выбрана оплата при оформлении заказа (&#x60;\&quot;paymentType\&quot;: \&quot;PREPAID\&quot;&#x60;):    * &#x60;YANDEX&#x60; — банковской картой.    * &#x60;APPLE_PAY&#x60; — Apple Pay (не используется).    * &#x60;GOOGLE_PAY&#x60; — Google Pay (не используется).    * &#x60;CREDIT&#x60; — в кредит.    * &#x60;TINKOFF_CREDIT&#x60; — в кредит в Тинькофф Банке.    * &#x60;TINKOFF_INSTALLMENTS&#x60; — рассрочка в Тинькофф Банке.    * &#x60;EXTERNAL_CERTIFICATE&#x60; — подарочным сертификатом (например, из приложения «Сбербанк Онлайн»).    * &#x60;SBP&#x60; — через систему быстрых платежей.    * &#x60;B2B_ACCOUNT_PREPAYMENT&#x60; — заказ оплачивает организация.    * &#x60;MICROCREDIT&#x60; - Сплит на основе МКК (Микрокредитной компании).   * Значения, если выбрана оплата при получении заказа (&#x60;\&quot;paymentType\&quot;: \&quot;POSTPAID\&quot;&#x60;):    * &#x60;CARD_ON_DELIVERY&#x60; — банковской картой.    * &#x60;BOUND_CARD_ON_DELIVERY&#x60; — привязанной картой при получении.    * &#x60;BNPL_BANK_ON_DELIVERY&#x60; — супер Сплитом.    * &#x60;BNPL_ON_DELIVERY&#x60; — Сплитом.    * &#x60;BNPL_TBYB&#x60; - Оплата после доставки на основе Сплита.    * &#x60;CASH_ON_DELIVERY&#x60; — наличными.    * &#x60;B2B_ACCOUNT_POSTPAYMENT&#x60; — заказ оплачивает организация после доставки.  * &#x60;UNKNOWN&#x60; — неизвестный тип.  Значение по умолчанию: &#x60;CASH_ON_DELIVERY&#x60;.
+ * @description Способ оплаты заказа:  * Значения, если выбрана оплата при оформлении заказа (&#x60;\&quot;paymentType\&quot;: \&quot;PREPAID\&quot;&#x60;):    * &#x60;YANDEX&#x60; — банковской картой.    * &#x60;APPLE_PAY&#x60; — Apple Pay (не используется).    * &#x60;GOOGLE_PAY&#x60; — Google Pay (не используется).    * &#x60;CREDIT&#x60; — в кредит.    * &#x60;TINKOFF_CREDIT&#x60; — в кредит в Тинькофф Банке.    * &#x60;TINKOFF_INSTALLMENTS&#x60; — рассрочка в Тинькофф Банке.    * &#x60;EXTERNAL_CERTIFICATE&#x60; — подарочным сертификатом (например, из приложения «Сбербанк Онлайн»).    * &#x60;SBP&#x60; — через систему быстрых платежей.    * &#x60;B2B_ACCOUNT_PREPAYMENT&#x60; — заказ оплачивает организация.    * &#x60;MICROCREDIT&#x60; - Сплит на основе МКК (Микрокредитной компании).    * &#x60;BNPL_TBC&#x60; - BNPL через внешний банк TBC.    * &#x60;DIGITAL_RUBLE&#x60; - Цифровой рубль.   * Значения, если выбрана оплата при получении заказа (&#x60;\&quot;paymentType\&quot;: \&quot;POSTPAID\&quot;&#x60;):    * &#x60;CARD_ON_DELIVERY&#x60; — банковской картой.    * &#x60;BOUND_CARD_ON_DELIVERY&#x60; — привязанной картой при получении.    * &#x60;BNPL_BANK_ON_DELIVERY&#x60; — супер Сплитом.    * &#x60;BNPL_ON_DELIVERY&#x60; — Сплитом.    * &#x60;BNPL_TBYB&#x60; - Оплата после доставки на основе Сплита.    * &#x60;SBP_ON_DELIVERY&#x60; — постоплата через СБП.    * &#x60;CASH_ON_DELIVERY&#x60; — наличными.    * &#x60;B2B_ACCOUNT_POSTPAYMENT&#x60; — заказ оплачивает организация после доставки.  * &#x60;UNKNOWN&#x60; — неизвестный тип.  Значение по умолчанию: &#x60;CASH_ON_DELIVERY&#x60;.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -67,6 +67,8 @@ class OrderPaymentMethodType
 
     public const SBP = 'SBP';
 
+    public const SBP_ON_DELIVERY = 'SBP_ON_DELIVERY';
+
     public const TINKOFF_INSTALLMENTS = 'TINKOFF_INSTALLMENTS';
 
     public const B2_B_ACCOUNT_PREPAYMENT = 'B2B_ACCOUNT_PREPAYMENT';
@@ -76,6 +78,10 @@ class OrderPaymentMethodType
     public const MICROCREDIT = 'MICROCREDIT';
 
     public const BNPL_TBYB = 'BNPL_TBYB';
+
+    public const BNPL_TBC = 'BNPL_TBC';
+
+    public const DIGITAL_RUBLE = 'DIGITAL_RUBLE';
 
     public const UNKNOWN = 'UNKNOWN';
 
@@ -98,11 +104,14 @@ class OrderPaymentMethodType
             self::GOOGLE_PAY,
             self::TINKOFF_CREDIT,
             self::SBP,
+            self::SBP_ON_DELIVERY,
             self::TINKOFF_INSTALLMENTS,
             self::B2_B_ACCOUNT_PREPAYMENT,
             self::B2_B_ACCOUNT_POSTPAYMENT,
             self::MICROCREDIT,
             self::BNPL_TBYB,
+            self::BNPL_TBC,
+            self::DIGITAL_RUBLE,
             self::UNKNOWN
         ];
     }

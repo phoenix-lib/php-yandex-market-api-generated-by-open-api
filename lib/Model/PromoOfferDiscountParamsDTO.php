@@ -60,7 +60,8 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPITypes = [
         'price' => 'int',
         'promo_price' => 'int',
-        'max_promo_price' => 'int'
+        'max_promo_price' => 'int',
+        'best_price_levels' => '\OpenAPI\Client\Model\PromoOfferBestPriceLevelsDTO'
     ];
 
     /**
@@ -73,7 +74,8 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
     protected static $openAPIFormats = [
         'price' => 'int64',
         'promo_price' => 'int64',
-        'max_promo_price' => 'int64'
+        'max_promo_price' => 'int64',
+        'best_price_levels' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
     protected static array $openAPINullables = [
         'price' => false,
         'promo_price' => false,
-        'max_promo_price' => false
+        'max_promo_price' => false,
+        'best_price_levels' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
     protected static $attributeMap = [
         'price' => 'price',
         'promo_price' => 'promoPrice',
-        'max_promo_price' => 'maxPromoPrice'
+        'max_promo_price' => 'maxPromoPrice',
+        'best_price_levels' => 'bestPriceLevels'
     ];
 
     /**
@@ -186,7 +190,8 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
     protected static $setters = [
         'price' => 'setPrice',
         'promo_price' => 'setPromoPrice',
-        'max_promo_price' => 'setMaxPromoPrice'
+        'max_promo_price' => 'setMaxPromoPrice',
+        'best_price_levels' => 'setBestPriceLevels'
     ];
 
     /**
@@ -197,7 +202,8 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
     protected static $getters = [
         'price' => 'getPrice',
         'promo_price' => 'getPromoPrice',
-        'max_promo_price' => 'getMaxPromoPrice'
+        'max_promo_price' => 'getMaxPromoPrice',
+        'best_price_levels' => 'getBestPriceLevels'
     ];
 
     /**
@@ -260,6 +266,7 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('promo_price', $data ?? [], null);
         $this->setIfExists('max_promo_price', $data ?? [], null);
+        $this->setIfExists('best_price_levels', $data ?? [], null);
     }
 
     /**
@@ -371,7 +378,7 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets max_promo_price
      *
-     * @param int|null $max_promo_price Максимально возможная цена для участия в акции. Если значение не заполнено, ограничение отсутствует.  Указывается в рублях.
+     * @param int|null $max_promo_price Максимально возможная цена для участия в акции. Если значение не заполнено, ограничение отсутствует.  Указывается в рублях.  Для акции «Бестселлеры Маркета» пороги по уровням возвращаются в параметре `bestPriceLevels`.
      *
      * @return self
      */
@@ -381,6 +388,33 @@ class PromoOfferDiscountParamsDTO implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable max_promo_price cannot be null');
         }
         $this->container['max_promo_price'] = $max_promo_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets best_price_levels
+     *
+     * @return \OpenAPI\Client\Model\PromoOfferBestPriceLevelsDTO|null
+     */
+    public function getBestPriceLevels()
+    {
+        return $this->container['best_price_levels'];
+    }
+
+    /**
+     * Sets best_price_levels
+     *
+     * @param \OpenAPI\Client\Model\PromoOfferBestPriceLevelsDTO|null $best_price_levels best_price_levels
+     *
+     * @return self
+     */
+    public function setBestPriceLevels($best_price_levels)
+    {
+        if (is_null($best_price_levels)) {
+            throw new \InvalidArgumentException('non-nullable best_price_levels cannot be null');
+        }
+        $this->container['best_price_levels'] = $best_price_levels;
 
         return $this;
     }

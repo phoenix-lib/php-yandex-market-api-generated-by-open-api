@@ -33,7 +33,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * OperationType Class Doc Comment
  *
  * @category Class
- * @description Тип операции:  * &#x60;ORDER_RECIPIENT_UPDATE&#x60; — изменение данных получателя.  * &#x60;ORDER_DELIVERY_INTERVAL_UPDATE&#x60; — изменение интервала дат доставки.  * &#x60;ORDER_STATUS_UPDATE&#x60; — обновление статуса заказа для его отмены.  * &#x60;RETURN_CANCELLATION&#x60; — отмена возврата.
+ * @description Тип операции:  * &#x60;ORDER_RECIPIENT_UPDATE&#x60; — изменение данных получателя.  * &#x60;ORDER_DELIVERY_INTERVAL_UPDATE&#x60; — изменение интервала дат доставки.  * &#x60;ORDER_STORAGE_LIMIT_DATE_UPDATE&#x60; — продление срока хранения заказа.  * &#x60;ORDER_STATUS_UPDATE&#x60; — обновление статуса заказа для его отмены.  * &#x60;RETURN_CANCELLATION&#x60; — отмена возврата.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -46,6 +46,8 @@ class OperationType
     public const ORDER_RECIPIENT_UPDATE = 'ORDER_RECIPIENT_UPDATE';
 
     public const ORDER_DELIVERY_INTERVAL_UPDATE = 'ORDER_DELIVERY_INTERVAL_UPDATE';
+
+    public const ORDER_STORAGE_LIMIT_DATE_UPDATE = 'ORDER_STORAGE_LIMIT_DATE_UPDATE';
 
     public const ORDER_STATUS_UPDATE = 'ORDER_STATUS_UPDATE';
 
@@ -60,6 +62,7 @@ class OperationType
         return [
             self::ORDER_RECIPIENT_UPDATE,
             self::ORDER_DELIVERY_INTERVAL_UPDATE,
+            self::ORDER_STORAGE_LIMIT_DATE_UPDATE,
             self::ORDER_STATUS_UPDATE,
             self::RETURN_CANCELLATION
         ];

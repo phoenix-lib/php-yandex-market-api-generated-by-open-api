@@ -470,8 +470,8 @@ $shipment_statuses = [READY_FOR_PICKUP, IN_TRANSIT]; // \OpenAPI\Client\Model\Re
 $type = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReturnType(); // \OpenAPI\Client\Model\ReturnType | Тип заказа для фильтрации:  * `UNREDEEMED` — невыкуп.  * `RETURN` — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты.
 $from_date = 2022-10-31; // \DateTime | Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
 $to_date = 2022-11-30; // \DateTime | Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
-$from_date2 = 2022-10-31; // \DateTime | {% note warning \"Вместо него используйте `fromDate`.\" %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления.
-$to_date2 = 2022-11-30; // \DateTime | {% note warning \"Вместо него используйте `toDate`.\" %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления.
+$from_date2 = 2022-10-31; // \DateTime | {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `fromDate`.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления.
+$to_date2 = 2022-11-30; // \DateTime | {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `toDate`.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления.
 
 try {
     $result = $apiInstance->getReturns($campaign_id, $page_token, $limit, $order_ids, $statuses, $shipment_statuses, $type, $from_date, $to_date, $from_date2, $to_date2);
@@ -494,8 +494,8 @@ try {
 | **type** | [**\OpenAPI\Client\Model\ReturnType**](../Model/.md)| Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. | [optional] |
 | **from_date** | **\DateTime**| Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
 | **to_date** | **\DateTime**| Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
-| **from_date2** | **\DateTime**| {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
-| **to_date2** | **\DateTime**| {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
+| **from_date2** | **\DateTime**| {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
+| **to_date2** | **\DateTime**| {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
 
 ### Return type
 

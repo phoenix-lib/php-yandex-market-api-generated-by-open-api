@@ -414,7 +414,7 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets items
      *
-     * @param \OpenAPI\Client\Model\OrdersStatsItemDTO[] $items Список товаров в заказе после возможных изменений.  Информация о доставке заказа добавляется отдельным элементом в массиве `items`— параметр `offerName` со значением `Доставка`.
+     * @param \OpenAPI\Client\Model\OrdersStatsItemDTO[] $items Список товаров и услуг магазина в заказе после возможных изменений.  Услуги установки, сборки и утилизации по модели DBS возвращаются отдельными позициями с `shopServiceType`.  Информация о доставке заказа добавляется отдельным элементом в массиве `items`— параметр `offerName` со значением `Доставка`.
      *
      * @return self
      */
@@ -738,7 +738,7 @@ class OrdersStatsOrderDTO implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets initial_items
      *
-     * @param \OpenAPI\Client\Model\OrdersStatsItemDTO[]|null $initial_items Список товаров в заказе.  Возвращается, только если было изменение количества товаров.
+     * @param \OpenAPI\Client\Model\OrdersStatsItemDTO[]|null $initial_items Список товаров и услуг магазина в заказе с первоначальным количеством.  Возвращается, только если было изменение количества товаров или услуг магазина.
      *
      * @return self
      */
