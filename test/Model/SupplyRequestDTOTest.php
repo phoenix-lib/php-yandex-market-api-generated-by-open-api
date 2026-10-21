@@ -168,4 +168,13 @@ class SupplyRequestDTOTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "etrn_identifier"
+     */
+    public function testPropertyEtrnIdentifier()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

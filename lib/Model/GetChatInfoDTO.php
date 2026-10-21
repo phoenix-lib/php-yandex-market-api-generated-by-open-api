@@ -539,7 +539,7 @@ class GetChatInfoDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets order_id
      *
-     * @param int|null $order_id Идентификатор заказа.
+     * @param int|null $order_id {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}  Вместо него используйте `context`.  {% endnote %}  Идентификатор заказа.
      *
      * @return self
      * @deprecated

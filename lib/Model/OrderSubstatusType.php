@@ -291,6 +291,8 @@ class OrderSubstatusType
 
     public const PURCHASE_GROUP_THRESHOLD_NOT_REACHED_CANCELLED = 'PURCHASE_GROUP_THRESHOLD_NOT_REACHED_CANCELLED';
 
+    public const COURIER_DELIVERY_POSTPAID_FAILED = 'COURIER_DELIVERY_POSTPAID_FAILED';
+
     public const UNKNOWN = 'UNKNOWN';
 
     /**
@@ -424,6 +426,7 @@ class OrderSubstatusType
             self::AWAIT_USER_STEAM_FAST_URL,
             self::USER_IDENTIFICATION_MISMATCH,
             self::PURCHASE_GROUP_THRESHOLD_NOT_REACHED_CANCELLED,
+            self::COURIER_DELIVERY_POSTPAID_FAILED,
             self::UNKNOWN
         ];
     }

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**\OpenAPI\Client\Model\OrdersStatsItemDTO[]**](OrdersStatsItemDTO.md) | Список товаров в заказе после возможных изменений.  Информация о доставке заказа добавляется отдельным элементом в массиве &#x60;items&#x60;— параметр &#x60;offerName&#x60; со значением &#x60;Доставка&#x60;. |
+**items** | [**\OpenAPI\Client\Model\OrdersStatsItemDTO[]**](OrdersStatsItemDTO.md) | Список товаров и услуг магазина в заказе после возможных изменений.  Услуги установки, сборки и утилизации по модели DBS возвращаются отдельными позициями с &#x60;shopServiceType&#x60;.  Информация о доставке заказа добавляется отдельным элементом в массиве &#x60;items&#x60;— параметр &#x60;offerName&#x60; со значением &#x60;Доставка&#x60;. |
 **payments** | [**\OpenAPI\Client\Model\OrdersStatsPaymentDTO[]**](OrdersStatsPaymentDTO.md) | Информация о расчетах по заказу.  Возвращается пустым, если заказ:   * только начали обрабатывать (даже если он оплачен);   * отменили до момента передачи в доставку.  Окончательная информация о расчетах по заказу вернется после его финальной обработки (например, после перехода в статус &#x60;DELIVERED&#x60;). |
 **commissions** | [**\OpenAPI\Client\Model\OrdersStatsCommissionDTO[]**](OrdersStatsCommissionDTO.md) | Информация о стоимости услуг. |
 **currency** | [**\OpenAPI\Client\Model\CurrencyType**](CurrencyType.md) |  |
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **payment_type** | [**\OpenAPI\Client\Model\OrdersStatsOrderPaymentType**](OrdersStatsOrderPaymentType.md) |  | [optional]
 **fake** | **bool** | Тип заказа:  * &#x60;false&#x60; — настоящий заказ покупателя.  * &#x60;true&#x60; — [тестовый заказ](../../concepts/sandbox.md) Маркета. | [optional]
 **delivery_region** | [**\OpenAPI\Client\Model\OrdersStatsDeliveryRegionDTO**](OrdersStatsDeliveryRegionDTO.md) |  | [optional]
-**initial_items** | [**\OpenAPI\Client\Model\OrdersStatsItemDTO[]**](OrdersStatsItemDTO.md) | Список товаров в заказе.  Возвращается, только если было изменение количества товаров. | [optional]
+**initial_items** | [**\OpenAPI\Client\Model\OrdersStatsItemDTO[]**](OrdersStatsItemDTO.md) | Список товаров и услуг магазина в заказе с первоначальным количеством.  Возвращается, только если было изменение количества товаров или услуг магазина. | [optional]
 **subsidies** | [**\OpenAPI\Client\Model\OrdersStatsSubsidyDTO[]**](OrdersStatsSubsidyDTO.md) | Начисление баллов, которые используются для уменьшения стоимости размещения, и их списание в случае невыкупа или возврата. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
