@@ -337,7 +337,7 @@ class OrdersStatsCommissionDTO implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets actual
      *
-     * @param float|null $actual Сумма, которая была выставлена в момент создания заказа и которую нужно оплатить. Точность — два знака после запятой.
+     * @param float|null $actual Сумма начисления или корректировки.  Корректировки размещения услуг магазина (`SHOP_SERVICE_PLACEMENT`) возвращаются отдельными элементами и могут быть отрицательными.  Точность — два знака после запятой.
      *
      * @return self
      */

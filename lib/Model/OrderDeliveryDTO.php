@@ -609,7 +609,7 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом `POST cart`.
+     * @param string|null $id {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}     {% endnote %}  Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом `POST cart`.
      *
      * @return self
      * @deprecated
@@ -638,7 +638,7 @@ class OrderDeliveryDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price
      *
-     * @param float|null $price {% note warning \"Стоимость доставки смотрите в параметре `deliveryTotal`.\" %}     {% endnote %}  Стоимость доставки в валюте заказа.
+     * @param float|null $price {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Стоимость доставки смотрите в параметре `deliveryTotal`.  {% endnote %}  Стоимость доставки в валюте заказа.
      *
      * @return self
      * @deprecated

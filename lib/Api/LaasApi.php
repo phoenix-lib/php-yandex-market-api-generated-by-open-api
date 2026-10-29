@@ -77,6 +77,9 @@ class LaasApi
         'cancelReturn' => [
             'application/json',
         ],
+        'createDocuments' => [
+            'application/json',
+        ],
         'createOrder' => [
             'application/json',
         ],
@@ -84,6 +87,9 @@ class LaasApi
             'application/json',
         ],
         'deleteCampaignOffers' => [
+            'application/json',
+        ],
+        'deleteDocuments' => [
             'application/json',
         ],
         'deleteOffers' => [
@@ -147,6 +153,9 @@ class LaasApi
             'application/json',
         ],
         'getDeliveryOptions' => [
+            'application/json',
+        ],
+        'getDocuments' => [
             'application/json',
         ],
         'getFulfillmentWarehouses' => [
@@ -219,6 +228,9 @@ class LaasApi
             'application/json',
         ],
         'updateCampaignOffers' => [
+            'application/json',
+        ],
+        'updateDocuments' => [
             'application/json',
         ],
         'updateOfferContent' => [
@@ -600,6 +612,375 @@ class LaasApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($cancel_return_request));
             } else {
                 $httpBody = $cancel_return_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Api-Key');
+        if ($apiKey !== null) {
+            $headers['Api-Key'] = $apiKey;
+        }
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createDocuments
+     *
+     * Создание документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\CreateDocumentsRequest $create_documents_request create_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDocuments'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\CreateDocumentsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     */
+    public function createDocuments($business_id, $create_documents_request, string $contentType = self::contentTypes['createDocuments'][0])
+    {
+        list($response) = $this->createDocumentsWithHttpInfo($business_id, $create_documents_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createDocumentsWithHttpInfo
+     *
+     * Создание документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\CreateDocumentsRequest $create_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDocuments'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\CreateDocumentsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createDocumentsWithHttpInfo($business_id, $create_documents_request, string $contentType = self::contentTypes['createDocuments'][0])
+    {
+        $request = $this->createDocumentsRequest($business_id, $create_documents_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\CreateDocumentsResponse',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 420:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenAPI\Client\Model\CreateDocumentsResponse',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\CreateDocumentsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 420:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createDocumentsAsync
+     *
+     * Создание документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\CreateDocumentsRequest $create_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createDocumentsAsync($business_id, $create_documents_request, string $contentType = self::contentTypes['createDocuments'][0])
+    {
+        return $this->createDocumentsAsyncWithHttpInfo($business_id, $create_documents_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createDocumentsAsyncWithHttpInfo
+     *
+     * Создание документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\CreateDocumentsRequest $create_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createDocumentsAsyncWithHttpInfo($business_id, $create_documents_request, string $contentType = self::contentTypes['createDocuments'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\CreateDocumentsResponse';
+        $request = $this->createDocumentsRequest($business_id, $create_documents_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createDocuments'
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\CreateDocumentsRequest $create_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createDocumentsRequest($business_id, $create_documents_request, string $contentType = self::contentTypes['createDocuments'][0])
+    {
+
+        // verify the required parameter 'business_id' is set
+        if ($business_id === null || (is_array($business_id) && count($business_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $business_id when calling createDocuments'
+            );
+        }
+        if ($business_id < 1) {
+            throw new \InvalidArgumentException('invalid value for "$business_id" when calling LaasApi.createDocuments, must be bigger than or equal to 1.');
+        }
+        
+        // verify the required parameter 'create_documents_request' is set
+        if ($create_documents_request === null || (is_array($create_documents_request) && count($create_documents_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $create_documents_request when calling createDocuments'
+            );
+        }
+
+
+        $resourcePath = '/v1/businesses/{businessId}/offers/documents/create';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($business_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'businessId' . '}',
+                ObjectSerializer::toPathValue($business_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($create_documents_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($create_documents_request));
+            } else {
+                $httpBody = $create_documents_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1735,6 +2116,375 @@ class LaasApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($delete_campaign_offers_request));
             } else {
                 $httpBody = $delete_campaign_offers_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Api-Key');
+        if ($apiKey !== null) {
+            $headers['Api-Key'] = $apiKey;
+        }
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation deleteDocuments
+     *
+     * Удаление документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\DeleteDocumentsRequest $delete_documents_request delete_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocuments'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\EmptyApiResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     */
+    public function deleteDocuments($business_id, $delete_documents_request, string $contentType = self::contentTypes['deleteDocuments'][0])
+    {
+        list($response) = $this->deleteDocumentsWithHttpInfo($business_id, $delete_documents_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation deleteDocumentsWithHttpInfo
+     *
+     * Удаление документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\DeleteDocumentsRequest $delete_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocuments'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\EmptyApiResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteDocumentsWithHttpInfo($business_id, $delete_documents_request, string $contentType = self::contentTypes['deleteDocuments'][0])
+    {
+        $request = $this->deleteDocumentsRequest($business_id, $delete_documents_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\EmptyApiResponse',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 420:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenAPI\Client\Model\EmptyApiResponse',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\EmptyApiResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 420:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteDocumentsAsync
+     *
+     * Удаление документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\DeleteDocumentsRequest $delete_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteDocumentsAsync($business_id, $delete_documents_request, string $contentType = self::contentTypes['deleteDocuments'][0])
+    {
+        return $this->deleteDocumentsAsyncWithHttpInfo($business_id, $delete_documents_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteDocumentsAsyncWithHttpInfo
+     *
+     * Удаление документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\DeleteDocumentsRequest $delete_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteDocumentsAsyncWithHttpInfo($business_id, $delete_documents_request, string $contentType = self::contentTypes['deleteDocuments'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\EmptyApiResponse';
+        $request = $this->deleteDocumentsRequest($business_id, $delete_documents_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteDocuments'
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\DeleteDocumentsRequest $delete_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deleteDocumentsRequest($business_id, $delete_documents_request, string $contentType = self::contentTypes['deleteDocuments'][0])
+    {
+
+        // verify the required parameter 'business_id' is set
+        if ($business_id === null || (is_array($business_id) && count($business_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $business_id when calling deleteDocuments'
+            );
+        }
+        if ($business_id < 1) {
+            throw new \InvalidArgumentException('invalid value for "$business_id" when calling LaasApi.deleteDocuments, must be bigger than or equal to 1.');
+        }
+        
+        // verify the required parameter 'delete_documents_request' is set
+        if ($delete_documents_request === null || (is_array($delete_documents_request) && count($delete_documents_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $delete_documents_request when calling deleteDocuments'
+            );
+        }
+
+
+        $resourcePath = '/v1/businesses/{businessId}/offers/documents/delete';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($business_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'businessId' . '}',
+                ObjectSerializer::toPathValue($business_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($delete_documents_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($delete_documents_request));
+            } else {
+                $httpBody = $delete_documents_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6294,7 +7044,7 @@ class LaasApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GetBusinessSettingsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     * @return \OpenAPI\Client\Model\GetBusinessSettingsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
     public function getBusinessSettings($business_id, string $contentType = self::contentTypes['getBusinessSettings'][0])
     {
@@ -6312,7 +7062,7 @@ class LaasApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GetBusinessSettingsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\GetBusinessSettingsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBusinessSettingsWithHttpInfo($business_id, string $contentType = self::contentTypes['getBusinessSettings'][0])
     {
@@ -6363,12 +7113,6 @@ class LaasApi
                 case 403:
                     return $this->handleResponseWithDataType(
                         '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 404:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
                         $request,
                         $response,
                     );
@@ -6436,14 +7180,6 @@ class LaasApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7802,8 +8538,8 @@ class LaasApi
      *
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaigns'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -7823,8 +8559,8 @@ class LaasApi
      *
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaigns'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -7995,8 +8731,8 @@ class LaasApi
      *
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaigns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8019,8 +8755,8 @@ class LaasApi
      *
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaigns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8072,8 +8808,8 @@ class LaasApi
      *
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getCampaigns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -9667,6 +10403,411 @@ class LaasApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_delivery_options_request));
             } else {
                 $httpBody = $get_delivery_options_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Api-Key');
+        if ($apiKey !== null) {
+            $headers['Api-Key'] = $apiKey;
+        }
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getDocuments
+     *
+     * Получение документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\GetDocumentsRequest $get_documents_request get_documents_request (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 50)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocuments'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\GetDocumentsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     */
+    public function getDocuments($business_id, $get_documents_request, $page_token = null, $limit = 50, string $contentType = self::contentTypes['getDocuments'][0])
+    {
+        list($response) = $this->getDocumentsWithHttpInfo($business_id, $get_documents_request, $page_token, $limit, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getDocumentsWithHttpInfo
+     *
+     * Получение документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\GetDocumentsRequest $get_documents_request (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 50)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocuments'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\GetDocumentsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getDocumentsWithHttpInfo($business_id, $get_documents_request, $page_token = null, $limit = 50, string $contentType = self::contentTypes['getDocuments'][0])
+    {
+        $request = $this->getDocumentsRequest($business_id, $get_documents_request, $page_token, $limit, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\GetDocumentsResponse',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 420:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenAPI\Client\Model\GetDocumentsResponse',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\GetDocumentsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 420:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getDocumentsAsync
+     *
+     * Получение документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\GetDocumentsRequest $get_documents_request (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 50)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getDocumentsAsync($business_id, $get_documents_request, $page_token = null, $limit = 50, string $contentType = self::contentTypes['getDocuments'][0])
+    {
+        return $this->getDocumentsAsyncWithHttpInfo($business_id, $get_documents_request, $page_token, $limit, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getDocumentsAsyncWithHttpInfo
+     *
+     * Получение документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\GetDocumentsRequest $get_documents_request (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 50)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getDocumentsAsyncWithHttpInfo($business_id, $get_documents_request, $page_token = null, $limit = 50, string $contentType = self::contentTypes['getDocuments'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\GetDocumentsResponse';
+        $request = $this->getDocumentsRequest($business_id, $get_documents_request, $page_token, $limit, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getDocuments'
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\GetDocumentsRequest $get_documents_request (required)
+     * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
+     * @param  int|null $limit {{ limit-param-description }} (optional, default to 50)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getDocumentsRequest($business_id, $get_documents_request, $page_token = null, $limit = 50, string $contentType = self::contentTypes['getDocuments'][0])
+    {
+
+        // verify the required parameter 'business_id' is set
+        if ($business_id === null || (is_array($business_id) && count($business_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $business_id when calling getDocuments'
+            );
+        }
+        if ($business_id < 1) {
+            throw new \InvalidArgumentException('invalid value for "$business_id" when calling LaasApi.getDocuments, must be bigger than or equal to 1.');
+        }
+        
+        // verify the required parameter 'get_documents_request' is set
+        if ($get_documents_request === null || (is_array($get_documents_request) && count($get_documents_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $get_documents_request when calling getDocuments'
+            );
+        }
+
+
+        if ($limit !== null && $limit > 100) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling LaasApi.getDocuments, must be smaller than or equal to 100.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling LaasApi.getDocuments, must be bigger than or equal to 1.');
+        }
+        
+
+        $resourcePath = '/v1/businesses/{businessId}/offers/documents';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_token,
+            'pageToken', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($business_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'businessId' . '}',
+                ObjectSerializer::toPathValue($business_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($get_documents_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($get_documents_request));
+            } else {
+                $httpBody = $get_documents_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -12841,8 +13982,8 @@ class LaasApi
      * @param  bool|null $only_waiting_for_cancellation_approve **Только для модели DBS**  Фильтр для получения заказов, по которым был запрос на отмену.  При значении &#x60;true&#x60; возвращаются только заказы, которые находятся в статусе &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60; и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT v2/campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation). (optional, default to false)
      * @param  bool|null $only_estimated_delivery Фильтрация заказов с долгой доставкой (31-60 дней) по подтвержденной дате доставки:  * &#x60;true&#x60; — возвращаются только заказы с неподтвержденной датой доставки. * &#x60;false&#x60; — фильтрация не применяется. (optional, default to false)
      * @param  \OpenAPI\Client\Model\OrderBuyerType|null $buyer_type Фильтрация заказов по типу покупателя. (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrders'] to see the possible values for this operation
@@ -12879,8 +14020,8 @@ class LaasApi
      * @param  bool|null $only_waiting_for_cancellation_approve **Только для модели DBS**  Фильтр для получения заказов, по которым был запрос на отмену.  При значении &#x60;true&#x60; возвращаются только заказы, которые находятся в статусе &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60; и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT v2/campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation). (optional, default to false)
      * @param  bool|null $only_estimated_delivery Фильтрация заказов с долгой доставкой (31-60 дней) по подтвержденной дате доставки:  * &#x60;true&#x60; — возвращаются только заказы с неподтвержденной датой доставки. * &#x60;false&#x60; — фильтрация не применяется. (optional, default to false)
      * @param  \OpenAPI\Client\Model\OrderBuyerType|null $buyer_type Фильтрация заказов по типу покупателя. (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrders'] to see the possible values for this operation
@@ -13068,8 +14209,8 @@ class LaasApi
      * @param  bool|null $only_waiting_for_cancellation_approve **Только для модели DBS**  Фильтр для получения заказов, по которым был запрос на отмену.  При значении &#x60;true&#x60; возвращаются только заказы, которые находятся в статусе &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60; и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT v2/campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation). (optional, default to false)
      * @param  bool|null $only_estimated_delivery Фильтрация заказов с долгой доставкой (31-60 дней) по подтвержденной дате доставки:  * &#x60;true&#x60; — возвращаются только заказы с неподтвержденной датой доставки. * &#x60;false&#x60; — фильтрация не применяется. (optional, default to false)
      * @param  \OpenAPI\Client\Model\OrderBuyerType|null $buyer_type Фильтрация заказов по типу покупателя. (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrders'] to see the possible values for this operation
@@ -13109,8 +14250,8 @@ class LaasApi
      * @param  bool|null $only_waiting_for_cancellation_approve **Только для модели DBS**  Фильтр для получения заказов, по которым был запрос на отмену.  При значении &#x60;true&#x60; возвращаются только заказы, которые находятся в статусе &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60; и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT v2/campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation). (optional, default to false)
      * @param  bool|null $only_estimated_delivery Фильтрация заказов с долгой доставкой (31-60 дней) по подтвержденной дате доставки:  * &#x60;true&#x60; — возвращаются только заказы с неподтвержденной датой доставки. * &#x60;false&#x60; — фильтрация не применяется. (optional, default to false)
      * @param  \OpenAPI\Client\Model\OrderBuyerType|null $buyer_type Фильтрация заказов по типу покупателя. (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrders'] to see the possible values for this operation
@@ -13179,8 +14320,8 @@ class LaasApi
      * @param  bool|null $only_waiting_for_cancellation_approve **Только для модели DBS**  Фильтр для получения заказов, по которым был запрос на отмену.  При значении &#x60;true&#x60; возвращаются только заказы, которые находятся в статусе &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60; и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT v2/campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation). (optional, default to false)
      * @param  bool|null $only_estimated_delivery Фильтрация заказов с долгой доставкой (31-60 дней) по подтвержденной дате доставки:  * &#x60;true&#x60; — возвращаются только заказы с неподтвержденной датой доставки. * &#x60;false&#x60; — фильтрация не применяется. (optional, default to false)
      * @param  \OpenAPI\Client\Model\OrderBuyerType|null $buyer_type Фильтрация заказов по типу покупателя. (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOrders'] to see the possible values for this operation
@@ -13911,7 +15052,7 @@ class LaasApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GetRegionsCodesResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     * @return \OpenAPI\Client\Model\GetRegionsCodesResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
     public function getRegionsCodes(string $contentType = self::contentTypes['getRegionsCodes'][0])
     {
@@ -13928,7 +15069,7 @@ class LaasApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GetRegionsCodesResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\GetRegionsCodesResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRegionsCodesWithHttpInfo(string $contentType = self::contentTypes['getRegionsCodes'][0])
     {
@@ -13973,12 +15114,6 @@ class LaasApi
                 case 403:
                     return $this->handleResponseWithDataType(
                         '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 404:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
                         $request,
                         $response,
                     );
@@ -14038,14 +15173,6 @@ class LaasApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -15398,8 +16525,8 @@ class LaasApi
      * @param  \OpenAPI\Client\Model\ReturnType|null $type Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. (optional)
      * @param  \DateTime|null $from_date Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
      * @param  \DateTime|null $to_date Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
-     * @param  \DateTime|null $from_date2 {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
-     * @param  \DateTime|null $to_date2 {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $from_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $to_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReturns'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -15426,8 +16553,8 @@ class LaasApi
      * @param  \OpenAPI\Client\Model\ReturnType|null $type Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. (optional)
      * @param  \DateTime|null $from_date Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
      * @param  \DateTime|null $to_date Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
-     * @param  \DateTime|null $from_date2 {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
-     * @param  \DateTime|null $to_date2 {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $from_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $to_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReturns'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -15605,8 +16732,8 @@ class LaasApi
      * @param  \OpenAPI\Client\Model\ReturnType|null $type Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. (optional)
      * @param  \DateTime|null $from_date Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
      * @param  \DateTime|null $to_date Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
-     * @param  \DateTime|null $from_date2 {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
-     * @param  \DateTime|null $to_date2 {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $from_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $to_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReturns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -15636,8 +16763,8 @@ class LaasApi
      * @param  \OpenAPI\Client\Model\ReturnType|null $type Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. (optional)
      * @param  \DateTime|null $from_date Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
      * @param  \DateTime|null $to_date Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
-     * @param  \DateTime|null $from_date2 {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
-     * @param  \DateTime|null $to_date2 {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $from_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $to_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReturns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -15696,8 +16823,8 @@ class LaasApi
      * @param  \OpenAPI\Client\Model\ReturnType|null $type Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. (optional)
      * @param  \DateTime|null $from_date Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
      * @param  \DateTime|null $to_date Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. (optional)
-     * @param  \DateTime|null $from_date2 {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
-     * @param  \DateTime|null $to_date2 {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $from_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
+     * @param  \DateTime|null $to_date2 {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getReturns'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -15914,7 +17041,7 @@ class LaasApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
-     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\GetWarehouseStocksRequest|null $get_warehouse_stocks_request get_warehouse_stocks_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStocks'] to see the possible values for this operation
      *
@@ -15922,7 +17049,7 @@ class LaasApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetWarehouseStocksResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
-    public function getStocks($campaign_id, $page_token = null, $limit = 100, $get_warehouse_stocks_request = null, string $contentType = self::contentTypes['getStocks'][0])
+    public function getStocks($campaign_id, $page_token = null, $limit = 50, $get_warehouse_stocks_request = null, string $contentType = self::contentTypes['getStocks'][0])
     {
         list($response) = $this->getStocksWithHttpInfo($campaign_id, $page_token, $limit, $get_warehouse_stocks_request, $contentType);
         return $response;
@@ -15935,7 +17062,7 @@ class LaasApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
-     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\GetWarehouseStocksRequest|null $get_warehouse_stocks_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStocks'] to see the possible values for this operation
      *
@@ -15943,7 +17070,7 @@ class LaasApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetWarehouseStocksResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStocksWithHttpInfo($campaign_id, $page_token = null, $limit = 100, $get_warehouse_stocks_request = null, string $contentType = self::contentTypes['getStocks'][0])
+    public function getStocksWithHttpInfo($campaign_id, $page_token = null, $limit = 50, $get_warehouse_stocks_request = null, string $contentType = self::contentTypes['getStocks'][0])
     {
         $request = $this->getStocksRequest($campaign_id, $page_token, $limit, $get_warehouse_stocks_request, $contentType);
 
@@ -16093,14 +17220,14 @@ class LaasApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
-     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\GetWarehouseStocksRequest|null $get_warehouse_stocks_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStocks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStocksAsync($campaign_id, $page_token = null, $limit = 100, $get_warehouse_stocks_request = null, string $contentType = self::contentTypes['getStocks'][0])
+    public function getStocksAsync($campaign_id, $page_token = null, $limit = 50, $get_warehouse_stocks_request = null, string $contentType = self::contentTypes['getStocks'][0])
     {
         return $this->getStocksAsyncWithHttpInfo($campaign_id, $page_token, $limit, $get_warehouse_stocks_request, $contentType)
             ->then(
@@ -16117,14 +17244,14 @@ class LaasApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
-     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\GetWarehouseStocksRequest|null $get_warehouse_stocks_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStocks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStocksAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = 100, $get_warehouse_stocks_request = null, string $contentType = self::contentTypes['getStocks'][0])
+    public function getStocksAsyncWithHttpInfo($campaign_id, $page_token = null, $limit = 50, $get_warehouse_stocks_request = null, string $contentType = self::contentTypes['getStocks'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetWarehouseStocksResponse';
         $request = $this->getStocksRequest($campaign_id, $page_token, $limit, $get_warehouse_stocks_request, $contentType);
@@ -16170,14 +17297,14 @@ class LaasApi
      *
      * @param  int $campaign_id Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. (required)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
-     * @param  int|null $limit {{ limit-param-description }} (optional, default to 100)
+     * @param  int|null $limit {{ limit-truncate-param-description }} (optional, default to 50)
      * @param  \OpenAPI\Client\Model\GetWarehouseStocksRequest|null $get_warehouse_stocks_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getStocks'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getStocksRequest($campaign_id, $page_token = null, $limit = 100, $get_warehouse_stocks_request = null, string $contentType = self::contentTypes['getStocks'][0])
+    public function getStocksRequest($campaign_id, $page_token = null, $limit = 50, $get_warehouse_stocks_request = null, string $contentType = self::contentTypes['getStocks'][0])
     {
 
         // verify the required parameter 'campaign_id' is set
@@ -16191,8 +17318,8 @@ class LaasApi
         }
         
 
-        if ($limit !== null && $limit > 200) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling LaasApi.getStocks, must be smaller than or equal to 200.');
+        if ($limit !== null && $limit > 100) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling LaasApi.getStocks, must be smaller than or equal to 100.');
         }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling LaasApi.getStocks, must be bigger than or equal to 1.');
@@ -17515,8 +18642,8 @@ class LaasApi
      * @param  int $region_id Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET v2/regions](../../reference/regions/searchRegionsByName.md). (required)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchRegionChildren'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -17537,8 +18664,8 @@ class LaasApi
      * @param  int $region_id Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET v2/regions](../../reference/regions/searchRegionsByName.md). (required)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchRegionChildren'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -17710,8 +18837,8 @@ class LaasApi
      * @param  int $region_id Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET v2/regions](../../reference/regions/searchRegionsByName.md). (required)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchRegionChildren'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -17735,8 +18862,8 @@ class LaasApi
      * @param  int $region_id Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET v2/regions](../../reference/regions/searchRegionsByName.md). (required)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchRegionChildren'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -17789,8 +18916,8 @@ class LaasApi
      * @param  int $region_id Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET v2/regions](../../reference/regions/searchRegionsByName.md). (required)
      * @param  string|null $page_token Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. (optional)
      * @param  int|null $limit {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} (optional)
-     * @param  int|null $page {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
-     * @param  int|null $page_size {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
+     * @param  int|null $page {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. (optional, default to 1) (deprecated)
+     * @param  int|null $page_size {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchRegionChildren'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -19392,6 +20519,375 @@ class LaasApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_campaign_offers_request));
             } else {
                 $httpBody = $update_campaign_offers_request;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Api-Key');
+        if ($apiKey !== null) {
+            $headers['Api-Key'] = $apiKey;
+        }
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateDocuments
+     *
+     * Обновление документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\UpdateDocumentsRequest $update_documents_request update_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDocuments'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\UpdateDocumentsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     */
+    public function updateDocuments($business_id, $update_documents_request, string $contentType = self::contentTypes['updateDocuments'][0])
+    {
+        list($response) = $this->updateDocumentsWithHttpInfo($business_id, $update_documents_request, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation updateDocumentsWithHttpInfo
+     *
+     * Обновление документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\UpdateDocumentsRequest $update_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDocuments'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\UpdateDocumentsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateDocumentsWithHttpInfo($business_id, $update_documents_request, string $contentType = self::contentTypes['updateDocuments'][0])
+    {
+        $request = $this->updateDocumentsRequest($business_id, $update_documents_request, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\UpdateDocumentsResponse',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 420:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenAPI\Client\Model\UpdateDocumentsResponse',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\UpdateDocumentsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 420:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateDocumentsAsync
+     *
+     * Обновление документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\UpdateDocumentsRequest $update_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateDocumentsAsync($business_id, $update_documents_request, string $contentType = self::contentTypes['updateDocuments'][0])
+    {
+        return $this->updateDocumentsAsyncWithHttpInfo($business_id, $update_documents_request, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateDocumentsAsyncWithHttpInfo
+     *
+     * Обновление документов
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\UpdateDocumentsRequest $update_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateDocumentsAsyncWithHttpInfo($business_id, $update_documents_request, string $contentType = self::contentTypes['updateDocuments'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\UpdateDocumentsResponse';
+        $request = $this->updateDocumentsRequest($business_id, $update_documents_request, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateDocuments'
+     *
+     * @param  int $business_id Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} (required)
+     * @param  \OpenAPI\Client\Model\UpdateDocumentsRequest $update_documents_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateDocuments'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateDocumentsRequest($business_id, $update_documents_request, string $contentType = self::contentTypes['updateDocuments'][0])
+    {
+
+        // verify the required parameter 'business_id' is set
+        if ($business_id === null || (is_array($business_id) && count($business_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $business_id when calling updateDocuments'
+            );
+        }
+        if ($business_id < 1) {
+            throw new \InvalidArgumentException('invalid value for "$business_id" when calling LaasApi.updateDocuments, must be bigger than or equal to 1.');
+        }
+        
+        // verify the required parameter 'update_documents_request' is set
+        if ($update_documents_request === null || (is_array($update_documents_request) && count($update_documents_request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $update_documents_request when calling updateDocuments'
+            );
+        }
+
+
+        $resourcePath = '/v1/businesses/{businessId}/offers/documents/update';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($business_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'businessId' . '}',
+                ObjectSerializer::toPathValue($business_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($update_documents_request)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($update_documents_request));
+            } else {
+                $httpBody = $update_documents_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

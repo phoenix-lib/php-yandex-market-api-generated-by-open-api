@@ -80,6 +80,15 @@ class CampaignSettingsDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "taxation"
+     */
+    public function testPropertyTaxation()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "country_region"
      */
     public function testPropertyCountryRegion()

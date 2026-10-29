@@ -395,7 +395,7 @@ class GetMappingDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets market_model_name
      *
-     * @param string|null $market_model_name Название модели на Маркете.  Может отсутствовать в ответе, если товар еще не привязан к карточке.
+     * @param string|null $market_model_name {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}     {% endnote %}  Название модели на Маркете.  Может отсутствовать в ответе, если товар еще не привязан к карточке.
      *
      * @return self
      * @deprecated

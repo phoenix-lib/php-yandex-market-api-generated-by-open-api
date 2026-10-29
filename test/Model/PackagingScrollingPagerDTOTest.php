@@ -87,13 +87,4 @@ class PackagingScrollingPagerDTOTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "prev_page_token"
-     */
-    public function testPropertyPrevPageToken()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

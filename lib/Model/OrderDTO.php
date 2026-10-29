@@ -982,7 +982,7 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyer_items_total
      *
-     * @param float|null $buyer_items_total Стоимость всех товаров в заказе в валюте покупателя после применения скидок и без учета стоимости доставки.
+     * @param float|null $buyer_items_total {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо него используйте `itemsTotal`.  {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя после применения скидок и без учета стоимости доставки.
      *
      * @return self
      * @deprecated
@@ -1011,7 +1011,7 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyer_total
      *
-     * @param float|null $buyer_total Стоимость всех товаров в заказе в валюте покупателя после применения скидок и с учетом стоимости доставки.
+     * @param float|null $buyer_total {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}     {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя после применения скидок и с учетом стоимости доставки.
      *
      * @return self
      * @deprecated
@@ -1040,7 +1040,7 @@ class OrderDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyer_total_before_discount
      *
-     * @param float|null $buyer_total_before_discount Стоимость всех товаров в заказе в валюте покупателя до применения скидок и с учетом стоимости доставки (`buyerItemsTotalBeforeDiscount` + стоимость доставки).
+     * @param float|null $buyer_total_before_discount {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}     {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя до применения скидок и с учетом стоимости доставки (`buyerItemsTotalBeforeDiscount` + стоимость доставки).
      *
      * @return self
      * @deprecated

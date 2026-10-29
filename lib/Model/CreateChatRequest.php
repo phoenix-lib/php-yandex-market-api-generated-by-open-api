@@ -311,7 +311,7 @@ class CreateChatRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets order_id
      *
-     * @param int|null $order_id Идентификатор заказа на Маркете.
+     * @param int|null $order_id {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}  Вместо него используйте `context`.  {% endnote %}  Идентификатор заказа на Маркете.
      *
      * @return self
      * @deprecated

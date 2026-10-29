@@ -386,7 +386,7 @@ class OutletAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets region_id
      *
-     * @param int $region_id Идентификатор региона.  Идентификатор можно получить c помощью запроса [GET v2/regions](../../reference/regions/searchRegionsByName.md).  {% note alert \"Типы регионов при создании и редактировании точек продаж\" %}  Указывайте только регионы типов `TOWN` (город), `CITY` (крупный город) и `REPUBLIC_AREA` (район субъекта федерации). Тип региона указан в выходных параметрах `type` запросов [GET v2/regions](../../reference/regions/searchRegionsByName.md) и [GET v2/regions/{regionId}](../../reference/regions/searchRegionsById.md).  {% endnote %}
+     * @param int $region_id Идентификатор региона.  Идентификатор можно получить c помощью запроса [GET v2/regions](../../reference/regions/searchRegionsByName.md).  {% note alert \"Типы регионов при создании и редактировании точек продаж\" %}  Указывайте только регионы типов `VILLAGE` (город), `CITY` (крупный город) и `REPUBLIC_AREA` (район субъекта федерации). Тип региона указан в выходных параметрах `type` запросов [GET v2/regions](../../reference/regions/searchRegionsByName.md) и [GET v2/regions/{regionId}](../../reference/regions/searchRegionsById.md).  {% endnote %}
      *
      * @return self
      */
@@ -623,7 +623,7 @@ class OutletAddressDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string|null $city {% note warning \"В ответах города и населенные пункты возвращаются в параметре `regionId`.\" %}     {% endnote %}
+     * @param string|null $city {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}  В ответах города и населенные пункты возвращаются в параметре `regionId`.  {% endnote %}
      *
      * @return self
      * @deprecated

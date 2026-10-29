@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **storage_period** | **int** | Срок хранения заказа в собственном пункте выдачи заказов. Считается в днях. | [optional]
 **status** | [**\OpenAPI\Client\Model\OutletStatusType**](OutletStatusType.md) |  | [optional]
 **region** | [**\OpenAPI\Client\Model\RegionDTO**](RegionDTO.md) |  | [optional]
-**shop_outlet_id** | **string** | {% note warning \&quot;Вместо него используйте &#x60;shopOutletCode&#x60;.\&quot; %}     {% endnote %}  Идентификатор точки продаж, заданный магазином. | [optional]
-**working_time** | **string** | {% note warning \&quot;Вместо него используйте &#x60;workingSchedule&#x60;.\&quot; %}     {% endnote %}  Рабочее время. | [optional]
+**shop_outlet_id** | **string** | {% note warning \&quot;Параметр устарел и будет отключен 19.10.2026.\&quot; %}  Вместо него используйте &#x60;shopOutletCode&#x60;.  {% endnote %}  Идентификатор точки продаж, заданный магазином. | [optional]
+**working_time** | **string** | {% note warning \&quot;Параметр устарел и будет отключен 19.10.2026.\&quot; %}  Вместо него используйте &#x60;workingSchedule&#x60;.  {% endnote %}  Рабочее время. | [optional]
 **moderation_reason** | **string** | Статус модерации. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

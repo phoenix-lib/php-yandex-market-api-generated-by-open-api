@@ -144,12 +144,36 @@ class FbyApiTest extends TestCase
     }
 
     /**
+     * Test case for createDocuments
+     *
+     * Создание документов.
+     *
+     */
+    public function testCreateDocuments()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for deleteCampaignOffers
      *
      * Удаление товаров из ассортимента магазина.
      *
      */
     public function testDeleteCampaignOffers()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for deleteDocuments
+     *
+     * Удаление документов.
+     *
+     */
+    public function testDeleteDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -732,6 +756,18 @@ class FbyApiTest extends TestCase
     }
 
     /**
+     * Test case for getDocuments
+     *
+     * Получение документов.
+     *
+     */
+    public function testGetDocuments()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getFulfillmentWarehouses
      *
      * Идентификаторы фулфилмент-складов Маркета.
@@ -1242,6 +1278,18 @@ class FbyApiTest extends TestCase
      *
      */
     public function testUpdateCampaignOffers()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateDocuments
+     *
+     * Обновление документов.
+     *
+     */
+    public function testUpdateDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
