@@ -60,7 +60,10 @@ class GenerateGoodsRealizationReportRequest implements ModelInterface, ArrayAcce
     protected static $openAPITypes = [
         'campaign_id' => 'int',
         'year' => 'int',
-        'month' => 'int'
+        'month' => 'int',
+        'inns' => 'string[]',
+        'placement_programs' => '\OpenAPI\Client\Model\PlacementType[]',
+        'placement_contracts' => 'string[]'
     ];
 
     /**
@@ -73,7 +76,10 @@ class GenerateGoodsRealizationReportRequest implements ModelInterface, ArrayAcce
     protected static $openAPIFormats = [
         'campaign_id' => 'int64',
         'year' => 'int32',
-        'month' => 'int32'
+        'month' => 'int32',
+        'inns' => null,
+        'placement_programs' => null,
+        'placement_contracts' => null
     ];
 
     /**
@@ -84,7 +90,10 @@ class GenerateGoodsRealizationReportRequest implements ModelInterface, ArrayAcce
     protected static array $openAPINullables = [
         'campaign_id' => false,
         'year' => false,
-        'month' => false
+        'month' => false,
+        'inns' => true,
+        'placement_programs' => true,
+        'placement_contracts' => true
     ];
 
     /**
@@ -175,7 +184,10 @@ class GenerateGoodsRealizationReportRequest implements ModelInterface, ArrayAcce
     protected static $attributeMap = [
         'campaign_id' => 'campaignId',
         'year' => 'year',
-        'month' => 'month'
+        'month' => 'month',
+        'inns' => 'inns',
+        'placement_programs' => 'placementPrograms',
+        'placement_contracts' => 'placementContracts'
     ];
 
     /**
@@ -186,7 +198,10 @@ class GenerateGoodsRealizationReportRequest implements ModelInterface, ArrayAcce
     protected static $setters = [
         'campaign_id' => 'setCampaignId',
         'year' => 'setYear',
-        'month' => 'setMonth'
+        'month' => 'setMonth',
+        'inns' => 'setInns',
+        'placement_programs' => 'setPlacementPrograms',
+        'placement_contracts' => 'setPlacementContracts'
     ];
 
     /**
@@ -197,7 +212,10 @@ class GenerateGoodsRealizationReportRequest implements ModelInterface, ArrayAcce
     protected static $getters = [
         'campaign_id' => 'getCampaignId',
         'year' => 'getYear',
-        'month' => 'getMonth'
+        'month' => 'getMonth',
+        'inns' => 'getInns',
+        'placement_programs' => 'getPlacementPrograms',
+        'placement_contracts' => 'getPlacementContracts'
     ];
 
     /**
@@ -260,6 +278,9 @@ class GenerateGoodsRealizationReportRequest implements ModelInterface, ArrayAcce
         $this->setIfExists('campaign_id', $data ?? [], null);
         $this->setIfExists('year', $data ?? [], null);
         $this->setIfExists('month', $data ?? [], null);
+        $this->setIfExists('inns', $data ?? [], null);
+        $this->setIfExists('placement_programs', $data ?? [], null);
+        $this->setIfExists('placement_contracts', $data ?? [], null);
     }
 
     /**
@@ -308,6 +329,18 @@ class GenerateGoodsRealizationReportRequest implements ModelInterface, ArrayAcce
 
         if (($this->container['month'] < 1)) {
             $invalidProperties[] = "invalid value for 'month', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['inns']) && (count($this->container['inns']) < 1)) {
+            $invalidProperties[] = "invalid value for 'inns', number of items must be greater than or equal to 1.";
+        }
+
+        if (!is_null($this->container['placement_programs']) && (count($this->container['placement_programs']) < 1)) {
+            $invalidProperties[] = "invalid value for 'placement_programs', number of items must be greater than or equal to 1.";
+        }
+
+        if (!is_null($this->container['placement_contracts']) && (count($this->container['placement_contracts']) < 1)) {
+            $invalidProperties[] = "invalid value for 'placement_contracts', number of items must be greater than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -415,6 +448,123 @@ class GenerateGoodsRealizationReportRequest implements ModelInterface, ArrayAcce
         }
 
         $this->container['month'] = $month;
+
+        return $this;
+    }
+
+    /**
+     * Gets inns
+     *
+     * @return string[]|null
+     */
+    public function getInns()
+    {
+        return $this->container['inns'];
+    }
+
+    /**
+     * Sets inns
+     *
+     * @param string[]|null $inns Список ИНН (доступно продавцам-резидентам РФ).
+     *
+     * @return self
+     */
+    public function setInns($inns)
+    {
+        if (is_null($inns)) {
+            array_push($this->openAPINullablesSetToNull, 'inns');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('inns', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+
+        if (!is_null($inns) && (count($inns) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $inns when calling GenerateGoodsRealizationReportRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['inns'] = $inns;
+
+        return $this;
+    }
+
+    /**
+     * Gets placement_programs
+     *
+     * @return \OpenAPI\Client\Model\PlacementType[]|null
+     */
+    public function getPlacementPrograms()
+    {
+        return $this->container['placement_programs'];
+    }
+
+    /**
+     * Sets placement_programs
+     *
+     * @param \OpenAPI\Client\Model\PlacementType[]|null $placement_programs Список моделей размещения.
+     *
+     * @return self
+     */
+    public function setPlacementPrograms($placement_programs)
+    {
+        if (is_null($placement_programs)) {
+            array_push($this->openAPINullablesSetToNull, 'placement_programs');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('placement_programs', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+
+        if (!is_null($placement_programs) && (count($placement_programs) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $placement_programs when calling GenerateGoodsRealizationReportRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['placement_programs'] = $placement_programs;
+
+        return $this;
+    }
+
+    /**
+     * Gets placement_contracts
+     *
+     * @return string[]|null
+     */
+    public function getPlacementContracts()
+    {
+        return $this->container['placement_contracts'];
+    }
+
+    /**
+     * Sets placement_contracts
+     *
+     * @param string[]|null $placement_contracts Список номеров договоров на размещение.
+     *
+     * @return self
+     */
+    public function setPlacementContracts($placement_contracts)
+    {
+        if (is_null($placement_contracts)) {
+            array_push($this->openAPINullablesSetToNull, 'placement_contracts');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('placement_contracts', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+
+        if (!is_null($placement_contracts) && (count($placement_contracts) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $placement_contracts when calling GenerateGoodsRealizationReportRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['placement_contracts'] = $placement_contracts;
 
         return $this;
     }

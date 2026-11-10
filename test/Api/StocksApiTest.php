@@ -84,12 +84,36 @@ class StocksApiTest extends TestCase
     }
 
     /**
+     * Test case for getStocksOnPartnerWarehouses
+     *
+     * Информация об остатках.
+     *
+     */
+    public function testGetStocksOnPartnerWarehouses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for updateStocks
      *
      * Передача информации об остатках.
      *
      */
     public function testUpdateStocks()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateStocksOnPartnerWarehouses
+     *
+     * Передача информации об остатках.
+     *
+     */
+    public function testUpdateStocksOnPartnerWarehouses()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

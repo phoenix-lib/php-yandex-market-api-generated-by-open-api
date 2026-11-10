@@ -105,4 +105,13 @@ class UpdateOrderDTOTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "extend_storage_period"
+     */
+    public function testPropertyExtendStoragePeriod()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

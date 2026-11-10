@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
  * LogisticPointFeatureTypeTest Class Doc Comment
  *
  * @category    Class
- * @description Свойство пункта выдачи:  * &#x60;RETURN_ALLOWED&#x60; — пункт выдачи принимает возвраты.  {% note warning \&quot;Проверка ограничений\&quot; %}  Признак не учитывает ограничения ПВЗ на прием различных товаров в возврате. Для проверки по конкретному набору товаров используйте метод [POST v1/campaigns/{campaignId}/return-delivery-options](../../reference/delivery-options/getReturnDeliveryOptions.md).  {% endnote %}
+ * @description Свойство пункта выдачи:  * &#x60;RETURN_ALLOWED&#x60; — пункт выдачи принимает возвраты. * &#x60;FITTING_ALLOWED&#x60; — в пункте выдачи доступна примерка.  {% note warning \&quot;Проверка ограничений\&quot; %}  Признак не учитывает ограничения ПВЗ на прием различных товаров в возврате. Для проверки по конкретному набору товаров используйте метод [POST v1/campaigns/{campaignId}/return-delivery-options](../../reference/delivery-options/getReturnDeliveryOptions.md).  {% endnote %}
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

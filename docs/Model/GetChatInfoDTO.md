@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **status** | [**\OpenAPI\Client\Model\ChatStatusType**](ChatStatusType.md) |  |
 **created_at** | **\DateTime** | Дата и время создания чата.  Формат даты: ISO 8601 со смещением относительно UTC. |
 **updated_at** | **\DateTime** | Дата и время последнего сообщения в чате.  Формат даты: ISO 8601 со смещением относительно UTC. |
-**order_id** | **int** | Идентификатор заказа. | [optional]
+**order_id** | **int** | {% note warning \&quot;Параметр устарел и будет отключен 19.10.2026.\&quot; %}  Вместо него используйте &#x60;context&#x60;.  {% endnote %}  Идентификатор заказа. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

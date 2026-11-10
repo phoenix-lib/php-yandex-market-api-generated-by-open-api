@@ -340,7 +340,7 @@ class OrderShipmentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param int|null $id Идентификатор посылки, присвоенный Маркетом.
+     * @param int|null $id {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}     {% endnote %}  Идентификатор посылки, присвоенный Маркетом.
      *
      * @return self
      * @deprecated

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **business_id** | **int** | Идентификатор кабинета. {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html) {% endif %} |
-**date_time_from** | **\DateTime** | Начало периода, включительно. | [optional]
-**date_time_to** | **\DateTime** | Конец периода, включительно. Максимальный период — 3 месяца. | [optional]
+**date_time_from** | **\DateTime** | {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;dateFrom&#x60;.  {% endnote %}  Начало периода, включительно. | [optional]
+**date_time_to** | **\DateTime** | {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;dateTo&#x60;.  {% endnote %}  Конец периода, включительно. Максимальный период — 3 месяца. | [optional]
 **date_from** | **\DateTime** | Начало периода, включительно.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional]
 **date_to** | **\DateTime** | Конец периода, включительно. Максимальный период — 3 месяца.  Формат даты: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional]
 **year_from** | **int** | Год. | [optional]

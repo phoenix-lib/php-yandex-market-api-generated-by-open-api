@@ -84,6 +84,18 @@ class LaasApiTest extends TestCase
     }
 
     /**
+     * Test case for createDocuments
+     *
+     * Создание документов.
+     *
+     */
+    public function testCreateDocuments()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for createOrder
      *
      * Создание заказа.
@@ -114,6 +126,18 @@ class LaasApiTest extends TestCase
      *
      */
     public function testDeleteCampaignOffers()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for deleteDocuments
+     *
+     * Удаление документов.
+     *
+     */
+    public function testDeleteDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -366,6 +390,18 @@ class LaasApiTest extends TestCase
      *
      */
     public function testGetDeliveryOptions()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getDocuments
+     *
+     * Получение документов.
+     *
+     */
+    public function testGetDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -654,6 +690,18 @@ class LaasApiTest extends TestCase
      *
      */
     public function testUpdateCampaignOffers()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateDocuments
+     *
+     * Обновление документов.
+     *
+     */
+    public function testUpdateDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -58,6 +58,7 @@ class BusinessSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
+        'warehouse_model' => '\OpenAPI\Client\Model\BusinessWarehouseModelType',
         'only_default_price' => 'bool',
         'currency' => '\OpenAPI\Client\Model\CurrencyType'
     ];
@@ -70,6 +71,7 @@ class BusinessSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'warehouse_model' => null,
         'only_default_price' => null,
         'currency' => null
     ];
@@ -80,6 +82,7 @@ class BusinessSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'warehouse_model' => false,
         'only_default_price' => false,
         'currency' => false
     ];
@@ -170,6 +173,7 @@ class BusinessSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
+        'warehouse_model' => 'warehouseModel',
         'only_default_price' => 'onlyDefaultPrice',
         'currency' => 'currency'
     ];
@@ -180,6 +184,7 @@ class BusinessSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
+        'warehouse_model' => 'setWarehouseModel',
         'only_default_price' => 'setOnlyDefaultPrice',
         'currency' => 'setCurrency'
     ];
@@ -190,6 +195,7 @@ class BusinessSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
+        'warehouse_model' => 'getWarehouseModel',
         'only_default_price' => 'getOnlyDefaultPrice',
         'currency' => 'getCurrency'
     ];
@@ -251,6 +257,7 @@ class BusinessSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('warehouse_model', $data ?? [], null);
         $this->setIfExists('only_default_price', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
     }
@@ -296,6 +303,33 @@ class BusinessSettingsDTO implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets warehouse_model
+     *
+     * @return \OpenAPI\Client\Model\BusinessWarehouseModelType|null
+     */
+    public function getWarehouseModel()
+    {
+        return $this->container['warehouse_model'];
+    }
+
+    /**
+     * Sets warehouse_model
+     *
+     * @param \OpenAPI\Client\Model\BusinessWarehouseModelType|null $warehouse_model warehouse_model
+     *
+     * @return self
+     */
+    public function setWarehouseModel($warehouse_model)
+    {
+        if (is_null($warehouse_model)) {
+            throw new \InvalidArgumentException('non-nullable warehouse_model cannot be null');
+        }
+        $this->container['warehouse_model'] = $warehouse_model;
+
+        return $this;
+    }
 
     /**
      * Gets only_default_price

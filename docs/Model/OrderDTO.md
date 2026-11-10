@@ -21,9 +21,9 @@ Name | Type | Description | Notes
 **tax_system** | [**\OpenAPI\Client\Model\OrderTaxSystemType**](OrderTaxSystemType.md) |  |
 **external_order_id** | **string** | Внешний идентификатор заказа, который вы передали в [POST v2/campaigns/{campaignId}/orders/{orderId}/external-id](../../reference/orders/updateExternalOrderId.md). | [optional]
 **updated_at** | **string** |  | [optional]
-**buyer_items_total** | **float** | Стоимость всех товаров в заказе в валюте покупателя после применения скидок и без учета стоимости доставки. | [optional]
-**buyer_total** | **float** | Стоимость всех товаров в заказе в валюте покупателя после применения скидок и с учетом стоимости доставки. | [optional]
-**buyer_total_before_discount** | **float** | Стоимость всех товаров в заказе в валюте покупателя до применения скидок и с учетом стоимости доставки (&#x60;buyerItemsTotalBeforeDiscount&#x60; + стоимость доставки). | [optional]
+**buyer_items_total** | **float** | {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо него используйте &#x60;itemsTotal&#x60;.  {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя после применения скидок и без учета стоимости доставки. | [optional]
+**buyer_total** | **float** | {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}     {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя после применения скидок и с учетом стоимости доставки. | [optional]
+**buyer_total_before_discount** | **float** | {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}     {% endnote %}  Стоимость всех товаров в заказе в валюте покупателя до применения скидок и с учетом стоимости доставки (&#x60;buyerItemsTotalBeforeDiscount&#x60; + стоимость доставки). | [optional]
 **subsidies** | [**\OpenAPI\Client\Model\OrderSubsidyDTO[]**](OrderSubsidyDTO.md) | Список субсидий по типам. | [optional]
 **notes** | **string** | Комментарий к заказу. | [optional]
 **cancel_requested** | **bool** | **Только для модели DBS**  Запрошена ли отмена. | [optional]

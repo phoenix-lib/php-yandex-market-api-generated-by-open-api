@@ -105,4 +105,31 @@ class GenerateGoodsRealizationReportRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "inns"
+     */
+    public function testPropertyInns()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "placement_programs"
+     */
+    public function testPropertyPlacementPrograms()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "placement_contracts"
+     */
+    public function testPropertyPlacementContracts()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

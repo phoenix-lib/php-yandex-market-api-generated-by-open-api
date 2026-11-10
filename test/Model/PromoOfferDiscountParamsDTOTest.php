@@ -105,4 +105,13 @@ class PromoOfferDiscountParamsDTOTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "best_price_levels"
+     */
+    public function testPropertyBestPriceLevels()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }
