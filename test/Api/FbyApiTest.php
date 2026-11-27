@@ -144,12 +144,48 @@ class FbyApiTest extends TestCase
     }
 
     /**
+     * Test case for createContentSizeTables
+     *
+     * Создание таблиц размеров.
+     *
+     */
+    public function testCreateContentSizeTables()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for createDocuments
+     *
+     * Создание документов.
+     *
+     */
+    public function testCreateDocuments()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for deleteCampaignOffers
      *
      * Удаление товаров из ассортимента магазина.
      *
      */
     public function testDeleteCampaignOffers()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for deleteDocuments
+     *
+     * Удаление документов.
+     *
+     */
+    public function testDeleteDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -720,12 +756,48 @@ class FbyApiTest extends TestCase
     }
 
     /**
+     * Test case for getContentSizeCharts
+     *
+     * Размерные сетки и обмеры для таблиц размеров.
+     *
+     */
+    public function testGetContentSizeCharts()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getContentSizeTables
+     *
+     * Таблицы размеров по идентификаторам.
+     *
+     */
+    public function testGetContentSizeTables()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getDefaultPrices
      *
      * Просмотр цен на указанные товары во всех магазинах.
      *
      */
     public function testGetDefaultPrices()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getDocuments
+     *
+     * Получение документов.
+     *
+     */
+    public function testGetDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -1224,6 +1296,18 @@ class FbyApiTest extends TestCase
     }
 
     /**
+     * Test case for suggestContentSizeTables
+     *
+     * Подбор таблиц размеров.
+     *
+     */
+    public function testSuggestContentSizeTables()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for updateBusinessPrices
      *
      * Установка цен на товары для всех магазинов.
@@ -1242,6 +1326,30 @@ class FbyApiTest extends TestCase
      *
      */
     public function testUpdateCampaignOffers()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateContentSizeTables
+     *
+     * Обновление таблиц размеров.
+     *
+     */
+    public function testUpdateContentSizeTables()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateDocuments
+     *
+     * Обновление документов.
+     *
+     */
+    public function testUpdateDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

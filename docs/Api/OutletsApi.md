@@ -251,7 +251,7 @@ $page_token = 'page_token_example'; // string | Идентификатор ст�
 $limit = 25; // int | {{ limit-param-description }}
 $region_id = 56; // int | Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md).
 $shop_outlet_code = 'shop_outlet_code_example'; // string | Идентификатор точки продаж, присвоенный магазином.
-$region_id2 = 56; // int | {% note warning \"Вместо него используйте `region_id`.\" %}     {% endnote %}
+$region_id2 = 56; // int | {% note warning \"Параметр устарел и будет отключен 19.10.2026.\" %}  Вместо него используйте `region_id`.  {% endnote %}
 
 try {
     $result = $apiInstance->getOutlets($campaign_id, $page_token, $limit, $region_id, $shop_outlet_code, $region_id2);
@@ -270,7 +270,7 @@ try {
 | **limit** | **int**| {{ limit-param-description }} | [optional] [default to 25] |
 | **region_id** | **int**| Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). | [optional] |
 | **shop_outlet_code** | **string**| Идентификатор точки продаж, присвоенный магазином. | [optional] |
-| **region_id2** | **int**| {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} | [optional] |
+| **region_id2** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 19.10.2026.\&quot; %}  Вместо него используйте &#x60;region_id&#x60;.  {% endnote %} | [optional] |
 
 ### Return type
 

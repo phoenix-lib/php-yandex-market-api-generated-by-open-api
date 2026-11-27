@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **pickup_till_date** | **\DateTime** | Дата, до которой можно забрать товар.  Только для невыкупов и возвратов в логистическом статусе &#x60;READY_FOR_PICKUP&#x60;.  Формат даты: ISO 8601 со смещением относительно UTC. | [optional]
 **shipment_recipient_type** | [**\OpenAPI\Client\Model\RecipientType**](RecipientType.md) |  | [optional]
 **shipment_status** | [**\OpenAPI\Client\Model\ReturnShipmentStatusType**](ReturnShipmentStatusType.md) |  | [optional]
-**refund_amount** | **int** | {% note warning \&quot;Вместо него используйте &#x60;amount&#x60;.\&quot; %}     {% endnote %}  Сумма возврата в копейках. | [optional]
+**refund_amount** | **int** | {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;amount&#x60;.  {% endnote %}  Сумма возврата в копейках. | [optional]
 **amount** | [**\OpenAPI\Client\Model\CurrencyValueDTO**](CurrencyValueDTO.md) |  | [optional]
 **fast_return** | **bool** | Используется ли опция **Быстрый возврат денег за дешевый брак**.  Актуально только для &#x60;returnType&#x3D;RETURN&#x60;. | [optional]
 

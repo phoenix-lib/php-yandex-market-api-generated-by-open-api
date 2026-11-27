@@ -18,7 +18,7 @@ getDeliveryOptions($campaign_id, $get_delivery_options_request): \OpenAPI\Client
 
 Получение доступных вариантов доставки заказов
 
-{% include notitle [access](../../_auto/method_scopes/getDeliveryOptions.md) %}  Возвращает список вариантов для доставки заказов. Выберите подходящий вариант доставки из ответа и передайте его при создании заказа.  Укажите `courierDelivery` для курьерской доставки или `pickupDelivery` для доставки в пункт выдачи. Не передавайте оба параметра одновременно.  {% include notitle [limit](../../_auto/method_limits/getDeliveryOptions.md) %}
+{% include notitle [access](../../_auto/method_scopes/getDeliveryOptions.md) %}  Возвращает список вариантов для доставки заказов. Выберите подходящий вариант доставки из ответа и передайте его при создании заказа.  Укажите `courierDelivery` для курьерской доставки или `pickupDelivery` для доставки в пункт выдачи. Не передавайте оба параметра одновременно.  **Пошаговые инструкции**  * [Создать заказ LaaS](../../step-by-step/laas-order.md#create)  {% include notitle [limit](../../_auto/method_limits/getDeliveryOptions.md) %}
 
 ### Example
 
@@ -85,7 +85,7 @@ getReturnDeliveryOptions($campaign_id, $get_return_delivery_options_request): \O
 
 Получение подходящих для возврата пунктов выдачи
 
-{% include notitle [access](../../_auto/method_scopes/getReturnDeliveryOptions.md) %}  Возвращает список идентификаторов пунктов выдачи, которые могут принять возврат указанных товаров.  {% include notitle [limit](../../_auto/method_limits/getReturnDeliveryOptions.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReturnDeliveryOptions.md) %}  Возвращает список идентификаторов пунктов выдачи, которые могут принять возврат указанных товаров.  **Пошаговые инструкции**  * [Создать возврат LaaS](../../step-by-step/laas-return.md#create)  {% include notitle [limit](../../_auto/method_limits/getReturnDeliveryOptions.md) %}
 
 ### Example
 

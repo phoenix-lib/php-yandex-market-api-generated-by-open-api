@@ -918,7 +918,7 @@ class OutletsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GetOutletResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     * @return \OpenAPI\Client\Model\GetOutletResponse|\OpenAPI\Client\Model\ApiTypedClientDataErrorResponse|\OpenAPI\Client\Model\ApiTypedUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiTypedForbiddenErrorResponse|\OpenAPI\Client\Model\ApiTypedNotFoundErrorResponse|\OpenAPI\Client\Model\ApiTypedLimitErrorResponse|\OpenAPI\Client\Model\ApiTypedServerErrorResponse
      */
     public function getOutlet($campaign_id, $outlet_id, string $contentType = self::contentTypes['getOutlet'][0])
     {
@@ -937,7 +937,7 @@ class OutletsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GetOutletResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\GetOutletResponse|\OpenAPI\Client\Model\ApiTypedClientDataErrorResponse|\OpenAPI\Client\Model\ApiTypedUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiTypedForbiddenErrorResponse|\OpenAPI\Client\Model\ApiTypedNotFoundErrorResponse|\OpenAPI\Client\Model\ApiTypedLimitErrorResponse|\OpenAPI\Client\Model\ApiTypedServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOutletWithHttpInfo($campaign_id, $outlet_id, string $contentType = self::contentTypes['getOutlet'][0])
     {
@@ -975,37 +975,37 @@ class OutletsApi
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedClientDataErrorResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedUnauthorizedErrorResponse',
                         $request,
                         $response,
                     );
                 case 403:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedForbiddenErrorResponse',
                         $request,
                         $response,
                     );
                 case 404:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedNotFoundErrorResponse',
                         $request,
                         $response,
                     );
                 case 420:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedLimitErrorResponse',
                         $request,
                         $response,
                     );
                 case 500:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedServerErrorResponse',
                         $request,
                         $response,
                     );
@@ -1044,7 +1044,7 @@ class OutletsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiClientDataErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedClientDataErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1052,7 +1052,7 @@ class OutletsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedUnauthorizedErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1060,7 +1060,7 @@ class OutletsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedForbiddenErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1068,7 +1068,7 @@ class OutletsApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedNotFoundErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1076,7 +1076,7 @@ class OutletsApi
                 case 420:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiLimitErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedLimitErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1084,7 +1084,7 @@ class OutletsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiServerErrorResponse',
+                        '\OpenAPI\Client\Model\ApiTypedServerErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1304,12 +1304,12 @@ class OutletsApi
      * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  int|null $region_id Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). (optional)
      * @param  string|null $shop_outlet_code Идентификатор точки продаж, присвоенный магазином. (optional)
-     * @param  int|null $region_id2 {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} (optional) (deprecated)
+     * @param  int|null $region_id2 {% note warning \&quot;Параметр устарел и будет отключен 19.10.2026.\&quot; %}  Вместо него используйте &#x60;region_id&#x60;.  {% endnote %} (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOutlets'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\GetOutletsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
+     * @return \OpenAPI\Client\Model\GetOutletsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse
      */
     public function getOutlets($campaign_id, $page_token = null, $limit = 25, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
     {
@@ -1327,12 +1327,12 @@ class OutletsApi
      * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  int|null $region_id Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). (optional)
      * @param  string|null $shop_outlet_code Идентификатор точки продаж, присвоенный магазином. (optional)
-     * @param  int|null $region_id2 {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} (optional) (deprecated)
+     * @param  int|null $region_id2 {% note warning \&quot;Параметр устарел и будет отключен 19.10.2026.\&quot; %}  Вместо него используйте &#x60;region_id&#x60;.  {% endnote %} (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOutlets'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\GetOutletsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiNotFoundErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\GetOutletsResponse|\OpenAPI\Client\Model\ApiClientDataErrorResponse|\OpenAPI\Client\Model\ApiUnauthorizedErrorResponse|\OpenAPI\Client\Model\ApiForbiddenErrorResponse|\OpenAPI\Client\Model\ApiLimitErrorResponse|\OpenAPI\Client\Model\ApiServerErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOutletsWithHttpInfo($campaign_id, $page_token = null, $limit = 25, $region_id = null, $shop_outlet_code = null, $region_id2 = null, string $contentType = self::contentTypes['getOutlets'][0])
     {
@@ -1383,12 +1383,6 @@ class OutletsApi
                 case 403:
                     return $this->handleResponseWithDataType(
                         '\OpenAPI\Client\Model\ApiForbiddenErrorResponse',
-                        $request,
-                        $response,
-                    );
-                case 404:
-                    return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
                         $request,
                         $response,
                     );
@@ -1460,14 +1454,6 @@ class OutletsApi
                     );
                     $e->setResponseObject($data);
                     throw $e;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ApiNotFoundErrorResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
                 case 420:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -1501,7 +1487,7 @@ class OutletsApi
      * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  int|null $region_id Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). (optional)
      * @param  string|null $shop_outlet_code Идентификатор точки продаж, присвоенный магазином. (optional)
-     * @param  int|null $region_id2 {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} (optional) (deprecated)
+     * @param  int|null $region_id2 {% note warning \&quot;Параметр устарел и будет отключен 19.10.2026.\&quot; %}  Вместо него используйте &#x60;region_id&#x60;.  {% endnote %} (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOutlets'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1527,7 +1513,7 @@ class OutletsApi
      * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  int|null $region_id Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). (optional)
      * @param  string|null $shop_outlet_code Идентификатор точки продаж, присвоенный магазином. (optional)
-     * @param  int|null $region_id2 {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} (optional) (deprecated)
+     * @param  int|null $region_id2 {% note warning \&quot;Параметр устарел и будет отключен 19.10.2026.\&quot; %}  Вместо него используйте &#x60;region_id&#x60;.  {% endnote %} (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOutlets'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1582,7 +1568,7 @@ class OutletsApi
      * @param  int|null $limit {{ limit-param-description }} (optional, default to 25)
      * @param  int|null $region_id Идентификатор региона. Если задать идентификатор родительского региона любого уровня, в выходных данных будут отображены точки продаж всех дочерних регионов. Идентификатор региона можно получить c помощью метода [GET v2/regions](../../reference/regions/searchRegionsByName.md). (optional)
      * @param  string|null $shop_outlet_code Идентификатор точки продаж, присвоенный магазином. (optional)
-     * @param  int|null $region_id2 {% note warning \&quot;Вместо него используйте &#x60;region_id&#x60;.\&quot; %}     {% endnote %} (optional) (deprecated)
+     * @param  int|null $region_id2 {% note warning \&quot;Параметр устарел и будет отключен 19.10.2026.\&quot; %}  Вместо него используйте &#x60;region_id&#x60;.  {% endnote %} (optional) (deprecated)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getOutlets'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

@@ -25,7 +25,7 @@ cancelReturn($campaign_id, $cancel_return_request): \OpenAPI\Client\Model\Cancel
 
 Отмена возврата
 
-{% include notitle [access](../../_auto/method_scopes/cancelReturn.md) %}  Отменяет возврат.  Это можно сделать только до принятия в пункте выдачи (`\"shipmentStatus\": \"CREATED\"`).  {% note info \"Возврат отменяется не мгновенно\" %}  Отмена возврата применяется в течение нескольких минут и только в случае успешного завершения операции. [Как проверить статус операции](../../reference/operations/getOperations.md)  {% endnote %}  {% note tip \"Используйте этот метод в подобных ситуациях\" %}  Вы создали возврат, в котором указали 3 товара. Но покупатель передумал и решил вернуть только 2. Отмените возврат и создайте новый.  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/cancelReturn.md) %}
+{% include notitle [access](../../_auto/method_scopes/cancelReturn.md) %}  Отменяет возврат.  Это можно сделать только до принятия в пункте выдачи (`\"shipmentStatus\": \"CREATED\"`).  {% note info \"Возврат отменяется не мгновенно\" %}  Отмена возврата применяется в течение нескольких минут и только в случае успешного завершения операции. [Как проверить статус операции](../../reference/operations/getOperations.md)  {% endnote %}  {% note tip \"Используйте этот метод в подобных ситуациях\" %}  Вы создали возврат, в котором указали 3 товара. Но покупатель передумал и решил вернуть только 2. Отмените возврат и создайте новый.  {% endnote %}  **Пошаговые инструкции**  * [Отменить возврат LaaS](../../step-by-step/laas-return.md#cancel)  {% include notitle [limit](../../_auto/method_limits/cancelReturn.md) %}
 
 ### Example
 
@@ -92,7 +92,7 @@ createReturn($campaign_id, $create_return_request): \OpenAPI\Client\Model\Create
 
 Создание возврата
 
-{% include notitle [access](../../_auto/method_scopes/createReturn.md) %}  Создает новый возврат.  Это можно сделать только для заказа в статусе `DELIVERED`.  {% note warning \"Перед вызовом метода\" %}  Проверьте, подходят ли пункты выдачи для возврата указанных товаров, — [POST v1/campaigns/{campaignId}/return-delivery-options](../../reference/delivery-options/getReturnDeliveryOptions.md).  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/createReturn.md) %}
+{% include notitle [access](../../_auto/method_scopes/createReturn.md) %}  Создает новый возврат.  Это можно сделать только для заказа в статусе `DELIVERED`.  {% note warning \"Перед вызовом метода\" %}  Проверьте, подходят ли пункты выдачи для возврата указанных товаров, — [POST v1/campaigns/{campaignId}/return-delivery-options](../../reference/delivery-options/getReturnDeliveryOptions.md).  {% endnote %}  **Пошаговые инструкции**  * [Создать возврат LaaS](../../step-by-step/laas-return.md#create)  {% include notitle [limit](../../_auto/method_limits/createReturn.md) %}
 
 ### Example
 
@@ -159,7 +159,7 @@ getReturn($campaign_id, $order_id, $return_id): \OpenAPI\Client\Model\GetReturnR
 
 Информация о невыкупе или возврате
 
-{% include notitle [access](../../_auto/method_scopes/getReturn.md) %}  Получает информацию по одному невыкупу или возврату.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый невыкуп или возврат.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getReturn.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReturn.md) %}  Получает информацию по одному невыкупу или возврату.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый невыкуп или возврат.  [{#T}](../../push-notifications/index.md)  {% endnote %}  **Пошаговые инструкции**  * [Невыкупы и возвраты](../../step-by-step/returns.md)  {% include notitle [limit](../../_auto/method_limits/getReturn.md) %}
 
 ### Example
 
@@ -228,7 +228,7 @@ getReturnApplication($campaign_id, $order_id, $return_id): \SplFileObject
 
 Получение заявления на возврат
 
-{% include notitle [access](../../_auto/method_scopes/getReturnApplication.md) %}  Загружает заявление покупателя на возврат товара.  {% include notitle [limit](../../_auto/method_limits/getReturnApplication.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReturnApplication.md) %}  Загружает заявление покупателя на возврат товара.  **Пошаговые инструкции**  * [Как работать с невыкупами и возвратами](../../step-by-step/returns.md#new-return)  {% include notitle [limit](../../_auto/method_limits/getReturnApplication.md) %}
 
 ### Example
 
@@ -297,7 +297,7 @@ getReturnAvailableDecisions($business_id, $get_return_available_decisions_reques
 
 Получение возможных решений по возврату
 
-{% include notitle [access](../../_auto/method_scopes/getReturnAvailableDecisions.md) %}  Возвращает список доступных решений по возврату.  {% include notitle [limit](../../_auto/method_limits/getReturnAvailableDecisions.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReturnAvailableDecisions.md) %}  Возвращает список доступных решений по возврату.  **Пошаговые инструкции**  * [Как работать с невыкупами и возвратами](../../step-by-step/returns.md#new-return)  {% include notitle [limit](../../_auto/method_limits/getReturnAvailableDecisions.md) %}
 
 ### Example
 
@@ -364,7 +364,7 @@ getReturnPhoto($campaign_id, $order_id, $return_id, $item_id, $image_hash): \Spl
 
 Получение фотографий товаров в возврате
 
-{% include notitle [access](../../_auto/method_scopes/getReturnPhoto.md) %}  Получает фотографии товаров, которые покупатель приложил к заявлению на возврат.  Хеш изображения (`imageHash`) можно получить из ответов методов [GET v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}](../../reference/returns/getReturn.md) и [GET v2/campaigns/{campaignId}/returns](../../reference/returns/getReturns.md) — в поле `images` решения по товару.  Максимальный размер изображения — 50 МБ.  Тип изображения можно определить по заголовку `Content-Type` в ответе.  {% include notitle [limit](../../_auto/method_limits/getReturnPhoto.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReturnPhoto.md) %}  Получает фотографии товаров, которые покупатель приложил к заявлению на возврат.  Хеш изображения (`imageHash`) можно получить из ответов методов [GET v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}](../../reference/returns/getReturn.md) и [GET v2/campaigns/{campaignId}/returns](../../reference/returns/getReturns.md) — в поле `images` решения по товару.  Максимальный размер изображения — 50 МБ.  Тип изображения можно определить по заголовку `Content-Type` в ответе.  **Пошаговые инструкции**  * [Как работать с невыкупами и возвратами](../../step-by-step/returns.md#new-return)  {% include notitle [limit](../../_auto/method_limits/getReturnPhoto.md) %}
 
 ### Example
 
@@ -437,7 +437,7 @@ getReturns($campaign_id, $page_token, $limit, $order_ids, $statuses, $shipment_s
 
 Список невыкупов и возвратов
 
-{% include notitle [access](../../_auto/method_scopes/getReturns.md) %}  Получает список невыкупов и возвратов.  Чтобы получить информацию по одному невыкупу или возврату, выполните запрос [GET v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}](../../reference/returns/getReturn.md).  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый невыкуп или возврат.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getReturns.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReturns.md) %}  Получает список невыкупов и возвратов.  Чтобы получить информацию по одному невыкупу или возврату, выполните запрос [GET v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}](../../reference/returns/getReturn.md).  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый невыкуп или возврат.  [{#T}](../../push-notifications/index.md)  {% endnote %}  **Пошаговые инструкции**  * [Невыкупы и возвраты](../../step-by-step/returns.md)  {% include notitle [limit](../../_auto/method_limits/getReturns.md) %}
 
 ### Example
 
@@ -470,8 +470,8 @@ $shipment_statuses = [READY_FOR_PICKUP, IN_TRANSIT]; // \OpenAPI\Client\Model\Re
 $type = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReturnType(); // \OpenAPI\Client\Model\ReturnType | Тип заказа для фильтрации:  * `UNREDEEMED` — невыкуп.  * `RETURN` — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты.
 $from_date = 2022-10-31; // \DateTime | Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
 $to_date = 2022-11-30; // \DateTime | Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
-$from_date2 = 2022-10-31; // \DateTime | {% note warning \"Вместо него используйте `fromDate`.\" %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления.
-$to_date2 = 2022-11-30; // \DateTime | {% note warning \"Вместо него используйте `toDate`.\" %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления.
+$from_date2 = 2022-10-31; // \DateTime | {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `fromDate`.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления.
+$to_date2 = 2022-11-30; // \DateTime | {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `toDate`.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления.
 
 try {
     $result = $apiInstance->getReturns($campaign_id, $page_token, $limit, $order_ids, $statuses, $shipment_statuses, $type, $from_date, $to_date, $from_date2, $to_date2);
@@ -494,8 +494,8 @@ try {
 | **type** | [**\OpenAPI\Client\Model\ReturnType**](../Model/.md)| Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. | [optional] |
 | **from_date** | **\DateTime**| Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
 | **to_date** | **\DateTime**| Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
-| **from_date2** | **\DateTime**| {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
-| **to_date2** | **\DateTime**| {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
+| **from_date2** | **\DateTime**| {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
+| **to_date2** | **\DateTime**| {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
 
 ### Return type
 
@@ -593,7 +593,7 @@ submitReturnDecision($campaign_id, $order_id, $return_id, $submit_return_decisio
 
 Передача решения по возврату
 
-{% include notitle [access](../../_auto/method_scopes/submitReturnDecision.md) %}  Позволяет передать список решений по возврату.  {% note info \"Перед вызовом метода\" %}  Получите список доступных решений — [POST v1/businesses/{businessId}/returns/decisions](../../reference/returns/getReturnAvailableDecisions.md).  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/submitReturnDecision.md) %}
+{% include notitle [access](../../_auto/method_scopes/submitReturnDecision.md) %}  Позволяет передать список решений по возврату.  {% note info \"Перед вызовом метода\" %}  Получите список доступных решений — [POST v1/businesses/{businessId}/returns/decisions](../../reference/returns/getReturnAvailableDecisions.md).  {% endnote %}  **Пошаговые инструкции**  * [Как работать с невыкупами и возвратами](../../step-by-step/returns.md#new-return)  {% include notitle [limit](../../_auto/method_limits/submitReturnDecision.md) %}
 
 ### Example
 

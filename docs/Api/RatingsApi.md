@@ -18,7 +18,7 @@ getQualityRatingDetails($campaign_id): \OpenAPI\Client\Model\GetQualityRatingDet
 
 Заказы, которые повлияли на индекс качества
 
-{% include notitle [access](../../_auto/method_scopes/getQualityRatingDetails.md) %}  Возвращает список заказов, которые повлияли на индекс качества магазина. Чтобы узнать значение индекса качества, выполните запрос [POST v2/businesses/{businessId}/ratings/quality](../../reference/ratings/getQualityRatings.md).  {% include notitle [limit](../../_auto/method_limits/getQualityRatingDetails.md) %}
+{% include notitle [access](../../_auto/method_scopes/getQualityRatingDetails.md) %}  Возвращает список заказов, которые повлияли на индекс качества магазина. Чтобы узнать значение индекса качества, выполните запрос [POST v2/businesses/{businessId}/ratings/quality](../../reference/ratings/getQualityRatings.md).  **Пошаговые инструкции**  * [Индекс качества](../../step-by-step/ratings.md)  {% include notitle [limit](../../_auto/method_limits/getQualityRatingDetails.md) %}
 
 ### Example
 
@@ -83,7 +83,7 @@ getQualityRatings($business_id, $get_quality_rating_request): \OpenAPI\Client\Mo
 
 Индекс качества магазинов
 
-{% include notitle [access](../../_auto/method_scopes/getQualityRatings.md) %}  Возвращает значение индекса качества магазинов и его составляющие.  Подробнее об индексе качества читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/quality/score/).  {% include notitle [limit](../../_auto/method_limits/getQualityRatings.md) %}
+{% include notitle [access](../../_auto/method_scopes/getQualityRatings.md) %}  Возвращает значение индекса качества магазинов и его составляющие.  Подробнее об индексе качества читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/quality/score/).  **Пошаговые инструкции**  * [Индекс качества](../../step-by-step/ratings.md)  {% include notitle [limit](../../_auto/method_limits/getQualityRatings.md) %}
 
 ### Example
 

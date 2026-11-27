@@ -58,8 +58,7 @@ class PackagingScrollingPagerDTO implements ModelInterface, ArrayAccess, \JsonSe
       * @var string[]
       */
     protected static $openAPITypes = [
-        'next_page_token' => 'string',
-        'prev_page_token' => 'string'
+        'next_page_token' => 'string'
     ];
 
     /**
@@ -70,8 +69,7 @@ class PackagingScrollingPagerDTO implements ModelInterface, ArrayAccess, \JsonSe
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'next_page_token' => null,
-        'prev_page_token' => null
+        'next_page_token' => null
     ];
 
     /**
@@ -80,8 +78,7 @@ class PackagingScrollingPagerDTO implements ModelInterface, ArrayAccess, \JsonSe
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'next_page_token' => false,
-        'prev_page_token' => false
+        'next_page_token' => false
     ];
 
     /**
@@ -170,8 +167,7 @@ class PackagingScrollingPagerDTO implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $attributeMap = [
-        'next_page_token' => 'nextPageToken',
-        'prev_page_token' => 'prevPageToken'
+        'next_page_token' => 'nextPageToken'
     ];
 
     /**
@@ -180,8 +176,7 @@ class PackagingScrollingPagerDTO implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $setters = [
-        'next_page_token' => 'setNextPageToken',
-        'prev_page_token' => 'setPrevPageToken'
+        'next_page_token' => 'setNextPageToken'
     ];
 
     /**
@@ -190,8 +185,7 @@ class PackagingScrollingPagerDTO implements ModelInterface, ArrayAccess, \JsonSe
      * @var string[]
      */
     protected static $getters = [
-        'next_page_token' => 'getNextPageToken',
-        'prev_page_token' => 'getPrevPageToken'
+        'next_page_token' => 'getNextPageToken'
     ];
 
     /**
@@ -252,7 +246,6 @@ class PackagingScrollingPagerDTO implements ModelInterface, ArrayAccess, \JsonSe
     public function __construct(?array $data = null)
     {
         $this->setIfExists('next_page_token', $data ?? [], null);
-        $this->setIfExists('prev_page_token', $data ?? [], null);
     }
 
     /**
@@ -320,35 +313,6 @@ class PackagingScrollingPagerDTO implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable next_page_token cannot be null');
         }
         $this->container['next_page_token'] = $next_page_token;
-
-        return $this;
-    }
-
-    /**
-     * Gets prev_page_token
-     *
-     * @return string|null
-     * @deprecated
-     */
-    public function getPrevPageToken()
-    {
-        return $this->container['prev_page_token'];
-    }
-
-    /**
-     * Sets prev_page_token
-     *
-     * @param string|null $prev_page_token Идентификатор предыдущей страницы результатов.
-     *
-     * @return self
-     * @deprecated
-     */
-    public function setPrevPageToken($prev_page_token)
-    {
-        if (is_null($prev_page_token)) {
-            throw new \InvalidArgumentException('non-nullable prev_page_token cannot be null');
-        }
-        $this->container['prev_page_token'] = $prev_page_token;
 
         return $this;
     }

@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **delivery_partner_type** | [**\OpenAPI\Client\Model\OrderDeliveryPartnerType**](OrderDeliveryPartnerType.md) |  |
 **dates** | [**\OpenAPI\Client\Model\OrderDeliveryDatesDTO**](OrderDeliveryDatesDTO.md) |  |
 **delivery_service_id** | **int** | Идентификатор службы доставки. |
-**id** | **string** | Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом &#x60;POST cart&#x60;. | [optional]
-**price** | **float** | {% note warning \&quot;Стоимость доставки смотрите в параметре &#x60;deliveryTotal&#x60;.\&quot; %}     {% endnote %}  Стоимость доставки в валюте заказа. | [optional]
+**id** | **string** | {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}     {% endnote %}  Идентификатор доставки, присвоенный магазином.  Указывается, только если магазин передал данный идентификатор в ответе на запрос методом &#x60;POST cart&#x60;. | [optional]
+**price** | **float** | {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Стоимость доставки смотрите в параметре &#x60;deliveryTotal&#x60;.  {% endnote %}  Стоимость доставки в валюте заказа. | [optional]
 **courier** | [**\OpenAPI\Client\Model\OrderCourierDTO**](OrderCourierDTO.md) |  | [optional]
 **region** | [**\OpenAPI\Client\Model\RegionDTO**](RegionDTO.md) |  | [optional]
 **address** | [**\OpenAPI\Client\Model\OrderDeliveryAddressDTO**](OrderDeliveryAddressDTO.md) |  | [optional]

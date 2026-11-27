@@ -72,6 +72,18 @@ class ContentApiTest extends TestCase
     }
 
     /**
+     * Test case for createContentSizeTables
+     *
+     * Создание таблиц размеров.
+     *
+     */
+    public function testCreateContentSizeTables()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getCategoryContentParameters
      *
      * Списки характеристик товаров по категориям.
@@ -84,12 +96,60 @@ class ContentApiTest extends TestCase
     }
 
     /**
+     * Test case for getContentSizeCharts
+     *
+     * Размерные сетки и обмеры для таблиц размеров.
+     *
+     */
+    public function testGetContentSizeCharts()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getContentSizeTables
+     *
+     * Таблицы размеров по идентификаторам.
+     *
+     */
+    public function testGetContentSizeTables()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getOfferCardsContentStatus
      *
      * Получение информации о заполненности карточек магазина.
      *
      */
     public function testGetOfferCardsContentStatus()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for suggestContentSizeTables
+     *
+     * Подбор таблиц размеров.
+     *
+     */
+    public function testSuggestContentSizeTables()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateContentSizeTables
+     *
+     * Обновление таблиц размеров.
+     *
+     */
+    public function testUpdateContentSizeTables()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

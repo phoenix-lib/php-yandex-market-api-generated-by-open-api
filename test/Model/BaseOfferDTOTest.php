@@ -305,6 +305,15 @@ class BaseOfferDTOTest extends TestCase
     }
 
     /**
+     * Test attribute "marking_declared"
+     */
+    public function testPropertyMarkingDeclared()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "age"
      */
     public function testPropertyAge()

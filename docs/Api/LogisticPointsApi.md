@@ -17,7 +17,7 @@ getLogisticPoints($business_id, $page_token, $limit): \OpenAPI\Client\Model\GetL
 
 Получение точек ПВЗ Маркета
 
-{% include notitle [access](../../_auto/method_scopes/getLogisticPoints.md) %}  Возвращает список пунктов выдачи заказов Маркета.  Регулярно запрашивайте эту информацию, чтобы в системе магазина хранить актуальные данные. Например, раз в день.  {% include notitle [limit](../../_auto/method_limits/getLogisticPoints.md) %}
+{% include notitle [access](../../_auto/method_scopes/getLogisticPoints.md) %}  Возвращает список пунктов выдачи заказов Маркета.  Регулярно запрашивайте эту информацию, чтобы в системе магазина хранить актуальные данные. Например, раз в день.  **Пошаговые инструкции**  * [Создать заказ LaaS](../../step-by-step/laas-order.md#create) * [Создать возврат LaaS](../../step-by-step/laas-return.md#create)  {% include notitle [limit](../../_auto/method_limits/getLogisticPoints.md) %}
 
 ### Example
 

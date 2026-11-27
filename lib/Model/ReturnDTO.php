@@ -704,7 +704,7 @@ class ReturnDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets refund_amount
      *
-     * @param int|null $refund_amount {% note warning \"Вместо него используйте `amount`.\" %}     {% endnote %}  Сумма возврата в копейках.
+     * @param int|null $refund_amount {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `amount`.  {% endnote %}  Сумма возврата в копейках.
      *
      * @return self
      * @deprecated

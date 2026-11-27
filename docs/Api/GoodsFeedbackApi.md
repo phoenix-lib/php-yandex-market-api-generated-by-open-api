@@ -22,7 +22,7 @@ deleteGoodsFeedbackComment($business_id, $delete_goods_feedback_comment_request,
 
 Удаление комментария к отзыву
 
-{% include notitle [access](../../_auto/method_scopes/deleteGoodsFeedbackComment.md) %}  Удаляет комментарий магазина.  {% include notitle [limit](../../_auto/method_limits/deleteGoodsFeedbackComment.md) %}
+{% include notitle [access](../../_auto/method_scopes/deleteGoodsFeedbackComment.md) %}  Удаляет комментарий магазина.  **Пошаговые инструкции**  * [Удалить свой комментарий](../../step-by-step/goods-feedback.md#delete)  {% include notitle [limit](../../_auto/method_limits/deleteGoodsFeedbackComment.md) %}
 
 ### Example
 
@@ -91,7 +91,7 @@ getGoodsFeedbackComments($business_id, $get_goods_feedback_comments_request, $pa
 
 Получение комментариев к отзыву
 
-{% include notitle [access](../../_auto/method_scopes/getGoodsFeedbackComments.md) %}  Возвращает комментарии к отзыву, кроме:    * тех, которые удалили пользователи или Маркет;   * комментариев к удаленным отзывам.  Идентификатор родительского комментария `parentId` возвращается только для ответов на другие комментарии, но не для ответов на отзывы.  {% if audience == \"partner\" %}  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый комментарий. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% endif %}  Результаты возвращаются постранично.  Комментарии расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `pageToken`, если вы получали его ранее.  {% include notitle [limit](../../_auto/method_limits/getGoodsFeedbackComments.md) %}
+{% include notitle [access](../../_auto/method_scopes/getGoodsFeedbackComments.md) %}  Возвращает комментарии к отзыву, кроме:    * тех, которые удалили пользователи или Маркет;   * комментариев к удаленным отзывам.  Идентификатор родительского комментария `parentId` возвращается только для ответов на другие комментарии, но не для ответов на отзывы.  {% if audience == \"partner\" %}  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый комментарий. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% endif %}  Результаты возвращаются постранично.  Комментарии расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `pageToken`, если вы получали его ранее.  **Пошаговые инструкции**  * [Отзывы о товарах](../../step-by-step/goods-feedback.md)  {% include notitle [limit](../../_auto/method_limits/getGoodsFeedbackComments.md) %}
 
 ### Example
 
@@ -164,7 +164,7 @@ getGoodsFeedbacks($business_id, $page_token, $limit, $get_goods_feedback_request
 
 Получение отзывов о товарах продавца
 
-{% include notitle [access](../../_auto/method_scopes/getGoodsFeedbacks.md) %}  Возвращает отзывы о товарах продавца по указанным фильтрам. **Исключение:** отзывы, которые удалили покупатели или Маркет.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый отзыв. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично.  Отзывы расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `pageToken`, если вы получали его ранее.  {% include notitle [limit](../../_auto/method_limits/getGoodsFeedbacks.md) %}
+{% include notitle [access](../../_auto/method_scopes/getGoodsFeedbacks.md) %}  Возвращает отзывы о товарах продавца по указанным фильтрам. **Исключение:** отзывы, которые удалили покупатели или Маркет.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый отзыв. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично.  Отзывы расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `pageToken`, если вы получали его ранее.  **Пошаговые инструкции**  * [Отзывы о товарах](../../step-by-step/goods-feedback.md)  {% include notitle [limit](../../_auto/method_limits/getGoodsFeedbacks.md) %}
 
 ### Example
 
@@ -308,7 +308,7 @@ skipGoodsFeedbacksReaction($business_id, $skip_goods_feedback_reaction_request, 
 
 Пропуск реакции на отзывы
 
-{% include notitle [access](../../_auto/method_scopes/skipGoodsFeedbacksReaction.md) %}  Пропускает реакцию на отзыв — параметр `needReaction` принимает значение `false` в методе получения всех отзывов [POST v2/businesses/{businessId}/goods-feedback](../../reference/goods-feedback/getGoodsFeedbacks.md).  {% include notitle [limit](../../_auto/method_limits/skipGoodsFeedbacksReaction.md) %}
+{% include notitle [access](../../_auto/method_scopes/skipGoodsFeedbacksReaction.md) %}  Пропускает реакцию на отзыв — параметр `needReaction` принимает значение `false` в методе получения всех отзывов [POST v2/businesses/{businessId}/goods-feedback](../../reference/goods-feedback/getGoodsFeedbacks.md).  **Пошаговые инструкции**  * [Отзывы о товарах](../../step-by-step/goods-feedback.md)  {% include notitle [limit](../../_auto/method_limits/skipGoodsFeedbacksReaction.md) %}
 
 ### Example
 
@@ -377,7 +377,7 @@ updateGoodsFeedbackComment($business_id, $update_goods_feedback_comment_request,
 
 Добавление нового или изменение созданного комментария
 
-{% include notitle [access](../../_auto/method_scopes/updateGoodsFeedbackComment.md) %}  Добавляет новый комментарий магазина или изменяет комментарий, который магазин оставлял ранее.  Для создания комментария к отзыву передайте только идентификатор отзыва `feedbackId`.  Чтобы добавить комментарий к другому комментарию, передайте:  * `feedbackId` — идентификатор отзыва; * `comment.parentId` — идентификатор родительского комментария.  Чтобы изменить комментарий, передайте:  * `feedbackId`— идентификатор отзыва; * `comment.id` — идентификатор комментария, который нужно изменить.  Если передать одновременно `comment.parentId` и `comment.id`, будет изменен существующий комментарий.  {% include notitle [limit](../../_auto/method_limits/updateGoodsFeedbackComment.md) %}
+{% include notitle [access](../../_auto/method_scopes/updateGoodsFeedbackComment.md) %}  Добавляет новый комментарий магазина или изменяет комментарий, который магазин оставлял ранее.  Для создания комментария к отзыву передайте только идентификатор отзыва `feedbackId`.  Чтобы добавить комментарий к другому комментарию, передайте:  * `feedbackId` — идентификатор отзыва; * `comment.parentId` — идентификатор родительского комментария.  Чтобы изменить комментарий, передайте:  * `feedbackId`— идентификатор отзыва; * `comment.id` — идентификатор комментария, который нужно изменить.  Если передать одновременно `comment.parentId` и `comment.id`, будет изменен существующий комментарий.  **Пошаговые инструкции**  * [Отзывы о товарах](../../step-by-step/goods-feedback.md)  {% include notitle [limit](../../_auto/method_limits/updateGoodsFeedbackComment.md) %}
 
 ### Example
 

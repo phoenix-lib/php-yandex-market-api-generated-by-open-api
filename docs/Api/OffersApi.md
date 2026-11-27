@@ -20,7 +20,7 @@ deleteCampaignOffers($campaign_id, $delete_campaign_offers_request): \OpenAPI\Cl
 
 Удаление товаров из ассортимента магазина
 
-{% include notitle [access](../../_auto/method_scopes/deleteCampaignOffers.md) %}  Удаляет заданные товары из заданного магазина.  {% note warning \"Запрос удаляет товары из конкретного магазина\" %}  На продажи в других магазинах и на наличие товара в общем каталоге он не влияет.  {% endnote %}  Товар не получится удалить, если он хранится на складах Маркета.  {% include notitle [limit](../../_auto/method_limits/deleteCampaignOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/deleteCampaignOffers.md) %}  Удаляет заданные товары из заданного магазина.  {% note warning \"Запрос удаляет товары из конкретного магазина\" %}  На продажи в других магазинах и на наличие товара в общем каталоге он не влияет.  {% endnote %}  Товар не получится удалить, если он хранится на складах Маркета.  **Пошаговые инструкции**  * [Удаление товаров из каталога](../../step-by-step/assortment-add-goods.md#deletion)  {% include notitle [limit](../../_auto/method_limits/deleteCampaignOffers.md) %}
 
 ### Example
 
@@ -229,7 +229,7 @@ updateCampaignOffers($campaign_id, $update_campaign_offers_request): \OpenAPI\Cl
 
 Изменение условий продажи товаров в магазине
 
-{% include notitle [access](../../_auto/method_scopes/updateCampaignOffers.md) %}  Изменяет параметры размещения товаров в конкретном магазине: доступность товара и применяемый НДС.  {% include notitle [limit](../../_auto/method_limits/updateCampaignOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/updateCampaignOffers.md) %}  Изменяет параметры размещения товаров в конкретном магазине: доступность товара и применяемый НДС.  **Пошаговые инструкции**  * [Добавить новые товары в каталог](../../step-by-step/assortment-add-goods.md#add)  {% include notitle [limit](../../_auto/method_limits/updateCampaignOffers.md) %}
 
 ### Example
 

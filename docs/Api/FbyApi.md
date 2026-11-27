@@ -12,7 +12,10 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 | [**confirmBusinessPrices()**](FbyApi.md#confirmBusinessPrices) | **POST** /v2/businesses/{businessId}/price-quarantine/confirm | Удаление товара из карантина по цене в кабинете |
 | [**confirmCampaignPrices()**](FbyApi.md#confirmCampaignPrices) | **POST** /v2/campaigns/{campaignId}/price-quarantine/confirm | Удаление товара из карантина по цене в магазине |
 | [**createChat()**](FbyApi.md#createChat) | **POST** /v2/businesses/{businessId}/chats/new | Создание нового чата с покупателем |
+| [**createContentSizeTables()**](FbyApi.md#createContentSizeTables) | **POST** /v2/businesses/{businessId}/size-tables/create | Создание таблиц размеров |
+| [**createDocuments()**](FbyApi.md#createDocuments) | **POST** /v1/businesses/{businessId}/offers/documents/create | Создание документов |
 | [**deleteCampaignOffers()**](FbyApi.md#deleteCampaignOffers) | **POST** /v2/campaigns/{campaignId}/offers/delete | Удаление товаров из ассортимента магазина |
+| [**deleteDocuments()**](FbyApi.md#deleteDocuments) | **POST** /v1/businesses/{businessId}/offers/documents/delete | Удаление документов |
 | [**deleteGoodsFeedbackComment()**](FbyApi.md#deleteGoodsFeedbackComment) | **POST** /v2/businesses/{businessId}/goods-feedback/comments/delete | Удаление комментария к отзыву |
 | [**deleteHiddenOffers()**](FbyApi.md#deleteHiddenOffers) | **POST** /v2/campaigns/{campaignId}/hidden-offers/delete | Возобновление показа товаров |
 | [**deleteOffers()**](FbyApi.md#deleteOffers) | **POST** /v2/businesses/{businessId}/offer-mappings/delete | Удаление товаров из каталога |
@@ -60,7 +63,10 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 | [**getChatHistory()**](FbyApi.md#getChatHistory) | **POST** /v2/businesses/{businessId}/chats/history | Получение истории сообщений в чате |
 | [**getChatMessage()**](FbyApi.md#getChatMessage) | **GET** /v2/businesses/{businessId}/chats/message | Получение сообщения в чате |
 | [**getChats()**](FbyApi.md#getChats) | **POST** /v2/businesses/{businessId}/chats | Получение доступных чатов |
+| [**getContentSizeCharts()**](FbyApi.md#getContentSizeCharts) | **POST** /v2/businesses/{businessId}/size-tables/charts | Размерные сетки и обмеры для таблиц размеров |
+| [**getContentSizeTables()**](FbyApi.md#getContentSizeTables) | **POST** /v2/businesses/{businessId}/size-tables | Таблицы размеров по идентификаторам |
 | [**getDefaultPrices()**](FbyApi.md#getDefaultPrices) | **POST** /v2/businesses/{businessId}/offer-prices | Просмотр цен на указанные товары во всех магазинах |
+| [**getDocuments()**](FbyApi.md#getDocuments) | **POST** /v1/businesses/{businessId}/offers/documents | Получение документов |
 | [**getFulfillmentWarehouses()**](FbyApi.md#getFulfillmentWarehouses) | **GET** /v2/warehouses | Идентификаторы фулфилмент-складов Маркета |
 | [**getGoodsFeedbackComments()**](FbyApi.md#getGoodsFeedbackComments) | **POST** /v2/businesses/{businessId}/goods-feedback/comments | Получение комментариев к отзыву |
 | [**getGoodsFeedbacks()**](FbyApi.md#getGoodsFeedbacks) | **POST** /v2/businesses/{businessId}/goods-feedback | Получение отзывов о товарах продавца |
@@ -102,8 +108,11 @@ All URIs are relative to https://api.partner.market.yandex.ru, except if the ope
 | [**sendMessageToChat()**](FbyApi.md#sendMessageToChat) | **POST** /v2/businesses/{businessId}/chats/message | Отправка сообщения в чат |
 | [**skipGoodsFeedbacksReaction()**](FbyApi.md#skipGoodsFeedbacksReaction) | **POST** /v2/businesses/{businessId}/goods-feedback/skip-reaction | Пропуск реакции на отзывы |
 | [**submitReturnDecision()**](FbyApi.md#submitReturnDecision) | **POST** /v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}/decision/submit | Передача решения по возврату |
+| [**suggestContentSizeTables()**](FbyApi.md#suggestContentSizeTables) | **POST** /v2/businesses/{businessId}/size-tables/suggest | Подбор таблиц размеров |
 | [**updateBusinessPrices()**](FbyApi.md#updateBusinessPrices) | **POST** /v2/businesses/{businessId}/offer-prices/updates | Установка цен на товары для всех магазинов |
 | [**updateCampaignOffers()**](FbyApi.md#updateCampaignOffers) | **POST** /v2/campaigns/{campaignId}/offers/update | Изменение условий продажи товаров в магазине |
+| [**updateContentSizeTables()**](FbyApi.md#updateContentSizeTables) | **POST** /v2/businesses/{businessId}/size-tables/update | Обновление таблиц размеров |
+| [**updateDocuments()**](FbyApi.md#updateDocuments) | **POST** /v1/businesses/{businessId}/offers/documents/update | Обновление документов |
 | [**updateGoodsFeedbackComment()**](FbyApi.md#updateGoodsFeedbackComment) | **POST** /v2/businesses/{businessId}/goods-feedback/comments/update | Добавление нового или изменение созданного комментария |
 | [**updateGoodsQuestionTextEntity()**](FbyApi.md#updateGoodsQuestionTextEntity) | **POST** /v1/businesses/{businessId}/goods-questions/update | Создание, изменение и удаление ответа или комментария |
 | [**updateOfferContent()**](FbyApi.md#updateOfferContent) | **POST** /v2/businesses/{businessId}/offer-cards/update | Редактирование категорийных характеристик товара |
@@ -187,7 +196,7 @@ addOffersToArchive($business_id, $add_offers_to_archive_request): \OpenAPI\Clien
 
 Добавление товаров в архив
 
-{% include notitle [access](../../_auto/method_scopes/addOffersToArchive.md) %}  Помещает товары в архив. Товары, помещенные в архив, скрыты с витрины во всех магазинах кабинета.  {% note warning \"В архив нельзя отправить товар, который хранится на складе Маркета\" %}  Вначале такой товар нужно распродать или вывезти.  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/addOffersToArchive.md) %}
+{% include notitle [access](../../_auto/method_scopes/addOffersToArchive.md) %}  Помещает товары в архив. Товары, помещенные в архив, скрыты с витрины во всех магазинах кабинета.  {% note warning \"В архив нельзя отправить товар, который хранится на складе Маркета\" %}  Вначале такой товар нужно распродать или вывезти.  {% endnote %}  **Пошаговые инструкции**  * [Управление товарами в архиве](../../step-by-step/assortment-archive.md)  {% include notitle [limit](../../_auto/method_limits/addOffersToArchive.md) %}
 
 ### Example
 
@@ -319,7 +328,7 @@ confirmBusinessPrices($business_id, $confirm_prices_request): \OpenAPI\Client\Mo
 
 Удаление товара из карантина по цене в кабинете
 
-{% include notitle [access](../../_auto/method_scopes/confirmBusinessPrices.md) %}  Подтверждает во всех магазинах цену на товары, которые попали в карантин, и удаляет их из карантина.  Товар попадает в карантин, если его цена меняется слишком резко. [Как настроить карантин](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  Чтобы увидеть список товаров, которые попали в карантин, используйте запрос [POST v2/businesses/{businessId}/price-quarantine](getBusinessQuarantineOffers.md).  {% include notitle [limit](../../_auto/method_limits/confirmBusinessPrices.md) %}
+{% include notitle [access](../../_auto/method_scopes/confirmBusinessPrices.md) %}  Подтверждает во всех магазинах цену на товары, которые попали в карантин, и удаляет их из карантина.  Товар попадает в карантин, если его цена меняется слишком резко. [Как настроить карантин](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  Чтобы увидеть список товаров, которые попали в карантин, используйте запрос [POST v2/businesses/{businessId}/price-quarantine](getBusinessQuarantineOffers.md).  **Пошаговые инструкции**  * [Как изменить цены на товары](../../step-by-step/assortment-change-prices.md)  {% include notitle [limit](../../_auto/method_limits/confirmBusinessPrices.md) %}
 
 ### Example
 
@@ -386,7 +395,7 @@ confirmCampaignPrices($campaign_id, $confirm_prices_request): \OpenAPI\Client\Mo
 
 Удаление товара из карантина по цене в магазине
 
-{% include notitle [access](../../_auto/method_scopes/confirmCampaignPrices.md) %}  Подтверждает в заданном магазине цену на товары, которые попали в карантин, и удаляет их из карантина.  Товар попадает в карантин, если его цена меняется слишком резко. [Как настроить карантин](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  Чтобы увидеть список товаров, которые попали в карантин, используйте запрос [POST v2/campaigns/{campaignId}/price-quarantine](getCampaignQuarantineOffers.md).  {% include notitle [limit](../../_auto/method_limits/confirmCampaignPrices.md) %}
+{% include notitle [access](../../_auto/method_scopes/confirmCampaignPrices.md) %}  Подтверждает в заданном магазине цену на товары, которые попали в карантин, и удаляет их из карантина.  Товар попадает в карантин, если его цена меняется слишком резко. [Как настроить карантин](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  Чтобы увидеть список товаров, которые попали в карантин, используйте запрос [POST v2/campaigns/{campaignId}/price-quarantine](getCampaignQuarantineOffers.md).  **Пошаговые инструкции**  * [Как изменить цены на товары](../../step-by-step/assortment-change-prices.md)  {% include notitle [limit](../../_auto/method_limits/confirmCampaignPrices.md) %}
 
 ### Example
 
@@ -453,7 +462,7 @@ createChat($business_id, $create_chat_request): \OpenAPI\Client\Model\CreateChat
 
 Создание нового чата с покупателем
 
-{% include notitle [access](../../_auto/method_scopes/createChat.md) %}  Создает новый чат с покупателем и возвращает информацию о нем или созданном ранее.  Типы чатов, которые может начать продавец:  * по заказам; * по возвратам (доступны только для FBY-, FBS- и Экспресс-магазинов).  {% include notitle [limit](../../_auto/method_limits/createChat.md) %}
+{% include notitle [access](../../_auto/method_scopes/createChat.md) %}  Создает новый чат с покупателем и возвращает информацию о нем или созданном ранее.  Типы чатов, которые может начать продавец:  * по заказам; * по возвратам (доступны только для FBY-, FBS- и Экспресс-магазинов).  **Пошаговые инструкции**  * [Начать чат с покупателем](../../step-by-step/chats.md#create)  {% include notitle [limit](../../_auto/method_limits/createChat.md) %}
 
 ### Example
 
@@ -512,6 +521,140 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `createContentSizeTables()`
+
+```php
+createContentSizeTables($business_id, $create_size_tables_request): \OpenAPI\Client\Model\CreateSizeTablesResponse
+```
+
+Создание таблиц размеров
+
+{% include notitle [access](../../_auto/method_scopes/createContentSizeTables.md) %}  Создает таблицы размеров бизнеса. За один запрос можно создать до 10 таблиц, в которых суммарно не больше 5000 ячеек. Если таблиц или ячеек больше, запрос отклоняется с ошибкой `BAD_REQUEST` и ни одна таблица не создается.  Таблица относится к размерной характеристике, а не к категории: она подбирается для всех категорий с той же размерной характеристикой.  Размерную характеристику категории возвращает метод подбора таблиц размеров `POST v2/businesses/{businessId}/size-tables/suggest` в поле `result.sizeParameterId`, характеристику существующей таблицы — метод `POST v2/businesses/{businessId}/size-tables` в поле `sizeParameterId`. Если в запросе есть неизвестный идентификатор размерной характеристики, запрос отклоняется с ошибкой `UNKNOWN_SIZE_PARAMETER` и ни одна таблица не создается.  Размерные сетки и обмеры, которые можно использовать в таблице, их значения и обязательные сетки возвращает метод `POST v2/businesses/{businessId}/size-tables/charts`.  {% cut \"Как заполнить таблицу\" %}  {% include notitle [size-tables-filling](../../_includes/common/size-tables-filling.md) %}  {% endcut %}  {% cut \"Чем сохраненная таблица отличается от переданной\" %}  {% include notitle [size-tables-saved-differences](../../_includes/common/size-tables-saved-differences.md) %}  Значения из ответа можно без изменений передать в метод обновления таблиц размеров `POST v2/businesses/{businessId}/size-tables/update`: поля `columnType` и `rowIndex` в нем не учитываются.  {% endcut %}  Чтобы привязать таблицу к товару, передайте ее идентификатор в `value` характеристики с `parameterId: 73979829` в запросе [POST v2/businesses/{businessId}/offer-cards/update](../../reference/content/updateOfferContent.md). Когда таблица изменяется, новое содержимое применяется к привязанным товарам автоматически.  {% note warning \"Повторный запрос создает таблицы еще раз\" %}  Метод не идемпотентен: каждый запрос создает новые таблицы, даже если такие же уже есть.  Если запрос завершился ошибкой с кодом 5xx, часть таблиц могла сохраниться. Получите таблицы бизнеса методом `POST v2/businesses/{businessId}/size-tables` и только после этого повторите запрос для таблиц, которых там нет.  {% endnote %}  Количество таблиц у бизнеса ограничено — суммарно по всем размерным характеристикам. Удалить таблицу нельзя. Если лимит исчерпан, таблица не создается и для нее возвращается ошибка `LIMIT_TABLES`. При одновременных запросах лимит проверяется нестрого, и таблиц может создаться больше.  **Пошаговые инструкции**  * [Создать свою таблицу](../../step-by-step/size-tables.md#create)  {% include notitle [limit](../../_auto/method_limits/createContentSizeTables.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$create_size_tables_request = new \OpenAPI\Client\Model\CreateSizeTablesRequest(); // \OpenAPI\Client\Model\CreateSizeTablesRequest
+
+try {
+    $result = $apiInstance->createContentSizeTables($business_id, $create_size_tables_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->createContentSizeTables: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **create_size_tables_request** | [**\OpenAPI\Client\Model\CreateSizeTablesRequest**](../Model/CreateSizeTablesRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CreateSizeTablesResponse**](../Model/CreateSizeTablesResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `createDocuments()`
+
+```php
+createDocuments($business_id, $create_documents_request): \OpenAPI\Client\Model\CreateDocumentsResponse
+```
+
+Создание документов
+
+{% include notitle [access](../../_auto/method_scopes/createDocuments.md) %}  Создает для указанного бизнеса документы на товары. За один запрос можно создать не более 100 документов.  Для привязки документа к товару передайте его номер в поле `certificates` метода [POST v2/businesses/{businessId}/offer-mappings/update](../../reference/business-offer-mappings/updateOfferMappings.md).  Если документ с таким номером уже существует, результат для документа содержит ошибку `DOCUMENT_ALREADY_EXISTS`. Существующий документ при этом не возвращается. Ошибка одного документа не мешает обработке остальных.  {% include notitle [limit](../../_auto/method_limits/createDocuments.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$create_documents_request = new \OpenAPI\Client\Model\CreateDocumentsRequest(); // \OpenAPI\Client\Model\CreateDocumentsRequest
+
+try {
+    $result = $apiInstance->createDocuments($business_id, $create_documents_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->createDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **create_documents_request** | [**\OpenAPI\Client\Model\CreateDocumentsRequest**](../Model/CreateDocumentsRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CreateDocumentsResponse**](../Model/CreateDocumentsResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `deleteCampaignOffers()`
 
 ```php
@@ -520,7 +663,7 @@ deleteCampaignOffers($campaign_id, $delete_campaign_offers_request): \OpenAPI\Cl
 
 Удаление товаров из ассортимента магазина
 
-{% include notitle [access](../../_auto/method_scopes/deleteCampaignOffers.md) %}  Удаляет заданные товары из заданного магазина.  {% note warning \"Запрос удаляет товары из конкретного магазина\" %}  На продажи в других магазинах и на наличие товара в общем каталоге он не влияет.  {% endnote %}  Товар не получится удалить, если он хранится на складах Маркета.  {% include notitle [limit](../../_auto/method_limits/deleteCampaignOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/deleteCampaignOffers.md) %}  Удаляет заданные товары из заданного магазина.  {% note warning \"Запрос удаляет товары из конкретного магазина\" %}  На продажи в других магазинах и на наличие товара в общем каталоге он не влияет.  {% endnote %}  Товар не получится удалить, если он хранится на складах Маркета.  **Пошаговые инструкции**  * [Удаление товаров из каталога](../../step-by-step/assortment-add-goods.md#deletion)  {% include notitle [limit](../../_auto/method_limits/deleteCampaignOffers.md) %}
 
 ### Example
 
@@ -579,6 +722,73 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deleteDocuments()`
+
+```php
+deleteDocuments($business_id, $delete_documents_request): \OpenAPI\Client\Model\EmptyApiResponse
+```
+
+Удаление документов
+
+{% include notitle [access](../../_auto/method_scopes/deleteDocuments.md) %}  Удаляет документы на товары по их идентификаторам. За один запрос можно удалить не более 100 документов.  Повторный запрос на удаление возвращает успешный ответ. Отсутствие одного документа не мешает обработке остальных.  {% include notitle [limit](../../_auto/method_limits/deleteDocuments.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$delete_documents_request = new \OpenAPI\Client\Model\DeleteDocumentsRequest(); // \OpenAPI\Client\Model\DeleteDocumentsRequest
+
+try {
+    $result = $apiInstance->deleteDocuments($business_id, $delete_documents_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->deleteDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **delete_documents_request** | [**\OpenAPI\Client\Model\DeleteDocumentsRequest**](../Model/DeleteDocumentsRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\EmptyApiResponse**](../Model/EmptyApiResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `deleteGoodsFeedbackComment()`
 
 ```php
@@ -587,7 +797,7 @@ deleteGoodsFeedbackComment($business_id, $delete_goods_feedback_comment_request,
 
 Удаление комментария к отзыву
 
-{% include notitle [access](../../_auto/method_scopes/deleteGoodsFeedbackComment.md) %}  Удаляет комментарий магазина.  {% include notitle [limit](../../_auto/method_limits/deleteGoodsFeedbackComment.md) %}
+{% include notitle [access](../../_auto/method_scopes/deleteGoodsFeedbackComment.md) %}  Удаляет комментарий магазина.  **Пошаговые инструкции**  * [Удалить свой комментарий](../../step-by-step/goods-feedback.md#delete)  {% include notitle [limit](../../_auto/method_limits/deleteGoodsFeedbackComment.md) %}
 
 ### Example
 
@@ -723,7 +933,7 @@ deleteOffers($business_id, $delete_offers_request): \OpenAPI\Client\Model\Delete
 
 Удаление товаров из каталога
 
-{% include notitle [access](../../_auto/method_scopes/deleteOffers.md) %}  Удаляет товары из каталога.  {% include notitle [limit](../../_auto/method_limits/deleteOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/deleteOffers.md) %}  Удаляет товары из каталога.  **Пошаговые инструкции**  * [Удаление товаров из каталога](../../step-by-step/assortment-add-goods.md#deletion)  {% include notitle [limit](../../_auto/method_limits/deleteOffers.md) %}
 
 ### Example
 
@@ -790,7 +1000,7 @@ deleteOffersFromArchive($business_id, $delete_offers_from_archive_request): \Ope
 
 Удаление товаров из архива
 
-{% include notitle [access](../../_auto/method_scopes/deleteOffersFromArchive.md) %}  Восстанавливает товары из архива.  {% include notitle [limit](../../_auto/method_limits/deleteOffersFromArchive.md) %}
+{% include notitle [access](../../_auto/method_scopes/deleteOffersFromArchive.md) %}  Восстанавливает товары из архива.  **Пошаговые инструкции**  * [Управление товарами в архиве](../../step-by-step/assortment-archive.md)  {% include notitle [limit](../../_auto/method_limits/deleteOffersFromArchive.md) %}
 
 ### Example
 
@@ -857,7 +1067,7 @@ deletePromoOffers($business_id, $delete_promo_offers_request): \OpenAPI\Client\M
 
 Удаление товаров из акции
 
-{% include notitle [access](../../_auto/method_scopes/deletePromoOffers.md) %}  Убирает товары из акции.  Изменения начинают действовать в течение 4–6 часов. Узнать, применились ли они, можно с помощью параметра `processing` в ответе метода [POST v2/businesses/{businessId}/promos](../../reference/promos/getPromos.md).  {% include notitle [limit](../../_auto/method_limits/deletePromoOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/deletePromoOffers.md) %}  Убирает товары из акции.  Изменения начинают действовать в течение 4–6 часов. Узнать, применились ли они, можно с помощью параметра `processing` в ответе метода [POST v2/businesses/{businessId}/promos](../../reference/promos/getPromos.md).  **Пошаговые инструкции**  * [Удалить товары из акции](../../step-by-step/promos.md#delete-goods)  {% include notitle [limit](../../_auto/method_limits/deletePromoOffers.md) %}
 
 ### Example
 
@@ -924,7 +1134,7 @@ generateBannersStatisticsReport($generate_banners_statistics_request, $format, $
 
 Отчет по охватному продвижению
 
-{% include notitle [access](../../_auto/method_scopes/generateBannersStatisticsReport.md) %}  Запускает генерацию сводного отчета по охватному продвижению. {% if audience == \"partner\" %}Что это за отчет: [для баннеров](https://yandex.ru/support/marketplace/ru/marketing/advertising-tools/banner#statistics), [для пуш-уведомлений](https://yandex.ru/support/marketplace/ru/marketing/advertising-tools/push-notifications#statistics).{% endif %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/incuts/banners_statistics.md) %}  {% if audience != \"advertiser\" %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% endif %}  {% include notitle [limit](../../_auto/method_limits/generateBannersStatisticsReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateBannersStatisticsReport.md) %}  Запускает генерацию сводного отчета по охватному продвижению. {% if audience == \"partner\" %}Что это за отчет: [для баннеров](https://yandex.ru/support/marketplace/ru/marketing/advertising-tools/banner#statistics), [для пуш-уведомлений](https://yandex.ru/support/marketplace/ru/marketing/advertising-tools/push-notifications#statistics).{% endif %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/incuts/banners_statistics.md) %}  {% if audience != \"advertiser\" %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% endif %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateBannersStatisticsReport.md) %}
 
 ### Example
 
@@ -993,7 +1203,7 @@ generateBarcodesReport($generate_barcodes_report_request): \OpenAPI\Client\Model
 
 Получение файла со штрихкодами
 
-{% include notitle [access](../../_auto/method_scopes/generateBarcodesReport.md) %}  Запускает генерацию PDF-файла со штрихкодами переданных товаров или товаров в указанной заявке на поставку.  Файл не получится сгенерировать, если в нем будет более 1 500 штрихкодов.  Узнать статус генерации и получить ссылку на готовый файл можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [limit](../../_auto/method_limits/generateBarcodesReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateBarcodesReport.md) %}  Запускает генерацию PDF-файла со штрихкодами переданных товаров или товаров в указанной заявке на поставку.  Файл не получится сгенерировать, если в нем будет более 1 500 штрихкодов.  Узнать статус генерации и получить ссылку на готовый файл можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  **Пошаговые инструкции**  * [Получить файл со штрихкодами товаров в заявке](../../step-by-step/supplies.md) * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateBarcodesReport.md) %}
 
 ### Example
 
@@ -1058,7 +1268,7 @@ generateBoostConsolidatedReport($generate_boost_consolidated_request, $format, $
 
 Отчет по бусту продаж
 
-{% include notitle [access](../../_auto/method_scopes/generateBoostConsolidatedReport.md) %}  Запускает генерацию сводного отчета по бусту продаж за заданный период. {% if audience == \"partner\" %}[Что такое буст продаж](https://yandex.ru/support/marketplace/ru/marketing/campaigns){% endif %}  Отчет содержит информацию по всем кампаниям, созданным и через API, и в кабинете.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports]({{ report-columns-boost-consolidated }}) %}  {% if audience != \"advertiser\" %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% endif %}  {% include notitle [limit](../../_auto/method_limits/generateBoostConsolidatedReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateBoostConsolidatedReport.md) %}  Запускает генерацию сводного отчета по бусту продаж за заданный период. {% if audience == \"partner\" %}[Что такое буст продаж](https://yandex.ru/support/marketplace/ru/marketing/campaigns){% endif %}  Отчет содержит информацию по всем кампаниям, созданным и через API, и в кабинете.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports]({{ report-columns-boost-consolidated }}) %}  {% if audience != \"advertiser\" %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% endif %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateBoostConsolidatedReport.md) %}
 
 ### Example
 
@@ -1127,7 +1337,7 @@ generateClosureDocumentsDetalizationReport($generate_closure_documents_detalizat
 
 Отчет по схождению с закрывающими документами
 
-{% include notitle [access](../../_auto/method_scopes/generateClosureDocumentsDetalizationReport.md) %}  Запускает генерацию отчета по схождению с закрывающими документами в зависимости от типа договора.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Договор на размещение    {% include notitle [reports](../../_auto/reports/period_closure/period_closure_income.md) %}  - Договор на продвижение    {% include notitle [reports](../../_auto/reports/period_closure/period_closure_outcome.md) %}  {% endlist %}  {% include notitle [limit](../../_auto/method_limits/generateClosureDocumentsDetalizationReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateClosureDocumentsDetalizationReport.md) %}  Запускает генерацию отчета по схождению с закрывающими документами в зависимости от типа договора.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Договор на размещение    {% include notitle [reports](../../_auto/reports/period_closure/period_closure_income.md) %}  - Договор на продвижение    {% include notitle [reports](../../_auto/reports/period_closure/period_closure_outcome.md) %}  {% endlist %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateClosureDocumentsDetalizationReport.md) %}
 
 ### Example
 
@@ -1194,7 +1404,7 @@ generateClosureDocumentsReport($generate_closure_documents_request): \OpenAPI\Cl
 
 Закрывающие документы
 
-{% include notitle [access](../../_auto/method_scopes/generateClosureDocumentsReport.md) %}  Возвращает ZIP-архив с закрывающими документами в формате PDF за указанный месяц.  {% cut \"Состав документов в зависимости от типа договора\" %}  * **Договор на размещение**    * [акт об оказанных услугах](*acts-main-act)   * [счет-фактура](*acts-main-invoice)   * [сводный отчет по данным статистики](*acts-main-report)   * [отчет об исполнении поручения и о зачете взаимных требований](*acts-main-agent) (отчет агента)  * **Договор на продвижение** (в России не заключается после 30 сентября 2024 года)    * [акт об оказании услуг](*acts-discounts-act)   * [счет-фактура](*acts-discounts-invoice), если этого требует схема налогообложения  * **Договор на маркетинг**    * [акт об оказанных услугах](*acts-marketing-act)   * [счет-фактура](*acts-main-invoice)   * [счет-фактура на аванс](*acts-marketing-invoice)   * [выписка по лицевому счету](*acts-marketing-account)   * [детализация к акту](*acts-marketing-details)  {% endcut %}  Узнать статус генерации и получить ссылку на архив можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [limit](../../_auto/method_limits/generateClosureDocumentsReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateClosureDocumentsReport.md) %}  Возвращает ZIP-архив с закрывающими документами в формате PDF за указанный месяц.  {% cut \"Состав документов в зависимости от типа договора\" %}  * **Договор на размещение**    * [универсальный передаточный документ (УПД-1)](*acts-main-utd) (в России формируется за октябрь 2026 года и последующие месяцы, вместо акта об оказанных услугах и счета-фактуры)   * [акт об оказанных услугах](*acts-main-act) (в России формируется за месяцы до октября 2026 года)   * [счет-фактура](*acts-main-invoice) (в России формируется за месяцы до октября 2026 года)   * [сводный отчет по данным статистики](*acts-main-report)   * [отчет об исполнении поручения и о зачете взаимных требований](*acts-main-agent) (отчет агента)  * **Договор на продвижение** (в России не заключается после 30 сентября 2024 года)    * [акт об оказании услуг](*acts-discounts-act)   * [счет-фактура](*acts-discounts-invoice), если этого требует схема налогообложения  * **Договор на маркетинг**    * [универсальный передаточный документ (УПД-1)](*acts-main-utd) (в России формируется за август 2026 года и последующие месяцы, вместо акта об оказанных услугах и счета-фактуры)   * [акт об оказанных услугах](*acts-marketing-act) (в России формируется за месяцы до августа 2026 года)   * [счет-фактура](*acts-main-invoice) (в России формируется за месяцы до августа 2026 года)   * [счет-фактура на аванс](*acts-marketing-invoice)   * [детализация к акту](*acts-marketing-details)  {% endcut %}  Узнать статус генерации и получить ссылку на архив можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateClosureDocumentsReport.md) %}
 
 ### Example
 
@@ -1259,7 +1469,7 @@ generateCompetitorsPositionReport($generate_competitors_position_report_request,
 
 Отчет «Конкурентная позиция»
 
-{% include notitle [access](../../_auto/method_scopes/generateCompetitorsPositionReport.md) %}  Запускает генерацию отчета «Конкурентная позиция» за заданный период. [Что это за отчет](https://yandex.ru/support2/marketplace/ru/analytics/competitors.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% note info \"Значение -1 в отчете\" %}  Если в CSV-файле в столбце :no-translate[**POSITION**] стоит -1, в этот день не было заказов с товарами в указанной категории.  {% endnote %}  {% include notitle [reports](../../_auto/reports/masterstat/competitors_position.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% include notitle [limit](../../_auto/method_limits/generateCompetitorsPositionReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateCompetitorsPositionReport.md) %}  Запускает генерацию отчета «Конкурентная позиция» за заданный период. [Что это за отчет](https://yandex.ru/support2/marketplace/ru/analytics/competitors.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% note info \"Значение -1 в отчете\" %}  Если в CSV-файле в столбце :no-translate[**POSITION**] стоит -1, в этот день не было заказов с товарами в указанной категории.  {% endnote %}  {% include notitle [reports](../../_auto/reports/masterstat/competitors_position.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateCompetitorsPositionReport.md) %}
 
 ### Example
 
@@ -1326,7 +1536,7 @@ generateGoodsFeedbackReport($generate_goods_feedback_request, $format): \OpenAPI
 
 Отчет по отзывам о товарах
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsFeedbackReport.md) %}  Запускает генерацию отчета по отзывам о товарах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/marketing/plus-reviews#stat)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/paid_opinion_models/paid_opinion_models.md) %}  {% include notitle [tariff-period](../../_includes/common/simultaneously-generated-reports-amount.md) %}  {% include notitle [limit](../../_auto/method_limits/generateGoodsFeedbackReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateGoodsFeedbackReport.md) %}  Запускает генерацию отчета по отзывам о товарах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/marketing/plus-reviews#stat)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/paid_opinion_models/paid_opinion_models.md) %}  {% include notitle [tariff-period](../../_includes/common/simultaneously-generated-reports-amount.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateGoodsFeedbackReport.md) %}
 
 ### Example
 
@@ -1393,7 +1603,7 @@ generateGoodsMovementReport($generate_goods_movement_report_request, $format): \
 
 Отчет по движению товаров
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsMovementReport.md) %}  Запускает генерацию отчета по движению товаров. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/reports-fby-fbs.html#flow)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/sku/movement/movement_config.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-unchanged.md) %}  {% include notitle [limit](../../_auto/method_limits/generateGoodsMovementReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateGoodsMovementReport.md) %}  Запускает генерацию отчета по движению товаров. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/reports-fby-fbs.html#flow)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/sku/movement/movement_config.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-unchanged.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateGoodsMovementReport.md) %}
 
 ### Example
 
@@ -1460,7 +1670,7 @@ generateGoodsPricesReport($generate_goods_prices_report_request, $format): \Open
 
 Отчет «Цены»
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsPricesReport.md) %}  Запускает генерацию отчета «Цены».  **Какая информация вернется:**  * если передать `businessId` — по единым ценам кабинета; * если [включены магазинные цены](*onlyDefaultPrice-false) и указать `campaignId` — по ценам в соответствующем магазине.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Цены во всех магазинах кабинета    {% include notitle [reports](../../_auto/reports/prices/mass_assortment_business_price_v2.md) %}  - Магазинные цены    {% include notitle [reports](../../_auto/reports/prices/mass_assortment_price_v2.md) %}  {% endlist %}  {% include notitle [tariff-period](../../_includes/common/simultaneously-generated-reports-amount.md) %}  {% include notitle [limit](../../_auto/method_limits/generateGoodsPricesReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateGoodsPricesReport.md) %}  Запускает генерацию отчета «Цены».  **Какая информация вернется:**  * если передать `businessId` — по единым ценам кабинета; * если [включены магазинные цены](*onlyDefaultPrice-false) и указать `campaignId` — по ценам в соответствующем магазине.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Цены во всех магазинах кабинета    {% include notitle [reports](../../_auto/reports/prices/mass_assortment_business_price_v2.md) %}  - Магазинные цены    {% include notitle [reports](../../_auto/reports/prices/mass_assortment_price_v2.md) %}  {% endlist %}  {% include notitle [tariff-period](../../_includes/common/simultaneously-generated-reports-amount.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateGoodsPricesReport.md) %}
 
 ### Example
 
@@ -1527,7 +1737,7 @@ generateGoodsRealizationReport($generate_goods_realization_report_request, $form
 
 Отчет по реализации
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsRealizationReport.md) %}  Запускает генерацию отчета по реализации за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#sales-report)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - FBY, FBS, Экспресс    {% include notitle [reports](../../_auto/reports/united/statistics/generator/united_statistics_v2.md) %}  - DBS    {% include notitle [reports](../../_auto/reports/united/statistics/generator/united_statistics_v2_dbs.md) %}  {% endlist %}  {% include notitle [limit](../../_auto/method_limits/generateGoodsRealizationReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateGoodsRealizationReport.md) %}  Запускает генерацию отчета по реализации за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#sales-report)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - FBY, FBS, Экспресс    {% include notitle [reports](../../_auto/reports/united/statistics/generator/united_statistics_v2.md) %}  - DBS    {% include notitle [reports](../../_auto/reports/united/statistics/generator/united_statistics_v2_dbs.md) %}  {% endlist %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateGoodsRealizationReport.md) %}
 
 ### Example
 
@@ -1594,7 +1804,7 @@ generateGoodsTurnoverReport($generate_goods_turnover_request, $format): \OpenAPI
 
 Отчет по оборачиваемости
 
-{% include notitle [access](../../_auto/method_scopes/generateGoodsTurnoverReport.md) %}  Запускает генерацию отчета по оборачиваемости за заданную дату.  [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#turnover)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/turnover/turnover.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-unchanged.md) %}  {% include notitle [limit](../../_auto/method_limits/generateGoodsTurnoverReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateGoodsTurnoverReport.md) %}  Запускает генерацию отчета по оборачиваемости за заданную дату.  [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#turnover)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/turnover/turnover.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-unchanged.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateGoodsTurnoverReport.md) %}
 
 ### Example
 
@@ -1661,7 +1871,7 @@ generateJewelryFiscalReport($generate_jewelry_fiscal_report_request, $format): \
 
 Отчет по заказам с ювелирными изделиями
 
-{% include notitle [access](../../_auto/method_scopes/generateJewelryFiscalReport.md) %}  Запускает генерацию отчета по заказам с ювелирными изделиями.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/identifiers/jewelry/orders_jewelry_fiscal.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-unchanged.md) %}  {% include notitle [limit](../../_auto/method_limits/generateJewelryFiscalReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateJewelryFiscalReport.md) %}  Запускает генерацию отчета по заказам с ювелирными изделиями.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/identifiers/jewelry/orders_jewelry_fiscal.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-unchanged.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateJewelryFiscalReport.md) %}
 
 ### Example
 
@@ -1728,7 +1938,7 @@ generateKeyIndicatorsReport($generate_key_indicators_request, $format): \OpenAPI
 
 Отчет по ключевым показателям
 
-{% include notitle [access](../../_auto/method_scopes/generateKeyIndicatorsReport.md) %}  Запускает генерацию отчета по ключевым показателям. [Что это за отчет](https://yandex.ru/support/marketplace/ru/analytics/key-metrics)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/key_indicators/key_indicators.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% include notitle [limit](../../_auto/method_limits/generateKeyIndicatorsReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateKeyIndicatorsReport.md) %}  Запускает генерацию отчета по ключевым показателям. [Что это за отчет](https://yandex.ru/support/marketplace/ru/analytics/key-metrics)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/key_indicators/key_indicators.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateKeyIndicatorsReport.md) %}
 
 ### Example
 
@@ -1795,7 +2005,7 @@ generateMarketingDetalizationReport($business_id, $generate_marketing_detalizati
 
 Отчет по счету маркетинга
 
-{% include notitle [access](../../_auto/method_scopes/generateMarketingDetalizationReport.md) %}  Запускает генерацию отчета по счету маркетинга.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/advertiser_billing_operations/advertiser_billing_operations.md) %}  {% include notitle [limit](../../_auto/method_limits/generateMarketingDetalizationReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateMarketingDetalizationReport.md) %}  Запускает генерацию отчета по счету маркетинга.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/advertiser_billing_operations/advertiser_billing_operations.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateMarketingDetalizationReport.md) %}
 
 ### Example
 
@@ -1866,7 +2076,7 @@ generateOfferBarcodes($business_id, $generate_offer_barcodes_request): \OpenAPI\
 
 Генерация штрихкодов
 
-{% include notitle [access](../../_auto/method_scopes/generateOfferBarcodes.md) %}  Генерирует штрихкоды и присваивает их указанным товарам.  Если у товара на упаковке уже есть штрихкод производителя, передайте его в параметре `barcodes` в методе [POST v2/businesses/{businessId}/offer-mappings/update](../../reference/business-offer-mappings/updateOfferMappings.md). Генерировать новый не нужно.  {% include notitle [limit](../../_auto/method_limits/generateOfferBarcodes.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateOfferBarcodes.md) %}  Генерирует штрихкоды и присваивает их указанным товарам.  Если у товара на упаковке уже есть штрихкод производителя, передайте его в параметре `barcodes` в методе [POST v2/businesses/{businessId}/offer-mappings/update](../../reference/business-offer-mappings/updateOfferMappings.md). Генерировать новый не нужно.  **Пошаговые инструкции**  * [Сгенерировать штрихкоды при добавлении товаров](../../step-by-step/assortment-add-goods.md#add)  {% include notitle [limit](../../_auto/method_limits/generateOfferBarcodes.md) %}
 
 ### Example
 
@@ -1933,7 +2143,7 @@ generateSalesGeographyReport($generate_sales_geography_request, $format): \OpenA
 
 Отчет по географии продаж
 
-{% include notitle [access](../../_auto/method_scopes/generateSalesGeographyReport.md) %}  Запускает генерацию отчета по географии продаж. [Что это за отчет](https://yandex.ru/support/marketplace/ru/analytics/sales-geography)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/locality/locality_offers_report_v2.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% include notitle [limit](../../_auto/method_limits/generateSalesGeographyReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateSalesGeographyReport.md) %}  Запускает генерацию отчета по географии продаж. [Что это за отчет](https://yandex.ru/support/marketplace/ru/analytics/sales-geography)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/locality/locality_offers_report_v2.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateSalesGeographyReport.md) %}
 
 ### Example
 
@@ -2000,7 +2210,7 @@ generateShelfsStatisticsReport($generate_shelfs_statistics_request, $format, $so
 
 Отчет по полкам
 
-{% include notitle [access](../../_auto/method_scopes/generateShelfsStatisticsReport.md) %}  Запускает генерацию сводного отчета по полкам — рекламным блокам с баннером или видео и набором товаров. {% if audience == \"partner\" %}Подробнее о них читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/shelf).{% endif %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/incuts/shelfs_statistics.md) %}  {% if audience != \"advertiser\" %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% endif %}  {% include notitle [limit](../../_auto/method_limits/generateShelfsStatisticsReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateShelfsStatisticsReport.md) %}  Запускает генерацию сводного отчета по полкам — рекламным блокам с баннером или видео и набором товаров. {% if audience == \"partner\" %}Подробнее о них читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/marketing/shelf).{% endif %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/incuts/shelfs_statistics.md) %}  {% if audience != \"advertiser\" %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% endif %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateShelfsStatisticsReport.md) %}
 
 ### Example
 
@@ -2069,7 +2279,7 @@ generateShowsBoostReport($generate_shows_boost_request, $format, $source_type): 
 
 Отчет по бусту показов
 
-{% include notitle [access](../../_auto/method_scopes/generateShowsBoostReport.md) %}  Запускает генерацию сводного отчета по бусту показов за заданный период. {% if audience == \"partner\" %}[Что такое буст показов](https://yandex.ru/support/marketplace/ru/marketing/boost-shows){% endif %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports]({{ report-columns-shows-boost }}) %}  {% if audience != \"advertiser\" %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% endif %}  {% include notitle [limit](../../_auto/method_limits/generateShowsBoostReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateShowsBoostReport.md) %}  Запускает генерацию сводного отчета по бусту показов за заданный период. {% if audience == \"partner\" %}[Что такое буст показов](https://yandex.ru/support/marketplace/ru/marketing/boost-shows){% endif %}  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports]({{ report-columns-shows-boost }}) %}  {% if audience != \"advertiser\" %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% endif %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateShowsBoostReport.md) %}
 
 ### Example
 
@@ -2138,7 +2348,7 @@ generateShowsSalesReport($generate_shows_sales_report_request, $format): \OpenAP
 
 Отчет «Аналитика продаж»
 
-{% include notitle [access](../../_auto/method_scopes/generateShowsSalesReport.md) %}  Запускает генерацию отчета «Аналитика продаж» за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/shows-sales.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/masterstat/sales_funnel_by_created_at.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  {% include notitle [limit](../../_auto/method_limits/generateShowsSalesReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateShowsSalesReport.md) %}  Запускает генерацию отчета «Аналитика продаж» за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/analytics/shows-sales.html)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/masterstat/sales_funnel_by_created_at.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-400-days.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateShowsSalesReport.md) %}
 
 ### Example
 
@@ -2205,7 +2415,7 @@ generateStocksOnWarehousesReport($generate_stocks_on_warehouses_report_request, 
 
 Отчет по остаткам на складах
 
-{% include notitle [access](../../_auto/method_scopes/generateStocksOnWarehousesReport.md) %}  Запускает генерацию отчета по остаткам на складах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#remains-history)  **Какая информация вернется:**  * Для моделей FBY и LaaS, если указать `campaignId`, — об остатках на складах Маркета. * Для остальных моделей, если указать `campaignId`, — об остатках на соответствующем складе магазина. * Для остальных моделей, если указать `businessId`, — об остатках на всех складах магазинов в кабинете, кроме FBY и LaaS. Используйте фильтр `campaignIds`, чтобы указать определенные магазины.  ⚠️ Не передавайте одновременно `campaignId` и `businessId`.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Склад Маркета    {% include notitle [reports](../../_auto/reports/stocks/stocks_on_warehouses.md) %}  - Склад магазина    {% include notitle [reports](../../_auto/reports/offers/mass/mass_shared_stocks_business_csv_config.md) %}  - Все склады магазинов в кабинете, кроме FBY и LaaS    {% include notitle [reports](../../_auto/reports/offers/stocks_business_config.md) %}  {% endlist %}  {% include notitle [limit](../../_auto/method_limits/generateStocksOnWarehousesReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateStocksOnWarehousesReport.md) %}  Запускает генерацию отчета по остаткам на складах. [Что это за отчет](https://yandex.ru/support/marketplace/ru/storage/logistics#remains-history)  {% note warning \"Когда использовать этот метод\" %}  Метод актуален:  * для моделей FBY и LaaS; * для моделей FBS, DBS и Экспресс, если в кабинете есть группы складов.  Если в кабинете нет групп складов и вы работаете с моделями FBS, DBS или Экспресс, используйте метод [POST v3/businesses/{businessId}/reports/stocks/generate](../../reference/reports/generateStocksReport.md). [Что такое группы складов и зачем они нужны](https://yandex.ru/support/marketplace/assortment/operations/stocks.html#unified-stocks).  {% endnote %}  **Какая информация вернется:**  * Для моделей FBY и LaaS, если указать `campaignId`, — об остатках на складах Маркета. * Для остальных моделей, если указать `campaignId`, — об остатках на соответствующем складе магазина. * Для остальных моделей, если указать `businessId`, — об остатках на всех складах магазинов в кабинете, кроме FBY и LaaS. Используйте фильтр `campaignIds`, чтобы указать определенные магазины.  ⚠️ Не передавайте одновременно `campaignId` и `businessId`.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% list tabs %}  - Склад Маркета    {% include notitle [reports](../../_auto/reports/stocks/stocks_on_warehouses.md) %}  - Склад магазина    {% include notitle [reports](../../_auto/reports/offers/mass/mass_shared_stocks_business_csv_config.md) %}  - Все склады магазинов в кабинете, кроме FBY и LaaS    {% include notitle [reports](../../_auto/reports/offers/stocks_business_config.md) %}  {% endlist %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateStocksOnWarehousesReport.md) %}
 
 ### Example
 
@@ -2272,7 +2482,7 @@ generateUnitedMarketplaceServicesReport($generate_united_marketplace_services_re
 
 Отчет по стоимости услуг
 
-{% include notitle [access](../../_auto/method_scopes/generateUnitedMarketplaceServicesReport.md) %}  Запускает генерацию отчета по стоимости услуг за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#reports)  Тип отчета зависит от того, какие поля заполнены в запросе:  |**Тип отчета**               |**Какие поля нужны**             | |-----------------------------|---------------------------------| |По дате начисления услуги    |`dateFrom` и `dateTo`            | |По дате формирования акта    |`year` и `month`                 |  Заказать отчеты обоих типов одним запросом нельзя.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/united/services/generator/united_marketplace_services.md) %}  {% include notitle [limit](../../_auto/method_limits/generateUnitedMarketplaceServicesReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateUnitedMarketplaceServicesReport.md) %}  Запускает генерацию отчета по стоимости услуг за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#reports)  Тип отчета зависит от того, какие поля заполнены в запросе:  |**Тип отчета**               |**Какие поля нужны**             | |-----------------------------|---------------------------------| |По дате начисления услуги    |`dateFrom` и `dateTo`            | |По дате формирования акта    |`year` и `month`                 |  Заказать отчеты обоих типов одним запросом нельзя.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/united/services/generator/united_marketplace_services.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateUnitedMarketplaceServicesReport.md) %}
 
 ### Example
 
@@ -2341,7 +2551,7 @@ generateUnitedNettingReport($generate_united_netting_report_request, $format, $l
 
 Отчет по платежам
 
-{% include notitle [access](../../_auto/method_scopes/generateUnitedNettingReport.md) %}  Запускает генерацию отчета по платежам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#all-pay)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  Тип отчета зависит от того, какие поля заполнены в запросе:  #| || **Тип отчета** | **Какие поля нужны** | **Комментарий** || || О платежах за период | `dateFrom` и `dateTo` |   В отчет попадают все платежи, которые были выплачены и начислены в выбранный период.    Пример: если перевод выполнен 31 августа и зачислен 1 сентября, он попадет в отчет за оба месяца. || || О платежном поручении | `bankOrderId` и `bankOrderDateTime` |—|| || [О баллах Маркета](*баллы_маркета) | `monthOfYear` |—|| |#  Заказать отчеты нескольких типов одним запросом нельзя.  {% include notitle [reports](../../_auto/reports/united/netting/generator/united_netting.md) %}  {% include notitle [limit](../../_auto/method_limits/generateUnitedNettingReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateUnitedNettingReport.md) %}  Запускает генерацию отчета по платежам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#all-pay)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  Тип отчета зависит от того, какие поля заполнены в запросе:  #| || **Тип отчета** | **Какие поля нужны** | **Комментарий** || || О платежах за период | `dateFrom` и `dateTo` |   В отчет попадают все платежи, которые были выплачены и начислены в выбранный период.    Пример: если перевод выполнен 31 августа и зачислен 1 сентября, он попадет в отчет за оба месяца. || || О платежном поручении | `bankOrderId` и `bankOrderDateTime` |—|| || [О баллах Маркета](*баллы_маркета) | `monthOfYear` |—|| |#  Заказать отчеты нескольких типов одним запросом нельзя.  {% include notitle [reports](../../_auto/reports/united/netting/generator/united_netting.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateUnitedNettingReport.md) %}
 
 ### Example
 
@@ -2410,7 +2620,7 @@ generateUnitedOrdersReport($generate_united_orders_request, $format, $language):
 
 Отчет по заказам
 
-{% include notitle [access](../../_auto/method_scopes/generateUnitedOrdersReport.md) %}  Запускает генерацию отчета по заказам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#get-report)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/united/orders/generator/united_orders.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-unchanged.md) %}  {% include notitle [limit](../../_auto/method_limits/generateUnitedOrdersReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateUnitedOrdersReport.md) %}  Запускает генерацию отчета по заказам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/accounting/transactions#get-report)  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/united/orders/generator/united_orders.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-unchanged.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateUnitedOrdersReport.md) %}
 
 ### Example
 
@@ -2479,7 +2689,7 @@ generateUnitedReturnsReport($generate_united_returns_request, $format): \OpenAPI
 
 Отчет по невыкупам и возвратам
 
-{% include notitle [access](../../_auto/method_scopes/generateUnitedReturnsReport.md) %}  Запускает генерацию сводного отчета по невыкупам и возвратам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/orders/returns/logistic#rejected-orders)  Отчет содержит информацию о невыкупах и возвратах за указанный период, а также о тех, которые готовы к выдаче.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/united/returns/generator/united_returns.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-unchanged.md) %}  {% include notitle [limit](../../_auto/method_limits/generateUnitedReturnsReport.md) %}
+{% include notitle [access](../../_auto/method_scopes/generateUnitedReturnsReport.md) %}  Запускает генерацию сводного отчета по невыкупам и возвратам за заданный период. [Что это за отчет](https://yandex.ru/support/marketplace/ru/orders/returns/logistic#rejected-orders)  Отчет содержит информацию о невыкупах и возвратах за указанный период, а также о тех, которые готовы к выдаче.  Узнать статус генерации и получить ссылку на готовый отчет можно с помощью запроса [GET v2/reports/info/{reportId}](../../reference/reports/getReportInfo.md).  {% include notitle [reports](../../_auto/reports/united/returns/generator/united_returns.md) %}  {% include notitle [tariff-period](../../_includes/common/report-data-period-unchanged.md) %}  **Пошаговые инструкции**  * [Заказать отчёт или документ](../../step-by-step/reports.md#generate)  {% include notitle [limit](../../_auto/method_limits/generateUnitedReturnsReport.md) %}
 
 ### Example
 
@@ -2608,7 +2818,7 @@ getBidsInfoForBusiness($business_id, $page_token, $limit, $get_bids_info_request
 
 Информация об установленных ставках
 
-{% include notitle [access](../../_auto/method_scopes/getBidsInfoForBusiness.md) %}  Возвращает значения ставок для заданных товаров.  {% note warning \"Получить информацию по кампаниям, созданным в кабинете, не получится\" %}  В ответе возвращаются значения только тех ставок, которые вы установили через запрос [PUT v2/businesses/{businessId}/bids](../../reference/bids/putBidsForBusiness.md).  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getBidsInfoForBusiness.md) %}
+{% include notitle [access](../../_auto/method_scopes/getBidsInfoForBusiness.md) %}  Возвращает значения ставок для заданных товаров.  {% note warning \"Получить информацию по кампаниям, созданным в кабинете, не получится\" %}  В ответе возвращаются значения только тех ставок, которые вы установили через запрос [PUT v2/businesses/{businessId}/bids](../../reference/bids/putBidsForBusiness.md).  {% endnote %}  **Пошаговые инструкции**  * [Как получить установленные ставки](../../step-by-step/boost.md#get-bids)  {% include notitle [limit](../../_auto/method_limits/getBidsInfoForBusiness.md) %}
 
 ### Example
 
@@ -2679,7 +2889,7 @@ getBidsRecommendations($business_id, $get_bids_recommendations_request): \OpenAP
 
 Рекомендованные ставки для заданных товаров
 
-{% include notitle [access](../../_auto/method_scopes/getBidsRecommendations.md) %}  Возвращает рекомендованные ставки для заданных товаров, что обеспечивает вашим предложениям определенную долю показов, и дополнительные инструменты продвижения.  Для одного товара может возвращаться одна рекомендованная ставка или несколько. Во втором случае разные ставки предназначены для достижения разной доли показов и получения дополнительных инструментов продвижения.  Если товар только добавлен в каталог, но пока не продается, рекомендованной ставки для него не будет.  В одном запросе может быть максимум 1500 товаров.  {% include notitle [limit](../../_auto/method_limits/getBidsRecommendations.md) %}
+{% include notitle [access](../../_auto/method_scopes/getBidsRecommendations.md) %}  Возвращает рекомендованные ставки для заданных товаров, что обеспечивает вашим предложениям определенную долю показов, и дополнительные инструменты продвижения.  Для одного товара может возвращаться одна рекомендованная ставка или несколько. Во втором случае разные ставки предназначены для достижения разной доли показов и получения дополнительных инструментов продвижения.  Если товар только добавлен в каталог, но пока не продается, рекомендованной ставки для него не будет.  В одном запросе может быть максимум 1500 товаров.  **Пошаговые инструкции**  * [Как получить рекомендованные ставки](../../step-by-step/boost.md#recommendations)  {% include notitle [limit](../../_auto/method_limits/getBidsRecommendations.md) %}
 
 ### Example
 
@@ -2746,7 +2956,7 @@ getBusinessOrders($business_id, $get_business_orders_request, $page_token, $limi
 
 Информация о заказах в кабинете
 
-{% include notitle [access](../../_auto/method_scopes/getBusinessOrders.md) %}  Возвращает информацию о заказах в кабинете. Запрос можно использовать для отслеживания заказов и их статусов.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый заказ или изменится его статус. А полную информацию можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Доступна фильтрация по параметрам:  * дата оформления заказа;  * дата и время обновления заказа;  * дата отгрузки;  * статусы заказов (`statuses`);  * этапы обработки или причины отмены (`substatuses`);  * идентификаторы кампаний;  * идентификаторы заказов;  * внешние идентификаторы заказов;  * тип заказа (настоящий или тестовый);  * модели размещения;  * наличие запросов от покупателей на отмену заказа.  Максимальный диапазон дат за один запрос — 30 дней (передается в параметрах `fromDate` и `toDate`). Если их не передать, возвращается информация за последние 30 дней.  Результаты возвращаются постранично. Для навигации используйте параметры `pageToken` и `limit`.  Получить более подробную информацию о покупателе и его номере телефона можно с помощью запроса [GET v2/campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/order-delivery/getOrderBuyerInfo.md).  {% include notitle [limit](../../_auto/method_limits/getBusinessOrders.md) %}
+{% include notitle [access](../../_auto/method_scopes/getBusinessOrders.md) %}  Возвращает информацию о заказах в кабинете. Запрос можно использовать для отслеживания заказов и их статусов.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый заказ или изменится его статус. А полную информацию можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Доступна фильтрация по параметрам:  * дата оформления заказа;  * дата и время обновления заказа;  * дата отгрузки;  * статусы заказов (`statuses`);  * этапы обработки или причины отмены (`substatuses`);  * идентификаторы кампаний;  * идентификаторы заказов;  * внешние идентификаторы заказов;  * тип заказа (настоящий или тестовый);  * модели размещения;  * наличие запросов от покупателей на отмену заказа.  Максимальный диапазон дат за один запрос — 30 дней (передается в параметрах `fromDate` и `toDate`). Если их не передать, возвращается информация за последние 30 дней.  Результаты возвращаются постранично. Для навигации используйте параметры `pageToken` и `limit`.  Получить более подробную информацию о покупателе и его номере телефона можно с помощью запроса [GET v2/campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/order-delivery/getOrderBuyerInfo.md).  **Пошаговые инструкции**  * [Получать информацию о заказах](../../step-by-step/orders-receive.md)  {% include notitle [limit](../../_auto/method_limits/getBusinessOrders.md) %}
 
 ### Example
 
@@ -2817,7 +3027,7 @@ getBusinessQuarantineOffers($business_id, $get_quarantine_offers_request, $page_
 
 Список товаров, находящихся в карантине по цене в кабинете
 
-{% include notitle [access](../../_auto/method_scopes/getBusinessQuarantineOffers.md) %}  Возвращает список товаров, которые находятся в карантине по цене, установленной для всех магазинов кабинета.  Проверьте цену каждого из товаров, который попал в карантин. Если ошибки нет и цена правильная, подтвердите ее с помощью запроса [POST v2/businesses/{businessId}/price-quarantine/confirm](../../reference/price-quarantine/confirmBusinessPrices.md). Если цена в самом деле ошибочная, установите верную с помощью запроса [POST v2/businesses/{businessId}/offer-prices/updates](../../reference/prices/updateBusinessPrices.md).  {% note info \"Что такое карантин?\" %}  Товар попадает в карантин, если его цена меняется слишком резко или слишком сильно отличается от рыночной. [Подробнее](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  {% endnote %}  В запросе можно использовать фильтры.  Результаты возвращаются постранично.  {% include notitle [limit](../../_auto/method_limits/getBusinessQuarantineOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/getBusinessQuarantineOffers.md) %}  Возвращает список товаров, которые находятся в карантине по цене, установленной для всех магазинов кабинета.  Проверьте цену каждого из товаров, который попал в карантин. Если ошибки нет и цена правильная, подтвердите ее с помощью запроса [POST v2/businesses/{businessId}/price-quarantine/confirm](../../reference/price-quarantine/confirmBusinessPrices.md). Если цена в самом деле ошибочная, установите верную с помощью запроса [POST v2/businesses/{businessId}/offer-prices/updates](../../reference/prices/updateBusinessPrices.md).  {% note info \"Что такое карантин?\" %}  Товар попадает в карантин, если его цена меняется слишком резко или слишком сильно отличается от рыночной. [Подробнее](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  {% endnote %}  В запросе можно использовать фильтры.  Результаты возвращаются постранично.  **Пошаговые инструкции**  * [Как изменить цены на товары](../../step-by-step/assortment-change-prices.md)  {% include notitle [limit](../../_auto/method_limits/getBusinessQuarantineOffers.md) %}
 
 ### Example
 
@@ -3089,7 +3299,7 @@ getCampaignQuarantineOffers($campaign_id, $get_quarantine_offers_request, $page_
 
 Список товаров, находящихся в карантине по цене в магазине
 
-{% include notitle [access](../../_auto/method_scopes/getCampaignQuarantineOffers.md) %}  Возвращает список товаров, которые находятся в карантине по цене, установленной в заданном магазине.  Проверьте цену каждого из товаров, который попал в карантин. Если ошибки нет и цена правильная, подтвердите ее с помощью запроса [POST v2/campaigns/{campaignId}/price-quarantine/confirm](../../reference/price-quarantine/confirmCampaignPrices.md). Если цена в самом деле ошибочная, установите верную с помощью запроса [POST v2/campaigns/{campaignId}/offer-prices/updates](../../reference/prices/updatePrices.md).  {% note info \"Что такое карантин?\" %}  Товар попадает в карантин, если его цена меняется слишком резко или слишком сильно отличается от рыночной. [Подробнее](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  {% endnote %}  В запросе можно использовать фильтры.  Результаты возвращаются постранично.  {% include notitle [limit](../../_auto/method_limits/getCampaignQuarantineOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/getCampaignQuarantineOffers.md) %}  Возвращает список товаров, которые находятся в карантине по цене, установленной в заданном магазине.  Проверьте цену каждого из товаров, который попал в карантин. Если ошибки нет и цена правильная, подтвердите ее с помощью запроса [POST v2/campaigns/{campaignId}/price-quarantine/confirm](../../reference/price-quarantine/confirmCampaignPrices.md). Если цена в самом деле ошибочная, установите верную с помощью запроса [POST v2/campaigns/{campaignId}/offer-prices/updates](../../reference/prices/updatePrices.md).  {% note info \"Что такое карантин?\" %}  Товар попадает в карантин, если его цена меняется слишком резко или слишком сильно отличается от рыночной. [Подробнее](https://yandex.ru/support/marketplace/assortment/operations/prices.html#quarantine)  {% endnote %}  В запросе можно использовать фильтры.  Результаты возвращаются постранично.  **Пошаговые инструкции**  * [Как изменить цены на товары](../../step-by-step/assortment-change-prices.md)  {% include notitle [limit](../../_auto/method_limits/getCampaignQuarantineOffers.md) %}
 
 ### Example
 
@@ -3251,8 +3461,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
 );
 $page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
 $limit = 56; // int | {{ limit-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %}
-$page = 1; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
-$page_size = 56; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
+$page = 1; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
+$page_size = 56; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
 
 try {
     $result = $apiInstance->getCampaigns($page_token, $limit, $page, $page_size);
@@ -3268,8 +3478,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
 | **limit** | **int**| {{ limit-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} | [optional] |
-| **page** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
+| **page** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
+| **page_size** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
 
 ### Return type
 
@@ -3426,7 +3636,7 @@ getCategoryContentParameters($category_id, $business_id): \OpenAPI\Client\Model\
 
 Списки характеристик товаров по категориям
 
-{% include notitle [access](../../_auto/method_scopes/getCategoryContentParameters.md) %}  Возвращает список характеристик с допустимыми значениями для заданной [листовой категории](*list-category).  Поля в ответе определяют правила передачи характеристики в методах: - [POST v2/businesses/{businessId}/offer-mappings/update](../../reference/business-offer-mappings/updateOfferMappings.md) - [POST v2/businesses/{businessId}/offer-cards/update](../../reference/content/updateOfferContent.md)  {% include notitle [limit](../../_auto/method_limits/getCategoryContentParameters.md) %}
+{% include notitle [access](../../_auto/method_scopes/getCategoryContentParameters.md) %}  Возвращает список характеристик с допустимыми значениями для заданной [листовой категории](*list-category).  Поля в ответе определяют правила передачи характеристики в методах: - [POST v2/businesses/{businessId}/offer-mappings/update](../../reference/business-offer-mappings/updateOfferMappings.md) - [POST v2/businesses/{businessId}/offer-cards/update](../../reference/content/updateOfferContent.md)  **Пошаговые инструкции**  * [Проверить сопоставление характеристик категории](../../step-by-step/content-change.md#check-and-update-comparison) * [Передача значений характеристики](../../step-by-step/parameter-values.md)  {% include notitle [limit](../../_auto/method_limits/getCategoryContentParameters.md) %}
 
 ### Example
 
@@ -3493,7 +3703,7 @@ getChat($business_id, $chat_id): \OpenAPI\Client\Model\GetChatResponse
 
 Получение чата по идентификатору
 
-{% include notitle [access](../../_auto/method_scopes/getChat.md) %}  Возвращает чат по его идентификатору.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getChat.md) %}
+{% include notitle [access](../../_auto/method_scopes/getChat.md) %}  Возвращает чат по его идентификатору.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  **Пошаговые инструкции**  * [Как проверить, есть ли новые чаты или сообщения](../../step-by-step/chats.md#check)  {% include notitle [limit](../../_auto/method_limits/getChat.md) %}
 
 ### Example
 
@@ -3560,7 +3770,7 @@ getChatHistory($business_id, $chat_id, $get_chat_history_request, $page_token, $
 
 Получение истории сообщений в чате
 
-{% include notitle [access](../../_auto/method_scopes/getChatHistory.md) %}  Возвращает историю сообщений в чате с покупателем.  {% include notitle [limit](../../_auto/method_limits/getChatHistory.md) %}
+{% include notitle [access](../../_auto/method_scopes/getChatHistory.md) %}  Возвращает историю сообщений в чате с покупателем.  **Пошаговые инструкции**  * [Чаты с покупателями](../../step-by-step/chats.md)  {% include notitle [limit](../../_auto/method_limits/getChatHistory.md) %}
 
 ### Example
 
@@ -3633,7 +3843,7 @@ getChatMessage($business_id, $chat_id, $message_id): \OpenAPI\Client\Model\GetCh
 
 Получение сообщения в чате
 
-{% include notitle [access](../../_auto/method_scopes/getChatMessage.md) %}  Возвращает сообщение по его идентификатору.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getChatMessage.md) %}
+{% include notitle [access](../../_auto/method_scopes/getChatMessage.md) %}  Возвращает сообщение по его идентификатору.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  **Пошаговые инструкции**  * [Как проверить, есть ли новые чаты или сообщения](../../step-by-step/chats.md#check)  {% include notitle [limit](../../_auto/method_limits/getChatMessage.md) %}
 
 ### Example
 
@@ -3702,7 +3912,7 @@ getChats($business_id, $get_chats_request, $page_token, $limit): \OpenAPI\Client
 
 Получение доступных чатов
 
-{% include notitle [access](../../_auto/method_scopes/getChats.md) %}  Возвращает чаты с покупателями.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getChats.md) %}
+{% include notitle [access](../../_auto/method_scopes/getChats.md) %}  Возвращает чаты с покупателями.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  **Пошаговые инструкции**  * [Чаты с покупателями](../../step-by-step/chats.md)  {% include notitle [limit](../../_auto/method_limits/getChats.md) %}
 
 ### Example
 
@@ -3751,6 +3961,144 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\GetChatsResponse**](../Model/GetChatsResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getContentSizeCharts()`
+
+```php
+getContentSizeCharts($business_id, $get_size_charts_request): \OpenAPI\Client\Model\GetSizeChartsResponse
+```
+
+Размерные сетки и обмеры для таблиц размеров
+
+{% include notitle [access](../../_auto/method_scopes/getContentSizeCharts.md) %}  Возвращает размерные сетки и обмеры, из которых можно составить таблицу размеров для указанной размерной характеристики. Их идентификаторы передаются в `sizeChartId` ячеек в методах создания и обновления таблиц размеров `POST v2/businesses/{businessId}/size-tables/create` и `POST v2/businesses/{businessId}/size-tables/update`.  В список входят:  * стандартные размерные сетки Маркета — значения в них выбираются из справочника `sizeValues`; * размерные сетки, значения в которых задаются текстом; * обмеры — значения в них тоже задаются текстом.  Брендовые размерные сетки в список не входят, и использовать их в своих таблицах нельзя: для них возвращается ошибка `UNKNOWN_SIZE_CHART`.  Обязательные размерные сетки отмечены `required: true`. В таблице должна быть хотя бы одна из них, а каждую обязательную сетку в таблице нужно заполнить во всех строках.  Для неизвестного идентификатора размерной характеристики возвращается ошибка `UNKNOWN_SIZE_PARAMETER`.  **Пошаговые инструкции**  * [Таблицы размеров](../../step-by-step/size-tables.md)  {% include notitle [limit](../../_auto/method_limits/getContentSizeCharts.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$get_size_charts_request = new \OpenAPI\Client\Model\GetSizeChartsRequest(); // \OpenAPI\Client\Model\GetSizeChartsRequest
+
+try {
+    $result = $apiInstance->getContentSizeCharts($business_id, $get_size_charts_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getContentSizeCharts: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **get_size_charts_request** | [**\OpenAPI\Client\Model\GetSizeChartsRequest**](../Model/GetSizeChartsRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetSizeChartsResponse**](../Model/GetSizeChartsResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getContentSizeTables()`
+
+```php
+getContentSizeTables($business_id, $get_size_tables_request, $page_token, $limit): \OpenAPI\Client\Model\GetSizeTablesResponse
+```
+
+Таблицы размеров по идентификаторам
+
+{% include notitle [access](../../_auto/method_scopes/getContentSizeTables.md) %}  Возвращает таблицы размеров по их идентификаторам. Идентификаторы возвращает метод подбора таблиц размеров. Если `sizeTableIds` не передан, возвращает все таблицы размеров, созданные бизнесом.  Сначала возвращаются созданные бизнесом, затем брендовые, затем стандартные таблицы; внутри каждой группы — по убыванию идентификатора.  Результаты возвращаются постранично. Для навигации используйте параметры `pageToken` и `limit`. В каждом следующем запросе передавайте тот же набор `sizeTableIds`, что и в первом: `pageToken` привязан к нему, и с другим набором запрос будет отклонен. Порядок идентификаторов значения не имеет.  Идентификаторы, по которым таблицу вернуть не удалось — такой таблицы нет или она принадлежит другому бизнесу, — возвращаются в `notFoundSizeTableIds` на первой странице.  **Пошаговые инструкции**  * [Таблицы размеров](../../step-by-step/size-tables.md)  {% include notitle [limit](../../_auto/method_limits/getContentSizeTables.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$get_size_tables_request = new \OpenAPI\Client\Model\GetSizeTablesRequest(); // \OpenAPI\Client\Model\GetSizeTablesRequest
+$page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
+$limit = 25; // int | {{ limit-param-description }}
+
+try {
+    $result = $apiInstance->getContentSizeTables($business_id, $get_size_tables_request, $page_token, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getContentSizeTables: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **get_size_tables_request** | [**\OpenAPI\Client\Model\GetSizeTablesRequest**](../Model/GetSizeTablesRequest.md)|  | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
+| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 25] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetSizeTablesResponse**](../Model/GetSizeTablesResponse.md)
 
 ### Authorization
 
@@ -3822,6 +4170,77 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\GetDefaultPricesResponse**](../Model/GetDefaultPricesResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getDocuments()`
+
+```php
+getDocuments($business_id, $get_documents_request, $page_token, $limit): \OpenAPI\Client\Model\GetDocumentsResponse
+```
+
+Получение документов
+
+{% include notitle [access](../../_auto/method_scopes/getDocuments.md) %}  Возвращает страницу документов на товары с учетом переданных фильтров.  {% include notitle [limit](../../_auto/method_limits/getDocuments.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$get_documents_request = new \OpenAPI\Client\Model\GetDocumentsRequest(); // \OpenAPI\Client\Model\GetDocumentsRequest
+$page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
+$limit = 50; // int | {{ limit-param-description }}
+
+try {
+    $result = $apiInstance->getDocuments($business_id, $get_documents_request, $page_token, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->getDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **get_documents_request** | [**\OpenAPI\Client\Model\GetDocumentsRequest**](../Model/GetDocumentsRequest.md)|  | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
+| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 50] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetDocumentsResponse**](../Model/GetDocumentsResponse.md)
 
 ### Authorization
 
@@ -3909,7 +4328,7 @@ getGoodsFeedbackComments($business_id, $get_goods_feedback_comments_request, $pa
 
 Получение комментариев к отзыву
 
-{% include notitle [access](../../_auto/method_scopes/getGoodsFeedbackComments.md) %}  Возвращает комментарии к отзыву, кроме:    * тех, которые удалили пользователи или Маркет;   * комментариев к удаленным отзывам.  Идентификатор родительского комментария `parentId` возвращается только для ответов на другие комментарии, но не для ответов на отзывы.  {% if audience == \"partner\" %}  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый комментарий. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% endif %}  Результаты возвращаются постранично.  Комментарии расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `pageToken`, если вы получали его ранее.  {% include notitle [limit](../../_auto/method_limits/getGoodsFeedbackComments.md) %}
+{% include notitle [access](../../_auto/method_scopes/getGoodsFeedbackComments.md) %}  Возвращает комментарии к отзыву, кроме:    * тех, которые удалили пользователи или Маркет;   * комментариев к удаленным отзывам.  Идентификатор родительского комментария `parentId` возвращается только для ответов на другие комментарии, но не для ответов на отзывы.  {% if audience == \"partner\" %}  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый комментарий. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% endif %}  Результаты возвращаются постранично.  Комментарии расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `pageToken`, если вы получали его ранее.  **Пошаговые инструкции**  * [Отзывы о товарах](../../step-by-step/goods-feedback.md)  {% include notitle [limit](../../_auto/method_limits/getGoodsFeedbackComments.md) %}
 
 ### Example
 
@@ -3982,7 +4401,7 @@ getGoodsFeedbacks($business_id, $page_token, $limit, $get_goods_feedback_request
 
 Получение отзывов о товарах продавца
 
-{% include notitle [access](../../_auto/method_scopes/getGoodsFeedbacks.md) %}  Возвращает отзывы о товарах продавца по указанным фильтрам. **Исключение:** отзывы, которые удалили покупатели или Маркет.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый отзыв. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично.  Отзывы расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `pageToken`, если вы получали его ранее.  {% include notitle [limit](../../_auto/method_limits/getGoodsFeedbacks.md) %}
+{% include notitle [access](../../_auto/method_scopes/getGoodsFeedbacks.md) %}  Возвращает отзывы о товарах продавца по указанным фильтрам. **Исключение:** отзывы, которые удалили покупатели или Маркет.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый отзыв. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично.  Отзывы расположены в порядке публикации, поэтому вы можете передавать определенный идентификатор страницы в `pageToken`, если вы получали его ранее.  **Пошаговые инструкции**  * [Отзывы о товарах](../../step-by-step/goods-feedback.md)  {% include notitle [limit](../../_auto/method_limits/getGoodsFeedbacks.md) %}
 
 ### Example
 
@@ -4126,7 +4545,7 @@ getGoodsQuestionAnswers($business_id, $get_answers_request, $page_token, $limit)
 
 Получение ответов на вопрос
 
-{% include notitle [access](../../_auto/method_scopes/getGoodsQuestionAnswers.md) %}  Возвращает ответы на вопрос о товаре по указанным фильтрам.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый ответ или комментарий. А полную информацию о них можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 ответов.  {% include notitle [limit](../../_auto/method_limits/getGoodsQuestionAnswers.md) %}
+{% include notitle [access](../../_auto/method_scopes/getGoodsQuestionAnswers.md) %}  Возвращает ответы на вопрос о товаре по указанным фильтрам.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый ответ или комментарий. А полную информацию о них можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 ответов.  **Пошаговые инструкции**  * [Вопросы и ответы о товарах](../../step-by-step/goods-questions.md)  {% include notitle [limit](../../_auto/method_limits/getGoodsQuestionAnswers.md) %}
 
 ### Example
 
@@ -4197,7 +4616,7 @@ getGoodsQuestions($business_id, $page_token, $limit, $get_questions_request): \O
 
 Получение вопросов о товарах продавца
 
-{% include notitle [access](../../_auto/method_scopes/getGoodsQuestions.md) %}  Возвращает вопросы о товарах продавца по указанным фильтрам.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый вопрос. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 вопросов.  {% include notitle [limit](../../_auto/method_limits/getGoodsQuestions.md) %}
+{% include notitle [access](../../_auto/method_scopes/getGoodsQuestions.md) %}  Возвращает вопросы о товарах продавца по указанным фильтрам.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый вопрос. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 вопросов.  **Пошаговые инструкции**  * [Вопросы и ответы о товарах](../../step-by-step/goods-questions.md)  {% include notitle [limit](../../_auto/method_limits/getGoodsQuestions.md) %}
 
 ### Example
 
@@ -4406,7 +4825,7 @@ getOfferCardsContentStatus($business_id, $page_token, $limit, $get_offer_cards_c
 
 Получение информации о заполненности карточек магазина
 
-{% include notitle [access](../../_auto/method_scopes/getOfferCardsContentStatus.md) %}  Возвращает сведения о состоянии контента для заданных товаров:  * создана ли карточка товара и в каком она статусе; * рейтинг карточки — на сколько процентов она заполнена; * переданные характеристики товаров; * есть ли ошибки или предупреждения, связанные с контентом; * рекомендации по заполнению карточки.  Чтобы получить другие характеристики товаров, воспользуйтесь методом [POST v2/businesses/{businessId}/offer-mappings](../../reference/business-offer-mappings/getOfferMappings.md).  {% include notitle [limit](../../_auto/method_limits/getOfferCardsContentStatus.md) %}
+{% include notitle [access](../../_auto/method_scopes/getOfferCardsContentStatus.md) %}  Возвращает сведения о состоянии контента для заданных товаров:  * создана ли карточка товара и в каком она статусе; * рейтинг карточки — на сколько процентов она заполнена; * переданные характеристики товаров; * есть ли ошибки или предупреждения, связанные с контентом; * рекомендации по заполнению карточки.  Чтобы получить другие характеристики товаров, воспользуйтесь методом [POST v2/businesses/{businessId}/offer-mappings](../../reference/business-offer-mappings/getOfferMappings.md).  **Пошаговые инструкции**  * [Получить текущие характеристики и статус карточки](../../step-by-step/content-change.md#edit-card) * [Получить рекомендации по заполнению карточки](../../step-by-step/recommendations.md)  {% include notitle [limit](../../_auto/method_limits/getOfferCardsContentStatus.md) %}
 
 ### Example
 
@@ -4477,7 +4896,7 @@ getOfferMappings($business_id, $page_token, $limit, $language, $get_offer_mappin
 
 Информация о товарах в каталоге
 
-{% include notitle [access](../../_auto/method_scopes/getOfferMappings.md) %}  Возвращает список товаров в каталоге, их категории на Маркете и характеристики каждого товара.  Можно использовать тремя способами: * задать список интересующих SKU; * задать фильтр — в этом случае результаты возвращаются постранично; * не передавать тело запроса, чтобы получить список всех товаров в каталоге.  Чтобы получить категорийные характеристики товаров, воспользуйтесь методом [POST v2/businesses/{businessId}/offer-cards](../../reference/content/getOfferCardsContentStatus.md).  {% include notitle [limit](../../_auto/method_limits/getOfferMappings.md) %}
+{% include notitle [access](../../_auto/method_scopes/getOfferMappings.md) %}  Возвращает список товаров в каталоге, их категории на Маркете и характеристики каждого товара.  Можно использовать тремя способами: * задать список интересующих SKU; * задать фильтр — в этом случае результаты возвращаются постранично; * не передавать тело запроса, чтобы получить список всех товаров в каталоге.  Чтобы получить категорийные характеристики товаров, воспользуйтесь методом [POST v2/businesses/{businessId}/offer-cards](../../reference/content/getOfferCardsContentStatus.md).  **Пошаговые инструкции**  * [Посмотреть товары в архиве](../../step-by-step/assortment-archive.md)  {% include notitle [limit](../../_auto/method_limits/getOfferMappings.md) %}
 
 ### Example
 
@@ -4688,7 +5107,7 @@ getOrderBusinessBuyerInfo($campaign_id, $order_id): \OpenAPI\Client\Model\GetBus
 
 Информация о покупателе — юридическом лице
 
-{% include notitle [access](../../_auto/method_scopes/getOrderBusinessBuyerInfo.md) %}  Возвращает информацию о покупателе по идентификатору заказа.  {% note info \"Как получить информацию о покупателе, который является физическим лицом\" %}  Воспользуйтесь запросом [GET v2/campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/order-delivery/getOrderBuyerInfo.md).  {% endnote %}  Получить данные можно, только если заказ находится в статусе `PROCESSING`, `DELIVERY`, `PICKUP` или `DELIVERED`.  {% include notitle [limit](../../_auto/method_limits/getOrderBusinessBuyerInfo.md) %}
+{% include notitle [access](../../_auto/method_scopes/getOrderBusinessBuyerInfo.md) %}  Возвращает информацию о покупателе по идентификатору заказа.  {% note info \"Как получить информацию о покупателе, который является физическим лицом\" %}  Воспользуйтесь запросом [GET v2/campaigns/{campaignId}/orders/{orderId}/buyer](../../reference/order-delivery/getOrderBuyerInfo.md).  {% endnote %}  Получить данные можно, только если заказ находится в статусе `PROCESSING`, `DELIVERY`, `PICKUP` или `DELIVERED`.  **Пошаговые инструкции**  * [Как получить информацию о покупателе](../../step-by-step/business-info.md#buyer-info)  {% include notitle [limit](../../_auto/method_limits/getOrderBusinessBuyerInfo.md) %}
 
 ### Example
 
@@ -4755,7 +5174,7 @@ getOrderBusinessDocumentsInfo($campaign_id, $order_id): \OpenAPI\Client\Model\Ge
 
 Информация о документах
 
-{% include notitle [access](../../_auto/method_scopes/getOrderBusinessDocumentsInfo.md) %}  Возвращает информацию о документах по идентификатору заказа.  Получить данные можно после того, как заказ перейдет в статус `DELIVERED`.  {% include notitle [limit](../../_auto/method_limits/getOrderBusinessDocumentsInfo.md) %}
+{% include notitle [access](../../_auto/method_scopes/getOrderBusinessDocumentsInfo.md) %}  Возвращает информацию о документах по идентификатору заказа.  Получить данные можно после того, как заказ перейдет в статус `DELIVERED`.  **Пошаговые инструкции**  * [Как получить информацию о документах](../../step-by-step/business-info.md#documents-info)  {% include notitle [limit](../../_auto/method_limits/getOrderBusinessDocumentsInfo.md) %}
 
 ### Example
 
@@ -4862,8 +5281,8 @@ $has_cis = false; // bool | Фильтр для получения заказо�
 $only_waiting_for_cancellation_approve = false; // bool | **Только для модели DBS**  Фильтр для получения заказов, по которым был запрос на отмену.  При значении `true` возвращаются только заказы, которые находятся в статусе `DELIVERY` или `PICKUP` и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT v2/campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation).
 $only_estimated_delivery = false; // bool | Фильтрация заказов с долгой доставкой (31-60 дней) по подтвержденной дате доставки:  * `true` — возвращаются только заказы с неподтвержденной датой доставки. * `false` — фильтрация не применяется.
 $buyer_type = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\OrderBuyerType(); // \OpenAPI\Client\Model\OrderBuyerType | Фильтрация заказов по типу покупателя.
-$page = 1; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
-$page_size = 56; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
+$page = 1; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
+$page_size = 56; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
 $page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
 $limit = 56; // int | {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %}
 
@@ -4895,8 +5314,8 @@ try {
 | **only_waiting_for_cancellation_approve** | **bool**| **Только для модели DBS**  Фильтр для получения заказов, по которым был запрос на отмену.  При значении &#x60;true&#x60; возвращаются только заказы, которые находятся в статусе &#x60;DELIVERY&#x60; или &#x60;PICKUP&#x60; и которые пользователи решили отменить.  Чтобы подтвердить или отклонить отмену, отправьте запрос [PUT v2/campaigns/{campaignId}/orders/{orderId}/cancellation/accept](../../reference/orders/acceptOrderCancellation). | [optional] [default to false] |
 | **only_estimated_delivery** | **bool**| Фильтрация заказов с долгой доставкой (31-60 дней) по подтвержденной дате доставки:  * &#x60;true&#x60; — возвращаются только заказы с неподтвержденной датой доставки. * &#x60;false&#x60; — фильтрация не применяется. | [optional] [default to false] |
 | **buyer_type** | [**\OpenAPI\Client\Model\OrderBuyerType**](../Model/.md)| Фильтрация заказов по типу покупателя. | [optional] |
-| **page** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
+| **page** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
+| **page_size** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
 | **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
 | **limit** | **int**| {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} | [optional] |
 
@@ -5138,7 +5557,7 @@ getPromoOffers($business_id, $get_promo_offers_request, $page_token, $limit): \O
 
 Получение списка товаров, которые участвуют или могут участвовать в акции
 
-{% include notitle [access](../../_auto/method_scopes/getPromoOffers.md) %}  Возвращает список товаров, которые участвуют или могут участвовать в акции.  {% note warning \"Условия участия в акциях могут меняться\" %}  Например, `maxPromoPrice`.  Установленные цены меняться не будут — `price` и `promoPrice`.  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getPromoOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/getPromoOffers.md) %}  Возвращает список товаров, которые участвуют или могут участвовать в акции.  {% note warning \"Условия участия в акциях могут меняться\" %}  Например, `maxPromoPrice` и `bestPriceLevels`.  Установленные цены меняться не будут — `price` и `promoPrice`.  {% endnote %}  **Пошаговые инструкции**  * [Управление акциями](../../step-by-step/promos.md)  {% include notitle [limit](../../_auto/method_limits/getPromoOffers.md) %}
 
 ### Example
 
@@ -5209,7 +5628,7 @@ getPromos($business_id, $get_promos_request): \OpenAPI\Client\Model\GetPromosRes
 
 Получение списка акций
 
-{% include notitle [access](../../_auto/method_scopes/getPromos.md) %}  Возвращает информацию об акциях Маркета. Не возвращает данные об акциях, которые создал продавец.  По умолчанию возвращаются акции, в которых продавец участвует или может принять участие.  Чтобы получить текущие или завершенные акции, передайте параметр `participation`.  Типы акций, которые возвращаются в ответе:  * прямая скидка; * флеш-акция; * скидка по промокоду.  {% include notitle [limit](../../_auto/method_limits/getPromos.md) %}
+{% include notitle [access](../../_auto/method_scopes/getPromos.md) %}  Возвращает информацию об акциях Маркета. Не возвращает данные об акциях, которые создал продавец.  По умолчанию возвращаются акции, в которых продавец участвует или может принять участие.  Чтобы получить текущие или завершенные акции, передайте параметр `participation`.  Типы акций, которые возвращаются в ответе:  * прямая скидка; * флеш-акция; * скидка по промокоду.  **Пошаговые инструкции**  * [Управление акциями](../../step-by-step/promos.md)  {% include notitle [limit](../../_auto/method_limits/getPromos.md) %}
 
 ### Example
 
@@ -5276,7 +5695,7 @@ getQualityRatings($business_id, $get_quality_rating_request): \OpenAPI\Client\Mo
 
 Индекс качества магазинов
 
-{% include notitle [access](../../_auto/method_scopes/getQualityRatings.md) %}  Возвращает значение индекса качества магазинов и его составляющие.  Подробнее об индексе качества читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/quality/score/).  {% include notitle [limit](../../_auto/method_limits/getQualityRatings.md) %}
+{% include notitle [access](../../_auto/method_scopes/getQualityRatings.md) %}  Возвращает значение индекса качества магазинов и его составляющие.  Подробнее об индексе качества читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/quality/score/).  **Пошаговые инструкции**  * [Индекс качества](../../step-by-step/ratings.md)  {% include notitle [limit](../../_auto/method_limits/getQualityRatings.md) %}
 
 ### Example
 
@@ -5343,7 +5762,7 @@ getRegionsCodes(): \OpenAPI\Client\Model\GetRegionsCodesResponse
 
 Список допустимых кодов стран
 
-{% include notitle [access](../../_auto/method_scopes/getRegionsCodes.md) %}  Возвращает список стран с их кодами в формате :no-translate[ISO 3166-1 alpha-2].  Страна производства `countryCode` понадобится при продаже товаров из-за рубежа для бизнеса. [Инструкция](../../step-by-step/business-info.md)  {% include notitle [limit](../../_auto/method_limits/getRegionsCodes.md) %}
+{% include notitle [access](../../_auto/method_scopes/getRegionsCodes.md) %}  Возвращает список стран с их кодами в формате :no-translate[ISO 3166-1 alpha-2].  Страна производства `countryCode` понадобится при продаже товаров из-за рубежа для бизнеса.  **Пошаговые инструкции**  * [Обработка заказов от юридических лиц](../../step-by-step/business-info.md)  {% include notitle [limit](../../_auto/method_limits/getRegionsCodes.md) %}
 
 ### Example
 
@@ -5405,7 +5824,7 @@ getReportInfo($report_id, $source_type): \OpenAPI\Client\Model\GetReportInfoResp
 
 Получение заданного отчета или документа
 
-{% include notitle [access](../../_auto/method_scopes/getReportInfo.md) %}  Возвращает статус генерации заданного отчета или документа и, если он готов, ссылку для скачивания.  Чтобы воспользоваться этим запросом, вначале нужно запустить генерацию отчета или документа. [Инструкция](../../step-by-step/reports.md)  {% include notitle [limit](../../_auto/method_limits/getReportInfo.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReportInfo.md) %}  Возвращает статус генерации заданного отчета или документа и, если он готов, ссылку для скачивания.  Чтобы воспользоваться этим запросом, вначале нужно запустить генерацию отчета или документа.  **Пошаговые инструкции**  * [Проверить готовность отчёта или документа](../../step-by-step/reports.md#status)  {% include notitle [limit](../../_auto/method_limits/getReportInfo.md) %}
 
 ### Example
 
@@ -5472,7 +5891,7 @@ getReturn($campaign_id, $order_id, $return_id): \OpenAPI\Client\Model\GetReturnR
 
 Информация о невыкупе или возврате
 
-{% include notitle [access](../../_auto/method_scopes/getReturn.md) %}  Получает информацию по одному невыкупу или возврату.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый невыкуп или возврат.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getReturn.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReturn.md) %}  Получает информацию по одному невыкупу или возврату.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый невыкуп или возврат.  [{#T}](../../push-notifications/index.md)  {% endnote %}  **Пошаговые инструкции**  * [Невыкупы и возвраты](../../step-by-step/returns.md)  {% include notitle [limit](../../_auto/method_limits/getReturn.md) %}
 
 ### Example
 
@@ -5541,7 +5960,7 @@ getReturnApplication($campaign_id, $order_id, $return_id): \SplFileObject
 
 Получение заявления на возврат
 
-{% include notitle [access](../../_auto/method_scopes/getReturnApplication.md) %}  Загружает заявление покупателя на возврат товара.  {% include notitle [limit](../../_auto/method_limits/getReturnApplication.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReturnApplication.md) %}  Загружает заявление покупателя на возврат товара.  **Пошаговые инструкции**  * [Как работать с невыкупами и возвратами](../../step-by-step/returns.md#new-return)  {% include notitle [limit](../../_auto/method_limits/getReturnApplication.md) %}
 
 ### Example
 
@@ -5610,7 +6029,7 @@ getReturnAvailableDecisions($business_id, $get_return_available_decisions_reques
 
 Получение возможных решений по возврату
 
-{% include notitle [access](../../_auto/method_scopes/getReturnAvailableDecisions.md) %}  Возвращает список доступных решений по возврату.  {% include notitle [limit](../../_auto/method_limits/getReturnAvailableDecisions.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReturnAvailableDecisions.md) %}  Возвращает список доступных решений по возврату.  **Пошаговые инструкции**  * [Как работать с невыкупами и возвратами](../../step-by-step/returns.md#new-return)  {% include notitle [limit](../../_auto/method_limits/getReturnAvailableDecisions.md) %}
 
 ### Example
 
@@ -5677,7 +6096,7 @@ getReturnPhoto($campaign_id, $order_id, $return_id, $item_id, $image_hash): \Spl
 
 Получение фотографий товаров в возврате
 
-{% include notitle [access](../../_auto/method_scopes/getReturnPhoto.md) %}  Получает фотографии товаров, которые покупатель приложил к заявлению на возврат.  Хеш изображения (`imageHash`) можно получить из ответов методов [GET v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}](../../reference/returns/getReturn.md) и [GET v2/campaigns/{campaignId}/returns](../../reference/returns/getReturns.md) — в поле `images` решения по товару.  Максимальный размер изображения — 50 МБ.  Тип изображения можно определить по заголовку `Content-Type` в ответе.  {% include notitle [limit](../../_auto/method_limits/getReturnPhoto.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReturnPhoto.md) %}  Получает фотографии товаров, которые покупатель приложил к заявлению на возврат.  Хеш изображения (`imageHash`) можно получить из ответов методов [GET v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}](../../reference/returns/getReturn.md) и [GET v2/campaigns/{campaignId}/returns](../../reference/returns/getReturns.md) — в поле `images` решения по товару.  Максимальный размер изображения — 50 МБ.  Тип изображения можно определить по заголовку `Content-Type` в ответе.  **Пошаговые инструкции**  * [Как работать с невыкупами и возвратами](../../step-by-step/returns.md#new-return)  {% include notitle [limit](../../_auto/method_limits/getReturnPhoto.md) %}
 
 ### Example
 
@@ -5750,7 +6169,7 @@ getReturns($campaign_id, $page_token, $limit, $order_ids, $statuses, $shipment_s
 
 Список невыкупов и возвратов
 
-{% include notitle [access](../../_auto/method_scopes/getReturns.md) %}  Получает список невыкупов и возвратов.  Чтобы получить информацию по одному невыкупу или возврату, выполните запрос [GET v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}](../../reference/returns/getReturn.md).  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый невыкуп или возврат.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getReturns.md) %}
+{% include notitle [access](../../_auto/method_scopes/getReturns.md) %}  Получает список невыкупов и возвратов.  Чтобы получить информацию по одному невыкупу или возврату, выполните запрос [GET v2/campaigns/{campaignId}/orders/{orderId}/returns/{returnId}](../../reference/returns/getReturn.md).  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый невыкуп или возврат.  [{#T}](../../push-notifications/index.md)  {% endnote %}  **Пошаговые инструкции**  * [Невыкупы и возвраты](../../step-by-step/returns.md)  {% include notitle [limit](../../_auto/method_limits/getReturns.md) %}
 
 ### Example
 
@@ -5783,8 +6202,8 @@ $shipment_statuses = [READY_FOR_PICKUP, IN_TRANSIT]; // \OpenAPI\Client\Model\Re
 $type = new \OpenAPI\Client\Model\\OpenAPI\Client\Model\ReturnType(); // \OpenAPI\Client\Model\ReturnType | Тип заказа для фильтрации:  * `UNREDEEMED` — невыкуп.  * `RETURN` — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты.
 $from_date = 2022-10-31; // \DateTime | Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
 $to_date = 2022-11-30; // \DateTime | Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: `ГГГГ-ММ-ДД`.
-$from_date2 = 2022-10-31; // \DateTime | {% note warning \"Вместо него используйте `fromDate`.\" %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления.
-$to_date2 = 2022-11-30; // \DateTime | {% note warning \"Вместо него используйте `toDate`.\" %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления.
+$from_date2 = 2022-10-31; // \DateTime | {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `fromDate`.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления.
+$to_date2 = 2022-11-30; // \DateTime | {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `toDate`.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления.
 
 try {
     $result = $apiInstance->getReturns($campaign_id, $page_token, $limit, $order_ids, $statuses, $shipment_statuses, $type, $from_date, $to_date, $from_date2, $to_date2);
@@ -5807,8 +6226,8 @@ try {
 | **type** | [**\OpenAPI\Client\Model\ReturnType**](../Model/.md)| Тип заказа для фильтрации:  * &#x60;UNREDEEMED&#x60; — невыкуп.  * &#x60;RETURN&#x60; — возврат.  Если не указать, в ответе будут и невыкупы, и возвраты. | [optional] |
 | **from_date** | **\DateTime**| Начальная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
 | **to_date** | **\DateTime**| Конечная дата для фильтрации невыкупов или возвратов по дате обновления.  Формат: &#x60;ГГГГ-ММ-ДД&#x60;. | [optional] |
-| **from_date2** | **\DateTime**| {% note warning \&quot;Вместо него используйте &#x60;fromDate&#x60;.\&quot; %}     {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
-| **to_date2** | **\DateTime**| {% note warning \&quot;Вместо него используйте &#x60;toDate&#x60;.\&quot; %}     {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
+| **from_date2** | **\DateTime**| {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;fromDate&#x60;.  {% endnote %}  Начальная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
+| **to_date2** | **\DateTime**| {% note warning \&quot;Параметр устарел и будет отключен 12.10.2026.\&quot; %}  Вместо него используйте &#x60;toDate&#x60;.  {% endnote %}  Конечная дата для фильтрации невыкупов или возвратов по дате обновления. | [optional] |
 
 ### Return type
 
@@ -5835,7 +6254,7 @@ getStocks($campaign_id, $page_token, $limit, $get_warehouse_stocks_request): \Op
 
 Информация об остатках и оборачиваемости
 
-{% include notitle [access](../../_auto/method_scopes/getStocks.md) %}  Возвращает данные об остатках товаров (для всех моделей) и об [оборачиваемости](*turnover) товаров (для модели FBY).  {% note info \"По умолчанию данные по оборачивамости не возращаются\" %}  Чтобы они были в ответе, передавайте `true` в поле `withTurnover`.  {% endnote %}  **Для моделей FBY и LaaS:** информация об остатках может возвращаться с нескольких складов Маркета, у которых будут разные `warehouseId`. Получить список складов Маркета можно с помощью метода [GET v2/warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).  **Для модели FBS:** в ответе может вернуться не только партнерский склад, но и склад возвратов Маркета. Это возможно, если возврат поступил в указанную продавцом точку возвратов и долго не был забран.  {% include notitle [limit](../../_auto/method_limits/getStocks.md) %}  [//]: <> (turnover: Среднее количество дней, за которое товар продается. Подробно об оборачиваемости рассказано в Справке Маркета для продавцов https://yandex.ru/support/marketplace/analytics/turnover.html.)
+{% include notitle [access](../../_auto/method_scopes/getStocks.md) %}  Возвращает данные об остатках товаров (для всех моделей) и об [оборачиваемости](*turnover) товаров (для модели FBY).  {% note warning \"Когда использовать этот метод\" %}  Метод актуален:  * для моделей FBY и LaaS; * для моделей FBS, DBS и Экспресс, если в кабинете есть группы складов.  Если в кабинете нет групп складов и вы работаете с моделями FBS, DBS или Экспресс, используйте метод [POST v3/businesses/{businessId}/offers/stocks](../../reference/stocks/getStocksOnPartnerWarehouses.md). [Что такое группы складов и зачем они нужны](https://yandex.ru/support/marketplace/assortment/operations/stocks.html#unified-stocks).  {% endnote %}  {% note info \"По умолчанию данные по оборачивамости не возращаются\" %}  Чтобы они были в ответе, передавайте `true` в поле `withTurnover`.  {% endnote %}  **Для моделей FBY и LaaS:** информация об остатках может возвращаться с нескольких складов Маркета, у которых будут разные `warehouseId`. Получить список складов Маркета можно с помощью метода [GET v2/warehouses](../../reference/warehouses/getFulfillmentWarehouses.md).  **Для модели FBS:** в ответе может вернуться не только партнерский склад, но и склад возвратов Маркета. Это возможно, если возврат поступил в указанную продавцом точку возвратов и долго не был забран.  {% include notitle [limit](../../_auto/method_limits/getStocks.md) %}  [//]: <> (turnover: Среднее количество дней, за которое товар продается. Подробно об оборачиваемости рассказано в Справке Маркета для продавцов https://yandex.ru/support/marketplace/analytics/turnover.html.)
 
 ### Example
 
@@ -5861,7 +6280,7 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
 );
 $campaign_id = 56; // int | Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями.
 $page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
-$limit = 100; // int | {{ limit-param-description }}
+$limit = 50; // int | {{ limit-truncate-param-description }}
 $get_warehouse_stocks_request = new \OpenAPI\Client\Model\GetWarehouseStocksRequest(); // \OpenAPI\Client\Model\GetWarehouseStocksRequest
 
 try {
@@ -5878,7 +6297,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **campaign_id** | **int**| Идентификатор кампании (магазина) — технический идентификатор, который представляет ваш магазин в системе Яндекс Маркета при работе через API. Он однозначно связывается с вашим магазином, но предназначен только для автоматизированного взаимодействия.  Его можно узнать с помощью запроса [GET v2/campaigns](../../reference/campaigns/getCampaigns.md) или найти в кабинете продавца на Маркете. Нажмите на иконку вашего аккаунта → **Настройки** и в меню слева выберите **API и модули**:  * блок **Идентификатор кампании**; * вкладка **Лог запросов** → выпадающий список в блоке **Показывать логи**.  ⚠️ Не путайте его с: - идентификатором магазина, который отображается в личном кабинете продавца; - рекламными кампаниями. | |
 | **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
-| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 100] |
+| **limit** | **int**| {{ limit-truncate-param-description }} | [optional] [default to 50] |
 | **get_warehouse_stocks_request** | [**\OpenAPI\Client\Model\GetWarehouseStocksRequest**](../Model/GetWarehouseStocksRequest.md)|  | [optional] |
 
 ### Return type
@@ -5906,7 +6325,7 @@ getSupplyRequestDocuments($campaign_id, $get_supply_request_documents_request): 
 
 Получение документов по заявке на поставку, вывоз или утилизацию
 
-{% include notitle [access](../../_auto/method_scopes/getSupplyRequestDocuments.md) %}  Возвращает документы по заявке.  {% include notitle [limit](../../_auto/method_limits/getSupplyRequestDocuments.md) %}
+{% include notitle [access](../../_auto/method_scopes/getSupplyRequestDocuments.md) %}  Возвращает документы по заявке.  **Пошаговые инструкции**  * [Заявки на поставку товаров на склад, вывоз или утилизацию](../../step-by-step/supplies.md)  {% include notitle [limit](../../_auto/method_limits/getSupplyRequestDocuments.md) %}
 
 ### Example
 
@@ -5973,7 +6392,7 @@ getSupplyRequestItems($campaign_id, $get_supply_request_items_request, $page_tok
 
 Получение товаров в заявке на поставку, вывоз или утилизацию
 
-{% include notitle [access](../../_auto/method_scopes/getSupplyRequestItems.md) %}  Возвращает список товаров в заявке и информацию по ним.  {% include notitle [limit](../../_auto/method_limits/getSupplyRequestItems.md) %}
+{% include notitle [access](../../_auto/method_scopes/getSupplyRequestItems.md) %}  Возвращает список товаров в заявке и информацию по ним.  **Пошаговые инструкции**  * [Заявки на поставку товаров на склад, вывоз или утилизацию](../../step-by-step/supplies.md)  {% include notitle [limit](../../_auto/method_limits/getSupplyRequestItems.md) %}
 
 ### Example
 
@@ -6044,7 +6463,7 @@ getSupplyRequests($campaign_id, $page_token, $limit, $get_supply_requests_reques
 
 Получение информации о заявках на поставку, вывоз и утилизацию
 
-{% include notitle [access](../../_auto/method_scopes/getSupplyRequests.md) %}  По указанным фильтрам возвращает заявки на поставку, вывоз и утилизацию, а также информацию по ним.  {% include notitle [limit](../../_auto/method_limits/getSupplyRequests.md) %}
+{% include notitle [access](../../_auto/method_scopes/getSupplyRequests.md) %}  По указанным фильтрам возвращает заявки на поставку, вывоз и утилизацию, а также информацию по ним.  **Пошаговые инструкции**  * [Заявки на поставку товаров на склад, вывоз или утилизацию](../../step-by-step/supplies.md)  {% include notitle [limit](../../_auto/method_limits/getSupplyRequests.md) %}
 
 ### Example
 
@@ -6115,7 +6534,7 @@ putBidsForBusiness($business_id, $put_sku_bids_request): \OpenAPI\Client\Model\E
 
 Включение буста продаж и установка ставок
 
-{% include notitle [access](../../_auto/method_scopes/putBidsForBusiness.md) %}  Запускает буст продаж — создает и включает кампанию, добавляет в нее товары и назначает на них ставки.  {% cut \"Как в кабинете выглядит кампания, созданная через API\" %}  ![](../../_images/api-boost.png)  {% endcut %}  При первом использовании запроса Маркет: создаст единую на все магазины бизнес-аккаунта кампанию, добавит в нее товары с указанными ставками, включит для них ценовую стратегию и запустит продвижение. Повторное использование запроса позволит обновить ставки на товары в этой кампании или добавить новые. Подробнее о ценовой стратегии читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html#price-strategy).  Если товара с указанным SKU нет, он будет проигнорирован. Если в будущем в каталоге появится товар с таким SKU, он автоматически будет добавлен в кампанию с указанной ставкой.  Запрос всегда работает с одной и той же созданной через API кампанией. Если в кабинете удалить ее, при следующем выполнении запроса Маркет создаст новую. Другими кампаниями управлять через API не получится. У созданной через API кампании всегда наибольший приоритет над остальными — изменить его нельзя.  Выполнение запроса включает кампанию и ценовую стратегию, если они были отключены.  Внести другие изменения в созданную через API кампанию можно в кабинете:  * выключить или включить кампанию; * изменить ее название; * выключить или включить ценовую стратегию.  Чтобы остановить продвижение отдельных товаров и удалить их из кампании, передайте для них нулевую ставку в параметре `bid`.  Подробнее о том, как работает буст продаж, читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html).  Узнать расходы на буст продаж можно с помощью запроса [POST v2/campaigns/{campaignId}/stats/orders](../../reference/orders-stats/getOrdersStats.md). Сумма содержится в поле `bidFee`.  {% note info \"Данные обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/putBidsForBusiness.md) %}
+{% include notitle [access](../../_auto/method_scopes/putBidsForBusiness.md) %}  Запускает буст продаж — создает и включает кампанию, добавляет в нее товары и назначает на них ставки.  {% cut \"Как в кабинете выглядит кампания, созданная через API\" %}  ![](../../_images/api-boost.png)  {% endcut %}  При первом использовании запроса Маркет: создаст единую на все магазины бизнес-аккаунта кампанию, добавит в нее товары с указанными ставками, включит для них ценовую стратегию и запустит продвижение. Повторное использование запроса позволит обновить ставки на товары в этой кампании или добавить новые. Подробнее о ценовой стратегии читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html#price-strategy).  Если товара с указанным SKU нет, он будет проигнорирован. Если в будущем в каталоге появится товар с таким SKU, он автоматически будет добавлен в кампанию с указанной ставкой.  Запрос всегда работает с одной и той же созданной через API кампанией. Если в кабинете удалить ее, при следующем выполнении запроса Маркет создаст новую. Другими кампаниями управлять через API не получится. У созданной через API кампании всегда наибольший приоритет над остальными — изменить его нельзя.  Выполнение запроса включает кампанию и ценовую стратегию, если они были отключены.  Внести другие изменения в созданную через API кампанию можно в кабинете:  * выключить или включить кампанию; * изменить ее название; * выключить или включить ценовую стратегию.  Чтобы остановить продвижение отдельных товаров и удалить их из кампании, передайте для них нулевую ставку в параметре `bid`.  Подробнее о том, как работает буст продаж, читайте в [Справке Маркета для продавцов](https://yandex.ru/support/marketplace/marketing/campaigns.html).  Узнать расходы на буст продаж можно с помощью запроса [POST v2/campaigns/{campaignId}/stats/orders](../../reference/orders-stats/getOrdersStats.md). Сумма содержится в поле `bidFee`.  {% note info \"Данные обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  **Пошаговые инструкции**  * [Работа с бустом продаж](../../step-by-step/boost.md)  {% include notitle [limit](../../_auto/method_limits/putBidsForBusiness.md) %}
 
 ### Example
 
@@ -6276,8 +6695,8 @@ $apiInstance = new OpenAPI\Client\Api\FbyApi(
 $region_id = 56; // int | Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET v2/regions](../../reference/regions/searchRegionsByName.md).
 $page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
 $limit = 56; // int | {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %}
-$page = 1; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
-$page_size = 56; // int | {% note warning \"Устаревший параметр\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
+$page = 1; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром `pageSize`.
+$page_size = 56; // int | {% note warning \"Параметр устарел и будет отключен 05.10.2026.\" %}  Вместо `page` и `pageSize` используйте пагинацию по `pageToken` и `limit`.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром `page`.
 
 try {
     $result = $apiInstance->searchRegionChildren($region_id, $page_token, $limit, $page, $page_size);
@@ -6294,8 +6713,8 @@ try {
 | **region_id** | **int**| Идентификатор региона.  Идентификатор региона можно получить c помощью запроса [GET v2/regions](../../reference/regions/searchRegionsByName.md). | |
 | **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
 | **limit** | **int**| {{ limit-truncate-param-description }}  {% note warning %}  У данного лимита нет значения по умолчанию.  {% endnote %} | [optional] |
-| **page** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
-| **page_size** | **int**| {% note warning \&quot;Устаревший параметр\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
+| **page** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Номер страницы результатов.  Используется вместе с параметром &#x60;pageSize&#x60;. | [optional] [default to 1] |
+| **page_size** | **int**| {% note warning \&quot;Параметр устарел и будет отключен 05.10.2026.\&quot; %}  Вместо &#x60;page&#x60; и &#x60;pageSize&#x60; используйте пагинацию по &#x60;pageToken&#x60; и &#x60;limit&#x60;.  [Подробнее о типах пагинации и их использовании](../../concepts/pagination.md)  {% endnote %}  Размер страницы.  Используется вместе с параметром &#x60;page&#x60;. | [optional] |
 
 ### Return type
 
@@ -6456,7 +6875,7 @@ sendFileToChat($business_id, $chat_id, $file): \OpenAPI\Client\Model\EmptyApiRes
 
 Отправка файла в чат
 
-{% include notitle [access](../../_auto/method_scopes/sendFileToChat.md) %}  Отправляет файл в чат с покупателем.  {% include notitle [limit](../../_auto/method_limits/sendFileToChat.md) %}
+{% include notitle [access](../../_auto/method_scopes/sendFileToChat.md) %}  Отправляет файл в чат с покупателем.  **Пошаговые инструкции**  * [Чаты с покупателями](../../step-by-step/chats.md)  {% include notitle [limit](../../_auto/method_limits/sendFileToChat.md) %}
 
 ### Example
 
@@ -6525,7 +6944,7 @@ sendMessageToChat($business_id, $chat_id, $send_message_to_chat_request): \OpenA
 
 Отправка сообщения в чат
 
-{% include notitle [access](../../_auto/method_scopes/sendMessageToChat.md) %}  Отправляет сообщение в чат с покупателем.  {% include notitle [limit](../../_auto/method_limits/sendMessageToChat.md) %}
+{% include notitle [access](../../_auto/method_scopes/sendMessageToChat.md) %}  Отправляет сообщение в чат с покупателем.  **Пошаговые инструкции**  * [Чаты с покупателями](../../step-by-step/chats.md)  {% include notitle [limit](../../_auto/method_limits/sendMessageToChat.md) %}
 
 ### Example
 
@@ -6594,7 +7013,7 @@ skipGoodsFeedbacksReaction($business_id, $skip_goods_feedback_reaction_request, 
 
 Пропуск реакции на отзывы
 
-{% include notitle [access](../../_auto/method_scopes/skipGoodsFeedbacksReaction.md) %}  Пропускает реакцию на отзыв — параметр `needReaction` принимает значение `false` в методе получения всех отзывов [POST v2/businesses/{businessId}/goods-feedback](../../reference/goods-feedback/getGoodsFeedbacks.md).  {% include notitle [limit](../../_auto/method_limits/skipGoodsFeedbacksReaction.md) %}
+{% include notitle [access](../../_auto/method_scopes/skipGoodsFeedbacksReaction.md) %}  Пропускает реакцию на отзыв — параметр `needReaction` принимает значение `false` в методе получения всех отзывов [POST v2/businesses/{businessId}/goods-feedback](../../reference/goods-feedback/getGoodsFeedbacks.md).  **Пошаговые инструкции**  * [Отзывы о товарах](../../step-by-step/goods-feedback.md)  {% include notitle [limit](../../_auto/method_limits/skipGoodsFeedbacksReaction.md) %}
 
 ### Example
 
@@ -6663,7 +7082,7 @@ submitReturnDecision($campaign_id, $order_id, $return_id, $submit_return_decisio
 
 Передача решения по возврату
 
-{% include notitle [access](../../_auto/method_scopes/submitReturnDecision.md) %}  Позволяет передать список решений по возврату.  {% note info \"Перед вызовом метода\" %}  Получите список доступных решений — [POST v1/businesses/{businessId}/returns/decisions](../../reference/returns/getReturnAvailableDecisions.md).  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/submitReturnDecision.md) %}
+{% include notitle [access](../../_auto/method_scopes/submitReturnDecision.md) %}  Позволяет передать список решений по возврату.  {% note info \"Перед вызовом метода\" %}  Получите список доступных решений — [POST v1/businesses/{businessId}/returns/decisions](../../reference/returns/getReturnAvailableDecisions.md).  {% endnote %}  **Пошаговые инструкции**  * [Как работать с невыкупами и возвратами](../../step-by-step/returns.md#new-return)  {% include notitle [limit](../../_auto/method_limits/submitReturnDecision.md) %}
 
 ### Example
 
@@ -6726,6 +7145,77 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `suggestContentSizeTables()`
+
+```php
+suggestContentSizeTables($business_id, $suggest_size_tables_request, $page_token, $limit): \OpenAPI\Client\Model\SuggestSizeTablesResponse
+```
+
+Подбор таблиц размеров
+
+{% include notitle [access](../../_auto/method_scopes/suggestContentSizeTables.md) %}  Возвращает таблицы размеров, подходящие для указанной категории, бренда и пола.  Тип `STANDARD` — таблицы, уже созданные Маркетом и автоматически подобранные под выбранные вами категорию, бренд и пол. Тип `CUSTOM` — таблицы, которые вы создали сами: они подходят, если у вас свой бренд, уникальная размерная линейка, товары маломерят или большемерят.  Сначала возвращаются созданные бизнесом, затем брендовые, затем стандартные таблицы; внутри каждой группы — по убыванию идентификатора.  Результаты возвращаются постранично. Для навигации используйте параметры `pageToken` и `limit`.  **Пошаговые инструкции**  * [Подобрать готовую таблицу](../../step-by-step/size-tables.md#suggest)  {% include notitle [limit](../../_auto/method_limits/suggestContentSizeTables.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$suggest_size_tables_request = new \OpenAPI\Client\Model\SuggestSizeTablesRequest(); // \OpenAPI\Client\Model\SuggestSizeTablesRequest
+$page_token = 'page_token_example'; // string | Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра `nextPageToken`, полученное при последнем запросе.
+$limit = 25; // int | {{ limit-param-description }}
+
+try {
+    $result = $apiInstance->suggestContentSizeTables($business_id, $suggest_size_tables_request, $page_token, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->suggestContentSizeTables: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **suggest_size_tables_request** | [**\OpenAPI\Client\Model\SuggestSizeTablesRequest**](../Model/SuggestSizeTablesRequest.md)|  | |
+| **page_token** | **string**| Идентификатор страницы c результатами.  Если параметр не указан, возвращается первая страница.  Передавайте значение выходного параметра &#x60;nextPageToken&#x60;, полученное при последнем запросе. | [optional] |
+| **limit** | **int**| {{ limit-param-description }} | [optional] [default to 25] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\SuggestSizeTablesResponse**](../Model/SuggestSizeTablesResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `updateBusinessPrices()`
 
 ```php
@@ -6734,7 +7224,7 @@ updateBusinessPrices($business_id, $update_business_prices_request): \OpenAPI\Cl
 
 Установка цен на товары для всех магазинов
 
-{% include notitle [access](../../_auto/method_scopes/updateBusinessPrices.md) %}  Устанавливает цены, которые действуют во всех магазинах. Чтобы получить рекомендации Маркета, касающиеся цен, выполните запрос [POST v2/businesses/{businessId}/offers/recommendations](../../reference/offers/getOfferRecommendations.md).  При необходимости передавайте НДС с помощью параметра `vat` в запросе [POST v2/campaigns/{campaignId}/offers/update](../../reference/offers/updateCampaignOffers.md).  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/updateBusinessPrices.md) %}
+{% include notitle [access](../../_auto/method_scopes/updateBusinessPrices.md) %}  Устанавливает цены, которые действуют во всех магазинах. Чтобы получить рекомендации Маркета, касающиеся цен, выполните запрос [POST v2/businesses/{businessId}/offers/recommendations](../../reference/offers/getOfferRecommendations.md).  При необходимости передавайте НДС с помощью параметра `vat` в запросе [POST v2/campaigns/{campaignId}/offers/update](../../reference/offers/updateCampaignOffers.md).  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  **Пошаговые инструкции**  * [Как изменить цены на товары](../../step-by-step/assortment-change-prices.md)  {% include notitle [limit](../../_auto/method_limits/updateBusinessPrices.md) %}
 
 ### Example
 
@@ -6801,7 +7291,7 @@ updateCampaignOffers($campaign_id, $update_campaign_offers_request): \OpenAPI\Cl
 
 Изменение условий продажи товаров в магазине
 
-{% include notitle [access](../../_auto/method_scopes/updateCampaignOffers.md) %}  Изменяет параметры размещения товаров в конкретном магазине: доступность товара и применяемый НДС.  {% include notitle [limit](../../_auto/method_limits/updateCampaignOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/updateCampaignOffers.md) %}  Изменяет параметры размещения товаров в конкретном магазине: доступность товара и применяемый НДС.  **Пошаговые инструкции**  * [Добавить новые товары в каталог](../../step-by-step/assortment-add-goods.md#add)  {% include notitle [limit](../../_auto/method_limits/updateCampaignOffers.md) %}
 
 ### Example
 
@@ -6860,6 +7350,140 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `updateContentSizeTables()`
+
+```php
+updateContentSizeTables($business_id, $update_size_tables_request): \OpenAPI\Client\Model\UpdateSizeTablesResponse
+```
+
+Обновление таблиц размеров
+
+{% include notitle [access](../../_auto/method_scopes/updateContentSizeTables.md) %}  Полностью заменяет названия и содержимое таблиц размеров, созданных бизнесом. За один запрос можно обновить до 10 таблиц, в которых суммарно не больше 5000 ячеек. Если таблиц или ячеек больше, запрос отклоняется с ошибкой `BAD_REQUEST` и ни одна таблица не обновляется.  {% note warning \"Передавайте полное содержимое таблицы\" %}  Все отсутствующие строки и колонки будут удалены.  {% endnote %}  Изменить можно только таблицы, созданные бизнесом, — у них в ответе метода `POST v2/businesses/{businessId}/size-tables` указано `editable: true`. Если таблицы нет, для нее возвращается ошибка `NOT_FOUND`, если это таблица Маркета (`sizeTableType: STANDARD`) — ошибка `FORBIDDEN`.  Размерную характеристику таблицы изменить нельзя: колонки и значения проверяются по характеристике, указанной при создании таблицы. Размерные сетки и обмеры, которые можно использовать в таблице, их значения и обязательные сетки возвращает метод `POST v2/businesses/{businessId}/size-tables/charts`.  Идентификаторы таблиц не должны повторяться в одном запросе. Если они повторяются, запрос отклоняется с ошибкой `BAD_REQUEST` и ни одна таблица не обновляется.  {% cut \"Как заполнить таблицу\" %}  {% include notitle [size-tables-filling](../../_includes/common/size-tables-filling.md) %}  {% endcut %}  {% cut \"Чем сохраненная таблица отличается от переданной\" %}  {% include notitle [size-tables-saved-differences](../../_includes/common/size-tables-saved-differences.md) %}  Значения из ответа можно без изменений передать в этот метод: поля `columnType` и `rowIndex` в нем не учитываются.  {% endcut %}  {% note warning \"Сохраняется содержимое из последнего запроса\" %}  Версии таблицы не сравниваются. Если таблицу изменили в кабинете после того, как вы ее получили, эти изменения будут перезаписаны без предупреждения. Ошибка `CONCURRENT_MODIFICATION` возвращается, только если таблицу изменили во время обработки вашего запроса. В этом случае повторите запрос.  {% endnote %}  Новое содержимое таблицы применяется к привязанным к ней товарам автоматически через некоторое время. Передавать товары повторно не нужно.  Если запрос завершился ошибкой с кодом 5xx, его можно повторить: таблицы заменятся тем же содержимым.  **Пошаговые инструкции**  * [Создать свою таблицу](../../step-by-step/size-tables.md#create)  {% include notitle [limit](../../_auto/method_limits/updateContentSizeTables.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$update_size_tables_request = new \OpenAPI\Client\Model\UpdateSizeTablesRequest(); // \OpenAPI\Client\Model\UpdateSizeTablesRequest
+
+try {
+    $result = $apiInstance->updateContentSizeTables($business_id, $update_size_tables_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->updateContentSizeTables: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **update_size_tables_request** | [**\OpenAPI\Client\Model\UpdateSizeTablesRequest**](../Model/UpdateSizeTablesRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\UpdateSizeTablesResponse**](../Model/UpdateSizeTablesResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateDocuments()`
+
+```php
+updateDocuments($business_id, $update_documents_request): \OpenAPI\Client\Model\UpdateDocumentsResponse
+```
+
+Обновление документов
+
+{% include notitle [access](../../_auto/method_scopes/updateDocuments.md) %}  Полностью обновляет номер, тип и даты документов на товары. За один запрос можно обновить не более 100 документов.  Для каждого документа передайте его идентификатор и актуальные значения номера, типа и дат. Если дата не указана, ранее сохраненная дата будет удалена. Ошибка одного документа не мешает обработке остальных.  {% include notitle [limit](../../_auto/method_limits/updateDocuments.md) %}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Api-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Api-Key', 'Bearer');
+
+// Configure OAuth2 access token for authorization: OAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\FbyApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$business_id = 56; // int | Идентификатор кабинета.  {% if audience == \"partner\" %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %}
+$update_documents_request = new \OpenAPI\Client\Model\UpdateDocumentsRequest(); // \OpenAPI\Client\Model\UpdateDocumentsRequest
+
+try {
+    $result = $apiInstance->updateDocuments($business_id, $update_documents_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FbyApi->updateDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **business_id** | **int**| Идентификатор кабинета.  {% if audience &#x3D;&#x3D; \&quot;partner\&quot; %}  Чтобы его узнать, воспользуйтесь запросом [GET v2/campaigns](../../reference/campaigns/getCampaigns.md).  ℹ️ [Что такое кабинет и магазин на Маркете](https://yandex.ru/support/marketplace/account/introduction.html)  {% endif %} | |
+| **update_documents_request** | [**\OpenAPI\Client\Model\UpdateDocumentsRequest**](../Model/UpdateDocumentsRequest.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\UpdateDocumentsResponse**](../Model/UpdateDocumentsResponse.md)
+
+### Authorization
+
+[ApiKey](../../README.md#ApiKey), [OAuth](../../README.md#OAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `updateGoodsFeedbackComment()`
 
 ```php
@@ -6868,7 +7492,7 @@ updateGoodsFeedbackComment($business_id, $update_goods_feedback_comment_request,
 
 Добавление нового или изменение созданного комментария
 
-{% include notitle [access](../../_auto/method_scopes/updateGoodsFeedbackComment.md) %}  Добавляет новый комментарий магазина или изменяет комментарий, который магазин оставлял ранее.  Для создания комментария к отзыву передайте только идентификатор отзыва `feedbackId`.  Чтобы добавить комментарий к другому комментарию, передайте:  * `feedbackId` — идентификатор отзыва; * `comment.parentId` — идентификатор родительского комментария.  Чтобы изменить комментарий, передайте:  * `feedbackId`— идентификатор отзыва; * `comment.id` — идентификатор комментария, который нужно изменить.  Если передать одновременно `comment.parentId` и `comment.id`, будет изменен существующий комментарий.  {% include notitle [limit](../../_auto/method_limits/updateGoodsFeedbackComment.md) %}
+{% include notitle [access](../../_auto/method_scopes/updateGoodsFeedbackComment.md) %}  Добавляет новый комментарий магазина или изменяет комментарий, который магазин оставлял ранее.  Для создания комментария к отзыву передайте только идентификатор отзыва `feedbackId`.  Чтобы добавить комментарий к другому комментарию, передайте:  * `feedbackId` — идентификатор отзыва; * `comment.parentId` — идентификатор родительского комментария.  Чтобы изменить комментарий, передайте:  * `feedbackId`— идентификатор отзыва; * `comment.id` — идентификатор комментария, который нужно изменить.  Если передать одновременно `comment.parentId` и `comment.id`, будет изменен существующий комментарий.  **Пошаговые инструкции**  * [Отзывы о товарах](../../step-by-step/goods-feedback.md)  {% include notitle [limit](../../_auto/method_limits/updateGoodsFeedbackComment.md) %}
 
 ### Example
 
@@ -6937,7 +7561,7 @@ updateGoodsQuestionTextEntity($business_id, $update_goods_question_text_entity_r
 
 Создание, изменение и удаление ответа или комментария
 
-{% include notitle [access](../../_auto/method_scopes/updateGoodsQuestionTextEntity.md) %}  Создание, изменение и удаление ответа или комментария.  {% include notitle [limit](../../_auto/method_limits/updateGoodsQuestionTextEntity.md) %}
+{% include notitle [access](../../_auto/method_scopes/updateGoodsQuestionTextEntity.md) %}  Создание, изменение и удаление ответа или комментария.  **Пошаговые инструкции**  * [Вопросы и ответы о товарах](../../step-by-step/goods-questions.md)  {% include notitle [limit](../../_auto/method_limits/updateGoodsQuestionTextEntity.md) %}
 
 ### Example
 
@@ -7004,7 +7628,7 @@ updateOfferContent($business_id, $update_offer_content_request): \OpenAPI\Client
 
 Редактирование категорийных характеристик товара
 
-{% include notitle [access](../../_auto/method_scopes/updateOfferContent.md) %}  Редактирует характеристики товара, которые специфичны для категории, к которой он относится.  {% note warning \"Здесь только то, что относится к конкретной категории\" %}  Если вам нужно изменить основные параметры товара (название, описание, изображения, видео, производитель, штрихкод), воспользуйтесь запросом [POST v2/businesses/{businessId}/offer-mappings/update](../../reference/business-offer-mappings/updateOfferMappings.md).  {% endnote %}  Чтобы удалить характеристики, которые заданы в параметрах с типом `string`, передайте пустое значение.  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/updateOfferContent.md) %}
+{% include notitle [access](../../_auto/method_scopes/updateOfferContent.md) %}  Редактирует характеристики товара, которые специфичны для категории, к которой он относится.  {% note warning \"Здесь только то, что относится к конкретной категории\" %}  Если вам нужно изменить основные параметры товара (название, описание, изображения, видео, производитель, штрихкод), воспользуйтесь запросом [POST v2/businesses/{businessId}/offer-mappings/update](../../reference/business-offer-mappings/updateOfferMappings.md).  {% endnote %}  Чтобы удалить характеристики, которые заданы в параметрах с типом `string`, передайте пустое значение.  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  **Пошаговые инструкции**  * [Объединить варианты товаров на карточке](../../step-by-step/assortment-add-goods.md#combine-variants) * [Товары относятся к новой для магазина категории](../../step-by-step/content-change.md#edit-card) * [Привязать таблицу размеров к карточке](../../step-by-step/size-tables.md#offer-card) * [Рекомендации Маркета по карточкам](../../step-by-step/recommendations.md) * [Передача значений характеристики](../../step-by-step/parameter-values.md)  {% include notitle [limit](../../_auto/method_limits/updateOfferContent.md) %}
 
 ### Example
 
@@ -7071,7 +7695,7 @@ updateOfferMappings($business_id, $update_offer_mappings_request, $language): \O
 
 Добавление товаров в каталог и изменение информации о них
 
-{% include notitle [access](../../_auto/method_scopes/updateOfferMappings.md) %}  Добавляет товары в каталог и передает:  * их [листовые категории](*list-categories) на Маркете и категорийные характеристики; * основные характеристики; * цены на товары в кабинете.  Также объединяет товары на карточке, редактирует и удаляет информацию об уже добавленных товарах, в том числе цены в кабинете и категории товаров.  Список категорий Маркета можно получить с помощью запроса [POST v2/categories/tree](../../reference/categories/getCategoriesTree.md), а характеристики товаров по категориям с помощью [POST v2/category/{categoryId}/parameters](../../reference/content/getCategoryContentParameters.md).  {% cut \"Добавить новый товар\" %}  Передайте его с новым идентификатором, который раньше никогда не использовался в каталоге.  Обязательно укажите параметры: `offerId`, `name`, `marketCategoryId`, `pictures`, `vendor`, `description`.  Старайтесь сразу передать как можно больше информации — она потребуется Маркету для подбора подходящей карточки или создания новой.  Если известно, какой карточке на Маркете соответствует товар, можно сразу указать идентификатор этой карточки (SKU на Маркете) в поле `marketSKU`.  **Для продавцов Market Yandex Go:**  Когда вы добавляете товары в каталог, указывайте значения параметров `name` и `description` на русском языке. Чтобы на витрине они отображались и на другом языке, еще раз выполните запрос `POST v2/businesses/{businessId}/offer-mappings/update`, где укажите:    * язык в параметре `language`;   * значения параметров `name` и `description` на указанном языке.    Повторно передавать остальные характеристики товара не нужно.  {% endcut %}  {% cut \"Изменить информацию о товаре\" %}  Передайте новые данные, указав в `offerId` SKU товара в вашей системе.  Поля, в которых ничего не меняется, можно не передавать.  {% endcut %}  {% cut \"Удалить переданные ранее параметры товара\" %}  В `deleteParameters` укажите значения параметров, которые хотите удалить. Можно передать сразу несколько значений.  Для параметров с типом `string` также можно передать пустое значение.  {% endcut %}  Параметр `offerId` (SKU товара в вашей системе) должен быть **уникальным** для всех товаров, которые вы передаете.  {% note warning \"Правила использования SKU\" %}  * У каждого товара SKU должен быть свой.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  SKU товара можно изменить в кабинете продавца на Маркете. О том, как это сделать, читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/assortment/operations/edit-sku).  {% endnote %}  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/updateOfferMappings.md) %}
+{% include notitle [access](../../_auto/method_scopes/updateOfferMappings.md) %}  Добавляет товары в каталог и передает:  * их [листовые категории](*list-categories) на Маркете и категорийные характеристики; * основные характеристики; * цены на товары в кабинете.  Также объединяет товары на карточке, редактирует и удаляет информацию об уже добавленных товарах, в том числе цены в кабинете и категории товаров.  Список категорий Маркета можно получить с помощью запроса [POST v2/categories/tree](../../reference/categories/getCategoriesTree.md), а характеристики товаров по категориям с помощью [POST v2/category/{categoryId}/parameters](../../reference/content/getCategoryContentParameters.md).  {% cut \"Добавить новый товар\" %}  Передайте его с новым идентификатором, который раньше никогда не использовался в каталоге.  Обязательно укажите параметры: `offerId`, `name`, `marketCategoryId`, `pictures`, `vendor`, `description`.  Старайтесь сразу передать как можно больше информации — она потребуется Маркету для подбора подходящей карточки или создания новой.  Если известно, какой карточке на Маркете соответствует товар, можно сразу указать идентификатор этой карточки (SKU на Маркете) в поле `marketSKU`.  **Для продавцов Market Yandex Go:**  Когда вы добавляете товары в каталог, указывайте значения параметров `name` и `description` на русском языке. Чтобы на витрине они отображались и на другом языке, еще раз выполните запрос `POST v2/businesses/{businessId}/offer-mappings/update`, где укажите:    * язык в параметре `language`;   * значения параметров `name` и `description` на указанном языке.    Повторно передавать остальные характеристики товара не нужно.  {% endcut %}  {% cut \"Изменить информацию о товаре\" %}  Передайте новые данные, указав в `offerId` SKU товара в вашей системе.  Поля, в которых ничего не меняется, можно не передавать.  {% endcut %}  {% cut \"Удалить переданные ранее параметры товара\" %}  В `deleteParameters` укажите значения параметров, которые хотите удалить. Можно передать сразу несколько значений.  Для параметров с типом `string` также можно передать пустое значение.  {% endcut %}  Параметр `offerId` (SKU товара в вашей системе) должен быть **уникальным** для всех товаров, которые вы передаете.  {% note warning \"Правила использования SKU\" %}  * У каждого товара SKU должен быть свой.  * Уже заданный SKU нельзя освободить и использовать заново для другого товара. Каждый товар должен получать новый идентификатор, до того никогда не использовавшийся в вашем каталоге.  SKU товара можно изменить в кабинете продавца на Маркете. О том, как это сделать, читайте [в Справке Маркета для продавцов](https://yandex.ru/support2/marketplace/ru/assortment/operations/edit-sku).  {% endnote %}  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  **Пошаговые инструкции**  * [Добавление и редактирование товаров](../../step-by-step/assortment-add-goods.md) * [Рекомендации Маркета по карточкам](../../step-by-step/recommendations.md) * [Передача значений характеристики](../../step-by-step/parameter-values.md)  {% include notitle [limit](../../_auto/method_limits/updateOfferMappings.md) %}
 
 ### Example
 
@@ -7140,7 +7764,7 @@ updatePrices($campaign_id, $update_prices_request): \OpenAPI\Client\Model\EmptyA
 
 Установка цен на товары в конкретном магазине
 
-{% include notitle [access](../../_auto/method_scopes/updatePrices.md) %}  Устанавливает цены на товары в магазине. Чтобы получить рекомендации Маркета, касающиеся цен, выполните запрос [POST v2/businesses/{businessId}/offers/recommendations](../../reference/offers/getOfferRecommendations.md).  {% note warning \"Метод только для отдельных магазинов\" %}  Вам доступен этот метод, если в кабинете продавца на Маркете есть возможность установить уникальные цены в отдельных магазинах. Как это проверить — в методе [POST v2/businesses/{businessId}/settings](../../reference/businesses/getBusinessSettings.md) в параметре `onlyDefaultPrice` возвращается значение `false`.  В ином случае используйте метод управления ценами, которые действуют во всех магазинах, — [POST v2/businesses/{businessId}/offer-prices/updates](../../reference/prices/updateBusinessPrices.md).  {% endnote %}  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/updatePrices.md) %}
+{% include notitle [access](../../_auto/method_scopes/updatePrices.md) %}  Устанавливает цены на товары в магазине. Чтобы получить рекомендации Маркета, касающиеся цен, выполните запрос [POST v2/businesses/{businessId}/offers/recommendations](../../reference/offers/getOfferRecommendations.md).  {% note warning \"Метод только для отдельных магазинов\" %}  Вам доступен этот метод, если в кабинете продавца на Маркете есть возможность установить уникальные цены в отдельных магазинах. Как это проверить — в методе [POST v2/businesses/{businessId}/settings](../../reference/businesses/getBusinessSettings.md) в параметре `onlyDefaultPrice` возвращается значение `false`.  В ином случае используйте метод управления ценами, которые действуют во всех магазинах, — [POST v2/businesses/{businessId}/offer-prices/updates](../../reference/prices/updateBusinessPrices.md).  {% endnote %}  {% note info \"Данные в каталоге обновляются не мгновенно\" %}  Это занимает до нескольких минут.  {% endnote %}  **Пошаговые инструкции**  * [Как изменить цены на товары](../../step-by-step/assortment-change-prices.md)  {% include notitle [limit](../../_auto/method_limits/updatePrices.md) %}
 
 ### Example
 
@@ -7207,7 +7831,7 @@ updatePromoOffers($business_id, $update_promo_offers_request): \OpenAPI\Client\M
 
 Добавление товаров в акцию или изменение их цен
 
-{% include notitle [access](../../_auto/method_scopes/updatePromoOffers.md) %}  Добавляет товары в акцию или изменяет цены на товары, которые участвуют в акции.  Изменения начинают действовать в течение 4–6 часов. Узнать, применились ли они, можно с помощью параметра `processing` в ответе метода [POST v2/businesses/{businessId}/promos](../../reference/promos/getPromos.md).  {% include notitle [limit](../../_auto/method_limits/updatePromoOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/updatePromoOffers.md) %}  Добавляет товары в акцию или изменяет цены на товары, которые участвуют в акции.  Изменения начинают действовать в течение 4–6 часов. Узнать, применились ли они, можно с помощью параметра `processing` в ответе метода [POST v2/businesses/{businessId}/promos](../../reference/promos/getPromos.md).  **Пошаговые инструкции**  * [Управление акциями](../../step-by-step/promos.md)  {% include notitle [limit](../../_auto/method_limits/updatePromoOffers.md) %}
 
 ### Example
 

@@ -19,7 +19,7 @@ getGoodsQuestionAnswers($business_id, $get_answers_request, $page_token, $limit)
 
 Получение ответов на вопрос
 
-{% include notitle [access](../../_auto/method_scopes/getGoodsQuestionAnswers.md) %}  Возвращает ответы на вопрос о товаре по указанным фильтрам.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый ответ или комментарий. А полную информацию о них можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 ответов.  {% include notitle [limit](../../_auto/method_limits/getGoodsQuestionAnswers.md) %}
+{% include notitle [access](../../_auto/method_scopes/getGoodsQuestionAnswers.md) %}  Возвращает ответы на вопрос о товаре по указанным фильтрам.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый ответ или комментарий. А полную информацию о них можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 ответов.  **Пошаговые инструкции**  * [Вопросы и ответы о товарах](../../step-by-step/goods-questions.md)  {% include notitle [limit](../../_auto/method_limits/getGoodsQuestionAnswers.md) %}
 
 ### Example
 
@@ -90,7 +90,7 @@ getGoodsQuestions($business_id, $page_token, $limit, $get_questions_request): \O
 
 Получение вопросов о товарах продавца
 
-{% include notitle [access](../../_auto/method_scopes/getGoodsQuestions.md) %}  Возвращает вопросы о товарах продавца по указанным фильтрам.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый вопрос. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 вопросов.  {% include notitle [limit](../../_auto/method_limits/getGoodsQuestions.md) %}
+{% include notitle [access](../../_auto/method_scopes/getGoodsQuestions.md) %}  Возвращает вопросы о товарах продавца по указанным фильтрам.  {% note tip \"Вы также можете настроить API-уведомления\" %}  Маркет отправит вам [запрос](../../push-notifications/reference/sendNotification.md), когда появится новый вопрос. А полную информацию о нем можно получить с помощью этого метода.  [{#T}](../../push-notifications/index.md)  {% endnote %}  Результаты возвращаются постранично, одна страница содержит не более 50 вопросов.  **Пошаговые инструкции**  * [Вопросы и ответы о товарах](../../step-by-step/goods-questions.md)  {% include notitle [limit](../../_auto/method_limits/getGoodsQuestions.md) %}
 
 ### Example
 
@@ -161,7 +161,7 @@ updateGoodsQuestionTextEntity($business_id, $update_goods_question_text_entity_r
 
 Создание, изменение и удаление ответа или комментария
 
-{% include notitle [access](../../_auto/method_scopes/updateGoodsQuestionTextEntity.md) %}  Создание, изменение и удаление ответа или комментария.  {% include notitle [limit](../../_auto/method_limits/updateGoodsQuestionTextEntity.md) %}
+{% include notitle [access](../../_auto/method_scopes/updateGoodsQuestionTextEntity.md) %}  Создание, изменение и удаление ответа или комментария.  **Пошаговые инструкции**  * [Вопросы и ответы о товарах](../../step-by-step/goods-questions.md)  {% include notitle [limit](../../_auto/method_limits/updateGoodsQuestionTextEntity.md) %}
 
 ### Example
 

@@ -19,7 +19,7 @@ getSupplyRequestDocuments($campaign_id, $get_supply_request_documents_request): 
 
 Получение документов по заявке на поставку, вывоз или утилизацию
 
-{% include notitle [access](../../_auto/method_scopes/getSupplyRequestDocuments.md) %}  Возвращает документы по заявке.  {% include notitle [limit](../../_auto/method_limits/getSupplyRequestDocuments.md) %}
+{% include notitle [access](../../_auto/method_scopes/getSupplyRequestDocuments.md) %}  Возвращает документы по заявке.  **Пошаговые инструкции**  * [Заявки на поставку товаров на склад, вывоз или утилизацию](../../step-by-step/supplies.md)  {% include notitle [limit](../../_auto/method_limits/getSupplyRequestDocuments.md) %}
 
 ### Example
 
@@ -86,7 +86,7 @@ getSupplyRequestItems($campaign_id, $get_supply_request_items_request, $page_tok
 
 Получение товаров в заявке на поставку, вывоз или утилизацию
 
-{% include notitle [access](../../_auto/method_scopes/getSupplyRequestItems.md) %}  Возвращает список товаров в заявке и информацию по ним.  {% include notitle [limit](../../_auto/method_limits/getSupplyRequestItems.md) %}
+{% include notitle [access](../../_auto/method_scopes/getSupplyRequestItems.md) %}  Возвращает список товаров в заявке и информацию по ним.  **Пошаговые инструкции**  * [Заявки на поставку товаров на склад, вывоз или утилизацию](../../step-by-step/supplies.md)  {% include notitle [limit](../../_auto/method_limits/getSupplyRequestItems.md) %}
 
 ### Example
 
@@ -157,7 +157,7 @@ getSupplyRequests($campaign_id, $page_token, $limit, $get_supply_requests_reques
 
 Получение информации о заявках на поставку, вывоз и утилизацию
 
-{% include notitle [access](../../_auto/method_scopes/getSupplyRequests.md) %}  По указанным фильтрам возвращает заявки на поставку, вывоз и утилизацию, а также информацию по ним.  {% include notitle [limit](../../_auto/method_limits/getSupplyRequests.md) %}
+{% include notitle [access](../../_auto/method_scopes/getSupplyRequests.md) %}  По указанным фильтрам возвращает заявки на поставку, вывоз и утилизацию, а также информацию по ним.  **Пошаговые инструкции**  * [Заявки на поставку товаров на склад, вывоз или утилизацию](../../step-by-step/supplies.md)  {% include notitle [limit](../../_auto/method_limits/getSupplyRequests.md) %}
 
 ### Example
 

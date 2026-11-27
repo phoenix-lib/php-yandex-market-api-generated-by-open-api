@@ -20,7 +20,7 @@ deletePromoOffers($business_id, $delete_promo_offers_request): \OpenAPI\Client\M
 
 Удаление товаров из акции
 
-{% include notitle [access](../../_auto/method_scopes/deletePromoOffers.md) %}  Убирает товары из акции.  Изменения начинают действовать в течение 4–6 часов. Узнать, применились ли они, можно с помощью параметра `processing` в ответе метода [POST v2/businesses/{businessId}/promos](../../reference/promos/getPromos.md).  {% include notitle [limit](../../_auto/method_limits/deletePromoOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/deletePromoOffers.md) %}  Убирает товары из акции.  Изменения начинают действовать в течение 4–6 часов. Узнать, применились ли они, можно с помощью параметра `processing` в ответе метода [POST v2/businesses/{businessId}/promos](../../reference/promos/getPromos.md).  **Пошаговые инструкции**  * [Удалить товары из акции](../../step-by-step/promos.md#delete-goods)  {% include notitle [limit](../../_auto/method_limits/deletePromoOffers.md) %}
 
 ### Example
 
@@ -87,7 +87,7 @@ getPromoOffers($business_id, $get_promo_offers_request, $page_token, $limit): \O
 
 Получение списка товаров, которые участвуют или могут участвовать в акции
 
-{% include notitle [access](../../_auto/method_scopes/getPromoOffers.md) %}  Возвращает список товаров, которые участвуют или могут участвовать в акции.  {% note warning \"Условия участия в акциях могут меняться\" %}  Например, `maxPromoPrice`.  Установленные цены меняться не будут — `price` и `promoPrice`.  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getPromoOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/getPromoOffers.md) %}  Возвращает список товаров, которые участвуют или могут участвовать в акции.  {% note warning \"Условия участия в акциях могут меняться\" %}  Например, `maxPromoPrice` и `bestPriceLevels`.  Установленные цены меняться не будут — `price` и `promoPrice`.  {% endnote %}  **Пошаговые инструкции**  * [Управление акциями](../../step-by-step/promos.md)  {% include notitle [limit](../../_auto/method_limits/getPromoOffers.md) %}
 
 ### Example
 
@@ -158,7 +158,7 @@ getPromos($business_id, $get_promos_request): \OpenAPI\Client\Model\GetPromosRes
 
 Получение списка акций
 
-{% include notitle [access](../../_auto/method_scopes/getPromos.md) %}  Возвращает информацию об акциях Маркета. Не возвращает данные об акциях, которые создал продавец.  По умолчанию возвращаются акции, в которых продавец участвует или может принять участие.  Чтобы получить текущие или завершенные акции, передайте параметр `participation`.  Типы акций, которые возвращаются в ответе:  * прямая скидка; * флеш-акция; * скидка по промокоду.  {% include notitle [limit](../../_auto/method_limits/getPromos.md) %}
+{% include notitle [access](../../_auto/method_scopes/getPromos.md) %}  Возвращает информацию об акциях Маркета. Не возвращает данные об акциях, которые создал продавец.  По умолчанию возвращаются акции, в которых продавец участвует или может принять участие.  Чтобы получить текущие или завершенные акции, передайте параметр `participation`.  Типы акций, которые возвращаются в ответе:  * прямая скидка; * флеш-акция; * скидка по промокоду.  **Пошаговые инструкции**  * [Управление акциями](../../step-by-step/promos.md)  {% include notitle [limit](../../_auto/method_limits/getPromos.md) %}
 
 ### Example
 
@@ -225,7 +225,7 @@ updatePromoOffers($business_id, $update_promo_offers_request): \OpenAPI\Client\M
 
 Добавление товаров в акцию или изменение их цен
 
-{% include notitle [access](../../_auto/method_scopes/updatePromoOffers.md) %}  Добавляет товары в акцию или изменяет цены на товары, которые участвуют в акции.  Изменения начинают действовать в течение 4–6 часов. Узнать, применились ли они, можно с помощью параметра `processing` в ответе метода [POST v2/businesses/{businessId}/promos](../../reference/promos/getPromos.md).  {% include notitle [limit](../../_auto/method_limits/updatePromoOffers.md) %}
+{% include notitle [access](../../_auto/method_scopes/updatePromoOffers.md) %}  Добавляет товары в акцию или изменяет цены на товары, которые участвуют в акции.  Изменения начинают действовать в течение 4–6 часов. Узнать, применились ли они, можно с помощью параметра `processing` в ответе метода [POST v2/businesses/{businessId}/promos](../../reference/promos/getPromos.md).  **Пошаговые инструкции**  * [Управление акциями](../../step-by-step/promos.md)  {% include notitle [limit](../../_auto/method_limits/updatePromoOffers.md) %}
 
 ### Example
 

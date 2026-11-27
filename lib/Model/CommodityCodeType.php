@@ -33,7 +33,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * CommodityCodeType Class Doc Comment
  *
  * @category Class
- * @description Тип товарного кода:  * &#x60;CUSTOMS_COMMODITY_CODE&#x60; — код товара в единой Товарной номенклатуре внешнеэкономической деятельности (ТН ВЭД) — 10 или 14 цифр без пробелов. * &#x60;IKPU_CODE&#x60; — идентификационный код продукции и услуг (ИКПУ) в Узбекистане – 17 цифр без пробелов.  Не передавайте несколько кодов одного типа.
+ * @description Тип товарного кода:  * &#x60;CUSTOMS_COMMODITY_CODE&#x60; — код товара в единой Товарной номенклатуре внешнеэкономической деятельности (ТН ВЭД) — 10 или 14 цифр без пробелов. * &#x60;IKPU_CODE&#x60; — идентификационный код продукции и услуг (ИКПУ) в Узбекистане – 17 цифр без пробелов. * &#x60;OKPD2_CODE&#x60; — код по Общероссийскому классификатору продукции по видам экономической деятельности (ОКПД2) — 2, 3, 4, 5, 6 или 9 цифр, разделенных точками: XX, XX.X, XX.XX, XX.XX.X, XX.XX.XX или XX.XX.XX.XXX.  Не передавайте несколько кодов одного типа.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -47,6 +47,8 @@ class CommodityCodeType
 
     public const IKPU_CODE = 'IKPU_CODE';
 
+    public const OKPD2_CODE = 'OKPD2_CODE';
+
     /**
      * Gets allowable values of the enum
      * @return string[]
@@ -55,7 +57,8 @@ class CommodityCodeType
     {
         return [
             self::CUSTOMS_COMMODITY_CODE,
-            self::IKPU_CODE
+            self::IKPU_CODE,
+            self::OKPD2_CODE
         ];
     }
 }

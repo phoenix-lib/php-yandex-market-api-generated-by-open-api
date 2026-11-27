@@ -337,7 +337,7 @@ class OfferMediaFilesDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets first_video_as_cover
      *
-     * @param bool|null $first_video_as_cover Использовать первое видео в карточке как видеообложку.  Передайте `true`, чтобы первое видео использовалось как видеообложка, или `false`, чтобы видеообложка не отображалась в карточке товара.
+     * @param bool|null $first_video_as_cover {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}     {% endnote %}  Использовать первое видео в карточке как видеообложку.  Передайте `true`, чтобы первое видео использовалось как видеообложка, или `false`, чтобы видеообложка не отображалась в карточке товара.
      *
      * @return self
      * @deprecated

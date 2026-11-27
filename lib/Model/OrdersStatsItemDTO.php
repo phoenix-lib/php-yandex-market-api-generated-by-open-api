@@ -35,7 +35,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * OrdersStatsItemDTO Class Doc Comment
  *
  * @category Class
- * @description Список товаров в заказе после возможных изменений.  В ходе обработки заказа Маркет может удалить из него единицы товаров — при проблемах на складе или по инициативе пользователя.  * Если из заказа удалены все единицы товара, его не будет в списке &#x60;items&#x60; — только в списке &#x60;initialItems&#x60;.  * Если в заказе осталась хотя бы одна единица товара, он будет и в списке &#x60;items&#x60; (с уменьшенным количеством единиц &#x60;count&#x60;), и в списке &#x60;initialItems&#x60; (с первоначальным количеством единиц &#x60;initialCount&#x60;).
+ * @description Список товаров в заказе после возможных изменений.  Услуги установки, сборки и утилизации по модели DBS возвращаются отдельными позициями. Позицию услуги можно отличить от товара по наличию &#x60;shopServiceType&#x60;; ее &#x60;offerName&#x60; — &#x60;Установка&#x60;, &#x60;Сборка&#x60; или &#x60;Утилизация&#x60;. У одного товара может быть несколько позиций услуг.  Значения &#x60;marketSku&#x60; и &#x60;shopSku&#x60; позиции услуги совпадают со значениями товара, для которого она заказана. При подсчете количества товаров исключайте позиции с &#x60;shopServiceType&#x60;.  Отмена услуг отражается по тем же правилам, что и удаление товаров: при частичной отмене позиция есть в &#x60;items&#x60; с уменьшенным &#x60;count&#x60; и в &#x60;initialItems&#x60; с первоначальным &#x60;initialCount&#x60;, при полной — только в &#x60;initialItems&#x60;.  В ходе обработки заказа Маркет может удалить из него единицы товаров — при проблемах на складе или по инициативе пользователя.  * Если из заказа удалены все единицы товара, его не будет в списке &#x60;items&#x60; — только в списке &#x60;initialItems&#x60;.  * Если в заказе осталась хотя бы одна единица товара, он будет и в списке &#x60;items&#x60; (с уменьшенным количеством единиц &#x60;count&#x60;), и в списке &#x60;initialItems&#x60; (с первоначальным количеством единиц &#x60;initialCount&#x60;).
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,6 +59,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'offer_name' => 'string',
+        'shop_service_type' => '\OpenAPI\Client\Model\OrdersStatsShopServiceType',
         'market_sku' => 'int',
         'shop_sku' => 'string',
         'count' => 'int',
@@ -81,6 +82,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'offer_name' => null,
+        'shop_service_type' => null,
         'market_sku' => 'int64',
         'shop_sku' => null,
         'count' => 'int32',
@@ -101,6 +103,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static array $openAPINullables = [
         'offer_name' => false,
+        'shop_service_type' => false,
         'market_sku' => false,
         'shop_sku' => false,
         'count' => false,
@@ -201,6 +204,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $attributeMap = [
         'offer_name' => 'offerName',
+        'shop_service_type' => 'shopServiceType',
         'market_sku' => 'marketSku',
         'shop_sku' => 'shopSku',
         'count' => 'count',
@@ -221,6 +225,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'offer_name' => 'setOfferName',
+        'shop_service_type' => 'setShopServiceType',
         'market_sku' => 'setMarketSku',
         'shop_sku' => 'setShopSku',
         'count' => 'setCount',
@@ -241,6 +246,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'offer_name' => 'getOfferName',
+        'shop_service_type' => 'getShopServiceType',
         'market_sku' => 'getMarketSku',
         'shop_sku' => 'getShopSku',
         'count' => 'getCount',
@@ -312,6 +318,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     public function __construct(?array $data = null)
     {
         $this->setIfExists('offer_name', $data ?? [], null);
+        $this->setIfExists('shop_service_type', $data ?? [], null);
         $this->setIfExists('market_sku', $data ?? [], null);
         $this->setIfExists('shop_sku', $data ?? [], null);
         $this->setIfExists('count', $data ?? [], null);
@@ -416,7 +423,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets offer_name
      *
-     * @param string|null $offer_name Название товара.
+     * @param string|null $offer_name Название товара или услуги магазина.
      *
      * @return self
      */
@@ -426,6 +433,33 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable offer_name cannot be null');
         }
         $this->container['offer_name'] = $offer_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_service_type
+     *
+     * @return \OpenAPI\Client\Model\OrdersStatsShopServiceType|null
+     */
+    public function getShopServiceType()
+    {
+        return $this->container['shop_service_type'];
+    }
+
+    /**
+     * Sets shop_service_type
+     *
+     * @param \OpenAPI\Client\Model\OrdersStatsShopServiceType|null $shop_service_type shop_service_type
+     *
+     * @return self
+     */
+    public function setShopServiceType($shop_service_type)
+    {
+        if (is_null($shop_service_type)) {
+            throw new \InvalidArgumentException('non-nullable shop_service_type cannot be null');
+        }
+        $this->container['shop_service_type'] = $shop_service_type;
 
         return $this;
     }
@@ -512,7 +546,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets count
      *
-     * @param int|null $count Количество единиц товара с учетом удаленных единиц.  Если из заказа удалены все единицы товара, он попадет только в список `initialItems`.
+     * @param int|null $count Количество единиц товара или услуги магазина с учетом удаленных или отмененных единиц.  Если из заказа удалены все единицы товара или полностью отменена услуга, позиция попадет только в список `initialItems`.
      *
      * @return self
      */
@@ -539,7 +573,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets prices
      *
-     * @param \OpenAPI\Client\Model\OrdersStatsPriceDTO[]|null $prices Цена или скидки на товар.
+     * @param \OpenAPI\Client\Model\OrdersStatsPriceDTO[]|null $prices Цена или скидки на товар или услугу магазина.
      *
      * @return self
      */
@@ -683,7 +717,7 @@ class OrdersStatsItemDTO implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets initial_count
      *
-     * @param int|null $initial_count Первоначальное количество единиц товара.
+     * @param int|null $initial_count Первоначальное количество единиц товара или услуги магазина.
      *
      * @return self
      */

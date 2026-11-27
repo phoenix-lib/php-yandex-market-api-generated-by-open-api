@@ -83,6 +83,7 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => '\OpenAPI\Client\Model\OfferType',
         'downloadable' => 'bool',
         'adult' => 'bool',
+        'marking_declared' => 'bool',
         'age' => '\OpenAPI\Client\Model\AgeDTO',
         'params' => '\OpenAPI\Client\Model\OfferParamDTO[]',
         'basic_price' => '\OpenAPI\Client\Model\GetPriceWithDiscountDTO',
@@ -129,6 +130,7 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => null,
         'downloadable' => null,
         'adult' => null,
+        'marking_declared' => null,
         'age' => null,
         'params' => null,
         'basic_price' => null,
@@ -173,6 +175,7 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => false,
         'downloadable' => false,
         'adult' => false,
+        'marking_declared' => false,
         'age' => false,
         'params' => true,
         'basic_price' => false,
@@ -297,6 +300,7 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => 'type',
         'downloadable' => 'downloadable',
         'adult' => 'adult',
+        'marking_declared' => 'markingDeclared',
         'age' => 'age',
         'params' => 'params',
         'basic_price' => 'basicPrice',
@@ -341,6 +345,7 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => 'setType',
         'downloadable' => 'setDownloadable',
         'adult' => 'setAdult',
+        'marking_declared' => 'setMarkingDeclared',
         'age' => 'setAge',
         'params' => 'setParams',
         'basic_price' => 'setBasicPrice',
@@ -385,6 +390,7 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         'type' => 'getType',
         'downloadable' => 'getDownloadable',
         'adult' => 'getAdult',
+        'marking_declared' => 'getMarkingDeclared',
         'age' => 'getAge',
         'params' => 'getParams',
         'basic_price' => 'getBasicPrice',
@@ -480,6 +486,7 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('downloadable', $data ?? [], null);
         $this->setIfExists('adult', $data ?? [], null);
+        $this->setIfExists('marking_declared', $data ?? [], null);
         $this->setIfExists('age', $data ?? [], null);
         $this->setIfExists('params', $data ?? [], null);
         $this->setIfExists('basic_price', $data ?? [], null);
@@ -716,7 +723,7 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets category
      *
-     * @param string|null $category {% note warning \"Вместо него используйте `marketCategoryId`.\" %}     {% endnote %}  Категория товара в вашем магазине.
+     * @param string|null $category {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `marketCategoryId`.  {% endnote %}  Категория товара в вашем магазине.
      *
      * @return self
      * @deprecated
@@ -1170,7 +1177,7 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customs_commodity_code
      *
-     * @param string|null $customs_commodity_code {% note warning \"Вместо него используйте `commodityCodes` с типом `CUSTOMS_COMMODITY_CODE`.\" %}     {% endnote %}  Код товара в единой Товарной номенклатуре внешнеэкономической деятельности (ТН ВЭД) — 10 или 14 цифр без пробелов.  Обязательно укажите, если он есть.
+     * @param string|null $customs_commodity_code {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  Вместо него используйте `commodityCodes` с типом `CUSTOMS_COMMODITY_CODE`.  {% endnote %}  Код товара в единой Товарной номенклатуре внешнеэкономической деятельности (ТН ВЭД) — 10 или 14 цифр без пробелов.  Обязательно укажите, если он есть.
      *
      * @return self
      * @deprecated
@@ -1237,7 +1244,7 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets certificates
      *
-     * @param string[]|null $certificates Номера документов на товар: сертификата, декларации соответствия и т. п.  Передавать можно только номера документов, сканы которого загружены в кабинете продавца по [инструкции](https://yandex.ru/support/marketplace/assortment/restrictions/certificates.html).
+     * @param string[]|null $certificates Номера документов на товар: сертификата, декларации соответствия и т. п.  Документы можно создать с помощью [POST v1/businesses/{businessId}/offers/documents/create](../../reference/documents/createDocuments.md).
      *
      * @return self
      */
@@ -1404,6 +1411,33 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets marking_declared
+     *
+     * @return bool|null
+     */
+    public function getMarkingDeclared()
+    {
+        return $this->container['marking_declared'];
+    }
+
+    /**
+     * Sets marking_declared
+     *
+     * @param bool|null $marking_declared Продавец будет маркировать товар в системе [«Честный ЗНАК»](https://честныйзнак.рф/). Аналог параметра «Буду маркировать» в кабинете продавца, фиде и Excel-шаблоне.  * `true` — продавец будет маркировать товар. * `false` — продавец не заявляет маркировку. Если маркировка для товара обязательна, значение `false` ее не отменит.  В ответе параметр показывает только заявление продавца. Если продавец не заявлял маркировку, параметр в ответе может отсутствовать.  Если параметр не передан, текущее значение не меняется. Удалить его через `deleteParameters` нельзя — чтобы отозвать заявление, передайте `false`.  Если признак меняется в нескольких местах (в кабинете, фиде, Excel-шаблоне или через API), сохраняется значение, переданное последним.  Для маркируемого товара передайте в `barcodes` хотя бы один штрихкод производителя в формате GTIN.
+     *
+     * @return self
+     */
+    public function setMarkingDeclared($marking_declared)
+    {
+        if (is_null($marking_declared)) {
+            throw new \InvalidArgumentException('non-nullable marking_declared cannot be null');
+        }
+        $this->container['marking_declared'] = $marking_declared;
+
+        return $this;
+    }
+
+    /**
      * Gets age
      *
      * @return \OpenAPI\Client\Model\AgeDTO|null
@@ -1444,7 +1478,7 @@ class GetOfferDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets params
      *
-     * @param \OpenAPI\Client\Model\OfferParamDTO[]|null $params {% note warning \"При передаче характеристик используйте `parameterValues`.\" %}     {% endnote %}  Характеристики, которые есть только у товаров конкретной категории — например, диаметр колес велосипеда или материал подошвы обуви.
+     * @param \OpenAPI\Client\Model\OfferParamDTO[]|null $params {% note warning \"Параметр устарел и будет отключен 12.10.2026.\" %}  При передаче характеристик используйте `parameterValues`.  {% endnote %}  Характеристики, которые есть только у товаров конкретной категории — например, диаметр колес велосипеда или материал подошвы обуви.
      *
      * @return self
      * @deprecated

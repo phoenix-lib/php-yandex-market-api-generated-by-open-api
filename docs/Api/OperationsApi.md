@@ -17,7 +17,7 @@ getOperations($business_id, $get_operations_request): \OpenAPI\Client\Model\GetO
 
 Получение статусов операций
 
-{% include notitle [access](../../_auto/method_scopes/getOperations.md) %}  Возвращает статусы запущенных операций по их идентификаторам.  {% include notitle [limit](../../_auto/method_limits/getOperations.md) %}
+{% include notitle [access](../../_auto/method_scopes/getOperations.md) %}  Возвращает статусы запущенных операций по их идентификаторам.  **Пошаговые инструкции**  * [Работа с LaaS-заказом](../../step-by-step/laas-order.md) * [Проверить завершение операции отмены возврата](../../step-by-step/laas-return.md#cancel)  {% include notitle [limit](../../_auto/method_limits/getOperations.md) %}
 
 ### Example
 

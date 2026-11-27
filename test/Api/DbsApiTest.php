@@ -156,6 +156,30 @@ class DbsApiTest extends TestCase
     }
 
     /**
+     * Test case for createContentSizeTables
+     *
+     * Создание таблиц размеров.
+     *
+     */
+    public function testCreateContentSizeTables()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for createDocuments
+     *
+     * Создание документов.
+     *
+     */
+    public function testCreateDocuments()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for createOutlet
      *
      * Создание точки продаж.
@@ -174,6 +198,18 @@ class DbsApiTest extends TestCase
      *
      */
     public function testDeleteCampaignOffers()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for deleteDocuments
+     *
+     * Удаление документов.
+     *
+     */
+    public function testDeleteDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -504,6 +540,18 @@ class DbsApiTest extends TestCase
     }
 
     /**
+     * Test case for generateStocksReport
+     *
+     * Отчет по остаткам на складах партнера.
+     *
+     */
+    public function testGenerateStocksReport()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for generateUnitedMarketplaceServicesReport
      *
      * Отчет по стоимости услуг.
@@ -768,6 +816,30 @@ class DbsApiTest extends TestCase
     }
 
     /**
+     * Test case for getContentSizeCharts
+     *
+     * Размерные сетки и обмеры для таблиц размеров.
+     *
+     */
+    public function testGetContentSizeCharts()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getContentSizeTables
+     *
+     * Таблицы размеров по идентификаторам.
+     *
+     */
+    public function testGetContentSizeTables()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getDefaultPrices
      *
      * Просмотр цен на указанные товары во всех магазинах.
@@ -786,6 +858,18 @@ class DbsApiTest extends TestCase
      *
      */
     public function testGetDeliveryServices()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getDocuments
+     *
+     * Получение документов.
+     *
+     */
+    public function testGetDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -1044,6 +1128,18 @@ class DbsApiTest extends TestCase
     }
 
     /**
+     * Test case for getPartnerWarehouses
+     *
+     * Список складов.
+     *
+     */
+    public function testGetPartnerWarehouses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getPrices
      *
      * Список цен.
@@ -1206,6 +1302,18 @@ class DbsApiTest extends TestCase
      *
      */
     public function testGetStocks()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getStocksOnPartnerWarehouses
+     *
+     * Информация об остатках.
+     *
+     */
+    public function testGetStocksOnPartnerWarehouses()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -1416,6 +1524,18 @@ class DbsApiTest extends TestCase
     }
 
     /**
+     * Test case for suggestContentSizeTables
+     *
+     * Подбор таблиц размеров.
+     *
+     */
+    public function testSuggestContentSizeTables()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for updateBusinessPrices
      *
      * Установка цен на товары для всех магазинов.
@@ -1434,6 +1554,30 @@ class DbsApiTest extends TestCase
      *
      */
     public function testUpdateCampaignOffers()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateContentSizeTables
+     *
+     * Обновление таблиц размеров.
+     *
+     */
+    public function testUpdateContentSizeTables()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateDocuments
+     *
+     * Обновление документов.
+     *
+     */
+    public function testUpdateDocuments()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -1602,6 +1746,30 @@ class DbsApiTest extends TestCase
      *
      */
     public function testUpdateStocks()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateStocksOnPartnerWarehouses
+     *
+     * Передача информации об остатках.
+     *
+     */
+    public function testUpdateStocksOnPartnerWarehouses()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for updateWarehouseModelStatus
+     *
+     * Включение/выключение модели работы склада.
+     *
+     */
+    public function testUpdateWarehouseModelStatus()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

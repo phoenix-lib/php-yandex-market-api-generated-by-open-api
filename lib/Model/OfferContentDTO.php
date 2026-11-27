@@ -419,7 +419,7 @@ class OfferContentDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets parameter_values
      *
-     * @param \OpenAPI\Client\Model\ParameterValueDTO[] $parameter_values Список характеристик с их значениями.  При **изменении** характеристик передавайте только те, значение которых нужно обновить. Если в `categoryId` вы меняете категорию, значения общих характеристик для старой и новой категории сохранятся, передавать их не нужно.  Подробнее читайте в [«Передача значений характеристики»](../../step-by-step/parameter-values.md).
+     * @param \OpenAPI\Client\Model\ParameterValueDTO[] $parameter_values Список характеристик с их значениями.  При **изменении** характеристик передавайте только те, значение которых нужно обновить. Если в `categoryId` вы меняете категорию, значения общих характеристик для старой и новой категории сохранятся, передавать их не нужно.
      *
      * @return self
      */

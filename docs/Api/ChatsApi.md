@@ -23,7 +23,7 @@ createChat($business_id, $create_chat_request): \OpenAPI\Client\Model\CreateChat
 
 Создание нового чата с покупателем
 
-{% include notitle [access](../../_auto/method_scopes/createChat.md) %}  Создает новый чат с покупателем и возвращает информацию о нем или созданном ранее.  Типы чатов, которые может начать продавец:  * по заказам; * по возвратам (доступны только для FBY-, FBS- и Экспресс-магазинов).  {% include notitle [limit](../../_auto/method_limits/createChat.md) %}
+{% include notitle [access](../../_auto/method_scopes/createChat.md) %}  Создает новый чат с покупателем и возвращает информацию о нем или созданном ранее.  Типы чатов, которые может начать продавец:  * по заказам; * по возвратам (доступны только для FBY-, FBS- и Экспресс-магазинов).  **Пошаговые инструкции**  * [Начать чат с покупателем](../../step-by-step/chats.md#create)  {% include notitle [limit](../../_auto/method_limits/createChat.md) %}
 
 ### Example
 
@@ -90,7 +90,7 @@ getChat($business_id, $chat_id): \OpenAPI\Client\Model\GetChatResponse
 
 Получение чата по идентификатору
 
-{% include notitle [access](../../_auto/method_scopes/getChat.md) %}  Возвращает чат по его идентификатору.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getChat.md) %}
+{% include notitle [access](../../_auto/method_scopes/getChat.md) %}  Возвращает чат по его идентификатору.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  **Пошаговые инструкции**  * [Как проверить, есть ли новые чаты или сообщения](../../step-by-step/chats.md#check)  {% include notitle [limit](../../_auto/method_limits/getChat.md) %}
 
 ### Example
 
@@ -157,7 +157,7 @@ getChatHistory($business_id, $chat_id, $get_chat_history_request, $page_token, $
 
 Получение истории сообщений в чате
 
-{% include notitle [access](../../_auto/method_scopes/getChatHistory.md) %}  Возвращает историю сообщений в чате с покупателем.  {% include notitle [limit](../../_auto/method_limits/getChatHistory.md) %}
+{% include notitle [access](../../_auto/method_scopes/getChatHistory.md) %}  Возвращает историю сообщений в чате с покупателем.  **Пошаговые инструкции**  * [Чаты с покупателями](../../step-by-step/chats.md)  {% include notitle [limit](../../_auto/method_limits/getChatHistory.md) %}
 
 ### Example
 
@@ -230,7 +230,7 @@ getChatMessage($business_id, $chat_id, $message_id): \OpenAPI\Client\Model\GetCh
 
 Получение сообщения в чате
 
-{% include notitle [access](../../_auto/method_scopes/getChatMessage.md) %}  Возвращает сообщение по его идентификатору.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getChatMessage.md) %}
+{% include notitle [access](../../_auto/method_scopes/getChatMessage.md) %}  Возвращает сообщение по его идентификатору.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  **Пошаговые инструкции**  * [Как проверить, есть ли новые чаты или сообщения](../../step-by-step/chats.md#check)  {% include notitle [limit](../../_auto/method_limits/getChatMessage.md) %}
 
 ### Example
 
@@ -299,7 +299,7 @@ getChats($business_id, $get_chats_request, $page_token, $limit): \OpenAPI\Client
 
 Получение доступных чатов
 
-{% include notitle [access](../../_auto/method_scopes/getChats.md) %}  Возвращает чаты с покупателями.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  {% include notitle [limit](../../_auto/method_limits/getChats.md) %}
+{% include notitle [access](../../_auto/method_scopes/getChats.md) %}  Возвращает чаты с покупателями.  {% note tip \"Подключите API-уведомления\" %}  Маркет отправит вам запрос [POST notification](../../push-notifications/reference/sendNotification.md), когда появится новый чат или сообщение.  [{#T}](../../push-notifications/index.md)  {% endnote %}  **Пошаговые инструкции**  * [Чаты с покупателями](../../step-by-step/chats.md)  {% include notitle [limit](../../_auto/method_limits/getChats.md) %}
 
 ### Example
 
@@ -370,7 +370,7 @@ sendFileToChat($business_id, $chat_id, $file): \OpenAPI\Client\Model\EmptyApiRes
 
 Отправка файла в чат
 
-{% include notitle [access](../../_auto/method_scopes/sendFileToChat.md) %}  Отправляет файл в чат с покупателем.  {% include notitle [limit](../../_auto/method_limits/sendFileToChat.md) %}
+{% include notitle [access](../../_auto/method_scopes/sendFileToChat.md) %}  Отправляет файл в чат с покупателем.  **Пошаговые инструкции**  * [Чаты с покупателями](../../step-by-step/chats.md)  {% include notitle [limit](../../_auto/method_limits/sendFileToChat.md) %}
 
 ### Example
 
@@ -439,7 +439,7 @@ sendMessageToChat($business_id, $chat_id, $send_message_to_chat_request): \OpenA
 
 Отправка сообщения в чат
 
-{% include notitle [access](../../_auto/method_scopes/sendMessageToChat.md) %}  Отправляет сообщение в чат с покупателем.  {% include notitle [limit](../../_auto/method_limits/sendMessageToChat.md) %}
+{% include notitle [access](../../_auto/method_scopes/sendMessageToChat.md) %}  Отправляет сообщение в чат с покупателем.  **Пошаговые инструкции**  * [Чаты с покупателями](../../step-by-step/chats.md)  {% include notitle [limit](../../_auto/method_limits/sendMessageToChat.md) %}
 
 ### Example
 
